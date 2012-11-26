@@ -10,6 +10,8 @@ Out of the box, the styling looks like this:
 
 [![](https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.png)](https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.png)
 
+It can quickly be modified, though. There are a couple other examples [here](https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.Blue.png) and [here](https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.Round.png).
+
 The styling is easily modified in a .plist that supports variables, like this:
 
 [![](https://raw.github.com/tombenner/nui/master/Screenshots/SettingsScreenshot.png)](https://raw.github.com/tombenner/nui/master/Screenshots/SettingsScreenshot.png)
