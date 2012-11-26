@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 
 @implementation AppDelegate {
-	NSMutableArray *demoItems;
+    NSMutableArray *demoItems;
 }
 
 @synthesize window = _window;
@@ -19,30 +19,30 @@
     [NUIAppearance init];
     
     demoItems = [NSMutableArray arrayWithCapacity:20];
-	[demoItems addObject:[NSDictionary dictionaryWithObjectsAndKeys:
+    [demoItems addObject:[NSDictionary dictionaryWithObjectsAndKeys:
                                @"John", @"name",
                                @"Guitar", @"description",
                                nil]];
-	[demoItems addObject:[NSDictionary dictionaryWithObjectsAndKeys:
+    [demoItems addObject:[NSDictionary dictionaryWithObjectsAndKeys:
                                @"Paul", @"name",
                                @"Bass", @"description",
                                nil]];
-	[demoItems addObject:[NSDictionary dictionaryWithObjectsAndKeys:
+    [demoItems addObject:[NSDictionary dictionaryWithObjectsAndKeys:
                                @"George", @"name",
                                @"Guitar", @"description",
                                nil]];
-	[demoItems addObject:[NSDictionary dictionaryWithObjectsAndKeys:
+    [demoItems addObject:[NSDictionary dictionaryWithObjectsAndKeys:
                                @"Ringo", @"name",
                                @"Drums", @"description",
                                nil]];
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
-	UINavigationController *navigationController = [[tabBarController viewControllers] objectAtIndex:1];
-	NUIDemoTableViewController *demoTableViewController = [[navigationController viewControllers] objectAtIndex:0];
-	demoTableViewController.demoItems = demoItems;
+    UINavigationController *navigationController = [[tabBarController viewControllers] objectAtIndex:1];
+    NUIDemoTableViewController *demoTableViewController = [[navigationController viewControllers] objectAtIndex:0];
+    demoTableViewController.demoItems = demoItems;
     
     return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

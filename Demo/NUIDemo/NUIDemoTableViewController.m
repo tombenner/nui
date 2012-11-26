@@ -66,9 +66,9 @@
     static NSString *CellIdentifier = @"NUIDemoCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-	NSDictionary *item = [self.demoItems objectAtIndex:indexPath.row];
-	cell.textLabel.text = [item objectForKey:@"name"];
-	cell.detailTextLabel.text = [item objectForKey:@"description"];
+    NSDictionary *item = [self.demoItems objectAtIndex:indexPath.row];
+    cell.textLabel.text = [item objectForKey:@"name"];
+    cell.detailTextLabel.text = [item objectForKey:@"description"];
     
     return cell;
 }

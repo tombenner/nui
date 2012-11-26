@@ -48,7 +48,7 @@
     CIFilter *monochromeFilter = [CIFilter filterWithName:@"CIColorMonochrome"];
     CIImage *baseImage = image;
     
-    [monochromeFilter setValue:baseImage forKey:@"inputImage"];		
+    [monochromeFilter setValue:baseImage forKey:@"inputImage"];        
     [monochromeFilter setValue:[CIColor colorWithRed:0.75 green:0.75 blue:0.75] forKey:@"inputColor"];
     [monochromeFilter setValue:[NSNumber numberWithFloat:1.0] forKey:@"inputIntensity"];
     
