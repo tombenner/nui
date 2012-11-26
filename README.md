@@ -61,7 +61,7 @@ To create, for example, a new UIButton named MyButton, we would do this:
 1. File > New > File...
 1. Cocoa Touch > Objective-C class > Next
 1. Set `Class` to `MyButton` and `Subclass of` to `NUIButton` > Next > Create
-1. In MyButton.m, add the following in the @implementation
+1. Add the following in MyButton.m:
 
     - (void)initNUI {
         [super initNUI];
@@ -299,7 +299,7 @@ FAQ
 
 Absolutely! NUI covers a lot of ground, but there's still a large number of elements and properties that are still unsupported. If you've made a NUISettings.plist theme that you really like, it'd be excellent to add it to this repo.
 
-#### What verions of iOS are supported?
+#### What versions of iOS are supported?
 
 NUI is tested on iOS 5.1. If you find bugs in iOS 6+, definitely feel free to let me know and/or contribute fixes!
 
