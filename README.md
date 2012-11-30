@@ -303,7 +303,7 @@ Absolutely! NUI covers a lot of ground, but there's still a large number of elem
 
 #### What versions of iOS are supported?
 
-NUI is tested on iOS 5.1. If you find bugs in iOS 6+, definitely feel free to let me know and/or contribute fixes!
+NUI has been tested on both iOS 5.1 and iOS 6.0.
 
 #### What advantages does this have over UIAppearance?
 
