@@ -12,12 +12,12 @@
 
 + (void)render:(UITabBar*)bar withClass:(NSString*)class_name
 {
-    if ([NUISettings hasKey:@"BackgroundTintColor" withClass:class_name]) {
-        [bar setTintColor:[NUISettings getColor:@"BackgroundTintColor" withClass:class_name]];
+    if ([NUISettings hasProperty:@"background-tint-color" withClass:class_name]) {
+        [bar setTintColor:[NUISettings getColor:@"background-tint-color" withClass:class_name]];
     }
     
-    if ([NUISettings hasKey:@"BackgroundImage" withClass:class_name]) {
-        [bar setBackgroundImage:[NUISettings getImage:@"BackgroundImage" withClass:class_name]];
+    if ([NUISettings hasProperty:@"background-image" withClass:class_name]) {
+        [bar setBackgroundImage:[NUISettings getImage:@"background-image" withClass:class_name]];
     }
     
     NSDictionary *titleTextAttributes = [NUIUtilities titleTextAttributesForClass:class_name];
@@ -26,8 +26,8 @@
         if ([[titleTextAttributes allKeys] count] > 0) {
             [item setTitleTextAttributes:titleTextAttributes forState:UIControlStateNormal];
         }
-        if ([NUISettings hasKey:@"TextOffset" withClass:class_name]) {
-            [item setTitlePositionAdjustment:[NUISettings getOffset:@"TextOffset" withClass:class_name]];
+        if ([NUISettings hasProperty:@"text-offset" withClass:class_name]) {
+            [item setTitlePositionAdjustment:[NUISettings getOffset:@"text-offset" withClass:class_name]];
         }
     }
 }

@@ -28,7 +28,7 @@
 
 + (void)renderLabel:(UILabel*)label;
 + (void)renderLabel:(UILabel*)label withClass:(NSString*)class_name;
-+ (void)renderLabel:(UILabel*)label withClass:(NSString*)class_name withPrefix:(NSString*)prefix;
++ (void)renderLabel:(UILabel*)label withClass:(NSString*)class_name withSuffix:(NSString*)suffix;
 
 + (void)renderNavigationBar:(UINavigationBar*)bar;
 + (void)renderNavigationBar:(UINavigationBar*)bar withClass:(NSString*)class_name;

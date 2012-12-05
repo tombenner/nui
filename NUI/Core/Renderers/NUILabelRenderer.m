@@ -12,47 +12,51 @@
 
 + (void)render:(UILabel*)label withClass:(NSString*)class_name
 {
-    [self render:label withClass:class_name withPrefix:@""];
+    [self render:label withClass:class_name withSuffix:@""];
 }
 
-+ (void)render:(UILabel*)label withClass:(NSString*)class_name withPrefix:(NSString*)prefix
++ (void)render:(UILabel*)label withClass:(NSString*)class_name withSuffix:(NSString*)suffix
 {
-    NSMutableString *key;
+    NSString *property;
     
-    key = [NSString stringWithFormat:@"%@%@", prefix, @"FontColor"];
-    if ([NUISettings hasKey:key withClass:class_name]) {
-        label.textColor = [NUISettings getColor:key withClass:class_name];
+    if (![suffix isEqualToString:@""]) {
+        class_name = [NSString stringWithFormat:@"%@%@", class_name, suffix];
     }
     
-    key = [NSString stringWithFormat:@"%@%@", prefix, @"FontColorHighlighted"];
-    if ([NUISettings hasKey:key withClass:class_name]) {
-        label.highlightedTextColor = [NUISettings getColor:key withClass:class_name];
+    property = @"font-color";
+    if ([NUISettings hasProperty:property withClass:class_name]) {
+        label.textColor = [NUISettings getColor:property withClass:class_name];
     }
     
-    key = [NSString stringWithFormat:@"%@%@", prefix, @"FontName"];
-    NSString *size_key = [NSString stringWithFormat:@"%@%@", prefix, @"FontSize"];
-    if ([NUISettings hasKey:key withClass:class_name]) {
-        label.font = [UIFont fontWithName:[NUISettings get:key withClass:class_name] size:[NUISettings getFloat:size_key withClass:class_name]];
+    property = @"font-color-highlighted";
+    if ([NUISettings hasProperty:property withClass:class_name]) {
+        label.highlightedTextColor = [NUISettings getColor:property withClass:class_name];
     }
     
-    key = [NSString stringWithFormat:@"%@%@", prefix, @"TextAlpha"];
-    if ([NUISettings hasKey:key withClass:class_name]) {
-        label.alpha = [NUISettings getFloat:key withClass:class_name];
+    property = @"font-name";
+    NSString *size_property = @"font-size";
+    if ([NUISettings hasProperty:property withClass:class_name]) {
+        label.font = [UIFont fontWithName:[NUISettings get:property withClass:class_name] size:[NUISettings getFloat:size_property withClass:class_name]];
     }
     
-    key = [NSString stringWithFormat:@"%@%@", prefix, @"TextAutoFit"];
-    if ([NUISettings hasKey:key withClass:class_name]) {
-        [label setAdjustsFontSizeToFitWidth:[NUISettings getBoolean:key withClass:class_name]];
+    property = @"text-alpha";
+    if ([NUISettings hasProperty:property withClass:class_name]) {
+        label.alpha = [NUISettings getFloat:property withClass:class_name];
     }
     
-    key = [NSString stringWithFormat:@"%@%@", prefix, @"TextShadowColor"];
-    if ([NUISettings hasKey:key withClass:class_name]) {
-        label.shadowColor = [NUISettings getColor:key withClass:class_name];
+    property = @"text-auto-fit";
+    if ([NUISettings hasProperty:property withClass:class_name]) {
+        [label setAdjustsFontSizeToFitWidth:[NUISettings getBoolean:property withClass:class_name]];
     }
     
-    key = [NSString stringWithFormat:@"%@%@", prefix, @"TextShadowOffset"];
-    if ([NUISettings hasKey:key withClass:class_name]) {
-        label.shadowOffset = [NUISettings getSize:key withClass:class_name];
+    property = @"text-shadow-color";
+    if ([NUISettings hasProperty:property withClass:class_name]) {
+        label.shadowColor = [NUISettings getColor:property withClass:class_name];
+    }
+    
+    property = @"text-shadow-offset";
+    if ([NUISettings hasProperty:property withClass:class_name]) {
+        label.shadowOffset = [NUISettings getSize:property withClass:class_name];
     }
 }
 

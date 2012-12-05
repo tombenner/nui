@@ -44,9 +44,9 @@
     [NUILabelRenderer render:label withClass:class_name];
 }
 
-+ (void)renderLabel:(UILabel*)label withClass:(NSString*)class_name withPrefix:(NSString*)prefix
++ (void)renderLabel:(UILabel*)label withClass:(NSString*)class_name withSuffix:(NSString*)suffix
 {
-    [NUILabelRenderer render:label withClass:class_name withPrefix:prefix];   
+    [NUILabelRenderer render:label withClass:class_name withSuffix:suffix];
 }
 
 

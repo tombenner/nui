@@ -40,15 +40,15 @@
 {   
     [self initNUI];
     
-    if ([NUISettings hasKey:@"BackgroundColorTop" withClass:_nuiClass]) {
+    if ([NUISettings hasProperty:@"background-color-top" withClass:_nuiClass]) {
         CAGradientLayer *gradient = [NUIGraphics
-                                     gradientLayerWithTop:[NUISettings getColor:@"BackgroundColorTop" withClass:_nuiClass] 
-                                     withBottom:[NUISettings getColor:@"BackgroundColorBottom" withClass:_nuiClass]
+                                     gradientLayerWithTop:[NUISettings getColor:@"background-color-top" withClass:_nuiClass] 
+                                     withBottom:[NUISettings getColor:@"background-color-bottom" withClass:_nuiClass]
                                      withFrame:self.frame];
         [gradient renderInContext:UIGraphicsGetCurrentContext()];
-    } else if ([NUISettings hasKey:@"BackgroundColor" withClass:_nuiClass]) {
+    } else if ([NUISettings hasProperty:@"background-color" withClass:_nuiClass]) {
         CGContextRef context = UIGraphicsGetCurrentContext();
-        CGContextSetFillColor(context, CGColorGetComponents([[NUISettings getColor:@"BackgroundColor" withClass:_nuiClass] CGColor]));
+        CGContextSetFillColor(context, CGColorGetComponents([[NUISettings getColor:@"background-color" withClass:_nuiClass] CGColor]));
         CGContextFillRect(context, rect);
     }
 }

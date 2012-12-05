@@ -14,20 +14,20 @@
 {
     NSMutableDictionary *titleTextAttributes = [NSMutableDictionary dictionary];
     
-    if ([NUISettings hasKey:@"FontName" withClass:class_name]) {
-        [titleTextAttributes setObject:[UIFont fontWithName:[NUISettings get:@"FontName" withClass:class_name] size:[NUISettings getFloat:@"FontSize" withClass:class_name]] forKey:UITextAttributeFont];
+    if ([NUISettings hasProperty:@"font-name" withClass:class_name]) {
+        [titleTextAttributes setObject:[UIFont fontWithName:[NUISettings get:@"font-name" withClass:class_name] size:[NUISettings getFloat:@"font-size" withClass:class_name]] forKey:UITextAttributeFont];
     }
     
-    if ([NUISettings hasKey:@"FontColor" withClass:class_name]) {
-        [titleTextAttributes setObject:[NUISettings getColor:@"FontColor" withClass:class_name] forKey:UITextAttributeTextColor];
+    if ([NUISettings hasProperty:@"font-color" withClass:class_name]) {
+        [titleTextAttributes setObject:[NUISettings getColor:@"font-color" withClass:class_name] forKey:UITextAttributeTextColor];
     }
     
-    if ([NUISettings hasKey:@"TextShadowColor" withClass:class_name]) {
-        [titleTextAttributes setObject:[NUISettings getColor:@"TextShadowColor" withClass:class_name] forKey:UITextAttributeTextShadowColor];
+    if ([NUISettings hasProperty:@"text-shadow-color" withClass:class_name]) {
+        [titleTextAttributes setObject:[NUISettings getColor:@"text-shadow-color" withClass:class_name] forKey:UITextAttributeTextShadowColor];
     }
     
-    if ([NUISettings hasKey:@"TextShadowOffset" withClass:class_name]) {
-        [titleTextAttributes setObject:[NSValue valueWithUIOffset:[NUISettings getOffset:@"TextShadowOffset" withClass:class_name]] forKey:UITextAttributeTextShadowOffset];
+    if ([NUISettings hasProperty:@"text-shadow-offset" withClass:class_name]) {
+        [titleTextAttributes setObject:[NSValue valueWithUIOffset:[NUISettings getOffset:@"text-shadow-offset" withClass:class_name]] forKey:UITextAttributeTextShadowOffset];
     }
     
     return titleTextAttributes;
