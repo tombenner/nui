@@ -57,6 +57,7 @@
 		4AAAFE75166FC47500A0D34D /* NUILargeTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAAFE4C166FC47500A0D34D /* NUILargeTextField.m */; };
 		4AAAFE76166FC47500A0D34D /* NUISmallButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAAFE4E166FC47500A0D34D /* NUISmallButton.m */; };
 		4AAAFE77166FC47500A0D34D /* NUISmallLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAAFE50166FC47500A0D34D /* NUISmallLabel.m */; };
+		4AAAFE7C166FD32600A0D34D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AAAFE7B166FD32600A0D34D /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -148,6 +149,7 @@
 		4AAAFE4E166FC47500A0D34D /* NUISmallButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISmallButton.m; sourceTree = "<group>"; };
 		4AAAFE4F166FC47500A0D34D /* NUISmallLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUISmallLabel.h; sourceTree = "<group>"; };
 		4AAAFE50166FC47500A0D34D /* NUISmallLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISmallLabel.m; sourceTree = "<group>"; };
+		4AAAFE7B166FD32600A0D34D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 				4A0B864A165EE59A005B5756 /* ViewController.h */,
 				4A0B864B165EE59A005B5756 /* ViewController.m */,
 				4AAAFE02166FC47500A0D34D /* NUI */,
+				4AAAFE7A166FD2EC00A0D34D /* Resources */,
 				4A0B863C165EE59A005B5756 /* Supporting Files */,
 			);
 			path = NUIDemo;
@@ -356,6 +359,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		4AAAFE7A166FD2EC00A0D34D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4AAAFE7B166FD32600A0D34D /* Default-568h@2x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -416,6 +427,7 @@
 				4AAAFE66166FC47500A0D34D /* Blue.NUIStyle.nss in Resources */,
 				4AAAFE67166FC47500A0D34D /* Default.NUIStyle.nss in Resources */,
 				4AAAFE68166FC47500A0D34D /* Round.NUIStyle.nss in Resources */,
+				4AAAFE7C166FD32600A0D34D /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
