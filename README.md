@@ -10,17 +10,39 @@ Out of the box, the styling looks like this:
 
 [![](https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.png)](https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.png)
 
-It can quickly be modified, though. There are a couple other examples [here](https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.Blue.png) and [here](https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.Round.png).
+It's easily modified, though. The styling above, for example, is declared [like this](https://raw.github.com/tombenner/nui/master/NUI/NUIStyle.nss). There are a couple other screenshots [here](https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.Blue.png) and [here](https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.Round.png).
 
-The styling is easily modified in a .plist that supports variables, like this:
+The styling is declared using a CSS-like syntax that supports variables:
 
-[![](https://raw.github.com/tombenner/nui/master/Screenshots/SettingsScreenshot.png)](https://raw.github.com/tombenner/nui/master/Screenshots/SettingsScreenshot.png)
+    @primaryFontName: HelveticaNeue;
+    @secondaryFontName: HelveticaNeue-Light;
+    @primaryFontColor: #333333;
+    @primaryBackgroundColor: #E6E6E6;
+
+    Button {
+        background-color: @primaryBackgroundColor;
+        border-color: #A2A2A2;
+        border-width: @primaryBorderWidth;
+        font-color: @primaryFontColor;
+        font-color-highlighted: #999999;
+        font-name: @primaryFontName;
+        font-size: 18;
+        corner-radius: 7;
+    }
+    NavigationBar {
+        background-tint-color: @primaryBackgroundColorTop;
+        font-name: @secondaryFontName;
+        font-size: 20;
+        font-color: @primaryFontColor;
+        text-shadow-color: #666666;
+        text-shadow-offset: 1,1;
+    }
 
 NUI lets you:
 
 * Update the visual appearance of an entire application in minutes
 * Save themes for use in multiple applications
-* Set the styles of UI elements using simple rules, like setting `ButtonBorderColor` to `#CCCCCC`
+* Set the styles of UI elements using simple rules, like setting `Button { border-color: #CCCCCC }`
 * Define variables like `@primaryFontName` or `@myBackgroundColor` (a la Sass/LESS)
 * Avoid digging through documentation to find how to change specific UI elements' styling
 * Quickly create new, custom UI elements and define custom style classes for them
@@ -42,7 +64,7 @@ If it isn't possible to change the inheritence of the element's class, you can a
 
 ### Editing The Style Rules
 
-NUISettings.plist contains all of the style rules. A rule for ButtonFontName modifies the font name of every NUIButton, for example. *(Please note that "NUI" is omitted in the style class for the simplicity's sake.)*
+NUIStyle.nss contains all of the style rules. A rule like `Button { font-name: "Helvetica" }` modifies the font name of every NUIButton, for example. *(Please note that "NUI" is omitted in the style class for the simplicity's sake.)*
 
 The format should be self-explanatory, but here are some notes:
 
@@ -70,7 +92,7 @@ To create, for example, a new UIButton named MyButton, we would do this:
         self.nuiClass = @"Button:MyButton";
     }
 
-You can now define style rules in NUISettings.plist for MyButton (see the available properties for Button in Style Classes below). If you don't want MyButton to inherit style rules from NUIButton, set `nuiClass` to `@"MyButton"` instead of `@"Button:MyButton"`.
+You can now define style rules in NUIStyle.nss for MyButton (see the available properties for Button in Style Classes below). If you don't want MyButton to inherit style rules from NUIButton, set `nuiClass` to `@"MyButton"` instead of `@"Button:MyButton"`.
 
 If you've made an element that could be widely reusable, definitely let me know, and I'll likely be very happy to include it in this repo. 
 
@@ -78,7 +100,7 @@ If you've made an element that could be widely reusable, definitely let me know,
 
 ### Creating Custom Themes
 
-Because all of the style rules are contained in NUISettings.plist, it's easy to create an NUI theme that can be reused in other projects. If you make one you like, let me know, and I'll likely be very happy to include it in this repo.
+Because all of the style rules are contained in NUIStyle.nss, it's easy to create an NUI theme that can be reused in other projects. If you make one you like, let me know, and I'll likely be very happy to include it in this repo.
 
 Style Classes
 -------------
@@ -89,128 +111,133 @@ Below are all of the currently available style classes, their corresponding UI e
 
 *NUIBarButtonItem*
 
-* BackgroundColor
-* BackgroundImage
-* BackgroundTintColor
-* FontColor
-* FontName
-* FontSize
-* TextShadowColor
-* TextShadowOffset
+* background-color
+* background-image
+* background-tint-color
+* font-color
+* font-name
+* font-size
+* text-shadow-color
+* text-shadow-offset
 
 #### Button
 
 *NUIButton*
 
-* BackgroundColor
-* BackgroundColorTop/BackgroundColorBottom
-* BackgroundImage
-* BackgroundImageHighlighted
-* BorderColor
-* BorderWidth
-* CornerRadius
-* FontColor
-* FontColorHighlighted
-* FontName
-* FontSize
-* Height
-* TextAlpha
-* TextAutoFit
-* TextShadowColor
-* TextShadowOffset
+* background-color
+* background-color-top/background-color-bottom
+* background-image
+* background-image-highlighted
+* border-color
+* border-width
+* corner-radius
+* font-color
+* font-color-highlighted
+* font-name
+* font-size
+* height
+* text-alpha
+* text-auto-fit
+* text-shadow-color
+* text-shadow-offset
 
 #### Label
 
 *NUILabel*
 
-* FontColor
-* FontColorHighlighted
-* FontName
-* FontSize
-* TextAlpha
-* TextAutoFit
-* TextShadowColor
-* TextShadowOffset
+* font-color
+* font-color-highlighted
+* font-name
+* font-size
+* text-alpha
+* text-auto-fit
+* text-shadow-color
+* text-shadow-offset
 
 #### NavigationBar
 
 *NUINavigationBar*
 
-* BackgroundColor
-* BackgroundColorTop/BackgroundColorBottom
-* BackgroundImage
-* BackgroundTintColor
-* FontColor
-* FontName
-* FontSize
-* TextShadowColor
-* TextShadowOffset
+* background-color
+* background-color-top/background-color-bottom
+* background-image
+* background-tint-color
+* font-color
+* font-name
+* font-size
+* text-shadow-color
+* text-shadow-offset
 
 #### SegmentedControl
 
 *NUISegmentedControl*
 
-* BackgroundTintColor
-* BackgroundColor
-* FontColor
-* FontName
-* FontSize
-* TextShadowColor
-* TextShadowOffset
+* background-tint-color
+* background-color
+* font-color
+* font-name
+* font-size
+* text-shadow-color
+* text-shadow-offset
 
 #### TabBar
 
 *NUITabBar*
 
-* BackgroundColor
-* BackgroundColorTop/BackgroundColorBottom
-* BackgroundImage
-* BackgroundTintColor
-* FontColor
-* FontName
-* FontSize
-* TextOffset
-* TextShadowColor
-* TextShadowOffset
+* background-color
+* background-color-top/background-color-bottom
+* background-image
+* background-tint-color
+* font-color
+* font-name
+* font-size
+* text-offset
+* text-shadow-color
+* text-shadow-offset
 
 #### TableCell
 
 *NUITableViewCell*
 
-* BackgroundColor
-* BackgroundColorTop/BackgroundColorBottom
-* DetailFontColor
-* DetailFontColorHighlighted
-* DetailFontName
-* DetailFontSize
-* DetailTextAlpha
-* DetailTextAutoFit
-* DetailTextShadowColor
-* DetailTextShadowOffset
-* FontColor
-* FontColorHighlighted
-* FontName
-* FontSize
-* TextAlpha
-* TextAutoFit
-* TextShadowColor
-* TextShadowOffset
+* background-color
+* background-color-top/background-color-bottom
+* font-color
+* font-color-highlighted
+* font-name
+* font-size
+* text-alpha
+* text-auto-fit
+* text-shadow-color
+* text-shadow-offset
+
+#### TableCellDetail
+
+The detail label of a *NUITableViewCell*
+
+* font-color
+* font-color-highlighted
+* font-name
+* font-size
+* text-alpha
+* text-auto-fit
+* text-shadow-color
+* text-shadow-offset
 
 #### TextField
 
 *NUITextField*
 
-* BorderStyle
-* FontName
-* FontSize
-* Height
+* border-style
+* font-name
+* font-size
+* height
 
 #### View
 
 *NUIView*
 
-* BackgroundColor
-* BackgroundImage
+* background-color
+* background-image
 
 ### Extended Classes
 
@@ -240,56 +267,61 @@ These classes are applied via UIAppearance, so they are applied to all elements 
 
 #### UIBarButtonItem
 
-* BackgroundColor
-* BackgroundImage
-* BackgroundTintColor
-* BackBackgroundColor *(for Back buttons)*
-* BackBackgroundImage *(for Back buttons)*
-* BackBackgroundTintColor *(for Back buttons)*
-* FontColor
-* FontName
-* FontSize
-* TextOffset
-* TextShadowColor
-* TextShadowOffset
+* background-color
+* background-image
+* background-tint-color
+* font-color
+* font-name
+* font-size
+* text-offset
+* text-shadow-color
+* text-shadow-offset
+
+#### UIBackBarButtonItem
+
+*A back button, inherits from UIBarButtonItem*
+
+* background-color
+* background-image
+* background-tint-color
 
 #### UINavigationBar
 
-* BackgroundColor
-* BackgroundImage
-* BackgroundTintColor
+* background-color
+* background-image
+* background-tint-color
 
 Style Properties
 ----------------
 
-* **BackgroundColor** - Color
-* **BackgroundColorTop**/**BackgroundColorBottom** - Gradient
-* **BackgroundImage** - Image
-* **BackgroundImageHighlighted** - Image
-* **BackgroundTintColor** - Color
-* **BorderColor** - Color
-* **BorderStyle** - BorderStyle
-* **BorderWidth** - Number
-* **CornerRadius** - Number
-* **FontColor** - Color
-* **FontColorHighlighted** - Color
-* **FontName** - FontName
-* **FontSize** - Number
-* **Height** - Number
-* **TextAlpha** - Number
-* **TextAutoFit** - Boolean
-* **TextOffset** - Offset
-* **TextShadowColor** - Color
-* **TextShadowOffset** - Offset
+* **background-color** - Color
+* **background-color-top**/**background-color-bottom** - Gradient
+* **background-image** - Image
+* **background-image-highlighted** - Image
+* **background-tint-color** - Color
+* **border-color** - Color
+* **border-style** - BorderStyle
+* **border-width** - Number
+* **corner-radius** - Number
+* **font-color** - Color
+* **font-color-highlighted** - Color
+* **font-name** - FontName
+* **font-size** - Number
+* **height** - Number
+* **text-alpha** - Number
+* **text-auto-fit** - Boolean
+* **text-offset** - Offset
+* **text-shadow-color** - Color
+* **text-shadow-offset** - Offset
 
 Style Value Types
 -----------------
 
-* **Boolean** - A boolean (set Type to Boolean in the plist)
+* **Boolean** - A boolean (`true` or `false`)
 * **BorderStyle** - A border style, as rendered by a UITextBorderStyle. Accepted values are `none`, `line`, `bezel`, and `rounded`.
 * **Color** - A hex color (e.g. `#FF0000`) or `clear` for a `[UIColor clearColor]`
 * **FontName** - A font name (see available values [here](http://iosfonts.com/))
-* **Gradient** - Two Colors that will create a vertical gradient. BackgroundColorTop and BackgroundColorBottom need to be defined in separate plist entries.
+* **Gradient** - Two Colors that will create a vertical gradient. background-color-top and background-color-bottom need to be defined in separate .nss properties.
 * **Image** - A name of an image, as used in `[UIImage imageNamed:name]` (e.g. `MyImage.png`).
 * **Number** - A number (e.g. `-1`, `4.5`)
 * **Offset** - Two numbers comprising the horizontal and vertical values of an offset (e.g. `-1,1`)
@@ -299,7 +331,7 @@ FAQ
 
 #### Can I contribute new UI elements, style properties, themes, etc?
 
-Absolutely! NUI covers a lot of ground, but there's still a large number of elements and properties that are still unsupported. If you've made a NUISettings.plist theme that you really like, it'd be excellent to add it to this repo.
+Absolutely! NUI covers a lot of ground, but there's still a large number of elements and properties that are still unsupported. If you've made a NUIStyle.nss theme that you really like, it'd be excellent to add it to this repo.
 
 #### What versions of iOS are supported?
 
