@@ -12,6 +12,14 @@
 
 + (BOOL)toBoolean:(id)value
 {
+    if ([value isKindOfClass:[NSString class]]) {
+        if ([value isEqualToString:@"true"]) {
+            return YES;
+        }
+        if ([value isEqualToString:@"false"]) {
+            return NO;
+        }
+    }
     return [value boolValue];
 }
 

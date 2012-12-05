@@ -12,6 +12,6 @@
 @interface NUILabelRenderer : NSObject
 
 + (void)render:(UILabel*)label withClass:(NSString*)class_name;
-+ (void)render:(UILabel*)label withClass:(NSString*)class_name withPrefix:(NSString*)prefix;
++ (void)render:(UILabel*)label withClass:(NSString*)class_name withSuffix:(NSString*)suffix;
 
 @end
