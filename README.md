@@ -42,7 +42,7 @@ NUI lets you:
 
 * Update the visual appearance of an entire application in minutes
 * Save themes for use in multiple applications
-* Set the styles of UI elements using simple rules, like setting `Button { border-color: #CCCCCC }`
+* Set the styles of UI elements using simple rules, like setting `Button { border-color: #CCCCCC; }`
 * Define variables like `@primaryFontName` or `@myBackgroundColor` (a la Sass/LESS)
 * Avoid digging through documentation to find how to change specific UI elements' styling
 * Quickly create new, custom UI elements and define custom style classes for them
@@ -64,7 +64,7 @@ If it isn't possible to change the inheritence of the element's class, you can a
 
 ### Editing The Style Rules
 
-NUIStyle.nss contains all of the style rules. A rule like `Button { font-name: "Helvetica" }` modifies the font name of every NUIButton, for example. *(Please note that "NUI" is omitted in the style class for the simplicity's sake.)*
+NUIStyle.nss contains all of the style rules. A rule like `Button { font-name: Helvetica; }` modifies the font name of every NUIButton, for example. *(Please note that "NUI" is omitted in the style class for the simplicity's sake.)*
 
 The format should be self-explanatory, but here are some notes:
 
