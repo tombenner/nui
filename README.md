@@ -30,7 +30,7 @@ The styling is declared using a CSS-like syntax that supports variables:
         corner-radius: 7;
     }
     NavigationBar {
-        background-tint-color: @primaryBackgroundColorTop;
+        background-tint-color: @primaryBackgroundColor;
         font-name: @secondaryFontName;
         font-size: 20;
         font-color: @primaryFontColor;
