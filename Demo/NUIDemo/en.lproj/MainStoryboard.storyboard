@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E2620" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="saZ-5Q-ZQI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="saZ-5Q-ZQI">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
-        <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--View Controller - Controls-->
         <scene sceneID="aHH-J0-DaF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="A7g-F5-vp6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="ERX-jm-icm" sceneMemberID="viewController">
+                <viewController id="ERX-jm-icm" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vEP-sJ-hxA" customClass="NUIView">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -76,13 +74,19 @@
                                 <rect key="frame" x="20" y="189" width="159" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ERX-jm-icm" id="GVp-vL-k65"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text Field" minimumFontSize="17" id="7Ao-qP-10H" customClass="NUITextField">
                                 <rect key="frame" x="20" y="257" width="93" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ERX-jm-icm" id="WA2-Bf-d4m"/>
+                                </connections>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="BAC-Py-hBd" customClass="NUISegmentedControl">
                                 <rect key="frame" x="65" y="318" width="190" height="30"/>
@@ -103,13 +107,13 @@
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A7g-F5-vp6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1010" y="-247"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="kww-0m-DV3">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tUc-LZ-sPV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="QSl-4a-Qez" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EqS-qd-y03" customClass="NUIView">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
@@ -118,13 +122,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="713-Ss-z9p" customClass="NUINavigationItem"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tUc-LZ-sPV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1446" y="-247"/>
         </scene>
         <!--Demo Table View Controller - Table View-->
         <scene sceneID="ALA-NQ-ahm">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Dm6-tu-8Yl" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="ZrP-fA-LgW" customClass="NUIDemoTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Rv2-Gp-ZeW">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
@@ -164,13 +168,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Table View" id="4go-bh-qKi"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dm6-tu-8Yl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1010" y="389"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="5eo-iQ-FZR">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ort-ET-tc6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController definesPresentationContext="YES" id="saZ-5Q-ZQI" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="2gI-M3-jFj" customClass="NUITabBar">
@@ -183,13 +187,13 @@
                         <segue destination="yKS-uI-aO1" kind="relationship" relationship="viewControllers" id="t7u-EB-Def"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ort-ET-tc6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-50" y="36"/>
         </scene>
         <!--Navigation Controller - Table View-->
         <scene sceneID="gYs-p9-KoR">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1SL-Xx-UMo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="yKS-uI-aO1" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Table View" id="YCs-MI-cDp"/>
                     <toolbarItems/>
@@ -202,13 +206,13 @@
                         <segue destination="ZrP-fA-LgW" kind="relationship" relationship="rootViewController" id="3tk-87-wyR"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1SL-Xx-UMo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="484" y="389"/>
         </scene>
         <!--Navigation Controller - Controls-->
         <scene sceneID="Vgr-TL-IgG">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MVe-eB-wui" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="5gO-X7-z36" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Controls" id="usd-qK-Y3n"/>
                     <toolbarItems/>
@@ -221,6 +225,7 @@
                         <segue destination="ERX-jm-icm" kind="relationship" relationship="rootViewController" id="TbR-4D-aYn"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MVe-eB-wui" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="484" y="-247"/>
         </scene>
@@ -270,6 +275,9 @@
         </class>
         <class className="NUIView" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NUIView.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
