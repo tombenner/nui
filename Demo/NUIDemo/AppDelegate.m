@@ -16,6 +16,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+
+    [NUISettings loadStylesheet:@"Blue.NUIStyle"];
     [NUIAppearance init];
     
     demoItems = [NSMutableArray arrayWithCapacity:20];
