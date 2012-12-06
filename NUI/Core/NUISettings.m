@@ -13,11 +13,11 @@
 @synthesize settings;
 static NUISettings *instance = nil;
 
-+ (void)loadSettings:(NSString*)name
++ (void)loadStylesheet:(NSString *)name
 {
     instance = [self getInstance];
     NUIStyleParser *parser = [[NUIStyleParser alloc] init];
-    instance.settings = [parser getStylesFromFile:@"NUIStyle"];
+    instance.settings = [parser getStylesFromFile:name];
 }
 
 + (BOOL)hasProperty:(NSString*)property withExplicitClass:(NSString*)class_name
@@ -118,8 +118,8 @@ static NUISettings *instance = nil;
     @synchronized(self) {    
         if(instance == nil) {
             instance = [NUISettings new];
-            [self loadSettings:@"NUISettings"];
-        }    
+            [self loadStylesheet:@"NUIStyle"];
+        }
     }
     
     return instance;
