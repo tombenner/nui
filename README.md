@@ -348,3 +348,8 @@ Yep! It's unclear when it will be launched, it won't be free (in either meaning 
 #### How is "NUI" pronounced?
 
 "New-ee". (It rhymes with "GUI", of course.)
+
+License
+-------
+
+NUI is released under the MIT License. Please see the LICENSE file for details.
