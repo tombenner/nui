@@ -12,5 +12,5 @@ Pod::Spec.new do |s|
   s.source_files = 'NUI', 'NUI/**/*.{h,m}'
   s.resources = "NUI/Resources/*.png", "NUI/**/*.nss"
   s.requires_arc = true
-
+  s.frameworks = "QuartzCore"
 end
