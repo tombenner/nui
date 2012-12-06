@@ -1,6 +1,6 @@
 NUI
 ===
-Style iOS apps with a style sheet
+Style iOS apps with a style sheet, similar to CSS
 
 Description
 -----------
