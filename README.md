@@ -4,7 +4,7 @@ Style iOS apps with a style sheet
 
 Description
 -----------
-NUI is a drop-in UI kit for iOS that lets you style UI elements using a style sheet, similar to CSS. It lets you style an entire app in minutes.
+NUI is a UI kit for iOS that lets you style UI elements using a style sheet, similar to CSS. It lets you style an entire app in minutes.
 
 Out of the box, the styling looks like this:
 
