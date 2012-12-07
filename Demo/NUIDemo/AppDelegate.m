@@ -17,8 +17,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 
-//  Uncomment this line to test out the blue stylesheet
-//    [NUISettings loadStylesheet:@"Blue.NUIStyle"];
     [NUIAppearance init];
     
     demoItems = [NSMutableArray arrayWithCapacity:20];
