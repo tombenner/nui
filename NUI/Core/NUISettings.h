@@ -16,7 +16,7 @@
 
 @property(nonatomic,retain)NSMutableDictionary *settings;  
 
-+ (void)loadSettings:(NSString*)name;
++ (void)loadStylesheet:(NSString*)name;
 + (BOOL)hasProperty:(NSString*)property withClass:(NSString*)class_name;
 + (id)get:(NSString*)property withClass:(NSString*)class_name;
 + (BOOL)getBoolean:(NSString*)property withClass:(NSString*)class_name;
