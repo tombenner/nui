@@ -56,6 +56,8 @@ Installation
 Usage
 -----
 
+*N.B. NUI will soon use categories instead of subclasses, making it truly a drop-in solution, without any need to modify elements' inheritance. [Read more...](https://github.com/tombenner/nui/issues/8#issuecomment-11182098)*
+
 To make an element styled, make it an instance of or inherit from the relevant NUI class, which simply adds styling support to existing UIKit classes. If your button is a UIButton, for example, you'll want to set its class to NUIButton (in Identity Inspector > Custom Class). Please refer to Style Classes below to see the available classes.
 
 If it isn't possible to change the inheritence of the element's class, you can also apply styling with NUIRenderer:
