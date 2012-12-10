@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NUIGraphics.h"
 #import "NUISettings.h"
+#import "NUIUtilities.h"
 
 @interface NUINavigationBarRenderer : NSObject
 

@@ -12,6 +12,12 @@
 
 + (void)render:(UIButton*)button withClass:(NSString*)class_name
 {
+    // TODO: Look into why the button seems to be rendered twice (once in the native iOS style)
+    if ([button.layer.sublayers count] == 3) {
+        [button.layer.sublayers[0] setOpacity:0.0f];
+        [button.layer.sublayers[1] setOpacity:0.0f];
+    }
+    
     // Set height
     if ([NUISettings hasProperty:@"height" withClass:class_name]) {
         CGRect frame = button.frame;
@@ -31,7 +37,8 @@
                                      gradientLayerWithTop:[NUISettings getColor:@"background-color-top" withClass:class_name] 
                                      withBottom:[NUISettings getColor:@"background-color-bottom" withClass:class_name]
                                      withFrame:button.bounds];
-        [button.layer insertSublayer:gradient atIndex:0];
+        int index = [button.layer.sublayers count] == 1 ? 0 : 1;
+        [button.layer insertSublayer:gradient atIndex:index];
     }
     
     // Set background image

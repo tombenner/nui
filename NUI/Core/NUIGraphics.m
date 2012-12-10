@@ -65,6 +65,16 @@
     return outputImage;
 }
 
++ (UIImage*)colorImage:(UIColor*)color withFrame:(CGRect)frame
+{
+    UIGraphicsBeginImageContextWithOptions(frame.size, NO, 0);
+    [color setFill];
+    UIRectFill(frame);
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
 + (CAGradientLayer*)gradientLayerWithTop:(id)topColor withBottom:(id)bottomColor withFrame:(CGRect)frame
 {
     CAGradientLayer *layer = [CAGradientLayer layer];
