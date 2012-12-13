@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NUIGraphics.h"
 #import "NUISettings.h"
 
 @interface NUITabBarRenderer : NSObject

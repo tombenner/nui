@@ -20,15 +20,22 @@
         [bar setBackgroundImage:[NUISettings getImage:@"background-image" withClass:class_name]];
     }
     
-    NSDictionary *titleTextAttributes = [NUIUtilities titleTextAttributesForClass:class_name];
-    
-    for (UITabBarItem *item in bar.items) {
-        if ([[titleTextAttributes allKeys] count] > 0) {
-            [item setTitleTextAttributes:titleTextAttributes forState:UIControlStateNormal];
-        }
-        if ([NUISettings hasProperty:@"text-offset" withClass:class_name]) {
-            [item setTitlePositionAdjustment:[NUISettings getOffset:@"text-offset" withClass:class_name]];
-        }
+    if ([NUISettings hasProperty:@"background-color-top" withClass:class_name]) {
+        CGRect frame = bar.bounds;
+        frame.size.width *= 2;
+        CAGradientLayer *gradient = [NUIGraphics
+                                     gradientLayerWithTop:[NUISettings getColor:@"background-color-top" withClass:class_name]
+                                     withBottom:[NUISettings getColor:@"background-color-bottom" withClass:class_name]
+                                     withFrame:frame];
+        int index = [bar.layer.sublayers count] == 1 ? 0 : 1;
+        [bar.layer insertSublayer:gradient atIndex:index];
+    } else if ([NUISettings hasProperty:@"background-color" withClass:class_name]) {
+        CGRect frame = bar.bounds;
+        frame.size.width *= 2;
+        UIImage *colorImage = [NUIGraphics colorImage:[NUISettings getColor:@"background-color" withClass:class_name] withFrame:frame];
+        
+        UIImageView *colorView = [[UIImageView alloc] initWithImage:colorImage];
+        [bar insertSubview:colorView atIndex:1];
     }
 }
 

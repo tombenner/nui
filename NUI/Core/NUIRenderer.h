@@ -14,6 +14,7 @@
 #import "NUINavigationItemRenderer.h"
 #import "NUISegmentedControlRenderer.h"
 #import "NUITabBarRenderer.h"
+#import "NUITabBarItemRenderer.h"
 #import "NUITableViewCellRenderer.h"
 #import "NUITextFieldRenderer.h"
 #import "NUIViewRenderer.h"
@@ -41,6 +42,9 @@
 
 + (void)renderTabBar:(UITabBar*)bar;
 + (void)renderTabBar:(UITabBar*)bar withClass:(NSString*)class_name;
+
++ (void)renderTabBarItem:(UITabBarItem*)bar;
++ (void)renderTabBarItem:(UITabBarItem*)bar withClass:(NSString*)class_name;
 
 + (void)renderTableViewCell:(UITableViewCell*)cell;
 + (void)renderTableViewCell:(UITableViewCell*)cell withClass:(NSString*)class_name;

@@ -99,6 +99,18 @@
 
 
 
++ (void)renderTabBarItem:(UITabBarItem*)item
+{
+    [NUITabBarItemRenderer render:item withClass:@"TabBar"];
+}
+
++ (void)renderTabBarItem:(UITabBarItem*)item withClass:(NSString*)class_name
+{
+    [NUITabBarItemRenderer render:item withClass:class_name];
+}
+
+
+
 + (void)renderTableViewCell:(UITableViewCell*)cell
 {
     [NUITableViewCellRenderer render:cell withClass:@"TableCell"];

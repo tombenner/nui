@@ -48,6 +48,42 @@
     return UIOffsetMake(size.width, size.height);
 }
 
++ (UIEdgeInsets)toEdgeInsets:(NSString*)value
+{
+    NSArray *values = [value componentsSeparatedByCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
+    values = [values filteredArrayUsingPredicate: [NSPredicate predicateWithFormat:@"SELF != ''"]];
+    // edges will contain a CSS-like ordering of edges (top, right, bottom, left)
+    NSMutableArray *edges = [[NSMutableArray alloc] initWithCapacity:4];
+    switch ([values count]) {
+        case 1:
+            edges = [NSArray arrayWithObjects:values[0], values[0], values[0], values[0], nil];
+            break;
+            
+        case 2:
+            edges = [NSArray arrayWithObjects:values[0], values[1], values[0], values[1], nil];
+            break;
+            
+        case 3:
+            edges = [NSArray arrayWithObjects:values[0], values[1], values[2], values[1], nil];
+            break;
+            
+        case 4:
+            edges = [NSArray arrayWithObjects:values[0], values[1], values[2], values[3], nil];
+            break;
+            
+        default:
+            edges = [NSArray arrayWithObjects:0, 0, 0, 0, nil];
+            break;
+    }
+    // UIEdgeInsetsMake's arguments have a different ordering: top, left, bottom, right
+    return UIEdgeInsetsMake(
+                            [edges[0] floatValue],
+                            [edges[3] floatValue],
+                            [edges[2] floatValue],
+                            [edges[1] floatValue]
+                            );
+}
+
 + (UITextBorderStyle)toBorderStyle:(NSString*)value
 {
     if ([value isEqualToString:@"none"]) {

@@ -13,7 +13,12 @@
 @synthesize settings;
 static NUISettings *instance = nil;
 
-+ (void)loadStylesheet:(NSString *)name
++ (void)init
+{
+    instance = [self getInstance];
+}
+
++ (void)initWithStylesheet:(NSString *)name
 {
     instance = [self getInstance];
     NUIStyleParser *parser = [[NUIStyleParser alloc] init];
@@ -82,6 +87,11 @@ static NUISettings *instance = nil;
     return [NUIConverter toOffset:[self get:property withClass:class_name]];
 }
 
++ (UIEdgeInsets)getEdgeInsets:(NSString*)property withClass:(NSString*)class_name
+{
+    return [NUIConverter toEdgeInsets:[self get:property withClass:class_name]];
+}
+
 + (UITextBorderStyle)getBorderStyle:(NSString*)property withClass:(NSString*)class_name
 {   
     return [NUIConverter toBorderStyle:[self get:property withClass:class_name]];
@@ -117,8 +127,9 @@ static NUISettings *instance = nil;
 {
     @synchronized(self) {    
         if(instance == nil) {
+            [[NUISwizzler new] swizzleAll];
             instance = [NUISettings new];
-            [self loadStylesheet:@"NUIStyle"];
+            [self initWithStylesheet:@"NUIStyle"];
         }
     }
     

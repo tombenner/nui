@@ -30,8 +30,13 @@
         [cell.backgroundView.layer addSublayer:gradient];
     }
     
+    // Set the labels' background colors to clearColor by default, so they don't show a white
+    // background on top of the cell background color
+    [cell.textLabel setBackgroundColor:[UIColor clearColor]];
+    [cell.detailTextLabel setBackgroundColor:[UIColor clearColor]];
+    
     // Set fonts
-    [NUIRenderer renderLabel:cell.textLabel withClass:class_name withSuffix:@""];
+    [NUIRenderer renderLabel:cell.textLabel withClass:class_name];
     [NUIRenderer renderLabel:cell.detailTextLabel withClass:class_name withSuffix:@"Detail"];
     
 }

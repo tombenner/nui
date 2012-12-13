@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "NUISettings.h"
 #import "NUIUtilities.h"
+#import "NUIGraphics.h"
 
 @interface NUIAppearance : NSObject
 

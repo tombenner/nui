@@ -16,7 +16,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-
     [NUIAppearance init];
     
     demoItems = [NSMutableArray arrayWithCapacity:20];

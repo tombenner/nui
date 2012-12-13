@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="saZ-5Q-ZQI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11E2620" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="saZ-5Q-ZQI">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
@@ -9,11 +9,11 @@
         <scene sceneID="aHH-J0-DaF">
             <objects>
                 <viewController id="ERX-jm-icm" customClass="ViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vEP-sJ-hxA" customClass="NUIView">
+                    <view key="view" contentMode="scaleToFill" id="vEP-sJ-hxA">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wwl-lo-IZA" customClass="NUILargeButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wwl-lo-IZA">
                                 <rect key="frame" x="20" y="20" width="133" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -24,8 +24,11 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="nuiClass" value="Button:LargeButton"/>
+                                </userDefinedRuntimeAttributes>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="trZ-cA-9Q3" customClass="NUIButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="trZ-cA-9Q3">
                                 <rect key="frame" x="20" y="89" width="74" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -37,7 +40,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mD1-dc-rTO" customClass="NUISmallButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mD1-dc-rTO">
                                 <rect key="frame" x="20" y="145" width="57" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
@@ -48,38 +51,50 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="nuiClass" value="Button:SmallButton"/>
+                                </userDefinedRuntimeAttributes>
                             </button>
-                            <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Large Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsFontSizeToFit="NO" id="Hrl-Bw-8aJ" customClass="NUILargeLabel">
+                            <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Large Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsFontSizeToFit="NO" id="Hrl-Bw-8aJ">
                                 <rect key="frame" x="167" y="25" width="133" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="nuiClass" value="Label:LargeLabel"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="J68-Kl-D4N" customClass="NUILabel">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="J68-Kl-D4N">
                                 <rect key="frame" x="110" y="92" width="62" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Small" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="Sp9-AF-Utd" customClass="NUISmallLabel">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Small" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="Sp9-AF-Utd">
                                 <rect key="frame" x="92" y="146" width="52" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="nuiClass" value="Label:SmallLabel"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="left" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Large Field" minimumFontSize="17" id="rWN-jr-5NY" customClass="NUILargeTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="left" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Large Field" minimumFontSize="17" id="rWN-jr-5NY">
                                 <rect key="frame" x="20" y="189" width="159" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="nuiClass" value="TextField:LargeTextField"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="delegate" destination="ERX-jm-icm" id="GVp-vL-k65"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text Field" minimumFontSize="17" id="7Ao-qP-10H" customClass="NUITextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text Field" minimumFontSize="17" id="7Ao-qP-10H">
                                 <rect key="frame" x="20" y="257" width="93" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -88,7 +103,7 @@
                                     <outlet property="delegate" destination="ERX-jm-icm" id="WA2-Bf-d4m"/>
                                 </connections>
                             </textField>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="BAC-Py-hBd" customClass="NUISegmentedControl">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="BAC-Py-hBd">
                                 <rect key="frame" x="65" y="318" width="190" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
@@ -99,7 +114,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Controls" id="hZa-Md-xXS" customClass="NUINavigationItem">
+                    <navigationItem key="navigationItem" title="Controls" id="hZa-Md-xXS">
                         <barButtonItem key="rightBarButtonItem" title="Bar Button" id="mFD-n9-Rao">
                             <connections>
                                 <segue destination="QSl-4a-Qez" kind="push" id="exU-f2-nyc"/>
@@ -115,12 +130,12 @@
         <scene sceneID="kww-0m-DV3">
             <objects>
                 <viewController id="QSl-4a-Qez" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="EqS-qd-y03" customClass="NUIView">
+                    <view key="view" contentMode="scaleToFill" id="EqS-qd-y03">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="713-Ss-z9p" customClass="NUINavigationItem"/>
+                    <navigationItem key="navigationItem" id="713-Ss-z9p"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tUc-LZ-sPV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -135,7 +150,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NUIDemoCell" textLabel="fn2-Cw-5xc" detailTextLabel="ALA-4h-3J9" style="IBUITableViewCellStyleSubtitle" id="QmV-kW-fvm" customClass="NUITableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NUIDemoCell" textLabel="fn2-Cw-5xc" detailTextLabel="ALA-4h-3J9" style="IBUITableViewCellStyleSubtitle" id="QmV-kW-fvm">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -177,7 +192,7 @@
             <objects>
                 <tabBarController definesPresentationContext="YES" id="saZ-5Q-ZQI" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="2gI-M3-jFj" customClass="NUITabBar">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="2gI-M3-jFj">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -197,7 +212,7 @@
                 <navigationController id="yKS-uI-aO1" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Table View" id="YCs-MI-cDp"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="x43-JE-1oM" customClass="NUINavigationBar">
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="x43-JE-1oM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -216,7 +231,7 @@
                 <navigationController id="5gO-X7-z36" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Controls" id="usd-qK-Y3n"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="F0d-FN-5Gk" customClass="NUINavigationBar">
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="F0d-FN-5Gk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -231,50 +246,8 @@
         </scene>
     </scenes>
     <classes>
-        <class className="NUIButton" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NUIButton.h"/>
-        </class>
         <class className="NUIDemoTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NUIDemoTableViewController.h"/>
-        </class>
-        <class className="NUILabel" superclassName="UILabel">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NUILabel.h"/>
-        </class>
-        <class className="NUILargeButton" superclassName="NUIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NUILargeButton.h"/>
-        </class>
-        <class className="NUILargeLabel" superclassName="NUILabel">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NUILargeLabel.h"/>
-        </class>
-        <class className="NUILargeTextField" superclassName="NUITextField">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NUILargeTextField.h"/>
-        </class>
-        <class className="NUINavigationBar" superclassName="UINavigationBar">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NUINavigationBar.h"/>
-        </class>
-        <class className="NUINavigationItem" superclassName="UINavigationItem">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NUINavigationItem.h"/>
-        </class>
-        <class className="NUISegmentedControl" superclassName="UISegmentedControl">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NUISegmentedControl.h"/>
-        </class>
-        <class className="NUISmallButton" superclassName="NUIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NUISmallButton.h"/>
-        </class>
-        <class className="NUISmallLabel" superclassName="NUILabel">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NUISmallLabel.h"/>
-        </class>
-        <class className="NUITabBar" superclassName="UITabBar">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NUITabBar.h"/>
-        </class>
-        <class className="NUITableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NUITableViewCell.h"/>
-        </class>
-        <class className="NUITextField" superclassName="UITextField">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NUITextField.h"/>
-        </class>
-        <class className="NUIView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NUIView.h"/>
         </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
