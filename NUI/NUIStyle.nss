@@ -15,13 +15,6 @@
 @primaryBorderColor: #A2A2A2;
 @primaryBorderWidth: 1;
 
-BarButton {
-    background-tint-color: @primaryBackgroundTintColor;
-    font-name: @secondaryFontNameBold;
-    font-color: @primaryFontColor;
-    text-shadow-color: clear;
-    font-size: 13;
-}
 Button {
     background-color-top: #FFFFFF;
     background-color-bottom: @primaryBackgroundColorBottom;
@@ -103,4 +96,11 @@ LargeTextField {
 View {
     background-color: @primaryBackgroundColor;
     background-image: NUIViewBackground.png;
+}
+UIBarButtonItem {
+    background-tint-color: @primaryBackgroundTintColor;
+    font-name: @secondaryFontNameBold;
+    font-color: @primaryFontColor;
+    text-shadow-color: clear;
+    font-size: 13;
 }
