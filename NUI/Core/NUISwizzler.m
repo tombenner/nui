@@ -23,8 +23,6 @@
     [self swizzleAwakeFromNib:[UITabBarItem class]];
     [self swizzleAwakeFromNib:[UITextField class]];
     [self swizzleAwakeFromNib:[UIView class]];
-    
-    //[self swizzleDrawRect:[UINavigationBar class]];
 }
 
 - (void)swizzleAwakeFromNib:(Class)class
