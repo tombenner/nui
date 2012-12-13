@@ -31,7 +31,7 @@
     }
     
     // Set fonts
-    [NUIRenderer renderLabel:cell.textLabel withClass:class_name withSuffix:@""];
+    [NUIRenderer renderLabel:cell.textLabel withClass:class_name];
     [NUIRenderer renderLabel:cell.detailTextLabel withClass:class_name withSuffix:@"Detail"];
     
 }
