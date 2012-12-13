@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "NUIConverter.h"
 #import "NUIStyleParser.h"
+#import "NUISwizzler.h"
 
 @interface NUISettings : NSObject {
     NSMutableDictionary *settings;
@@ -16,7 +17,8 @@
 
 @property(nonatomic,retain)NSMutableDictionary *settings;  
 
-+ (void)loadStylesheet:(NSString*)name;
++ (void)init;
++ (void)initWithStylesheet:(NSString*)name;
 + (BOOL)hasProperty:(NSString*)property withClass:(NSString*)class_name;
 + (id)get:(NSString*)property withClass:(NSString*)class_name;
 + (BOOL)getBoolean:(NSString*)property withClass:(NSString*)class_name;
