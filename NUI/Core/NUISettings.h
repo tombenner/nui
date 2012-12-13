@@ -23,6 +23,7 @@
 + (float)getFloat:(NSString*)property withClass:(NSString*)class_name;
 + (CGSize)getSize:(NSString*)property withClass:(NSString*)class_name;
 + (UIOffset)getOffset:(NSString*)property withClass:(NSString*)class_name;
++ (UIEdgeInsets)getEdgeInsets:(NSString*)property withClass:(NSString*)class_name;
 + (UITextBorderStyle)getBorderStyle:(NSString*)property withClass:(NSString*)class_name;
 + (UIColor*)getColor:(NSString*)property withClass:(NSString*)class_name;
 + (UIColor*)getColorFromImage:(NSString*)property withClass:(NSString*)class_name;

@@ -12,6 +12,7 @@
 + (float)toFloat:(id)value;
 + (CGSize)toSize:(NSString*)value;
 + (UIOffset)toOffset:(NSString*)value;
++ (UIEdgeInsets)toEdgeInsets:(NSString*)value;
 + (UITextBorderStyle)toBorderStyle:(NSString*)value;
 + (UIColor*)toColor:(NSString*)value;
 + (UIColor*)toColorFromImageName:(NSString*)value;

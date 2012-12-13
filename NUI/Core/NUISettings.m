@@ -82,6 +82,11 @@ static NUISettings *instance = nil;
     return [NUIConverter toOffset:[self get:property withClass:class_name]];
 }
 
++ (UIEdgeInsets)getEdgeInsets:(NSString*)property withClass:(NSString*)class_name
+{
+    return [NUIConverter toEdgeInsets:[self get:property withClass:class_name]];
+}
+
 + (UITextBorderStyle)getBorderStyle:(NSString*)property withClass:(NSString*)class_name
 {   
     return [NUIConverter toBorderStyle:[self get:property withClass:class_name]];
