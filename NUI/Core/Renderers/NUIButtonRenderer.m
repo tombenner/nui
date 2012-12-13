@@ -26,6 +26,11 @@
         button.frame = frame;
     }
     
+    // Set padding
+    if ([NUISettings hasProperty:@"padding" withClass:class_name]) {
+        [button setTitleEdgeInsets:[NUISettings getEdgeInsets:@"padding" withClass:class_name]];
+    }
+    
     // Set background color
     if ([NUISettings hasProperty:@"background-color" withClass:class_name]) {
         [button setBackgroundColor:[NUISettings getColor:@"background-color" withClass:class_name]];
