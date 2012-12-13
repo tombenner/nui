@@ -29,14 +29,14 @@
                              withFrame:frame];
         
         UIImageView *gradientView = [[UIImageView alloc] initWithImage:gradient];
-        [bar insertSubview:gradientView atIndex:1];
+        [bar.subviews[0] insertSubview:gradientView atIndex:1];
     } else if ([NUISettings hasProperty:@"background-color" withClass:class_name]) {
         CGRect frame = bar.bounds;
         frame.size.width *= 2;
         UIImage *colorImage = [NUIGraphics colorImage:[NUISettings getColor:@"background-color" withClass:class_name] withFrame:frame];
         
         UIImageView *colorView = [[UIImageView alloc] initWithImage:colorImage];
-        [bar insertSubview:colorView atIndex:1];
+        [bar.subviews[0] insertSubview:colorView atIndex:1];
     }
     
     NSDictionary *titleTextAttributes = [NUIUtilities titleTextAttributesForClass:class_name];
