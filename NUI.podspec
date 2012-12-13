@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/tombenner/nui"
   s.license      = { :type => 'MIT', :file => 'LICENSE.txt' }
   s.author       = { "Tom Benner" => "tombenner@gmail.com" }
-  s.source       = { :git => "https://github.com/tombenner/nui.git", :tag => "0.2.0" }
+  s.source       = { :git => "https://github.com/tombenner/nui.git", :tag => "v0.2.0" }
   s.platform     = :ios, '5.0'
 
   s.source_files = 'NUI', 'NUI/**/*.{h,m}'
