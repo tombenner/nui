@@ -12,6 +12,6 @@
 
 @interface NUITabBarRenderer : NSObject
 
-+ (void)render:(UITabBar*)bar withClass:(NSString*)class_name;
++ (void)render:(UITabBar*)bar withClass:(NSString*)className;
 
 @end

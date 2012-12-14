@@ -13,6 +13,6 @@
 
 @interface NUINavigationItemRenderer : NSObject
 
-+ (void)render:(UINavigationItem*)item withClass:(NSString*)class_name;
++ (void)render:(UINavigationItem*)item withClass:(NSString*)className;
 
 @end

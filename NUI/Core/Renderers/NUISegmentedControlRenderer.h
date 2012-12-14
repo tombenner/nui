@@ -12,6 +12,6 @@
 
 @interface NUISegmentedControlRenderer : NSObject
 
-+ (void)render:(UISegmentedControl*)segmented_control withClass:(NSString*)class_name;
++ (void)render:(UISegmentedControl*)control withClass:(NSString*)className;
 
 @end

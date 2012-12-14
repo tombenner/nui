@@ -10,24 +10,24 @@
 
 @implementation NUIUtilities
 
-+ (NSDictionary*)titleTextAttributesForClass:(NSString*)class_name
++ (NSDictionary*)titleTextAttributesForClass:(NSString*)className
 {
     NSMutableDictionary *titleTextAttributes = [NSMutableDictionary dictionary];
     
-    if ([NUISettings hasProperty:@"font-name" withClass:class_name]) {
-        [titleTextAttributes setObject:[UIFont fontWithName:[NUISettings get:@"font-name" withClass:class_name] size:[NUISettings getFloat:@"font-size" withClass:class_name]] forKey:UITextAttributeFont];
+    if ([NUISettings hasProperty:@"font-name" withClass:className]) {
+        [titleTextAttributes setObject:[UIFont fontWithName:[NUISettings get:@"font-name" withClass:className] size:[NUISettings getFloat:@"font-size" withClass:className]] forKey:UITextAttributeFont];
     }
     
-    if ([NUISettings hasProperty:@"font-color" withClass:class_name]) {
-        [titleTextAttributes setObject:[NUISettings getColor:@"font-color" withClass:class_name] forKey:UITextAttributeTextColor];
+    if ([NUISettings hasProperty:@"font-color" withClass:className]) {
+        [titleTextAttributes setObject:[NUISettings getColor:@"font-color" withClass:className] forKey:UITextAttributeTextColor];
     }
     
-    if ([NUISettings hasProperty:@"text-shadow-color" withClass:class_name]) {
-        [titleTextAttributes setObject:[NUISettings getColor:@"text-shadow-color" withClass:class_name] forKey:UITextAttributeTextShadowColor];
+    if ([NUISettings hasProperty:@"text-shadow-color" withClass:className]) {
+        [titleTextAttributes setObject:[NUISettings getColor:@"text-shadow-color" withClass:className] forKey:UITextAttributeTextShadowColor];
     }
     
-    if ([NUISettings hasProperty:@"text-shadow-offset" withClass:class_name]) {
-        [titleTextAttributes setObject:[NSValue valueWithUIOffset:[NUISettings getOffset:@"text-shadow-offset" withClass:class_name]] forKey:UITextAttributeTextShadowOffset];
+    if ([NUISettings hasProperty:@"text-shadow-offset" withClass:className]) {
+        [titleTextAttributes setObject:[NSValue valueWithUIOffset:[NUISettings getOffset:@"text-shadow-offset" withClass:className]] forKey:UITextAttributeTextShadowOffset];
     }
     
     return titleTextAttributes;

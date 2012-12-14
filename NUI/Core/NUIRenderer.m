@@ -15,9 +15,9 @@
     [NUIBarButtonItemRenderer render:item withClass:@"Button"];
 }
 
-+ (void)renderBarButtonItem:(UIBarButtonItem*)item withClass:(NSString*)class_name
++ (void)renderBarButtonItem:(UIBarButtonItem*)item withClass:(NSString*)className
 {
-    [NUIBarButtonItemRenderer render:item withClass:class_name];
+    [NUIBarButtonItemRenderer render:item withClass:className];
 }
 
 
@@ -27,9 +27,9 @@
     [NUIButtonRenderer render:button withClass:@"Button"];
 }
 
-+ (void)renderButton:(UIButton*)button withClass:(NSString*)class_name
++ (void)renderButton:(UIButton*)button withClass:(NSString*)className
 {
-    [NUIButtonRenderer render:button withClass:class_name];
+    [NUIButtonRenderer render:button withClass:className];
 }
 
 
@@ -39,14 +39,14 @@
     [NUILabelRenderer render:label withClass:@"Label"];
 }
 
-+ (void)renderLabel:(UILabel*)label withClass:(NSString*)class_name
++ (void)renderLabel:(UILabel*)label withClass:(NSString*)className
 {
-    [NUILabelRenderer render:label withClass:class_name];
+    [NUILabelRenderer render:label withClass:className];
 }
 
-+ (void)renderLabel:(UILabel*)label withClass:(NSString*)class_name withSuffix:(NSString*)suffix
++ (void)renderLabel:(UILabel*)label withClass:(NSString*)className withSuffix:(NSString*)suffix
 {
-    [NUILabelRenderer render:label withClass:class_name withSuffix:suffix];
+    [NUILabelRenderer render:label withClass:className withSuffix:suffix];
 }
 
 
@@ -56,9 +56,9 @@
     [NUINavigationBarRenderer render:bar withClass:@"NavigationBar"];
 }
 
-+ (void)renderNavigationBar:(UINavigationBar*)bar withClass:(NSString*)class_name
++ (void)renderNavigationBar:(UINavigationBar*)bar withClass:(NSString*)className
 {
-    [NUINavigationBarRenderer render:bar withClass:class_name];
+    [NUINavigationBarRenderer render:bar withClass:className];
 }
 
 
@@ -68,9 +68,9 @@
     [NUINavigationItemRenderer render:item withClass:@"NavigationBar"];
 }
 
-+ (void)renderNavigationItem:(UINavigationItem*)item withClass:(NSString*)class_name
++ (void)renderNavigationItem:(UINavigationItem*)item withClass:(NSString*)className
 {
-    [NUINavigationItemRenderer render:item withClass:class_name];
+    [NUINavigationItemRenderer render:item withClass:className];
 }
 
 
@@ -80,9 +80,9 @@
     [NUISegmentedControlRenderer render:control withClass:@"SegmentedControl"];
 }
 
-+ (void)renderSegmentedControl:(UISegmentedControl*)control withClass:(NSString*)class_name
++ (void)renderSegmentedControl:(UISegmentedControl*)control withClass:(NSString*)className
 {
-    [NUISegmentedControlRenderer render:control withClass:class_name];
+    [NUISegmentedControlRenderer render:control withClass:className];
 }
 
 
@@ -92,9 +92,9 @@
     [NUITabBarRenderer render:bar withClass:@"TabBar"];
 }
 
-+ (void)renderTabBar:(UITabBar*)bar withClass:(NSString*)class_name
++ (void)renderTabBar:(UITabBar*)bar withClass:(NSString*)className
 {
-    [NUITabBarRenderer render:bar withClass:class_name];
+    [NUITabBarRenderer render:bar withClass:className];
 }
 
 
@@ -104,9 +104,9 @@
     [NUITabBarItemRenderer render:item withClass:@"TabBar"];
 }
 
-+ (void)renderTabBarItem:(UITabBarItem*)item withClass:(NSString*)class_name
++ (void)renderTabBarItem:(UITabBarItem*)item withClass:(NSString*)className
 {
-    [NUITabBarItemRenderer render:item withClass:class_name];
+    [NUITabBarItemRenderer render:item withClass:className];
 }
 
 
@@ -116,21 +116,21 @@
     [NUITableViewCellRenderer render:cell withClass:@"TableCell"];
 }
 
-+ (void)renderTableViewCell:(UITableViewCell*)cell withClass:(NSString*)class_name
++ (void)renderTableViewCell:(UITableViewCell*)cell withClass:(NSString*)className
 {
-    [NUITableViewCellRenderer render:cell withClass:class_name];
+    [NUITableViewCellRenderer render:cell withClass:className];
 }
 
 
 
-+ (void)renderTextField:(UITextField*)text_field
++ (void)renderTextField:(UITextField*)textField
 {
-    [NUITextFieldRenderer render:text_field withClass:@"TextField"];
+    [NUITextFieldRenderer render:textField withClass:@"TextField"];
 }
 
-+ (void)renderTextField:(UITextField*)text_field withClass:(NSString*)class_name
++ (void)renderTextField:(UITextField*)textField withClass:(NSString*)className
 {
-    [NUITextFieldRenderer render:text_field withClass:class_name];
+    [NUITextFieldRenderer render:textField withClass:className];
 }
 
 
@@ -140,9 +140,9 @@
     [NUIViewRenderer render:view withClass:@"View"];
 }
 
-+ (void)renderView:(UIView*)view withClass:(NSString*)class_name
++ (void)renderView:(UIView*)view withClass:(NSString*)className
 {
-    [NUIViewRenderer render:view withClass:class_name];
+    [NUIViewRenderer render:view withClass:className];
 }
 
 @end

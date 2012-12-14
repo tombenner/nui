@@ -13,6 +13,6 @@
 
 @interface NUINavigationBarRenderer : NSObject
 
-+ (void)render:(UINavigationBar*)bar withClass:(NSString*)class_name;
++ (void)render:(UINavigationBar*)bar withClass:(NSString*)className;
 
 @end

@@ -10,22 +10,22 @@
 
 @implementation NUIBarButtonItemRenderer
 
-+ (void)render:(UIBarButtonItem*)item withClass:(NSString*)class_name
++ (void)render:(UIBarButtonItem*)item withClass:(NSString*)className
 {   
     
-    if ([NUISettings hasProperty:@"background-image" withClass:class_name]) {
-        [item setBackgroundImage:[NUISettings getImage:@"background-image" withClass:class_name] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    if ([NUISettings hasProperty:@"background-image" withClass:className]) {
+        [item setBackgroundImage:[NUISettings getImage:@"background-image" withClass:className] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     }
     
-    if ([NUISettings hasProperty:@"background-tint-color" withClass:class_name]) {
-        [item setTintColor:[NUISettings getColor:@"background-tint-color" withClass:class_name]];
+    if ([NUISettings hasProperty:@"background-tint-color" withClass:className]) {
+        [item setTintColor:[NUISettings getColor:@"background-tint-color" withClass:className]];
     }
-    if ([NUISettings hasProperty:@"background-color" withClass:class_name]) {
-        UIImage *backgroundColorImage = [NUIGraphics barButtonWithColor:[NUISettings getColor:@"background-color" withClass:class_name]];
+    if ([NUISettings hasProperty:@"background-color" withClass:className]) {
+        UIImage *backgroundColorImage = [NUIGraphics barButtonWithColor:[NUISettings getColor:@"background-color" withClass:className]];
         [item setBackgroundImage:backgroundColorImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     }
     
-    NSDictionary *titleTextAttributes = [NUIUtilities titleTextAttributesForClass:class_name];
+    NSDictionary *titleTextAttributes = [NUIUtilities titleTextAttributesForClass:className];
     
     if ([[titleTextAttributes allKeys] count] > 0) {
         [item setTitleTextAttributes:titleTextAttributes forState:UIControlStateNormal];

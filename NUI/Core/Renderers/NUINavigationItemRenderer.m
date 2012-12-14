@@ -10,7 +10,7 @@
 
 @implementation NUINavigationItemRenderer
 
-+ (void)render:(UINavigationItem*)item withClass:(NSString*)class_name
++ (void)render:(UINavigationItem*)item withClass:(NSString*)className
 {
     if (item.backBarButtonItem != nil) {
         [NUIRenderer renderBarButtonItem:item.backBarButtonItem];

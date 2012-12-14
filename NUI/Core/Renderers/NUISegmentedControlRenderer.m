@@ -10,21 +10,21 @@
 
 @implementation NUISegmentedControlRenderer
 
-+ (void)render:(UISegmentedControl*)control withClass:(NSString*)class_name
++ (void)render:(UISegmentedControl*)control withClass:(NSString*)className
 {
     // UISegmentedControlStyleBar is necessary for some of the settings below to take effect
     control.segmentedControlStyle = UISegmentedControlStyleBar;
     
     // Set background color
-    if ([NUISettings hasProperty:@"background-color" withClass:class_name]) {
-        [control setBackgroundColor:[NUISettings getColor:@"background-color" withClass:class_name]];
+    if ([NUISettings hasProperty:@"background-color" withClass:className]) {
+        [control setBackgroundColor:[NUISettings getColor:@"background-color" withClass:className]];
     }
     // Set background tint color
-    if ([NUISettings hasProperty:@"background-tint-color" withClass:class_name]) {
-        [control setTintColor:[NUISettings getColor:@"background-tint-color" withClass:class_name]];
+    if ([NUISettings hasProperty:@"background-tint-color" withClass:className]) {
+        [control setTintColor:[NUISettings getColor:@"background-tint-color" withClass:className]];
     }
     
-    NSDictionary *titleTextAttributes = [NUIUtilities titleTextAttributesForClass:class_name];
+    NSDictionary *titleTextAttributes = [NUIUtilities titleTextAttributesForClass:className];
     
     if ([[titleTextAttributes allKeys] count] > 0) {
         [control setTitleTextAttributes:titleTextAttributes forState:UIControlStateNormal];

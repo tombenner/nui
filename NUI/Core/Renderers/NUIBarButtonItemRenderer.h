@@ -14,6 +14,6 @@
 
 @interface NUIBarButtonItemRenderer : NSObject
 
-+ (void)render:(UIBarButtonItem*)item withClass:(NSString*)class_name;
++ (void)render:(UIBarButtonItem*)item withClass:(NSString*)className;
 
 @end

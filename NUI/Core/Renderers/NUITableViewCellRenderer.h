@@ -14,6 +14,6 @@
 
 @interface NUITableViewCellRenderer : NSObject
 
-+ (void)render:(UITableViewCell*)cell withClass:(NSString*)class_name;
++ (void)render:(UITableViewCell*)cell withClass:(NSString*)className;
 
 @end

@@ -10,23 +10,23 @@
 
 @implementation NUITableViewCellRenderer
 
-+ (void)render:(UITableViewCell*)cell withClass:(NSString*)class_name
++ (void)render:(UITableViewCell*)cell withClass:(NSString*)className
 {
     // Set background color
-    if ([NUISettings hasProperty:@"background-color" withClass:class_name]) {
+    if ([NUISettings hasProperty:@"background-color" withClass:className]) {
         UIView *background = [[UIView alloc] initWithFrame:cell.frame];
-        background.backgroundColor = [NUISettings getColor:@"background-color" withClass:class_name];
+        background.backgroundColor = [NUISettings getColor:@"background-color" withClass:className];
         cell.backgroundView = background;
     }
     
     // Set background gradient
-    if ([NUISettings hasProperty:@"background-color-top" withClass:class_name]) {
+    if ([NUISettings hasProperty:@"background-color-top" withClass:className]) {
         CGRect backgroundViewFrame = cell.contentView.frame;
         cell.backgroundView = [[UIView alloc] initWithFrame:backgroundViewFrame];
         CAGradientLayer *gradient = [NUIGraphics
-                                     gradientLayerWithTop:[NUISettings getColor:@"background-color-top" withClass:class_name] 
-                                     withBottom:[NUISettings getColor:@"background-color-bottom" withClass:class_name]
-                                     withFrame:cell.bounds];
+                                     gradientLayerWithTop:[NUISettings getColor:@"background-color-top" withClass:className] 
+                                     bottom:[NUISettings getColor:@"background-color-bottom" withClass:className]
+                                     frame:cell.bounds];
         [cell.backgroundView.layer addSublayer:gradient];
     }
     
@@ -36,8 +36,8 @@
     [cell.detailTextLabel setBackgroundColor:[UIColor clearColor]];
     
     // Set fonts
-    [NUIRenderer renderLabel:cell.textLabel withClass:class_name];
-    [NUIRenderer renderLabel:cell.detailTextLabel withClass:class_name withSuffix:@"Detail"];
+    [NUIRenderer renderLabel:cell.textLabel withClass:className];
+    [NUIRenderer renderLabel:cell.detailTextLabel withClass:className withSuffix:@"Detail"];
     
 }
 

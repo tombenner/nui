@@ -11,6 +11,6 @@
 
 @interface NUIViewRenderer : NSObject
 
-+ (void)render:(UIView*)view withClass:(NSString*)class_name;
++ (void)render:(UIView*)view withClass:(NSString*)className;
 
 @end

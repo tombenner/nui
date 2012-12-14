@@ -11,6 +11,6 @@
 
 @interface NUIUtilities : NSObject
 
-+ (NSDictionary*)titleTextAttributesForClass:(NSString*)class_name;
++ (NSDictionary*)titleTextAttributesForClass:(NSString*)className;
 
 @end

@@ -10,15 +10,15 @@
 
 @implementation NUITabBarItemRenderer
 
-+ (void)render:(UITabBarItem*)item withClass:(NSString*)class_name
++ (void)render:(UITabBarItem*)item withClass:(NSString*)className
 {   
-    NSDictionary *titleTextAttributes = [NUIUtilities titleTextAttributesForClass:class_name];
+    NSDictionary *titleTextAttributes = [NUIUtilities titleTextAttributesForClass:className];
     
     if ([[titleTextAttributes allKeys] count] > 0) {
         [item setTitleTextAttributes:titleTextAttributes forState:UIControlStateNormal];
     }
-    if ([NUISettings hasProperty:@"text-offset" withClass:class_name]) {
-        [item setTitlePositionAdjustment:[NUISettings getOffset:@"text-offset" withClass:class_name]];
+    if ([NUISettings hasProperty:@"text-offset" withClass:className]) {
+        [item setTitlePositionAdjustment:[NUISettings getOffset:@"text-offset" withClass:className]];
     }
 }
 

@@ -19,17 +19,17 @@
 
 + (void)init;
 + (void)initWithStylesheet:(NSString*)name;
-+ (BOOL)hasProperty:(NSString*)property withClass:(NSString*)class_name;
-+ (id)get:(NSString*)property withClass:(NSString*)class_name;
-+ (BOOL)getBoolean:(NSString*)property withClass:(NSString*)class_name;
-+ (float)getFloat:(NSString*)property withClass:(NSString*)class_name;
-+ (CGSize)getSize:(NSString*)property withClass:(NSString*)class_name;
-+ (UIOffset)getOffset:(NSString*)property withClass:(NSString*)class_name;
-+ (UIEdgeInsets)getEdgeInsets:(NSString*)property withClass:(NSString*)class_name;
-+ (UITextBorderStyle)getBorderStyle:(NSString*)property withClass:(NSString*)class_name;
-+ (UIColor*)getColor:(NSString*)property withClass:(NSString*)class_name;
-+ (UIColor*)getColorFromImage:(NSString*)property withClass:(NSString*)class_name;
-+ (UIImage*)getImage:(NSString*)property withClass:(NSString*)class_name;
-+ (UIImage*)getImageFromColor:(NSString*)property withClass:(NSString*)class_name;
++ (BOOL)hasProperty:(NSString*)property withClass:(NSString*)className;
++ (id)get:(NSString*)property withClass:(NSString*)className;
++ (BOOL)getBoolean:(NSString*)property withClass:(NSString*)className;
++ (float)getFloat:(NSString*)property withClass:(NSString*)className;
++ (CGSize)getSize:(NSString*)property withClass:(NSString*)className;
++ (UIOffset)getOffset:(NSString*)property withClass:(NSString*)className;
++ (UIEdgeInsets)getEdgeInsets:(NSString*)property withClass:(NSString*)className;
++ (UITextBorderStyle)getBorderStyle:(NSString*)property withClass:(NSString*)className;
++ (UIColor*)getColor:(NSString*)property withClass:(NSString*)className;
++ (UIColor*)getColorFromImage:(NSString*)property withClass:(NSString*)className;
++ (UIImage*)getImage:(NSString*)property withClass:(NSString*)className;
++ (UIImage*)getImageFromColor:(NSString*)property withClass:(NSString*)className;
 
 @end

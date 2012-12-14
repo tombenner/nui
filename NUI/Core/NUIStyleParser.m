@@ -13,9 +13,9 @@
 
 @implementation NUIStyleParser
 
-- (NSMutableDictionary*)getStylesFromFile:(NSString*)file_name
+- (NSMutableDictionary*)getStylesFromFile:(NSString*)fileName
 {
-    NSString* path = [[NSBundle mainBundle] pathForResource:file_name ofType:@"nss"];
+    NSString* path = [[NSBundle mainBundle] pathForResource:fileName ofType:@"nss"];
     NSString* content = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     return [self consolidateRuleSets:[self getRuleSets:content] withTopLevelDeclarations:[self getTopLevelDeclarations:content]];
 }

@@ -11,6 +11,6 @@
 
 @interface NUITextFieldRenderer : NSObject
 
-+ (void)render:(UITextField*)text_field withClass:(NSString*)class_name;
++ (void)render:(UITextField*)textField withClass:(NSString*)className;
 
 @end

@@ -75,7 +75,7 @@
     return image;
 }
 
-+ (CAGradientLayer*)gradientLayerWithTop:(id)topColor withBottom:(id)bottomColor withFrame:(CGRect)frame
++ (CAGradientLayer*)gradientLayerWithTop:(id)topColor bottom:(id)bottomColor frame:(CGRect)frame
 {
     CAGradientLayer *layer = [CAGradientLayer layer];
     layer.frame = frame;
@@ -87,9 +87,9 @@
     return layer;
 }
 
-+ (UIImage*)gradientImageWithTop:(id)topColor withBottom:(id)bottomColor withFrame:(CGRect)frame
++ (UIImage*)gradientImageWithTop:(id)topColor bottom:(id)bottomColor frame:(CGRect)frame
 {
-    CAGradientLayer *layer = [self gradientLayerWithTop:topColor withBottom:bottomColor withFrame:frame];
+    CAGradientLayer *layer = [self gradientLayerWithTop:topColor bottom:bottomColor frame:frame];
     UIGraphicsBeginImageContext([layer frame].size);
     
     [layer renderInContext:UIGraphicsGetCurrentContext()];

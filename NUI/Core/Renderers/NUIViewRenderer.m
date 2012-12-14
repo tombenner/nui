@@ -10,12 +10,12 @@
 
 @implementation NUIViewRenderer
 
-+ (void)render:(UIView*)view withClass:(NSString*)class_name
++ (void)render:(UIView*)view withClass:(NSString*)className
 {
-    if ([NUISettings hasProperty:@"background-image" withClass:class_name]) {
-        [view setBackgroundColor: [NUISettings getColorFromImage:@"background-image" withClass: class_name]];
-    } else if ([NUISettings hasProperty:@"background-color" withClass:class_name]) {
-        [view setBackgroundColor: [NUISettings getColor:@"background-color" withClass: class_name]];
+    if ([NUISettings hasProperty:@"background-image" withClass:className]) {
+        [view setBackgroundColor: [NUISettings getColorFromImage:@"background-image" withClass: className]];
+    } else if ([NUISettings hasProperty:@"background-color" withClass:className]) {
+        [view setBackgroundColor: [NUISettings getColor:@"background-color" withClass: className]];
     }
 }
 

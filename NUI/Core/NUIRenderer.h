@@ -22,37 +22,37 @@
 @interface NUIRenderer : NSObject
 
 + (void)renderBarButtonItem:(UIBarButtonItem*)item;
-+ (void)renderBarButtonItem:(UIBarButtonItem*)item withClass:(NSString*)class_name;
++ (void)renderBarButtonItem:(UIBarButtonItem*)item withClass:(NSString*)className;
 
 + (void)renderButton:(UIButton*)button;
-+ (void)renderButton:(UIButton*)button withClass:(NSString*)class_name;
++ (void)renderButton:(UIButton*)button withClass:(NSString*)className;
 
 + (void)renderLabel:(UILabel*)label;
-+ (void)renderLabel:(UILabel*)label withClass:(NSString*)class_name;
-+ (void)renderLabel:(UILabel*)label withClass:(NSString*)class_name withSuffix:(NSString*)suffix;
++ (void)renderLabel:(UILabel*)label withClass:(NSString*)className;
++ (void)renderLabel:(UILabel*)label withClass:(NSString*)className withSuffix:(NSString*)suffix;
 
 + (void)renderNavigationBar:(UINavigationBar*)bar;
-+ (void)renderNavigationBar:(UINavigationBar*)bar withClass:(NSString*)class_name;
++ (void)renderNavigationBar:(UINavigationBar*)bar withClass:(NSString*)className;
 
 + (void)renderNavigationItem:(UINavigationItem*)item;
-+ (void)renderNavigationItem:(UINavigationItem*)item withClass:(NSString*)class_name;
++ (void)renderNavigationItem:(UINavigationItem*)item withClass:(NSString*)className;
 
 + (void)renderSegmentedControl:(UISegmentedControl*)control;
-+ (void)renderSegmentedControl:(UISegmentedControl*)control withClass:(NSString*)class_name;
++ (void)renderSegmentedControl:(UISegmentedControl*)control withClass:(NSString*)className;
 
 + (void)renderTabBar:(UITabBar*)bar;
-+ (void)renderTabBar:(UITabBar*)bar withClass:(NSString*)class_name;
++ (void)renderTabBar:(UITabBar*)bar withClass:(NSString*)className;
 
 + (void)renderTabBarItem:(UITabBarItem*)bar;
-+ (void)renderTabBarItem:(UITabBarItem*)bar withClass:(NSString*)class_name;
++ (void)renderTabBarItem:(UITabBarItem*)bar withClass:(NSString*)className;
 
 + (void)renderTableViewCell:(UITableViewCell*)cell;
-+ (void)renderTableViewCell:(UITableViewCell*)cell withClass:(NSString*)class_name;
++ (void)renderTableViewCell:(UITableViewCell*)cell withClass:(NSString*)className;
 
-+ (void)renderTextField:(UITextField*)text_field;
-+ (void)renderTextField:(UITextField*)text_field withClass:(NSString*)class_name;
++ (void)renderTextField:(UITextField*)textField;
++ (void)renderTextField:(UITextField*)textField withClass:(NSString*)className;
 
 + (void)renderView:(UIView*)view;
-+ (void)renderView:(UIView*)view withClass:(NSString*)class_name;
++ (void)renderView:(UIView*)view withClass:(NSString*)className;
 
 @end

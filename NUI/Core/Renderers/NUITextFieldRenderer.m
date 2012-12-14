@@ -10,29 +10,29 @@
 
 @implementation NUITextFieldRenderer
 
-+ (void)render:(UITextField*)text_field withClass:(NSString*)class_name
++ (void)render:(UITextField*)textField withClass:(NSString*)className
 {
     NSString *fontSizeProperty = @"font-size";
     
     // Set font
-    if ([NUISettings hasProperty:@"font-name" withClass:class_name]) {
-        [text_field setFont:[UIFont fontWithName:[NUISettings get:@"font-name" withClass:class_name] size:[NUISettings getFloat:fontSizeProperty withClass:class_name]]];
+    if ([NUISettings hasProperty:@"font-name" withClass:className]) {
+        [textField setFont:[UIFont fontWithName:[NUISettings get:@"font-name" withClass:className] size:[NUISettings getFloat:fontSizeProperty withClass:className]]];
     // If font-name is undefined but font-size is defined, use systemFont
-    } else if ([NUISettings getFloat:fontSizeProperty withClass:class_name]) {
-        [text_field setFont:[UIFont systemFontOfSize:[NUISettings getFloat:fontSizeProperty withClass:class_name]]];
+    } else if ([NUISettings getFloat:fontSizeProperty withClass:className]) {
+        [textField setFont:[UIFont systemFontOfSize:[NUISettings getFloat:fontSizeProperty withClass:className]]];
     }
     
     // Set border style   
-    if ([NUISettings hasProperty:@"border-color" withClass:class_name]) {
-        [text_field setBorderStyle:[NUISettings getBorderStyle:@"border-color" withClass:class_name]];
+    if ([NUISettings hasProperty:@"border-color" withClass:className]) {
+        [textField setBorderStyle:[NUISettings getBorderStyle:@"border-color" withClass:className]];
     }
     
     // Set height
-    if ([NUISettings hasProperty:@"height" withClass:class_name]) {
-        CGRect buttonFrame = text_field.frame;
+    if ([NUISettings hasProperty:@"height" withClass:className]) {
+        CGRect buttonFrame = textField.frame;
         CGSize originalSize = buttonFrame.size;
-        buttonFrame.size = CGSizeMake(originalSize.width, [NUISettings getFloat:@"height" withClass: class_name]);
-        text_field.frame = buttonFrame;
+        buttonFrame.size = CGSizeMake(originalSize.width, [NUISettings getFloat:@"height" withClass: className]);
+        textField.frame = buttonFrame;
     }
 }
 
