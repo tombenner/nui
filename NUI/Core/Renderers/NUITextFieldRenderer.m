@@ -12,13 +12,14 @@
 
 + (void)render:(UITextField*)text_field withClass:(NSString*)class_name
 {
+    NSString *fontSizeProperty = @"font-size";
+    
     // Set font
-    NSString *size_property = @"font-size";
     if ([NUISettings hasProperty:@"font-name" withClass:class_name]) {
-        [text_field setFont:[UIFont fontWithName:[NUISettings get:@"font-name" withClass:class_name] size:[NUISettings getFloat:@"font-size" withClass:class_name]]];
-    }
-    else if ([NUISettings getFloat:size_property withClass:class_name]) {   // font-size defined but font-name undefined
-        [text_field setFont:[UIFont systemFontOfSize:[NUISettings getFloat:size_property withClass:class_name]]];
+        [text_field setFont:[UIFont fontWithName:[NUISettings get:@"font-name" withClass:class_name] size:[NUISettings getFloat:fontSizeProperty withClass:class_name]]];
+    // If font-name is undefined but font-size is defined, use systemFont
+    } else if ([NUISettings getFloat:fontSizeProperty withClass:class_name]) {
+        [text_field setFont:[UIFont systemFontOfSize:[NUISettings getFloat:fontSizeProperty withClass:class_name]]];
     }
     
     // Set border style   

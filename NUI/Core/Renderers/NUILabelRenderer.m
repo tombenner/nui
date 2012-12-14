@@ -18,6 +18,7 @@
 + (void)render:(UILabel*)label withClass:(NSString*)class_name withSuffix:(NSString*)suffix
 {
     NSString *property;
+    NSString *fontSizeProperty = @"font-size";
     
     if (![suffix isEqualToString:@""]) {
         class_name = [NSString stringWithFormat:@"%@%@", class_name, suffix];
@@ -34,13 +35,11 @@
     }
     
     property = @"font-name";
-    NSString *size_property = @"font-size";
     if ([NUISettings hasProperty:property withClass:class_name]) {
-        label.font = [UIFont fontWithName:[NUISettings get:property withClass:class_name] size:[NUISettings getFloat:size_property withClass:class_name]];
-    }
-    else if ([NUISettings getFloat:size_property withClass:class_name]) {   // font-size defined but font-name undefined
-        label.font = [UIFont systemFontOfSize:[NUISettings getFloat:size_property withClass:class_name]];
-        
+        label.font = [UIFont fontWithName:[NUISettings get:property withClass:class_name] size:[NUISettings getFloat:fontSizeProperty withClass:class_name]];
+    // If font-name is undefined but font-size is defined, use systemFont
+    } else if ([NUISettings getFloat:fontSizeProperty withClass:class_name]) {
+        label.font = [UIFont systemFontOfSize:[NUISettings getFloat:fontSizeProperty withClass:class_name]];
     }
     
     property = @"text-alpha";
