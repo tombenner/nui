@@ -38,6 +38,10 @@
     if ([NUISettings hasProperty:property withClass:class_name]) {
         label.font = [UIFont fontWithName:[NUISettings get:property withClass:class_name] size:[NUISettings getFloat:size_property withClass:class_name]];
     }
+    else if ([NUISettings getFloat:size_property withClass:class_name]) {   // font-size defined but font-name undefined
+        label.font = [UIFont systemFontOfSize:[NUISettings getFloat:size_property withClass:class_name]];
+        
+    }
     
     property = @"text-alpha";
     if ([NUISettings hasProperty:property withClass:class_name]) {
