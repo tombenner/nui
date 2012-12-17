@@ -54,6 +54,8 @@ Installation
 1. Add `[NUIAppearance init];` to `application:didFinishLaunchingWithOptions` in AppDelegate.m (like [this](https://github.com/tombenner/nui/blob/master/Demo/NUIDemo/AppDelegate.m))
 1. Add `[NUISettings init];` to `@autoreleasepool` in `main()` in `main.m` (like [this](https://github.com/tombenner/nui/blob/master/Demo/NUIDemo/main.m))
 
+NUI can also be installed using [CocoaPods](http://cocoapods.org/) (its pod name is "NUI"). Steps 3. and 4. above are still required.
+
 Usage
 -----
 
