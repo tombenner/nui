@@ -164,4 +164,20 @@
     return [UIImage imageNamed:value];
 }
 
++ (UITextAlignment)toTextAlignment:(NSString*)value
+{
+    UITextAlignment textAlignment = UITextAlignmentLeft;
+    
+    if ([value isEqualToString:@"center"])
+    {
+        textAlignment =  UITextAlignmentCenter;
+    }
+    else if ([value isEqualToString:@"right"])
+    {
+        textAlignment =  UITextAlignmentRight;
+    }
+    
+    return textAlignment;
+}
+
 @end
