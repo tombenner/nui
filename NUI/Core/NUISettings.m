@@ -117,6 +117,11 @@ static NUISettings *instance = nil;
     return [NUIConverter toImageFromImageName:[self get:property withClass:className]];
 }
 
++ (UITextAlignment)getTextAlignment:(NSString *)property withClass:(NSString*)className
+{
+    return [NUIConverter toTextAlignment:[self get:property withClass:className]];
+}
+
 + (NSArray*)getClasses:(NSString*)className
 {
     NSArray *classes = [[[className componentsSeparatedByString: @":"] reverseObjectEnumerator] allObjects];

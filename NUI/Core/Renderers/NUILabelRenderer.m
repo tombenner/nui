@@ -41,6 +41,11 @@
     } else if ([NUISettings getFloat:fontSizeProperty withClass:className]) {
         label.font = [UIFont systemFontOfSize:[NUISettings getFloat:fontSizeProperty withClass:className]];
     }
+
+    property = @"text-align";
+    if ([NUISettings hasProperty:property withClass:className]) {
+        label.textAlignment = [NUISettings getTextAlignment:property withClass:className];
+    }
     
     property = @"text-alpha";
     if ([NUISettings hasProperty:property withClass:className]) {
