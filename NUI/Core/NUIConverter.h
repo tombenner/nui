@@ -18,5 +18,5 @@
 + (UIColor*)toColorFromImageName:(NSString*)value;
 + (UIImage*)toImageFromColorName:(NSString*)value;
 + (UIImage*)toImageFromImageName:(NSString*)value;
-
++ (UITextAlignment)toTextAlignment:(NSString*)value;
 @end

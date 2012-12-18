@@ -153,6 +153,7 @@ Below are all of the currently available style classes, their corresponding UI c
 * font-color-highlighted
 * font-name
 * font-size
+* text-align
 * text-alpha
 * text-auto-fit
 * text-shadow-color
