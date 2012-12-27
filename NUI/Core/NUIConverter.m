@@ -105,7 +105,9 @@
     SEL selector = NSSelectorFromString([NSString stringWithFormat:@"%@Color", value]);
     if (selector) {
         if ([[UIColor class] respondsToSelector:selector]) {
-            return [[UIColor class] performSelector:selector];
+            // [[UIColor class] performSelector:selector] would be better here, but it causes
+            // a warning: "PerformSelector may cause a leak because its selector is unknown"
+            return objc_msgSend([UIColor class], selector);
         }
     }
     

@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 Tom Benner. All rights reserved.
 //
 
+#import <objc/message.h>
+
 @interface NUIConverter : NSObject
 
 + (BOOL)toBoolean:(id)value;
