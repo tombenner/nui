@@ -168,12 +168,9 @@
 {
     UITextAlignment textAlignment = UITextAlignmentLeft;
     
-    if ([value isEqualToString:@"center"])
-    {
+    if ([value isEqualToString:@"center"]) {
         textAlignment =  UITextAlignmentCenter;
-    }
-    else if ([value isEqualToString:@"right"])
-    {
+    } else if ([value isEqualToString:@"right"]) {
         textAlignment =  UITextAlignmentRight;
     }
     

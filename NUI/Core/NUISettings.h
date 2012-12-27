@@ -31,6 +31,6 @@
 + (UIColor*)getColorFromImage:(NSString*)property withClass:(NSString*)className;
 + (UIImage*)getImage:(NSString*)property withClass:(NSString*)className;
 + (UIImage*)getImageFromColor:(NSString*)property withClass:(NSString*)className;
-+ (UITextAlignment)getTextAlignment:(NSString *)property withClass:(NSString*)className;
++ (UITextAlignment)getTextAlignment:(NSString*)property withClass:(NSString*)className;
 
 @end
