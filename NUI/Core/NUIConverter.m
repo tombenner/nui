@@ -100,9 +100,13 @@
 
 + (UIColor*)toColor:(NSString*)value
 {
-    
-    if ([value isEqualToString:@"clear"]) {
-        return [UIColor clearColor];
+    // Look at UIColor selectors for a matching selector.
+    // Name matches can take the form of 'colorname' (matching selectors like +redColor with 'red').
+    SEL selector = NSSelectorFromString([NSString stringWithFormat:@"%@Color", value]);
+    if (selector) {
+        if ([[UIColor class] respondsToSelector:selector]) {
+            return [[UIColor class] performSelector:selector];
+        }
     }
     
     NSString *cString = [[value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
