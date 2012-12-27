@@ -140,6 +140,7 @@ Below are all of the currently available style classes, their corresponding UI c
 * font-size
 * height
 * padding
+* text-align
 * text-alpha
 * text-auto-fit
 * text-shadow-color
@@ -210,6 +211,7 @@ Below are all of the currently available style classes, their corresponding UI c
 * font-color-highlighted
 * font-name
 * font-size
+* text-align
 * text-alpha
 * text-auto-fit
 * text-shadow-color
@@ -223,6 +225,7 @@ The detail label of a *UITableViewCell*
 * font-color-highlighted
 * font-name
 * font-size
+* text-align
 * text-alpha
 * text-auto-fit
 * text-shadow-color
@@ -292,6 +295,7 @@ Style Properties
 * **font-size** - Number
 * **height** - Number
 * **padding** - Box
+* **text-align** - TextAlign
 * **text-alpha** - Number
 * **text-auto-fit** - Boolean
 * **text-offset** - Offset
@@ -310,6 +314,7 @@ Style Value Types
 * **Image** - A name of an image, as used in `[UIImage imageNamed:name]` (e.g. `MyImage.png`).
 * **Number** - A number (e.g. `-1`, `4.5`)
 * **Offset** - Two numbers comprising the horizontal and vertical values of an offset (e.g. `-1,1`)
+* **TextAlign** - A text alignment (e.g. `left`, `right`, `center`)
 
 FAQ
 ---
