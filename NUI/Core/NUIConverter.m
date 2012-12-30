@@ -112,10 +112,14 @@
     }
     
     // Remove all whitespace.
-    NSString *cString = [[[value componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] componentsJoinedByString:@""] uppercaseString];
+    NSString *cString = [[[value componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]
+                                 componentsJoinedByString:@""]
+                                 uppercaseString];
     
-    NSArray *hexStrings = [NUIConverter getCapturedStrings:cString withPattern:@"(?:0x|#)([0-9A-F]{6})"];
-    NSArray *csStrings = [NUIConverter getCapturedStrings:cString withPattern:@"(RGB|RGBA|HSL|HSLA)\\((\\d{1,3}|[0-9.]+),(\\d{1,3}|[0-9.]+),(\\d{1,3}|[0-9.]+)(?:,(\\d{1,3}|[0-9.]+))?\\)"];
+    NSArray *hexStrings = [NUIConverter getCapturedStrings:cString
+                                               withPattern:@"(?:0x|#)([0-9A-F]{6})"];
+    NSArray *csStrings = [NUIConverter getCapturedStrings:cString
+                                              withPattern:@"(RGB|RGBA|HSL|HSLA)\\((\\d{1,3}|[0-9.]+),(\\d{1,3}|[0-9.]+),(\\d{1,3}|[0-9.]+)(?:,(\\d{1,3}|[0-9.]+))?\\)"];
     
     UIColor *color = nil;
     
@@ -147,7 +151,7 @@
             color = [UIColor colorWithHue:[NUIConverter parseColorComponent:[csStrings objectAtIndex:2]]
                                saturation:[NUIConverter parseColorComponent:[csStrings objectAtIndex:3]]
                                brightness:[NUIConverter parseColorComponent:[csStrings objectAtIndex:4]]
-                                alpha:a];
+                                    alpha:a];
         }
     }
     
