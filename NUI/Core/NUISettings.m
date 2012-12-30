@@ -15,10 +15,10 @@ static NUISettings *instance = nil;
 
 + (void)init
 {
-    instance = [self getInstance];
+    [self initWithStylesheet:@"NUIStyle"];
 }
 
-+ (void)initWithStylesheet:(NSString *)name
++ (void)initWithStylesheet:(NSString*)name
 {
     instance = [self getInstance];
     NUIStyleParser *parser = [[NUIStyleParser alloc] init];
@@ -27,7 +27,6 @@ static NUISettings *instance = nil;
 
 + (BOOL)hasProperty:(NSString*)property withExplicitClass:(NSString*)className
 {
-    instance = [self getInstance];
     NSMutableDictionary *ruleSet = [instance.settings objectForKey:className];
     if (ruleSet == nil) {
         return NO;
@@ -51,7 +50,6 @@ static NUISettings *instance = nil;
 
 + (id)get:(NSString*)property withExplicitClass:(NSString*)className
 {
-    instance = [self getInstance];
     NSMutableDictionary *ruleSet = [instance.settings objectForKey:className];
     return [ruleSet objectForKey:property];
 }
@@ -134,7 +132,6 @@ static NUISettings *instance = nil;
         if(instance == nil) {
             [[NUISwizzler new] swizzleAll];
             instance = [NUISettings new];
-            [self initWithStylesheet:@"NUIStyle"];
         }
     }
     
