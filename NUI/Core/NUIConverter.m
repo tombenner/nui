@@ -111,45 +111,59 @@
         }
     }
     
-    NSString *cString = [[value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
-    
-    // Try to match four color expressions:
-    //   #hhhhhh,
-    //   0xhhhhhh,
-    //   RGB(ddd,ddd,ddd),
-    //   RGBA(ddd,ddd,ddd,ddd).
+    // Remove all whitespace.
+    NSString *cString = [[[value componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] componentsJoinedByString:@""] uppercaseString];
     
     NSArray *hexStrings = [NUIConverter getCapturedStrings:cString withPattern:@"(?:0x|#)([0-9A-F]{6})"];
-    NSArray *rgbaStrings = [NUIConverter getCapturedStrings:cString withPattern:@"(RGB|RGBA)\\((\\d{1,3}),(\\d{1,3}),(\\d{1,3})(?:,(\\d{1,3}))?\\)"];
+    NSArray *csStrings = [NUIConverter getCapturedStrings:cString withPattern:@"(RGB|RGBA|HSL|HSLA)\\((\\d{1,3}|[0-9.]+),(\\d{1,3}|[0-9.]+),(\\d{1,3}|[0-9.]+)(?:,(\\d{1,3}|[0-9.]+))?\\)"];
     
-    unsigned int r, g, b, a;
+    UIColor *color = nil;
     
     if (hexStrings) {        
         unsigned int c;
         [[NSScanner scannerWithString:[hexStrings objectAtIndex:1]] scanHexInt:&c];
-        r = (c >> 16) & 0xFF;
-        g = (c >>  8) & 0xFF;
-        b = (c >>  0) & 0xFF;
-        a = 255;
-    } else if (rgbaStrings) {
-        BOOL isRGBA = [[rgbaStrings objectAtIndex:1] isEqualToString:@"RGBA"];
+        color = [UIColor colorWithRed:(float)((c >> 16) & 0xFF) / 255.0f
+                                green:(float)((c >>  8) & 0xFF) / 255.0f
+                                 blue:(float)((c >>  0) & 0xFF) / 255.0f
+                                alpha:1.0f];
+    } else if (csStrings) {
+        BOOL isRGB = [[csStrings objectAtIndex:1] hasPrefix:@"RGB"];
+        BOOL isAlpha = [[csStrings objectAtIndex:1] hasSuffix:@"A"];
         
-        // RGBA color type specified but no alpha provided.
-        if (isRGBA && [[rgbaStrings objectAtIndex:5] isEqual:[NSNull null]])
+        // Color space with alpha specified but no alpha provided.
+        if (isAlpha && [[csStrings objectAtIndex:5] isEqual:[NSNull null]])
             return nil;
+    
+        CGFloat a = isAlpha ?
+                    [NUIConverter parseColorComponent:[csStrings objectAtIndex:5]] :
+                    1.0f;
         
-        r = [[rgbaStrings objectAtIndex:2] intValue];
-        g = [[rgbaStrings objectAtIndex:3] intValue];
-        b = [[rgbaStrings objectAtIndex:4] intValue];
-        a = isRGBA ? [[rgbaStrings objectAtIndex:5] intValue] : 255;
-    } else {
-        return nil;
+        if (isRGB) {
+            color = [UIColor colorWithRed:[NUIConverter parseColorComponent:[csStrings objectAtIndex:2]]
+                                    green:[NUIConverter parseColorComponent:[csStrings objectAtIndex:3]]
+                                     blue:[NUIConverter parseColorComponent:[csStrings objectAtIndex:4]]
+                                    alpha:a];
+        } else {
+            color = [UIColor colorWithHue:[NUIConverter parseColorComponent:[csStrings objectAtIndex:2]]
+                               saturation:[NUIConverter parseColorComponent:[csStrings objectAtIndex:3]]
+                               brightness:[NUIConverter parseColorComponent:[csStrings objectAtIndex:4]]
+                                alpha:a];
+        }
     }
     
-    return [UIColor colorWithRed:((float) r / 255.0f)
-                           green:((float) g / 255.0f)
-                            blue:((float) b / 255.0f)
-                           alpha:((float) a / 255.0f)];
+    return color;
+}
+
+/** Parses a color component in a color expression. Values containing
+ *  periods (.) are treated as unscaled floats. Integer values
+ *  are normalized by 255.
+ */
++ (CGFloat)parseColorComponent:(NSString *)s {
+    if ([s rangeOfString:@"."].location != NSNotFound) {
+        return [s floatValue];
+    } else {
+        return [s floatValue] / 255.0f;
+    }
 }
 
 + (UIColor*)toColorFromImageName:(NSString*)value
