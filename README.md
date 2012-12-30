@@ -236,10 +236,14 @@ The detail label of a *UITableViewCell*
 
 *UITextField*
 
+* background-color
+* background-image
 * border-style
+* border-width
 * font-name
 * font-size
 * height
+* vertical-align
 
 #### View
 
@@ -302,6 +306,7 @@ Style Properties
 * **text-offset** - Offset
 * **text-shadow-color** - Color
 * **text-shadow-offset** - Offset
+* **vertical-align** - VerticalAlign
 
 Style Value Types
 -----------------
@@ -316,6 +321,7 @@ Style Value Types
 * **Number** - A number (e.g. `-1`, `4.5`)
 * **Offset** - Two numbers comprising the horizontal and vertical values of an offset (e.g. `-1,1`)
 * **TextAlign** - A text alignment (e.g. `left`, `right`, `center`)
+* **VerticalAlign** - A vertical alignment (e.g. `top`, `center`, `bottom`, `fill`)
 
 FAQ
 ---
