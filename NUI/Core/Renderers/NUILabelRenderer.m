@@ -24,6 +24,14 @@
         className = [NSString stringWithFormat:@"%@%@", className, suffix];
     }
     
+    property = @"background-color";
+    if ([NUISettings hasProperty:property withClass:className]) {
+        label.backgroundColor = [NUISettings getColor:property withClass:className];
+    } else {
+        // UILabels created programmatically have a white background by default
+        label.backgroundColor = [UIColor clearColor];
+    }
+    
     property = @"font-color";
     if ([NUISettings hasProperty:property withClass:className]) {
         label.textColor = [NUISettings getColor:property withClass:className];

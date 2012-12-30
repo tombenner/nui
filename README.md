@@ -150,6 +150,7 @@ Below are all of the currently available style classes, their corresponding UI c
 
 *UILabel*
 
+* background-color
 * font-color
 * font-color-highlighted
 * font-name
