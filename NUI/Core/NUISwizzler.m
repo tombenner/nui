@@ -12,17 +12,19 @@
 
 - (void)swizzleAll
 {
-    [self swizzleAwakeFromNib:[UIBarButtonItem class]];
-    [self swizzleAwakeFromNib:[UIButton class]];
-    [self swizzleAwakeFromNib:[UILabel class]];
-    [self swizzleAwakeFromNib:[UINavigationBar class]];
-    [self swizzleAwakeFromNib:[UINavigationItem class]];
-    [self swizzleAwakeFromNib:[UISegmentedControl class]];
-    [self swizzleAwakeFromNib:[UITabBar class]];
-    [self swizzleAwakeFromNib:[UITableViewCell class]];
+    [self swizzleDidMoveToWindow:[UIBarButtonItem class]];
+    [self swizzleDidMoveToWindow:[UIButton class]];
+    [self swizzleDidMoveToWindow:[UILabel class]];
+    [self swizzleDidMoveToWindow:[UINavigationBar class]];
+    [self swizzleDidMoveToWindow:[UINavigationItem class]];
+    [self swizzleDidMoveToWindow:[UISegmentedControl class]];
+    [self swizzleDidMoveToWindow:[UITabBar class]];
+    [self swizzleDidMoveToWindow:[UITableViewCell class]];
+    [self swizzleDidMoveToWindow:[UITextField class]];
+    [self swizzleDidMoveToWindow:[UIView class]];
+    
+    // didMoveToWindow isn't called on UITabBarItems, so we need to use awakeFromNib instead.
     [self swizzleAwakeFromNib:[UITabBarItem class]];
-    [self swizzleAwakeFromNib:[UITextField class]];
-    [self swizzleAwakeFromNib:[UIView class]];
 }
 
 - (void)swizzleAwakeFromNib:(Class)class
@@ -30,9 +32,9 @@
     [self swizzle:class from:@selector(awakeFromNib) to:@selector(override_awakeFromNib)];
 }
 
-- (void)swizzleDrawRect:(Class)class
+- (void)swizzleDidMoveToWindow:(Class)class
 {
-    [self swizzle:class from:@selector(drawRect:) to:@selector(override_drawRect:)];
+    [self swizzle:class from:@selector(didMoveToWindow) to:@selector(override_didMoveToWindow)];
 }
 
 - (void)swizzle:(Class)class from:(SEL)original to:(SEL)new

@@ -13,5 +13,6 @@
 @interface UITableViewCell (NUI)
 
 @property (nonatomic, retain) NSString* nuiClass;
+@property (nonatomic, retain) NSNumber* nuiIsApplied;
 
 @end

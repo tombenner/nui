@@ -19,20 +19,26 @@
     }
 }
 
-- (void)override_awakeFromNib
+- (void)override_didMoveToWindow
 {
-    // Styling shouldn't be applied to inherited classes
-    if ([self class] == [UIView class]) {
-        [self initNUI];
-        [self awakeFromNibNUI];
+    if (!self.nuiIsApplied) {
+        // Styling shouldn't be applied to inherited classes
+        if ([self class] == [UIView class]) {
+            [self initNUI];
+            [self didMoveToWindowNUI];
+        }
+        self.nuiIsApplied = [NSNumber numberWithBool:YES];
     }
-    [self override_awakeFromNib];
+    [self override_didMoveToWindow];
 }
 
-- (void)awakeFromNibNUI
+- (void)didMoveToWindowNUI
 {
     if (![self.nuiClass isEqualToString:@"none"]) {
-        [NUIRenderer renderView:self withClass:self.nuiClass];
+        if ([self class] == [UIView class] &&
+            [[self superview] class] != [UINavigationBar class]) {
+            [NUIRenderer renderView:self withClass:self.nuiClass];
+        }
     }
 }
 
@@ -42,6 +48,14 @@
 
 - (NSString*)nuiClass {
     return objc_getAssociatedObject(self, "nuiClass");
+}
+
+- (void)setNuiIsApplied:(NSNumber*)value {
+    objc_setAssociatedObject(self, "nuiIsApplied", value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSNumber*)nuiIsApplied {
+    return objc_getAssociatedObject(self, "nuiIsApplied");
 }
 
 @end
