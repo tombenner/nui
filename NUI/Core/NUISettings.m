@@ -120,6 +120,11 @@ static NUISettings *instance = nil;
     return [NUIConverter toTextAlignment:[self get:property withClass:className]];
 }
 
++ (UIControlContentVerticalAlignment)getVerticalAlignment:(NSString*)property withClass:(NSString*)className
+{
+    return [NUIConverter toVerticalAlignment:[self get:property withClass:className]];
+}
+
 + (NSArray*)getClasses:(NSString*)className
 {
     NSArray *classes = [[[className componentsSeparatedByString: @":"] reverseObjectEnumerator] allObjects];

@@ -187,6 +187,21 @@
     return textAlignment;
 }
 
++ (UIControlContentVerticalAlignment)toVerticalAlignment:(NSString*)value
+{
+    UIControlContentVerticalAlignment verticalAlignment = UIControlContentVerticalAlignmentTop;
+    
+    if ([value isEqualToString:@"center"]) {
+        verticalAlignment =  UIControlContentVerticalAlignmentCenter;
+    } else if ([value isEqualToString:@"bottom"]) {
+        verticalAlignment =  UIControlContentVerticalAlignmentBottom;
+    } else if ([value isEqualToString:@"fill"]) {
+        verticalAlignment =  UIControlContentVerticalAlignmentFill;
+    }
+    
+    return verticalAlignment;
+}
+
 /** Matches the given content against the regular expression pattern, extracting
  *  any captured groups into an NSArray. Unmatched captured groups are represented
  *  by NSNull instances in the returned array.
