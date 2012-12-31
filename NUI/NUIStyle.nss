@@ -85,9 +85,11 @@ TableCellDetail {
     font-color: @secondaryFontColor;
 }
 TextField {
-    font-name: @inputFontName;
     height: 37;
+    font-name: @inputFontName;
     font-size: 18;
+    border-style: rounded;
+    vertical-align: center;
 }
 LargeTextField {
     height: 50;
