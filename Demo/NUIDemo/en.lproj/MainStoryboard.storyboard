@@ -126,16 +126,16 @@
             </objects>
             <point key="canvasLocation" x="1010" y="-247"/>
         </scene>
-        <!--View Controller-->
+        <!--Programmatically Created View Controller - Created By Code-->
         <scene sceneID="kww-0m-DV3">
             <objects>
-                <viewController id="QSl-4a-Qez" sceneMemberID="viewController">
+                <viewController id="QSl-4a-Qez" customClass="ProgrammaticallyCreatedViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EqS-qd-y03">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="713-Ss-z9p"/>
+                    <navigationItem key="navigationItem" title="Created By Code" id="713-Ss-z9p"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tUc-LZ-sPV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -248,6 +248,9 @@
     <classes>
         <class className="NUIDemoTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NUIDemoTableViewController.h"/>
+        </class>
+        <class className="ProgrammaticallyCreatedViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProgrammaticallyCreatedViewController.h"/>
         </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>

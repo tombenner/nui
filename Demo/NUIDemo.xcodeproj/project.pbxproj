@@ -25,6 +25,7 @@
 		4A55F08516758E9D0056753C /* UISegmentedControl+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A55F08416758E9D0056753C /* UISegmentedControl+NUI.m */; };
 		4A55F08816758EDA0056753C /* UITableViewCell+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A55F08716758EDA0056753C /* UITableViewCell+NUI.m */; };
 		4A55F08B16758F360056753C /* UITextField+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A55F08A16758F360056753C /* UITextField+NUI.m */; };
+		4A744B0B1691058C0068F3CF /* ProgrammaticallyCreatedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A744B0A1691058B0068F3CF /* ProgrammaticallyCreatedViewController.m */; };
 		4A779342167560FF00B5EE81 /* UIButton+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A779340167560FF00B5EE81 /* UIButton+NUI.m */; };
 		4A7793451675619500B5EE81 /* UITabBar+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7793441675619500B5EE81 /* UITabBar+NUI.m */; };
 		4A7793481675625800B5EE81 /* NUITabBarItemRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7793471675625800B5EE81 /* NUITabBarItemRenderer.m */; };
@@ -90,6 +91,8 @@
 		4A55F08716758EDA0056753C /* UITableViewCell+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+NUI.m"; sourceTree = "<group>"; };
 		4A55F08916758F360056753C /* UITextField+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+NUI.h"; sourceTree = "<group>"; };
 		4A55F08A16758F360056753C /* UITextField+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+NUI.m"; sourceTree = "<group>"; };
+		4A744B09169105890068F3CF /* ProgrammaticallyCreatedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgrammaticallyCreatedViewController.h; sourceTree = "<group>"; };
+		4A744B0A1691058B0068F3CF /* ProgrammaticallyCreatedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgrammaticallyCreatedViewController.m; sourceTree = "<group>"; };
 		4A779340167560FF00B5EE81 /* UIButton+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+NUI.m"; sourceTree = "<group>"; };
 		4A779341167560FF00B5EE81 /* UIButton+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+NUI.h"; sourceTree = "<group>"; };
 		4A7793431675619500B5EE81 /* UITabBar+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBar+NUI.h"; sourceTree = "<group>"; };
@@ -200,6 +203,8 @@
 				4A0B8647165EE59A005B5756 /* MainStoryboard.storyboard */,
 				4A0B8685165F1382005B5756 /* NUIDemoTableViewController.h */,
 				4A0B8686165F1383005B5756 /* NUIDemoTableViewController.m */,
+				4A744B09169105890068F3CF /* ProgrammaticallyCreatedViewController.h */,
+				4A744B0A1691058B0068F3CF /* ProgrammaticallyCreatedViewController.m */,
 				4A0B864A165EE59A005B5756 /* ViewController.h */,
 				4A0B864B165EE59A005B5756 /* ViewController.m */,
 				4AAAFE7A166FD2EC00A0D34D /* Resources */,
@@ -447,6 +452,7 @@
 				4A55F08516758E9D0056753C /* UISegmentedControl+NUI.m in Sources */,
 				4A55F08816758EDA0056753C /* UITableViewCell+NUI.m in Sources */,
 				4A55F08B16758F360056753C /* UITextField+NUI.m in Sources */,
+				4A744B0B1691058C0068F3CF /* ProgrammaticallyCreatedViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
