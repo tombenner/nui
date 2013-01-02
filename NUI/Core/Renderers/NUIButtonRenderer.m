@@ -58,6 +58,11 @@
     
     [NUIRenderer renderLabel:button.titleLabel withClass:className];
     
+    // Set text align
+    if ([NUISettings hasProperty:@"text-align" withClass:className]) {
+        [button setContentHorizontalAlignment:[NUISettings getControlContentHorizontalAlignment:@"text-align" withClass:className]];
+    }
+    
     // Set font color
     if ([NUISettings hasProperty:@"font-color" withClass:className]) {
         [button setTitleColor:[NUISettings getColor:@"font-color" withClass:className] forState:UIControlStateNormal];
