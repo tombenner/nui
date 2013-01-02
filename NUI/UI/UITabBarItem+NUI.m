@@ -15,7 +15,7 @@
 - (void)initNUI
 {
     if (!self.nuiClass) {
-        self.nuiClass = @"TabBar";
+        self.nuiClass = @"TabBarItem";
     }
 }
 

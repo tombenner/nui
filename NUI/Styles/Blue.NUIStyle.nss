@@ -66,6 +66,8 @@ SegmentedControl {
 }
 TabBar {
     background-color: #FFFFFF;
+}
+TabBarItem {
     font-name: @secondaryFontName;
     font-color: @primaryFontColor;
     font-size: 18;

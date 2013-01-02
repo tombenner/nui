@@ -195,6 +195,11 @@ Below are all of the currently available style classes, their corresponding UI c
 * background-color-top/background-color-bottom
 * background-image
 * background-tint-color
+
+#### TabBarItem
+
+*UITabBarItem*
+
 * font-color
 * font-name
 * font-size
