@@ -37,6 +37,17 @@
         UIImageView *colorView = [[UIImageView alloc] initWithImage:colorImage];
         [bar insertSubview:colorView atIndex:1];
     }
+    
+    // Apply UITabBarItem's background-image-selected property to bar.selectionIndicatorImage
+    if ([[bar items] count] > 0) {
+        UITabBarItem *firstItem = [[bar items] objectAtIndex:0];
+        NSArray *firstItemClasses = [firstItem.nuiClass componentsSeparatedByString: @":"];
+        for (NSString *itemClass in firstItemClasses) {
+            if ([NUISettings hasProperty:@"background-image-selected" withClass:itemClass]) {
+                [bar setSelectionIndicatorImage:[NUISettings getImage:@"background-image-selected" withClass:itemClass]];
+            }
+        }
+    }
 }
 
 @end

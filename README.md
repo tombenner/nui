@@ -200,6 +200,7 @@ Below are all of the currently available style classes, their corresponding UI c
 
 *UITabBarItem*
 
+* background-image-selected
 * font-color
 * font-name
 * font-size
@@ -294,6 +295,7 @@ Style Properties
 * **background-color-top**/**background-color-bottom** - Gradient
 * **background-image** - Image
 * **background-image-highlighted** - Image
+* **background-image-selected** - Image
 * **background-tint-color** - Color
 * **border-color** - Color
 * **border-style** - BorderStyle
