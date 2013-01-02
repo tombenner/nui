@@ -42,7 +42,7 @@
     }
     
     if ([NUISettings hasProperty:@"vertical-align" withClass:className]) {
-        [textField setContentVerticalAlignment:[NUISettings getVerticalAlignment:@"vertical-align" withClass:className]];
+        [textField setContentVerticalAlignment:[NUISettings getControlContentVerticalAlignment:@"vertical-align" withClass:className]];
     }
     
     // Set height

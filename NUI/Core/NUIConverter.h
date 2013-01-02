@@ -21,5 +21,6 @@
 + (UIImage*)toImageFromColorName:(NSString*)value;
 + (UIImage*)toImageFromImageName:(NSString*)value;
 + (UITextAlignment)toTextAlignment:(NSString*)value;
-+ (UIControlContentVerticalAlignment)toVerticalAlignment:(NSString*)value;
++ (UIControlContentHorizontalAlignment)toControlContentHorizontalAlignment:(NSString*)value;
++ (UIControlContentVerticalAlignment)toControlContentVerticalAlignment:(NSString*)value;
 @end

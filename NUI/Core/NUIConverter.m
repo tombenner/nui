@@ -194,30 +194,45 @@
 
 + (UITextAlignment)toTextAlignment:(NSString*)value
 {
-    UITextAlignment textAlignment = UITextAlignmentLeft;
+    UITextAlignment alignment = UITextAlignmentLeft;
     
     if ([value isEqualToString:@"center"]) {
-        textAlignment =  UITextAlignmentCenter;
+        alignment =  UITextAlignmentCenter;
     } else if ([value isEqualToString:@"right"]) {
-        textAlignment =  UITextAlignmentRight;
+        alignment =  UITextAlignmentRight;
     }
     
-    return textAlignment;
+    return alignment;
 }
 
-+ (UIControlContentVerticalAlignment)toVerticalAlignment:(NSString*)value
++ (UIControlContentHorizontalAlignment)toControlContentHorizontalAlignment:(NSString*)value
 {
-    UIControlContentVerticalAlignment verticalAlignment = UIControlContentVerticalAlignmentTop;
+    UIControlContentHorizontalAlignment alignment = UIControlContentHorizontalAlignmentLeft;
     
     if ([value isEqualToString:@"center"]) {
-        verticalAlignment =  UIControlContentVerticalAlignmentCenter;
-    } else if ([value isEqualToString:@"bottom"]) {
-        verticalAlignment =  UIControlContentVerticalAlignmentBottom;
+        alignment =  UIControlContentHorizontalAlignmentCenter;
+    } else if ([value isEqualToString:@"right"]) {
+        alignment =  UIControlContentHorizontalAlignmentRight;
     } else if ([value isEqualToString:@"fill"]) {
-        verticalAlignment =  UIControlContentVerticalAlignmentFill;
+        alignment =  UIControlContentHorizontalAlignmentFill;
     }
     
-    return verticalAlignment;
+    return alignment;
+}
+
++ (UIControlContentVerticalAlignment)toControlContentVerticalAlignment:(NSString*)value
+{
+    UIControlContentVerticalAlignment alignment = UIControlContentVerticalAlignmentTop;
+    
+    if ([value isEqualToString:@"center"]) {
+        alignment =  UIControlContentVerticalAlignmentCenter;
+    } else if ([value isEqualToString:@"bottom"]) {
+        alignment =  UIControlContentVerticalAlignmentBottom;
+    } else if ([value isEqualToString:@"fill"]) {
+        alignment =  UIControlContentVerticalAlignmentFill;
+    }
+    
+    return alignment;
 }
 
 /** Matches the given content against the regular expression pattern, extracting

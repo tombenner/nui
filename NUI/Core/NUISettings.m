@@ -120,9 +120,14 @@ static NUISettings *instance = nil;
     return [NUIConverter toTextAlignment:[self get:property withClass:className]];
 }
 
-+ (UIControlContentVerticalAlignment)getVerticalAlignment:(NSString*)property withClass:(NSString*)className
++ (UIControlContentHorizontalAlignment)getControlContentHorizontalAlignment:(NSString*)property withClass:(NSString*)className
 {
-    return [NUIConverter toVerticalAlignment:[self get:property withClass:className]];
+    return [NUIConverter toControlContentHorizontalAlignment:[self get:property withClass:className]];
+}
+
++ (UIControlContentVerticalAlignment)getControlContentVerticalAlignment:(NSString*)property withClass:(NSString*)className
+{
+    return [NUIConverter toControlContentVerticalAlignment:[self get:property withClass:className]];
 }
 
 + (NSArray*)getClasses:(NSString*)className

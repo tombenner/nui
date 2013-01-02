@@ -32,6 +32,7 @@
 + (UIImage*)getImage:(NSString*)property withClass:(NSString*)className;
 + (UIImage*)getImageFromColor:(NSString*)property withClass:(NSString*)className;
 + (UITextAlignment)getTextAlignment:(NSString*)property withClass:(NSString*)className;
-+ (UIControlContentVerticalAlignment)getVerticalAlignment:(NSString*)property withClass:(NSString*)className;
++ (UIControlContentHorizontalAlignment)getControlContentHorizontalAlignment:(NSString*)property withClass:(NSString*)className;
++ (UIControlContentVerticalAlignment)getControlContentVerticalAlignment:(NSString*)property withClass:(NSString*)className;
 
 @end
