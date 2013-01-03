@@ -52,6 +52,9 @@
     if ([NUISettings hasProperty:@"background-image" withClass:className]) {
         [button setBackgroundImage:[NUISettings getImage:@"background-image" withClass:className] forState:UIControlStateNormal];
     }
+    if ([NUISettings hasProperty:@"background-image-selected" withClass:className]) {
+        [button setBackgroundImage:[NUISettings getImage:@"background-image-selected" withClass:className] forState:UIControlStateSelected];
+    }
     if ([NUISettings hasProperty:@"background-image-highlighted" withClass:className]) {
         [button setBackgroundImage:[NUISettings getImage:@"background-image-highlighted" withClass:className] forState:UIControlStateHighlighted];
     }
@@ -66,6 +69,9 @@
     // Set font color
     if ([NUISettings hasProperty:@"font-color" withClass:className]) {
         [button setTitleColor:[NUISettings getColor:@"font-color" withClass:className] forState:UIControlStateNormal];
+    }
+    if ([NUISettings hasProperty:@"font-color-selected" withClass:className]) {
+        [button setTitleColor:[NUISettings getColor:@"font-color-selected" withClass:className] forState:UIControlStateSelected];
     }
     if ([NUISettings hasProperty:@"font-color-highlighted" withClass:className]) {
         [button setTitleColor:[NUISettings getColor:@"font-color-highlighted" withClass:className] forState:UIControlStateHighlighted];
