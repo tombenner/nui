@@ -131,11 +131,13 @@ Below are all of the currently available style classes, their corresponding UI c
 * background-color-top/background-color-bottom
 * background-image
 * background-image-highlighted
+* background-image-selected
 * border-color
 * border-width
 * corner-radius
 * font-color
 * font-color-highlighted
+* font-color-selected
 * font-name
 * font-size
 * height
