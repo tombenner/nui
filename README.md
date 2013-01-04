@@ -61,17 +61,15 @@ NUI can also be installed using [CocoaPods](http://cocoapods.org/) (its pod name
 Usage
 -----
 
-After dropping in NUI, you can modify your app's styling by simply editing NUIStyle.nss.
+After dropping in NUI, you can modify your app's styling by simply editing NUIStyle.nss. If you want to avoid modifying NUI's files, you can copy NUIStyle.nss into your app, rename it (e.g. MyTheme.nss), then replace `[NUISettings init]` with `[NUISettings initWithStylesheet:@"MyTheme"];` (step 4 in Installation).
 
-Due to the nature of UIKit's usage of simple UI components within more complex UI components, NUI doesn't style some UIKit components in some rare cases. If you need to apply styling for these cases, you can simply use NUIRenderer:
+Due to the nature of UIKit's usage of simple UI components within more complex UI components, NUI doesn't style some UIKit components in some very rare cases. If you ever need to apply styling for these cases, you can simply use NUIRenderer:
 
     [NUIRenderer renderButton:myButton];
 
-If you want to specify a style class in this call, you can do this like so:
+You can specify a custom style class, too:
 
     [NUIRenderer renderButton:myButton withClass:@"LargeButton"]
-
-To make `LargeButton` inherit from `Button`, use `@"Button:LargeButton"`.
 
 *N.B. NUI used to require that you make your elements inherit from a NUI class, but this is no longer the case. See "Migrating From Subclasses To Categories" below for details.*
 
