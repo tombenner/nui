@@ -47,6 +47,8 @@ NUI lets you:
 * Avoid digging through documentation to find how to change specific UI elements' styling
 * Quickly create custom style classes
 
+Some exciting features are on the horizon, and contributions are very encouraged. Please see the [FAQ](#how-can-i-contribute).
+
 Installation
 ------------
 1. Copy the NUI directory into your application
@@ -81,19 +83,29 @@ The format should be self-explanatory, but here are some notes:
 
 * Styling variables are defined at the top, but they can be added/modified/removed as you see fit.
 * You can make an element inherit from multiple style classes (see Creating Custom Style Classes below).
-* Rules beginning with "UI" are applied via UIAppearance, and thus are applied to all elements of that class in the application, regardless of whether they inherit from a NUI class.
+* Style classes beginning with "UI" are applied via UIAppearance, and thus are applied to all elements of that class in the application, regardless of whether they inherit from a NUI class.
 
 To see all of the available properties and values, see the Style Classes and Style Value Types lists below.
 
 ### Creating Custom Style Classes
 
-To give an element a custom style class (e.g. `LargeButton`), set a runtime attribute for it in Interface Builder (in Identity Inspector > User Defined Runtime Attributes, click `+`). Set the Key Path to `nuiClass`, Type to `String`, and Value to `LargeButton`:
+You can give elements custom style classes (e.g. `LargeButton`), and make those classes inherit from one or more other style classes by using the form `Button:LargeButton`. To bypass NUI's styling for a particular element, set the class to `none`. You can set an element's style class either in Interface Builder or programmatically: 
+
+#### Setting an Element's Style Class in Interface Builder
+
+To do this, you'll set a runtime attribute for the element (in Identity Inspector > User Defined Runtime Attributes, click `+`). Set the Key Path to `nuiClass`, Type to `String`, and Value to `LargeButton` (or `Button:MyButton`:
 
 [![](https://raw.github.com/tombenner/nui/master/Screenshots/SettingARuntimeAttribute.png)](https://raw.github.com/tombenner/nui/master/Screenshots/SettingARuntimeAttribute.png)
 
-If you want it to inherit styling rules from another style class, like `Button`, set the value to `Button:LargeButton`.
+#### Setting an Element's Style Class Programmatically
 
-To bypass NUI's styling for a particular element, simply set the value to `none`.
+To do this, you'll want to import the NUI category for the element. If you're styling a UIButton, you'd import:
+
+    #import "UIButton+NUI.h"
+
+You can then set `nuiClass` on your element:
+
+    myButton.nuiClass = @"LargeButton";
 
 *N.B. A style class can inherit from an indefinite number of style rules, so if you want to create groups of style rules, you can set `nuiClass` to something like `@"MyStyleGroup1:MyStyleGroup2:MyButton"`.*
 
@@ -335,17 +347,17 @@ Style Value Types
 FAQ
 ---
 
-#### Can I contribute new UI elements, style properties, themes, etc?
+#### How can I contribute?
 
-Absolutely! NUI covers a lot of ground, but there's still a large number of elements and properties that are still unsupported. If you've made a NUIStyle.nss theme that you really like, it'd be excellent to add it to this repo.
-
-#### What versions of iOS are supported?
-
-NUI has been tested on both iOS 5.1 and iOS 6.0.
+Contributers are extremely appreciated! NUI covers a lot of ground, but there are still a number of elements and properties that are unsupported. Adding support for new properties is easy (take a look at [NUIButtonRenderer](https://github.com/tombenner/nui/blob/master/NUI/Core/Renderers/NUIButtonRenderer.m) for examples). There are also a number of exciting big features that on the [Roadmap](https://github.com/tombenner/nui/wiki/Roadmap) that are up for grabs. We're also always looking for new themes, so feel free to add those, too!
 
 #### What advantages does this have over UIAppearance?
 
-UIAppearance is alright, but it's not intuitive, time-consuming, and it doesn't support either the granularity or number of style modifications that NUI does. Styling should be abstracted in a simple style sheet with simple property definitions; you shouldn't have to stare at long, nested method calls and have to dig through Apple's documentation every time you want to make a small styling modification.
+UIAppearance is alright, but it's unintuitive, time-consuming, and it doesn't support either the granularity or number of style modifications that NUI does. Styling should be abstracted in a simple style sheet with simple property definitions; you shouldn't have to stare at long, nested method calls and have to dig through Apple's documentation every time you want to make a small styling modification.
+
+#### I have an app that uses NUI; can I add a link to it here?
+
+Sure! Feel free to add it to [Apps Using NUI](https://github.com/tombenner/nui/wiki/Apps-Using-NUI).
 
 #### Do you know about Pixate?
 
