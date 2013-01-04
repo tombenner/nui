@@ -57,6 +57,8 @@
 		89B940851671418200850A9A /* Blue.NUIStyle.nss in Resources */ = {isa = PBXBuildFile; fileRef = 89B9404C1671418100850A9A /* Blue.NUIStyle.nss */; };
 		89B940861671418200850A9A /* Default.NUIStyle.nss in Resources */ = {isa = PBXBuildFile; fileRef = 89B9404D1671418100850A9A /* Default.NUIStyle.nss */; };
 		89B940871671418200850A9A /* Round.NUIStyle.nss in Resources */ = {isa = PBXBuildFile; fileRef = 89B9404E1671418100850A9A /* Round.NUIStyle.nss */; };
+		B51BC28A169724A3004A38F8 /* UISwitch+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = B51BC289169724A3004A38F8 /* UISwitch+NUI.m */; };
+		B51BC28E16972527004A38F8 /* NUISwitchRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = B51BC28D16972527004A38F8 /* NUISwitchRenderer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -147,6 +149,10 @@
 		89B9404C1671418100850A9A /* Blue.NUIStyle.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Blue.NUIStyle.nss; sourceTree = "<group>"; };
 		89B9404D1671418100850A9A /* Default.NUIStyle.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Default.NUIStyle.nss; sourceTree = "<group>"; };
 		89B9404E1671418100850A9A /* Round.NUIStyle.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Round.NUIStyle.nss; sourceTree = "<group>"; };
+		B51BC288169724A3004A38F8 /* UISwitch+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISwitch+NUI.h"; sourceTree = "<group>"; };
+		B51BC289169724A3004A38F8 /* UISwitch+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISwitch+NUI.m"; sourceTree = "<group>"; };
+		B51BC28C16972527004A38F8 /* NUISwitchRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUISwitchRenderer.h; sourceTree = "<group>"; };
+		B51BC28D16972527004A38F8 /* NUISwitchRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISwitchRenderer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +300,8 @@
 				89B940431671418100850A9A /* NUITextFieldRenderer.m */,
 				89B940441671418100850A9A /* NUIViewRenderer.h */,
 				89B940451671418100850A9A /* NUIViewRenderer.m */,
+				B51BC28C16972527004A38F8 /* NUISwitchRenderer.h */,
+				B51BC28D16972527004A38F8 /* NUISwitchRenderer.m */,
 			);
 			path = Renderers;
 			sourceTree = "<group>";
@@ -343,6 +351,8 @@
 				4A55F08A16758F360056753C /* UITextField+NUI.m */,
 				4A55F076167570C10056753C /* UIView+NUI.h */,
 				4A55F077167570C10056753C /* UIView+NUI.m */,
+				B51BC288169724A3004A38F8 /* UISwitch+NUI.h */,
+				B51BC289169724A3004A38F8 /* UISwitch+NUI.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -453,6 +463,8 @@
 				4A55F08816758EDA0056753C /* UITableViewCell+NUI.m in Sources */,
 				4A55F08B16758F360056753C /* UITextField+NUI.m in Sources */,
 				4A744B0B1691058C0068F3CF /* ProgrammaticallyCreatedViewController.m in Sources */,
+				B51BC28A169724A3004A38F8 /* UISwitch+NUI.m in Sources */,
+				B51BC28E16972527004A38F8 /* NUISwitchRenderer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

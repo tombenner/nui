@@ -2,12 +2,17 @@
 //  UISwitch+NUI.h
 //  NUIDemo
 //
-//  Created by Benjamin Clayton on 04/01/2013.
-//  Copyright (c) 2013 Tom Benner. All rights reserved.
+//  Created by Benjamin Clayton @benclayton on 04/01/2013.
+//  Copyright (c) 2013 Benjamin Clayton @benclayton. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+#import <objc/runtime.h>
+#import "NUIRenderer.h"
 
 @interface UISwitch (NUI)
+
+@property (nonatomic, retain) NSString* nuiClass;
+@property (nonatomic, retain) NSNumber* nuiIsApplied;
 
 @end
