@@ -87,6 +87,18 @@
 
 
 
++ (void)renderSwitch:(UISwitch*)uiSwitch
+{
+    [NUISwitchRenderer render:uiSwitch withClass:@"Switch"];
+}
+
++ (void)renderSwitch:(UISwitch*)uiSwitch withClass:(NSString*)className
+{
+    [NUISwitchRenderer render:uiSwitch withClass:className];
+}
+
+
+
 + (void)renderTabBar:(UITabBar*)bar
 {
     [NUITabBarRenderer render:bar withClass:@"TabBar"];
@@ -143,16 +155,6 @@
 + (void)renderView:(UIView*)view withClass:(NSString*)className
 {
     [NUIViewRenderer render:view withClass:className];
-}
-
-+ (void)renderSwitch:(UISwitch*)view
-{
-    [NUISwitchRenderer render:view withClass:@"View"];
-}
-
-+ (void)renderSwitch:(UISwitch*)view withClass:(NSString*)className
-{
-    [NUISwitchRenderer render:view withClass:className];
 }
 
 @end

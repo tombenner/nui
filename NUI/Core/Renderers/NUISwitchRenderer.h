@@ -11,6 +11,6 @@
 
 @interface NUISwitchRenderer : NSObject
 
-+ (void)render:(UISwitch*)item withClass:(NSString*)className;
++ (void)render:(UISwitch*)uiSwitch withClass:(NSString*)className;
 
 @end

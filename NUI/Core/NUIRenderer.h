@@ -41,6 +41,9 @@
 + (void)renderSegmentedControl:(UISegmentedControl*)control;
 + (void)renderSegmentedControl:(UISegmentedControl*)control withClass:(NSString*)className;
 
++ (void)renderSwitch:(UISwitch*)uiSwitch;
++ (void)renderSwitch:(UISwitch*)uiSwitch withClass:(NSString*)className;
+
 + (void)renderTabBar:(UITabBar*)bar;
 + (void)renderTabBar:(UITabBar*)bar withClass:(NSString*)className;
 
@@ -55,8 +58,5 @@
 
 + (void)renderView:(UIView*)view;
 + (void)renderView:(UIView*)view withClass:(NSString*)className;
-
-+ (void)renderSwitch:(UISwitch*)view;
-+ (void)renderSwitch:(UISwitch*)view withClass:(NSString*)className;
 
 @end
