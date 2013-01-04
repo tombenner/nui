@@ -108,3 +108,6 @@ UIBarButtonItem {
     text-shadow-color: clear;
     font-size: 13;
 }
+Switch {
+    on-tint-color: @primaryBackgroundTintColor;
+}

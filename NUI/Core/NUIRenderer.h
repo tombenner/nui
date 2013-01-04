@@ -18,6 +18,7 @@
 #import "NUITableViewCellRenderer.h"
 #import "NUITextFieldRenderer.h"
 #import "NUIViewRenderer.h"
+#import "NUISwitchRenderer.h"
 
 @interface NUIRenderer : NSObject
 
@@ -54,5 +55,8 @@
 
 + (void)renderView:(UIView*)view;
 + (void)renderView:(UIView*)view withClass:(NSString*)className;
+
++ (void)renderSwitch:(UISwitch*)view;
++ (void)renderSwitch:(UISwitch*)view withClass:(NSString*)className;
 
 @end

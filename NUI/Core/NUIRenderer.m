@@ -145,4 +145,14 @@
     [NUIViewRenderer render:view withClass:className];
 }
 
++ (void)renderSwitch:(UISwitch*)view
+{
+    [NUISwitchRenderer render:view withClass:@"View"];
+}
+
++ (void)renderSwitch:(UISwitch*)view withClass:(NSString*)className
+{
+    [NUISwitchRenderer render:view withClass:className];
+}
+
 @end
