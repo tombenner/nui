@@ -199,6 +199,17 @@ Below are all of the currently available style classes, their corresponding UI c
 * text-shadow-color
 * text-shadow-offset
 
+#### Switch
+
+*UISwitch*
+
+* background-color
+* off-image
+* on-image
+* on-tint-color
+* thumb-tint-color
+* tint-color
+
 #### TabBar
 
 *UITabBar*

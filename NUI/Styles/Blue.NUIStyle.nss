@@ -64,6 +64,9 @@ SegmentedControl {
     font-color: @primaryFontColor;
     text-shadow-color: clear;
 }
+Switch {
+    on-tint-color: @primaryBackgroundTintColor;
+}
 TabBar {
     background-color: #FFFFFF;
 }

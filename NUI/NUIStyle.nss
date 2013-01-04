@@ -64,6 +64,9 @@ SegmentedControl {
     font-color: @primaryFontColor;
     text-shadow-color: clear;
 }
+Switch {
+    on-tint-color: @primaryBackgroundTintColor;
+}
 TabBar {
     background-color-top: @primaryBackgroundColorTop;
     background-color-bottom: @primaryBackgroundColorBottom;
@@ -107,7 +110,4 @@ UIBarButtonItem {
     font-color: @primaryFontColor;
     text-shadow-color: clear;
     font-size: 13;
-}
-Switch {
-    on-tint-color: @primaryBackgroundTintColor;
 }

@@ -85,9 +85,13 @@
     
     NSArray *items = [NSArray arrayWithObjects: @"Segmented", @"Control", nil];
     UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:items];
-    [segmentedControl setFrame:CGRectMake(65, 318, 190, 30)];
+    [segmentedControl setFrame:CGRectMake(20, 318, 190, 30)];
     [segmentedControl setSelectedSegmentIndex:0];
     [self.view addSubview:segmentedControl];
+    
+    UISwitch *uiSwitch = [[UISwitch alloc] initWithFrame:CGRectMake(223, 319, 79, 27)];
+    [uiSwitch setOn:YES];
+    [self.view addSubview:uiSwitch];
 }
 
 @end

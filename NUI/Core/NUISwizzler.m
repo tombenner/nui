@@ -18,6 +18,7 @@
     [self swizzleDidMoveToWindow:[UINavigationBar class]];
     [self swizzleDidMoveToWindow:[UINavigationItem class]];
     [self swizzleDidMoveToWindow:[UISegmentedControl class]];
+    [self swizzleDidMoveToWindow:[UISwitch class]];
     [self swizzleDidMoveToWindow:[UITabBar class]];
     [self swizzleDidMoveToWindow:[UITableViewCell class]];
     [self swizzleDidMoveToWindow:[UITextField class]];

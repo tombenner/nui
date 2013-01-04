@@ -58,5 +58,4 @@
     return objc_getAssociatedObject(self, "nuiIsApplied");
 }
 
-
 @end
