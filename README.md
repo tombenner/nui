@@ -46,6 +46,7 @@ NUI lets you:
 * Define variables like `@primaryFontName` or `@myBackgroundColor` (a la Sass/LESS)
 * Avoid digging through documentation to find how to change specific UI elements' styling
 * Quickly create custom style classes
+* Modify an application's styling while it is running
 
 Some exciting features are on the horizon, and contributions are very encouraged. Please see the [FAQ](#how-can-i-contribute).
 
@@ -106,6 +107,14 @@ You can then set `nuiClass` on your element:
     myButton.nuiClass = @"LargeButton";
 
 *N.B. A style class can inherit from an indefinite number of style rules, so if you want to create groups of style rules, you can set `nuiClass` to something like `@"MyStyleGroup1:MyStyleGroup2:MyButton"`.*
+
+#### Modifying Styling While The Application Is Running
+
+To do this, add the following line after `[NUISettings init];` in [main.m](https://github.com/tombenner/nui/blob/master/Demo/NUIDemo/main.m), replacing `@"/path/to/Style.nss"` with the absolute file path of your .nss file (e.g. `/Users/myusername/projects/ios/MyApp/Style.nss`):
+
+    [NUISettings setAutoUpdatePath:@"/path/to/Style.nss"];
+
+Now, whenever you modify and save your .nss file while the app is running, the new changes will be applied instantaneously, without any need to rebuild the app. This can drastically speed up the process of styling. You'll want to remove this line when you create a release build.
 
 ### Creating Custom Themes
 
