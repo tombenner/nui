@@ -45,10 +45,10 @@ static NUISettings *instance = nil;
     return instance.autoUpdatePath;
 }
 
-+ (NSString*)setAutoUpdatePath:(NSString*)path
++ (void)setAutoUpdatePath:(NSString*)path
 {
     instance = [self getInstance];
-    return instance.autoUpdatePath = path;
+    instance.autoUpdatePath = path;
 }
 
 + (BOOL)hasProperty:(NSString*)property withExplicitClass:(NSString*)className

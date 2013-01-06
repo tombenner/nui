@@ -24,7 +24,7 @@
 + (void)loadStylesheetByPath:(NSString*)path;
 + (BOOL)autoUpdateIsEnabled;
 + (NSString*)autoUpdatePath;
-+ (NSString*)setAutoUpdatePath:(NSString*)path;
++ (void)setAutoUpdatePath:(NSString*)path;
 + (BOOL)hasProperty:(NSString*)property withClass:(NSString*)className;
 + (id)get:(NSString*)property withClass:(NSString*)className;
 + (BOOL)getBoolean:(NSString*)property withClass:(NSString*)className;
