@@ -40,12 +40,15 @@
     
     // Set background gradient
     if ([NUISettings hasProperty:@"background-color-top" withClass:className]) {
-        CAGradientLayer *gradient = [NUIGraphics
+        CAGradientLayer *gradientLayer = [NUIGraphics
                                      gradientLayerWithTop:[NUISettings getColor:@"background-color-top" withClass:className] 
                                      bottom:[NUISettings getColor:@"background-color-bottom" withClass:className]
                                      frame:button.bounds];
-        int index = [button.layer.sublayers count] == 1 ? 0 : 1;
-        [button.layer insertSublayer:gradient atIndex:index];
+        int backgroundLayerIndex = [button.layer.sublayers count] == 1 ? 0 : 1;
+        if (button.nuiIsApplied) {
+            [[button.layer.sublayers objectAtIndex:backgroundLayerIndex] removeFromSuperlayer];
+        }
+        [button.layer insertSublayer:gradientLayer atIndex:backgroundLayerIndex];
     }
     
     // Set background image

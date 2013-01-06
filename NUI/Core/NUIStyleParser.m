@@ -20,6 +20,12 @@
     return [self consolidateRuleSets:[self getRuleSets:content] withTopLevelDeclarations:[self getTopLevelDeclarations:content]];
 }
 
+- (NSMutableDictionary*)getStylesFromPath:(NSString*)path
+{
+    NSString* content = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    return [self consolidateRuleSets:[self getRuleSets:content] withTopLevelDeclarations:[self getTopLevelDeclarations:content]];
+}
+
 - (NSMutableDictionary*)getTopLevelDeclarations:(NSString*)content
 {
     NSString *topLevelContent = [self getTopLevelContent:content];

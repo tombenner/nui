@@ -11,5 +11,6 @@
 @interface NUIStyleParser : NSObject
 
 - (NSMutableDictionary*)getStylesFromFile:(NSString*)content;
+- (NSMutableDictionary*)getStylesFromPath:(NSString*)path;
 
 @end

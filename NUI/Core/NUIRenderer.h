@@ -7,20 +7,32 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NUIFileMonitor.h"
+#import "NUISettings.h"
 #import "NUIBarButtonItemRenderer.h"
 #import "NUIButtonRenderer.h"
 #import "NUILabelRenderer.h"
 #import "NUINavigationBarRenderer.h"
 #import "NUINavigationItemRenderer.h"
 #import "NUISegmentedControlRenderer.h"
+#import "NUISwitchRenderer.h"
 #import "NUITabBarRenderer.h"
 #import "NUITabBarItemRenderer.h"
 #import "NUITableViewCellRenderer.h"
 #import "NUITextFieldRenderer.h"
 #import "NUIViewRenderer.h"
-#import "NUISwitchRenderer.h"
+#import "UIView+NUI.h"
 
-@interface NUIRenderer : NSObject
+@interface NUIRenderer : NSObject {
+    NSMutableArray *renderedObjects;
+    NSMutableArray *renderedObjectIdentifiers;
+}
+
+@property(nonatomic,retain)NSMutableArray *renderedObjects;
+@property(nonatomic,retain)NSMutableArray *renderedObjectIdentifiers;
+
++ (void)render:(UIView*)object;
++ (void)rerender;
 
 + (void)renderBarButtonItem:(UIBarButtonItem*)item;
 + (void)renderBarButtonItem:(UIBarButtonItem*)item withClass:(NSString*)className;

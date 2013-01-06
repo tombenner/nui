@@ -21,13 +21,11 @@
     
     // Set background gradient
     if ([NUISettings hasProperty:@"background-color-top" withClass:className]) {
-        CGRect backgroundViewFrame = cell.contentView.frame;
-        cell.backgroundView = [[UIView alloc] initWithFrame:backgroundViewFrame];
-        CAGradientLayer *gradient = [NUIGraphics
-                                     gradientLayerWithTop:[NUISettings getColor:@"background-color-top" withClass:className] 
-                                     bottom:[NUISettings getColor:@"background-color-bottom" withClass:className]
-                                     frame:cell.bounds];
-        [cell.backgroundView.layer addSublayer:gradient];
+        UIImage *gradientImage = [NUIGraphics
+                                  gradientImageWithTop:[NUISettings getColor:@"background-color-top" withClass:className]
+                                  bottom:[NUISettings getColor:@"background-color-bottom" withClass:className]
+                                  frame:cell.bounds];
+        cell.backgroundView = [[UIImageView alloc] initWithImage:gradientImage];
     }
     
     // Set the labels' background colors to clearColor by default, so they don't show a white

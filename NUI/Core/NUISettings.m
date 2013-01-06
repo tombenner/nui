@@ -10,7 +10,8 @@
 
 @implementation NUISettings
 
-@synthesize settings;
+@synthesize autoUpdatePath;
+@synthesize styles;
 static NUISettings *instance = nil;
 
 + (void)init
@@ -22,12 +23,37 @@ static NUISettings *instance = nil;
 {
     instance = [self getInstance];
     NUIStyleParser *parser = [[NUIStyleParser alloc] init];
-    instance.settings = [parser getStylesFromFile:name];
+    instance.styles = [parser getStylesFromFile:name];
+}
+
++ (void)loadStylesheetByPath:(NSString*)path
+{
+    instance = [self getInstance];
+    NUIStyleParser *parser = [[NUIStyleParser alloc] init];
+    instance.styles = [parser getStylesFromPath:path];
+}
+
++ (BOOL)autoUpdateIsEnabled
+{
+    instance = [self getInstance];
+    return instance.autoUpdatePath != nil;
+}
+
++ (NSString*)autoUpdatePath
+{
+    instance = [self getInstance];
+    return instance.autoUpdatePath;
+}
+
++ (void)setAutoUpdatePath:(NSString*)path
+{
+    instance = [self getInstance];
+    instance.autoUpdatePath = path;
 }
 
 + (BOOL)hasProperty:(NSString*)property withExplicitClass:(NSString*)className
 {
-    NSMutableDictionary *ruleSet = [instance.settings objectForKey:className];
+    NSMutableDictionary *ruleSet = [instance.styles objectForKey:className];
     if (ruleSet == nil) {
         return NO;
     }
@@ -50,7 +76,7 @@ static NUISettings *instance = nil;
 
 + (id)get:(NSString*)property withExplicitClass:(NSString*)className
 {
-    NSMutableDictionary *ruleSet = [instance.settings objectForKey:className];
+    NSMutableDictionary *ruleSet = [instance.styles objectForKey:className];
     return [ruleSet objectForKey:property];
 }
 

@@ -12,13 +12,19 @@
 #import "NUISwizzler.h"
 
 @interface NUISettings : NSObject {
-    NSMutableDictionary *settings;
+    NSString *autoUpdatePath;
+    NSMutableDictionary *styles;
 }
 
-@property(nonatomic,retain)NSMutableDictionary *settings;  
+@property(nonatomic,retain)NSString *autoUpdatePath;
+@property(nonatomic,retain)NSMutableDictionary *styles;
 
 + (void)init;
 + (void)initWithStylesheet:(NSString*)name;
++ (void)loadStylesheetByPath:(NSString*)path;
++ (BOOL)autoUpdateIsEnabled;
++ (NSString*)autoUpdatePath;
++ (void)setAutoUpdatePath:(NSString*)path;
 + (BOOL)hasProperty:(NSString*)property withClass:(NSString*)className;
 + (id)get:(NSString*)property withClass:(NSString*)className;
 + (BOOL)getBoolean:(NSString*)property withClass:(NSString*)className;
