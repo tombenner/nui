@@ -20,6 +20,7 @@
         [bar setBackgroundImage:[NUISettings getImage:@"background-image" withClass:className]];
     }
     
+    int backgroundLayerIndex = [bar.layer.sublayers count] == 1 ? 0 : 1;
     if ([NUISettings hasProperty:@"background-color-top" withClass:className]) {
         CGRect frame = bar.bounds;
         frame.size.width *= 2;
@@ -27,15 +28,19 @@
                                      gradientLayerWithTop:[NUISettings getColor:@"background-color-top" withClass:className]
                                      bottom:[NUISettings getColor:@"background-color-bottom" withClass:className]
                                      frame:frame];
-        int index = [bar.layer.sublayers count] == 1 ? 0 : 1;
-        [bar.layer insertSublayer:gradient atIndex:index];
+        if (bar.nuiIsApplied) {
+            [[bar.layer.sublayers objectAtIndex:backgroundLayerIndex] removeFromSuperlayer];
+        }
+        [bar.layer insertSublayer:gradient atIndex:backgroundLayerIndex];
     } else if ([NUISettings hasProperty:@"background-color" withClass:className]) {
         CGRect frame = bar.bounds;
         frame.size.width *= 2;
         UIImage *colorImage = [NUIGraphics colorImage:[NUISettings getColor:@"background-color" withClass:className] withFrame:frame];
-        
-        UIImageView *colorView = [[UIImageView alloc] initWithImage:colorImage];
-        [bar insertSubview:colorView atIndex:1];
+        CALayer *colorLayer = [NUIGraphics uiImageToCALayer:colorImage];
+        if (bar.nuiIsApplied) {
+            [[bar.layer.sublayers objectAtIndex:backgroundLayerIndex] removeFromSuperlayer];
+        }
+        [bar.layer insertSublayer:colorLayer atIndex:backgroundLayerIndex];
     }
     
     // Apply UITabBarItem's background-image-selected property to bar.selectionIndicatorImage

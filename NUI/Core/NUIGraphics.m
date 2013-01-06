@@ -43,6 +43,17 @@
     return [CIColor colorWithRed:red green:green blue:blue];
 }
 
++ (CALayer*)uiImageToCALayer:(UIImage*)image
+{
+    CALayer*    layer = [CALayer layer];
+    CGFloat nativeWidth = CGImageGetWidth(image.CGImage);
+    CGFloat nativeHeight = CGImageGetHeight(image.CGImage);
+    CGRect      startFrame = CGRectMake(0.0, 0.0, nativeWidth, nativeHeight);
+    layer.contents = (id)image.CGImage;
+    layer.frame = startFrame;
+    return layer;
+}
+
 + (CIImage*)tintCIImage:(CIImage*)image withColor:(CIColor*)color
 {
     CIFilter *monochromeFilter = [CIFilter filterWithName:@"CIColorMonochrome"];

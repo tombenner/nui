@@ -13,6 +13,7 @@
 
 + (UIImage*)backButtonWithColor:(UIColor*)color;
 + (UIImage*)barButtonWithColor:(UIColor*)color;
++ (CALayer*)uiImageToCALayer:(UIImage*)image;
 + (CIImage*)tintCIImage:(CIImage*)image withColor:(CIColor*)color;
 + (UIImage*)colorImage:(UIColor*)color withFrame:(CGRect)frame;
 + (CAGradientLayer*)gradientLayerWithTop:(id)topColor bottom:(id)bottomColor frame:(CGRect)frame;

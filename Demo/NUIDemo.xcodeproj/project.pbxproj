@@ -26,6 +26,7 @@
 		4A55F08816758EDA0056753C /* UITableViewCell+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A55F08716758EDA0056753C /* UITableViewCell+NUI.m */; };
 		4A55F08B16758F360056753C /* UITextField+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A55F08A16758F360056753C /* UITextField+NUI.m */; };
 		4A744B0B1691058C0068F3CF /* ProgrammaticallyCreatedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A744B0A1691058B0068F3CF /* ProgrammaticallyCreatedViewController.m */; };
+		4A744B19169904520068F3CF /* NUIFileMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A744B18169904500068F3CF /* NUIFileMonitor.m */; };
 		4A779342167560FF00B5EE81 /* UIButton+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A779340167560FF00B5EE81 /* UIButton+NUI.m */; };
 		4A7793451675619500B5EE81 /* UITabBar+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7793441675619500B5EE81 /* UITabBar+NUI.m */; };
 		4A7793481675625800B5EE81 /* NUITabBarItemRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7793471675625800B5EE81 /* NUITabBarItemRenderer.m */; };
@@ -95,6 +96,8 @@
 		4A55F08A16758F360056753C /* UITextField+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+NUI.m"; sourceTree = "<group>"; };
 		4A744B09169105890068F3CF /* ProgrammaticallyCreatedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgrammaticallyCreatedViewController.h; sourceTree = "<group>"; };
 		4A744B0A1691058B0068F3CF /* ProgrammaticallyCreatedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgrammaticallyCreatedViewController.m; sourceTree = "<group>"; };
+		4A744B171699044F0068F3CF /* NUIFileMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIFileMonitor.h; sourceTree = "<group>"; };
+		4A744B18169904500068F3CF /* NUIFileMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIFileMonitor.m; sourceTree = "<group>"; };
 		4A779340167560FF00B5EE81 /* UIButton+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+NUI.m"; sourceTree = "<group>"; };
 		4A779341167560FF00B5EE81 /* UIButton+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+NUI.h"; sourceTree = "<group>"; };
 		4A7793431675619500B5EE81 /* UITabBar+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBar+NUI.h"; sourceTree = "<group>"; };
@@ -258,6 +261,8 @@
 				89B940241671418100850A9A /* NUIAppearance.m */,
 				89B940251671418100850A9A /* NUIConverter.h */,
 				89B940261671418100850A9A /* NUIConverter.m */,
+				4A744B171699044F0068F3CF /* NUIFileMonitor.h */,
+				4A744B18169904500068F3CF /* NUIFileMonitor.m */,
 				89B940271671418100850A9A /* NUIGraphics.h */,
 				89B940281671418100850A9A /* NUIGraphics.m */,
 				89B940291671418100850A9A /* NUIRenderer.h */,
@@ -465,6 +470,7 @@
 				4A744B0B1691058C0068F3CF /* ProgrammaticallyCreatedViewController.m in Sources */,
 				B51BC28A169724A3004A38F8 /* UISwitch+NUI.m in Sources */,
 				B51BC28E16972527004A38F8 /* NUISwitchRenderer.m in Sources */,
+				4A744B19169904520068F3CF /* NUIFileMonitor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
