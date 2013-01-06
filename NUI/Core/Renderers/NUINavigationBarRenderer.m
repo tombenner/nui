@@ -46,19 +46,4 @@
     }
 }
 
-+ (void)render:(UINavigationBar*)bar onDrawRect:(CGRect)rect withClass:(NSString*)className
-{
-    if ([NUISettings hasProperty:@"background-color-top" withClass:className]) {
-        CAGradientLayer *gradient = [NUIGraphics
-                                     gradientLayerWithTop:[NUISettings getColor:@"background-color-top" withClass:className]
-                                     bottom:[NUISettings getColor:@"background-color-bottom" withClass:className]
-                                     frame:bar.frame];
-        [gradient renderInContext:UIGraphicsGetCurrentContext()];
-    } else if ([NUISettings hasProperty:@"background-color" withClass:className]) {
-        CGContextRef context = UIGraphicsGetCurrentContext();
-        CGContextSetFillColor(context, CGColorGetComponents([[NUISettings getColor:@"background-color" withClass:className] CGColor]));
-        CGContextFillRect(context, rect);
-    }
-}
-
 @end
