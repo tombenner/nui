@@ -192,14 +192,14 @@
     return [UIImage imageNamed:value];
 }
 
-+ (UITextAlignment)toTextAlignment:(NSString*)value
++ (kTextAlignment)toTextAlignment:(NSString*)value
 {
-    UITextAlignment alignment = UITextAlignmentLeft;
+    kTextAlignment alignment = kTextAlignmentLeft;
     
     if ([value isEqualToString:@"center"]) {
-        alignment =  UITextAlignmentCenter;
+        alignment =   kTextAlignmentCenter;
     } else if ([value isEqualToString:@"right"]) {
-        alignment =  UITextAlignmentRight;
+        alignment =   kTextAlignmentRight;
     }
     
     return alignment;

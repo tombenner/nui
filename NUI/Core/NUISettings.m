@@ -115,7 +115,7 @@ static NUISettings *instance = nil;
     return [NUIConverter toImageFromImageName:[self get:property withClass:className]];
 }
 
-+ (UITextAlignment)getTextAlignment:(NSString*)property withClass:(NSString*)className
++ (kTextAlignment)getTextAlignment:(NSString*)property withClass:(NSString*)className
 {
     return [NUIConverter toTextAlignment:[self get:property withClass:className]];
 }
