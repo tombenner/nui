@@ -53,7 +53,7 @@
         if (cornerRadius < 5) {
             insetLength = 5;
         }
-        insetLength -= 3;
+        insetLength += 3;
         
         if ([NUISettings hasProperty:@"corner-radius" withClass:className]) {
             [layer setCornerRadius:[NUISettings getFloat:@"corner-radius" withClass:className]];
