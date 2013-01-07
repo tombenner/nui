@@ -43,6 +43,15 @@
     return [CIColor colorWithRed:red green:green blue:blue];
 }
 
++ (UIImage*)caLayerToUIImage:(CALayer*)layer
+{
+    UIGraphicsBeginImageContext([layer frame].size);
+    [layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
 + (CALayer*)uiImageToCALayer:(UIImage*)image
 {
     CALayer*    layer = [CALayer layer];

@@ -134,8 +134,12 @@ Below are all of the currently available style classes, their corresponding UI c
 *UIBarButtonItem*
 
 * background-color
+* background-color-top/background-color-bottom
 * background-image
 * background-tint-color
+* border-color
+* border-width
+* corner-radius
 * font-color
 * font-name
 * font-size

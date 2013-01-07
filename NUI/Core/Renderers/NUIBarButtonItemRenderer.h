@@ -11,6 +11,7 @@
 #import "NUIRenderer.h"
 #import "NUISettings.h"
 #import "NUIUtilities.h"
+#import "UIBarButtonItem+NUI.h"
 
 @interface NUIBarButtonItemRenderer : NSObject
 

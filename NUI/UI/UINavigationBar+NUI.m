@@ -33,6 +33,15 @@
 {   
     if (![self.nuiClass isEqualToString:@"none"]) {
         [NUIRenderer renderNavigationBar:self withClass:self.nuiClass];
+        
+        for (UINavigationItem *navigationItem in [self items]) {
+            for (UIBarButtonItem *barButtonItem in [navigationItem leftBarButtonItems]) {
+                [NUIRenderer renderBarButtonItem:barButtonItem];
+            }
+            for (UIBarButtonItem *barButtonItem in [navigationItem rightBarButtonItems]) {
+                [NUIRenderer renderBarButtonItem:barButtonItem];
+            }
+        }
     }
 }
 

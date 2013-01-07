@@ -16,7 +16,7 @@ static NUIRenderer *instance = nil;
 
 + (void)renderBarButtonItem:(UIBarButtonItem*)item
 {
-    [NUIBarButtonItemRenderer render:item withClass:@"Button"];
+    [NUIBarButtonItemRenderer render:item withClass:@"BarButton"];
     [self registerObject:item];
 }
 
