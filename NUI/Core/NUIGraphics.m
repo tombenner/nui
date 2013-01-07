@@ -10,6 +10,61 @@
 
 @implementation NUIGraphics
 
++ (UIImage*)backButtonWithClass:(NSString*)className
+{
+    int borderWidth = 1;
+    int cornerRadius = 7;
+    int width = 50;
+    int height = 32;
+    int dWidth = width - borderWidth;
+    int dHeight = height - borderWidth;
+    int arrowWidth = 14;
+    
+    CAShapeLayer *shape       = [CAShapeLayer layer];
+    shape.frame = CGRectMake(0, 0, width, height);
+    shape.backgroundColor = [[UIColor clearColor] CGColor];
+    shape.fillColor = [[UIColor clearColor] CGColor];
+    shape.strokeColor = [[UIColor clearColor] CGColor];
+    shape.lineWidth = 0;
+    shape.lineCap = kCALineCapRound;
+    shape.lineJoin = kCALineJoinRound;
+    
+    if ([NUISettings hasProperty:@"background-color" withClass:className]) {
+        shape.fillColor = [[NUISettings getColor:@"background-color" withClass:className] CGColor];
+    }
+    if ([NUISettings hasProperty:@"background-color-top" withClass:className]) {
+        shape.fillColor = [[NUISettings getColor:@"background-color-top" withClass:className] CGColor];
+    }
+    
+    if ([NUISettings hasProperty:@"border-color" withClass:className]) {
+        shape.strokeColor = [[NUISettings getColor:@"border-color" withClass:className] CGColor];
+    }
+    
+    if ([NUISettings hasProperty:@"border-width" withClass:className]) {
+        shape.lineWidth = [NUISettings getFloat:@"border-width" withClass:className];
+    }
+    
+    if ([NUISettings hasProperty:@"corner-radius" withClass:className]) {
+        cornerRadius = [NUISettings getFloat:@"corner-radius" withClass:className];
+    }
+    
+    CGMutablePathRef path = CGPathCreateMutable();
+    CGPathMoveToPoint(path, NULL, dWidth, dHeight - cornerRadius);
+    CGPathAddArcToPoint(path, NULL, dWidth, dHeight, dWidth - cornerRadius, dHeight, cornerRadius);
+    CGPathAddLineToPoint(path, NULL, arrowWidth, dHeight);
+    CGPathAddLineToPoint(path, NULL, borderWidth, height/2);
+    CGPathAddLineToPoint(path, NULL, arrowWidth, borderWidth);
+    CGPathAddLineToPoint(path, NULL, dWidth - cornerRadius, borderWidth);
+    CGPathAddArcToPoint(path, NULL, dWidth, borderWidth, dWidth, borderWidth + cornerRadius, cornerRadius);
+    CGPathAddLineToPoint(path, NULL, dWidth, dHeight - cornerRadius);
+    
+    shape.path = path;
+    
+    UIImage *image = [self caLayerToUIImage:shape];
+    image = [image resizableImageWithCapInsets:UIEdgeInsetsMake(0, arrowWidth + 5, 0, cornerRadius + 5) resizingMode:UIImageResizingModeStretch];
+    return image;
+}
+
 + (UIImage*)backButtonWithColor:(UIColor*)color
 {
     CIColor *ciColor = [self uiColorToCIColor:color];
@@ -45,7 +100,7 @@
 
 + (UIImage*)caLayerToUIImage:(CALayer*)layer
 {
-    UIGraphicsBeginImageContext([layer frame].size);
+    UIGraphicsBeginImageContext(layer.frame.size);
     [layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();

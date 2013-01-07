@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <QuartzCore/QuartzCore.h>
+#import "NUISettings.h"
 
 @interface NUIGraphics : NSObject
 
++ (UIImage*)backButtonWithClass:(NSString*)className;
 + (UIImage*)backButtonWithColor:(UIColor*)color;
 + (UIImage*)barButtonWithColor:(UIColor*)color;
 + (UIImage*)caLayerToUIImage:(CALayer*)layer;
