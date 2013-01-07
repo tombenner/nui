@@ -82,7 +82,6 @@ The format should be self-explanatory, but here are some notes:
 
 * Styling variables are defined at the top, but they can be added/modified/removed as you see fit.
 * You can make an element inherit from multiple style classes (see Creating Custom Style Classes below).
-* Style classes beginning with "UI" are applied via UIAppearance, and thus are applied to all elements of that class in the application, regardless of whether they inherit from a NUI class.
 
 To see all of the available properties and values, see the Style Classes and Style Value Types lists below.
 
@@ -135,6 +134,22 @@ Below are all of the currently available style classes, their corresponding UI c
 
 * background-color
 * background-color-top/background-color-bottom
+* background-image
+* background-tint-color
+* border-color
+* border-width
+* corner-radius
+* font-color
+* font-name
+* font-size
+* text-shadow-color
+* text-shadow-offset
+
+#### BarButtonBack
+
+*UIBarButtonItem back button, inherits from BarButton*
+
+* background-color
 * background-image
 * background-tint-color
 * border-color
@@ -293,36 +308,6 @@ The detail label of a *UITableViewCell*
 
 * background-color
 * background-image
-
-### UIAppearance Classes
-
-These classes are applied via UIAppearance, so they are applied to all elements of that class in the application, regardless of whether they inherit from a NUI class.
-
-#### UIBarButtonItem
-
-* background-color
-* background-image
-* background-tint-color
-* font-color
-* font-name
-* font-size
-* text-offset
-* text-shadow-color
-* text-shadow-offset
-
-#### UIBackBarButtonItem
-
-*A back button, inherits from UIBarButtonItem*
-
-* background-color
-* background-image
-* background-tint-color
-
-#### UINavigationBar
-
-* background-color
-* background-image
-* background-tint-color
 
 Style Properties
 ----------------
