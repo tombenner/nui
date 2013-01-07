@@ -80,6 +80,17 @@
         [button setTitleColor:[NUISettings getColor:@"font-color-highlighted" withClass:className] forState:UIControlStateHighlighted];
     }
     
+    // Set text shadow color
+    if ([NUISettings hasProperty:@"text-shadow-color" withClass:className]) {
+        [button setTitleShadowColor:[NUISettings getColor:@"text-shadow-color" withClass:className] forState:UIControlStateNormal];
+    }
+    if ([NUISettings hasProperty:@"text-shadow-color-selected" withClass:className]) {
+        [button setTitleShadowColor:[NUISettings getColor:@"text-shadow-color-selected" withClass:className] forState:UIControlStateSelected];
+    }
+    if ([NUISettings hasProperty:@"text-shadow-color-highlighted" withClass:className]) {
+        [button setTitleShadowColor:[NUISettings getColor:@"text-shadow-color-highlighted" withClass:className] forState:UIControlStateHighlighted];
+    }
+    
     CALayer *layer = [button layer];
     
     // Set corners

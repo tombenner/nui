@@ -184,6 +184,8 @@ Below are all of the currently available style classes, their corresponding UI c
 * text-alpha
 * text-auto-fit
 * text-shadow-color
+* text-shadow-color-highlighted
+* text-shadow-color-selected
 * text-shadow-offset
 
 #### Label
