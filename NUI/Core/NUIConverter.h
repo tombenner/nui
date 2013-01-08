@@ -8,6 +8,18 @@
 
 #import <objc/message.h>
 
+#ifdef __IPHONE_6_0 // iOS6 and later
+#   define kTextAlignment           NSTextAlignment
+#   define kTextAlignmentCenter     NSTextAlignmentCenter
+#   define kTextAlignmentLeft       NSTextAlignmentLeft
+#   define kTextAlignmentRight      NSTextAlignmentRight
+#else // older versions
+#   define kTextAlignment           UITextAlignment
+#   define kTextAlignmentCenter     UITextAlignmentCenter
+#   define kTextAlignmentLeft       UITextAlignmentLeft
+#   define kTextAlignmentRight      UITextAlignmentRight
+#endif
+
 @interface NUIConverter : NSObject
 
 + (BOOL)toBoolean:(id)value;
@@ -20,7 +32,7 @@
 + (UIColor*)toColorFromImageName:(NSString*)value;
 + (UIImage*)toImageFromColorName:(NSString*)value;
 + (UIImage*)toImageFromImageName:(NSString*)value;
-+ (UITextAlignment)toTextAlignment:(NSString*)value;
++ (kTextAlignment)toTextAlignment:(NSString*)value;
 + (UIControlContentHorizontalAlignment)toControlContentHorizontalAlignment:(NSString*)value;
 + (UIControlContentVerticalAlignment)toControlContentVerticalAlignment:(NSString*)value;
 @end
