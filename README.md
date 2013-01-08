@@ -135,6 +135,7 @@ Below are all of the currently available style classes, their corresponding UI c
 * background-color
 * background-color-top/background-color-bottom
 * background-image
+* background-image-insets
 * background-tint-color
 * border-color
 * border-width
@@ -151,6 +152,7 @@ Below are all of the currently available style classes, their corresponding UI c
 
 * background-color
 * background-image
+* background-image-insets
 * background-tint-color
 * border-color
 * border-width
@@ -168,8 +170,11 @@ Below are all of the currently available style classes, their corresponding UI c
 * background-color
 * background-color-top/background-color-bottom
 * background-image
+* background-image-insets
 * background-image-highlighted
+* background-image-highlighted-insets
 * background-image-selected
+* background-image-selected-insets
 * border-color
 * border-width
 * corner-radius
@@ -210,6 +215,7 @@ Below are all of the currently available style classes, their corresponding UI c
 * background-color
 * background-color-top/background-color-bottom
 * background-image
+* background-image-insets
 * background-tint-color
 * font-color
 * font-name
@@ -235,7 +241,9 @@ Below are all of the currently available style classes, their corresponding UI c
 
 * background-color
 * off-image
+* off-image-insets
 * on-image
+* on-image-insets
 * on-tint-color
 * thumb-tint-color
 * tint-color
@@ -247,6 +255,7 @@ Below are all of the currently available style classes, their corresponding UI c
 * background-color
 * background-color-top/background-color-bottom
 * background-image
+* background-image-insets
 * background-tint-color
 
 #### TabBarItem
@@ -254,6 +263,7 @@ Below are all of the currently available style classes, their corresponding UI c
 *UITabBarItem*
 
 * background-image-selected
+* background-image-selected-insets
 * font-color
 * font-name
 * font-size
@@ -297,6 +307,7 @@ The detail label of a *UITableViewCell*
 
 * background-color
 * background-image
+* background-image-insets
 * border-style
 * border-width
 * font-name
@@ -317,8 +328,11 @@ Style Properties
 * **background-color** - Color
 * **background-color-top**/**background-color-bottom** - Gradient
 * **background-image** - Image
+* **background-image-insets** - Box
 * **background-image-highlighted** - Image
+* **background-image-highlighted-insets** - Box
 * **background-image-selected** - Image
+* **background-image-selected-insets** - Box
 * **background-tint-color** - Color
 * **border-color** - Color
 * **border-style** - BorderStyle
