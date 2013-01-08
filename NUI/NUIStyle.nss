@@ -37,20 +37,11 @@ Button {
     height: 37;
     corner-radius: 7;
 }
-
 LargeButton {
     height: 50;
     font-size: 20;
     corner-radius: 10;
 }
-
-ImageButton {
-    height: 50;
-    font-size: 20;
-    background-image: NUIBarButtonTemplate.png;
-    background-image-insets: 5 5 5 5;
-}
-
 SmallButton {
     height: 24;
     font-size: 14;
