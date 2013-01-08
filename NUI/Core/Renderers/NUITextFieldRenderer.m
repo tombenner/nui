@@ -38,7 +38,12 @@
     
     // Set background image
     if ([NUISettings hasProperty:@"background-image" withClass:className]) {
-        [textField setBackground:[NUISettings getImage:@"background-image" withClass:className]];
+        UIImage* image = [NUISettings getImage:@"background-image" withClass:className];
+        if ([NUISettings hasProperty:@"background-image-insets" withClass:className]) {
+            UIEdgeInsets insets = [NUISettings getEdgeInsets:@"background-image-insets" withClass:className];
+            image = [image resizableImageWithCapInsets:insets];
+        }
+        [textField setBackground:image];
     }
     
     if ([NUISettings hasProperty:@"vertical-align" withClass:className]) {
