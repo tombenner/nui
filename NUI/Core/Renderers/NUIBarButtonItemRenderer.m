@@ -12,9 +12,13 @@
 
 + (void)render:(UIBarButtonItem*)item withClass:(NSString*)className
 {
-    
     if ([NUISettings hasProperty:@"background-image" withClass:className]) {
-        [item setBackgroundImage:[NUISettings getImage:@"background-image" withClass:className] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+        UIImage* image = [NUISettings getImage:@"background-image" withClass:className];
+        if ([NUISettings hasProperty:@"background-image-insets" withClass:className]) {
+            UIEdgeInsets insets = [NUISettings getEdgeInsets:@"background-image-insets" withClass:className];
+            image = [image resizableImageWithCapInsets:insets];
+        }
+        [item setBackgroundImage:image forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     } else if ([NUISettings hasProperty:@"background-tint-color" withClass:className]) {
         [item setTintColor:[NUISettings getColor:@"background-tint-color" withClass:className]];
     } else if ([NUISettings hasProperty:@"background-color" withClass:className] ||
