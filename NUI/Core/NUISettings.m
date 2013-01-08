@@ -138,7 +138,13 @@ static NUISettings *instance = nil;
 
 + (UIImage*)getImage:(NSString*)property withClass:(NSString*)className
 {
-    return [NUIConverter toImageFromImageName:[self get:property withClass:className]];
+    UIImage *image = [NUIConverter toImageFromImageName:[self get:property withClass:className]];
+    NSString *insetsProperty = [NSString stringWithFormat:@"%@%@", property, @"-insets"];
+    if ([self hasProperty:insetsProperty withClass:className]) {
+        UIEdgeInsets insets = [self getEdgeInsets:insetsProperty withClass:className];
+        image = [image resizableImageWithCapInsets:insets];
+    }
+    return image;
 }
 
 + (kTextAlignment)getTextAlignment:(NSString*)property withClass:(NSString*)className

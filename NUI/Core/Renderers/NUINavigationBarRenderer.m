@@ -17,12 +17,7 @@
     }
     
     if ([NUISettings hasProperty:@"background-image" withClass:className]) {
-        UIImage* image = [NUISettings getImage:@"background-image" withClass:className];
-        if ([NUISettings hasProperty:@"background-image-insets" withClass:className]) {
-            UIEdgeInsets insets = [NUISettings getEdgeInsets:@"background-image-insets" withClass:className];
-            image = [image resizableImageWithCapInsets:insets];
-        }
-        [bar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
+        [bar setBackgroundImage:[NUISettings getImage:@"background-image" withClass:className] forBarMetrics:UIBarMetricsDefault];
     }
     
     if ([NUISettings hasProperty:@"background-color-top" withClass:className]) {

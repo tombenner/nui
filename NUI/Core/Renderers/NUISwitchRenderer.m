@@ -17,21 +17,11 @@
     }
     
     if ([NUISettings hasProperty:@"off-image" withClass:className]) {
-        UIImage* image = [NUISettings getImage:@"off-image" withClass:className];
-        if ([NUISettings hasProperty:@"off-image-insets" withClass:className]) {
-            UIEdgeInsets insets = [NUISettings getEdgeInsets:@"off-image-insets" withClass:className];
-            image = [image resizableImageWithCapInsets:insets];
-        }
-        [uiSwitch setOffImage:image];
+        [uiSwitch setOffImage:[NUISettings getImage:@"off-image" withClass:className]];
     }
     
-    if ([NUISettings hasProperty:@"on-image" withClass:className]) {       
-        UIImage* image = [NUISettings getImage:@"on-image" withClass:className];
-        if ([NUISettings hasProperty:@"on-image-insets" withClass:className]) {
-            UIEdgeInsets insets = [NUISettings getEdgeInsets:@"on-image-insets" withClass:className];
-            image = [image resizableImageWithCapInsets:insets];
-        }
-        [uiSwitch setOffImage:image];
+    if ([NUISettings hasProperty:@"on-image" withClass:className]) {
+        [uiSwitch setOnImage:[NUISettings getImage:@"on-image" withClass:className]];
     }
     
     if ([NUISettings hasProperty:@"on-tint-color" withClass:className]) {

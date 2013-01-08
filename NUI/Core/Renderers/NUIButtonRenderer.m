@@ -53,28 +53,13 @@
     
     // Set background image
     if ([NUISettings hasProperty:@"background-image" withClass:className]) {
-        UIImage* image = [NUISettings getImage:@"background-image" withClass:className];
-        if ([NUISettings hasProperty:@"background-image-insets" withClass:className]) {
-            UIEdgeInsets insets = [NUISettings getEdgeInsets:@"background-image-insets" withClass:className];
-            image = [image resizableImageWithCapInsets:insets];
-        }
-        [button setBackgroundImage:image forState:UIControlStateNormal];
+        [button setBackgroundImage:[NUISettings getImage:@"background-image" withClass:className] forState:UIControlStateNormal];
     }
     if ([NUISettings hasProperty:@"background-image-selected" withClass:className]) {
-        UIImage* image = [NUISettings getImage:@"background-image-selected" withClass:className];
-        if ([NUISettings hasProperty:@"background-image-selected-insets" withClass:className]) {
-            UIEdgeInsets insets = [NUISettings getEdgeInsets:@"background-image-selected-insets" withClass:className];
-            image = [image resizableImageWithCapInsets:insets];
-        }
-        [button setBackgroundImage:image forState:UIControlStateSelected];
+        [button setBackgroundImage:[NUISettings getImage:@"background-image-selected" withClass:className] forState:UIControlStateSelected];
     }
     if ([NUISettings hasProperty:@"background-image-highlighted" withClass:className]) {
-        UIImage* image = [NUISettings getImage:@"background-image-highlighted" withClass:className];
-        if ([NUISettings hasProperty:@"background-image-highlighted-insets" withClass:className]) {
-            UIEdgeInsets insets = [NUISettings getEdgeInsets:@"background-image-highlighted-insets" withClass:className];
-            image = [image resizableImageWithCapInsets:insets];
-        }
-        [button setBackgroundImage:image forState:UIControlStateHighlighted];
+        [button setBackgroundImage:[NUISettings getImage:@"background-image-highlighted" withClass:className] forState:UIControlStateHighlighted];
     }
     
     [NUIRenderer renderLabel:button.titleLabel withClass:className];

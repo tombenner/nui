@@ -17,12 +17,7 @@
     }
     
     if ([NUISettings hasProperty:@"background-image" withClass:className]) {
-        UIImage* image = [NUISettings getImage:@"background-image" withClass:className];
-        if ([NUISettings hasProperty:@"background-image-insets" withClass:className]) {
-            UIEdgeInsets insets = [NUISettings getEdgeInsets:@"background-image-insets" withClass:className];
-            image = [image resizableImageWithCapInsets:insets];
-        }
-        [bar setBackgroundImage:image];
+        [bar setBackgroundImage:[NUISettings getImage:@"background-image" withClass:className]];
     }
     
     if ([NUISettings hasProperty:@"background-color-top" withClass:className]) {
@@ -44,12 +39,7 @@
         NSArray *firstItemClasses = [firstItem.nuiClass componentsSeparatedByString: @":"];
         for (NSString *itemClass in firstItemClasses) {
             if ([NUISettings hasProperty:@"background-image-selected" withClass:itemClass]) {
-                UIImage* image = [NUISettings getImage:@"background-image-selected" withClass:className];
-                if ([NUISettings hasProperty:@"background-image-selected-insets" withClass:className]) {
-                    UIEdgeInsets insets = [NUISettings getEdgeInsets:@"background-image-selected-insets" withClass:className];
-                    image = [image resizableImageWithCapInsets:insets];
-                }
-                [bar setSelectionIndicatorImage:image];
+                [bar setSelectionIndicatorImage:[NUISettings getImage:@"background-image-selected" withClass:itemClass]];
             }
         }
     }
