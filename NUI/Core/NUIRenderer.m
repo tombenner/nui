@@ -103,6 +103,18 @@ static NUIRenderer *instance = nil;
 }
 
 
++ (void)renderSlider:(UISlider*)uiSlider
+{
+    [NUISliderRenderer render:uiSlider withClass:@"Slider"];
+    [self registerObject:uiSlider];
+}
+
++ (void)renderSlider:(UISlider*)uiSlider withClass:(NSString*)className
+{
+    [NUISliderRenderer render:uiSlider withClass:className];
+    [self registerObject:uiSlider];
+}
+
 
 + (void)renderSwitch:(UISwitch*)uiSwitch
 {
@@ -159,6 +171,18 @@ static NUIRenderer *instance = nil;
 }
 
 
++ (void)renderToolbar:(UIToolbar*)bar
+{
+    [NUIToolbarRenderer render:bar withClass:@"Toolbar"];
+    [self registerObject:bar];
+}
+
++ (void)renderToolbar:(UIToolbar*)bar withClass:(NSString*)className
+{
+    [NUIToolbarRenderer render:bar withClass:className];
+    [self registerObject:bar];
+}
+
 
 + (void)renderTextField:(UITextField*)textField
 {
@@ -209,10 +233,12 @@ static NUIRenderer *instance = nil;
                                    [UINavigationBar class], @"renderNavigationBar",
                                    [UINavigationItem class], @"renderNavigationItem",
                                    [UISegmentedControl class], @"renderSegmentedControl",
+                                   [UISlider class], @"renderSlider",
                                    [UISwitch class], @"renderSwitch",
                                    [UITabBar class], @"renderTabBar",
                                    [UITabBarItem class], @"renderTabBarItem",
                                    [UITableViewCell class], @"renderTableViewCell",
+                                   [UIToolbar class], @"renderToolbar",
                                    [UITextField class], @"renderTextField",
                                    [UIButton class], @"renderButton",
                                    [UILabel class], @"renderLabel",

@@ -19,6 +19,9 @@
     if ([NUISettings hasProperty:@"background-image" withClass:className]) {
         [bar setBackgroundImage:[NUISettings getImage:@"background-image" withClass:className] forBarMetrics:UIBarMetricsDefault];
     }
+    if ([NUISettings hasProperty:@"shadow-image" withClass:className]) {
+        [bar setShadowImage:[NUISettings getImage:@"shadow-image" withClass:className]];
+    }
     
     if ([NUISettings hasProperty:@"background-color-top" withClass:className]) {
         CGRect frame = bar.bounds;

@@ -38,6 +38,15 @@
     if ([NUISettings hasProperty:@"background-image" withClass:className]) {
         [[uiClass appearance] setBackButtonBackgroundImage:[NUISettings getImage:@"background-image" withClass:className] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     }
+    if ([NUISettings hasProperty:@"background-image-selected" withClass:className]) {
+        [[uiClass appearance] setBackButtonBackgroundImage:[NUISettings getImage:@"background-image-selected" withClass:className] forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
+    }
+    if ([NUISettings hasProperty:@"background-image-highlighted" withClass:className]) {
+        [[uiClass appearance] setBackButtonBackgroundImage:[NUISettings getImage:@"background-image-highlighted" withClass:className] forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
+    }
+    if ([NUISettings hasProperty:@"background-image-disabled" withClass:className]) {
+        [[uiClass appearance] setBackButtonBackgroundImage:[NUISettings getImage:@"background-image-disabled" withClass:className] forState:UIControlStateDisabled barMetrics:UIBarMetricsDefault];
+    }
     
 }
 
