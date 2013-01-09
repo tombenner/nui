@@ -171,6 +171,8 @@ Below are all of the currently available style classes, their corresponding UI c
 * background-color-top/background-color-bottom
 * background-image
 * background-image-insets
+* background-image-disabled
+* background-image-disabled-insets
 * background-image-highlighted
 * background-image-highlighted-insets
 * background-image-selected
@@ -179,6 +181,7 @@ Below are all of the currently available style classes, their corresponding UI c
 * border-width
 * corner-radius
 * font-color
+* font-color-disabled
 * font-color-highlighted
 * font-color-selected
 * font-name
@@ -192,6 +195,8 @@ Below are all of the currently available style classes, their corresponding UI c
 * text-shadow-color-highlighted
 * text-shadow-color-selected
 * text-shadow-offset
+* title-insets
+* content-insets
 
 #### Label
 
@@ -220,6 +225,7 @@ Below are all of the currently available style classes, their corresponding UI c
 * font-color
 * font-name
 * font-size
+* shadow-image
 * text-shadow-color
 * text-shadow-offset
 
@@ -234,6 +240,16 @@ Below are all of the currently available style classes, their corresponding UI c
 * font-size
 * text-shadow-color
 * text-shadow-offset
+
+#### Slider
+
+*UISlider*
+
+* minimum-value-image-color
+* maximum-value-image-color
+* minimum-track-tint-color
+* maximum-track-tint-color
+* thumb-tint-color
 
 #### Switch
 
@@ -301,6 +317,18 @@ The detail label of a *UITableViewCell*
 * text-shadow-color
 * text-shadow-offset
 
+#### Toolbar
+
+*UIToolbar*
+
+* background-tint-color
+* background-image-landscape-top
+* background-image-landscape-bottom
+* background-image-portrait-top
+* background-image-portrait-bottom
+* shadow-image-top
+* shadow-image-bottom
+
 #### TextField
 
 *UITextField*
@@ -328,7 +356,17 @@ Style Properties
 * **background-color** - Color
 * **background-color-top**/**background-color-bottom** - Gradient
 * **background-image** - Image
+* **background-image-landscape-top** - Image
+* **background-image-landscape-top-insets** - Box
+* **background-image-landscape-bottom** - Image
+* **background-image-landscape-bottom-insets** - Box
+* **background-image-portrait-top** - Image
+* **background-image-portrait-top-insets** - Box
+* **background-image-portrait-bottom** - Image
+* **background-image-portrait-bottom-insets** - Box
 * **background-image-insets** - Box
+* **background-image-disabled** - Image
+* **background-image-disabled-insets** - Box
 * **background-image-highlighted** - Image
 * **background-image-highlighted-insets** - Box
 * **background-image-selected** - Image
@@ -344,6 +382,15 @@ Style Properties
 * **font-size** - Number
 * **height** - Number
 * **padding** - Box
+* **shadow-image-top** - Image
+* **shadow-image-top-insets** - Box
+* **shadow-image-bottom** - Image
+* **shadow-image-bottom-insets** - Box
+* **minimum-value-image-color** - Color
+* **maximum-value-image-color** - Color
+* **minimum-track-tint-color** - Color
+* **maximum-track-tint-color** - Color
+* **thumb-tint-color** - Color
 * **text-align** - TextAlign
 * **text-alpha** - Number
 * **text-auto-fit** - Boolean

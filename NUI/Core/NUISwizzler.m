@@ -18,12 +18,14 @@
     [self swizzleDidMoveToWindow:[UINavigationBar class]];
     [self swizzleDidMoveToWindow:[UINavigationItem class]];
     [self swizzleDidMoveToWindow:[UISegmentedControl class]];
+    [self swizzleDidMoveToWindow:[UISlider class]];
     [self swizzleDidMoveToWindow:[UISwitch class]];
     [self swizzleDidMoveToWindow:[UITabBar class]];
     [self swizzleDidMoveToWindow:[UITableViewCell class]];
     [self swizzleDidMoveToWindow:[UITextField class]];
+    [self swizzleDidMoveToWindow:[UIToolbar class]];
     [self swizzleDidMoveToWindow:[UIView class]];
-    
+
     // didMoveToWindow isn't called on UITabBarItems, so we need to use awakeFromNib instead.
     [self swizzleAwakeFromNib:[UITabBarItem class]];
 }
