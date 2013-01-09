@@ -100,46 +100,74 @@
 
 + (UIColor*)toColor:(NSString*)value
 {
-    
-    if ([value isEqualToString:@"clear"]) {
-        return [UIColor clearColor];
+    // Look at UIColor selectors for a matching selector.
+    // Name matches can take the form of 'colorname' (matching selectors like +redColor with 'red').
+    SEL selector = NSSelectorFromString([NSString stringWithFormat:@"%@Color", value]);
+    if (selector) {
+        if ([[UIColor class] respondsToSelector:selector]) {
+            // [[UIColor class] performSelector:selector] would be better here, but it causes
+            // a warning: "PerformSelector may cause a leak because its selector is unknown"
+            return objc_msgSend([UIColor class], selector);
+        }
     }
     
-    NSString *cString = [[value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
+    // Remove all whitespace.
+    NSString *cString = [[[value componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]
+                                 componentsJoinedByString:@""]
+                                 uppercaseString];
     
-    // String should be at least 6 characters
-    if ([cString length] < 6) return nil;
+    NSArray *hexStrings = [NUIConverter getCapturedStrings:cString
+                                               withPattern:@"(?:0x|#)([0-9A-F]{6})"];
+    NSArray *csStrings = [NUIConverter getCapturedStrings:cString
+                                              withPattern:@"(RGB|RGBA|HSL|HSLA)\\((\\d{1,3}|[0-9.]+),(\\d{1,3}|[0-9.]+),(\\d{1,3}|[0-9.]+)(?:,(\\d{1,3}|[0-9.]+))?\\)"];
     
-    // Strip 0X if it appears
-    if ([cString hasPrefix:@"0X"]) cString = [cString substringFromIndex:2];
+    UIColor *color = nil;
     
-    // Strip # if it appears
-    if ([cString hasPrefix:@"#"]) cString = [cString substringFromIndex:1];
+    if (hexStrings) {        
+        unsigned int c;
+        [[NSScanner scannerWithString:[hexStrings objectAtIndex:1]] scanHexInt:&c];
+        color = [UIColor colorWithRed:(float)((c >> 16) & 0xFF) / 255.0f
+                                green:(float)((c >>  8) & 0xFF) / 255.0f
+                                 blue:(float)((c >>  0) & 0xFF) / 255.0f
+                                alpha:1.0f];
+    } else if (csStrings) {
+        BOOL isRGB = [[csStrings objectAtIndex:1] hasPrefix:@"RGB"];
+        BOOL isAlpha = [[csStrings objectAtIndex:1] hasSuffix:@"A"];
+        
+        // Color space with alpha specified but no alpha provided.
+        if (isAlpha && [[csStrings objectAtIndex:5] isEqual:[NSNull null]])
+            return nil;
     
-    if ([cString length] != 6) return nil;
+        CGFloat a = isAlpha ?
+                    [NUIConverter parseColorComponent:[csStrings objectAtIndex:5]] :
+                    1.0f;
+        
+        if (isRGB) {
+            color = [UIColor colorWithRed:[NUIConverter parseColorComponent:[csStrings objectAtIndex:2]]
+                                    green:[NUIConverter parseColorComponent:[csStrings objectAtIndex:3]]
+                                     blue:[NUIConverter parseColorComponent:[csStrings objectAtIndex:4]]
+                                    alpha:a];
+        } else {
+            color = [UIColor colorWithHue:[NUIConverter parseColorComponent:[csStrings objectAtIndex:2]]
+                               saturation:[NUIConverter parseColorComponent:[csStrings objectAtIndex:3]]
+                               brightness:[NUIConverter parseColorComponent:[csStrings objectAtIndex:4]]
+                                    alpha:a];
+        }
+    }
     
-    // Separate into r, g, b substrings
-    NSRange range;
-    range.location = 0;
-    range.length = 2;
-    NSString *rString = [cString substringWithRange:range];
-    
-    range.location = 2;
-    NSString *gString = [cString substringWithRange:range];
-    
-    range.location = 4;
-    NSString *bString = [cString substringWithRange:range];
-    
-    // Scan values
-    unsigned int r, g, b;
-    [[NSScanner scannerWithString:rString] scanHexInt:&r];
-    [[NSScanner scannerWithString:gString] scanHexInt:&g];
-    [[NSScanner scannerWithString:bString] scanHexInt:&b];
-    
-    return [UIColor colorWithRed:((float) r / 255.0f)
-                           green:((float) g / 255.0f)
-                            blue:((float) b / 255.0f)
-                           alpha:1.0f];
+    return color;
+}
+
+/** Parses a color component in a color expression. Values containing
+ *  periods (.) are treated as unscaled floats. Integer values
+ *  are normalized by 255.
+ */
++ (CGFloat)parseColorComponent:(NSString *)s {
+    if ([s rangeOfString:@"."].location != NSNotFound) {
+        return [s floatValue];
+    } else {
+        return [s floatValue] / 255.0f;
+    }
 }
 
 + (UIColor*)toColorFromImageName:(NSString*)value
@@ -162,6 +190,72 @@
 + (UIImage*)toImageFromImageName:(NSString*)value
 {
     return [UIImage imageNamed:value];
+}
+
++ (kTextAlignment)toTextAlignment:(NSString*)value
+{
+    kTextAlignment alignment = kTextAlignmentLeft;
+    
+    if ([value isEqualToString:@"center"]) {
+        alignment =   kTextAlignmentCenter;
+    } else if ([value isEqualToString:@"right"]) {
+        alignment =   kTextAlignmentRight;
+    }
+    
+    return alignment;
+}
+
++ (UIControlContentHorizontalAlignment)toControlContentHorizontalAlignment:(NSString*)value
+{
+    UIControlContentHorizontalAlignment alignment = UIControlContentHorizontalAlignmentLeft;
+    
+    if ([value isEqualToString:@"center"]) {
+        alignment =  UIControlContentHorizontalAlignmentCenter;
+    } else if ([value isEqualToString:@"right"]) {
+        alignment =  UIControlContentHorizontalAlignmentRight;
+    } else if ([value isEqualToString:@"fill"]) {
+        alignment =  UIControlContentHorizontalAlignmentFill;
+    }
+    
+    return alignment;
+}
+
++ (UIControlContentVerticalAlignment)toControlContentVerticalAlignment:(NSString*)value
+{
+    UIControlContentVerticalAlignment alignment = UIControlContentVerticalAlignmentTop;
+    
+    if ([value isEqualToString:@"center"]) {
+        alignment =  UIControlContentVerticalAlignmentCenter;
+    } else if ([value isEqualToString:@"bottom"]) {
+        alignment =  UIControlContentVerticalAlignmentBottom;
+    } else if ([value isEqualToString:@"fill"]) {
+        alignment =  UIControlContentVerticalAlignmentFill;
+    }
+    
+    return alignment;
+}
+
+/** Matches the given content against the regular expression pattern, extracting
+ *  any captured groups into an NSArray. Unmatched captured groups are represented
+ *  by NSNull instances in the returned array.
+ */
++ (NSArray *)getCapturedStrings:(NSString *)content withPattern:(NSString *)pattern {
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:nil];
+    NSTextCheckingResult *result = [regex firstMatchInString:content options:0 range:NSMakeRange(0, [content length])];
+    
+    if (!result)
+        return nil;
+    
+    NSMutableArray *capturedStrings = [NSMutableArray array];
+    for (NSUInteger i = 0; i <= regex.numberOfCaptureGroups; i++) {
+        NSRange capturedRange = [result rangeAtIndex:i];
+        if (capturedRange.location != NSNotFound) {
+            [capturedStrings insertObject:[content substringWithRange:capturedRange] atIndex:i];
+        } else {
+            [capturedStrings insertObject:[NSNull null] atIndex:i];
+        }
+    }
+    return [NSArray arrayWithArray:capturedStrings];
 }
 
 @end

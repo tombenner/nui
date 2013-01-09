@@ -16,6 +16,13 @@
 - (NSMutableDictionary*)getStylesFromFile:(NSString*)fileName
 {
     NSString* path = [[NSBundle mainBundle] pathForResource:fileName ofType:@"nss"];
+    NSAssert1(path != nil, @"File \"%@\" does not exist", fileName);
+    NSString* content = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    return [self consolidateRuleSets:[self getRuleSets:content] withTopLevelDeclarations:[self getTopLevelDeclarations:content]];
+}
+
+- (NSMutableDictionary*)getStylesFromPath:(NSString*)path
+{
     NSString* content = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     return [self consolidateRuleSets:[self getRuleSets:content] withTopLevelDeclarations:[self getTopLevelDeclarations:content]];
 }

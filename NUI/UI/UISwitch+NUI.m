@@ -1,29 +1,35 @@
 //
-//  UITableViewCell+NUI.m
+//  UISwitch+NUI.m
 //  NUIDemo
 //
-//  Created by Tom Benner on 12/9/12.
-//  Copyright (c) 2012 Tom Benner. All rights reserved.
+//  Created by Benjamin Clayton on 04/01/2013.
+//  Copyright (c) 2013 Tom Benner. All rights reserved.
 //
 
-#import "UITableViewCell+NUI.h"
+#import "UISwitch+NUI.h"
 
-@implementation UITableViewCell (NUI)
+@implementation UISwitch (NUI)
 
 @dynamic nuiClass;
+@dynamic nuiIsApplied;
 
 - (void)initNUI
 {
     if (!self.nuiClass) {
-        self.nuiClass = @"TableCell";
+        self.nuiClass = @"Switch";
     }
 }
 
 - (void)applyNUI
 {
-    [self initNUI];
-    if (![self.nuiClass isEqualToString:@"none"]) {
-        [NUIRenderer renderTableViewCell:self withClass:self.nuiClass];
+    // Styling shouldn't be applied to inherited classes
+    if ([self class] == [UISwitch class]) {
+        [self initNUI];
+        if (![self.nuiClass isEqualToString:@"none"]) {
+            if ([self class] == [UISwitch class]) {
+                [NUIRenderer renderSwitch:self withClass:self.nuiClass];
+            }
+        }
     }
     self.nuiIsApplied = [NSNumber numberWithBool:YES];
 }

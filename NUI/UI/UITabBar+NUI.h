@@ -13,5 +13,8 @@
 @interface UITabBar (NUI)
 
 @property (nonatomic, retain) NSString* nuiClass;
+@property (nonatomic, retain) NSNumber* nuiIsApplied;
+
+- (void)applyNUI;
 
 @end

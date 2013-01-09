@@ -46,6 +46,9 @@ NUI lets you:
 * Define variables like `@primaryFontName` or `@myBackgroundColor` (a la Sass/LESS)
 * Avoid digging through documentation to find how to change specific UI elements' styling
 * Quickly create custom style classes
+* Modify an application's styling while it is running
+
+Some exciting features are on the horizon, and contributions are very encouraged. Please see the [FAQ](#how-can-i-contribute).
 
 Installation
 ------------
@@ -59,17 +62,15 @@ NUI can also be installed using [CocoaPods](http://cocoapods.org/) (its pod name
 Usage
 -----
 
-After dropping in NUI, you can modify your app's styling by simply editing NUIStyle.nss.
+After dropping in NUI, you can modify your app's styling by simply editing NUIStyle.nss. If you want to avoid modifying NUI's files, you can copy NUIStyle.nss into your app, rename it (e.g. MyTheme.nss), then replace `[NUISettings init]` with `[NUISettings initWithStylesheet:@"MyTheme"];` (step 4 in Installation).
 
-Due to the nature of UIKit's usage of simple UI components within more complex UI components, NUI doesn't style some UIKit components in some rare cases. If you need to apply styling for these cases, you can simply use NUIRenderer:
+Due to the nature of UIKit's usage of simple UI components within more complex UI components, NUI doesn't style some UIKit components in some very rare cases. If you ever need to apply styling for these cases, you can simply use NUIRenderer:
 
     [NUIRenderer renderButton:myButton];
 
-If you want to specify a style class in this call, you can do this like so:
+You can specify a custom style class, too:
 
     [NUIRenderer renderButton:myButton withClass:@"LargeButton"]
-
-To make `LargeButton` inherit from `Button`, use `@"Button:LargeButton"`.
 
 *N.B. NUI used to require that you make your elements inherit from a NUI class, but this is no longer the case. See "Migrating From Subclasses To Categories" below for details.*
 
@@ -81,21 +82,38 @@ The format should be self-explanatory, but here are some notes:
 
 * Styling variables are defined at the top, but they can be added/modified/removed as you see fit.
 * You can make an element inherit from multiple style classes (see Creating Custom Style Classes below).
-* Rules beginning with "UI" are applied via UIAppearance, and thus are applied to all elements of that class in the application, regardless of whether they inherit from a NUI class.
 
 To see all of the available properties and values, see the Style Classes and Style Value Types lists below.
 
 ### Creating Custom Style Classes
 
-To give an element a custom style class (e.g. `LargeButton`), set a runtime attribute for it in Interface Builder (in Identity Inspector > User Defined Runtime Attributes, click `+`). Set the Key Path to `nuiClass`, Type to `String`, and Value to `LargeButton`:
+You can give elements custom style classes (e.g. `LargeButton`), and make those classes inherit from one or more other style classes by using the form `Button:LargeButton`. To bypass NUI's styling for a particular element, set the class to `none`. You can set an element's style class either in Interface Builder or programmatically: 
+
+#### Setting an Element's Style Class in Interface Builder
+
+To do this, you'll set a runtime attribute for the element (in Identity Inspector > User Defined Runtime Attributes, click `+`). Set the Key Path to `nuiClass`, Type to `String`, and Value to `LargeButton` (or `Button:MyButton`:
 
 [![](https://raw.github.com/tombenner/nui/master/Screenshots/SettingARuntimeAttribute.png)](https://raw.github.com/tombenner/nui/master/Screenshots/SettingARuntimeAttribute.png)
 
-If you want it to inherit styling rules from another style class, like `Button`, set the value to `Button:LargeButton`.
+#### Setting an Element's Style Class Programmatically
 
-To bypass NUI's styling for a particular element, simply set the value to `none`.
+To do this, you'll want to import the NUI category for the element. If you're styling a UIButton, you'd import:
+
+    #import "UIButton+NUI.h"
+
+You can then set `nuiClass` on your element:
+
+    myButton.nuiClass = @"LargeButton";
 
 *N.B. A style class can inherit from an indefinite number of style rules, so if you want to create groups of style rules, you can set `nuiClass` to something like `@"MyStyleGroup1:MyStyleGroup2:MyButton"`.*
+
+#### Modifying Styling While The Application Is Running
+
+To do this, add the following line after `[NUISettings init];` in [main.m](https://github.com/tombenner/nui/blob/master/Demo/NUIDemo/main.m), replacing `@"/path/to/Style.nss"` with the absolute file path of your .nss file (e.g. `/Users/myusername/projects/ios/MyApp/Style.nss`):
+
+    [NUISettings setAutoUpdatePath:@"/path/to/Style.nss"];
+
+Now, whenever you modify and save your .nss file while the app is running, the new changes will be applied instantaneously, without any need to rebuild the app. This can drastically speed up the process of styling. You'll want to remove this line when you create a release build.
 
 ### Creating Custom Themes
 
@@ -115,8 +133,30 @@ Below are all of the currently available style classes, their corresponding UI c
 *UIBarButtonItem*
 
 * background-color
+* background-color-top/background-color-bottom
 * background-image
+* background-image-insets
 * background-tint-color
+* border-color
+* border-width
+* corner-radius
+* font-color
+* font-name
+* font-size
+* text-shadow-color
+* text-shadow-offset
+
+#### BarButtonBack
+
+*UIBarButtonItem back button, inherits from BarButton*
+
+* background-color
+* background-image
+* background-image-insets
+* background-tint-color
+* border-color
+* border-width
+* corner-radius
 * font-color
 * font-name
 * font-size
@@ -130,29 +170,39 @@ Below are all of the currently available style classes, their corresponding UI c
 * background-color
 * background-color-top/background-color-bottom
 * background-image
+* background-image-insets
 * background-image-highlighted
+* background-image-highlighted-insets
+* background-image-selected
+* background-image-selected-insets
 * border-color
 * border-width
 * corner-radius
 * font-color
 * font-color-highlighted
+* font-color-selected
 * font-name
 * font-size
 * height
 * padding
+* text-align
 * text-alpha
 * text-auto-fit
 * text-shadow-color
+* text-shadow-color-highlighted
+* text-shadow-color-selected
 * text-shadow-offset
 
 #### Label
 
 *UILabel*
 
+* background-color
 * font-color
 * font-color-highlighted
 * font-name
 * font-size
+* text-align
 * text-alpha
 * text-auto-fit
 * text-shadow-color
@@ -165,6 +215,7 @@ Below are all of the currently available style classes, their corresponding UI c
 * background-color
 * background-color-top/background-color-bottom
 * background-image
+* background-image-insets
 * background-tint-color
 * font-color
 * font-name
@@ -184,6 +235,19 @@ Below are all of the currently available style classes, their corresponding UI c
 * text-shadow-color
 * text-shadow-offset
 
+#### Switch
+
+*UISwitch*
+
+* background-color
+* off-image
+* off-image-insets
+* on-image
+* on-image-insets
+* on-tint-color
+* thumb-tint-color
+* tint-color
+
 #### TabBar
 
 *UITabBar*
@@ -191,7 +255,15 @@ Below are all of the currently available style classes, their corresponding UI c
 * background-color
 * background-color-top/background-color-bottom
 * background-image
+* background-image-insets
 * background-tint-color
+
+#### TabBarItem
+
+*UITabBarItem*
+
+* background-image-selected
+* background-image-selected-insets
 * font-color
 * font-name
 * font-size
@@ -209,6 +281,7 @@ Below are all of the currently available style classes, their corresponding UI c
 * font-color-highlighted
 * font-name
 * font-size
+* text-align
 * text-alpha
 * text-auto-fit
 * text-shadow-color
@@ -222,6 +295,7 @@ The detail label of a *UITableViewCell*
 * font-color-highlighted
 * font-name
 * font-size
+* text-align
 * text-alpha
 * text-auto-fit
 * text-shadow-color
@@ -231,10 +305,15 @@ The detail label of a *UITableViewCell*
 
 *UITextField*
 
+* background-color
+* background-image
+* background-image-insets
 * border-style
+* border-width
 * font-name
 * font-size
 * height
+* vertical-align
 
 #### View
 
@@ -243,43 +322,17 @@ The detail label of a *UITableViewCell*
 * background-color
 * background-image
 
-### UIAppearance Classes
-
-These classes are applied via UIAppearance, so they are applied to all elements of that class in the application, regardless of whether they inherit from a NUI class.
-
-#### UIBarButtonItem
-
-* background-color
-* background-image
-* background-tint-color
-* font-color
-* font-name
-* font-size
-* text-offset
-* text-shadow-color
-* text-shadow-offset
-
-#### UIBackBarButtonItem
-
-*A back button, inherits from UIBarButtonItem*
-
-* background-color
-* background-image
-* background-tint-color
-
-#### UINavigationBar
-
-* background-color
-* background-image
-* background-tint-color
-
 Style Properties
 ----------------
 
 * **background-color** - Color
 * **background-color-top**/**background-color-bottom** - Gradient
 * **background-image** - Image
+* **background-image-insets** - Box
 * **background-image-highlighted** - Image
+* **background-image-highlighted-insets** - Box
+* **background-image-selected** - Image
+* **background-image-selected-insets** - Box
 * **background-tint-color** - Color
 * **border-color** - Color
 * **border-style** - BorderStyle
@@ -291,11 +344,13 @@ Style Properties
 * **font-size** - Number
 * **height** - Number
 * **padding** - Box
+* **text-align** - TextAlign
 * **text-alpha** - Number
 * **text-auto-fit** - Boolean
 * **text-offset** - Offset
 * **text-shadow-color** - Color
 * **text-shadow-offset** - Offset
+* **vertical-align** - VerticalAlign
 
 Style Value Types
 -----------------
@@ -303,27 +358,29 @@ Style Value Types
 * **Boolean** - A boolean (`true` or `false`)
 * **BorderStyle** - A border style, as rendered by a UITextBorderStyle. Accepted values are `none`, `line`, `bezel`, and `rounded`.
 * **Box** - A series of 1 to 4 integers that specify the widths of a box's edges. Interpreted like CSS's `padding` and `margin` properties (top, right, bottom, left). Examples: `15` (a box with a width of 15 for each edge), `10 15` (a box with a width of 10 for the top and bottom edges and 15 for the right and left edges)
-* **Color** - A hex color (e.g. `#FF0000`) or `clear` for a `[UIColor clearColor]`
+* **Color** - A hex color (e.g. `#FF0000`); a rgb, rgba, hsl, or hsla expression (e.g. `rgb(255,0,0)` or `hsla(0.5, 0, 1.0, 0.5)`); or a color name that UIColor has a related method name for (e.g. `red`, `yellow`, `clear`). If `[UIColor redColor]` is supported, then `red` is supported.
 * **FontName** - A font name (see available values [here](http://iosfonts.com/))
 * **Gradient** - Two Colors that will create a vertical gradient. background-color-top and background-color-bottom need to be defined in separate .nss properties.
 * **Image** - A name of an image, as used in `[UIImage imageNamed:name]` (e.g. `MyImage.png`).
 * **Number** - A number (e.g. `-1`, `4.5`)
 * **Offset** - Two numbers comprising the horizontal and vertical values of an offset (e.g. `-1,1`)
+* **TextAlign** - A text alignment (e.g. `left`, `right`, `center`)
+* **VerticalAlign** - A vertical alignment (e.g. `top`, `center`, `bottom`, `fill`)
 
 FAQ
 ---
 
-#### Can I contribute new UI elements, style properties, themes, etc?
+#### How can I contribute?
 
-Absolutely! NUI covers a lot of ground, but there's still a large number of elements and properties that are still unsupported. If you've made a NUIStyle.nss theme that you really like, it'd be excellent to add it to this repo.
-
-#### What versions of iOS are supported?
-
-NUI has been tested on both iOS 5.1 and iOS 6.0.
+Contributers are extremely appreciated! NUI covers a lot of ground, but there are still a number of elements and properties that are unsupported. Adding support for new properties is easy (take a look at [NUIButtonRenderer](https://github.com/tombenner/nui/blob/master/NUI/Core/Renderers/NUIButtonRenderer.m) for examples). There are also a number of exciting big features that on the [Roadmap](https://github.com/tombenner/nui/wiki/Roadmap) that are up for grabs. We're also always looking for new themes, so feel free to add those, too!
 
 #### What advantages does this have over UIAppearance?
 
-UIAppearance is alright, but it's not intuitive, time-consuming, and it doesn't support either the granularity or number of style modifications that NUI does. Styling should be abstracted in a simple style sheet with simple property definitions; you shouldn't have to stare at long, nested method calls and have to dig through Apple's documentation every time you want to make a small styling modification.
+UIAppearance is alright, but it's unintuitive, time-consuming, and it doesn't support either the granularity or number of style modifications that NUI does. Styling should be abstracted in a simple style sheet with simple property definitions; you shouldn't have to stare at long, nested method calls and have to dig through Apple's documentation every time you want to make a small styling modification.
+
+#### I have an app that uses NUI; can I add a link to it here?
+
+Sure! Feel free to add it to [Apps Using NUI](https://github.com/tombenner/nui/wiki/Apps-Using-NUI).
 
 #### Do you know about Pixate?
 

@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <QuartzCore/QuartzCore.h>
+#import "NUIGraphics.h"
 #import "NUISettings.h"
 
 @interface NUITextFieldRenderer : NSObject

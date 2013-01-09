@@ -12,8 +12,10 @@
 
 + (void)render:(UIButton*)button withClass:(NSString*)className
 {
-    // TODO: Look into why the button seems to be rendered twice (once in the native iOS style)
-    if ([button.layer.sublayers count] == 3) {
+    // UIButtonTypeRoundedRect's first two sublayers contain its background and border, which
+    // need to be hidden for NUI's rendering to be displayed correctly. Ideally we would switch
+    // over to a UIButtonTypeCustom, but this appears to be impossible.
+    if (button.buttonType == UIButtonTypeRoundedRect) {
         [button.layer.sublayers[0] setOpacity:0.0f];
         [button.layer.sublayers[1] setOpacity:0.0f];
     }
@@ -38,17 +40,23 @@
     
     // Set background gradient
     if ([NUISettings hasProperty:@"background-color-top" withClass:className]) {
-        CAGradientLayer *gradient = [NUIGraphics
+        CAGradientLayer *gradientLayer = [NUIGraphics
                                      gradientLayerWithTop:[NUISettings getColor:@"background-color-top" withClass:className] 
                                      bottom:[NUISettings getColor:@"background-color-bottom" withClass:className]
                                      frame:button.bounds];
-        int index = [button.layer.sublayers count] == 1 ? 0 : 1;
-        [button.layer insertSublayer:gradient atIndex:index];
+        int backgroundLayerIndex = [button.layer.sublayers count] == 1 ? 0 : 1;
+        if (button.nuiIsApplied) {
+            [[button.layer.sublayers objectAtIndex:backgroundLayerIndex] removeFromSuperlayer];
+        }
+        [button.layer insertSublayer:gradientLayer atIndex:backgroundLayerIndex];
     }
     
     // Set background image
     if ([NUISettings hasProperty:@"background-image" withClass:className]) {
         [button setBackgroundImage:[NUISettings getImage:@"background-image" withClass:className] forState:UIControlStateNormal];
+    }
+    if ([NUISettings hasProperty:@"background-image-selected" withClass:className]) {
+        [button setBackgroundImage:[NUISettings getImage:@"background-image-selected" withClass:className] forState:UIControlStateSelected];
     }
     if ([NUISettings hasProperty:@"background-image-highlighted" withClass:className]) {
         [button setBackgroundImage:[NUISettings getImage:@"background-image-highlighted" withClass:className] forState:UIControlStateHighlighted];
@@ -56,12 +64,31 @@
     
     [NUIRenderer renderLabel:button.titleLabel withClass:className];
     
+    // Set text align
+    if ([NUISettings hasProperty:@"text-align" withClass:className]) {
+        [button setContentHorizontalAlignment:[NUISettings getControlContentHorizontalAlignment:@"text-align" withClass:className]];
+    }
+    
     // Set font color
     if ([NUISettings hasProperty:@"font-color" withClass:className]) {
         [button setTitleColor:[NUISettings getColor:@"font-color" withClass:className] forState:UIControlStateNormal];
     }
+    if ([NUISettings hasProperty:@"font-color-selected" withClass:className]) {
+        [button setTitleColor:[NUISettings getColor:@"font-color-selected" withClass:className] forState:UIControlStateSelected];
+    }
     if ([NUISettings hasProperty:@"font-color-highlighted" withClass:className]) {
         [button setTitleColor:[NUISettings getColor:@"font-color-highlighted" withClass:className] forState:UIControlStateHighlighted];
+    }
+    
+    // Set text shadow color
+    if ([NUISettings hasProperty:@"text-shadow-color" withClass:className]) {
+        [button setTitleShadowColor:[NUISettings getColor:@"text-shadow-color" withClass:className] forState:UIControlStateNormal];
+    }
+    if ([NUISettings hasProperty:@"text-shadow-color-selected" withClass:className]) {
+        [button setTitleShadowColor:[NUISettings getColor:@"text-shadow-color-selected" withClass:className] forState:UIControlStateSelected];
+    }
+    if ([NUISettings hasProperty:@"text-shadow-color-highlighted" withClass:className]) {
+        [button setTitleShadowColor:[NUISettings getColor:@"text-shadow-color-highlighted" withClass:className] forState:UIControlStateHighlighted];
     }
     
     CALayer *layer = [button layer];

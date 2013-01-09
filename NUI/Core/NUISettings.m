@@ -10,25 +10,50 @@
 
 @implementation NUISettings
 
-@synthesize settings;
+@synthesize autoUpdatePath;
+@synthesize styles;
 static NUISettings *instance = nil;
 
 + (void)init
 {
-    instance = [self getInstance];
+    [self initWithStylesheet:@"NUIStyle"];
 }
 
-+ (void)initWithStylesheet:(NSString *)name
++ (void)initWithStylesheet:(NSString*)name
 {
     instance = [self getInstance];
     NUIStyleParser *parser = [[NUIStyleParser alloc] init];
-    instance.settings = [parser getStylesFromFile:name];
+    instance.styles = [parser getStylesFromFile:name];
+}
+
++ (void)loadStylesheetByPath:(NSString*)path
+{
+    instance = [self getInstance];
+    NUIStyleParser *parser = [[NUIStyleParser alloc] init];
+    instance.styles = [parser getStylesFromPath:path];
+}
+
++ (BOOL)autoUpdateIsEnabled
+{
+    instance = [self getInstance];
+    return instance.autoUpdatePath != nil;
+}
+
++ (NSString*)autoUpdatePath
+{
+    instance = [self getInstance];
+    return instance.autoUpdatePath;
+}
+
++ (void)setAutoUpdatePath:(NSString*)path
+{
+    instance = [self getInstance];
+    instance.autoUpdatePath = path;
 }
 
 + (BOOL)hasProperty:(NSString*)property withExplicitClass:(NSString*)className
 {
-    instance = [self getInstance];
-    NSMutableDictionary *ruleSet = [instance.settings objectForKey:className];
+    NSMutableDictionary *ruleSet = [instance.styles objectForKey:className];
     if (ruleSet == nil) {
         return NO;
     }
@@ -51,8 +76,7 @@ static NUISettings *instance = nil;
 
 + (id)get:(NSString*)property withExplicitClass:(NSString*)className
 {
-    instance = [self getInstance];
-    NSMutableDictionary *ruleSet = [instance.settings objectForKey:className];
+    NSMutableDictionary *ruleSet = [instance.styles objectForKey:className];
     return [ruleSet objectForKey:property];
 }
 
@@ -114,7 +138,28 @@ static NUISettings *instance = nil;
 
 + (UIImage*)getImage:(NSString*)property withClass:(NSString*)className
 {
-    return [NUIConverter toImageFromImageName:[self get:property withClass:className]];
+    UIImage *image = [NUIConverter toImageFromImageName:[self get:property withClass:className]];
+    NSString *insetsProperty = [NSString stringWithFormat:@"%@%@", property, @"-insets"];
+    if ([self hasProperty:insetsProperty withClass:className]) {
+        UIEdgeInsets insets = [self getEdgeInsets:insetsProperty withClass:className];
+        image = [image resizableImageWithCapInsets:insets];
+    }
+    return image;
+}
+
++ (kTextAlignment)getTextAlignment:(NSString*)property withClass:(NSString*)className
+{
+    return [NUIConverter toTextAlignment:[self get:property withClass:className]];
+}
+
++ (UIControlContentHorizontalAlignment)getControlContentHorizontalAlignment:(NSString*)property withClass:(NSString*)className
+{
+    return [NUIConverter toControlContentHorizontalAlignment:[self get:property withClass:className]];
+}
+
++ (UIControlContentVerticalAlignment)getControlContentVerticalAlignment:(NSString*)property withClass:(NSString*)className
+{
+    return [NUIConverter toControlContentVerticalAlignment:[self get:property withClass:className]];
 }
 
 + (NSArray*)getClasses:(NSString*)className
@@ -129,7 +174,6 @@ static NUISettings *instance = nil;
         if(instance == nil) {
             [[NUISwizzler new] swizzleAll];
             instance = [NUISettings new];
-            [self initWithStylesheet:@"NUIStyle"];
         }
     }
     

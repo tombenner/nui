@@ -22,9 +22,27 @@
         [textField setFont:[UIFont systemFontOfSize:[NUISettings getFloat:fontSizeProperty withClass:className]]];
     }
     
-    // Set border style   
-    if ([NUISettings hasProperty:@"border-color" withClass:className]) {
-        [textField setBorderStyle:[NUISettings getBorderStyle:@"border-color" withClass:className]];
+    // Set background color
+    if ([NUISettings hasProperty:@"background-color" withClass:className]) {
+        [textField setBackgroundColor:[NUISettings getColor:@"background-color" withClass:className]];
+    }
+    
+    // Set background gradient
+    if ([NUISettings hasProperty:@"background-color-top" withClass:className]) {
+        UIImage *gradient = [NUIGraphics
+                                     gradientImageWithTop:[NUISettings getColor:@"background-color-top" withClass:className]
+                                     bottom:[NUISettings getColor:@"background-color-bottom" withClass:className]
+                                     frame:textField.bounds];
+        [textField setBackground:gradient];
+    }
+    
+    // Set background image
+    if ([NUISettings hasProperty:@"background-image" withClass:className]) {
+        [textField setBackground:[NUISettings getImage:@"background-image" withClass:className]];
+    }
+    
+    if ([NUISettings hasProperty:@"vertical-align" withClass:className]) {
+        [textField setContentVerticalAlignment:[NUISettings getControlContentVerticalAlignment:@"vertical-align" withClass:className]];
     }
     
     // Set height
@@ -33,6 +51,18 @@
         CGSize originalSize = buttonFrame.size;
         buttonFrame.size = CGSizeMake(originalSize.width, [NUISettings getFloat:@"height" withClass: className]);
         textField.frame = buttonFrame;
+    }
+    
+    // Set border style
+    if ([NUISettings hasProperty:@"border-style" withClass:className]) {
+        [textField setBorderStyle:[NUISettings getBorderStyle:@"border-style" withClass:className]];
+    }
+    
+    CALayer *layer = [textField layer];
+    
+    // Set border width
+    if ([NUISettings hasProperty:@"border-width" withClass:className]) {
+        [layer setBorderWidth:[NUISettings getFloat:@"border-width" withClass:className]];
     }
 }
 

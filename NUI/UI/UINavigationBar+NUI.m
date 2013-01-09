@@ -19,18 +19,38 @@
     }
 }
 
-- (void)override_awakeFromNib
+- (void)applyNUI
 {
     [self initNUI];
-    [self awakeFromNibNUI];
-    [self override_awakeFromNib];
-}
-
-- (void)awakeFromNibNUI
-{   
     if (![self.nuiClass isEqualToString:@"none"]) {
         [NUIRenderer renderNavigationBar:self withClass:self.nuiClass];
+        
+        for (UINavigationItem *navigationItem in [self items]) {
+            for (UIBarButtonItem *barButtonItem in [navigationItem leftBarButtonItems]) {
+                [barButtonItem applyNUI];
+            }
+            for (UIBarButtonItem *barButtonItem in [navigationItem rightBarButtonItems]) {
+                [barButtonItem applyNUI];
+            }
+        }
     }
+    self.nuiIsApplied = [NSNumber numberWithBool:YES];
+}
+
+- (void)override_didMoveToWindow
+{
+    if (!self.nuiIsApplied) {
+        [self applyNUI];
+    }
+    [self override_didMoveToWindow];
+}
+
+- (void)setNuiIsApplied:(NSNumber*)value {
+    objc_setAssociatedObject(self, "nuiIsApplied", value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSNumber*)nuiIsApplied {
+    return objc_getAssociatedObject(self, "nuiIsApplied");
 }
 
 - (void)setNuiClass:(NSString*)value {

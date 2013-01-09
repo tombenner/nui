@@ -19,23 +19,26 @@
     }
 }
 
-- (void)override_awakeFromNib
+- (void)applyNUI
 {
     // Styling shouldn't be applied to inherited classes or to labels within other views
     // (e.g. UITableViewCellContentView)
     if ([self class] == [UILabel class] &&
         [[self superview] class] == [UIView class]) {
         [self initNUI];
-        [self awakeFromNibNUI];
+        if (![self.nuiClass isEqualToString:@"none"]) {
+            [NUIRenderer renderLabel:self withClass:self.nuiClass];
+        }
     }
-    [self override_awakeFromNib];
+    self.nuiIsApplied = [NSNumber numberWithBool:YES];
 }
 
-- (void)awakeFromNibNUI
+- (void)override_didMoveToWindow
 {
-    if (![self.nuiClass isEqualToString:@"none"]) {
-        [NUIRenderer renderLabel:self withClass:self.nuiClass];
+    if (!self.nuiIsApplied) {
+        [self applyNUI];
     }
+    [self override_didMoveToWindow];
 }
 
 - (void)setNuiClass:(NSString*)value {
@@ -44,6 +47,14 @@
 
 - (NSString*)nuiClass {
     return objc_getAssociatedObject(self, "nuiClass");
+}
+
+- (void)setNuiIsApplied:(NSNumber*)value {
+    objc_setAssociatedObject(self, "nuiIsApplied", value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSNumber*)nuiIsApplied {
+    return objc_getAssociatedObject(self, "nuiIsApplied");
 }
 
 @end

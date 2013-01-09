@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "NUIGraphics.h"
 #import "NUISettings.h"
+#import "UITabBarItem+NUI.h"
 
 @interface NUITabBarRenderer : NSObject
 

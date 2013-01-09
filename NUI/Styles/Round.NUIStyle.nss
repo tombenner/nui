@@ -15,6 +15,16 @@
 @primaryBorderColor: #A2A2A2;
 @primaryBorderWidth: 1;
 
+BarButton {
+    background-color: @primaryBackgroundColor;
+    border-color: @primaryBorderColor;
+    border-width: @primaryBorderWidth;
+    corner-radius: 7;
+    font-name: @secondaryFontNameBold;
+    font-color: @primaryFontColor;
+    font-size: 13;
+    text-shadow-color: clear;
+}
 Button {
     background-color-top: #FFFFFF;
     background-color-bottom: @primaryBackgroundColorBottom;
@@ -64,9 +74,14 @@ SegmentedControl {
     font-color: @primaryFontColor;
     text-shadow-color: clear;
 }
+Switch {
+    on-tint-color: @primaryBackgroundTintColor;
+}
 TabBar {
     background-color-top: @primaryBackgroundColorTop;
     background-color-bottom: @primaryBackgroundColorBottom;
+}
+TabBarItem {
     font-name: @secondaryFontName;
     font-color: @primaryFontColor;
     font-size: 18;
@@ -85,9 +100,11 @@ TableCellDetail {
     font-color: @secondaryFontColor;
 }
 TextField {
-    font-name: @inputFontName;
     height: 37;
+    font-name: @inputFontName;
     font-size: 18;
+    border-style: rounded;
+    vertical-align: center;
 }
 LargeTextField {
     height: 50;
@@ -97,11 +114,4 @@ LargeTextField {
 }
 View {
     background-image: NUIViewBackground.png;
-}
-UIBarButtonItem {
-    background-tint-color: @primaryBackgroundTintColor;
-    font-name: @secondaryFontNameBold;
-    font-color: @primaryFontColor;
-    text-shadow-color: clear;
-    font-size: 13;
 }

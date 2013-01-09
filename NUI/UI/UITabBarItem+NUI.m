@@ -15,22 +15,25 @@
 - (void)initNUI
 {
     if (!self.nuiClass) {
-        self.nuiClass = @"TabBar";
+        self.nuiClass = @"TabBarItem";
     }
+}
+
+- (void)applyNUI
+{
+    [self initNUI];
+    if (![self.nuiClass isEqualToString:@"none"]) {
+        [NUIRenderer renderTabBarItem:self withClass:self.nuiClass];
+    }
+    self.nuiIsApplied = [NSNumber numberWithBool:YES];
 }
 
 - (void)override_awakeFromNib
 {
-    [self initNUI];
-    [self awakeFromNibNUI];
-    [self override_awakeFromNib];
-}
-
-- (void)awakeFromNibNUI
-{
-    if (![self.nuiClass isEqualToString:@"none"]) {
-        [NUIRenderer renderTabBarItem:self withClass:self.nuiClass];
+    if (!self.nuiIsApplied) {
+        [self applyNUI];
     }
+    [self override_awakeFromNib];
 }
 
 - (void)setNuiClass:(NSString*)value {
@@ -39,6 +42,14 @@
 
 - (NSString*)nuiClass {
     return objc_getAssociatedObject(self, "nuiClass");
+}
+
+- (void)setNuiIsApplied:(NSNumber*)value {
+    objc_setAssociatedObject(self, "nuiIsApplied", value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSNumber*)nuiIsApplied {
+    return objc_getAssociatedObject(self, "nuiIsApplied");
 }
 
 @end

@@ -22,42 +22,21 @@
     
     if ([NUISettings hasProperty:@"background-color-top" withClass:className]) {
         CGRect frame = bar.bounds;
-        frame.size.width *= 2;
-        UIImage *gradient = [NUIGraphics
+        UIImage *gradientImage = [NUIGraphics
                              gradientImageWithTop:[NUISettings getColor:@"background-color-top" withClass:className]
                              bottom:[NUISettings getColor:@"background-color-bottom" withClass:className]
                              frame:frame];
-        
-        UIImageView *gradientView = [[UIImageView alloc] initWithImage:gradient];
-        [bar.subviews[0] insertSubview:gradientView atIndex:1];
+        [bar setBackgroundImage:gradientImage forBarMetrics:UIBarMetricsDefault];
     } else if ([NUISettings hasProperty:@"background-color" withClass:className]) {
         CGRect frame = bar.bounds;
-        frame.size.width *= 2;
         UIImage *colorImage = [NUIGraphics colorImage:[NUISettings getColor:@"background-color" withClass:className] withFrame:frame];
-        
-        UIImageView *colorView = [[UIImageView alloc] initWithImage:colorImage];
-        [bar.subviews[0] insertSubview:colorView atIndex:1];
+        [bar setBackgroundImage:colorImage forBarMetrics:UIBarMetricsDefault];
     }
     
     NSDictionary *titleTextAttributes = [NUIUtilities titleTextAttributesForClass:className];
     
     if ([[titleTextAttributes allKeys] count] > 0) {
         bar.titleTextAttributes = titleTextAttributes;
-    }
-}
-
-+ (void)render:(UINavigationBar*)bar onDrawRect:(CGRect)rect withClass:(NSString*)className
-{
-    if ([NUISettings hasProperty:@"background-color-top" withClass:className]) {
-        CAGradientLayer *gradient = [NUIGraphics
-                                     gradientLayerWithTop:[NUISettings getColor:@"background-color-top" withClass:className]
-                                     bottom:[NUISettings getColor:@"background-color-bottom" withClass:className]
-                                     frame:bar.frame];
-        [gradient renderInContext:UIGraphicsGetCurrentContext()];
-    } else if ([NUISettings hasProperty:@"background-color" withClass:className]) {
-        CGContextRef context = UIGraphicsGetCurrentContext();
-        CGContextSetFillColor(context, CGColorGetComponents([[NUISettings getColor:@"background-color" withClass:className] CGColor]));
-        CGContextFillRect(context, rect);
     }
 }
 

@@ -30,20 +30,26 @@
 
     if ([NUISettings hasProperty:@"background-color-top" withClass:className]) {
         CGRect frame = bar.bounds;
-        frame.size.width *= 2;
-        CAGradientLayer *gradient = [NUIGraphics
-                                     gradientLayerWithTop:[NUISettings getColor:@"background-color-top" withClass:className]
-                                     bottom:[NUISettings getColor:@"background-color-bottom" withClass:className]
-                                     frame:frame];
-        int index = [bar.layer.sublayers count] == 1 ? 0 : 1;
-        [bar.layer insertSublayer:gradient atIndex:index];
+        UIImage *gradientImage = [NUIGraphics
+                                  gradientImageWithTop:[NUISettings getColor:@"background-color-top" withClass:className]
+                                  bottom:[NUISettings getColor:@"background-color-bottom" withClass:className]
+                                  frame:frame];
+        [bar setBackgroundImage:gradientImage];
     } else if ([NUISettings hasProperty:@"background-color" withClass:className]) {
         CGRect frame = bar.bounds;
-        frame.size.width *= 2;
         UIImage *colorImage = [NUIGraphics colorImage:[NUISettings getColor:@"background-color" withClass:className] withFrame:frame];
-        
-        UIImageView *colorView = [[UIImageView alloc] initWithImage:colorImage];
-        [bar insertSubview:colorView atIndex:1];
+        [bar setBackgroundImage:colorImage];
+    }
+    
+    // Apply UITabBarItem's background-image-selected property to bar.selectionIndicatorImage
+    if ([[bar items] count] > 0) {
+        UITabBarItem *firstItem = [[bar items] objectAtIndex:0];
+        NSArray *firstItemClasses = [firstItem.nuiClass componentsSeparatedByString: @":"];
+        for (NSString *itemClass in firstItemClasses) {
+            if ([NUISettings hasProperty:@"background-image-selected" withClass:itemClass]) {
+                [bar setSelectionIndicatorImage:[NUISettings getImage:@"background-image-selected" withClass:itemClass]];
+            }
+        }
     }
 }
 
