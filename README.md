@@ -322,11 +322,13 @@ The detail label of a *UITableViewCell*
 
 *UIToolbar*
 
+* background-color
+* background-image-top
+* background-image-bottom
+* background-image-top-landscape
+* background-image-bottom-landscape
 * background-tint-color
-* background-image-landscape-top
-* background-image-landscape-bottom
-* background-image-portrait-top
-* background-image-portrait-bottom
+* shadow-image
 * shadow-image-top
 * shadow-image-bottom
 
@@ -357,14 +359,6 @@ Style Properties
 * **background-color** - Color
 * **background-color-top**/**background-color-bottom** - Gradient
 * **background-image** - Image
-* **background-image-landscape-top** - Image
-* **background-image-landscape-top-insets** - Box
-* **background-image-landscape-bottom** - Image
-* **background-image-landscape-bottom-insets** - Box
-* **background-image-portrait-top** - Image
-* **background-image-portrait-top-insets** - Box
-* **background-image-portrait-bottom** - Image
-* **background-image-portrait-bottom-insets** - Box
 * **background-image-insets** - Box
 * **background-image-disabled** - Image
 * **background-image-disabled-insets** - Box
@@ -372,6 +366,10 @@ Style Properties
 * **background-image-highlighted-insets** - Box
 * **background-image-selected** - Image
 * **background-image-selected-insets** - Box
+* **background-image-top** - Image
+* **background-image-bottom** - Image
+* **background-image-top-landscape** - Image
+* **background-image-bottom-landscape** - Image
 * **background-tint-color** - Color
 * **border-color** - Color
 * **border-style** - BorderStyle
@@ -383,14 +381,13 @@ Style Properties
 * **font-size** - Number
 * **height** - Number
 * **padding** - Box
-* **shadow-image-top** - Image
-* **shadow-image-top-insets** - Box
-* **shadow-image-bottom** - Image
-* **shadow-image-bottom-insets** - Box
 * **minimum-value-image** - Image
 * **maximum-value-image** - Image
 * **minimum-track-tint-color** - Color
 * **maximum-track-tint-color** - Color
+* **shadow-image** - Image
+* **shadow-image-top** - Image
+* **shadow-image-bottom** - Image
 * **thumb-image** - Image
 * **thumb-tint-color** - Color
 * **text-align** - TextAlign
