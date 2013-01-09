@@ -10,9 +10,6 @@
 
 @implementation UISwitch (NUI)
 
-@dynamic nuiClass;
-@dynamic nuiIsApplied;
-
 - (void)initNUI
 {
     if (!self.nuiClass) {
@@ -40,22 +37,6 @@
         [self applyNUI];
     }
     [self override_didMoveToWindow];
-}
-
-- (void)setNuiClass:(NSString*)value {
-    objc_setAssociatedObject(self, "nuiClass", value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (NSString*)nuiClass {
-    return objc_getAssociatedObject(self, "nuiClass");
-}
-
-- (void)setNuiIsApplied:(NSNumber*)value {
-    objc_setAssociatedObject(self, "nuiIsApplied", value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (NSNumber*)nuiIsApplied {
-    return objc_getAssociatedObject(self, "nuiIsApplied");
 }
 
 @end

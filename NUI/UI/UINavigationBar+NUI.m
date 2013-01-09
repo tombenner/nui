@@ -10,8 +10,6 @@
 
 @implementation UINavigationBar (NUI)
 
-@dynamic nuiClass;
-
 - (void)initNUI
 {
     if (!self.nuiClass) {
@@ -43,22 +41,6 @@
         [self applyNUI];
     }
     [self override_didMoveToWindow];
-}
-
-- (void)setNuiIsApplied:(NSNumber*)value {
-    objc_setAssociatedObject(self, "nuiIsApplied", value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (NSNumber*)nuiIsApplied {
-    return objc_getAssociatedObject(self, "nuiIsApplied");
-}
-
-- (void)setNuiClass:(NSString*)value {
-    objc_setAssociatedObject(self, "nuiClass", value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (NSString*)nuiClass {
-    return objc_getAssociatedObject(self, "nuiClass");
 }
 
 @end
