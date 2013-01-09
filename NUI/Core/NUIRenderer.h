@@ -15,10 +15,12 @@
 #import "NUINavigationBarRenderer.h"
 #import "NUINavigationItemRenderer.h"
 #import "NUISegmentedControlRenderer.h"
+#import "NUISliderRenderer.h"
 #import "NUISwitchRenderer.h"
 #import "NUITabBarRenderer.h"
 #import "NUITabBarItemRenderer.h"
 #import "NUITableViewCellRenderer.h"
+#import "NUIToolbarRenderer.h"
 #import "NUITextFieldRenderer.h"
 #import "NUIViewRenderer.h"
 #import "UIView+NUI.h"
@@ -53,6 +55,9 @@
 + (void)renderSegmentedControl:(UISegmentedControl*)control;
 + (void)renderSegmentedControl:(UISegmentedControl*)control withClass:(NSString*)className;
 
++ (void)renderSlider:(UISlider*)uiSlider;
++ (void)renderSlider:(UISlider*)uiSlider withClass:(NSString*)className;
+
 + (void)renderSwitch:(UISwitch*)uiSwitch;
 + (void)renderSwitch:(UISwitch*)uiSwitch withClass:(NSString*)className;
 
@@ -64,6 +69,9 @@
 
 + (void)renderTableViewCell:(UITableViewCell*)cell;
 + (void)renderTableViewCell:(UITableViewCell*)cell withClass:(NSString*)className;
+
++ (void)renderToolbar:(UIToolbar*)bar;
++ (void)renderToolbar:(UIToolbar*)bar withClass:(NSString*)className;
 
 + (void)renderTextField:(UITextField*)textField;
 + (void)renderTextField:(UITextField*)textField withClass:(NSString*)className;
