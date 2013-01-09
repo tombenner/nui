@@ -18,12 +18,11 @@
 + (void)render:(UILabel*)label withClass:(NSString*)className withSuffix:(NSString*)suffix
 {
     NSString *property;
-    NSString *fontSizeProperty = @"font-size";
-    
+
     if (![suffix isEqualToString:@""]) {
         className = [NSString stringWithFormat:@"%@%@", className, suffix];
     }
-    
+
     property = @"font-color";
     if ([NUISettings hasProperty:property withClass:className]) {
         label.textColor = [NUISettings getColor:property withClass:className];
@@ -33,15 +32,17 @@
     if ([NUISettings hasProperty:property withClass:className]) {
         label.highlightedTextColor = [NUISettings getColor:property withClass:className];
     }
-    
+
+    property = @"font-size";
+    if ([NUISettings hasProperty:property withClass:className]) {
+        label.font = [label.font fontWithSize:[NUISettings getFloat:property withClass:className]];
+    }
+
     property = @"font-name";
     if ([NUISettings hasProperty:property withClass:className]) {
-        label.font = [UIFont fontWithName:[NUISettings get:property withClass:className] size:[NUISettings getFloat:fontSizeProperty withClass:className]];
-    // If font-name is undefined but font-size is defined, use systemFont
-    } else if ([NUISettings getFloat:fontSizeProperty withClass:className]) {
-        label.font = [UIFont systemFontOfSize:[NUISettings getFloat:fontSizeProperty withClass:className]];
+        label.font = [UIFont fontWithName:[NUISettings get:property withClass:className] size:label.font.pointSize];
     }
-    
+
     property = @"text-alpha";
     if ([NUISettings hasProperty:property withClass:className]) {
         label.alpha = [NUISettings getFloat:property withClass:className];
