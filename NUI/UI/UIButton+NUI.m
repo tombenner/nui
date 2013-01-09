@@ -24,7 +24,8 @@
 {
     [self initNUI];
     if (![self.nuiClass isEqualToString:@"none"]) {
-        if (![NSStringFromClass([self class]) isEqualToString:@"UINavigationButton"]) {
+        if (![NSStringFromClass([self class]) isEqualToString:@"UINavigationButton"] &&
+            ![NSStringFromClass([[self superview] class]) isEqualToString:@"UIToolbarTextButton"]) {
             [NUIRenderer renderButton:self withClass:self.nuiClass];
         }
     }
