@@ -55,8 +55,8 @@
 + (void)renderSegmentedControl:(UISegmentedControl*)control;
 + (void)renderSegmentedControl:(UISegmentedControl*)control withClass:(NSString*)className;
 
-+ (void)renderSlider:(UISlider*)uiSlider;
-+ (void)renderSlider:(UISlider*)uiSlider withClass:(NSString*)className;
++ (void)renderSlider:(UISlider*)slider;
++ (void)renderSlider:(UISlider*)slider withClass:(NSString*)className;
 
 + (void)renderSwitch:(UISwitch*)uiSwitch;
 + (void)renderSwitch:(UISwitch*)uiSwitch withClass:(NSString*)className;

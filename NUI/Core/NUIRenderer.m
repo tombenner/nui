@@ -103,16 +103,16 @@ static NUIRenderer *instance = nil;
 }
 
 
-+ (void)renderSlider:(UISlider*)uiSlider
++ (void)renderSlider:(UISlider*)slider
 {
-    [NUISliderRenderer render:uiSlider withClass:@"Slider"];
-    [self registerObject:uiSlider];
+    [NUISliderRenderer render:slider withClass:@"Slider"];
+    [self registerObject:slider];
 }
 
-+ (void)renderSlider:(UISlider*)uiSlider withClass:(NSString*)className
++ (void)renderSlider:(UISlider*)slider withClass:(NSString*)className
 {
-    [NUISliderRenderer render:uiSlider withClass:className];
-    [self registerObject:uiSlider];
+    [NUISliderRenderer render:slider withClass:className];
+    [self registerObject:slider];
 }
 
 

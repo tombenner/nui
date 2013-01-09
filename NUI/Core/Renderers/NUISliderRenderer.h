@@ -11,6 +11,6 @@
 
 @interface NUISliderRenderer : NSObject
 
-+ (void)render:(UISlider*)uiSlider withClass:(NSString*)className;
++ (void)render:(UISlider*)slider withClass:(NSString*)className;
 
 @end

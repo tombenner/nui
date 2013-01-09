@@ -245,10 +245,11 @@ Below are all of the currently available style classes, their corresponding UI c
 
 *UISlider*
 
-* minimum-value-image-color
-* maximum-value-image-color
 * minimum-track-tint-color
 * maximum-track-tint-color
+* minimum-value-image
+* maximum-value-image
+* thumb-image
 * thumb-tint-color
 
 #### Switch
@@ -386,10 +387,11 @@ Style Properties
 * **shadow-image-top-insets** - Box
 * **shadow-image-bottom** - Image
 * **shadow-image-bottom-insets** - Box
-* **minimum-value-image-color** - Color
-* **maximum-value-image-color** - Color
+* **minimum-value-image** - Image
+* **maximum-value-image** - Image
 * **minimum-track-tint-color** - Color
 * **maximum-track-tint-color** - Color
+* **thumb-image** - Image
 * **thumb-tint-color** - Color
 * **text-align** - TextAlign
 * **text-alpha** - Number
