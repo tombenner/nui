@@ -19,21 +19,21 @@
     }
 }
 
-- (void)override_awakeFromNib
+- (void)applyNUI
 {
-    if (!self.nuiIsApplied) {
-        [self initNUI];
-        [self awakeFromNibNUI];
-        self.nuiIsApplied = [NSNumber numberWithBool:YES];
-    }
-    [self override_awakeFromNib];
-}
-
-- (void)awakeFromNibNUI
-{
+    [self initNUI];
     if (![self.nuiClass isEqualToString:@"none"]) {
         [NUIRenderer renderTabBarItem:self withClass:self.nuiClass];
     }
+    self.nuiIsApplied = [NSNumber numberWithBool:YES];
+}
+
+- (void)override_awakeFromNib
+{
+    if (!self.nuiIsApplied) {
+        [self applyNUI];
+    }
+    [self override_awakeFromNib];
 }
 
 - (void)setNuiClass:(NSString*)value {

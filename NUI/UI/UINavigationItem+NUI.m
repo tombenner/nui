@@ -19,21 +19,21 @@
     }
 }
 
-- (void)override_didMoveToWindow
+- (void)applyNUI
 {
-    if (!self.nuiIsApplied) {
-        [self initNUI];
-        [self didMoveToWindowNUI];
-        self.nuiIsApplied = [NSNumber numberWithBool:YES];
-    }
-    [self override_didMoveToWindow];
-}
-
-- (void)didMoveToWindowNUI
-{
+    [self initNUI];
     if (![self.nuiClass isEqualToString:@"none"]) {
         [NUIRenderer renderNavigationItem:self withClass:self.nuiClass];
     }
+    self.nuiIsApplied = [NSNumber numberWithBool:YES];
+}
+
+- (void)override_didMoveToWindow
+{
+    if (!self.nuiIsApplied) {
+        [self applyNUI];
+    }
+    [self override_didMoveToWindow];
 }
 
 - (void)setNuiClass:(NSString*)value {
