@@ -100,7 +100,10 @@
 
 + (UIImage*)caLayerToUIImage:(CALayer*)layer
 {
-    UIGraphicsBeginImageContext(layer.frame.size);
+    UIScreen *screen = [UIScreen mainScreen];
+    CGFloat scale = [screen scale];
+    UIGraphicsBeginImageContextWithOptions(layer.frame.size, NO, scale);
+    
     [layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
