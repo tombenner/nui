@@ -339,11 +339,15 @@ The detail label of a *UITableViewCell*
 * background-color
 * background-image
 * background-image-insets
+* border-color
 * border-style
 * border-width
+* corner-radius
+* font-color
 * font-name
 * font-size
 * height
+* padding
 * vertical-align
 
 #### View

@@ -34,4 +34,21 @@
     [self override_didMoveToWindow];
 }
 
+// Padding apparently can't be modified during didMoveToWindow
+- (CGRect)override_textRectForBounds:(CGRect)bounds {
+    if ([NUISettings hasProperty:@"padding" withClass:self.nuiClass]) {
+        UIEdgeInsets insets = [NUISettings getEdgeInsets:@"padding" withClass:self.nuiClass];
+        return CGRectMake(bounds.origin.x + insets.left,
+                          bounds.origin.y + insets.top,
+                          bounds.size.width - (insets.left + insets.right),
+                          bounds.size.height - (insets.top + insets.bottom));
+    } else {
+        return [self override_textRectForBounds:bounds];
+    }
+}
+
+- (CGRect)override_editingRectForBounds:(CGRect)bounds {
+    return [self textRectForBounds:bounds];
+}
+
 @end
