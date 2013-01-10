@@ -14,5 +14,6 @@
 @interface NUITabBarRenderer : NSObject
 
 + (void)render:(UITabBar*)bar withClass:(NSString*)className;
++ (void)sizeDidChange:(UITabBar*)bar;
 
 @end

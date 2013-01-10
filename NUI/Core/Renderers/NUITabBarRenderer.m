@@ -20,6 +20,29 @@
         [bar setBackgroundImage:[NUISettings getImage:@"background-image" withClass:className]];
     }
     
+    [self renderSizeDependentProperties:bar];
+    
+    // Apply UITabBarItem's background-image-selected property to bar.selectionIndicatorImage
+    if ([[bar items] count] > 0) {
+        UITabBarItem *firstItem = [[bar items] objectAtIndex:0];
+        NSArray *firstItemClasses = [firstItem.nuiClass componentsSeparatedByString: @":"];
+        for (NSString *itemClass in firstItemClasses) {
+            if ([NUISettings hasProperty:@"background-image-selected" withClass:itemClass]) {
+                [bar setSelectionIndicatorImage:[NUISettings getImage:@"background-image-selected" withClass:itemClass]];
+            }
+        }
+    }
+}
+
++ (void)sizeDidChange:(UITabBar*)bar
+{
+    [self renderSizeDependentProperties:bar];
+}
+
++ (void)renderSizeDependentProperties:(UITabBar*)bar
+{
+    NSString *className = bar.nuiClass;
+    
     if ([NUISettings hasProperty:@"background-color-top" withClass:className]) {
         CGRect frame = bar.bounds;
         UIImage *gradientImage = [NUIGraphics
@@ -31,17 +54,6 @@
         CGRect frame = bar.bounds;
         UIImage *colorImage = [NUIGraphics colorImage:[NUISettings getColor:@"background-color" withClass:className] withFrame:frame];
         [bar setBackgroundImage:colorImage];
-    }
-    
-    // Apply UITabBarItem's background-image-selected property to bar.selectionIndicatorImage
-    if ([[bar items] count] > 0) {
-        UITabBarItem *firstItem = [[bar items] objectAtIndex:0];
-        NSArray *firstItemClasses = [firstItem.nuiClass componentsSeparatedByString: @":"];
-        for (NSString *itemClass in firstItemClasses) {
-            if ([NUISettings hasProperty:@"background-image-selected" withClass:itemClass]) {
-                [bar setSelectionIndicatorImage:[NUISettings getImage:@"background-image-selected" withClass:itemClass]];
-            }
-        }
     }
 }
 

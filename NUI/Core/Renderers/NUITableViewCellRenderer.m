@@ -12,6 +12,28 @@
 
 + (void)render:(UITableViewCell*)cell withClass:(NSString*)className
 {
+    [self renderSizeDependentProperties:cell];
+    
+    // Set the labels' background colors to clearColor by default, so they don't show a white
+    // background on top of the cell background color
+    [cell.textLabel setBackgroundColor:[UIColor clearColor]];
+    [cell.detailTextLabel setBackgroundColor:[UIColor clearColor]];
+    
+    // Set fonts
+    [NUIRenderer renderLabel:cell.textLabel withClass:className];
+    [NUIRenderer renderLabel:cell.detailTextLabel withClass:className withSuffix:@"Detail"];
+    
+}
+
++ (void)sizeDidChange:(UITableViewCell*)cell
+{
+    [self renderSizeDependentProperties:cell];
+}
+
++ (void)renderSizeDependentProperties:(UITableViewCell*)cell
+{
+    NSString *className = cell.nuiClass;
+    
     // Set background color
     if ([NUISettings hasProperty:@"background-color" withClass:className]) {
         UIView *background = [[UIView alloc] initWithFrame:cell.frame];
@@ -27,16 +49,6 @@
                                   frame:cell.bounds];
         cell.backgroundView = [[UIImageView alloc] initWithImage:gradientImage];
     }
-    
-    // Set the labels' background colors to clearColor by default, so they don't show a white
-    // background on top of the cell background color
-    [cell.textLabel setBackgroundColor:[UIColor clearColor]];
-    [cell.detailTextLabel setBackgroundColor:[UIColor clearColor]];
-    
-    // Set fonts
-    [NUIRenderer renderLabel:cell.textLabel withClass:className];
-    [NUIRenderer renderLabel:cell.detailTextLabel withClass:className withSuffix:@"Detail"];
-    
 }
 
 @end

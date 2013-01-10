@@ -22,6 +22,7 @@
     [self initNUI];
     if (![self.nuiClass isEqualToString:@"none"]) {
         [NUIRenderer renderTabBar:self withClass:self.nuiClass];
+        [NUIRenderer addOrientationDidChangeObserver:self];
     }
     self.nuiIsApplied = [NSNumber numberWithBool:YES];
 }
@@ -32,6 +33,11 @@
         [self applyNUI];
     }
     [self override_didMoveToWindow];
+}
+
+- (void)orientationDidChange:(NSNotification*)notification
+{
+    [NUIRenderer performSelector:@selector(sizeDidChangeForTabBar:) withObject:self afterDelay:0];
 }
 
 @end

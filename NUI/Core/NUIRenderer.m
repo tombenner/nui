@@ -211,6 +211,28 @@ static NUIRenderer *instance = nil;
 }
 
 
+
++ (void)sizeDidChangeForNavigationBar:(UINavigationBar*)bar
+{
+    [NUINavigationBarRenderer sizeDidChange:bar];
+}
+
++ (void)sizeDidChangeForTabBar:(UITabBar*)bar
+{
+    [NUITabBarRenderer sizeDidChange:bar];
+}
+
++ (void)sizeDidChangeForTableViewCell:(UITableViewCell*)cell
+{
+    [NUITableViewCellRenderer sizeDidChange:cell];
+}
+
+
++ (void)addOrientationDidChangeObserver:(id)observer
+{
+    [[NSNotificationCenter defaultCenter] addObserver:observer selector:@selector(orientationDidChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
+}
+
 + (void)registerObject:(NSObject*)object
 {
     if ([NUISettings autoUpdateIsEnabled]) {

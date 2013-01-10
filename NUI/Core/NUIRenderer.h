@@ -79,4 +79,10 @@
 + (void)renderView:(UIView*)view;
 + (void)renderView:(UIView*)view withClass:(NSString*)className;
 
++ (void)sizeDidChangeForNavigationBar:(UINavigationBar*)bar;
++ (void)sizeDidChangeForTabBar:(UITabBar*)bar;
++ (void)sizeDidChangeForTableViewCell:(UITableViewCell*)cell;
+
++ (void)addOrientationDidChangeObserver:(id)observer;
+
 @end

@@ -22,6 +22,7 @@
     [self initNUI];
     if (![self.nuiClass isEqualToString:@"none"]) {
         [NUIRenderer renderNavigationBar:self withClass:self.nuiClass];
+        [NUIRenderer addOrientationDidChangeObserver:self];
         
         for (UINavigationItem *navigationItem in [self items]) {
             for (UIBarButtonItem *barButtonItem in [navigationItem leftBarButtonItems]) {
@@ -41,6 +42,11 @@
         [self applyNUI];
     }
     [self override_didMoveToWindow];
+}
+
+- (void)orientationDidChange:(NSNotification*)notification
+{
+    [NUIRenderer performSelector:@selector(sizeDidChangeForNavigationBar:) withObject:self afterDelay:0];
 }
 
 @end
