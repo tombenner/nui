@@ -109,10 +109,8 @@
         [layer setBorderWidth:[NUISettings getFloat:@"border-width" withClass:className]];
     }
     
-    float cornerRadius = [NUISettings getFloat:@"corner-radius" withClass:className];
-    
     if ([NUISettings hasProperty:@"corner-radius" withClass:className]) {
-        [layer setCornerRadius:cornerRadius];
+        [layer setCornerRadius:[NUISettings getFloat:@"corner-radius" withClass:className]];
     }
     
     return layer;
