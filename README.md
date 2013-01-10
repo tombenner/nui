@@ -233,8 +233,12 @@ Below are all of the currently available style classes, their corresponding UI c
 
 *UISegmentedControl*
 
-* background-tint-color
 * background-color
+* background-color-selected
+* background-tint-color
+* border-color
+* border-width
+* corner-radius
 * font-color
 * font-name
 * font-size
