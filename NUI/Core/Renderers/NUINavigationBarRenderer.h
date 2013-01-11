@@ -10,9 +10,11 @@
 #import "NUIGraphics.h"
 #import "NUISettings.h"
 #import "NUIUtilities.h"
+#import "UINavigationBar+NUI.h"
 
 @interface NUINavigationBarRenderer : NSObject
 
 + (void)render:(UINavigationBar*)bar withClass:(NSString*)className;
++ (void)sizeDidChange:(UINavigationBar*)bar;
 
 @end

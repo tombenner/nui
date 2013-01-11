@@ -10,8 +10,6 @@
 
 @implementation UITableViewCell (NUI)
 
-@dynamic nuiClass;
-
 - (void)initNUI
 {
     if (!self.nuiClass) {
@@ -24,6 +22,7 @@
     [self initNUI];
     if (![self.nuiClass isEqualToString:@"none"]) {
         [NUIRenderer renderTableViewCell:self withClass:self.nuiClass];
+        [NUIRenderer addOrientationDidChangeObserver:self];
     }
     self.nuiIsApplied = [NSNumber numberWithBool:YES];
 }
@@ -36,20 +35,9 @@
     [self override_didMoveToWindow];
 }
 
-- (void)setNuiClass:(NSString*)value {
-    objc_setAssociatedObject(self, "nuiClass", value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (NSString*)nuiClass {
-    return objc_getAssociatedObject(self, "nuiClass");
-}
-
-- (void)setNuiIsApplied:(NSNumber*)value {
-    objc_setAssociatedObject(self, "nuiIsApplied", value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (NSNumber*)nuiIsApplied {
-    return objc_getAssociatedObject(self, "nuiIsApplied");
+- (void)orientationDidChange:(NSNotification*)notification
+{
+    [NUIRenderer performSelector:@selector(sizeDidChangeForTableViewCell:) withObject:self afterDelay:0];
 }
 
 @end

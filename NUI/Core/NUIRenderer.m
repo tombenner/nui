@@ -103,6 +103,18 @@ static NUIRenderer *instance = nil;
 }
 
 
++ (void)renderSlider:(UISlider*)slider
+{
+    [NUISliderRenderer render:slider withClass:@"Slider"];
+    [self registerObject:slider];
+}
+
++ (void)renderSlider:(UISlider*)slider withClass:(NSString*)className
+{
+    [NUISliderRenderer render:slider withClass:className];
+    [self registerObject:slider];
+}
+
 
 + (void)renderSwitch:(UISwitch*)uiSwitch
 {
@@ -159,6 +171,18 @@ static NUIRenderer *instance = nil;
 }
 
 
++ (void)renderToolbar:(UIToolbar*)bar
+{
+    [NUIToolbarRenderer render:bar withClass:@"Toolbar"];
+    [self registerObject:bar];
+}
+
++ (void)renderToolbar:(UIToolbar*)bar withClass:(NSString*)className
+{
+    [NUIToolbarRenderer render:bar withClass:className];
+    [self registerObject:bar];
+}
+
 
 + (void)renderTextField:(UITextField*)textField
 {
@@ -187,6 +211,28 @@ static NUIRenderer *instance = nil;
 }
 
 
+
++ (void)sizeDidChangeForNavigationBar:(UINavigationBar*)bar
+{
+    [NUINavigationBarRenderer sizeDidChange:bar];
+}
+
++ (void)sizeDidChangeForTabBar:(UITabBar*)bar
+{
+    [NUITabBarRenderer sizeDidChange:bar];
+}
+
++ (void)sizeDidChangeForTableViewCell:(UITableViewCell*)cell
+{
+    [NUITableViewCellRenderer sizeDidChange:cell];
+}
+
+
++ (void)addOrientationDidChangeObserver:(id)observer
+{
+    [[NSNotificationCenter defaultCenter] addObserver:observer selector:@selector(orientationDidChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
+}
+
 + (void)registerObject:(NSObject*)object
 {
     if ([NUISettings autoUpdateIsEnabled]) {
@@ -209,10 +255,12 @@ static NUIRenderer *instance = nil;
                                    [UINavigationBar class], @"renderNavigationBar",
                                    [UINavigationItem class], @"renderNavigationItem",
                                    [UISegmentedControl class], @"renderSegmentedControl",
+                                   [UISlider class], @"renderSlider",
                                    [UISwitch class], @"renderSwitch",
                                    [UITabBar class], @"renderTabBar",
                                    [UITabBarItem class], @"renderTabBarItem",
                                    [UITableViewCell class], @"renderTableViewCell",
+                                   [UIToolbar class], @"renderToolbar",
                                    [UITextField class], @"renderTextField",
                                    [UIButton class], @"renderButton",
                                    [UILabel class], @"renderLabel",

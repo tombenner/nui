@@ -14,12 +14,17 @@
 {
     NSString *fontSizeProperty = @"font-size";
     
-    // Set font
+    // Set font name
     if ([NUISettings hasProperty:@"font-name" withClass:className]) {
         [textField setFont:[UIFont fontWithName:[NUISettings get:@"font-name" withClass:className] size:[NUISettings getFloat:fontSizeProperty withClass:className]]];
     // If font-name is undefined but font-size is defined, use systemFont
     } else if ([NUISettings getFloat:fontSizeProperty withClass:className]) {
         [textField setFont:[UIFont systemFontOfSize:[NUISettings getFloat:fontSizeProperty withClass:className]]];
+    }
+    
+    // Set font color
+    if ([NUISettings hasProperty:@"font-color" withClass:className]) {
+        [textField setTextColor:[NUISettings getColor:@"font-color" withClass:className]];
     }
     
     // Set background color
@@ -60,9 +65,19 @@
     
     CALayer *layer = [textField layer];
     
+    // Set border color
+    if ([NUISettings hasProperty:@"border-color" withClass:className]) {
+        [layer setBorderColor:[[NUISettings getColor:@"border-color" withClass:className] CGColor]];
+    }
+    
     // Set border width
     if ([NUISettings hasProperty:@"border-width" withClass:className]) {
         [layer setBorderWidth:[NUISettings getFloat:@"border-width" withClass:className]];
+    }
+    
+    // Set corner radius
+    if ([NUISettings hasProperty:@"corner-radius" withClass:className]) {
+        [layer setCornerRadius:[NUISettings getFloat:@"corner-radius" withClass:className]];
     }
 }
 

@@ -15,6 +15,9 @@
 + (UIImage*)backButtonWithClass:(NSString*)className;
 + (UIImage*)backButtonWithColor:(UIColor*)color;
 + (UIImage*)barButtonWithColor:(UIColor*)color;
++ (CALayer*)roundedRectLayerWithClass:(NSString*)className;
++ (UIImage*)roundedRectImageWithClass:(NSString*)className;
++ (UIImage*)roundedRectImageWithClass:(NSString*)className layer:(CALayer*)layer;
 + (UIImage*)caLayerToUIImage:(CALayer*)layer;
 + (CALayer*)uiImageToCALayer:(UIImage*)image;
 + (CIImage*)tintCIImage:(CIImage*)image withColor:(CIColor*)color;

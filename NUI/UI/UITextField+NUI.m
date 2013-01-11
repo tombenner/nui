@@ -10,8 +10,6 @@
 
 @implementation UITextField (NUI)
 
-@dynamic nuiClass;
-
 - (void)initNUI
 {
     if (!self.nuiClass) {
@@ -36,20 +34,21 @@
     [self override_didMoveToWindow];
 }
 
-- (void)setNuiClass:(NSString*)value {
-    objc_setAssociatedObject(self, "nuiClass", value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+// Padding apparently can't be modified during didMoveToWindow
+- (CGRect)override_textRectForBounds:(CGRect)bounds {
+    if ([NUISettings hasProperty:@"padding" withClass:self.nuiClass]) {
+        UIEdgeInsets insets = [NUISettings getEdgeInsets:@"padding" withClass:self.nuiClass];
+        return CGRectMake(bounds.origin.x + insets.left,
+                          bounds.origin.y + insets.top,
+                          bounds.size.width - (insets.left + insets.right),
+                          bounds.size.height - (insets.top + insets.bottom));
+    } else {
+        return [self override_textRectForBounds:bounds];
+    }
 }
 
-- (NSString*)nuiClass {
-    return objc_getAssociatedObject(self, "nuiClass");
-}
-
-- (void)setNuiIsApplied:(NSNumber*)value {
-    objc_setAssociatedObject(self, "nuiIsApplied", value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (NSNumber*)nuiIsApplied {
-    return objc_getAssociatedObject(self, "nuiIsApplied");
+- (CGRect)override_editingRectForBounds:(CGRect)bounds {
+    return [self textRectForBounds:bounds];
 }
 
 @end

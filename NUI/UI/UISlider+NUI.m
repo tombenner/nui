@@ -1,30 +1,30 @@
 //
-//  UISwitch+NUI.m
+//  UISlider+NUI.m
 //  NUIDemo
 //
-//  Created by Benjamin Clayton on 04/01/2013.
-//  Copyright (c) 2013 Tom Benner. All rights reserved.
+//  Created by Simon Moser @savage7 on 09/01/13.
+//  Copyright (c) 2013 Simon Moser. All rights reserved.
 //
 
-#import "UISwitch+NUI.h"
+#import "UISlider+NUI.h"
 
-@implementation UISwitch (NUI)
+@implementation UISlider (NUI)
 
 - (void)initNUI
 {
     if (!self.nuiClass) {
-        self.nuiClass = @"Switch";
+        self.nuiClass = @"Slider";
     }
 }
 
 - (void)applyNUI
 {
     // Styling shouldn't be applied to inherited classes
-    if ([self class] == [UISwitch class]) {
+    if ([self class] == [UISlider class]) {
         [self initNUI];
         if (![self.nuiClass isEqualToString:@"none"]) {
-            if ([self class] == [UISwitch class]) {
-                [NUIRenderer renderSwitch:self withClass:self.nuiClass];
+            if ([self class] == [UISlider class]) {
+                [NUIRenderer renderSlider:self withClass:self.nuiClass];
             }
         }
     }

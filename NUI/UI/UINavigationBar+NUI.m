@@ -10,8 +10,6 @@
 
 @implementation UINavigationBar (NUI)
 
-@dynamic nuiClass;
-
 - (void)initNUI
 {
     if (!self.nuiClass) {
@@ -24,6 +22,7 @@
     [self initNUI];
     if (![self.nuiClass isEqualToString:@"none"]) {
         [NUIRenderer renderNavigationBar:self withClass:self.nuiClass];
+        [NUIRenderer addOrientationDidChangeObserver:self];
         
         for (UINavigationItem *navigationItem in [self items]) {
             for (UIBarButtonItem *barButtonItem in [navigationItem leftBarButtonItems]) {
@@ -45,20 +44,9 @@
     [self override_didMoveToWindow];
 }
 
-- (void)setNuiIsApplied:(NSNumber*)value {
-    objc_setAssociatedObject(self, "nuiIsApplied", value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (NSNumber*)nuiIsApplied {
-    return objc_getAssociatedObject(self, "nuiIsApplied");
-}
-
-- (void)setNuiClass:(NSString*)value {
-    objc_setAssociatedObject(self, "nuiClass", value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (NSString*)nuiClass {
-    return objc_getAssociatedObject(self, "nuiClass");
+- (void)orientationDidChange:(NSNotification*)notification
+{
+    [NUIRenderer performSelector:@selector(sizeDidChangeForNavigationBar:) withObject:self afterDelay:0];
 }
 
 @end

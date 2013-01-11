@@ -13,7 +13,7 @@
 + (NSDictionary*)titleTextAttributesForClass:(NSString*)className
 {
     NSMutableDictionary *titleTextAttributes = [NSMutableDictionary dictionary];
-    
+
     if ([NUISettings hasProperty:@"font-name" withClass:className]) {
         [titleTextAttributes setObject:[UIFont fontWithName:[NUISettings get:@"font-name" withClass:className] size:[NUISettings getFloat:@"font-size" withClass:className]] forKey:UITextAttributeFont];
     }

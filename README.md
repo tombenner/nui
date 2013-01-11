@@ -10,7 +10,12 @@ Out of the box, the styling looks like this:
 
 [![](https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.png)](https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.png)
 
-It's easily modified, though. The styling above, for example, is declared [like this](https://raw.github.com/tombenner/nui/master/NUI/NUIStyle.nss). There are a couple other screenshots [here](https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.Blue.png) and [here](https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.Round.png).
+It's easily modified, though. The styling above, for example, is declared [like this](https://raw.github.com/tombenner/nui/master/NUI/NUIStyle.nss). Here are examples of other themes that are defined [here](https://github.com/tombenner/nui/tree/master/NUI/Themes):
+
+[<img src="https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.Route.png" width="120" />](https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.Route.png)
+[<img src="https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.Googolplex.png" width="120" />](https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.Googolplex.png)
+[<img src="https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.Switchboard.png" width="120" />](https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.Switchboard.png)
+[<img src="https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.SkyBlue.png" width="120" />](https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.SkyBlue.png)
 
 The styling is declared using a CSS-like syntax that supports variables:
 
@@ -171,6 +176,8 @@ Below are all of the currently available style classes, their corresponding UI c
 * background-color-top/background-color-bottom
 * background-image
 * background-image-insets
+* background-image-disabled
+* background-image-disabled-insets
 * background-image-highlighted
 * background-image-highlighted-insets
 * background-image-selected
@@ -179,6 +186,7 @@ Below are all of the currently available style classes, their corresponding UI c
 * border-width
 * corner-radius
 * font-color
+* font-color-disabled
 * font-color-highlighted
 * font-color-selected
 * font-name
@@ -192,6 +200,8 @@ Below are all of the currently available style classes, their corresponding UI c
 * text-shadow-color-highlighted
 * text-shadow-color-selected
 * text-shadow-offset
+* title-insets
+* content-insets
 
 #### Label
 
@@ -220,6 +230,7 @@ Below are all of the currently available style classes, their corresponding UI c
 * font-color
 * font-name
 * font-size
+* shadow-image
 * text-shadow-color
 * text-shadow-offset
 
@@ -227,13 +238,28 @@ Below are all of the currently available style classes, their corresponding UI c
 
 *UISegmentedControl*
 
-* background-tint-color
 * background-color
+* background-color-selected
+* background-tint-color
+* border-color
+* border-width
+* corner-radius
 * font-color
 * font-name
 * font-size
 * text-shadow-color
 * text-shadow-offset
+
+#### Slider
+
+*UISlider*
+
+* minimum-track-tint-color
+* maximum-track-tint-color
+* minimum-value-image
+* maximum-value-image
+* thumb-image
+* thumb-tint-color
 
 #### Switch
 
@@ -301,6 +327,20 @@ The detail label of a *UITableViewCell*
 * text-shadow-color
 * text-shadow-offset
 
+#### Toolbar
+
+*UIToolbar*
+
+* background-color
+* background-image-top
+* background-image-bottom
+* background-image-top-landscape
+* background-image-bottom-landscape
+* background-tint-color
+* shadow-image
+* shadow-image-top
+* shadow-image-bottom
+
 #### TextField
 
 *UITextField*
@@ -308,11 +348,15 @@ The detail label of a *UITableViewCell*
 * background-color
 * background-image
 * background-image-insets
+* border-color
 * border-style
 * border-width
+* corner-radius
+* font-color
 * font-name
 * font-size
 * height
+* padding
 * vertical-align
 
 #### View
@@ -329,10 +373,16 @@ Style Properties
 * **background-color-top**/**background-color-bottom** - Gradient
 * **background-image** - Image
 * **background-image-insets** - Box
+* **background-image-disabled** - Image
+* **background-image-disabled-insets** - Box
 * **background-image-highlighted** - Image
 * **background-image-highlighted-insets** - Box
 * **background-image-selected** - Image
 * **background-image-selected-insets** - Box
+* **background-image-top** - Image
+* **background-image-bottom** - Image
+* **background-image-top-landscape** - Image
+* **background-image-bottom-landscape** - Image
 * **background-tint-color** - Color
 * **border-color** - Color
 * **border-style** - BorderStyle
@@ -344,6 +394,15 @@ Style Properties
 * **font-size** - Number
 * **height** - Number
 * **padding** - Box
+* **minimum-value-image** - Image
+* **maximum-value-image** - Image
+* **minimum-track-tint-color** - Color
+* **maximum-track-tint-color** - Color
+* **shadow-image** - Image
+* **shadow-image-top** - Image
+* **shadow-image-bottom** - Image
+* **thumb-image** - Image
+* **thumb-tint-color** - Color
 * **text-align** - TextAlign
 * **text-alpha** - Number
 * **text-auto-fit** - Boolean

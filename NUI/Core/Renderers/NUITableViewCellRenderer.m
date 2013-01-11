@@ -12,21 +12,7 @@
 
 + (void)render:(UITableViewCell*)cell withClass:(NSString*)className
 {
-    // Set background color
-    if ([NUISettings hasProperty:@"background-color" withClass:className]) {
-        UIView *background = [[UIView alloc] initWithFrame:cell.frame];
-        background.backgroundColor = [NUISettings getColor:@"background-color" withClass:className];
-        cell.backgroundView = background;
-    }
-    
-    // Set background gradient
-    if ([NUISettings hasProperty:@"background-color-top" withClass:className]) {
-        UIImage *gradientImage = [NUIGraphics
-                                  gradientImageWithTop:[NUISettings getColor:@"background-color-top" withClass:className]
-                                  bottom:[NUISettings getColor:@"background-color-bottom" withClass:className]
-                                  frame:cell.bounds];
-        cell.backgroundView = [[UIImageView alloc] initWithImage:gradientImage];
-    }
+    [self renderSizeDependentProperties:cell];
     
     // Set the labels' background colors to clearColor by default, so they don't show a white
     // background on top of the cell background color
@@ -37,6 +23,31 @@
     [NUIRenderer renderLabel:cell.textLabel withClass:className];
     [NUIRenderer renderLabel:cell.detailTextLabel withClass:className withSuffix:@"Detail"];
     
+}
+
++ (void)sizeDidChange:(UITableViewCell*)cell
+{
+    [self renderSizeDependentProperties:cell];
+}
+
++ (void)renderSizeDependentProperties:(UITableViewCell*)cell
+{
+    NSString *className = cell.nuiClass;
+    
+    // Set background color
+    if ([NUISettings hasProperty:@"background-color" withClass:className]) {
+        UIImage *colorImage = [NUISettings getImageFromColor:@"background-color" withClass:className];
+        cell.backgroundView = [[UIImageView alloc] initWithImage:colorImage];
+    }
+    
+    // Set background gradient
+    if ([NUISettings hasProperty:@"background-color-top" withClass:className]) {
+        UIImage *gradientImage = [NUIGraphics
+                                  gradientImageWithTop:[NUISettings getColor:@"background-color-top" withClass:className]
+                                  bottom:[NUISettings getColor:@"background-color-bottom" withClass:className]
+                                  frame:cell.bounds];
+        cell.backgroundView = [[UIImageView alloc] initWithImage:gradientImage];
+    }
 }
 
 @end

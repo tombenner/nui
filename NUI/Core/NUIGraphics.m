@@ -91,6 +91,52 @@
     return uiImage;
 }
 
++ (CALayer*)roundedRectLayerWithClass:(NSString*)className
+{
+    CALayer *layer = [CALayer layer];
+    [layer setFrame:CGRectMake(0, 0, 50, 50)];
+    [layer setMasksToBounds:YES];
+    
+    if ([NUISettings hasProperty:@"background-color" withClass:className]) {
+        [layer setBackgroundColor:[[NUISettings getColor:@"background-color" withClass:className] CGColor]];
+    }
+    
+    if ([NUISettings hasProperty:@"border-color" withClass:className]) {
+        [layer setBorderColor:[[NUISettings getColor:@"border-color" withClass:className] CGColor]];
+    }
+    
+    if ([NUISettings hasProperty:@"border-width" withClass:className]) {
+        [layer setBorderWidth:[NUISettings getFloat:@"border-width" withClass:className]];
+    }
+    
+    if ([NUISettings hasProperty:@"corner-radius" withClass:className]) {
+        [layer setCornerRadius:[NUISettings getFloat:@"corner-radius" withClass:className]];
+    }
+    
+    return layer;
+}
+
++ (UIImage*)roundedRectImageWithClass:(NSString*)className
+{
+    CALayer *layer = [self roundedRectLayerWithClass:className];
+    return [self roundedRectImageWithClass:className layer:layer];
+}
+
++ (UIImage*)roundedRectImageWithClass:(NSString*)className layer:(CALayer*)layer
+{
+    float cornerRadius = [NUISettings getFloat:@"corner-radius" withClass:className];
+    float insetLength = cornerRadius;
+    
+    if (cornerRadius < 5) {
+        insetLength = 5;
+    }
+    insetLength += 3;
+    
+    UIImage *image = [NUIGraphics caLayerToUIImage:layer];
+    image = [image resizableImageWithCapInsets:UIEdgeInsetsMake(0, insetLength, 0, insetLength) resizingMode:UIImageResizingModeStretch];
+    return image;
+}
+
 + (CIColor*)uiColorToCIColor:(UIColor*)color
 {
     CGFloat red = 0.0, green = 0.0, blue = 0.0, alpha = 0.0;
@@ -100,7 +146,10 @@
 
 + (UIImage*)caLayerToUIImage:(CALayer*)layer
 {
-    UIGraphicsBeginImageContext(layer.frame.size);
+    UIScreen *screen = [UIScreen mainScreen];
+    CGFloat scale = [screen scale];
+    UIGraphicsBeginImageContextWithOptions(layer.frame.size, NO, scale);
+    
     [layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();

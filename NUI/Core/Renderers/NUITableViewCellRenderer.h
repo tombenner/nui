@@ -15,5 +15,6 @@
 @interface NUITableViewCellRenderer : NSObject
 
 + (void)render:(UITableViewCell*)cell withClass:(NSString*)className;
++ (void)sizeDidChange:(UITableViewCell*)cell;
 
 @end

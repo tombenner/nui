@@ -12,15 +12,24 @@
 
 + (void)render:(UISegmentedControl*)control withClass:(NSString*)className
 {
-    // UISegmentedControlStyleBar is necessary for some of the settings below to take effect
-    control.segmentedControlStyle = UISegmentedControlStyleBar;
-    
-    // Set background color
-    if ([NUISettings hasProperty:@"background-color" withClass:className]) {
-        [control setBackgroundColor:[NUISettings getColor:@"background-color" withClass:className]];
+    if ([NUISettings hasProperty:@"background-color" withClass:className] ||
+        [NUISettings hasProperty:@"border-color" withClass:className]) {
+        CALayer *layer = [NUIGraphics roundedRectLayerWithClass:className];
+        UIImage *normalImage = [NUIGraphics roundedRectImageWithClass:className layer:layer];
+        
+        if ([NUISettings hasProperty:@"background-color-selected" withClass:className]) {
+            [layer setBackgroundColor:[[NUISettings getColor:@"background-color-selected" withClass:className] CGColor]];
+        }
+        UIImage *selectedImage = [NUIGraphics roundedRectImageWithClass:className layer:layer];
+        [control setBackgroundImage:normalImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+        [control setBackgroundImage:selectedImage forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
+        [control setDividerImage:[NUISettings getImageFromColor:@"border-color" withClass:className] forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     }
+    
     // Set background tint color
     if ([NUISettings hasProperty:@"background-tint-color" withClass:className]) {
+        // UISegmentedControlStyleBar is necessary for setTintColor to take effect
+        control.segmentedControlStyle = UISegmentedControlStyleBar;
         [control setTintColor:[NUISettings getColor:@"background-tint-color" withClass:className]];
     }
     
