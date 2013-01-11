@@ -10,7 +10,12 @@ Out of the box, the styling looks like this:
 
 [![](https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.png)](https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.png)
 
-It's easily modified, though. The styling above, for example, is declared [like this](https://raw.github.com/tombenner/nui/master/NUI/NUIStyle.nss). There are a couple other screenshots [here](https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.Blue.png) and [here](https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.Round.png).
+It's easily modified, though. The styling above, for example, is declared [like this](https://raw.github.com/tombenner/nui/master/NUI/NUIStyle.nss). Here are examples of other themes that are defined [here](https://github.com/tombenner/nui/tree/master/NUI/Themes):
+
+[<img src="https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.Route.png" width="120" />](https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.Route.png)
+[<img src="https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.Googolplex.png" width="120" />](https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.Googolplex.png)
+[<img src="https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.Switchboard.png" width="120" />](https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.Switchboard.png)
+[<img src="https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.SkyBlue.png" width="120" />](https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.SkyBlue.png)
 
 The styling is declared using a CSS-like syntax that supports variables:
 

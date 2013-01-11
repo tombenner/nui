@@ -33,6 +33,13 @@
 		4A77934B1675635100B5EE81 /* UITabBarItem+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A77934A1675635100B5EE81 /* UITabBarItem+NUI.m */; };
 		4A77934E1675647A00B5EE81 /* NUISwizzler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A77934D1675647A00B5EE81 /* NUISwizzler.m */; };
 		4A7793511675687C00B5EE81 /* UIBarButtonItem+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7793501675687C00B5EE81 /* UIBarButtonItem+NUI.m */; };
+		4A9965E5169FB56800DAA38A /* Blue.NUI.nss in Resources */ = {isa = PBXBuildFile; fileRef = 4A9965DE169FB56800DAA38A /* Blue.NUI.nss */; };
+		4A9965E6169FB56800DAA38A /* Default.NUI.nss in Resources */ = {isa = PBXBuildFile; fileRef = 4A9965DF169FB56800DAA38A /* Default.NUI.nss */; };
+		4A9965E7169FB56800DAA38A /* Googolplex.NUI.nss in Resources */ = {isa = PBXBuildFile; fileRef = 4A9965E0169FB56800DAA38A /* Googolplex.NUI.nss */; };
+		4A9965E8169FB56800DAA38A /* Round.NUI.nss in Resources */ = {isa = PBXBuildFile; fileRef = 4A9965E1169FB56800DAA38A /* Round.NUI.nss */; };
+		4A9965E9169FB56800DAA38A /* Route.NUI.nss in Resources */ = {isa = PBXBuildFile; fileRef = 4A9965E2169FB56800DAA38A /* Route.NUI.nss */; };
+		4A9965EA169FB56800DAA38A /* SkyBlue.NUI.nss in Resources */ = {isa = PBXBuildFile; fileRef = 4A9965E3169FB56800DAA38A /* SkyBlue.NUI.nss */; };
+		4A9965EB169FB56800DAA38A /* Switchboard.NUI.nss in Resources */ = {isa = PBXBuildFile; fileRef = 4A9965E4169FB56800DAA38A /* Switchboard.NUI.nss */; };
 		4AAAFE7C166FD32600A0D34D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AAAFE7B166FD32600A0D34D /* Default-568h@2x.png */; };
 		89B940701671418200850A9A /* NUIAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B940241671418100850A9A /* NUIAppearance.m */; };
 		89B940711671418200850A9A /* NUIConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B940261671418100850A9A /* NUIConverter.m */; };
@@ -55,9 +62,6 @@
 		89B940821671418200850A9A /* NUIBackButtonTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B940481671418100850A9A /* NUIBackButtonTemplate.png */; };
 		89B940831671418200850A9A /* NUIBarButtonTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B940491671418100850A9A /* NUIBarButtonTemplate.png */; };
 		89B940841671418200850A9A /* NUIViewBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B9404A1671418100850A9A /* NUIViewBackground.png */; };
-		89B940851671418200850A9A /* Blue.NUIStyle.nss in Resources */ = {isa = PBXBuildFile; fileRef = 89B9404C1671418100850A9A /* Blue.NUIStyle.nss */; };
-		89B940861671418200850A9A /* Default.NUIStyle.nss in Resources */ = {isa = PBXBuildFile; fileRef = 89B9404D1671418100850A9A /* Default.NUIStyle.nss */; };
-		89B940871671418200850A9A /* Round.NUIStyle.nss in Resources */ = {isa = PBXBuildFile; fileRef = 89B9404E1671418100850A9A /* Round.NUIStyle.nss */; };
 		B51BC28A169724A3004A38F8 /* UISwitch+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = B51BC289169724A3004A38F8 /* UISwitch+NUI.m */; };
 		B51BC28E16972527004A38F8 /* NUISwitchRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = B51BC28D16972527004A38F8 /* NUISwitchRenderer.m */; };
 		D983DEE5169DBCCD00A3A180 /* NUIToolbarRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = D983DEE4169DBCCC00A3A180 /* NUIToolbarRenderer.m */; };
@@ -114,6 +118,13 @@
 		4A77934D1675647A00B5EE81 /* NUISwizzler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISwizzler.m; sourceTree = "<group>"; };
 		4A77934F1675687C00B5EE81 /* UIBarButtonItem+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+NUI.h"; sourceTree = "<group>"; };
 		4A7793501675687C00B5EE81 /* UIBarButtonItem+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+NUI.m"; sourceTree = "<group>"; };
+		4A9965DE169FB56800DAA38A /* Blue.NUI.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Blue.NUI.nss; sourceTree = "<group>"; };
+		4A9965DF169FB56800DAA38A /* Default.NUI.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Default.NUI.nss; sourceTree = "<group>"; };
+		4A9965E0169FB56800DAA38A /* Googolplex.NUI.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Googolplex.NUI.nss; sourceTree = "<group>"; };
+		4A9965E1169FB56800DAA38A /* Round.NUI.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Round.NUI.nss; sourceTree = "<group>"; };
+		4A9965E2169FB56800DAA38A /* Route.NUI.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Route.NUI.nss; sourceTree = "<group>"; };
+		4A9965E3169FB56800DAA38A /* SkyBlue.NUI.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SkyBlue.NUI.nss; sourceTree = "<group>"; };
+		4A9965E4169FB56800DAA38A /* Switchboard.NUI.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Switchboard.NUI.nss; sourceTree = "<group>"; };
 		4AAAFE7B166FD32600A0D34D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		89B940231671418100850A9A /* NUIAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIAppearance.h; sourceTree = "<group>"; };
 		89B940241671418100850A9A /* NUIAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIAppearance.m; sourceTree = "<group>"; };
@@ -153,9 +164,6 @@
 		89B940481671418100850A9A /* NUIBackButtonTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NUIBackButtonTemplate.png; sourceTree = "<group>"; };
 		89B940491671418100850A9A /* NUIBarButtonTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NUIBarButtonTemplate.png; sourceTree = "<group>"; };
 		89B9404A1671418100850A9A /* NUIViewBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NUIViewBackground.png; sourceTree = "<group>"; };
-		89B9404C1671418100850A9A /* Blue.NUIStyle.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Blue.NUIStyle.nss; sourceTree = "<group>"; };
-		89B9404D1671418100850A9A /* Default.NUIStyle.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Default.NUIStyle.nss; sourceTree = "<group>"; };
-		89B9404E1671418100850A9A /* Round.NUIStyle.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Round.NUIStyle.nss; sourceTree = "<group>"; };
 		B51BC288169724A3004A38F8 /* UISwitch+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISwitch+NUI.h"; sourceTree = "<group>"; };
 		B51BC289169724A3004A38F8 /* UISwitch+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISwitch+NUI.m"; sourceTree = "<group>"; };
 		B51BC28C16972527004A38F8 /* NUISwitchRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUISwitchRenderer.h; sourceTree = "<group>"; };
@@ -245,6 +253,20 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		4A9965DD169FB54400DAA38A /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				4A9965DE169FB56800DAA38A /* Blue.NUI.nss */,
+				4A9965DF169FB56800DAA38A /* Default.NUI.nss */,
+				4A9965E0169FB56800DAA38A /* Googolplex.NUI.nss */,
+				4A9965E1169FB56800DAA38A /* Round.NUI.nss */,
+				4A9965E2169FB56800DAA38A /* Route.NUI.nss */,
+				4A9965E3169FB56800DAA38A /* SkyBlue.NUI.nss */,
+				4A9965E4169FB56800DAA38A /* Switchboard.NUI.nss */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
 		4AAAFE7A166FD2EC00A0D34D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,7 +281,7 @@
 				89B940221671418100850A9A /* Core */,
 				89B940461671418100850A9A /* NUIStyle.nss */,
 				89B940471671418100850A9A /* Resources */,
-				89B9404B1671418100850A9A /* Styles */,
+				4A9965DD169FB54400DAA38A /* Themes */,
 				89B9404F1671418100850A9A /* UI */,
 			);
 			name = NUI;
@@ -335,16 +357,6 @@
 				89B9404A1671418100850A9A /* NUIViewBackground.png */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		89B9404B1671418100850A9A /* Styles */ = {
-			isa = PBXGroup;
-			children = (
-				89B9404C1671418100850A9A /* Blue.NUIStyle.nss */,
-				89B9404D1671418100850A9A /* Default.NUIStyle.nss */,
-				89B9404E1671418100850A9A /* Round.NUIStyle.nss */,
-			);
-			path = Styles;
 			sourceTree = "<group>";
 		};
 		89B9404F1671418100850A9A /* UI */ = {
@@ -440,9 +452,13 @@
 				89B940821671418200850A9A /* NUIBackButtonTemplate.png in Resources */,
 				89B940831671418200850A9A /* NUIBarButtonTemplate.png in Resources */,
 				89B940841671418200850A9A /* NUIViewBackground.png in Resources */,
-				89B940851671418200850A9A /* Blue.NUIStyle.nss in Resources */,
-				89B940861671418200850A9A /* Default.NUIStyle.nss in Resources */,
-				89B940871671418200850A9A /* Round.NUIStyle.nss in Resources */,
+				4A9965E5169FB56800DAA38A /* Blue.NUI.nss in Resources */,
+				4A9965E6169FB56800DAA38A /* Default.NUI.nss in Resources */,
+				4A9965E7169FB56800DAA38A /* Googolplex.NUI.nss in Resources */,
+				4A9965E8169FB56800DAA38A /* Round.NUI.nss in Resources */,
+				4A9965E9169FB56800DAA38A /* Route.NUI.nss in Resources */,
+				4A9965EA169FB56800DAA38A /* SkyBlue.NUI.nss in Resources */,
+				4A9965EB169FB56800DAA38A /* Switchboard.NUI.nss in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
