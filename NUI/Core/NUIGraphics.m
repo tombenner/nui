@@ -12,13 +12,13 @@
 
 + (UIImage*)backButtonWithClass:(NSString*)className
 {
-    int borderWidth = 1;
-    int cornerRadius = 7;
-    int width = 50;
-    int height = 32;
-    int dWidth = width - borderWidth;
-    int dHeight = height - borderWidth;
-    int arrowWidth = 14;
+    float borderWidth = 1;
+    float cornerRadius = 7;
+    float width = 50;
+    float height = 32;
+    float dWidth = width - borderWidth - 0.5;
+    float dHeight = height - borderWidth - 0.5;
+    float arrowWidth = 14;
     
     CAShapeLayer *shape       = [CAShapeLayer layer];
     shape.frame = CGRectMake(0, 0, width, height);
@@ -52,16 +52,16 @@
     CGPathMoveToPoint(path, NULL, dWidth, dHeight - cornerRadius);
     CGPathAddArcToPoint(path, NULL, dWidth, dHeight, dWidth - cornerRadius, dHeight, cornerRadius);
     CGPathAddLineToPoint(path, NULL, arrowWidth, dHeight);
-    CGPathAddLineToPoint(path, NULL, borderWidth, height/2);
-    CGPathAddLineToPoint(path, NULL, arrowWidth, borderWidth);
-    CGPathAddLineToPoint(path, NULL, dWidth - cornerRadius, borderWidth);
+    CGPathAddLineToPoint(path, NULL, borderWidth + 0.5, height/2);
+    CGPathAddLineToPoint(path, NULL, arrowWidth, borderWidth + 0.5);
+    CGPathAddLineToPoint(path, NULL, dWidth - cornerRadius, borderWidth + 0.5);
     CGPathAddArcToPoint(path, NULL, dWidth, borderWidth, dWidth, borderWidth + cornerRadius, cornerRadius);
     CGPathAddLineToPoint(path, NULL, dWidth, dHeight - cornerRadius);
-    
     shape.path = path;
     
     UIImage *image = [self caLayerToUIImage:shape];
     image = [image resizableImageWithCapInsets:UIEdgeInsetsMake(0, arrowWidth + 5, 0, cornerRadius + 5) resizingMode:UIImageResizingModeStretch];
+    
     return image;
 }
 
