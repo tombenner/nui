@@ -20,7 +20,7 @@
 - (void)applyNUI
 {
     [self initNUI];
-    if (![self.nuiClass isEqualToString:@"none"]) {
+    if ([self nuiShouldBeApplied]) {
         [NUIRenderer renderTextField:self withClass:self.nuiClass];
     }
     self.nuiIsApplied = [NSNumber numberWithBool:YES];
@@ -34,9 +34,20 @@
     [self override_didMoveToWindow];
 }
 
+- (BOOL)nuiShouldBeApplied
+{
+    if (![self.nuiClass isEqualToString:@"none"]) {
+        if (![[self superview] isKindOfClass:[UISearchBar class]]) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
 // Padding apparently can't be modified during didMoveToWindow
 - (CGRect)override_textRectForBounds:(CGRect)bounds {
-    if ([NUISettings hasProperty:@"padding" withClass:self.nuiClass]) {
+    if ([self nuiShouldBeApplied] &&
+        [NUISettings hasProperty:@"padding" withClass:self.nuiClass]) {
         UIEdgeInsets insets = [NUISettings getEdgeInsets:@"padding" withClass:self.nuiClass];
         return CGRectMake(bounds.origin.x + insets.left,
                           bounds.origin.y + insets.top,
