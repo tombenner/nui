@@ -37,6 +37,15 @@
     if ([NUISettings hasProperty:@"background-color" withClass:className]) {
         [button setBackgroundImage:[NUISettings getImageFromColor:@"background-color" withClass:className] forState:UIControlStateNormal];
     }
+    if ([NUISettings hasProperty:@"background-color-selected" withClass:className]) {
+        [button setBackgroundImage:[NUISettings getImageFromColor:@"background-color-selected" withClass:className] forState:UIControlStateSelected];
+    }
+    if ([NUISettings hasProperty:@"background-color-highlighted" withClass:className]) {
+        [button setBackgroundImage:[NUISettings getImageFromColor:@"background-color-highlighted" withClass:className] forState:UIControlStateHighlighted];
+    }
+    if ([NUISettings hasProperty:@"background-color-disabled" withClass:className]) {
+        [button setBackgroundImage:[NUISettings getImageFromColor:@"background-color-disabled" withClass:className] forState:UIControlStateDisabled];
+    }
     
     // Set background gradient
     if ([NUISettings hasProperty:@"background-color-top" withClass:className]) {

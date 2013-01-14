@@ -174,6 +174,9 @@ Below are all of the currently available style classes, their corresponding UI c
 
 * background-color
 * background-color-top/background-color-bottom
+* background-color-disabled
+* background-color-highlighted
+* background-color-selected
 * background-image
 * background-image-insets
 * background-image-disabled
