@@ -35,7 +35,7 @@
     
     // Set background color
     if ([NUISettings hasProperty:@"background-color" withClass:className]) {
-        [button setBackgroundColor:[NUISettings getColor:@"background-color" withClass:className]];
+        [button setBackgroundImage:[NUISettings getImageFromColor:@"background-color" withClass:className] forState:UIControlStateNormal];
     }
     
     // Set background gradient
