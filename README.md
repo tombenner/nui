@@ -247,17 +247,17 @@ Below are all of the currently available style classes, their corresponding UI c
 * scope-background-color
 * scope-background-image
 
-#### SearchBarScopeBar
-
-*UISearchBar scope bar, inherits from SegmentedControl*
-
-See SegmentedControl
-
 #### SearchBarButton
 
 *UISearchBar button, inherits from BarButton*
 
 See Button
+
+#### SearchBarScopeBar
+
+*UISearchBar scope bar, inherits from SegmentedControl*
+
+See SegmentedControl
 
 #### SegmentedControl
 
