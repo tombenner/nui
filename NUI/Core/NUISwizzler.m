@@ -17,6 +17,7 @@
     [self swizzleDidMoveToWindow:[UILabel class]];
     [self swizzleDidMoveToWindow:[UINavigationBar class]];
     [self swizzleDidMoveToWindow:[UINavigationItem class]];
+    [self swizzleDidMoveToWindow:[UISearchBar class]];
     [self swizzleDidMoveToWindow:[UISegmentedControl class]];
     [self swizzleDidMoveToWindow:[UISlider class]];
     [self swizzleDidMoveToWindow:[UISwitch class]];

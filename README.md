@@ -237,6 +237,28 @@ Below are all of the currently available style classes, their corresponding UI c
 * text-shadow-color
 * text-shadow-offset
 
+#### SearchBar
+
+*UISearchBar*
+
+* background-color
+* background-color-top/background-color-bottom
+* background-image
+* scope-background-color
+* scope-background-image
+
+#### SearchBarScopeBar
+
+*UISearchBar scope bar, inherits from SegmentedControl*
+
+See SegmentedControl
+
+#### SearchBarButton
+
+*UISearchBar button, inherits from BarButton*
+
+See Button
+
 #### SegmentedControl
 
 *UISegmentedControl*
