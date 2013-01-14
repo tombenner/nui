@@ -20,9 +20,27 @@
 - (void)applyNUI
 {
     [self initNUI];
+    BOOL forceRender = NO;
+    NSString *selfClass = NSStringFromClass([self class]);
+    NSString *superviewClass = NSStringFromClass([[self superview] class]);
+    NSArray *bypassedClasses = [NSArray arrayWithObjects:@"UINavigationButton", nil];
+    NSArray *bypassedSuperviewClasses = [NSArray arrayWithObjects:
+                                         @"UICalloutBar",
+                                         @"UISearchBarTextField",
+                                         @"UIToolbarTextButton",
+                                         nil];
+    // By default, render UINavigationButtons in UISearchBar as BarButtons
+    if ([selfClass isEqualToString:@"UINavigationButton"] &&
+        [superviewClass isEqualToString:@"UISearchBar"]) {
+        if ([self.nuiClass isEqualToString:@"Button"]) {
+            self.nuiClass = @"BarButton:SearchBarButton";
+        }
+        forceRender = YES;
+    }
     if (![self.nuiClass isEqualToString:@"none"]) {
-        if (![NSStringFromClass([self class]) isEqualToString:@"UINavigationButton"] &&
-            ![NSStringFromClass([[self superview] class]) isEqualToString:@"UIToolbarTextButton"]) {
+        if ((![bypassedClasses containsObject:selfClass] &&
+            ![bypassedSuperviewClasses containsObject:superviewClass]) ||
+            forceRender) {
             [NUIRenderer renderButton:self withClass:self.nuiClass];
         }
     }
