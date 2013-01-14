@@ -18,7 +18,6 @@
 + (void)render:(UILabel*)label withClass:(NSString*)className withSuffix:(NSString*)suffix
 {
     NSString *property;
-    NSString *fontSizeProperty = @"font-size";
     
     if (![suffix isEqualToString:@""]) {
         className = [NSString stringWithFormat:@"%@%@", className, suffix];
@@ -31,6 +30,14 @@
         // UILabels created programmatically have a white background by default
         label.backgroundColor = [UIColor clearColor];
     }
+    
+    [self renderText:label withClass:className];
+}
+
++ (void)renderText:(UILabel*)label withClass:(NSString*)className
+{
+    NSString *property;
+    NSString *fontSizeProperty = @"font-size";
     
     property = @"font-color";
     if ([NUISettings hasProperty:property withClass:className]) {

@@ -65,7 +65,7 @@
         [button setBackgroundImage:[NUISettings getImage:@"background-image-disabled" withClass:className] forState:UIControlStateDisabled];
     }
     
-    [NUIRenderer renderLabel:button.titleLabel withClass:className];
+    [NUILabelRenderer renderText:button.titleLabel withClass:className];
     
     // Set text align
     if ([NUISettings hasProperty:@"text-align" withClass:className]) {
