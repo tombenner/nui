@@ -17,11 +17,13 @@
 
 BarButton {
     background-color: @primaryBackgroundColor;
+    background-color-highlighted: #CCCCCC;
     border-color: @primaryBorderColor;
     border-width: @primaryBorderWidth;
     corner-radius: 7;
     font-name: @secondaryFontNameBold;
     font-color: @primaryFontColor;
+    font-color-disabled: @secondaryFontColor;
     font-size: 13;
     text-shadow-color: clear;
 }
@@ -67,8 +69,17 @@ NavigationBar {
     background-color-top: @primaryBackgroundColorTop;
     background-color-bottom: @primaryBackgroundColorBottomStrong;
 }
+SearchBar {
+    background-color-top: @primaryBackgroundColorTop;
+    background-color-bottom: @primaryBackgroundColorBottom;
+    scope-background-color: #FFFFFF;
+}
 SegmentedControl {
-    background-tint-color: @primaryBackgroundColorTop;
+    background-color: @primaryBackgroundColorTop;
+    background-color-selected: @primaryBackgroundColorBottomStrong;
+    border-color: @primaryBorderColor;
+    border-width: @primaryBorderWidth;
+    corner-radius: 7;
     font-name: @secondaryFontNameBold;
     font-size: 13;
     font-color: @primaryFontColor;

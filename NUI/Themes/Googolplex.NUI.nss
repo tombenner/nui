@@ -78,6 +78,11 @@ NavigationBar {
     font-color: @primaryFontColor;
     text-shadow-color: clear;
 }
+SearchBar {
+    background-color-top: @primaryBackgroundColorTop;
+    background-color-bottom: @primaryBackgroundColorBottom;
+    scope-background-color: #FFFFFF;
+}
 SegmentedControl {
     background-color: @primaryBackgroundColorTop;
     background-color-selected: #E6E6E6;
