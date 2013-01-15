@@ -17,15 +17,12 @@
 
 + (void)render:(UILabel*)label withClass:(NSString*)className withSuffix:(NSString*)suffix
 {
-    NSString *property;
-    
     if (![suffix isEqualToString:@""]) {
         className = [NSString stringWithFormat:@"%@%@", className, suffix];
     }
     
-    property = @"background-color";
-    if ([NUISettings hasProperty:property withClass:className]) {
-        label.backgroundColor = [NUISettings getColor:property withClass:className];
+    if ([NUISettings hasProperty:@"background-color" withClass:className]) {
+        label.backgroundColor = [NUISettings getColor:@"background-color" withClass:className];
     } else {
         // UILabels created programmatically have a white background by default
         label.backgroundColor = [UIColor clearColor];
