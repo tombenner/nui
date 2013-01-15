@@ -28,6 +28,20 @@
         label.backgroundColor = [UIColor clearColor];
     }
     
+    CALayer *layer = [label layer];
+    
+    if ([NUISettings hasProperty:@"border-color" withClass:className]) {
+        [layer setBorderColor:[[NUISettings getColor:@"border-color" withClass:className] CGColor]];
+    }
+    
+    if ([NUISettings hasProperty:@"border-width" withClass:className]) {
+        [layer setBorderWidth:[NUISettings getFloat:@"border-width" withClass:className]];
+    }
+    
+    if ([NUISettings hasProperty:@"corner-radius" withClass:className]) {
+        [layer setCornerRadius:[NUISettings getFloat:@"corner-radius" withClass:className]];
+    }
+    
     [self renderText:label withClass:className];
 }
 
