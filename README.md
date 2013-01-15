@@ -211,6 +211,9 @@ Below are all of the currently available style classes, their corresponding UI c
 *UILabel*
 
 * background-color *(Color)*
+* border-color *(Color)*
+* border-width *(Number)*
+* corner-radius *(Number)*
 * font-color *(Color)*
 * font-color-highlighted *(Color)*
 * font-name *(FontName)*
