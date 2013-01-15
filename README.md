@@ -393,6 +393,9 @@ The detail label of a *UITableViewCell*
 
 * background-color *(Color)*
 * background-image *(Image)*
+* border-color *(Color)*
+* border-width *(Number)*
+* corner-radius *(Number)*
 
 Style Value Types
 -----------------
