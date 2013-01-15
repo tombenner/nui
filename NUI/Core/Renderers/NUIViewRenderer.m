@@ -17,6 +17,20 @@
     } else if ([NUISettings hasProperty:@"background-color" withClass:className]) {
         [view setBackgroundColor: [NUISettings getColor:@"background-color" withClass: className]];
     }
+    
+    CALayer *layer = [view layer];
+    
+    if ([NUISettings hasProperty:@"border-color" withClass:className]) {
+        [layer setBorderColor:[[NUISettings getColor:@"border-color" withClass:className] CGColor]];
+    }
+    
+    if ([NUISettings hasProperty:@"border-width" withClass:className]) {
+        [layer setBorderWidth:[NUISettings getFloat:@"border-width" withClass:className]];
+    }
+    
+    if ([NUISettings hasProperty:@"corner-radius" withClass:className]) {
+        [layer setCornerRadius:[NUISettings getFloat:@"corner-radius" withClass:className]];
+    }
 }
 
 @end
