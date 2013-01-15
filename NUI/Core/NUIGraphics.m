@@ -65,32 +65,6 @@
     return image;
 }
 
-+ (UIImage*)backButtonWithColor:(UIColor*)color
-{
-    CIColor *ciColor = [self uiColorToCIColor:color];
-    CIImage *ciImage = [[CIImage alloc] initWithImage:[UIImage imageNamed:@"NUIBackButtonTemplate.png"]];
-    CIContext *context = [CIContext contextWithOptions:nil];
-    
-    ciImage = [self tintCIImage:ciImage withColor:ciColor];
-    UIImage *uiImage = [UIImage imageWithCGImage:[context createCGImage:ciImage fromRect:ciImage.extent]];
-    uiImage = [uiImage resizableImageWithCapInsets:UIEdgeInsetsMake(0, 16, 0, 10)];
-    
-    return uiImage;
-}
-
-+ (UIImage*)barButtonWithColor:(UIColor*)color
-{
-    CIColor *ciColor = [self uiColorToCIColor:color];
-    CIImage *ciImage = [[CIImage alloc] initWithImage:[UIImage imageNamed:@"NUIBarButtonTemplate.png"]];
-    CIContext *context = [CIContext contextWithOptions:nil];
-    
-    ciImage = [self tintCIImage:ciImage withColor:ciColor];
-    UIImage *uiImage = [UIImage imageWithCGImage:[context createCGImage:ciImage fromRect:ciImage.extent]];
-    uiImage = [uiImage resizableImageWithCapInsets:UIEdgeInsetsMake(0, 10, 0, 10)];
-    
-    return uiImage;
-}
-
 + (CALayer*)roundedRectLayerWithClass:(NSString*)className
 {
     CALayer *layer = [CALayer layer];
