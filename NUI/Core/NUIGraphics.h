@@ -13,8 +13,6 @@
 @interface NUIGraphics : NSObject
 
 + (UIImage*)backButtonWithClass:(NSString*)className;
-+ (UIImage*)backButtonWithColor:(UIColor*)color;
-+ (UIImage*)barButtonWithColor:(UIColor*)color;
 + (CALayer*)roundedRectLayerWithClass:(NSString*)className;
 + (UIImage*)roundedRectImageWithClass:(NSString*)className;
 + (UIImage*)roundedRectImageWithClass:(NSString*)className layer:(CALayer*)layer;

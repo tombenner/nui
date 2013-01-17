@@ -35,7 +35,16 @@
     
     // Set background color
     if ([NUISettings hasProperty:@"background-color" withClass:className]) {
-        [button setBackgroundColor:[NUISettings getColor:@"background-color" withClass:className]];
+        [button setBackgroundImage:[NUISettings getImageFromColor:@"background-color" withClass:className] forState:UIControlStateNormal];
+    }
+    if ([NUISettings hasProperty:@"background-color-selected" withClass:className]) {
+        [button setBackgroundImage:[NUISettings getImageFromColor:@"background-color-selected" withClass:className] forState:UIControlStateSelected];
+    }
+    if ([NUISettings hasProperty:@"background-color-highlighted" withClass:className]) {
+        [button setBackgroundImage:[NUISettings getImageFromColor:@"background-color-highlighted" withClass:className] forState:UIControlStateHighlighted];
+    }
+    if ([NUISettings hasProperty:@"background-color-disabled" withClass:className]) {
+        [button setBackgroundImage:[NUISettings getImageFromColor:@"background-color-disabled" withClass:className] forState:UIControlStateDisabled];
     }
     
     // Set background gradient
@@ -65,7 +74,7 @@
         [button setBackgroundImage:[NUISettings getImage:@"background-image-disabled" withClass:className] forState:UIControlStateDisabled];
     }
     
-    [NUIRenderer renderLabel:button.titleLabel withClass:className];
+    [NUILabelRenderer renderText:button.titleLabel withClass:className];
     
     // Set text align
     if ([NUISettings hasProperty:@"text-align" withClass:className]) {

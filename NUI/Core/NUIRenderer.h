@@ -14,6 +14,7 @@
 #import "NUILabelRenderer.h"
 #import "NUINavigationBarRenderer.h"
 #import "NUINavigationItemRenderer.h"
+#import "NUISearchBarRenderer.h"
 #import "NUISegmentedControlRenderer.h"
 #import "NUISliderRenderer.h"
 #import "NUISwitchRenderer.h"
@@ -51,6 +52,9 @@
 
 + (void)renderNavigationItem:(UINavigationItem*)item;
 + (void)renderNavigationItem:(UINavigationItem*)item withClass:(NSString*)className;
+
++ (void)renderSearchBar:(UISearchBar*)bar;
++ (void)renderSearchBar:(UISearchBar*)bar withClass:(NSString*)className;
 
 + (void)renderSegmentedControl:(UISegmentedControl*)control;
 + (void)renderSegmentedControl:(UISegmentedControl*)control withClass:(NSString*)className;

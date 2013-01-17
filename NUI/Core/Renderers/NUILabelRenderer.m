@@ -17,25 +17,45 @@
 
 + (void)render:(UILabel*)label withClass:(NSString*)className withSuffix:(NSString*)suffix
 {
-    NSString *property;
 
     if (![suffix isEqualToString:@""]) {
         className = [NSString stringWithFormat:@"%@%@", className, suffix];
     }
 
-    property = @"background-color";
-    if ([NUISettings hasProperty:property withClass:className]) {
-        label.backgroundColor = [NUISettings getColor:property withClass:className];
+    if ([NUISettings hasProperty:@"background-color" withClass:className]) {
+        label.backgroundColor = [NUISettings getColor:@"background-color" withClass:className];
     } else {
         // UILabels created programmatically have a white background by default
         label.backgroundColor = [UIColor clearColor];
     }
 
+    CALayer *layer = [label layer];
+    
+    if ([NUISettings hasProperty:@"border-color" withClass:className]) {
+        [layer setBorderColor:[[NUISettings getColor:@"border-color" withClass:className] CGColor]];
+    }
+    
+    if ([NUISettings hasProperty:@"border-width" withClass:className]) {
+        [layer setBorderWidth:[NUISettings getFloat:@"border-width" withClass:className]];
+    }
+    
+    if ([NUISettings hasProperty:@"corner-radius" withClass:className]) {
+        [layer setCornerRadius:[NUISettings getFloat:@"corner-radius" withClass:className]];
+    }
+    
+    [self renderText:label withClass:className];
+}
+
++ (void)renderText:(UILabel*)label withClass:(NSString*)className
+{
+    NSString *property;
+    NSString *fontSizeProperty = @"font-size";
+
     property = @"font-color";
     if ([NUISettings hasProperty:property withClass:className]) {
         label.textColor = [NUISettings getColor:property withClass:className];
     }
-    
+
     property = @"font-color-highlighted";
     if ([NUISettings hasProperty:property withClass:className]) {
         label.highlightedTextColor = [NUISettings getColor:property withClass:className];

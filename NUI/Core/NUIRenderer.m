@@ -89,6 +89,19 @@ static NUIRenderer *instance = nil;
 }
 
 
++ (void)renderSearchBar:(UISearchBar*)bar
+{
+    [NUISearchBarRenderer render:bar withClass:@"SearchBar"];
+    [self registerObject:bar];
+}
+
++ (void)renderSearchBar:(UISearchBar*)bar withClass:(NSString*)className
+{
+    [NUISearchBarRenderer render:bar withClass:className];
+    [self registerObject:bar];
+}
+
+
 
 + (void)renderSegmentedControl:(UISegmentedControl*)control
 {

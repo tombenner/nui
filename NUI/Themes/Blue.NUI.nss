@@ -65,8 +65,17 @@ NavigationBar {
     background-color-top: #54B4EB;
     background-color-bottom: #2FA4E7;
 }
+SearchBar {
+    background-color-top: @primaryBackgroundColorTop;
+    background-color-bottom: @primaryBackgroundColorBottom;
+    scope-background-color: #FFFFFF;
+}
 SegmentedControl {
-    background-tint-color: @primaryBackgroundColorTop;
+    background-color: @primaryBackgroundColorTop;
+    background-color-selected: #EEEEEE;
+    border-color: #999999;
+    border-width: @primaryBorderWidth;
+    corner-radius: 7;
     font-name: @secondaryFontNameBold;
     font-size: 13;
     font-color: @primaryFontColor;

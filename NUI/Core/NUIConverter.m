@@ -72,7 +72,7 @@
             break;
             
         default:
-            edges = [NSArray arrayWithObjects:0, 0, 0, 0, nil];
+            edges = [NSArray arrayWithObjects:@0, @0, @0, @0, nil];
             break;
     }
     // UIEdgeInsetsMake's arguments have a different ordering: top, left, bottom, right

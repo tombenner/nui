@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <QuartzCore/QuartzCore.h>
 #import "NUISettings.h"
 
 @interface NUILabelRenderer : NSObject
 
 + (void)render:(UILabel*)label withClass:(NSString*)className;
 + (void)render:(UILabel*)label withClass:(NSString*)className withSuffix:(NSString*)suffix;
++ (void)renderText:(UILabel*)label withClass:(NSString*)className;
 
 @end

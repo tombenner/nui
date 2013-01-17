@@ -131,285 +131,271 @@ Version 0.1 of NUI required that you manually make your app's UI components inhe
 Style Classes
 -------------
 
-Below are all of the currently available style classes, their corresponding UI component classes, and the properties they support.
+Below are all of the currently available style classes, their corresponding UI component classes, and the properties they support. Value types (e.g. *Color*, *Gradient*) are described below in Style Value Types.
 
 #### BarButton
 
 *UIBarButtonItem*
 
-* background-color
-* background-color-top/background-color-bottom
-* background-image
-* background-image-insets
-* background-tint-color
-* border-color
-* border-width
-* corner-radius
-* font-color
-* font-name
-* font-size
-* text-shadow-color
-* text-shadow-offset
+* background-color *(Color)*
+* background-color-top/background-color-bottom *(Gradient)*
+* background-image *(Image)*
+* background-image-insets *(Box)*
+* background-tint-color *(Color)*
+* border-color *(Color)*
+* border-width *(Number)*
+* corner-radius *(Number)*
+* font-color *(Color)*
+* font-name *(FontName)*
+* font-size *(Number)*
+* text-shadow-color *(Color)*
+* text-shadow-offset *(Offset)*
 
 #### BarButtonBack
 
 *UIBarButtonItem back button, inherits from BarButton*
 
-* background-color
-* background-image
-* background-image-insets
-* background-tint-color
-* border-color
-* border-width
-* corner-radius
-* font-color
-* font-name
-* font-size
-* text-shadow-color
-* text-shadow-offset
+* background-color *(Color)*
+* background-image *(Image)*
+* background-image-insets *(Box)*
+* background-tint-color *(Color)*
+* border-color *(Color)*
+* border-width *(Number)*
+* corner-radius *(Number)*
+* font-color *(Color)*
+* font-name *(FontName)*
+* font-size *(Number)*
+* text-shadow-color *(Color)*
+* text-shadow-offset *(Offset)*
 
 #### Button
 
 *UIButton*
 
-* background-color
-* background-color-top/background-color-bottom
-* background-image
-* background-image-insets
-* background-image-disabled
-* background-image-disabled-insets
-* background-image-highlighted
-* background-image-highlighted-insets
-* background-image-selected
-* background-image-selected-insets
-* border-color
-* border-width
-* corner-radius
-* font-color
-* font-color-disabled
-* font-color-highlighted
-* font-color-selected
-* font-name
-* font-size
-* height
-* padding
-* text-align
-* text-alpha
-* text-auto-fit
-* text-shadow-color
-* text-shadow-color-highlighted
-* text-shadow-color-selected
-* text-shadow-offset
-* title-insets
-* content-insets
+* background-color *(Color)*
+* background-color-top/background-color-bottom *(Gradient)*
+* background-color-disabled *(Color)*
+* background-color-highlighted *(Color)*
+* background-color-selected *(Color)*
+* background-image *(Image)*
+* background-image-insets *(Box)*
+* background-image-disabled *(Image)*
+* background-image-disabled-insets *(Box)*
+* background-image-highlighted *(Image)*
+* background-image-highlighted-insets *(Box)*
+* background-image-selected *(Image)*
+* background-image-selected-insets *(Box)*
+* border-color *(Color)*
+* border-width *(Number)*
+* corner-radius *(Number)*
+* font-color *(Color)*
+* font-color-disabled *(Color)*
+* font-color-highlighted *(Color)*
+* font-color-selected *(Color)*
+* font-name *(FontName)*
+* font-size *(Number)*
+* height *(Number)*
+* padding *(Box)*
+* text-align *(TextAlign)*
+* text-alpha *(Number)*
+* text-auto-fit *(Boolean)*
+* text-shadow-color *(Color)*
+* text-shadow-color-highlighted *(Color)*
+* text-shadow-color-selected *(Color)*
+* text-shadow-offset *(Offset)*
+* title-insets *(Box)*
+* content-insets *(Box)*
 
 #### Label
 
 *UILabel*
 
-* background-color
-* font-color
-* font-color-highlighted
-* font-name
-* font-size
-* text-align
-* text-alpha
-* text-auto-fit
-* text-shadow-color
-* text-shadow-offset
+* background-color *(Color)*
+* border-color *(Color)*
+* border-width *(Number)*
+* corner-radius *(Number)*
+* font-color *(Color)*
+* font-color-highlighted *(Color)*
+* font-name *(FontName)*
+* font-size *(Number)*
+* text-align *(TextAlign)*
+* text-alpha *(Number)*
+* text-auto-fit *(Boolean)*
+* text-shadow-color *(Color)*
+* text-shadow-offset *(Offset)*
 
 #### NavigationBar
 
 *UINavigationBar*
 
-* background-color
-* background-color-top/background-color-bottom
-* background-image
-* background-image-insets
-* background-tint-color
-* font-color
-* font-name
-* font-size
-* shadow-image
-* text-shadow-color
-* text-shadow-offset
+* background-color *(Color)*
+* background-color-top/background-color-bottom *(Gradient)*
+* background-image *(Image)*
+* background-image-insets *(Box)*
+* background-tint-color *(Color)*
+* font-color *(Color)*
+* font-name *(FontName)*
+* font-size *(Number)*
+* shadow-image *(Image)*
+* text-shadow-color *(Color)*
+* text-shadow-offset *(Offset)*
+
+#### SearchBar
+
+*UISearchBar*
+
+* background-color *(Color)*
+* background-color-top/background-color-bottom *(Gradient)*
+* background-image *(Image)*
+* scope-background-color *(Color)*
+* scope-background-image *(Image)*
+
+#### SearchBarButton
+
+*UISearchBar button, inherits from BarButton*
+
+See Button
+
+#### SearchBarScopeBar
+
+*UISearchBar scope bar, inherits from SegmentedControl*
+
+See SegmentedControl
 
 #### SegmentedControl
 
 *UISegmentedControl*
 
-* background-color
-* background-color-selected
-* background-tint-color
-* border-color
-* border-width
-* corner-radius
-* font-color
-* font-name
-* font-size
-* text-shadow-color
-* text-shadow-offset
+* background-color *(Color)*
+* background-color-selected *(Color)*
+* background-tint-color *(Color)*
+* border-color *(Color)*
+* border-width *(Number)*
+* corner-radius *(Number)*
+* font-color *(Color)*
+* font-name *(FontName)*
+* font-size *(Number)*
+* text-shadow-color *(Color)*
+* text-shadow-offset *(Offset)*
 
 #### Slider
 
 *UISlider*
 
-* minimum-track-tint-color
-* maximum-track-tint-color
-* minimum-value-image
-* maximum-value-image
-* thumb-image
-* thumb-tint-color
+* minimum-track-tint-color *(Color)*
+* maximum-track-tint-color *(Color)*
+* minimum-value-image *(Image)*
+* maximum-value-image *(Image)*
+* thumb-image *(Image)*
+* thumb-tint-color *(Color)*
 
 #### Switch
 
 *UISwitch*
 
-* background-color
-* off-image
-* off-image-insets
-* on-image
-* on-image-insets
-* on-tint-color
-* thumb-tint-color
-* tint-color
+* background-color *(Color)*
+* off-image *(Image)*
+* off-image-insets *(Box)*
+* on-image *(Image)*
+* on-image-insets *(Box)*
+* on-tint-color *(Color)*
+* thumb-tint-color *(Color)*
+* tint-color *(Color)*
 
 #### TabBar
 
 *UITabBar*
 
-* background-color
-* background-color-top/background-color-bottom
-* background-image
-* background-image-insets
-* background-tint-color
+* background-color *(Color)*
+* background-color-top/background-color-bottom *(Gradient)*
+* background-image *(Image)*
+* background-image-insets *(Box)*
+* background-tint-color *(Color)*
 
 #### TabBarItem
 
 *UITabBarItem*
 
-* background-image-selected
-* background-image-selected-insets
-* font-color
-* font-name
-* font-size
-* text-offset
-* text-shadow-color
-* text-shadow-offset
+* background-image-selected *(Image)*
+* background-image-selected-insets *(Box)*
+* font-color *(Color)*
+* font-name *(FontName)*
+* font-size *(Number)*
+* text-offset *(Offset)*
+* text-shadow-color *(Color)*
+* text-shadow-offset *(Offset)*
 
 #### TableCell
 
 *UITableViewCell*
 
-* background-color
-* background-color-top/background-color-bottom
-* font-color
-* font-color-highlighted
-* font-name
-* font-size
-* text-align
-* text-alpha
-* text-auto-fit
-* text-shadow-color
-* text-shadow-offset
+* background-color *(Color)*
+* background-color-top/background-color-bottom *(Gradient)*
+* font-color *(Color)*
+* font-color-highlighted *(Color)*
+* font-name *(FontName)*
+* font-size *(Number)*
+* text-align *(TextAlign)*
+* text-alpha *(Number)*
+* text-auto-fit *(Boolean)*
+* text-shadow-color *(Color)*
+* text-shadow-offset *(Offset)*
 
 #### TableCellDetail
 
 The detail label of a *UITableViewCell*
 
-* font-color
-* font-color-highlighted
-* font-name
-* font-size
-* text-align
-* text-alpha
-* text-auto-fit
-* text-shadow-color
-* text-shadow-offset
+* font-color *(Color)*
+* font-color-highlighted *(Color)*
+* font-name *(FontName)*
+* font-size *(Number)*
+* text-align *(TextAlign)*
+* text-alpha *(Number)*
+* text-auto-fit *(Boolean)*
+* text-shadow-color *(Color)*
+* text-shadow-offset *(Offset)*
 
 #### Toolbar
 
 *UIToolbar*
 
-* background-color
-* background-image-top
-* background-image-bottom
-* background-image-top-landscape
-* background-image-bottom-landscape
-* background-tint-color
-* shadow-image
-* shadow-image-top
-* shadow-image-bottom
+* background-color *(Color)*
+* background-image-top *(Image)*
+* background-image-bottom *(Image)*
+* background-image-top-landscape *(Image)*
+* background-image-bottom-landscape *(Image)*
+* background-tint-color *(Color)*
+* shadow-image *(Image)*
+* shadow-image-top *(Image)*
+* shadow-image-bottom *(Image)*
 
 #### TextField
 
 *UITextField*
 
-* background-color
-* background-image
-* background-image-insets
-* border-color
-* border-style
-* border-width
-* corner-radius
-* font-color
-* font-name
-* font-size
-* height
-* padding
-* vertical-align
+* background-color *(Color)*
+* background-image *(Image)*
+* background-image-insets *(Box)*
+* border-color *(Color)*
+* border-style *(BorderStyle)*
+* border-width *(Number)*
+* corner-radius *(Number)*
+* font-color *(Color)*
+* font-name *(FontName)*
+* font-size *(Number)*
+* height *(Number)*
+* padding *(Box)*
+* vertical-align *(VerticalAlign)*
 
 #### View
 
 *UIView*
 
-* background-color
-* background-image
-
-Style Properties
-----------------
-
-* **background-color** - Color
-* **background-color-top**/**background-color-bottom** - Gradient
-* **background-image** - Image
-* **background-image-insets** - Box
-* **background-image-disabled** - Image
-* **background-image-disabled-insets** - Box
-* **background-image-highlighted** - Image
-* **background-image-highlighted-insets** - Box
-* **background-image-selected** - Image
-* **background-image-selected-insets** - Box
-* **background-image-top** - Image
-* **background-image-bottom** - Image
-* **background-image-top-landscape** - Image
-* **background-image-bottom-landscape** - Image
-* **background-tint-color** - Color
-* **border-color** - Color
-* **border-style** - BorderStyle
-* **border-width** - Number
-* **corner-radius** - Number
-* **font-color** - Color
-* **font-color-highlighted** - Color
-* **font-name** - FontName
-* **font-size** - Number
-* **height** - Number
-* **padding** - Box
-* **minimum-value-image** - Image
-* **maximum-value-image** - Image
-* **minimum-track-tint-color** - Color
-* **maximum-track-tint-color** - Color
-* **shadow-image** - Image
-* **shadow-image-top** - Image
-* **shadow-image-bottom** - Image
-* **thumb-image** - Image
-* **thumb-tint-color** - Color
-* **text-align** - TextAlign
-* **text-alpha** - Number
-* **text-auto-fit** - Boolean
-* **text-offset** - Offset
-* **text-shadow-color** - Color
-* **text-shadow-offset** - Offset
-* **vertical-align** - VerticalAlign
+* background-color *(Color)*
+* background-image *(Image)*
+* border-color *(Color)*
+* border-width *(Number)*
+* corner-radius *(Number)*
 
 Style Value Types
 -----------------
