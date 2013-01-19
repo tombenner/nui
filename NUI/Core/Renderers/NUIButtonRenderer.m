@@ -19,6 +19,7 @@
         [button.layer.sublayers[0] setOpacity:0.0f];
         [button.layer.sublayers[1] setOpacity:0.0f];
     }
+	button.backgroundColor = [UIColor clearColor];
     
     // Set height
     if ([NUISettings hasProperty:@"height" withClass:className]) {
@@ -32,10 +33,9 @@
     if ([NUISettings hasProperty:@"padding" withClass:className]) {
         [button setTitleEdgeInsets:[NUISettings getEdgeInsets:@"padding" withClass:className]];
     }
-    
+	
     // Set background color
     if ([NUISettings hasProperty:@"background-color" withClass:className]) {
-		[button setBackgroundColor:[NUISettings getColor:@"background-color" withClass:className]];
         [button setBackgroundImage:[NUISettings getImageFromColor:@"background-color" withClass:className] forState:UIControlStateNormal];
     }
     if ([NUISettings hasProperty:@"background-color-selected" withClass:className]) {
