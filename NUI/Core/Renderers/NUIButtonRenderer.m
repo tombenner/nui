@@ -120,9 +120,9 @@
     
     // Set corners
     if ([NUISettings hasProperty:@"corner-radius" withClass:className]) {
-        [layer setMasksToBounds:YES];
         [layer setCornerRadius:[NUISettings getFloat:@"corner-radius" withClass:className]];
     }
+	layer.masksToBounds = (layer.cornerRadius > 0);
     
     // Set border color
     if ([NUISettings hasProperty:@"border-color" withClass:className]) {

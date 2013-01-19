@@ -31,6 +31,7 @@
     if ([NUISettings hasProperty:@"corner-radius" withClass:className]) {
         [layer setCornerRadius:[NUISettings getFloat:@"corner-radius" withClass:className]];
     }
+	layer.masksToBounds = (layer.cornerRadius > 0);
 	
 	if ([NUISettings hasProperty:@"shadow-offset" withClass:className]) {
 		layer.shadowOffset = [NUISettings getSize:@"shadow-offset" withClass:className];
