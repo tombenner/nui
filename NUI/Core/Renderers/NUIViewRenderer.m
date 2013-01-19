@@ -12,6 +12,8 @@
 
 + (void)render:(UIView*)view withClass:(NSString*)className
 {
+	view.backgroundColor = [UIColor clearColor];
+	
     if ([NUISettings hasProperty:@"background-image" withClass:className]) {
         [view setBackgroundColor: [NUISettings getColorFromImage:@"background-image" withClass: className]];
     } else if ([NUISettings hasProperty:@"background-color" withClass:className]) {

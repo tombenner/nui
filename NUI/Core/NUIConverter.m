@@ -173,7 +173,11 @@
 + (UIColor*)toColorFromImageName:(NSString*)value
 {
     UIImage* image = [self toImageFromImageName:value];
-    return [UIColor colorWithPatternImage:image];
+    return [self toColorFromImage:image];
+}
++ (UIColor*)toColorFromImage:(UIImage*)value
+{
+	return [UIColor colorWithPatternImage:value];
 }
 
 + (UIImage*)toImageFromColorName:(NSString*)value {
