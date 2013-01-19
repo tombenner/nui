@@ -30,6 +30,7 @@
 + (UITextBorderStyle)toBorderStyle:(NSString*)value;
 + (UIColor*)toColor:(NSString*)value;
 + (UIColor*)toColorFromImageName:(NSString*)value;
++ (UIColor*)toColorFromImage:(UIImage*)value;
 + (UIImage*)toImageFromColorName:(NSString*)value;
 + (UIImage*)toImageFromImageName:(NSString*)value;
 + (kTextAlignment)toTextAlignment:(NSString*)value;

@@ -311,7 +311,9 @@ static NUIRenderer *instance = nil;
             instance = [NUIRenderer new];
             if ([NUISettings autoUpdateIsEnabled]) {
                 [NUIFileMonitor watch:[NUISettings autoUpdatePath] withCallback:^(){
-                    [NUIRenderer rerender];
+					dispatch_async(dispatch_get_main_queue(), ^{
+						[NUIRenderer rerender];
+					});
                 }];
                 instance.renderedObjects = [[NSMutableArray alloc] init];
                 instance.renderedObjectIdentifiers = [[NSMutableArray alloc] init];

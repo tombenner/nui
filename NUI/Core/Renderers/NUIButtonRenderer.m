@@ -19,6 +19,7 @@
         [button.layer.sublayers[0] setOpacity:0.0f];
         [button.layer.sublayers[1] setOpacity:0.0f];
     }
+	button.backgroundColor = [UIColor clearColor];
     
     // Set height
     if ([NUISettings hasProperty:@"height" withClass:className]) {
@@ -32,7 +33,7 @@
     if ([NUISettings hasProperty:@"padding" withClass:className]) {
         [button setTitleEdgeInsets:[NUISettings getEdgeInsets:@"padding" withClass:className]];
     }
-    
+	
     // Set background color
     if ([NUISettings hasProperty:@"background-color" withClass:className]) {
         [button setBackgroundImage:[NUISettings getImageFromColor:@"background-color" withClass:className] forState:UIControlStateNormal];
@@ -120,9 +121,9 @@
     
     // Set corners
     if ([NUISettings hasProperty:@"corner-radius" withClass:className]) {
-        [layer setMasksToBounds:YES];
         [layer setCornerRadius:[NUISettings getFloat:@"corner-radius" withClass:className]];
     }
+	layer.masksToBounds = (layer.cornerRadius > 0);
     
     // Set border color
     if ([NUISettings hasProperty:@"border-color" withClass:className]) {
@@ -133,6 +134,25 @@
     if ([NUISettings hasProperty:@"border-width" withClass:className]) {
         [layer setBorderWidth:[NUISettings getFloat:@"border-width" withClass:className]];
     }
+	
+	// Set shadow
+	if ([NUISettings hasProperty:@"shadow-offset" withClass:className]) {
+		layer.shadowOffset = [NUISettings getSize:@"shadow-offset" withClass:className];
+	}
+	if ([NUISettings hasProperty:@"shadow-alpha" withClass:className]) {
+		layer.shadowOpacity = [NUISettings getFloat:@"shadow-alpha" withClass:className];
+	}
+	if ([NUISettings hasProperty:@"shadow-color" withClass:className]) {
+		layer.shadowColor = [[NUISettings getColor:@"shadow-color" withClass:className] CGColor];
+	}
+	if ([NUISettings hasProperty:@"shadow-radius" withClass:className]) {
+		layer.shadowRadius = [NUISettings getFloat:@"shadow-radius" withClass:className];
+	}
+	if ([NUISettings hasProperty:@"shadow-box" withClass:className]) {
+		if([NUISettings getBoolean:@"shadow-box" withClass:className]) {
+			layer.shadowPath = [[UIBezierPath bezierPathWithRect:button.bounds] CGPath];
+		}
+	}
 }
 
 @end

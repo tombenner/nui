@@ -128,7 +128,8 @@ static NUISettings *instance = nil;
 
 + (UIColor*)getColorFromImage:(NSString*)property withClass:(NSString*)className
 {
-    return [NUIConverter toColorFromImageName:[self get:property withClass:className]];
+	UIImage *image = [self getImage:property withClass:className];
+    return [NUIConverter toColorFromImage:image];
 }
 
 + (UIImage*)getImageFromColor:(NSString*)property withClass:(NSString*)className
