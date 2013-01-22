@@ -43,6 +43,27 @@
 }
 
 - (void)setNuiClass:(NSString*)value {
+    // Set class to none if any view superviews is in the exclude
+    NSArray *excludeSubviews = [[NUISettings get:@"exclude-subviews" withClass:value] componentsSeparatedByString:@","];
+    if(excludeSubviews.count){
+        UIView *superView = self;
+        while (superView != nil) {
+            if ([excludeSubviews containsObject:NSStringFromClass([superView class])]) {
+                value = @"none";
+                break;
+            }
+            superView = superView.superview;
+        }
+    }
+    
+    // Set class to none if view is in the exclude
+    NSArray *excludeViews = [[NUISettings get:@"exclude-views" withClass:value] componentsSeparatedByString:@","];
+    if(excludeViews.count){
+        if ([excludeViews containsObject:NSStringFromClass([self class])]) {
+            value = @"none";
+        }
+    }
+    
     objc_setAssociatedObject(self, "nuiClass", value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
