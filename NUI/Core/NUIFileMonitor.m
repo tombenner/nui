@@ -21,7 +21,7 @@
     dispatch_source_set_event_handler(source, ^
                                       {
                                           unsigned long flags = dispatch_source_get_data(source);
-                                          if (flags & DISPATCH_VNODE_DELETE) {
+                                          if (flags) {
                                               dispatch_source_cancel(source);
                                               callback();
                                               [self watch:path withCallback:callback];
