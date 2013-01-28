@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "NUIFileMonitor.h"
 #import "NUISettings.h"
+#import "NUIWindowRenderer.h"
 #import "NUIBarButtonItemRenderer.h"
 #import "NUIButtonRenderer.h"
 #import "NUIControlRenderer.h"
@@ -37,6 +38,9 @@
 
 + (void)render:(UIView*)object;
 + (void)rerender;
+
++ (void)renderWindow:(UIWindow*)window;
++ (void)renderWindow:(UIWindow*)window withClass:(NSString*)className;
 
 + (void)renderBarButtonItem:(UIBarButtonItem*)item;
 + (void)renderBarButtonItem:(UIBarButtonItem*)item withClass:(NSString*)className;
