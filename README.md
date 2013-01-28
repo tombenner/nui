@@ -331,6 +331,8 @@ See SegmentedControl
 
 * background-color *(Color)*
 * background-color-top/background-color-bottom *(Gradient)*
+* background-color-selected *(Color)*
+* background-color-top-selected/background-color-bottom-selected *(Gradient)*
 * font-color *(Color)*
 * font-color-highlighted *(Color)*
 * font-name *(FontName)*
