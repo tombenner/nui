@@ -15,6 +15,12 @@
     if (item.backBarButtonItem != nil) {
         [NUIRenderer renderBarButtonItem:item.backBarButtonItem];
     }
+    if (item.leftBarButtonItem != nil) {
+        [NUIRenderer renderBarButtonItem:item.leftBarButtonItem];
+    }
+    if (item.rightBarButtonItem != nil) {
+        [NUIRenderer renderBarButtonItem:item.rightBarButtonItem];
+    }
 }
 
 @end

@@ -48,6 +48,21 @@
                                   frame:cell.bounds];
         cell.backgroundView = [[UIImageView alloc] initWithImage:gradientImage];
     }
+    
+    // Set selected background color
+    if ([NUISettings hasProperty:@"background-color-selected" withClass:className]) {
+        UIImage *colorImage = [NUISettings getImageFromColor:@"background-color-selected" withClass:className];
+        cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:colorImage];
+    }
+    
+    // Set selected background gradient
+    if ([NUISettings hasProperty:@"background-color-top-selected" withClass:className]) {
+        UIImage *gradientImage = [NUIGraphics
+                                  gradientImageWithTop:[NUISettings getColor:@"background-color-top-selected" withClass:className]
+                                  bottom:[NUISettings getColor:@"background-color-bottom-selected" withClass:className]
+                                  frame:cell.bounds];
+        cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:gradientImage];
+    }
 }
 
 @end
