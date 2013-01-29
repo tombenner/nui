@@ -15,11 +15,11 @@
     // UIButtonTypeRoundedRect's first two sublayers contain its background and border, which
     // need to be hidden for NUI's rendering to be displayed correctly. Ideally we would switch
     // over to a UIButtonTypeCustom, but this appears to be impossible.
-    if (button.buttonType == UIButtonTypeRoundedRect) {
-        [button.layer.sublayers[0] setOpacity:0.0f];
-        [button.layer.sublayers[1] setOpacity:0.0f];
-    }
-    
+//    if (button.buttonType == UIButtonTypeRoundedRect) {
+//        [button.layer.sublayers[0] setOpacity:0.0f];
+//        [button.layer.sublayers[1] setOpacity:0.0f];
+//    }
+
     // Set height
     if ([NUISettings hasProperty:@"height" withClass:className]) {
         CGRect frame = button.frame;

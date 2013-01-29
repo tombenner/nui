@@ -22,8 +22,8 @@
         [item setTitlePositionAdjustment:[NUISettings getOffset:@"text-offset" withClass:className]];
     }
 
-    [item setFinishedSelectedImage:[item image]
-       withFinishedUnselectedImage:[item finishedUnselectedImage]];
+//    [item setFinishedSelectedImage:[item image]
+//       withFinishedUnselectedImage:[item finishedUnselectedImage]];
 }
 
 @end
