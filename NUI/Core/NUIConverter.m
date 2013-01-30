@@ -189,6 +189,31 @@
 
 + (UIImage*)toImageFromImageName:(NSString*)value
 {
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone &&
+       [[UIScreen mainScreen] bounds].size.height == 568.0)
+    {
+        NSMutableString * imageName = [value mutableCopy];
+        
+        // Strip extensions
+        NSRange extension = [imageName rangeOfString:@".png" options:NSBackwardsSearch|NSAnchoredSearch];
+        if(extension.location != NSNotFound) {
+            [imageName deleteCharactersInRange:extension];
+        }
+        
+        // Insert @2x
+        NSRange retina568hSymbol = [imageName rangeOfString:@"2x"];
+        if(retina568hSymbol.location != NSNotFound) {
+            [imageName insertString:@"-568h" atIndex:retina568hSymbol.location];
+        } else {
+            [imageName appendString:@"-568h@2x"];
+        }
+        
+        NSString * imagePath = [[NSBundle mainBundle] pathForResource:imageName ofType:@"png"];
+        if(imagePath) {
+            return [UIImage imageNamed:imagePath];
+        }
+    }
+    
     return [UIImage imageNamed:value];
 }
 
