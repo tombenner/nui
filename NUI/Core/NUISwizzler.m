@@ -25,6 +25,7 @@
     [self swizzleDidMoveToWindow:[UITableViewCell class]];
     [self swizzleDidMoveToWindow:[UITextField class]];
     [self swizzleDidMoveToWindow:[UIToolbar class]];
+    [self swizzleDidMoveToWindow:[UIControl class]];
     [self swizzleDidMoveToWindow:[UIView class]];
 
     // didMoveToWindow isn't called on UITabBarItems, so we need to use awakeFromNib instead.

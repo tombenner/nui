@@ -42,6 +42,18 @@ static NUIRenderer *instance = nil;
 
 
 
++ (void)renderControl:(UIControl*)control
+{
+    [NUIControlRenderer render:control withClass:@"Control"];
+    [self registerObject:control];
+}
+
++ (void)renderControl:(UIControl*)control withClass:(NSString*)className
+{
+    [NUIControlRenderer render:control withClass:className];
+    [self registerObject:control];
+}
+
 + (void)renderLabel:(UILabel*)label
 {
     [NUILabelRenderer render:label withClass:@"Label"];
