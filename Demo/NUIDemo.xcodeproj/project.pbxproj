@@ -64,6 +64,8 @@
 		89B940841671418200850A9A /* NUIViewBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B9404A1671418100850A9A /* NUIViewBackground.png */; };
 		B51BC28A169724A3004A38F8 /* UISwitch+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = B51BC289169724A3004A38F8 /* UISwitch+NUI.m */; };
 		B51BC28E16972527004A38F8 /* NUISwitchRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = B51BC28D16972527004A38F8 /* NUISwitchRenderer.m */; };
+		D8E7168116B8AF4400686854 /* NUIControlRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E7168016B8AF4300686854 /* NUIControlRenderer.m */; };
+		D8E7168516B9980300686854 /* UIControl+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E7168416B9980300686854 /* UIControl+NUI.m */; };
 		D983DEE5169DBCCD00A3A180 /* NUIToolbarRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = D983DEE4169DBCCC00A3A180 /* NUIToolbarRenderer.m */; };
 		D983DEE8169DC05300A3A180 /* UIToolbar+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = D983DEE7169DC05300A3A180 /* UIToolbar+NUI.m */; };
 		D983DF1C169DC84600A3A180 /* UISlider+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = D983DF1B169DC84500A3A180 /* UISlider+NUI.m */; };
@@ -170,6 +172,10 @@
 		B51BC289169724A3004A38F8 /* UISwitch+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISwitch+NUI.m"; sourceTree = "<group>"; };
 		B51BC28C16972527004A38F8 /* NUISwitchRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUISwitchRenderer.h; sourceTree = "<group>"; };
 		B51BC28D16972527004A38F8 /* NUISwitchRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISwitchRenderer.m; sourceTree = "<group>"; };
+		D8E7167F16B8AF4300686854 /* NUIControlRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIControlRenderer.h; sourceTree = "<group>"; };
+		D8E7168016B8AF4300686854 /* NUIControlRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIControlRenderer.m; sourceTree = "<group>"; };
+		D8E7168316B9980300686854 /* UIControl+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+NUI.h"; sourceTree = "<group>"; };
+		D8E7168416B9980300686854 /* UIControl+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+NUI.m"; sourceTree = "<group>"; };
 		D983DEE3169DBCCB00A3A180 /* NUIToolbarRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIToolbarRenderer.h; sourceTree = "<group>"; };
 		D983DEE4169DBCCC00A3A180 /* NUIToolbarRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIToolbarRenderer.m; sourceTree = "<group>"; };
 		D983DEE6169DC05300A3A180 /* UIToolbar+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIToolbar+NUI.h"; sourceTree = "<group>"; };
@@ -323,6 +329,8 @@
 				89B940331671418100850A9A /* NUIBarButtonItemRenderer.m */,
 				89B940341671418100850A9A /* NUIButtonRenderer.h */,
 				89B940351671418100850A9A /* NUIButtonRenderer.m */,
+				D8E7167F16B8AF4300686854 /* NUIControlRenderer.h */,
+				D8E7168016B8AF4300686854 /* NUIControlRenderer.m */,
 				89B940361671418100850A9A /* NUILabelRenderer.h */,
 				89B940371671418100850A9A /* NUILabelRenderer.m */,
 				89B940381671418100850A9A /* NUINavigationBarRenderer.h */,
@@ -368,6 +376,8 @@
 				4A7793501675687C00B5EE81 /* UIBarButtonItem+NUI.m */,
 				4A779341167560FF00B5EE81 /* UIButton+NUI.h */,
 				4A779340167560FF00B5EE81 /* UIButton+NUI.m */,
+				D8E7168316B9980300686854 /* UIControl+NUI.h */,
+				D8E7168416B9980300686854 /* UIControl+NUI.m */,
 				4A55F07A1675718F0056753C /* UILabel+NUI.h */,
 				4A55F07B1675718F0056753C /* UILabel+NUI.m */,
 				4A55F07D167573D10056753C /* UINavigationBar+NUI.h */,
@@ -515,6 +525,8 @@
 				D983DF1F169DC87800A3A180 /* NUISliderRenderer.m in Sources */,
 				4ADA71C616A0F15C00BDCF81 /* UISearchBar+NUI.m in Sources */,
 				4ADA71CA16A103CD00BDCF81 /* NUISearchBarRenderer.m in Sources */,
+				D8E7168116B8AF4400686854 /* NUIControlRenderer.m in Sources */,
+				D8E7168516B9980300686854 /* UIControl+NUI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,7 @@
 #import "NUISettings.h"
 #import "NUIBarButtonItemRenderer.h"
 #import "NUIButtonRenderer.h"
+#import "NUIControlRenderer.h"
 #import "NUILabelRenderer.h"
 #import "NUINavigationBarRenderer.h"
 #import "NUINavigationItemRenderer.h"
@@ -42,6 +43,9 @@
 
 + (void)renderButton:(UIButton*)button;
 + (void)renderButton:(UIButton*)button withClass:(NSString*)className;
+
++ (void)renderControl:(UIControl*)control;
++ (void)renderControl:(UIControl*)control withClass:(NSString*)className;
 
 + (void)renderLabel:(UILabel*)label;
 + (void)renderLabel:(UILabel*)label withClass:(NSString*)className;
