@@ -15,6 +15,18 @@
     
     if ([NUISettings hasProperty:@"background-image" withClass:className]) {
         [item setBackgroundImage:[NUISettings getImage:@"background-image" withClass:className] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+        
+        if([NUISettings hasProperty:@"background-image-landscape" withClass:className]) {
+            [item setBackgroundImage:[NUISettings getImage:@"background-image-landscape" withClass:className] forState:UIControlStateNormal barMetrics:UIBarMetricsLandscapePhone];
+        } else if([NUISettings hasProperty:@"background-image-selected" withClass:className]) {
+            [item setBackgroundImage:[NUISettings getImage:@"background-image-highlighted" withClass:className] forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
+        } else if([NUISettings hasProperty:@"background-image-selected-landscape" withClass:className]) {
+            [item setBackgroundImage:[NUISettings getImage:@"background-image-highlighted-landscape" withClass:className] forState:UIControlStateHighlighted barMetrics:UIBarMetricsLandscapePhone];
+        } else if([NUISettings hasProperty:@"background-image-disabled" withClass:className]) {
+            [item setBackgroundImage:[NUISettings getImage:@"background-image-disabled" withClass:className] forState:UIControlStateDisabled barMetrics:UIBarMetricsDefault];
+        } else if([NUISettings hasProperty:@"background-image-disabled-landscape" withClass:className]) {
+            [item setBackgroundImage:[NUISettings getImage:@"background-image-disabled-landscape" withClass:className] forState:UIControlStateDisabled barMetrics:UIBarMetricsLandscapePhone];
+        }
     } else if ([NUISettings hasProperty:@"background-tint-color" withClass:className]) {
         [item setTintColor:[NUISettings getColor:@"background-tint-color" withClass:className]];
     } else if ([NUISettings hasProperty:@"background-color" withClass:className] ||
