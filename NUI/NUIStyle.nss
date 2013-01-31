@@ -49,10 +49,6 @@ SmallButton {
     font-size: 14;
     corner-radius: 5;
 }
-Control {
-    border-color: @primaryBorderColor;
-    border-width: @primaryBorderWidth;
-}
 Label {
     font-name: @secondaryFontName;
     font-size: 20;
