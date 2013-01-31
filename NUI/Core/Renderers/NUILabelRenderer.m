@@ -48,7 +48,6 @@
 + (void)renderText:(UILabel*)label withClass:(NSString*)className
 {
     NSString *property;
-    NSString *fontSizeProperty = @"font-size";
     
     property = @"font-color";
     if ([NUISettings hasProperty:property withClass:className]) {
