@@ -206,6 +206,16 @@ Below are all of the currently available style classes, their corresponding UI c
 * title-insets *(Box)*
 * content-insets *(Box)*
 
+#### Control
+
+*UIControl*
+
+* background-color *(Color)*
+* background-image *(Image)*
+* border-color *(Color)*
+* border-width *(Number)*
+* corner-radius *(Number)*
+
 #### Label
 
 *UILabel*
