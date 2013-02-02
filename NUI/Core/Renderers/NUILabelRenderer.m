@@ -7,6 +7,7 @@
 //
 
 #import "NUILabelRenderer.h"
+#import "NUIViewRenderer.h"
 
 @implementation NUILabelRenderer
 
@@ -28,26 +29,15 @@
         label.backgroundColor = [UIColor clearColor];
     }
     
-    CALayer *layer = [label layer];
-    
-    if ([NUISettings hasProperty:@"border-color" withClass:className]) {
-        [layer setBorderColor:[[NUISettings getColor:@"border-color" withClass:className] CGColor]];
-    }
-    
-    if ([NUISettings hasProperty:@"border-width" withClass:className]) {
-        [layer setBorderWidth:[NUISettings getFloat:@"border-width" withClass:className]];
-    }
-    
-    if ([NUISettings hasProperty:@"corner-radius" withClass:className]) {
-        [layer setCornerRadius:[NUISettings getFloat:@"corner-radius" withClass:className]];
-    }
-    
+    [NUIViewRenderer renderBorder:label withClass:className];
+    [NUIViewRenderer renderShadow:label withClass:className];
     [self renderText:label withClass:className];
 }
 
 + (void)renderText:(UILabel*)label withClass:(NSString*)className
 {
     NSString *property;
+    NSString *fontSizeProperty = @"font-size";
     
     property = @"font-color";
     if ([NUISettings hasProperty:property withClass:className]) {
@@ -59,16 +49,14 @@
         label.highlightedTextColor = [NUISettings getColor:property withClass:className];
     }
     
-    property = @"font-size";
-    if ([NUISettings hasProperty:property withClass:className]) {
-        label.font = [label.font fontWithSize:[NUISettings getFloat:property withClass:className]];
-    }
-    
     property = @"font-name";
     if ([NUISettings hasProperty:property withClass:className]) {
-        label.font = [UIFont fontWithName:[NUISettings get:property withClass:className] size:label.font.pointSize];
+        label.font = [UIFont fontWithName:[NUISettings get:property withClass:className] size:[NUISettings getFloat:fontSizeProperty withClass:className]];
+        // If font-name is undefined but font-size is defined, use systemFont
+    } else if ([NUISettings getFloat:fontSizeProperty withClass:className]) {
+        label.font = [UIFont systemFontOfSize:[NUISettings getFloat:fontSizeProperty withClass:className]];
     }
-
+    
     property = @"text-align";
     if ([NUISettings hasProperty:property withClass:className]) {
         label.textAlignment = [NUISettings getTextAlignment:property withClass:className];
