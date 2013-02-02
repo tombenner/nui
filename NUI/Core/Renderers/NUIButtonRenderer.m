@@ -16,8 +16,10 @@
     // need to be hidden for NUI's rendering to be displayed correctly. Ideally we would switch
     // over to a UIButtonTypeCustom, but this appears to be impossible.
     if (button.buttonType == UIButtonTypeRoundedRect) {
-        [button.layer.sublayers[0] setOpacity:0.0f];
-        [button.layer.sublayers[1] setOpacity:0.0f];
+        if ([button.layer.sublayers count] > 2) {
+            [button.layer.sublayers[0] setOpacity:0.0f];
+            [button.layer.sublayers[1] setOpacity:0.0f];
+        }
     }
     
     // Set height
