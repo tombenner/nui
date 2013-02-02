@@ -49,8 +49,9 @@
     }
     
     // Set background gradient
+	CAGradientLayer *gradientLayer = nil;
     if ([NUISettings hasProperty:@"background-color-top" withClass:className]) {
-        CAGradientLayer *gradientLayer = [NUIGraphics
+        gradientLayer = [NUIGraphics
                                           gradientLayerWithTop:[NUISettings getColor:@"background-color-top" withClass:className]
                                           bottom:[NUISettings getColor:@"background-color-bottom" withClass:className]
                                           frame:button.bounds];
@@ -118,6 +119,12 @@
     }
     
     [NUIViewRenderer renderBorder:button withClass:className];
+	
+	// We need to apply the corner radius to the gradient layer too
+	if (gradientLayer && [NUISettings hasProperty:@"corner-radius" withClass:className]) {
+		[gradientLayer setCornerRadius:[NUISettings getFloat:@"corner-radius" withClass:className]];
+    }
+	
     [NUIViewRenderer renderShadow:button withClass:className];
 }
 
