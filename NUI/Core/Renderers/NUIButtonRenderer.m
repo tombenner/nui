@@ -119,12 +119,7 @@
     }
     
     [NUIViewRenderer renderBorder:button withClass:className];
-	
-	// We need to apply the corner radius to the gradient layer too
-	if (gradientLayer && [NUISettings hasProperty:@"corner-radius" withClass:className]) {
-		[gradientLayer setCornerRadius:[NUISettings getFloat:@"corner-radius" withClass:className]];
-    }
-	
+    
     [NUIViewRenderer renderShadow:button withClass:className];
 }
 
