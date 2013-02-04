@@ -59,8 +59,14 @@
     CGPathAddLineToPoint(path, NULL, dWidth, dHeight - cornerRadius);
     shape.path = path;
     
+    UIEdgeInsets insets = UIEdgeInsetsMake(1, arrowWidth + 5, 1, cornerRadius + 5);
     UIImage *image = [self caLayerToUIImage:shape];
-    image = [image resizableImageWithCapInsets:UIEdgeInsetsMake(0, arrowWidth + 5, 0, cornerRadius + 5) resizingMode:UIImageResizingModeStretch];
+    if ([image respondsToSelector:@selector(resizableImageWithCapInsets:resizingMode:)]) {
+        image = [image resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
+    } else {
+        image = [image resizableImageWithCapInsets:insets];
+    }
+
     
     return image;
 }
@@ -106,8 +112,13 @@
     }
     insetLength += 3;
     
+    UIEdgeInsets insets = UIEdgeInsetsMake(insetLength, insetLength, insetLength, insetLength) ;
     UIImage *image = [NUIGraphics caLayerToUIImage:layer];
-    image = [image resizableImageWithCapInsets:UIEdgeInsetsMake(0, insetLength, 0, insetLength) resizingMode:UIImageResizingModeStretch];
+    if ([image respondsToSelector:@selector(resizableImageWithCapInsets:resizingMode:)]) {
+        image = [image resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
+    } else {
+        image = [image resizableImageWithCapInsets:insets];
+    }
     return image;
 }
 
