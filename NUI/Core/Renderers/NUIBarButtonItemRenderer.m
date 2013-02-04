@@ -59,8 +59,13 @@
             [layer setCornerRadius:[NUISettings getFloat:@"corner-radius" withClass:className]];
         }
         
+        UIEdgeInsets insets = UIEdgeInsetsMake(insetLength, insetLength, insetLength, insetLength);
         UIImage *image = [NUIGraphics caLayerToUIImage:layer];
-        image = [image resizableImageWithCapInsets:UIEdgeInsetsMake(0, insetLength, 0, insetLength) resizingMode:UIImageResizingModeStretch];
+        if ([image respondsToSelector:@selector(resizableImageWithCapInsets:resizingMode:)]) {
+            image = [image resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
+        } else {
+            image = [image resizableImageWithCapInsets:insets];
+        }
         
         [item setBackgroundImage:image forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     }
