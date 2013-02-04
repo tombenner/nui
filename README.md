@@ -197,6 +197,10 @@ Below are all of the currently available style classes, their corresponding UI c
 * font-size *(Number)*
 * height *(Number)*
 * padding *(Box)*
+* shadow-color *(Color)*
+* shadow-offset *(Offset)*
+* shadow-opacity *(Number)*
+* shadow-radius *(Number)*
 * text-align *(TextAlign)*
 * text-alpha *(Number)*
 * text-auto-fit *(Boolean)*
@@ -205,10 +209,6 @@ Below are all of the currently available style classes, their corresponding UI c
 * text-shadow-color-selected *(Color)*
 * text-shadow-offset *(Offset)*
 * title-insets *(Box)*
-* shadow-radius *(Number)*
-* shadow-offset *(Size)*
-* shadow-color *(Color)*
-* shadow-opacity *(Number)*
 
 #### Control
 
@@ -219,10 +219,10 @@ Below are all of the currently available style classes, their corresponding UI c
 * border-color *(Color)*
 * border-width *(Number)*
 * corner-radius *(Number)*
-* shadow-radius *(Number)*
-* shadow-offset *(Size)*
 * shadow-color *(Color)*
+* shadow-offset *(Offset)*
 * shadow-opacity *(Number)*
+* shadow-radius *(Number)*
 
 #### Label
 
@@ -236,15 +236,15 @@ Below are all of the currently available style classes, their corresponding UI c
 * font-color-highlighted *(Color)*
 * font-name *(FontName)*
 * font-size *(Number)*
+* shadow-color *(Color)*
+* shadow-offset *(Offset)*
+* shadow-opacity *(Number)*
+* shadow-radius *(Number)*
 * text-align *(TextAlign)*
 * text-alpha *(Number)*
 * text-auto-fit *(Boolean)*
 * text-shadow-color *(Color)*
 * text-shadow-offset *(Offset)*
-* shadow-radius *(Number)*
-* shadow-offset *(Size)*
-* shadow-color *(Color)*
-* shadow-opacity *(Number)*
 
 #### NavigationBar
 
@@ -409,11 +409,11 @@ The detail label of a *UITableViewCell*
 * font-size *(Number)*
 * height *(Number)*
 * padding *(Box)*
-* vertical-align *(VerticalAlign)*
-* shadow-radius *(Number)*
-* shadow-offset *(Size)*
 * shadow-color *(Color)*
+* shadow-offset *(Offset)*
 * shadow-opacity *(Number)*
+* shadow-radius *(Number)*
+* vertical-align *(VerticalAlign)*
 
 #### View
 
@@ -424,10 +424,10 @@ The detail label of a *UITableViewCell*
 * border-color *(Color)*
 * border-width *(Number)*
 * corner-radius *(Number)*
-* shadow-radius *(Number)*
-* shadow-offset *(Size)*
 * shadow-color *(Color)*
+* shadow-offset *(Offset)*
 * shadow-opacity *(Number)*
+* shadow-radius *(Number)*
 
 Style Value Types
 -----------------
