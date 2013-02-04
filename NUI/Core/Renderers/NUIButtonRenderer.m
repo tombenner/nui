@@ -7,6 +7,7 @@
 //
 
 #import "NUIButtonRenderer.h"
+#import "NUIViewRenderer.h"
 
 @implementation NUIButtonRenderer
 
@@ -48,11 +49,12 @@
     }
     
     // Set background gradient
+	CAGradientLayer *gradientLayer = nil;
     if ([NUISettings hasProperty:@"background-color-top" withClass:className]) {
-        CAGradientLayer *gradientLayer = [NUIGraphics
-                                     gradientLayerWithTop:[NUISettings getColor:@"background-color-top" withClass:className] 
-                                     bottom:[NUISettings getColor:@"background-color-bottom" withClass:className]
-                                     frame:button.bounds];
+        gradientLayer = [NUIGraphics
+                                          gradientLayerWithTop:[NUISettings getColor:@"background-color-top" withClass:className]
+                                          bottom:[NUISettings getColor:@"background-color-bottom" withClass:className]
+                                          frame:button.bounds];
         int backgroundLayerIndex = [button.layer.sublayers count] == 1 ? 0 : 1;
         if (button.nuiIsApplied) {
             [[button.layer.sublayers objectAtIndex:backgroundLayerIndex] removeFromSuperlayer];
@@ -116,23 +118,14 @@
         [button setContentEdgeInsets:[NUISettings getEdgeInsets:@"content-insets" withClass:className]];
     }
     
-    CALayer *layer = [button layer];
-    
-    // Set corners
-    if ([NUISettings hasProperty:@"corner-radius" withClass:className]) {
-        [layer setMasksToBounds:YES];
-        [layer setCornerRadius:[NUISettings getFloat:@"corner-radius" withClass:className]];
+    [NUIViewRenderer renderBorder:button withClass:className];
+	
+	// We need to apply the corner radius to the gradient layer too
+	if (gradientLayer && [NUISettings hasProperty:@"corner-radius" withClass:className]) {
+		[gradientLayer setCornerRadius:[NUISettings getFloat:@"corner-radius" withClass:className]];
     }
-    
-    // Set border color
-    if ([NUISettings hasProperty:@"border-color" withClass:className]) {
-        [layer setBorderColor:[[NUISettings getColor:@"border-color" withClass:className] CGColor]];
-    }
-    
-    // Set border width
-    if ([NUISettings hasProperty:@"border-width" withClass:className]) {
-        [layer setBorderWidth:[NUISettings getFloat:@"border-width" withClass:className]];
-    }
+	
+    [NUIViewRenderer renderShadow:button withClass:className];
 }
 
 @end

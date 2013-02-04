@@ -205,6 +205,10 @@ Below are all of the currently available style classes, their corresponding UI c
 * text-shadow-offset *(Offset)*
 * title-insets *(Box)*
 * content-insets *(Box)*
+* shadow-radius *(Number)*
+* shadow-offset *(Size)*
+* shadow-color *(Color)*
+* shadow-opacity *(Number)*
 
 #### Control
 
@@ -215,6 +219,10 @@ Below are all of the currently available style classes, their corresponding UI c
 * border-color *(Color)*
 * border-width *(Number)*
 * corner-radius *(Number)*
+* shadow-radius *(Number)*
+* shadow-offset *(Size)*
+* shadow-color *(Color)*
+* shadow-opacity *(Number)*
 
 #### Label
 
@@ -233,6 +241,10 @@ Below are all of the currently available style classes, their corresponding UI c
 * text-auto-fit *(Boolean)*
 * text-shadow-color *(Color)*
 * text-shadow-offset *(Offset)*
+* shadow-radius *(Number)*
+* shadow-offset *(Size)*
+* shadow-color *(Color)*
+* shadow-opacity *(Number)*
 
 #### NavigationBar
 
@@ -398,6 +410,10 @@ The detail label of a *UITableViewCell*
 * height *(Number)*
 * padding *(Box)*
 * vertical-align *(VerticalAlign)*
+* shadow-radius *(Number)*
+* shadow-offset *(Size)*
+* shadow-color *(Color)*
+* shadow-opacity *(Number)*
 
 #### View
 
@@ -408,6 +424,10 @@ The detail label of a *UITableViewCell*
 * border-color *(Color)*
 * border-width *(Number)*
 * corner-radius *(Number)*
+* shadow-radius *(Number)*
+* shadow-offset *(Size)*
+* shadow-color *(Color)*
+* shadow-opacity *(Number)*
 
 Style Value Types
 -----------------

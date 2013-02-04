@@ -18,6 +18,12 @@
         [view setBackgroundColor: [NUISettings getColor:@"background-color" withClass: className]];
     }
     
+    [self renderBorder:view withClass:className];
+    [self renderShadow:view withClass:className];
+}
+
++ (void)renderBorder:(UIView*)view withClass:(NSString*)className
+{
     CALayer *layer = [view layer];
     
     if ([NUISettings hasProperty:@"border-color" withClass:className]) {
@@ -30,6 +36,27 @@
     
     if ([NUISettings hasProperty:@"corner-radius" withClass:className]) {
         [layer setCornerRadius:[NUISettings getFloat:@"corner-radius" withClass:className]];
+    }
+}
+
++ (void)renderShadow:(UIView*)view withClass:(NSString*)className
+{
+    CALayer *layer = [view layer];
+    
+    if ([NUISettings hasProperty:@"shadow-radius" withClass:className]) {
+        [layer setShadowRadius:[NUISettings getFloat:@"shadow-radius" withClass:className]];
+    }
+    
+    if ([NUISettings hasProperty:@"shadow-offset" withClass:className]) {
+        [layer setShadowOffset:[NUISettings getSize:@"shadow-offset" withClass:className]];
+    }
+    
+    if ([NUISettings hasProperty:@"shadow-color" withClass:className]) {
+        [layer setShadowColor:[NUISettings getColor:@"shadow-color" withClass:className].CGColor];
+    }
+    
+    if ([NUISettings hasProperty:@"shadow-opacity" withClass:className]) {
+        [layer setShadowOpacity:[NUISettings getFloat:@"shadow-opacity" withClass:className]];
     }
 }
 

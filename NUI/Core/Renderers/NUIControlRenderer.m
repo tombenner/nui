@@ -7,6 +7,7 @@
 //
 
 #import "NUIControlRenderer.h"
+#import "NUIViewRenderer.h"
 
 @implementation NUIControlRenderer
 
@@ -18,19 +19,8 @@
         [control setBackgroundColor: [NUISettings getColor:@"background-color" withClass: className]];
     }
     
-    CALayer *layer = [control layer];
-    
-    if ([NUISettings hasProperty:@"border-color" withClass:className]) {
-        [layer setBorderColor:[[NUISettings getColor:@"border-color" withClass:className] CGColor]];
-    }
-    
-    if ([NUISettings hasProperty:@"border-width" withClass:className]) {
-        [layer setBorderWidth:[NUISettings getFloat:@"border-width" withClass:className]];
-    }
-    
-    if ([NUISettings hasProperty:@"corner-radius" withClass:className]) {
-        [layer setCornerRadius:[NUISettings getFloat:@"corner-radius" withClass:className]];
-    }
+    [NUIViewRenderer renderBorder:control withClass:className];
+    [NUIViewRenderer renderShadow:control withClass:className];
 }
 
 @end

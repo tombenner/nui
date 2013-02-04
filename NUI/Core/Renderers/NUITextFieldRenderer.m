@@ -7,6 +7,7 @@
 //
 
 #import "NUITextFieldRenderer.h"
+#import "NUIViewRenderer.h"
 
 @implementation NUITextFieldRenderer
 
@@ -17,7 +18,7 @@
     // Set font name
     if ([NUISettings hasProperty:@"font-name" withClass:className]) {
         [textField setFont:[UIFont fontWithName:[NUISettings get:@"font-name" withClass:className] size:[NUISettings getFloat:fontSizeProperty withClass:className]]];
-    // If font-name is undefined but font-size is defined, use systemFont
+        // If font-name is undefined but font-size is defined, use systemFont
     } else if ([NUISettings getFloat:fontSizeProperty withClass:className]) {
         [textField setFont:[UIFont systemFontOfSize:[NUISettings getFloat:fontSizeProperty withClass:className]]];
     }
@@ -35,9 +36,9 @@
     // Set background gradient
     if ([NUISettings hasProperty:@"background-color-top" withClass:className]) {
         UIImage *gradient = [NUIGraphics
-                                     gradientImageWithTop:[NUISettings getColor:@"background-color-top" withClass:className]
-                                     bottom:[NUISettings getColor:@"background-color-bottom" withClass:className]
-                                     frame:textField.bounds];
+                             gradientImageWithTop:[NUISettings getColor:@"background-color-top" withClass:className]
+                             bottom:[NUISettings getColor:@"background-color-bottom" withClass:className]
+                             frame:textField.bounds];
         [textField setBackground:gradient];
     }
     
@@ -63,22 +64,8 @@
         [textField setBorderStyle:[NUISettings getBorderStyle:@"border-style" withClass:className]];
     }
     
-    CALayer *layer = [textField layer];
-    
-    // Set border color
-    if ([NUISettings hasProperty:@"border-color" withClass:className]) {
-        [layer setBorderColor:[[NUISettings getColor:@"border-color" withClass:className] CGColor]];
-    }
-    
-    // Set border width
-    if ([NUISettings hasProperty:@"border-width" withClass:className]) {
-        [layer setBorderWidth:[NUISettings getFloat:@"border-width" withClass:className]];
-    }
-    
-    // Set corner radius
-    if ([NUISettings hasProperty:@"corner-radius" withClass:className]) {
-        [layer setCornerRadius:[NUISettings getFloat:@"corner-radius" withClass:className]];
-    }
+    [NUIViewRenderer renderBorder:textField withClass:className];
+    [NUIViewRenderer renderShadow:textField withClass:className];
 }
 
 @end
