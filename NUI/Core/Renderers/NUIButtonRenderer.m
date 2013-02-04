@@ -49,7 +49,7 @@
     }
     
     // Set background gradient
-	CAGradientLayer *gradientLayer = nil;
+    CAGradientLayer *gradientLayer = nil;
     if ([NUISettings hasProperty:@"background-color-top" withClass:className]) {
         gradientLayer = [NUIGraphics
                                           gradientLayerWithTop:[NUISettings getColor:@"background-color-top" withClass:className]
