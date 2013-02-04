@@ -187,6 +187,7 @@ Below are all of the currently available style classes, their corresponding UI c
 * background-image-selected-insets *(Box)*
 * border-color *(Color)*
 * border-width *(Number)*
+* content-insets *(Box)*
 * corner-radius *(Number)*
 * font-color *(Color)*
 * font-color-disabled *(Color)*
@@ -204,7 +205,6 @@ Below are all of the currently available style classes, their corresponding UI c
 * text-shadow-color-selected *(Color)*
 * text-shadow-offset *(Offset)*
 * title-insets *(Box)*
-* content-insets *(Box)*
 * shadow-radius *(Number)*
 * shadow-offset *(Size)*
 * shadow-color *(Color)*
