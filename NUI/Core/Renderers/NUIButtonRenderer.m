@@ -51,9 +51,8 @@
     }
     
     // Set background gradient
-    CAGradientLayer *gradientLayer = nil;
     if ([NUISettings hasProperty:@"background-color-top" withClass:className]) {
-        gradientLayer = [NUIGraphics
+        CAGradientLayer *gradientLayer = [NUIGraphics
                                           gradientLayerWithTop:[NUISettings getColor:@"background-color-top" withClass:className]
                                           bottom:[NUISettings getColor:@"background-color-bottom" withClass:className]
                                           frame:button.bounds];
@@ -121,7 +120,14 @@
     }
     
     [NUIViewRenderer renderBorder:button withClass:className];
-    
+	
+	// We need to apply the corner radius to all sublayers so that the shadow displays correctly
+    if ([NUISettings hasProperty:@"corner-radius" withClass:className]) {
+		CGFloat r = [NUISettings getFloat:@"corner-radius" withClass:className];
+		for (CALayer* layer in button.layer.sublayers)
+			layer.cornerRadius = r;
+	}
+	
     [NUIViewRenderer renderShadow:button withClass:className];
 }
 
