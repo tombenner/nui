@@ -16,12 +16,17 @@
     
     // Set the labels' background colors to clearColor by default, so they don't show a white
     // background on top of the cell background color
-    [cell.textLabel setBackgroundColor:[UIColor clearColor]];
-    [cell.detailTextLabel setBackgroundColor:[UIColor clearColor]];
+    if (cell.textLabel != nil) {
+        [cell.textLabel setBackgroundColor:[UIColor clearColor]];
+        // Set Font
+        [NUIRenderer renderLabel:cell.textLabel withClass:className];
+    }
     
-    // Set fonts
-    [NUIRenderer renderLabel:cell.textLabel withClass:className];
-    [NUIRenderer renderLabel:cell.detailTextLabel withClass:className withSuffix:@"Detail"];
+    if (cell.detailTextLabel != nil) {
+        [cell.detailTextLabel setBackgroundColor:[UIColor clearColor]];
+        // Set font
+        [NUIRenderer renderLabel:cell.detailTextLabel withClass:className withSuffix:@"Detail"];
+    }
     
 }
 
