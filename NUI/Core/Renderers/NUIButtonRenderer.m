@@ -120,14 +120,15 @@
     }
     
     [NUIViewRenderer renderBorder:button withClass:className];
-	
-	// We need to apply the corner radius to all sublayers so that the shadow displays correctly
+    
+    // We need to apply the corner radius to all sublayers so that the shadow displays correctly
     if ([NUISettings hasProperty:@"corner-radius" withClass:className]) {
-		CGFloat r = [NUISettings getFloat:@"corner-radius" withClass:className];
-		for (CALayer* layer in button.layer.sublayers)
-			layer.cornerRadius = r;
-	}
-	
+        CGFloat r = [NUISettings getFloat:@"corner-radius" withClass:className];
+        for (CALayer* layer in button.layer.sublayers) {
+            layer.cornerRadius = r;
+        }
+    }
+    
     [NUIViewRenderer renderShadow:button withClass:className];
 }
 
