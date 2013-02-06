@@ -33,6 +33,7 @@
     
     [self swizzle:[UITextField class] methodName:@"textRectForBounds:"];
     [self swizzle:[UITextField class] methodName:@"editingRectForBounds:"];
+    [self swizzle:[UIWindow class] methodName:@"becomeKeyWindow"];
 }
 
 - (void)swizzleAwakeFromNib:(Class)class
