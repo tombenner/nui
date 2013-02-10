@@ -14,18 +14,6 @@
 @synthesize renderedObjectIdentifiers;
 static NUIRenderer *instance = nil;
 
-+ (void)renderWindow:(UIWindow*)window
-{
-    [NUIWindowRenderer render:window withClass:@"Window"];
-    [self registerObject:window];
-}
-
-+ (void)renderWindow:(UIWindow*)window withClass:(NSString*)className
-{
-    [NUIWindowRenderer render:window withClass:className];
-    [self registerObject:window];
-}
-
 
 + (void)renderBarButtonItem:(UIBarButtonItem*)item
 {
@@ -246,6 +234,20 @@ static NUIRenderer *instance = nil;
 {
     [NUIViewRenderer render:view withClass:className];
     [self registerObject:view];
+}
+
+
+
++ (void)renderWindow:(UIWindow*)window
+{
+    [NUIWindowRenderer render:window withClass:@"Window"];
+    [self registerObject:window];
+}
+
++ (void)renderWindow:(UIWindow*)window withClass:(NSString*)className
+{
+    [NUIWindowRenderer render:window withClass:className];
+    [self registerObject:window];
 }
 
 
