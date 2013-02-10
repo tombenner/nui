@@ -429,6 +429,12 @@ The detail label of a *UITableViewCell*
 * shadow-opacity *(Number)*
 * shadow-radius *(Number)*
 
+#### Window
+
+*UIWindow*
+
+* background-color *(Color)*
+
 Style Value Types
 -----------------
 
