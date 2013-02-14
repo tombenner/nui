@@ -21,8 +21,9 @@
 
 - (void)applyNUI
 {
-    // Styling shouldn't be applied to inherited classes
-    if ([self class] == [UIView class]) {
+    // Styling shouldn't be applied to inherited classes, unless nuiClass is
+    // explictly set
+    if ([self class] == [UIView class] || self.nuiClass) {
         [self initNUI];
         if (![self.nuiClass isEqualToString:@"none"]) {
             if ([self class] == [UIView class] &&
