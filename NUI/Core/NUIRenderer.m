@@ -14,6 +14,7 @@
 @synthesize renderedObjectIdentifiers;
 static NUIRenderer *instance = nil;
 
+
 + (void)renderBarButtonItem:(UIBarButtonItem*)item
 {
     [NUIBarButtonItemRenderer render:item withClass:@"BarButton"];
@@ -41,6 +42,18 @@ static NUIRenderer *instance = nil;
 }
 
 
+
++ (void)renderControl:(UIControl*)control
+{
+    [NUIControlRenderer render:control withClass:@"Control"];
+    [self registerObject:control];
+}
+
++ (void)renderControl:(UIControl*)control withClass:(NSString*)className
+{
+    [NUIControlRenderer render:control withClass:className];
+    [self registerObject:control];
+}
 
 + (void)renderLabel:(UILabel*)label
 {
@@ -225,6 +238,20 @@ static NUIRenderer *instance = nil;
 
 
 
++ (void)renderWindow:(UIWindow*)window
+{
+    [NUIWindowRenderer render:window withClass:@"Window"];
+    [self registerObject:window];
+}
+
++ (void)renderWindow:(UIWindow*)window withClass:(NSString*)className
+{
+    [NUIWindowRenderer render:window withClass:className];
+    [self registerObject:window];
+}
+
+
+
 + (void)sizeDidChangeForNavigationBar:(UINavigationBar*)bar
 {
     [NUINavigationBarRenderer sizeDidChange:bar];
@@ -248,7 +275,7 @@ static NUIRenderer *instance = nil;
 
 + (void)registerObject:(NSObject*)object
 {
-    if ([NUISettings autoUpdateIsEnabled]) {
+    if ([NUISettings autoUpdateIsEnabled] && object != nil) {
         NSString *hash = [NSString stringWithFormat:@"%d", object.hash];
         NUIRenderer *instance = [self getInstance];
         if (![instance.renderedObjectIdentifiers containsObject:hash]) {

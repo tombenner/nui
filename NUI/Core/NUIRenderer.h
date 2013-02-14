@@ -11,6 +11,7 @@
 #import "NUISettings.h"
 #import "NUIBarButtonItemRenderer.h"
 #import "NUIButtonRenderer.h"
+#import "NUIControlRenderer.h"
 #import "NUILabelRenderer.h"
 #import "NUINavigationBarRenderer.h"
 #import "NUINavigationItemRenderer.h"
@@ -24,6 +25,7 @@
 #import "NUIToolbarRenderer.h"
 #import "NUITextFieldRenderer.h"
 #import "NUIViewRenderer.h"
+#import "NUIWindowRenderer.h"
 #import "UIView+NUI.h"
 
 @interface NUIRenderer : NSObject {
@@ -42,6 +44,9 @@
 
 + (void)renderButton:(UIButton*)button;
 + (void)renderButton:(UIButton*)button withClass:(NSString*)className;
+
++ (void)renderControl:(UIControl*)control;
++ (void)renderControl:(UIControl*)control withClass:(NSString*)className;
 
 + (void)renderLabel:(UILabel*)label;
 + (void)renderLabel:(UILabel*)label withClass:(NSString*)className;
@@ -82,6 +87,9 @@
 
 + (void)renderView:(UIView*)view;
 + (void)renderView:(UIView*)view withClass:(NSString*)className;
+
++ (void)renderWindow:(UIWindow*)window;
++ (void)renderWindow:(UIWindow*)window withClass:(NSString*)className;
 
 + (void)sizeDidChangeForNavigationBar:(UINavigationBar*)bar;
 + (void)sizeDidChangeForTabBar:(UITabBar*)bar;

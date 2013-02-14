@@ -7,6 +7,7 @@
 //
 
 #import "NUIButtonRenderer.h"
+#import "NUIViewRenderer.h"
 
 @implementation NUIButtonRenderer
 
@@ -15,10 +16,13 @@
     // UIButtonTypeRoundedRect's first two sublayers contain its background and border, which
     // need to be hidden for NUI's rendering to be displayed correctly. Ideally we would switch
     // over to a UIButtonTypeCustom, but this appears to be impossible.
-//    if (button.buttonType == UIButtonTypeRoundedRect) {
-//        [button.layer.sublayers[0] setOpacity:0.0f];
-//        [button.layer.sublayers[1] setOpacity:0.0f];
-//    }
+
+    if (button.buttonType == UIButtonTypeRoundedRect) {
+        if ([button.layer.sublayers count] > 2) {
+            [button.layer.sublayers[0] setOpacity:0.0f];
+            [button.layer.sublayers[1] setOpacity:0.0f];
+        }
+    }
 
     // Set height
     if ([NUISettings hasProperty:@"height" withClass:className]) {
@@ -50,9 +54,9 @@
     // Set background gradient
     if ([NUISettings hasProperty:@"background-color-top" withClass:className]) {
         CAGradientLayer *gradientLayer = [NUIGraphics
-                                     gradientLayerWithTop:[NUISettings getColor:@"background-color-top" withClass:className] 
-                                     bottom:[NUISettings getColor:@"background-color-bottom" withClass:className]
-                                     frame:button.bounds];
+                                          gradientLayerWithTop:[NUISettings getColor:@"background-color-top" withClass:className]
+                                          bottom:[NUISettings getColor:@"background-color-bottom" withClass:className]
+                                          frame:button.bounds];
         int backgroundLayerIndex = [button.layer.sublayers count] == 1 ? 0 : 1;
         if (button.nuiIsApplied) {
             [[button.layer.sublayers objectAtIndex:backgroundLayerIndex] removeFromSuperlayer];
@@ -116,23 +120,17 @@
         [button setContentEdgeInsets:[NUISettings getEdgeInsets:@"content-insets" withClass:className]];
     }
     
-    CALayer *layer = [button layer];
+    [NUIViewRenderer renderBorder:button withClass:className];
     
-    // Set corners
+    // We need to apply the corner radius to all sublayers so that the shadow displays correctly
     if ([NUISettings hasProperty:@"corner-radius" withClass:className]) {
-        [layer setMasksToBounds:YES];
-        [layer setCornerRadius:[NUISettings getFloat:@"corner-radius" withClass:className]];
+        CGFloat r = [NUISettings getFloat:@"corner-radius" withClass:className];
+        for (CALayer* layer in button.layer.sublayers) {
+            layer.cornerRadius = r;
+        }
     }
     
-    // Set border color
-    if ([NUISettings hasProperty:@"border-color" withClass:className]) {
-        [layer setBorderColor:[[NUISettings getColor:@"border-color" withClass:className] CGColor]];
-    }
-    
-    // Set border width
-    if ([NUISettings hasProperty:@"border-width" withClass:className]) {
-        [layer setBorderWidth:[NUISettings getFloat:@"border-width" withClass:className]];
-    }
+    [NUIViewRenderer renderShadow:button withClass:className];
 }
 
 @end

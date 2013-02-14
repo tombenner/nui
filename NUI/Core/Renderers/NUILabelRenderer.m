@@ -7,6 +7,7 @@
 //
 
 #import "NUILabelRenderer.h"
+#import "NUIViewRenderer.h"
 
 @implementation NUILabelRenderer
 
@@ -29,20 +30,9 @@
         label.backgroundColor = [UIColor clearColor];
     }
 
-    CALayer *layer = [label layer];
-    
-    if ([NUISettings hasProperty:@"border-color" withClass:className]) {
-        [layer setBorderColor:[[NUISettings getColor:@"border-color" withClass:className] CGColor]];
-    }
-    
-    if ([NUISettings hasProperty:@"border-width" withClass:className]) {
-        [layer setBorderWidth:[NUISettings getFloat:@"border-width" withClass:className]];
-    }
-    
-    if ([NUISettings hasProperty:@"corner-radius" withClass:className]) {
-        [layer setCornerRadius:[NUISettings getFloat:@"corner-radius" withClass:className]];
-    }
-    
+    [NUIViewRenderer renderBorder:label withClass:className];
+    [NUIViewRenderer renderShadow:label withClass:className];
+
     [self renderText:label withClass:className];
 }
 
@@ -70,7 +60,7 @@
     if ([NUISettings hasProperty:property withClass:className]) {
         label.font = [UIFont fontWithName:[NUISettings get:property withClass:className] size:label.font.pointSize];
     }
-
+    
     property = @"text-align";
     if ([NUISettings hasProperty:property withClass:className]) {
         label.textAlignment = [NUISettings getTextAlignment:property withClass:className];

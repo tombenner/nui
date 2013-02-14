@@ -187,6 +187,7 @@ Below are all of the currently available style classes, their corresponding UI c
 * background-image-selected-insets *(Box)*
 * border-color *(Color)*
 * border-width *(Number)*
+* content-insets *(Box)*
 * corner-radius *(Number)*
 * font-color *(Color)*
 * font-color-disabled *(Color)*
@@ -196,6 +197,10 @@ Below are all of the currently available style classes, their corresponding UI c
 * font-size *(Number)*
 * height *(Number)*
 * padding *(Box)*
+* shadow-color *(Color)*
+* shadow-offset *(Offset)*
+* shadow-opacity *(Number)*
+* shadow-radius *(Number)*
 * text-align *(TextAlign)*
 * text-alpha *(Number)*
 * text-auto-fit *(Boolean)*
@@ -204,7 +209,20 @@ Below are all of the currently available style classes, their corresponding UI c
 * text-shadow-color-selected *(Color)*
 * text-shadow-offset *(Offset)*
 * title-insets *(Box)*
-* content-insets *(Box)*
+
+#### Control
+
+*UIControl*
+
+* background-color *(Color)*
+* background-image *(Image)*
+* border-color *(Color)*
+* border-width *(Number)*
+* corner-radius *(Number)*
+* shadow-color *(Color)*
+* shadow-offset *(Offset)*
+* shadow-opacity *(Number)*
+* shadow-radius *(Number)*
 
 #### Label
 
@@ -218,6 +236,10 @@ Below are all of the currently available style classes, their corresponding UI c
 * font-color-highlighted *(Color)*
 * font-name *(FontName)*
 * font-size *(Number)*
+* shadow-color *(Color)*
+* shadow-offset *(Offset)*
+* shadow-opacity *(Number)*
+* shadow-radius *(Number)*
 * text-align *(TextAlign)*
 * text-alpha *(Number)*
 * text-auto-fit *(Boolean)*
@@ -387,6 +409,10 @@ The detail label of a *UITableViewCell*
 * font-size *(Number)*
 * height *(Number)*
 * padding *(Box)*
+* shadow-color *(Color)*
+* shadow-offset *(Offset)*
+* shadow-opacity *(Number)*
+* shadow-radius *(Number)*
 * vertical-align *(VerticalAlign)*
 
 #### View
@@ -398,6 +424,16 @@ The detail label of a *UITableViewCell*
 * border-color *(Color)*
 * border-width *(Number)*
 * corner-radius *(Number)*
+* shadow-color *(Color)*
+* shadow-offset *(Offset)*
+* shadow-opacity *(Number)*
+* shadow-radius *(Number)*
+
+#### Window
+
+*UIWindow*
+
+* background-color *(Color)*
 
 Style Value Types
 -----------------
