@@ -22,8 +22,21 @@
         [item setTitlePositionAdjustment:[NUISettings getOffset:@"text-offset" withClass:className]];
     }
 
-//    [item setFinishedSelectedImage:[item image]
-//       withFinishedUnselectedImage:[item finishedUnselectedImage]];
+    if ([NUISettings hasProperty:@"image-insets" withClass:className]) {
+        [item setImageInsets:[NUISettings getEdgeInsets:@"image-insets" withClass:className]];
+    }
+
+    if ([NUISettings hasProperty:@"finished-image" withClass:className]) {
+        UIImage *unselectedFinishedImage = [NUISettings getImage:@"finished-image" withClass:className];
+        UIImage *selectedFinishedImage = unselectedFinishedImage;
+
+        if ([NUISettings hasProperty:@"finished-image" withClass:className]) {
+            selectedFinishedImage = [NUISettings getImage:@"finished-image-selected" withClass:className];
+        }
+
+        [item setFinishedSelectedImage:selectedFinishedImage withFinishedUnselectedImage:unselectedFinishedImage];
+    }
+
 }
 
 @end

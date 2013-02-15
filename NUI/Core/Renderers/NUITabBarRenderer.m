@@ -20,6 +20,10 @@
         [bar setBackgroundImage:[NUISettings getImage:@"background-image" withClass:className]];
     }
 
+    if ([NUISettings hasProperty:@"background-image-selected" withClass:className]) {
+        [bar setSelectionIndicatorImage:[NUISettings getImage:@"background-image-selected" withClass:className]];
+    }
+
     [self renderSizeDependentProperties:bar];
 
     // Apply UITabBarItem's background-image-selected property to bar.selectionIndicatorImage
@@ -32,6 +36,13 @@
             }
         }
     }
+
+    if ([NUISettings hasProperty:@"image-insets" withClass:className]) {
+        for (UITabBarItem *barItem in bar.items) {
+            [barItem setImageInsets:[NUISettings getEdgeInsets:@"image-insets" withClass:className]];
+        }
+    }
+
 }
 
 + (void)sizeDidChange:(UITabBar*)bar
