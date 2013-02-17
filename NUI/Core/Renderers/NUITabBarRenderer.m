@@ -23,9 +23,13 @@
     if ([NUISettings hasProperty:@"background-image" withClass:className]) {
         [bar setBackgroundImage:[NUISettings getImage:@"background-image" withClass:className]];
     }
-    
+
+    if ([NUISettings hasProperty:@"background-image-selected" withClass:className]) {
+        [bar setSelectionIndicatorImage:[NUISettings getImage:@"background-image-selected" withClass:className]];
+    }
+
     [self renderSizeDependentProperties:bar];
-    
+
     // Apply UITabBarItem's background-image-selected property to bar.selectionIndicatorImage
     if ([[bar items] count] > 0) {
         UITabBarItem *firstItem = [[bar items] objectAtIndex:0];
@@ -36,6 +40,13 @@
             }
         }
     }
+
+    if ([NUISettings hasProperty:@"image-insets" withClass:className]) {
+        for (UITabBarItem *barItem in bar.items) {
+            [barItem setImageInsets:[NUISettings getEdgeInsets:@"image-insets" withClass:className]];
+        }
+    }
+
 }
 
 + (void)sizeDidChange:(UITabBar*)bar
@@ -46,7 +57,7 @@
 + (void)renderSizeDependentProperties:(UITabBar*)bar
 {
     NSString *className = bar.nuiClass;
-    
+
     if ([NUISettings hasProperty:@"background-color-top" withClass:className]) {
         CGRect frame = bar.bounds;
         UIImage *gradientImage = [NUIGraphics
