@@ -22,15 +22,7 @@
             [button.layer.sublayers[1] setOpacity:0.0f];
         }
     }
-    
-    // Set height
-    if ([NUISettings hasProperty:@"height" withClass:className]) {
-        CGRect frame = button.frame;
-        CGSize originalSize = frame.size;
-        frame.size = CGSizeMake(originalSize.width, [NUISettings getFloat:@"height" withClass:className]);
-        button.frame = frame;
-    }
-    
+
     // Set padding
     if ([NUISettings hasProperty:@"padding" withClass:className]) {
         [button setTitleEdgeInsets:[NUISettings getEdgeInsets:@"padding" withClass:className]];
@@ -128,7 +120,8 @@
             layer.cornerRadius = r;
         }
     }
-    
+
+    [NUIViewRenderer renderSize:button withClass:className];
     [NUIViewRenderer renderShadow:button withClass:className];
 }
 
