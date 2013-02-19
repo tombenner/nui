@@ -50,20 +50,13 @@
     if ([NUISettings hasProperty:@"vertical-align" withClass:className]) {
         [textField setContentVerticalAlignment:[NUISettings getControlContentVerticalAlignment:@"vertical-align" withClass:className]];
     }
-    
-    // Set height
-    if ([NUISettings hasProperty:@"height" withClass:className]) {
-        CGRect buttonFrame = textField.frame;
-        CGSize originalSize = buttonFrame.size;
-        buttonFrame.size = CGSizeMake(originalSize.width, [NUISettings getFloat:@"height" withClass: className]);
-        textField.frame = buttonFrame;
-    }
-    
+
     // Set border style
     if ([NUISettings hasProperty:@"border-style" withClass:className]) {
         [textField setBorderStyle:[NUISettings getBorderStyle:@"border-style" withClass:className]];
     }
-    
+
+    [NUIViewRenderer renderSize:textField withClass:className];
     [NUIViewRenderer renderBorder:textField withClass:className];
     [NUIViewRenderer renderShadow:textField withClass:className];
 }

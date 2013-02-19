@@ -28,7 +28,8 @@
         // UILabels created programmatically have a white background by default
         label.backgroundColor = [UIColor clearColor];
     }
-    
+
+    [NUIViewRenderer renderSize:label withClass:className];
     [NUIViewRenderer renderBorder:label withClass:className];
     [NUIViewRenderer renderShadow:label withClass:className];
     [self renderText:label withClass:className];
