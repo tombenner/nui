@@ -10,27 +10,54 @@
 
 @implementation NUIUtilities
 
-+ (NSDictionary*)titleTextAttributesForClass:(NSString*)className
++ (NSDictionary*)titleTextAttributesForClass:(NSString*)className withSuffix:(NSString*) suffix
 {
     NSMutableDictionary *titleTextAttributes = [NSMutableDictionary dictionary];
 
-    if ([NUISettings hasProperty:@"font-name" withClass:className]) {
-        [titleTextAttributes setObject:[UIFont fontWithName:[NUISettings get:@"font-name" withClass:className] size:[NUISettings getFloat:@"font-size" withClass:className]] forKey:UITextAttributeFont];
+    NSString *fontNameSelector = [NUIUtilities selector:@"font-name" withSuffix:suffix];
+    NSString *fontSizeSelector = [NUIUtilities selector:@"font-size" withSuffix:suffix];
+    NSString *fontColorSelector = [NUIUtilities selector:@"font-color" withSuffix:suffix];
+    NSString *textShadowColorSelector = [NUIUtilities selector:@"text-shadow-color" withSuffix:suffix];
+    NSString *textShadowOffsetSelector = [NUIUtilities selector:@"text-shadow-offset" withSuffix:suffix];
+
+    if ([NUISettings hasProperty:fontNameSelector withClass:className] || [NUISettings hasProperty:fontSizeSelector withClass:className]) {
+        NSString *fontName = [NUISettings get:fontNameSelector withClass:className];
+        float fontSize = [NUISettings getFloat:fontSizeSelector withClass:className];
+
+        fontSize = fontSize ? fontSize : [UIFont systemFontSize];
+        UIFont *font = fontName ? [UIFont fontWithName:fontName size:fontSize] : [UIFont systemFontOfSize:fontSize];
+
+        [titleTextAttributes setObject:font forKey:UITextAttributeFont];
     }
-    
-    if ([NUISettings hasProperty:@"font-color" withClass:className]) {
-        [titleTextAttributes setObject:[NUISettings getColor:@"font-color" withClass:className] forKey:UITextAttributeTextColor];
+
+    if ([NUISettings hasProperty:fontColorSelector withClass:className]) {
+        [titleTextAttributes setObject:[NUISettings getColor:fontColorSelector withClass:className] forKey:UITextAttributeTextColor];
     }
-    
-    if ([NUISettings hasProperty:@"text-shadow-color" withClass:className]) {
-        [titleTextAttributes setObject:[NUISettings getColor:@"text-shadow-color" withClass:className] forKey:UITextAttributeTextShadowColor];
+
+    if ([NUISettings hasProperty:textShadowColorSelector withClass:className]) {
+        [titleTextAttributes setObject:[NUISettings getColor:textShadowColorSelector withClass:className] forKey:UITextAttributeTextShadowColor];
     }
-    
-    if ([NUISettings hasProperty:@"text-shadow-offset" withClass:className]) {
-        [titleTextAttributes setObject:[NSValue valueWithUIOffset:[NUISettings getOffset:@"text-shadow-offset" withClass:className]] forKey:UITextAttributeTextShadowOffset];
+
+    if ([NUISettings hasProperty:textShadowOffsetSelector withClass:className]) {
+        [titleTextAttributes setObject:[NSValue valueWithUIOffset:[NUISettings getOffset:textShadowOffsetSelector withClass:className]] forKey:UITextAttributeTextShadowOffset];
     }
-    
+
     return titleTextAttributes;
 }
+
++ (NSDictionary*)titleTextAttributesForClass:(NSString*)className
+{
+    return [NUIUtilities titleTextAttributesForClass:className withSuffix:nil];
+}
+
++ (NSString*) selector: (NSString*) selector withSuffix: (NSString*) suffix
+{
+    if (suffix)
+    {
+        return [NSString stringWithFormat:@"%@-%@", selector, suffix];
+    }
+    return selector;
+}
+
 
 @end

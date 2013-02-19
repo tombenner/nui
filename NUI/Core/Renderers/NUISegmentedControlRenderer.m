@@ -40,6 +40,14 @@
     if ([[titleTextAttributes allKeys] count] > 0) {
         [control setTitleTextAttributes:titleTextAttributes forState:UIControlStateNormal];
     }
+
+    NSDictionary *selectedSegmentAttributeOverrides = [NUIUtilities titleTextAttributesForClass:className withSuffix:@"selected"];
+    if ([[selectedSegmentAttributeOverrides allKeys] count] > 0)
+    {
+        NSMutableDictionary *selectedTitleTextAttributes = [titleTextAttributes mutableCopy];
+        [selectedTitleTextAttributes addEntriesFromDictionary:selectedSegmentAttributeOverrides];
+        [control setTitleTextAttributes:[selectedTitleTextAttributes copy] forState:UIControlStateSelected];
+    }
 }
 
 @end
