@@ -298,12 +298,12 @@ See SegmentedControl
 * border-width *(Number)*
 * corner-radius *(Number)*
 * font-color *(Color)*
+* font-color-selected *(Color)*
 * font-name *(FontName)*
 * font-size *(Number)*
 * text-shadow-color *(Color)*
-* text-shadow-offset *(Offset)*
-* font-color-selected *(Color)*
 * text-shadow-color-selected *(Color)*
+* text-shadow-offset *(Offset)*
 * text-shadow-offset-selected *(Offset)*
 
 #### Slider
