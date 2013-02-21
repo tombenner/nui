@@ -50,10 +50,9 @@
     return [NUIUtilities titleTextAttributesForClass:className withSuffix:nil];
 }
 
-+ (NSString*) selector: (NSString*) selector withSuffix: (NSString*) suffix
++ (NSString*)selector:(NSString*)selector withSuffix:(NSString*)suffix
 {
-    if (suffix)
-    {
+    if (suffix) {
         return [NSString stringWithFormat:@"%@-%@", selector, suffix];
     }
     return selector;
