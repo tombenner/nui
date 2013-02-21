@@ -302,6 +302,9 @@ See SegmentedControl
 * font-size *(Number)*
 * text-shadow-color *(Color)*
 * text-shadow-offset *(Offset)*
+* font-color-selected *(Color)*
+* text-shadow-color-selected *(Color)*
+* text-shadow-offset-selected *(Offset)*
 
 #### Slider
 
