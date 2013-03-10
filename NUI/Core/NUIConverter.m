@@ -117,7 +117,7 @@
                                  uppercaseString];
     
     NSArray *hexStrings = [NUIConverter getCapturedStrings:cString
-                                               withPattern:@"(?:0x|#)([0-9A-F]{6})"];
+                                               withPattern:@"(?:0X|#)([0-9A-F]{6})"];
     NSArray *csStrings = [NUIConverter getCapturedStrings:cString
                                               withPattern:@"(RGB|RGBA|HSL|HSLA)\\((\\d{1,3}|[0-9.]+),(\\d{1,3}|[0-9.]+),(\\d{1,3}|[0-9.]+)(?:,(\\d{1,3}|[0-9.]+))?\\)"];
     
