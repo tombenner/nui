@@ -339,6 +339,7 @@ See SegmentedControl
 * background-image *(Image)*
 * background-image-insets *(Box)*
 * background-tint-color *(Color)*
+* selected-image *(Image)*
 * selected-image-tint-color *(Color)*
 
 #### TabBarItem

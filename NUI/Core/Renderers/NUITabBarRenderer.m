@@ -12,16 +12,20 @@
 
 + (void)render:(UITabBar*)bar withClass:(NSString*)className
 {
+    if ([NUISettings hasProperty:@"background-image" withClass:className]) {
+        [bar setBackgroundImage:[NUISettings getImage:@"background-image" withClass:className]];
+    }
+    
     if ([NUISettings hasProperty:@"background-tint-color" withClass:className]) {
         [bar setTintColor:[NUISettings getColor:@"background-tint-color" withClass:className]];
     }
     
-    if ([NUISettings hasProperty:@"selected-image-tint-color" withClass:className]) {
-        [bar setSelectedImageTintColor:[NUISettings getColor:@"selected-image-tint-color" withClass:className]];
+    if ([NUISettings hasProperty:@"selected-image" withClass:className]) {
+        [bar setSelectionIndicatorImage:[NUISettings getImage:@"selected-image" withClass:className]];
     }
     
-    if ([NUISettings hasProperty:@"background-image" withClass:className]) {
-        [bar setBackgroundImage:[NUISettings getImage:@"background-image" withClass:className]];
+    if ([NUISettings hasProperty:@"selected-image-tint-color" withClass:className]) {
+        [bar setSelectedImageTintColor:[NUISettings getColor:@"selected-image-tint-color" withClass:className]];
     }
     
     [self renderSizeDependentProperties:bar];
