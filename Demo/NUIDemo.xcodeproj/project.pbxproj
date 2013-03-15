@@ -72,6 +72,7 @@
 		D983DEE8169DC05300A3A180 /* UIToolbar+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = D983DEE7169DC05300A3A180 /* UIToolbar+NUI.m */; };
 		D983DF1C169DC84600A3A180 /* UISlider+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = D983DF1B169DC84500A3A180 /* UISlider+NUI.m */; };
 		D983DF1F169DC87800A3A180 /* NUISliderRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = D983DF1E169DC87500A3A180 /* NUISliderRenderer.m */; };
+		FC280DB916F127DE00B01664 /* UIProgressView+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = FC280DB816F127DE00B01664 /* UIProgressView+NUI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -190,6 +191,8 @@
 		D983DF1B169DC84500A3A180 /* UISlider+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISlider+NUI.m"; sourceTree = "<group>"; };
 		D983DF1D169DC87200A3A180 /* NUISliderRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUISliderRenderer.h; sourceTree = "<group>"; };
 		D983DF1E169DC87500A3A180 /* NUISliderRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISliderRenderer.m; sourceTree = "<group>"; };
+		FC280DB716F127DE00B01664 /* UIProgressView+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIProgressView+NUI.h"; sourceTree = "<group>"; };
+		FC280DB816F127DE00B01664 /* UIProgressView+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIProgressView+NUI.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -392,6 +395,8 @@
 				4A55F07E167573D10056753C /* UINavigationBar+NUI.m */,
 				4A55F08016758E4D0056753C /* UINavigationItem+NUI.h */,
 				4A55F08116758E4D0056753C /* UINavigationItem+NUI.m */,
+				FC280DB716F127DE00B01664 /* UIProgressView+NUI.h */,
+				FC280DB816F127DE00B01664 /* UIProgressView+NUI.m */,
 				4ADA71C416A0F15C00BDCF81 /* UISearchBar+NUI.h */,
 				4ADA71C516A0F15C00BDCF81 /* UISearchBar+NUI.m */,
 				4A55F08316758E9D0056753C /* UISegmentedControl+NUI.h */,
@@ -406,10 +411,10 @@
 				4A77934A1675635100B5EE81 /* UITabBarItem+NUI.m */,
 				4A55F08616758ED90056753C /* UITableViewCell+NUI.h */,
 				4A55F08716758EDA0056753C /* UITableViewCell+NUI.m */,
-				D983DEE6169DC05300A3A180 /* UIToolbar+NUI.h */,
-				D983DEE7169DC05300A3A180 /* UIToolbar+NUI.m */,
 				4A55F08916758F360056753C /* UITextField+NUI.h */,
 				4A55F08A16758F360056753C /* UITextField+NUI.m */,
+				D983DEE6169DC05300A3A180 /* UIToolbar+NUI.h */,
+				D983DEE7169DC05300A3A180 /* UIToolbar+NUI.m */,
 				4A55F076167570C10056753C /* UIView+NUI.h */,
 				4A55F077167570C10056753C /* UIView+NUI.m */,
 				4A38831316C7269F00DB99C2 /* UIWindow+NUI.h */,
@@ -539,6 +544,7 @@
 				D8E7168516B9980300686854 /* UIControl+NUI.m in Sources */,
 				4A38831116C7268000DB99C2 /* NUIWindowRenderer.m in Sources */,
 				4A38831516C7269F00DB99C2 /* UIWindow+NUI.m in Sources */,
+				FC280DB916F127DE00B01664 /* UIProgressView+NUI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -58,6 +58,9 @@
 + (void)renderNavigationItem:(UINavigationItem*)item;
 + (void)renderNavigationItem:(UINavigationItem*)item withClass:(NSString*)className;
 
++ (void)renderProgressView:(UIProgressView*)item;
++ (void)renderProgressView:(UIProgressView*)item withClass:(NSString*)className;
+
 + (void)renderSearchBar:(UISearchBar*)bar;
 + (void)renderSearchBar:(UISearchBar*)bar withClass:(NSString*)className;
 
