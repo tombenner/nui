@@ -7,6 +7,7 @@
 //
 
 #import "NUIRenderer.h"
+#import "UIProgressView+NUI.h"
 
 @implementation NUIRenderer
 
@@ -85,6 +86,20 @@ static NUIRenderer *instance = nil;
 {
     [NUINavigationBarRenderer render:bar withClass:className];
     [self registerObject:bar];
+}
+
+
+
++ (void)renderProgressView:(UIProgressView*)progressView
+{
+    [UIProgressView renderNui:progressView];
+    [self registerObject:progressView];
+}
+
++ (void)renderProgressView:(UIProgressView*)progressView withClass:(NSString*)className
+{
+    [UIProgressView renderNui:progressView withClass:className];
+    [self registerObject:progressView];
 }
 
 
@@ -294,6 +309,7 @@ static NUIRenderer *instance = nil;
                                    [UIBarButtonItem class], @"renderBarButtonItem",
                                    [UINavigationBar class], @"renderNavigationBar",
                                    [UINavigationItem class], @"renderNavigationItem",
+                                   [UIProgressView class], @"renderProgressView",
                                    [UISegmentedControl class], @"renderSegmentedControl",
                                    [UISlider class], @"renderSlider",
                                    [UISwitch class], @"renderSwitch",

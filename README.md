@@ -265,6 +265,16 @@ Below are all of the currently available style classes, their corresponding UI c
 * text-shadow-color *(Color)*
 * text-shadow-offset *(Offset)*
 
+#### Progress
+
+*UIProgressView*
+
+* progress-image *(Image)*
+* progress-tint *(Color)*
+* track-image *(Image)*
+* track-tint *(Color)*
+* width *(Number)*
+
 #### SearchBar
 
 *UISearchBar*
