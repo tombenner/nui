@@ -115,6 +115,10 @@
                                 <rect key="frame" x="223" y="319" width="79" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
+                            <progressView opaque="NO" contentMode="scaleToFill" progress="0.5" id="ZRC-yd-FZl">
+                                <rect key="frame" x="158" y="268" width="150" height="9"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
