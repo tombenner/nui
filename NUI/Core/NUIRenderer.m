@@ -92,13 +92,13 @@ static NUIRenderer *instance = nil;
 
 + (void)renderProgressView:(UIProgressView*)progressView
 {
-    [UIProgressView renderNui:progressView];
+    [NUIProgressViewRenderer render:progressView];
     [self registerObject:progressView];
 }
 
 + (void)renderProgressView:(UIProgressView*)progressView withClass:(NSString*)className
 {
-    [UIProgressView renderNui:progressView withClass:className];
+    [NUIProgressViewRenderer render:progressView withClass:className];
     [self registerObject:progressView];
 }
 

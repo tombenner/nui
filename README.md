@@ -270,9 +270,9 @@ Below are all of the currently available style classes, their corresponding UI c
 *UIProgressView*
 
 * progress-image *(Image)*
-* progress-tint *(Color)*
+* progress-tint-color *(Color)*
 * track-image *(Image)*
-* track-tint *(Color)*
+* track-tint-color *(Color)*
 * width *(Number)*
 
 #### SearchBar

@@ -15,6 +15,7 @@
 #import "NUILabelRenderer.h"
 #import "NUINavigationBarRenderer.h"
 #import "NUINavigationItemRenderer.h"
+#import "NUIProgressViewRenderer.h"
 #import "NUISearchBarRenderer.h"
 #import "NUISegmentedControlRenderer.h"
 #import "NUISliderRenderer.h"
@@ -58,8 +59,8 @@
 + (void)renderNavigationItem:(UINavigationItem*)item;
 + (void)renderNavigationItem:(UINavigationItem*)item withClass:(NSString*)className;
 
-+ (void)renderProgressView:(UIProgressView*)item;
-+ (void)renderProgressView:(UIProgressView*)item withClass:(NSString*)className;
++ (void)renderProgressView:(UIProgressView*)progressView;
++ (void)renderProgressView:(UIProgressView*)progressView withClass:(NSString*)className;
 
 + (void)renderSearchBar:(UISearchBar*)bar;
 + (void)renderSearchBar:(UISearchBar*)bar withClass:(NSString*)className;

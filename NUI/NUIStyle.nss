@@ -70,9 +70,8 @@ NavigationBar {
     background-color-bottom: @primaryBackgroundColorBottomStrong;
 }
 Progress {
-    progress-tint: @primaryBackgroundTintColor;
-    track-tint: @secondaryBackgroundColorTop;
-    width:80;
+    progress-tint-color: @primaryBackgroundTintColor;
+    track-tint-color: @secondaryBackgroundColorTop;
 }
 SearchBar {
     background-color-top: @primaryBackgroundColorTop;

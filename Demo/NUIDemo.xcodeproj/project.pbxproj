@@ -27,6 +27,7 @@
 		4A55F08516758E9D0056753C /* UISegmentedControl+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A55F08416758E9D0056753C /* UISegmentedControl+NUI.m */; };
 		4A55F08816758EDA0056753C /* UITableViewCell+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A55F08716758EDA0056753C /* UITableViewCell+NUI.m */; };
 		4A55F08B16758F360056753C /* UITextField+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A55F08A16758F360056753C /* UITextField+NUI.m */; };
+		4A5B5B2916F6471400CF8D16 /* NUIProgressViewRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5B5B2816F6471400CF8D16 /* NUIProgressViewRenderer.m */; };
 		4A744B0B1691058C0068F3CF /* ProgrammaticallyCreatedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A744B0A1691058B0068F3CF /* ProgrammaticallyCreatedViewController.m */; };
 		4A744B19169904520068F3CF /* NUIFileMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A744B18169904500068F3CF /* NUIFileMonitor.m */; };
 		4A779342167560FF00B5EE81 /* UIButton+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A779340167560FF00B5EE81 /* UIButton+NUI.m */; };
@@ -111,6 +112,8 @@
 		4A55F08716758EDA0056753C /* UITableViewCell+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+NUI.m"; sourceTree = "<group>"; };
 		4A55F08916758F360056753C /* UITextField+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+NUI.h"; sourceTree = "<group>"; };
 		4A55F08A16758F360056753C /* UITextField+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+NUI.m"; sourceTree = "<group>"; };
+		4A5B5B2716F6471400CF8D16 /* NUIProgressViewRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIProgressViewRenderer.h; sourceTree = "<group>"; };
+		4A5B5B2816F6471400CF8D16 /* NUIProgressViewRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIProgressViewRenderer.m; sourceTree = "<group>"; };
 		4A744B09169105890068F3CF /* ProgrammaticallyCreatedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgrammaticallyCreatedViewController.h; sourceTree = "<group>"; };
 		4A744B0A1691058B0068F3CF /* ProgrammaticallyCreatedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgrammaticallyCreatedViewController.m; sourceTree = "<group>"; };
 		4A744B171699044F0068F3CF /* NUIFileMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIFileMonitor.h; sourceTree = "<group>"; };
@@ -346,6 +349,8 @@
 				89B940391671418100850A9A /* NUINavigationBarRenderer.m */,
 				89B9403A1671418100850A9A /* NUINavigationItemRenderer.h */,
 				89B9403B1671418100850A9A /* NUINavigationItemRenderer.m */,
+				4A5B5B2716F6471400CF8D16 /* NUIProgressViewRenderer.h */,
+				4A5B5B2816F6471400CF8D16 /* NUIProgressViewRenderer.m */,
 				4ADA71C816A103CD00BDCF81 /* NUISearchBarRenderer.h */,
 				4ADA71C916A103CD00BDCF81 /* NUISearchBarRenderer.m */,
 				89B9403C1671418100850A9A /* NUISegmentedControlRenderer.h */,
@@ -545,6 +550,7 @@
 				4A38831116C7268000DB99C2 /* NUIWindowRenderer.m in Sources */,
 				4A38831516C7269F00DB99C2 /* UIWindow+NUI.m in Sources */,
 				FC280DB916F127DE00B01664 /* UIProgressView+NUI.m in Sources */,
+				4A5B5B2916F6471400CF8D16 /* NUIProgressViewRenderer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

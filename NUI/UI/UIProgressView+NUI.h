@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <objc/runtime.h>
+#import "NUIRenderer.h"
 
 @interface UIProgressView (NUI)
-
-+(void)renderNui:(UIProgressView*)progressView;
-+(void)renderNui:(UIProgressView*)progressView withClass:(NSString*)className;
 
 @end

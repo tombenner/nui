@@ -83,10 +83,6 @@
     [textField setDelegate:self];
     [self.view addSubview:textField];
     
-    UIProgressView *progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(158, 268, 150, 9)];
-    progressView.progress = 0.5;
-    [self.view addSubview:progressView];    
-    
     NSArray *items = [NSArray arrayWithObjects: @"Segmented", @"Control", nil];
     UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:items];
     [segmentedControl setFrame:CGRectMake(20, 318, 190, 30)];
