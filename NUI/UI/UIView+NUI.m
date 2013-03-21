@@ -21,15 +21,11 @@
 
 - (void)applyNUI
 {
-    // Styling shouldn't be applied to inherited classes, unless nuiClass is
-    // explictly set
-    if ([self class] == [UIView class] || self.nuiClass) {
+    // Styling shouldn't be applied to inherited classes, unless nuiClass is explictly set
+    if (([self class] == [UIView class] && [[self superview] class] != [UINavigationBar class]) || self.nuiClass) {
         [self initNUI];
         if (![self.nuiClass isEqualToString:@"none"]) {
-            if ([self class] == [UIView class] &&
-                [[self superview] class] != [UINavigationBar class]) {
-                [NUIRenderer renderView:self withClass:self.nuiClass];
-            }
+            [NUIRenderer renderView:self withClass:self.nuiClass];
         }
     }
     self.nuiIsApplied = [NSNumber numberWithBool:YES];
