@@ -24,9 +24,7 @@
     if ([self class] == [UISwitch class] || self.nuiClass) {
         [self initNUI];
         if (![self.nuiClass isEqualToString:@"none"]) {
-            if ([self class] == [UISwitch class]) {
-                [NUIRenderer renderSwitch:self withClass:self.nuiClass];
-            }
+            [NUIRenderer renderSwitch:self withClass:self.nuiClass];
         }
     }
     self.nuiIsApplied = [NSNumber numberWithBool:YES];

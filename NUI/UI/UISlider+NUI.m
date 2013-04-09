@@ -24,9 +24,7 @@
     if ([self class] == [UISlider class] || self.nuiClass) {
         [self initNUI];
         if (![self.nuiClass isEqualToString:@"none"]) {
-            if ([self class] == [UISlider class]) {
-                [NUIRenderer renderSlider:self withClass:self.nuiClass];
-            }
+            [NUIRenderer renderSlider:self withClass:self.nuiClass];
         }
     }
     self.nuiIsApplied = [NSNumber numberWithBool:YES];
