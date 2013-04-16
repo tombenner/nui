@@ -303,10 +303,15 @@ See SegmentedControl
 
 * background-color *(Color)*
 * background-color-selected *(Color)*
+* background-image *(Image)*
+* background-image-insets *(Box)*
+* background-image-selected *(Image)*
+* background-image-selected-insets *(Box)*
 * background-tint-color *(Color)*
 * border-color *(Color)*
 * border-width *(Number)*
 * corner-radius *(Number)*
+* divider-image *(Image)*
 * font-color *(Color)*
 * font-color-selected *(Color)*
 * font-name *(FontName)*

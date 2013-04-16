@@ -12,7 +12,17 @@
 
 + (void)render:(UISegmentedControl*)control withClass:(NSString*)className
 {
-    if ([NUISettings hasProperty:@"background-color" withClass:className] ||
+    if ([NUISettings hasProperty:@"background-image" withClass:className]) {
+        if ([NUISettings hasProperty:@"background-image" withClass:className]) {
+            [control setBackgroundImage:[NUISettings getImage:@"background-image" withClass:className] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+        }
+        if ([NUISettings hasProperty:@"background-image-selected" withClass:className]) {
+            [control setBackgroundImage:[NUISettings getImage:@"background-image-selected" withClass:className] forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
+        }        
+        if ([NUISettings hasProperty:@"divider-image" withClass:className]) {
+            [control setDividerImage:[NUISettings getImage:@"divider-image" withClass:className] forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+        }        
+    } else if ([NUISettings hasProperty:@"background-color" withClass:className] ||
         [NUISettings hasProperty:@"border-color" withClass:className]) {
         CALayer *layer = [NUIGraphics roundedRectLayerWithClass:className];
         UIImage *normalImage = [NUIGraphics roundedRectImageWithClass:className layer:layer];
