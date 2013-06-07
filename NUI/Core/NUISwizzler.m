@@ -34,6 +34,7 @@
     
     [self swizzle:[UITextField class] methodName:@"textRectForBounds:"];
     [self swizzle:[UITextField class] methodName:@"editingRectForBounds:"];
+    [self swizzle:[UITextField class] methodName:@"drawRect:"];
     [self swizzle:[UIWindow class] methodName:@"becomeKeyWindow"];
 }
 
