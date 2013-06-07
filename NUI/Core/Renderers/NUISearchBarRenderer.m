@@ -16,6 +16,10 @@
         [bar setBackgroundImage:[NUISettings getImageFromColor:@"background-color" withClass:className]];
     }
     
+    if ([NUISettings hasProperty:@"background-tint-color" withClass:className]) {
+        [bar setTintColor:[NUISettings getColor:@"background-tint-color" withClass:className]];
+    }
+    
     if ([NUISettings hasProperty:@"background-color-top" withClass:className]) {
         UIImage *gradientImage = [NUIGraphics
                                           gradientImageWithTop:[NUISettings getColor:@"background-color-top" withClass:className]
