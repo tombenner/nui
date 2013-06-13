@@ -56,23 +56,23 @@
     NSMutableArray *edges = [[NSMutableArray alloc] initWithCapacity:4];
     switch ([values count]) {
         case 1:
-            edges = [NSArray arrayWithObjects:values[0], values[0], values[0], values[0], nil];
+            edges = [NSMutableArray arrayWithObjects:values[0], values[0], values[0], values[0], nil];
             break;
             
         case 2:
-            edges = [NSArray arrayWithObjects:values[0], values[1], values[0], values[1], nil];
+            edges = [NSMutableArray arrayWithObjects:values[0], values[1], values[0], values[1], nil];
             break;
             
         case 3:
-            edges = [NSArray arrayWithObjects:values[0], values[1], values[2], values[1], nil];
+            edges = [NSMutableArray arrayWithObjects:values[0], values[1], values[2], values[1], nil];
             break;
             
         case 4:
-            edges = [NSArray arrayWithObjects:values[0], values[1], values[2], values[3], nil];
+            edges = [NSMutableArray arrayWithObjects:values[0], values[1], values[2], values[3], nil];
             break;
             
         default:
-            edges = [NSArray arrayWithObjects:@0, @0, @0, @0, nil];
+            edges = [NSMutableArray arrayWithObjects:@0, @0, @0, @0, nil];
             break;
     }
     // UIEdgeInsetsMake's arguments have a different ordering: top, left, bottom, right
