@@ -13,6 +13,7 @@
 
 + (void)render:(UIButton*)button withClass:(NSString*)className
 {
+    [NUIViewRenderer renderSize:button withClass:className];
     // UIButtonTypeRoundedRect's first two sublayers contain its background and border, which
     // need to be hidden for NUI's rendering to be displayed correctly. Ideally we would switch
     // over to a UIButtonTypeCustom, but this appears to be impossible.
@@ -121,7 +122,7 @@
         }
     }
 
-    [NUIViewRenderer renderSize:button withClass:className];
+    
     [NUIViewRenderer renderShadow:button withClass:className];
 }
 
