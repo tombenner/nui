@@ -13,7 +13,6 @@
 		4A0B8640165EE59A005B5756 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A0B863E165EE59A005B5756 /* InfoPlist.strings */; };
 		4A0B8642165EE59A005B5756 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0B8641165EE59A005B5756 /* main.m */; };
 		4A0B8646165EE59A005B5756 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0B8645165EE59A005B5756 /* AppDelegate.m */; };
-		4A0B8649165EE59A005B5756 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A0B8647165EE59A005B5756 /* MainStoryboard.storyboard */; };
 		4A0B864C165EE59A005B5756 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0B864B165EE59A005B5756 /* ViewController.m */; };
 		4A0B8681165EE917005B5756 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0B8680165EE917005B5756 /* QuartzCore.framework */; };
 		4A0B8687165F1383005B5756 /* NUIDemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0B8686165F1383005B5756 /* NUIDemoTableViewController.m */; };
@@ -46,6 +45,8 @@
 		4AAAFE7C166FD32600A0D34D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AAAFE7B166FD32600A0D34D /* Default-568h@2x.png */; };
 		4ADA71C616A0F15C00BDCF81 /* UISearchBar+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADA71C516A0F15C00BDCF81 /* UISearchBar+NUI.m */; };
 		4ADA71CA16A103CD00BDCF81 /* NUISearchBarRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADA71C916A103CD00BDCF81 /* NUISearchBarRenderer.m */; };
+		832B9C1B176AEADA0054F06E /* iPad Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 832B9C19176AEADA0054F06E /* iPad Storyboard.storyboard */; };
+		832B9C1E176AEAED0054F06E /* iPhone Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 832B9C1C176AEAED0054F06E /* iPhone Storyboard.storyboard */; };
 		89B940701671418200850A9A /* NUIAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B940241671418100850A9A /* NUIAppearance.m */; };
 		89B940711671418200850A9A /* NUIConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B940261671418100850A9A /* NUIConverter.m */; };
 		89B940721671418200850A9A /* NUIGraphics.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B940281671418100850A9A /* NUIGraphics.m */; };
@@ -87,7 +88,6 @@
 		4A0B8643165EE59A005B5756 /* NUIDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NUIDemo-Prefix.pch"; sourceTree = "<group>"; };
 		4A0B8644165EE59A005B5756 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4A0B8645165EE59A005B5756 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4A0B8648165EE59A005B5756 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		4A0B864A165EE59A005B5756 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		4A0B864B165EE59A005B5756 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4A0B8680165EE917005B5756 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -142,6 +142,8 @@
 		4ADA71C516A0F15C00BDCF81 /* UISearchBar+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+NUI.m"; sourceTree = "<group>"; };
 		4ADA71C816A103CD00BDCF81 /* NUISearchBarRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUISearchBarRenderer.h; sourceTree = "<group>"; };
 		4ADA71C916A103CD00BDCF81 /* NUISearchBarRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISearchBarRenderer.m; sourceTree = "<group>"; };
+		832B9C1A176AEADA0054F06E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = "en.lproj/iPad Storyboard.storyboard"; sourceTree = "<group>"; };
+		832B9C1D176AEAED0054F06E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = "en.lproj/iPhone Storyboard.storyboard"; sourceTree = "<group>"; };
 		89B940231671418100850A9A /* NUIAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIAppearance.h; sourceTree = "<group>"; };
 		89B940241671418100850A9A /* NUIAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIAppearance.m; sourceTree = "<group>"; };
 		89B940251671418100850A9A /* NUIConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIConverter.h; sourceTree = "<group>"; };
@@ -247,15 +249,16 @@
 			isa = PBXGroup;
 			children = (
 				89B940211671418100850A9A /* NUI */,
-				4A0B8644165EE59A005B5756 /* AppDelegate.h */,
-				4A0B8645165EE59A005B5756 /* AppDelegate.m */,
-				4A0B8647165EE59A005B5756 /* MainStoryboard.storyboard */,
 				4A0B8685165F1382005B5756 /* NUIDemoTableViewController.h */,
 				4A0B8686165F1383005B5756 /* NUIDemoTableViewController.m */,
 				4A744B09169105890068F3CF /* ProgrammaticallyCreatedViewController.h */,
 				4A744B0A1691058B0068F3CF /* ProgrammaticallyCreatedViewController.m */,
 				4A0B864A165EE59A005B5756 /* ViewController.h */,
 				4A0B864B165EE59A005B5756 /* ViewController.m */,
+				832B9C19176AEADA0054F06E /* iPad Storyboard.storyboard */,
+				832B9C1C176AEAED0054F06E /* iPhone Storyboard.storyboard */,
+				4A0B8644165EE59A005B5756 /* AppDelegate.h */,
+				4A0B8645165EE59A005B5756 /* AppDelegate.m */,
 				4AAAFE7A166FD2EC00A0D34D /* Resources */,
 				4A0B863C165EE59A005B5756 /* Supporting Files */,
 			);
@@ -480,7 +483,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A0B8640165EE59A005B5756 /* InfoPlist.strings in Resources */,
-				4A0B8649165EE59A005B5756 /* MainStoryboard.storyboard in Resources */,
 				4AAAFE7C166FD32600A0D34D /* Default-568h@2x.png in Resources */,
 				89B940811671418200850A9A /* NUIStyle.nss in Resources */,
 				89B940841671418200850A9A /* NUIViewBackground.png in Resources */,
@@ -491,6 +493,8 @@
 				4A9965E9169FB56800DAA38A /* Route.NUI.nss in Resources */,
 				4A9965EA169FB56800DAA38A /* SkyBlue.NUI.nss in Resources */,
 				4A9965EB169FB56800DAA38A /* Switchboard.NUI.nss in Resources */,
+				832B9C1B176AEADA0054F06E /* iPad Storyboard.storyboard in Resources */,
+				832B9C1E176AEAED0054F06E /* iPhone Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,12 +569,20 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		4A0B8647165EE59A005B5756 /* MainStoryboard.storyboard */ = {
+		832B9C19176AEADA0054F06E /* iPad Storyboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4A0B8648165EE59A005B5756 /* en */,
+				832B9C1A176AEADA0054F06E /* en */,
 			);
-			name = MainStoryboard.storyboard;
+			name = "iPad Storyboard.storyboard";
+			sourceTree = "<group>";
+		};
+		832B9C1C176AEAED0054F06E /* iPhone Storyboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				832B9C1D176AEAED0054F06E /* en */,
+			);
+			name = "iPhone Storyboard.storyboard";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -635,7 +647,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NUIDemo/NUIDemo-Prefix.pch";
 				INFOPLIST_FILE = "NUIDemo/NUIDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -646,7 +660,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NUIDemo/NUIDemo-Prefix.pch";
 				INFOPLIST_FILE = "NUIDemo/NUIDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
