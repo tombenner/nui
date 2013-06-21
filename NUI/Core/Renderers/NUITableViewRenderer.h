@@ -14,7 +14,7 @@
 
 @interface NUITableViewRenderer : NSObject
 
-+ (void)render:(UITableView*)tableView withClass:(NSString*)className;
++ (void)render:(UITableView*)tableView;
 + (void)sizeDidChange:(UITableView*)tableView;
 
 @end

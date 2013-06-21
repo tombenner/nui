@@ -10,7 +10,7 @@
 
 @implementation NUITableViewRenderer
 
-+ (void)render:(UITableView*)tableView withClass:(NSString*)className
++ (void)render:(UITableView*)tableView
 {
     [self renderSizeDependentProperties:tableView];
 }
