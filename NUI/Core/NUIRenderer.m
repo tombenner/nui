@@ -213,13 +213,13 @@ static NUIRenderer *instance = nil;
 
 + (void)renderTableView:(UITableView*)tableView
 {
-    [NUITableViewRenderer render:tableView withClass:@"TableCell"];
+    [NUITableViewRenderer render:tableView];
     [self registerObject:tableView];
 }
 
 + (void)renderTableView:(UITableView*)tableView withClass:(NSString*)className
 {
-    [NUITableViewRenderer render:tableView withClass:className];
+    [NUITableViewRenderer render:tableView];
     [self registerObject:tableView];
 }
 
