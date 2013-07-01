@@ -282,6 +282,7 @@ Below are all of the currently available style classes, their corresponding UI c
 * background-color *(Color)*
 * background-color-top/background-color-bottom *(Gradient)*
 * background-image *(Image)*
+* background-tint-color *(Color)*
 * scope-background-color *(Color)*
 * scope-background-image *(Image)*
 
