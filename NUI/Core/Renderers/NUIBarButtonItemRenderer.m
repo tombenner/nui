@@ -68,6 +68,18 @@
         }
         
         [item setBackgroundImage:image forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+        
+        if ([NUISettings hasProperty:@"background-color-highlighted" withClass:className]) {
+            CALayer *highlightedLayer = layer;
+            highlightedLayer.backgroundColor = [NUISettings getColor:@"background-color-highlighted" withClass:className].CGColor;
+            UIImage *highlightedImage = [NUIGraphics caLayerToUIImage:highlightedLayer];
+            if ([highlightedImage respondsToSelector:@selector(resizableImageWithCapInsets:resizingMode:)]) {
+                highlightedImage = [highlightedImage resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
+            } else {
+                highlightedImage = [highlightedImage resizableImageWithCapInsets:insets];
+            }
+            [item setBackgroundImage:highlightedImage forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
+        }
     }
     
     NSDictionary *titleTextAttributes = [NUIUtilities titleTextAttributesForClass:className];
