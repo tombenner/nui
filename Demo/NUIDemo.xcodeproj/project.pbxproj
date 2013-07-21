@@ -74,6 +74,8 @@
 		D983DEE8169DC05300A3A180 /* UIToolbar+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = D983DEE7169DC05300A3A180 /* UIToolbar+NUI.m */; };
 		D983DF1C169DC84600A3A180 /* UISlider+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = D983DF1B169DC84500A3A180 /* UISlider+NUI.m */; };
 		D983DF1F169DC87800A3A180 /* NUISliderRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = D983DF1E169DC87500A3A180 /* NUISliderRenderer.m */; };
+		E291BBD7179C89470016BC1D /* NUITableViewRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = E291BBD6179C89470016BC1D /* NUITableViewRenderer.m */; };
+		E291BBDA179C89710016BC1D /* UITableView+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = E291BBD9179C89710016BC1D /* UITableView+NUI.m */; };
 		FC280DB916F127DE00B01664 /* UIProgressView+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = FC280DB816F127DE00B01664 /* UIProgressView+NUI.m */; };
 /* End PBXBuildFile section */
 
@@ -196,6 +198,10 @@
 		D983DF1B169DC84500A3A180 /* UISlider+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISlider+NUI.m"; sourceTree = "<group>"; };
 		D983DF1D169DC87200A3A180 /* NUISliderRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUISliderRenderer.h; sourceTree = "<group>"; };
 		D983DF1E169DC87500A3A180 /* NUISliderRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISliderRenderer.m; sourceTree = "<group>"; };
+		E291BBD5179C89470016BC1D /* NUITableViewRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUITableViewRenderer.h; sourceTree = "<group>"; };
+		E291BBD6179C89470016BC1D /* NUITableViewRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUITableViewRenderer.m; sourceTree = "<group>"; };
+		E291BBD8179C89710016BC1D /* UITableView+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+NUI.h"; sourceTree = "<group>"; };
+		E291BBD9179C89710016BC1D /* UITableView+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+NUI.m"; sourceTree = "<group>"; };
 		FC280DB716F127DE00B01664 /* UIProgressView+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIProgressView+NUI.h"; sourceTree = "<group>"; };
 		FC280DB816F127DE00B01664 /* UIProgressView+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIProgressView+NUI.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -366,6 +372,8 @@
 				4A7793471675625800B5EE81 /* NUITabBarItemRenderer.m */,
 				89B9403E1671418100850A9A /* NUITabBarRenderer.h */,
 				89B9403F1671418100850A9A /* NUITabBarRenderer.m */,
+				E291BBD5179C89470016BC1D /* NUITableViewRenderer.h */,
+				E291BBD6179C89470016BC1D /* NUITableViewRenderer.m */,
 				89B940401671418100850A9A /* NUITableViewCellRenderer.h */,
 				89B940411671418100850A9A /* NUITableViewCellRenderer.m */,
 				89B940421671418100850A9A /* NUITextFieldRenderer.h */,
@@ -417,6 +425,8 @@
 				4A7793441675619500B5EE81 /* UITabBar+NUI.m */,
 				4A7793491675635100B5EE81 /* UITabBarItem+NUI.h */,
 				4A77934A1675635100B5EE81 /* UITabBarItem+NUI.m */,
+				E291BBD8179C89710016BC1D /* UITableView+NUI.h */,
+				E291BBD9179C89710016BC1D /* UITableView+NUI.m */,
 				4A55F08616758ED90056753C /* UITableViewCell+NUI.h */,
 				4A55F08716758EDA0056753C /* UITableViewCell+NUI.m */,
 				4A55F08916758F360056753C /* UITextField+NUI.h */,
@@ -555,6 +565,8 @@
 				4A38831516C7269F00DB99C2 /* UIWindow+NUI.m in Sources */,
 				FC280DB916F127DE00B01664 /* UIProgressView+NUI.m in Sources */,
 				4A5B5B2916F6471400CF8D16 /* NUIProgressViewRenderer.m in Sources */,
+				E291BBD7179C89470016BC1D /* NUITableViewRenderer.m in Sources */,
+				E291BBDA179C89710016BC1D /* UITableView+NUI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

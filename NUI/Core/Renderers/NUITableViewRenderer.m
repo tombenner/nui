@@ -10,20 +10,18 @@
 
 @implementation NUITableViewRenderer
 
-+ (void)render:(UITableView*)tableView
++ (void)render:(UITableView*)tableView withClass:(NSString*)className
 {
-    [self renderSizeDependentProperties:tableView];
+    [self renderSizeDependentProperties:tableView withClass:(NSString*)className];
 }
 
 + (void)sizeDidChange:(UITableView*)tableView
 {
-    [self renderSizeDependentProperties:tableView];
+    [self renderSizeDependentProperties:tableView withClass:tableView.nuiClass];
 }
 
-+ (void)renderSizeDependentProperties:(UITableView*)tableView
++ (void)renderSizeDependentProperties:(UITableView*)tableView withClass:(NSString*)className
 {
-    NSString *className = tableView.nuiClass;
-    
     // Set background color
     if ([NUISettings hasProperty:@"background-color" withClass:className]) {
         UIImage *colorImage = [NUISettings getImageFromColor:@"background-color" withClass:className];

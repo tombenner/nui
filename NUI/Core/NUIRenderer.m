@@ -199,6 +199,20 @@ static NUIRenderer *instance = nil;
 
 
 
++ (void)renderTableView:(UITableView*)tableView
+{
+    [NUITableViewRenderer render:tableView withClass:@"Table"];
+    [self registerObject:tableView];
+}
+
++ (void)renderTableView:(UITableView*)tableView withClass:(NSString*)className
+{
+    [NUITableViewRenderer render:tableView withClass:className];
+    [self registerObject:tableView];
+}
+
+
+
 + (void)renderTableViewCell:(UITableViewCell*)cell
 {
     [NUITableViewCellRenderer render:cell withClass:@"TableCell"];
@@ -211,17 +225,7 @@ static NUIRenderer *instance = nil;
     [self registerObject:cell];
 }
 
-+ (void)renderTableView:(UITableView*)tableView
-{
-    [NUITableViewRenderer render:tableView];
-    [self registerObject:tableView];
-}
 
-+ (void)renderTableView:(UITableView*)tableView withClass:(NSString*)className
-{
-    [NUITableViewRenderer render:tableView];
-    [self registerObject:tableView];
-}
 
 + (void)renderToolbar:(UIToolbar*)bar
 {
@@ -234,6 +238,7 @@ static NUIRenderer *instance = nil;
     [NUIToolbarRenderer render:bar withClass:className];
     [self registerObject:bar];
 }
+
 
 
 + (void)renderTextField:(UITextField*)textField

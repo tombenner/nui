@@ -81,11 +81,11 @@
 + (void)renderTabBarItem:(UITabBarItem*)bar;
 + (void)renderTabBarItem:(UITabBarItem*)bar withClass:(NSString*)className;
 
-+ (void)renderTableViewCell:(UITableViewCell*)cell;
-+ (void)renderTableViewCell:(UITableViewCell*)cell withClass:(NSString*)className;
-
 + (void)renderTableView:(UITableView*)tableView;
 + (void)renderTableView:(UITableView*)tableView withClass:(NSString*)className;
+
++ (void)renderTableViewCell:(UITableViewCell*)cell;
++ (void)renderTableViewCell:(UITableViewCell*)cell withClass:(NSString*)className;
 
 + (void)renderToolbar:(UIToolbar*)bar;
 + (void)renderToolbar:(UIToolbar*)bar withClass:(NSString*)className;

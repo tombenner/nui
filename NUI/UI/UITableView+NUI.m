@@ -13,7 +13,7 @@
 - (void)initNUI
 {
     if (!self.nuiClass) {
-        self.nuiClass = @"TableView";
+        self.nuiClass = @"Table";
     }
 }
 

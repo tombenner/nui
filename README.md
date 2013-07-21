@@ -371,6 +371,13 @@ See SegmentedControl
 * text-shadow-color *(Color)*
 * text-shadow-offset *(Offset)*
 
+#### Table
+
+*UITableView*
+
+* background-color *(Color)*
+* background-color-top/background-color-bottom *(Gradient)*
+
 #### TableCell
 
 *UITableViewCell*
