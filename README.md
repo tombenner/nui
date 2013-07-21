@@ -139,6 +139,7 @@ Below are all of the currently available style classes, their corresponding UI c
 
 * background-color *(Color)*
 * background-color-top/background-color-bottom *(Gradient)*
+* background-color-highlighted *(Color)*
 * background-image *(Image)*
 * background-image-insets *(Box)*
 * background-tint-color *(Color)*
