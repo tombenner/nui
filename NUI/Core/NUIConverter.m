@@ -53,7 +53,7 @@
     NSArray *values = [value componentsSeparatedByCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
     values = [values filteredArrayUsingPredicate: [NSPredicate predicateWithFormat:@"SELF != ''"]];
     // edges will contain a CSS-like ordering of edges (top, right, bottom, left)
-    NSMutableArray *edges = [[NSMutableArray alloc] initWithCapacity:4];
+    NSArray *edges = nil;
     switch ([values count]) {
         case 1:
             edges = [NSArray arrayWithObjects:values[0], values[0], values[0], values[0], nil];
