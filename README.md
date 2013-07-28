@@ -314,6 +314,7 @@ See SegmentedControl
 * border-width *(Number)*
 * corner-radius *(Number)*
 * divider-image *(Image)*
+* divider-color *(Color)*
 * font-color *(Color)*
 * font-color-selected *(Color)*
 * font-name *(FontName)*
