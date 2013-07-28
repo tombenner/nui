@@ -35,12 +35,10 @@
         }
     }
 
-    // divider-image/divider-color
+    // Set divider image or divider color
     if ([NUISettings hasProperty:@"divider-image" withClass:className]) {
         [control setDividerImage:[NUISettings getImage:@"divider-image" withClass:className] forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    }
-    else if ([NUISettings hasProperty:@"divider-color" withClass:className])
-    {
+    } else if ([NUISettings hasProperty:@"divider-color" withClass:className]) {
         [control setDividerImage:[NUISettings getImageFromColor:@"divider-color" withClass:className] forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     }
 

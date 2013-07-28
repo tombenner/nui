@@ -313,8 +313,8 @@ See SegmentedControl
 * border-color *(Color)*
 * border-width *(Number)*
 * corner-radius *(Number)*
-* divider-image *(Image)*
 * divider-color *(Color)*
+* divider-image *(Image)*
 * font-color *(Color)*
 * font-color-selected *(Color)*
 * font-name *(FontName)*
