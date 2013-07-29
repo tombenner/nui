@@ -192,9 +192,9 @@
 + (UIImage *)toImageFromImageName:(NSString *)value {
 	NSRange index;
 	if (IPHONE_5_OR_GREATER && (index = [value rangeOfString:@"." options:NSBackwardsSearch]).location != NSNotFound) {
-		NSString *pathForResource = [[value substringToIndex:index.location] stringByAppendingString:@"-568h@2x"];
+		NSString *pathForResource = [[value substringToIndex:index.location] stringByAppendingString:@"-568h"];
 		NSString *type = [value substringFromIndex:(index.location + 1)];
-		if ([[NSBundle mainBundle] pathForResource:pathForResource ofType:type]) {
+		if ([[NSBundle mainBundle] pathForResource:[pathForResource stringByAppendingString:@"@2x"] ofType:type]) {
 			return [UIImage imageNamed:[[pathForResource stringByAppendingString:@"."] stringByAppendingString:type]];
 		}
 	}
