@@ -18,6 +18,7 @@
 
 @property(nonatomic,retain)NSString *autoUpdatePath;
 @property(nonatomic,retain)NSMutableDictionary *styles;
+@property(nonatomic,retain)NSArray *exclusions;
 
 + (void)init;
 + (void)initWithStylesheet:(NSString*)name;
@@ -40,5 +41,7 @@
 + (kTextAlignment)getTextAlignment:(NSString*)property withClass:(NSString*)className;
 + (UIControlContentHorizontalAlignment)getControlContentHorizontalAlignment:(NSString*)property withClass:(NSString*)className;
 + (UIControlContentVerticalAlignment)getControlContentVerticalAlignment:(NSString*)property withClass:(NSString*)className;
++ (void)setExclusions:(NSArray *)exclusions;
++ (NSArray*)getExclusions;
 
 @end

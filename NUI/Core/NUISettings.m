@@ -168,6 +168,18 @@ static NUISettings *instance = nil;
     return classes;
 }
 
++ (void)setExclusions:(NSArray *)exclusions
+{
+	NUISettings *instance = [self getInstance];
+	instance.exclusions = exclusions;
+}
+
++ (NSArray*)getExclusions
+{
+	NUISettings *instance = [self getInstance];
+	return instance.exclusions;
+}
+
 + (NUISettings*)getInstance
 {
     @synchronized(self) {    
