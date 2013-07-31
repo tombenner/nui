@@ -37,6 +37,15 @@
         tableView.backgroundView = [[UIImageView alloc] initWithImage:gradientImage];
     }
     
+    // Set seperator style
+    if ([NUISettings hasProperty:@"separator-style" withClass:className]) {
+        [tableView setSeparatorStyle:[NUISettings getSeparatorStyle:@"separator-style" withClass:className]];
+    }
+    
+    // Set seperator color
+    if ([NUISettings hasProperty:@"separator-color" withClass:className]) {
+        [tableView setSeparatorColor:[NUISettings getColor:@"separator-color" withClass:className]];
+    }
 }
 
 @end

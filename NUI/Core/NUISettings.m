@@ -121,6 +121,11 @@ static NUISettings *instance = nil;
     return [NUIConverter toBorderStyle:[self get:property withClass:className]];
 }
 
++ (UITableViewCellSeparatorStyle)getSeparatorStyle:(NSString*)property withClass:(NSString*)className
+{
+    return [NUIConverter toSeparatorStyle:[self get:property withClass:className]];
+}
+
 + (UIColor*)getColor:(NSString*)property withClass:(NSString*)className
 {   
     return [NUIConverter toColor:[self get:property withClass:className]];
