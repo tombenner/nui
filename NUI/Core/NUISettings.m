@@ -180,4 +180,16 @@ static NUISettings *instance = nil;
     return instance;
 }
 
++ (void)setGlobalExclusions:(NSArray *)array
+{
+    instance = [self getInstance];
+    instance.globalExclusions = [array mutableCopy];
+}
+
++ (NSMutableArray*)getGlobalExclusions
+{
+    instance = [self getInstance];
+    return instance.globalExclusions;
+}
+
 @end
