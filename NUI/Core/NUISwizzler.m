@@ -49,6 +49,10 @@
     [self swizzle:class methodName:@"didMoveToWindow"];
 }
 
+- (void)swizzleDealloc:(Class)class {
+    [self swizzle:class methodName:@"dealloc"];
+}
+
 - (void)swizzle:(Class)class methodName:(NSString*)methodName
 {
     SEL originalMethod = NSSelectorFromString(methodName);

@@ -105,5 +105,6 @@
 + (void)sizeDidChangeForTableViewCell:(UITableViewCell*)cell;
 
 + (void)addOrientationDidChangeObserver:(id)observer;
++ (void)removeOrientationDidChangeObserver:(id)observer;
 
 @end
