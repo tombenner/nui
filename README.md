@@ -379,6 +379,8 @@ See SegmentedControl
 
 * background-color *(Color)*
 * background-color-top/background-color-bottom *(Gradient)*
+* separator-color *(Color)*
+* separator-style *(SeparatorStyle)*
 
 #### TableCell
 
@@ -483,6 +485,7 @@ Style Value Types
 * **Image** - A name of an image, as used in `[UIImage imageNamed:name]` (e.g. `MyImage.png`).
 * **Number** - A number (e.g. `-1`, `4.5`)
 * **Offset** - Two numbers comprising the horizontal and vertical values of an offset (e.g. `-1,1`)
+* **SeparatorStyle** - A separator style, as rendered by a UITableViewSeparatorStyle. Accepted values are `none`, `single-line`, and `single-line-etched`.
 * **TextAlign** - A text alignment (e.g. `left`, `right`, `center`)
 * **VerticalAlign** - A vertical alignment (e.g. `top`, `center`, `bottom`, `fill`)
 
