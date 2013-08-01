@@ -254,6 +254,19 @@ static NUIRenderer *instance = nil;
 }
 
 
++ (void)renderTextView:(UITextView *)textView
+{
+    [NUITextViewRenderer render:textView withClass:@"TextView"];
+    [self registerObject:textView];
+}
+
++ (void)renderTextView:(UITextView *)textView withClass:(NSString *)className
+{
+    [NUITextViewRenderer render:textView withClass:className];
+    [self registerObject:textView];
+}
+
+
 
 + (void)renderView:(UIView*)view
 {

@@ -29,6 +29,7 @@
 #import "NUIViewRenderer.h"
 #import "NUIWindowRenderer.h"
 #import "UIView+NUI.h"
+#import "NUITextViewRenderer.h"
 
 @interface NUIRenderer : NSObject {
     NSMutableArray *renderedObjects;
@@ -92,6 +93,9 @@
 
 + (void)renderTextField:(UITextField*)textField;
 + (void)renderTextField:(UITextField*)textField withClass:(NSString*)className;
+
++ (void)renderTextView:(UITextView*)textView;
++ (void)renderTextView:(UITextView*)textView withClass:(NSString*)className;
 
 + (void)renderView:(UIView*)view;
 + (void)renderView:(UIView*)view withClass:(NSString*)className;
