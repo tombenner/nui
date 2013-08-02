@@ -11,6 +11,7 @@
 @implementation UIView (NUI)
 
 @dynamic nuiClass;
+@dynamic nuiIsExcluded;
 
 - (void)initNUI
 {
@@ -40,11 +41,32 @@
 }
 
 - (void)setNuiClass:(NSString*)value {
-    objc_setAssociatedObject(self, "nuiClass", value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+	BOOL isCurrentClassExplicitlyExcluded = NO;
+	for (NSString *class in [NUISettings getExclusions]) {
+		if ([self isKindOfClass:NSClassFromString(class)]) {
+			isCurrentClassExplicitlyExcluded = YES;
+			break;
+		}
+	}
+	BOOL isCurrentClassImplicitlyExcluded = (self.superview != nil && self.superview.nuiIsExcluded);
+	if (isCurrentClassExplicitlyExcluded || isCurrentClassImplicitlyExcluded) {
+		objc_setAssociatedObject(self, "nuiClass", @"none", OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+		self.nuiIsExcluded = YES;
+	} else {
+		objc_setAssociatedObject(self, "nuiClass", value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+	}
 }
 
 - (NSString*)nuiClass {
     return objc_getAssociatedObject(self, "nuiClass");
+}
+
+- (void)setNuiIsExcluded:(BOOL)nuiIsExcluded {
+	objc_setAssociatedObject(self, "nuiIsExcluded", [NSNumber numberWithBool:nuiIsExcluded], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (BOOL)nuiIsExcluded {
+	return [objc_getAssociatedObject(self, "nuiIsExcluded") boolValue];
 }
 
 - (void)setNuiIsApplied:(NSNumber*)value {

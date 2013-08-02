@@ -379,6 +379,8 @@ See SegmentedControl
 
 * background-color *(Color)*
 * background-color-top/background-color-bottom *(Gradient)*
+* section-index-color *(Color)*
+* separator-color *(Color)*
 
 #### TableCell
 

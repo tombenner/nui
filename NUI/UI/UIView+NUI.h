@@ -14,6 +14,7 @@
 
 @property (nonatomic, retain) NSString* nuiClass;
 @property (nonatomic, retain) NSNumber* nuiIsApplied;
+@property (nonatomic) BOOL nuiIsExcluded;
 
 - (void)applyNUI;
 

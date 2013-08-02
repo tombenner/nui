@@ -14,11 +14,9 @@
 		4A0B8642165EE59A005B5756 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0B8641165EE59A005B5756 /* main.m */; };
 		4A0B8646165EE59A005B5756 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0B8645165EE59A005B5756 /* AppDelegate.m */; };
 		4A0B864C165EE59A005B5756 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0B864B165EE59A005B5756 /* ViewController.m */; };
-		4A0B8681165EE917005B5756 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0B8680165EE917005B5756 /* QuartzCore.framework */; };
 		4A0B8687165F1383005B5756 /* NUIDemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0B8686165F1383005B5756 /* NUIDemoTableViewController.m */; };
 		4A38831116C7268000DB99C2 /* NUIWindowRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A38831016C7268000DB99C2 /* NUIWindowRenderer.m */; };
 		4A38831516C7269F00DB99C2 /* UIWindow+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A38831416C7269F00DB99C2 /* UIWindow+NUI.m */; };
-		4A4FC6341663141D0058031B /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A4FC62016629C4D0058031B /* CoreImage.framework */; };
 		4A55F078167570C10056753C /* UIView+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A55F077167570C10056753C /* UIView+NUI.m */; };
 		4A55F07C1675718F0056753C /* UILabel+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A55F07B1675718F0056753C /* UILabel+NUI.m */; };
 		4A55F07F167573D10056753C /* UINavigationBar+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A55F07E167573D10056753C /* UINavigationBar+NUI.m */; };
@@ -68,6 +66,8 @@
 		89B940841671418200850A9A /* NUIViewBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B9404A1671418100850A9A /* NUIViewBackground.png */; };
 		B51BC28A169724A3004A38F8 /* UISwitch+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = B51BC289169724A3004A38F8 /* UISwitch+NUI.m */; };
 		B51BC28E16972527004A38F8 /* NUISwitchRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = B51BC28D16972527004A38F8 /* NUISwitchRenderer.m */; };
+		B55B4B3AA139CBB2526B194B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55B49E1BC0262AD4B2F7B96 /* QuartzCore.framework */; };
+		B55B4F77931F6471CCF81770 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55B4565419F6A34426EEE3B /* CoreImage.framework */; };
 		D8E7168116B8AF4400686854 /* NUIControlRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E7168016B8AF4300686854 /* NUIControlRenderer.m */; };
 		D8E7168516B9980300686854 /* UIControl+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E7168416B9980300686854 /* UIControl+NUI.m */; };
 		D983DEE5169DBCCD00A3A180 /* NUIToolbarRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = D983DEE4169DBCCC00A3A180 /* NUIToolbarRenderer.m */; };
@@ -92,14 +92,12 @@
 		4A0B8645165EE59A005B5756 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4A0B864A165EE59A005B5756 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		4A0B864B165EE59A005B5756 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		4A0B8680165EE917005B5756 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4A0B8685165F1382005B5756 /* NUIDemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIDemoTableViewController.h; sourceTree = "<group>"; };
 		4A0B8686165F1383005B5756 /* NUIDemoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIDemoTableViewController.m; sourceTree = "<group>"; };
 		4A38830F16C7268000DB99C2 /* NUIWindowRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIWindowRenderer.h; sourceTree = "<group>"; };
 		4A38831016C7268000DB99C2 /* NUIWindowRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIWindowRenderer.m; sourceTree = "<group>"; };
 		4A38831316C7269F00DB99C2 /* UIWindow+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+NUI.h"; sourceTree = "<group>"; };
 		4A38831416C7269F00DB99C2 /* UIWindow+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+NUI.m"; sourceTree = "<group>"; };
-		4A4FC62016629C4D0058031B /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		4A55F076167570C10056753C /* UIView+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+NUI.h"; sourceTree = "<group>"; };
 		4A55F077167570C10056753C /* UIView+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+NUI.m"; sourceTree = "<group>"; };
 		4A55F07A1675718F0056753C /* UILabel+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+NUI.h"; sourceTree = "<group>"; };
@@ -186,6 +184,8 @@
 		B51BC289169724A3004A38F8 /* UISwitch+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISwitch+NUI.m"; sourceTree = "<group>"; };
 		B51BC28C16972527004A38F8 /* NUISwitchRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUISwitchRenderer.h; sourceTree = "<group>"; };
 		B51BC28D16972527004A38F8 /* NUISwitchRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISwitchRenderer.m; sourceTree = "<group>"; };
+		B55B4565419F6A34426EEE3B /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/CoreImage.framework; sourceTree = "<group>"; };
+		B55B49E1BC0262AD4B2F7B96 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = "<group>"; };
 		D8E7167F16B8AF4300686854 /* NUIControlRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIControlRenderer.h; sourceTree = "<group>"; };
 		D8E7168016B8AF4300686854 /* NUIControlRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIControlRenderer.m; sourceTree = "<group>"; };
 		D8E7168316B9980300686854 /* UIControl+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+NUI.h"; sourceTree = "<group>"; };
@@ -211,11 +211,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A4FC6341663141D0058031B /* CoreImage.framework in Frameworks */,
-				4A0B8681165EE917005B5756 /* QuartzCore.framework in Frameworks */,
 				4A0B8636165EE59A005B5756 /* UIKit.framework in Frameworks */,
 				4A0B8638165EE59A005B5756 /* Foundation.framework in Frameworks */,
 				4A0B863A165EE59A005B5756 /* CoreGraphics.framework in Frameworks */,
+				B55B4F77931F6471CCF81770 /* CoreImage.framework in Frameworks */,
+				B55B4B3AA139CBB2526B194B /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,8 +225,6 @@
 		4A0B8626165EE59A005B5756 = {
 			isa = PBXGroup;
 			children = (
-				4A4FC62016629C4D0058031B /* CoreImage.framework */,
-				4A0B8680165EE917005B5756 /* QuartzCore.framework */,
 				4A0B863B165EE59A005B5756 /* NUIDemo */,
 				4A0B8634165EE59A005B5756 /* Frameworks */,
 				4A0B8632165EE59A005B5756 /* Products */,
@@ -247,6 +245,8 @@
 				4A0B8635165EE59A005B5756 /* UIKit.framework */,
 				4A0B8637165EE59A005B5756 /* Foundation.framework */,
 				4A0B8639165EE59A005B5756 /* CoreGraphics.framework */,
+				B55B4565419F6A34426EEE3B /* CoreImage.framework */,
+				B55B49E1BC0262AD4B2F7B96 /* QuartzCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
