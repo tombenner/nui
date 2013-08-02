@@ -18,15 +18,12 @@
         }
         if ([NUISettings hasProperty:@"background-image-selected" withClass:className]) {
             [control setBackgroundImage:[NUISettings getImage:@"background-image-selected" withClass:className] forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
-        }        
-        if ([NUISettings hasProperty:@"divider-image" withClass:className]) {
-            [control setDividerImage:[NUISettings getImage:@"divider-image" withClass:className] forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-        }        
+        }
     } else if ([NUISettings hasProperty:@"background-color" withClass:className] ||
         [NUISettings hasProperty:@"border-color" withClass:className]) {
         CALayer *layer = [NUIGraphics roundedRectLayerWithClass:className];
         UIImage *normalImage = [NUIGraphics roundedRectImageWithClass:className layer:layer];
-        
+
         if ([NUISettings hasProperty:@"background-color-selected" withClass:className]) {
             [layer setBackgroundColor:[[NUISettings getColor:@"background-color-selected" withClass:className] CGColor]];
         }
@@ -37,14 +34,21 @@
             [control setDividerImage:[NUISettings getImageFromColor:@"border-color" withClass:className] forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
         }
     }
-    
+
+    // Set divider image or divider color
+    if ([NUISettings hasProperty:@"divider-image" withClass:className]) {
+        [control setDividerImage:[NUISettings getImage:@"divider-image" withClass:className] forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    } else if ([NUISettings hasProperty:@"divider-color" withClass:className]) {
+        [control setDividerImage:[NUISettings getImageFromColor:@"divider-color" withClass:className] forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    }
+
     // Set background tint color
     if ([NUISettings hasProperty:@"background-tint-color" withClass:className]) {
         // UISegmentedControlStyleBar is necessary for setTintColor to take effect
         control.segmentedControlStyle = UISegmentedControlStyleBar;
         [control setTintColor:[NUISettings getColor:@"background-tint-color" withClass:className]];
     }
-    
+
     NSDictionary *titleTextAttributes = [NUIUtilities titleTextAttributesForClass:className];
     
     if ([[titleTextAttributes allKeys] count] > 0) {

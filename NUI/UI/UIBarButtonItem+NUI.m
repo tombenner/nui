@@ -29,6 +29,14 @@
     self.nuiIsApplied = [NSNumber numberWithBool:YES];
 }
 
+- (void)override_awakeFromNib
+{
+    if (!self.nuiIsApplied) {
+        [self applyNUI];
+    }
+    [self override_awakeFromNib];
+}
+
 - (void)override_didMoveToWindow
 {
     if (!self.nuiIsApplied) {
