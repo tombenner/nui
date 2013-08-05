@@ -12,6 +12,8 @@
 
 - (void)swizzleAll
 {
+    [self swizzleWillMoveToWindow:[UIView class]];
+
     [self swizzleDidMoveToWindow:[UIBarButtonItem class]];
     [self swizzleDidMoveToWindow:[UIButton class]];
     [self swizzleDidMoveToWindow:[UILabel class]];
@@ -42,6 +44,11 @@
 - (void)swizzleAwakeFromNib:(Class)class
 {
     [self swizzle:class methodName:@"awakeFromNib"];
+}
+
+- (void)swizzleWillMoveToWindow:(Class)class
+{
+    [self swizzle:class methodName:@"willMoveToWindow:"];
 }
 
 - (void)swizzleDidMoveToWindow:(Class)class

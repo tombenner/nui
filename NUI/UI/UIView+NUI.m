@@ -39,6 +39,22 @@
     [self override_didMoveToWindow];
 }
 
+-(void)override_willMoveToWindow:(UIWindow *)newWindow
+{
+    if ([self.nuiClass isEqualToString:@"none"]){
+        [self disableNUI:self];
+    }
+    [self override_willMoveToWindow:newWindow];
+}
+
+-(void)disableNUI:(UIView*)view{
+    for (UIView* vw in view.subviews) {
+        [vw setNuiClass:@"none"];
+        [self disableNUI:vw];
+    }
+}
+
+
 - (void)setNuiClass:(NSString*)value {
     objc_setAssociatedObject(self, "nuiClass", value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
