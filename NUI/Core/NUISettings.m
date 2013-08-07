@@ -171,13 +171,25 @@ static NUISettings *instance = nil;
 + (NUISettings*)getInstance
 {
     @synchronized(self) {    
-        if(instance == nil) {
+        if (instance == nil) {
             [[NUISwizzler new] swizzleAll];
             instance = [NUISettings new];
         }
     }
     
     return instance;
+}
+
++ (void)setGlobalExclusions:(NSArray *)array
+{
+    instance = [self getInstance];
+    instance.globalExclusions = [array mutableCopy];
+}
+
++ (NSMutableArray*)getGlobalExclusions
+{
+    instance = [self getInstance];
+    return instance.globalExclusions;
 }
 
 @end

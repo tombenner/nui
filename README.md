@@ -19,29 +19,31 @@ It's easily modified, though. The styling above, for example, is declared [like 
 
 The styling is declared using a CSS-like syntax that supports variables:
 
-    @primaryFontName: HelveticaNeue;
-    @secondaryFontName: HelveticaNeue-Light;
-    @primaryFontColor: #333333;
-    @primaryBackgroundColor: #E6E6E6;
+```css
+@primaryFontName: HelveticaNeue;
+@secondaryFontName: HelveticaNeue-Light;
+@primaryFontColor: #333333;
+@primaryBackgroundColor: #E6E6E6;
 
-    Button {
-        background-color: @primaryBackgroundColor;
-        border-color: #A2A2A2;
-        border-width: @primaryBorderWidth;
-        font-color: @primaryFontColor;
-        font-color-highlighted: #999999;
-        font-name: @primaryFontName;
-        font-size: 18;
-        corner-radius: 7;
-    }
-    NavigationBar {
-        background-tint-color: @primaryBackgroundColor;
-        font-name: @secondaryFontName;
-        font-size: 20;
-        font-color: @primaryFontColor;
-        text-shadow-color: #666666;
-        text-shadow-offset: 1,1;
-    }
+Button {
+    background-color: @primaryBackgroundColor;
+    border-color: #A2A2A2;
+    border-width: @primaryBorderWidth;
+    font-color: @primaryFontColor;
+    font-color-highlighted: #999999;
+    font-name: @primaryFontName;
+    font-size: 18;
+    corner-radius: 7;
+}
+NavigationBar {
+    background-tint-color: @primaryBackgroundColor;
+    font-name: @secondaryFontName;
+    font-size: 20;
+    font-color: @primaryFontColor;
+    text-shadow-color: #666666;
+    text-shadow-offset: 1,1;
+}
+```
 
 NUI lets you:
 
@@ -71,11 +73,15 @@ After dropping in NUI, you can modify your app's styling by simply editing NUISt
 
 Due to the nature of UIKit's usage of simple UI components within more complex UI components, NUI doesn't style some UIKit components in some very rare cases. If you ever need to apply styling for these cases, you can simply use NUIRenderer:
 
-    [NUIRenderer renderButton:myButton];
+```objective-c
+[NUIRenderer renderButton:myButton];
+```
 
 You can specify a custom style class, too:
 
-    [NUIRenderer renderButton:myButton withClass:@"LargeButton"]
+```objective-c
+[NUIRenderer renderButton:myButton withClass:@"LargeButton"]
+```
 
 *N.B. NUI used to require that you make your elements inherit from a NUI class, but this is no longer the case. See "Migrating From Subclasses To Categories" below for details.*
 
@@ -104,19 +110,52 @@ To do this, you'll set a runtime attribute for the element (in Identity Inspecto
 
 To do this, you'll want to import the NUI category for the element. If you're styling a UIButton, you'd import:
 
-    #import "UIButton+NUI.h"
+```objective-c
+#import "UIButton+NUI.h"
+```
 
 You can then set `nuiClass` on your element:
 
-    myButton.nuiClass = @"LargeButton";
+```objective-c
+myButton.nuiClass = @"LargeButton";
+```
 
 *N.B. A style class can inherit from an indefinite number of style rules, so if you want to create groups of style rules, you can set `nuiClass` to something like `@"MyStyleGroup1:MyStyleGroup2:MyButton"`.*
 
-#### Modifying Styling While The Application Is Running
+### Excluding Views from NUI's Styling
+
+If you want to prevent specific view classes from being styled (e.g. third party UI elements that are already styled), you can specify these in NSS:
+
+```css
+Button {
+    exclude-views: UIAlertButton;
+    exclude-subviews: UITableViewCell,TDBadgedCell,UITextField;
+}
+```
+
+* `exclude-views` will prevent NUI from applying the `Button` style to views of the specified classes
+* `exclude-subviews` will prevent NUI from applying the `Button style to subviews of views of the specified classes
+
+If you want to globally prevent specific view classes from being styled (regardless of style class), you can do this using `+[NUISettings setGlobalExclusions:]`:
+
+```objective-c
+int main(int argc, char *argv[])
+{
+    @autoreleasepool {
+        [NUISettings init];
+        [NUISettings setGlobalExclusions:@[@"ABMemberCell", @"ABMultiCell"]];
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([MyAppDelegate class]));
+    }
+}
+```
+
+### Modifying Styling While The Application Is Running
 
 To do this, add the following line after `[NUISettings init];` in [main.m](https://github.com/tombenner/nui/blob/master/Demo/NUIDemo/main.m), replacing `@"/path/to/Style.nss"` with the absolute file path of your .nss file (e.g. `/Users/myusername/projects/ios/MyApp/Style.nss`):
 
-    [NUISettings setAutoUpdatePath:@"/path/to/Style.nss"];
+```objective-c
+[NUISettings setAutoUpdatePath:@"/path/to/Style.nss"];
+```
 
 Now, whenever you modify and save your .nss file while the app is running, the new changes will be applied instantaneously, without any need to rebuild the app. This can drastically speed up the process of styling. You'll want to remove this line when you create a release build.
 

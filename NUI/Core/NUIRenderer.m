@@ -383,7 +383,7 @@ static NUIRenderer *instance = nil;
 + (NUIRenderer*)getInstance
 {
     @synchronized(self) {
-        if(instance == nil) {
+        if (instance == nil) {
             instance = [NUIRenderer new];
             if ([NUISettings autoUpdateIsEnabled]) {
                 [NUIFileMonitor watch:[NUISettings autoUpdatePath] withCallback:^(){

@@ -34,6 +34,8 @@ Button {
     height: 37;
     corner-radius: 18;
     padding: 10;
+    exclude-views: UIAlertButton;
+    exclude-subviews: UITableViewCell,UITextField;
 }
 LargeButton {
     height: 50;

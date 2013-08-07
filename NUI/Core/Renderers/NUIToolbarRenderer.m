@@ -39,8 +39,7 @@
     }
     
     // setShadowImage is available since ios 6.0
-    if([bar respondsToSelector:@selector(setShadowImage:forToolbarPosition:)])
-    {
+    if ([bar respondsToSelector:@selector(setShadowImage:forToolbarPosition:)]) {
         if ([NUISettings hasProperty:@"shadow-image" withClass:className]) {
             [bar setShadowImage:[NUISettings getImage:@"shadow-image" withClass:className] forToolbarPosition:UIToolbarPositionAny];
         }
