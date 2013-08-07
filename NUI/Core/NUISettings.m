@@ -171,7 +171,7 @@ static NUISettings *instance = nil;
 + (NUISettings*)getInstance
 {
     @synchronized(self) {    
-        if(instance == nil) {
+        if (instance == nil) {
             [[NUISwizzler new] swizzleAll];
             instance = [NUISettings new];
         }

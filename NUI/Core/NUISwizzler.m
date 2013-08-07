@@ -60,7 +60,7 @@
 {
     Method originalMethod = class_getInstanceMethod(class, original);
     Method newMethod = class_getInstanceMethod(class, new);
-    if(class_addMethod(class, original, method_getImplementation(newMethod), method_getTypeEncoding(newMethod))) {
+    if (class_addMethod(class, original, method_getImplementation(newMethod), method_getTypeEncoding(newMethod))) {
         class_replaceMethod(class, new, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
     } else {
         method_exchangeImplementations(originalMethod, newMethod);
