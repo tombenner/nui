@@ -451,6 +451,22 @@ The detail label of a *UITableViewCell*
 * text-shadow-color *(Color)*
 * text-shadow-offset *(Offset)*
 
+#### TableHeaderFooterView
+
+No default styles for *UITableViewHeaderFooterView*, because headers and footers are usually rendered differently.
+
+* background-color *(Color)*
+* background-color-top/background-color-bottom *(Gradient)*
+* font-color *(Color)*
+* font-color-highlighted *(Color)*
+* font-name *(FontName)*
+* font-size *(Number)*
+* text-align *(TextAlign)*
+* text-alpha *(Number)*
+* text-auto-fit *(Boolean)*
+* text-shadow-color *(Color)*
+* text-shadow-offset *(Offset)*
+
 #### Toolbar
 
 *UIToolbar*

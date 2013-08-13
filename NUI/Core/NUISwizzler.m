@@ -24,6 +24,9 @@
     [self swizzleDidMoveToWindow:[UISwitch class]];
     [self swizzleDidMoveToWindow:[UITabBar class]];
     [self swizzleDidMoveToWindow:[UITableViewCell class]];
+#ifdef __IPHONE_6_0 // iOS6 and later
+    [self swizzleDidMoveToWindow:[UITableViewHeaderFooterView class]];
+#endif
     [self swizzleDidMoveToWindow:[UITextField class]];
     [self swizzleDidMoveToWindow:[UIToolbar class]];
     [self swizzleDidMoveToWindow:[UIControl class]];

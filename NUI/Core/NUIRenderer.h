@@ -30,6 +30,10 @@
 #import "NUIWindowRenderer.h"
 #import "UIView+NUI.h"
 
+#ifdef __IPHONE_6_0 // iOS6 and later
+#import "NUITableViewHeaderFooterViewRenderer.h"
+#endif
+
 @interface NUIRenderer : NSObject {
     NSMutableArray *renderedObjects;
     NSMutableArray *renderedObjectIdentifiers;
@@ -87,6 +91,11 @@
 + (void)renderTableViewCell:(UITableViewCell*)cell;
 + (void)renderTableViewCell:(UITableViewCell*)cell withClass:(NSString*)className;
 
+#ifdef __IPHONE_6_0 // iOS6 and later
++ (void)renderTableViewHeaderFooterView:(UITableViewHeaderFooterView*)view;
++ (void)renderTableViewHeaderFooterView:(UITableViewHeaderFooterView*)view withClass:(NSString*)className;
+#endif
+
 + (void)renderToolbar:(UIToolbar*)bar;
 + (void)renderToolbar:(UIToolbar*)bar withClass:(NSString*)className;
 
@@ -103,6 +112,9 @@
 + (void)sizeDidChangeForTabBar:(UITabBar*)bar;
 + (void)sizeDidChangeForTableView:(UITableView*)tableView;
 + (void)sizeDidChangeForTableViewCell:(UITableViewCell*)cell;
+#ifdef __IPHONE_6_0 // iOS6 and later
++ (void)sizeDidChangeForTableViewHeaderFooterView:(UITableViewHeaderFooterView*)view;
+#endif
 
 + (void)addOrientationDidChangeObserver:(id)observer;
 
