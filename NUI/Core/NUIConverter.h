@@ -28,6 +28,7 @@
 + (UIOffset)toOffset:(NSString*)value;
 + (UIEdgeInsets)toEdgeInsets:(NSString*)value;
 + (UITextBorderStyle)toBorderStyle:(NSString*)value;
++ (UITableViewCellSeparatorStyle)toSeparatorStyle:(NSString*)value;
 + (UIColor*)toColor:(NSString*)value;
 + (UIColor*)toColorFromImageName:(NSString*)value;
 + (UIImage*)toImageFromColorName:(NSString*)value;
