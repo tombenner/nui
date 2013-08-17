@@ -1,10 +1,10 @@
 NUI
 ===
-Style iOS apps with a style sheet, similar to CSS
+Style iOS apps with a stylesheet, similar to CSS
 
 Description
 -----------
-NUI is a drop-in UI kit for iOS that lets you style UI elements using a style sheet, similar to CSS. It lets you style an entire app in minutes.
+NUI is a drop-in UI kit for iOS that lets you style UI elements using a stylesheet, similar to CSS. It lets you style an entire app in minutes.
 
 Out of the box, the styling looks like this:
 
@@ -418,6 +418,8 @@ See SegmentedControl
 
 * background-color *(Color)*
 * background-color-top/background-color-bottom *(Gradient)*
+* separator-color *(Color)*
+* separator-style *(SeparatorStyle)*
 
 #### TableCell
 
@@ -538,6 +540,7 @@ Style Value Types
 * **Image** - A name of an image, as used in `[UIImage imageNamed:name]` (e.g. `MyImage.png`).
 * **Number** - A number (e.g. `-1`, `4.5`)
 * **Offset** - Two numbers comprising the horizontal and vertical values of an offset (e.g. `-1,1`)
+* **SeparatorStyle** - A separator style, as rendered by a UITableViewSeparatorStyle. Accepted values are `none`, `single-line`, and `single-line-etched`.
 * **TextAlign** - A text alignment (e.g. `left`, `right`, `center`)
 * **VerticalAlign** - A vertical alignment (e.g. `top`, `center`, `bottom`, `fill`)
 
@@ -550,7 +553,7 @@ Contributers are extremely appreciated! NUI covers a lot of ground, but there ar
 
 #### What advantages does this have over UIAppearance?
 
-UIAppearance is alright, but it's unintuitive, time-consuming, and it doesn't support either the granularity or number of style modifications that NUI does. Styling should be abstracted in a simple style sheet with simple property definitions; you shouldn't have to stare at long, nested method calls and have to dig through Apple's documentation every time you want to make a small styling modification.
+UIAppearance is alright, but it's unintuitive, time-consuming, and it doesn't support either the granularity or number of style modifications that NUI does. Styling should be abstracted in a simple stylesheet with simple property definitions; you shouldn't have to stare at long, nested method calls and have to dig through Apple's documentation every time you want to make a small styling modification.
 
 #### I have an app that uses NUI; can I add a link to it here?
 

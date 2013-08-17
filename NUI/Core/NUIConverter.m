@@ -98,6 +98,18 @@
     return UITextBorderStyleNone;
 }
 
++ (UITableViewCellSeparatorStyle)toSeparatorStyle:(NSString*)value
+{
+    if([value isEqualToString:@"none"]) {
+        return UITableViewCellSeparatorStyleNone;
+    } else if([value isEqualToString:@"single-line"]) {
+        return UITableViewCellSeparatorStyleSingleLine;
+    } else if([value isEqualToString:@"single-line-etched"]){
+        return UITableViewCellSeparatorStyleSingleLineEtched;
+    }
+    return UITableViewCellSeparatorStyleNone;
+}
+
 + (UIColor*)toColor:(NSString*)value
 {
     // Look at UIColor selectors for a matching selector.

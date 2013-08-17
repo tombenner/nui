@@ -331,6 +331,10 @@ static NUIRenderer *instance = nil;
     [[NSNotificationCenter defaultCenter] addObserver:observer selector:@selector(orientationDidChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
 }
 
++ (void)removeOrientationDidChangeObserver:(id)observer {
+    [[NSNotificationCenter defaultCenter] removeObserver:observer name:UIDeviceOrientationDidChangeNotification object:nil];
+}
+
 + (void)registerObject:(NSObject*)object
 {
     if ([NUISettings autoUpdateIsEnabled] && object != nil) {
@@ -411,7 +415,6 @@ static NUIRenderer *instance = nil;
             }
         }
     }
-    
     return instance;
 }
 

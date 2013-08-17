@@ -117,5 +117,6 @@
 #endif
 
 + (void)addOrientationDidChangeObserver:(id)observer;
++ (void)removeOrientationDidChangeObserver:(id)observer;
 
 @end

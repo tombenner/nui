@@ -12,6 +12,17 @@
 
 + (void)render:(UITableView*)tableView withClass:(NSString*)className
 {
+    // Set seperator style
+    if ([NUISettings hasProperty:@"separator-style" withClass:className]) {
+        [tableView setSeparatorStyle:[NUISettings getSeparatorStyle:@"separator-style" withClass:className]];
+    }
+    
+    // Set seperator color
+    if ([NUISettings hasProperty:@"separator-color" withClass:className]) {
+        [tableView setSeparatorColor:[NUISettings getColor:@"separator-color" withClass:className]];
+    }
+
+    
     [self renderSizeDependentProperties:tableView withClass:(NSString*)className];
 }
 
