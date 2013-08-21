@@ -190,7 +190,16 @@ Below are all of the currently available style classes, their corresponding UI c
 * font-size *(Number)*
 * text-shadow-color *(Color)*
 * text-shadow-offset *(Offset)*
-
+* font-color-selected *(Color)*
+* font-name-selected *(FontName)*
+* font-size-selected *(Number)*
+* text-shadow-color-selected *(Color)*
+* text-shadow-offset-selected *(Offset)*
+* font-color-highlighted *(Color)*
+* font-name-highlighted *(FontName)*
+* font-size-highlighted *(Number)*
+* text-shadow-color-highlighted *(Color)*
+* text-shadow-offset-highlighted *(Offset)*
 #### BarButtonBack
 
 *UIBarButtonItem back button, inherits from BarButton*
@@ -207,6 +216,16 @@ Below are all of the currently available style classes, their corresponding UI c
 * font-size *(Number)*
 * text-shadow-color *(Color)*
 * text-shadow-offset *(Offset)*
+* font-color-selected *(Color)*
+* font-name-selected *(FontName)*
+* font-size-selected *(Number)*
+* text-shadow-color-selected *(Color)*
+* text-shadow-offset-selected *(Offset)*
+* font-color-highlighted *(Color)*
+* font-name-highlighted *(FontName)*
+* font-size-highlighted *(Number)*
+* text-shadow-color-highlighted *(Color)*
+* text-shadow-offset-highlighted *(Offset)*
 
 #### Button
 
