@@ -32,6 +32,12 @@
         [[uiClass appearance] setTitleTextAttributes:selectedTextAttributes forState:UIControlStateSelected];
     }
 
+    NSDictionary *highlightedTextAttributes = [NUIUtilities titleTextAttributesForClass:className withSuffix:@"highlighted"];
+    
+    if ([[highlightedTextAttributes allKeys] count] > 0) {
+        [[uiClass appearance] setTitleTextAttributes:selectedTextAttributes forState:UIControlStateHighlighted];
+    }
+
     if ([NUISettings hasProperty:@"background-tint-color" withClass:className]) {
         [[uiClass appearance] setTintColor:[NUISettings getColor:@"background-tint-color" withClass:className]];
     }
