@@ -88,6 +88,11 @@
         [item setTitleTextAttributes:titleTextAttributes forState:UIControlStateNormal];
     }
     
+    NSDictionary *selectedTextAttributes = [NUIUtilities titleTextAttributesForClass:className withSuffix:@"selected"];
+    
+    if ([[selectedTextAttributes allKeys] count] > 0) {
+        [item setTitleTextAttributes:selectedTextAttributes forState:UIControlStateSelected];
+    }
 }
 
 @end
