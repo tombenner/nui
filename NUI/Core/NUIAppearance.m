@@ -25,7 +25,13 @@
     if ([[titleTextAttributes allKeys] count] > 0) {
         [[uiClass appearance] setTitleTextAttributes:titleTextAttributes forState:UIControlStateNormal];
     }
+ 
+    NSDictionary *selectedTextAttributes = [NUIUtilities titleTextAttributesForClass:className withSuffix:@"selected"];
     
+    if ([[selectedTextAttributes allKeys] count] > 0) {
+        [[uiClass appearance] setTitleTextAttributes:selectedTextAttributes forState:UIControlStateSelected];
+    }
+
     if ([NUISettings hasProperty:@"background-tint-color" withClass:className]) {
         [[uiClass appearance] setTintColor:[NUISettings getColor:@"background-tint-color" withClass:className]];
     }
