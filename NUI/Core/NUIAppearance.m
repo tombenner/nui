@@ -20,23 +20,9 @@
     NSString *className = @"BarButton:BarButtonBack";
     Class uiClass = [UIBarButtonItem class];
     
-    NSDictionary *titleTextAttributes = [NUIUtilities titleTextAttributesForClass:className];
-    
-    if ([[titleTextAttributes allKeys] count] > 0) {
-        [[uiClass appearance] setTitleTextAttributes:titleTextAttributes forState:UIControlStateNormal];
-    }
- 
-    NSDictionary *selectedTextAttributes = [NUIUtilities titleTextAttributesForClass:className withSuffix:@"selected"];
-    
-    if ([[selectedTextAttributes allKeys] count] > 0) {
-        [[uiClass appearance] setTitleTextAttributes:selectedTextAttributes forState:UIControlStateSelected];
-    }
-
-    NSDictionary *highlightedTextAttributes = [NUIUtilities titleTextAttributesForClass:className withSuffix:@"highlighted"];
-    
-    if ([[highlightedTextAttributes allKeys] count] > 0) {
-        [[uiClass appearance] setTitleTextAttributes:selectedTextAttributes forState:UIControlStateHighlighted];
-    }
+    [self setTitleTextAttributesForClass:uiClass nuiClass:className suffix:nil state:UIControlStateNormal];
+    [self setTitleTextAttributesForClass:uiClass nuiClass:className suffix:@"selected" state:UIControlStateSelected];
+    [self setTitleTextAttributesForClass:uiClass nuiClass:className suffix:@"highlighted" state:UIControlStateHighlighted];
 
     if ([NUISettings hasProperty:@"background-tint-color" withClass:className]) {
         [[uiClass appearance] setTintColor:[NUISettings getColor:@"background-tint-color" withClass:className]];
@@ -62,4 +48,17 @@
     
 }
 
++ (void)setTitleTextAttributesForClass:(Class)uiClass nuiClass:(NSString *)nuiClass suffix:(NSString *)suffix state:(UIControlState)controlState
+{
+    NSDictionary *textAttributes;
+    if (suffix) {
+        textAttributes = [NUIUtilities titleTextAttributesForClass:nuiClass withSuffix:suffix];
+    } else {
+        textAttributes = [NUIUtilities titleTextAttributesForClass:nuiClass];
+    }
+    
+    if ([[textAttributes allKeys] count] > 0) {
+        [[uiClass appearance] setTitleTextAttributes:textAttributes forState:controlState];
+    }
+}
 @end
