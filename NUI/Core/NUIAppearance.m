@@ -23,6 +23,7 @@
     [self setTitleTextAttributesForClass:uiClass nuiClass:className suffix:nil state:UIControlStateNormal];
     [self setTitleTextAttributesForClass:uiClass nuiClass:className suffix:@"selected" state:UIControlStateSelected];
     [self setTitleTextAttributesForClass:uiClass nuiClass:className suffix:@"highlighted" state:UIControlStateHighlighted];
+    [self setTitleTextAttributesForClass:uiClass nuiClass:className suffix:@"disabled" state:UIControlStateDisabled];
 
     if ([NUISettings hasProperty:@"background-tint-color" withClass:className]) {
         [[uiClass appearance] setTintColor:[NUISettings getColor:@"background-tint-color" withClass:className]];
