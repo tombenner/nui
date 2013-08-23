@@ -15,18 +15,24 @@
     if ([NUISettings hasProperty:@"background-tint-color" withClass:className]) {
         [bar setTintColor:[NUISettings getColor:@"background-tint-color" withClass:className]];
     }
-    
+
     if ([NUISettings hasProperty:@"background-image" withClass:className]) {
         [bar setBackgroundImage:[NUISettings getImage:@"background-image" withClass:className] forBarMetrics:UIBarMetricsDefault];
     }
     if ([NUISettings hasProperty:@"shadow-image" withClass:className]) {
         [bar setShadowImage:[NUISettings getImage:@"shadow-image" withClass:className]];
     }
-    
+
+    NSString *property = @"title-vertical-offset";
+    if ([NUISettings hasProperty:property withClass:className]) {
+        float offset = [NUISettings getFloat:property withClass:className];
+        [bar setTitleVerticalPositionAdjustment:offset forBarMetrics:UIBarMetricsDefault];
+    }
+
     [self renderSizeDependentProperties:bar];
-    
+
     NSDictionary *titleTextAttributes = [NUIUtilities titleTextAttributesForClass:className];
-    
+
     if ([[titleTextAttributes allKeys] count] > 0) {
         bar.titleTextAttributes = titleTextAttributes;
     }
@@ -40,7 +46,7 @@
 + (void)renderSizeDependentProperties:(UINavigationBar*)bar
 {
     NSString *className = bar.nuiClass;
-    
+
     if ([NUISettings hasProperty:@"background-color-top" withClass:className]) {
         CGRect frame = bar.bounds;
         UIImage *gradientImage = [NUIGraphics

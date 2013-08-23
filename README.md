@@ -310,6 +310,7 @@ Below are all of the currently available style classes, their corresponding UI c
 * shadow-image *(Image)*
 * text-shadow-color *(Color)*
 * text-shadow-offset *(Offset)*
+* title-vertical-offset *(Number)*
 
 #### Progress
 
