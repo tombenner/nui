@@ -21,6 +21,10 @@
         textView.font = [UIFont fontWithName:[NUISettings get:property withClass:className] size:textView.font.pointSize];
     }
     
+    property = @"padding";
+    if ([NUISettings hasProperty:property withClass:className]) {
+        [textView setContentInset:[NUISettings getEdgeInsets:@"padding" withClass:className]];
+    }
 }
 
 @end

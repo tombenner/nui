@@ -533,6 +533,15 @@ The detail label of a *UITableViewCell*
 * vertical-align *(VerticalAlign)*
 * width *(Number)*
 
+#### TextView
+
+*UITextView*
+
+* font-color *(Color)*
+* font-name *(FontName)*
+* font-size *(Number)*
+* padding *(Box)*
+
 #### View
 
 *UIView*
