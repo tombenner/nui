@@ -123,6 +123,11 @@ TextField {
     border-style: rounded;
     vertical-align: center;
 }
+TextView {
+    font-name: @primaryFontName;
+    font-color: @primaryFontColor;
+    font-size: 14;
+}
 LargeTextField {
     height: 50;
     font-size: 28;

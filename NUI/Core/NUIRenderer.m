@@ -188,6 +188,16 @@ static NUIRenderer *gInstance = nil;
     [NUITextFieldRenderer render:textField withClass:className];
 }
 
++ (void)renderTextView:(UITextView *)textView
+{
+    [NUITextViewRenderer render:textView withClass:@"TextView"];
+}
+
++ (void)renderTextView:(UITextView *)textView withClass:(NSString *)className
+{
+    [NUITextViewRenderer render:textView withClass:className];
+}
+
 + (void)renderView:(UIView*)view
 {
     [NUIViewRenderer render:view withClass:@"View"];
@@ -265,7 +275,7 @@ static NUIRenderer *gInstance = nil;
     for (UIView *subview in view.subviews) {
         [self rerenderView:subview];
     }
-    
+
     if ([view respondsToSelector:@selector(applyNUI)]){
         [view applyNUI];
     }
@@ -274,10 +284,10 @@ static NUIRenderer *gInstance = nil;
 + (void)setRerenderOnOrientationChange:(BOOL)rerender
 {
     NUIRenderer *instance = [self getInstance];
-    
+
     if (instance.rerenderOnOrientationChange != rerender) {
         instance.rerenderOnOrientationChange = rerender;
-        
+
         if (rerender) {
             [self addOrientationDidChangeObserver:self];
         } else {
@@ -306,9 +316,9 @@ static NUIRenderer *gInstance = nil;
 + (void)orientationDidChange:(NSNotification *)notification
 {
     UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
-    
+
     BOOL didReload = [NUISettings reloadStylesheetsOnOrientationChange:orientation];
-    
+
     if (didReload)
         [NUIRenderer rerender];
 }
