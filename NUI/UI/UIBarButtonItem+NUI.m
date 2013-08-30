@@ -33,6 +33,10 @@
 {
     if (!self.nuiIsApplied) {
         [self applyNUI];
+        
+        if ([self respondsToSelector:@selector(NUI_customRender)]) {
+            [self performSelector:@selector(NUI_customRender)];
+        }
     }
     [self override_awakeFromNib];
 }
@@ -41,6 +45,10 @@
 {
     if (!self.nuiIsApplied) {
         [self applyNUI];
+        
+        if ([self respondsToSelector:@selector(NUI_customRender)]) {
+            [self performSelector:@selector(NUI_customRender)];
+        }
     }
     [self override_didMoveToWindow];
 }

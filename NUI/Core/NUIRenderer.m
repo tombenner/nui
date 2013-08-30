@@ -366,6 +366,9 @@ static NUIRenderer *instance = nil;
     for (int i = 0; i < [instance.renderedObjects count]; i++) {
         UIView *object = [instance.renderedObjects objectAtIndex:i];
         [NUIRenderer render:object];
+        if ([object respondsToSelector:@selector(NUI_customRender)]) {
+            [object performSelector:@selector(NUI_customRender)];
+        }
     }
     [CATransaction flush];
 }

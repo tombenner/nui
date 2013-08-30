@@ -30,6 +30,11 @@
 #import "NUIWindowRenderer.h"
 #import "UIView+NUI.h"
 
+@protocol NUIRenderer <NSObject>
+@optional
+- (void)NUI_customRender;
+@end
+
 @interface NUIRenderer : NSObject {
     NSMutableArray *renderedObjects;
     NSMutableArray *renderedObjectIdentifiers;
