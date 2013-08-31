@@ -141,6 +141,28 @@ static NUISettings *instance = nil;
     return [NUIConverter toImageFromColorName:[self get:property withClass:className]];
 }
 
++ (UIImage*)getImageFromGradientColors:(NSArray*)colors size:(CGSize)size
+{
+    UIGraphicsBeginImageContextWithOptions(size, NO, 0);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGFloat locations[2] = {0.0 ,1.0};
+    CFArrayRef cgColors = (__bridge CFArrayRef) @[(id)[colors[0] CGColor], (id)[colors[1] CGColor]];
+    
+    CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceRGB();
+    CGGradientRef gradient = CGGradientCreateWithColors(colorspace, cgColors, locations);
+    
+    CGContextDrawLinearGradient(context, gradient, CGPointMake(0.5, 0.0), CGPointMake(0.5, 100.0), kCGGradientDrawsAfterEndLocation);
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    CGGradientRelease(gradient);
+    CGColorSpaceRelease(colorspace);
+    return image;
+}
+
 + (UIImage*)getImage:(NSString*)property withClass:(NSString*)className
 {
     UIImage *image = [NUIConverter toImageFromImageName:[self get:property withClass:className]];

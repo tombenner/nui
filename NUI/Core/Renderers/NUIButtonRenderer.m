@@ -45,15 +45,34 @@
     
     // Set background gradient
     if ([NUISettings hasProperty:@"background-color-top" withClass:className]) {
-        CAGradientLayer *gradientLayer = [NUIGraphics
-                                          gradientLayerWithTop:[NUISettings getColor:@"background-color-top" withClass:className]
-                                          bottom:[NUISettings getColor:@"background-color-bottom" withClass:className]
-                                          frame:button.bounds];
-        int backgroundLayerIndex = [button.layer.sublayers count] == 1 ? 0 : 1;
-        if (button.nuiIsApplied) {
-            [[button.layer.sublayers objectAtIndex:backgroundLayerIndex] removeFromSuperlayer];
+        UIColor *topColor = [NUISettings getColor:@"background-color-top" withClass:className];
+        
+        if ([NUISettings hasProperty:@"background-color-bottom" withClass:className]) {
+            UIColor *bottomColor = [NUISettings getColor:@"background-color-bottom" withClass:className];
+            
+            UIImage *backgroundImage = [NUISettings getImageFromGradientColors:@[topColor, bottomColor] size:button.bounds.size];
+            
+            [button setBackgroundImage:backgroundImage
+                              forState:UIControlStateNormal];
         }
-        [button.layer insertSublayer:gradientLayer atIndex:backgroundLayerIndex];
+        
+    }
+    
+    // Set background highlighted gradient
+    if ([NUISettings hasProperty:@"background-color-highlighted-top" withClass:className]) {
+        UIColor *topColor = [NUISettings getColor:@"background-color-highlighted-top" withClass:className];
+        
+        if ([NUISettings hasProperty:@"background-color-highlighted-bottom" withClass:className]) {
+            UIColor *bottomColor = [NUISettings getColor:@"background-color-highlighted-bottom" withClass:className];
+            
+            UIImage *backgroundImage = [NUISettings getImageFromGradientColors:@[topColor, bottomColor] size:button.bounds.size];
+            
+            [button setBackgroundImage:backgroundImage
+                              forState:UIControlStateHighlighted];
+            [button setBackgroundImage:backgroundImage
+                              forState:UIControlStateHighlighted|UIControlStateSelected];
+        }
+        
     }
     
     // Set background image
