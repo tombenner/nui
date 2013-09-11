@@ -21,7 +21,7 @@
 {
     // Styling shouldn't be applied to inherited classes, unless nuiClass is
     // explictly set
-    if ([self class] == [UISwitch class] || self.nuiClass) {
+    if ([self isMemberOfClass:[UISwitch class]] || self.nuiClass) {
         [self initNUI];
         if (![self.nuiClass isEqualToString:@"none"]) {
             [NUIRenderer renderSwitch:self withClass:self.nuiClass];
