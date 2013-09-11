@@ -30,12 +30,12 @@
             [NUIRenderer renderView:self withClass:self.nuiClass];
         }
     }
-    self.nuiIsApplied = [NSNumber numberWithBool:YES];
+    self.nuiApplied = YES;
 }
 
 - (void)override_didMoveToWindow
 {
-    if (!self.nuiIsApplied) {
+    if (!self.isNUIApplied) {
         [self applyNUI];
     }
     [self override_didMoveToWindow];
@@ -79,13 +79,16 @@
     return objc_getAssociatedObject(self, kNUIAssociatedClassKey);
 }
 
-- (void)setNuiIsApplied:(NSNumber*)value {
-    objc_setAssociatedObject(self, kNUIAssociatedAppliedFlagKey, value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setNuiApplied:(BOOL)value {
+    
+    objc_setAssociatedObject(self, "nuiIsApplied", [NSNumber numberWithBool:value], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 
 }
 
-- (NSNumber*)nuiIsApplied {
-    return objc_getAssociatedObject(self, kNUIAssociatedAppliedFlagKey);
+- (BOOL)isNUIApplied {
+    NSNumber *nuiAppliedFlagNumber = objc_getAssociatedObject(self, "nuiIsApplied");
+    
+    return [nuiAppliedFlagNumber boolValue];
 }
 
 @end

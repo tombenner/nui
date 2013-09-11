@@ -53,7 +53,7 @@
                                           bottom:[NUISettings getColor:@"background-color-bottom" withClass:className]
                                           frame:button.bounds];
         int backgroundLayerIndex = [button.layer.sublayers count] == 1 ? 0 : 1;
-        if (button.nuiIsApplied) {
+        if (button.isNUIApplied) {
             [[button.layer.sublayers objectAtIndex:backgroundLayerIndex] removeFromSuperlayer];
         }
         [button.layer insertSublayer:gradientLayer atIndex:backgroundLayerIndex];

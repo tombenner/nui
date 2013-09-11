@@ -24,7 +24,7 @@
         [NUIRenderer renderTableView:self withClass:self.nuiClass];
         [NUIRenderer addOrientationDidChangeObserver:self];
     }
-    self.nuiIsApplied = [NSNumber numberWithBool:YES];
+    self.nuiApplied = [NSNumber numberWithBool:YES];
 }
 
 - (void)orientationDidChange:(NSNotification*)notification
