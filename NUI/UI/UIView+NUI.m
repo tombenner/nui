@@ -24,7 +24,7 @@
     // Styling shouldn't be applied to inherited classes, unless nuiClass is explictly set
     if (([self class] == [UIView class] && [[self superview] class] != [UINavigationBar class]) || self.nuiClass) {
         [self initNUI];
-        if (![self.nuiClass isEqualToString:@"none"]) {
+        if (![self.nuiClass isEqualToString:kNUIClassNone]) {
             [NUIRenderer renderView:self withClass:self.nuiClass];
         }
     }
@@ -41,19 +41,19 @@
 
 - (void)setNuiClass:(NSString*)value
 {
-    if (![value isEqualToString:@"none"]) {
+    if (![value isEqualToString:kNUIClassNone]) {
         // Set class to none if view is in the exclude
         NSMutableArray *excludeViews = [NSMutableArray arrayWithArray:[[NUISettings get:@"exclude-views" withClass:value] componentsSeparatedByString:@","]];
         // Add global exclusions to the list
         [excludeViews addObjectsFromArray:[NUISettings getGlobalExclusions]];
         if (excludeViews.count) {
             if ([excludeViews containsObject:NSStringFromClass([self class])]) {
-                value = @"none";
+                value = kNUIClassNone;
             }
         }
     }
     
-    if (![value isEqualToString:@"none"]) {
+    if (![value isEqualToString:kNUIClassNone]) {
         // Set class to none if any view superviews is in the exclude
         NSMutableArray *excludeSubviews = [NSMutableArray arrayWithArray:[[NUISettings get:@"exclude-subviews" withClass:value] componentsSeparatedByString:@","]];
         // Add global exclusions to the list
@@ -62,7 +62,7 @@
             UIView *superView = self;
             while (superView != nil) {
                 if ([excludeSubviews containsObject:NSStringFromClass([superView class])]) {
-                    value = @"none";
+                    value = kNUIClassNone;
                     break;
                 }
                 superView = superView.superview;
@@ -70,19 +70,20 @@
         }
     }
     
-    objc_setAssociatedObject(self, "nuiClass", value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, kNUIAssociatedClassKey, value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (NSString*)nuiClass {
-    return objc_getAssociatedObject(self, "nuiClass");
+    return objc_getAssociatedObject(self, kNUIAssociatedClassKey);
 }
 
 - (void)setNuiIsApplied:(NSNumber*)value {
-    objc_setAssociatedObject(self, "nuiIsApplied", value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, kNUIAssociatedAppliedFlagKey, value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+
 }
 
 - (NSNumber*)nuiIsApplied {
-    return objc_getAssociatedObject(self, "nuiIsApplied");
+    return objc_getAssociatedObject(self, kNUIAssociatedAppliedFlagKey);
 }
 
 @end

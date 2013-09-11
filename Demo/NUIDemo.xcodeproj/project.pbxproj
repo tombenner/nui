@@ -80,6 +80,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3AE80CFA17E0EB290065FB3D /* NUIConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIConstants.h; sourceTree = "<group>"; };
 		4A0B8631165EE59A005B5756 /* NUIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NUIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A0B8635165EE59A005B5756 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4A0B8637165EE59A005B5756 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -338,6 +339,7 @@
 				4A77934D1675647A00B5EE81 /* NUISwizzler.m */,
 				89B9402F1671418100850A9A /* NUIUtilities.h */,
 				89B940301671418100850A9A /* NUIUtilities.m */,
+				3AE80CFA17E0EB290065FB3D /* NUIConstants.h */,
 				89B940311671418100850A9A /* Renderers */,
 			);
 			path = Core;

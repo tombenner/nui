@@ -23,7 +23,7 @@
     // explictly set
     if ([self class] == [UISwitch class] || self.nuiClass) {
         [self initNUI];
-        if (![self.nuiClass isEqualToString:@"none"]) {
+        if (![self.nuiClass isEqualToString:kNUIClassNone]) {
             [NUIRenderer renderSwitch:self withClass:self.nuiClass];
         }
     }

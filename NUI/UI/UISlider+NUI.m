@@ -23,7 +23,7 @@
     // explictly set
     if ([self class] == [UISlider class] || self.nuiClass) {
         [self initNUI];
-        if (![self.nuiClass isEqualToString:@"none"]) {
+        if (![self.nuiClass isEqualToString:kNUIClassNone]) {
             [NUIRenderer renderSlider:self withClass:self.nuiClass];
         }
     }

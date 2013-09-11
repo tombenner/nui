@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NUIConstants.h"
 #import "NUIFileMonitor.h"
 #import "NUISettings.h"
 #import "NUIBarButtonItemRenderer.h"

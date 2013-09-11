@@ -19,7 +19,7 @@
 - (void)applyNUI
 {
     [self initNUI];
-    if (![self.nuiClass isEqualToString:@"none"]) {
+    if (![self.nuiClass isEqualToString:kNUIClassNone]) {
         [NUIRenderer renderWindow:self withClass:self.nuiClass];
     }
     self.nuiIsApplied = [NSNumber numberWithBool:YES];
