@@ -101,6 +101,10 @@
     if ([NUISettings hasProperty:@"text-shadow-color-highlighted" withClass:className]) {
         [button setTitleShadowColor:[NUISettings getColor:@"text-shadow-color-highlighted" withClass:className] forState:UIControlStateHighlighted];
     }
+    if ([NUISettings hasProperty:@"text-shadow-color-disabled" withClass:className]) {
+        [button setTitleShadowColor:[NUISettings getColor:@"text-shadow-color-disabled" withClass:className] forState:UIControlStateDisabled];
+    }
+    
     
     // title insets
     if ([NUISettings hasProperty:@"title-insets" withClass:className]) {
