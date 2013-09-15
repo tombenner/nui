@@ -37,6 +37,11 @@
     [self override_didMoveToWindow];
 }
 
+- (void)override_dealloc {
+    [NUIRenderer removeOrientationDidChangeObserver:self];
+    [self override_dealloc];
+}
+
 - (void)orientationDidChange:(NSNotification*)notification
 {
     [NUIRenderer performSelector:@selector(sizeDidChangeForTableViewHeaderFooterView:) withObject:self afterDelay:0];
