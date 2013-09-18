@@ -27,20 +27,42 @@
         fontSize = fontSize ? fontSize : [UIFont systemFontSize];
         UIFont *font = fontName ? [UIFont fontWithName:fontName size:fontSize] : [UIFont systemFontOfSize:fontSize];
 
-        [titleTextAttributes setObject:font forKey:UITextAttributeFont];
+        [titleTextAttributes setObject:font forKey:[self textAttributeFontKey]];
     }
 
     if ([NUISettings hasProperty:fontColorSelector withClass:className]) {
-        [titleTextAttributes setObject:[NUISettings getColor:fontColorSelector withClass:className] forKey:UITextAttributeTextColor];
+        [titleTextAttributes setObject:[NUISettings getColor:fontColorSelector withClass:className] forKey:[self textAttributeTextColorKey]];
     }
 
-    if ([NUISettings hasProperty:textShadowColorSelector withClass:className]) {
-        [titleTextAttributes setObject:[NUISettings getColor:textShadowColorSelector withClass:className] forKey:UITextAttributeTextShadowColor];
+    if (OSVersionIsAtLeastiOS7()) {
+        NSShadow *shadow = [[NSShadow alloc] init];
+        BOOL containsShadow = NO;
+        
+        if ([NUISettings hasProperty:textShadowColorSelector withClass:className]) {
+            containsShadow = YES;
+            shadow.shadowColor = [NUISettings getColor:textShadowColorSelector withClass:className];
+        }
+        
+        if ([NUISettings hasProperty:textShadowOffsetSelector withClass:className]) {
+            containsShadow = YES;
+            UIOffset offset = [NUISettings getOffset:textShadowOffsetSelector withClass:className];
+            CGSize shadowOffset = CGSizeMake(offset.horizontal, offset.vertical);
+            shadow.shadowOffset = shadowOffset;
+        }
+        
+        if (containsShadow) {
+            [titleTextAttributes setObject:shadow forKey:NSShadowAttributeName];
+        }
+    } else {
+        if ([NUISettings hasProperty:textShadowColorSelector withClass:className]) {
+            [titleTextAttributes setObject:[NUISettings getColor:textShadowColorSelector withClass:className] forKey:UITextAttributeTextShadowColor];
+        }
+        
+        if ([NUISettings hasProperty:textShadowOffsetSelector withClass:className]) {
+            [titleTextAttributes setObject:[NSValue valueWithUIOffset:[NUISettings getOffset:textShadowOffsetSelector withClass:className]] forKey:UITextAttributeTextShadowOffset];
+        }
     }
 
-    if ([NUISettings hasProperty:textShadowOffsetSelector withClass:className]) {
-        [titleTextAttributes setObject:[NSValue valueWithUIOffset:[NUISettings getOffset:textShadowOffsetSelector withClass:className]] forKey:UITextAttributeTextShadowOffset];
-    }
 
     return titleTextAttributes;
 }
@@ -58,5 +80,53 @@
     return selector;
 }
 
++ (NSString *)textAttributeFontKey
+{
+    if (OSVersionIsAtLeastiOS7()) {
+        return NSFontAttributeName;
+    } else {
+        return UITextAttributeFont;
+    }
+}
+
++ (NSString *)textAttributeTextColorKey
+{
+    if (OSVersionIsAtLeastiOS7()) {
+        return nil;
+    } else {
+        return UITextAttributeTextColor;
+    }
+}
+
++ (NSString *)textAttributeTextShadowColorKey
+{
+    if (OSVersionIsAtLeastiOS7()) {
+        return nil;
+    } else {
+        return UITextAttributeTextShadowColor;
+    }
+}
+
++ (NSString *)textAttributeTextShadowOffsetKey
+{
+    if (OSVersionIsAtLeastiOS7()) {
+        return nil;
+    } else {
+        return UITextAttributeTextShadowOffset;
+    }
+}
+
++ (NSString *)textAttributeShadowKey
+{
+    if (OSVersionIsAtLeastiOS7()) {
+        return NSShadowAttributeName;
+    } else {
+        return nil;
+    }
+}
+
+static BOOL OSVersionIsAtLeastiOS7() {
+    return (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1);
+}
 
 @end
