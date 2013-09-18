@@ -22,6 +22,7 @@
 
 + (void)init;
 + (void)initWithStylesheet:(NSString*)name;
++ (void)appendStylesheet:(NSString*)name;
 + (void)loadStylesheetByPath:(NSString*)path;
 + (BOOL)autoUpdateIsEnabled;
 + (NSString*)autoUpdatePath;
