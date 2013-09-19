@@ -83,11 +83,25 @@
     }
     
     NSDictionary *titleTextAttributes = [NUIUtilities titleTextAttributesForClass:className];
+    NSDictionary *titleTextAttributesHighlighted = [NUIUtilities titleTextAttributesHighlightedForClass:className];
+    NSDictionary *titleTextAttributesSelected = [NUIUtilities titleTextAttributesSelectedForClass:className];
+    NSDictionary *titleTextAttributesDisabled = [NUIUtilities titleTextAttributesDisabledForClass:className];
     
     if ([[titleTextAttributes allKeys] count] > 0) {
         [item setTitleTextAttributes:titleTextAttributes forState:UIControlStateNormal];
     }
     
+    if ([[titleTextAttributesHighlighted allKeys] count] > 0) {
+        [item setTitleTextAttributes:titleTextAttributesHighlighted forState:UIControlStateHighlighted];
+    }
+    
+    if ([[titleTextAttributesSelected allKeys] count] > 0) {
+        [item setTitleTextAttributes:titleTextAttributesSelected forState:UIControlStateHighlighted];
+    }
+    
+    if ([[titleTextAttributesDisabled allKeys] count] > 0) {
+        [item setTitleTextAttributes:titleTextAttributesDisabled forState:UIControlStateHighlighted];
+    }
 }
 
 @end

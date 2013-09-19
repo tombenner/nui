@@ -190,6 +190,21 @@ Below are all of the currently available style classes, their corresponding UI c
 * font-size *(Number)*
 * text-shadow-color *(Color)*
 * text-shadow-offset *(Offset)*
+* font-color-highlighted *(Color)*
+* font-name-highlighted *(FontName)*
+* font-size-highlighted *(Number)*
+* text-shadow-color-highlighted *(Color)*
+* text-shadow-offset-highlighted *(Offset)*
+* font-color-selected *(Color)*
+* font-name-selected *(FontName)*
+* font-size-selected *(Number)*
+* text-shadow-color-selected *(Color)*
+* text-shadow-offset-selected *(Offset)*
+* font-color-disabled *(Color)*
+* font-name-disabled *(FontName)*
+* font-size-disabled *(Number)*
+* text-shadow-color-disabled *(Color)*
+* text-shadow-offset-disabled *(Offset)*
 
 #### BarButtonBack
 
@@ -207,6 +222,21 @@ Below are all of the currently available style classes, their corresponding UI c
 * font-size *(Number)*
 * text-shadow-color *(Color)*
 * text-shadow-offset *(Offset)*
+* font-color-highlighted *(Color)*
+* font-name-highlighted *(FontName)*
+* font-size-highlighted *(Number)*
+* text-shadow-color-highlighted *(Color)*
+* text-shadow-offset-highlighted *(Offset)*
+* font-color-selected *(Color)*
+* font-name-selected *(FontName)*
+* font-size-selected *(Number)*
+* text-shadow-color-selected *(Color)*
+* text-shadow-offset-selected *(Offset)*
+* font-color-disabled *(Color)*
+* font-name-disabled *(FontName)*
+* font-size-disabled *(Number)*
+* text-shadow-color-disabled *(Color)*
+* text-shadow-offset-disabled *(Offset)*
 
 #### Button
 
