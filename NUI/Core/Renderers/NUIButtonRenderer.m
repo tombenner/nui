@@ -43,6 +43,12 @@
         [button setBackgroundImage:[NUISettings getImageFromColor:@"background-color-disabled" withClass:className] forState:UIControlStateDisabled];
     }
     
+    //Set title multiline
+    if ([NUISettings hasProperty:@"title-multiline" withClass:className]) {
+        button.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        button.titleLabel.textAlignment = NSTextAlignmentLeft;
+    }
+    
     // Set background gradient
     if ([NUISettings hasProperty:@"background-color-top" withClass:className]) {
         CAGradientLayer *gradientLayer = [NUIGraphics
@@ -68,6 +74,17 @@
     }
     if ([NUISettings hasProperty:@"background-image-disabled" withClass:className]) {
         [button setBackgroundImage:[NUISettings getImage:@"background-image-disabled" withClass:className] forState:UIControlStateDisabled];
+    }
+    
+    //Set images
+    if ([NUISettings hasProperty:@"image" withClass:className]) {
+        [button setImage:[NUISettings getImage:@"image" withClass:className] forState:UIControlStateNormal];
+    }
+    if ([NUISettings hasProperty:@"image-selected" withClass:className]) {
+        [button setImage:[NUISettings getImage:@"image-selected" withClass:className] forState:UIControlStateSelected];
+    }
+    if ([NUISettings hasProperty:@"image-highlighted" withClass:className]) {
+        [button setImage:[NUISettings getImage:@"image-highlighted" withClass:className] forState:UIControlStateHighlighted];
     }
     
     [NUILabelRenderer renderText:button.titleLabel withClass:className];

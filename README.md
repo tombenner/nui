@@ -250,6 +250,10 @@ Below are all of the currently available style classes, their corresponding UI c
 * text-shadow-offset *(Offset)*
 * title-insets *(Box)*
 * width *(Number)*
+* title-multiline *(Bool)*
+* image *(Image)*
+* image-selected *(Image)*
+* image-highlighted *(Image)*
 
 #### Control
 
