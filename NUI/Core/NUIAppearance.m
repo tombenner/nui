@@ -13,6 +13,7 @@
 + (void)init
 {
     [self initUIBarButtonItem];
+    [self initUIPageControl];
 }
 
 + (void)initUIBarButtonItem
@@ -48,6 +49,20 @@
         [[uiClass appearance] setBackButtonBackgroundImage:[NUISettings getImage:@"background-image-disabled" withClass:className] forState:UIControlStateDisabled barMetrics:UIBarMetricsDefault];
     }
     
+}
+
++ (void)initUIPageControl
+{
+    NSString *className = @"UIPageControl";
+    Class uiClass = [UIPageControl class];
+    
+    if ([NUISettings hasProperty:@"tint-color" withClass:className]) {
+        [[uiClass appearance] setPageIndicatorTintColor:[NUISettings getColor:@"tint-color" withClass:className]];
+    }
+    
+    if ([NUISettings hasProperty:@"current-tint-color" withClass:className]) {
+        [[uiClass appearance] setCurrentPageIndicatorTintColor:[NUISettings getColor:@"current-tint-color" withClass:className]];
+    }
 }
 
 @end
