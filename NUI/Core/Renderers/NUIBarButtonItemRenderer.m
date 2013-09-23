@@ -18,12 +18,14 @@
         if ([NUISettings hasProperty:@"background-image-highlighted" withClass:className]) {
             [item setBackgroundImage:[NUISettings getImage:@"background-image-highlighted" withClass:className] forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
         }
-    } else if ([NUISettings hasProperty:@"background-tint-color" withClass:className]) {
-        [item setTintColor:[NUISettings getColor:@"tint-color" withClass:className]];
-    } else if ([NUISettings hasProperty:@"tint-color" withClass:className]) {
+    }
+    else if ([NUISettings hasProperty:@"background-tint-color" withClass:className]) {
         [item setTintColor:[NUISettings getColor:@"background-tint-color" withClass:className]];
-    } else if ([NUISettings hasProperty:@"background-color" withClass:className] ||
-               [NUISettings hasProperty:@"background-color-top" withClass:className]) {
+    }
+    else if ([NUISettings hasProperty:@"tint-color" withClass:className]) {
+        [item setTintColor:[NUISettings getColor:@"tint-color" withClass:className]];
+    }
+    else if ([NUISettings hasProperty:@"background-color" withClass:className] || [NUISettings hasProperty:@"background-color-top" withClass:className]) {
         CALayer *layer = [CALayer layer];
         [layer setFrame:CGRectMake(0, 0, 30, 26)];
         [layer setMasksToBounds:YES];
