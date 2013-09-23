@@ -12,11 +12,12 @@
 
 + (NSDictionary*)titleTextAttributesForClass:(NSString*)className withSuffix:(NSString*)suffix
 {
-    return [self titleTextAttributesForClass:className withSuffix:suffix forStatus:NO];
+    return [self titleTextAttributesForClass:className withSuffix:suffix forHighlighted:NO];
 }
 
-+ (NSDictionary*)titleTextAttributesForClass:(NSString*)className withSuffix:(NSString*)suffix forStatus:(NSString *)status
++ (NSDictionary*)titleTextAttributesForClass:(NSString*)className withSuffix:(NSString*)suffix forHighlighted:(BOOL)highlighted
 {
+    NSString *highlightedPostfix = @"-highlighted";
     NSMutableDictionary *titleTextAttributes = [NSMutableDictionary dictionary];
 
     NSMutableString *fontNameSelector = [[NUIUtilities selector:@"font-name" withSuffix:suffix] mutableCopy];
@@ -24,13 +25,13 @@
     NSMutableString *fontColorSelector = [[NUIUtilities selector:@"font-color" withSuffix:suffix] mutableCopy];
     NSMutableString *textShadowColorSelector = [[NUIUtilities selector:@"text-shadow-color" withSuffix:suffix] mutableCopy];
     NSMutableString *textShadowOffsetSelector = [[NUIUtilities selector:@"text-shadow-offset" withSuffix:suffix] mutableCopy];
-    
-    if (status) {
-        [fontNameSelector appendString:status];
-        [fontSizeSelector appendString:status];
-        [fontColorSelector appendString:status];
-        [textShadowColorSelector appendString:status];
-        [textShadowOffsetSelector appendString:status];
+
+    if (highlighted) {
+        [fontNameSelector appendString:highlightedPostfix];
+        [fontSizeSelector appendString:highlightedPostfix];
+        [fontColorSelector appendString:highlightedPostfix];
+        [textShadowColorSelector appendString:highlightedPostfix];
+        [textShadowOffsetSelector appendString:highlightedPostfix];
     }
     
     if ([NUISettings hasProperty:fontNameSelector withClass:className] || [NUISettings hasProperty:fontSizeSelector withClass:className]) {
@@ -46,7 +47,7 @@
     if ([NUISettings hasProperty:fontColorSelector withClass:className]) {
         [titleTextAttributes setObject:[NUISettings getColor:fontColorSelector withClass:className] forKey:UITextAttributeTextColor];
     }
-
+    
     if ([NUISettings hasProperty:textShadowColorSelector withClass:className]) {
         [titleTextAttributes setObject:[NUISettings getColor:textShadowColorSelector withClass:className] forKey:UITextAttributeTextShadowColor];
     }
@@ -60,22 +61,12 @@
 
 + (NSDictionary*)titleTextAttributesForClass:(NSString*)className
 {
-    return [NUIUtilities titleTextAttributesForClass:className withSuffix:nil forStatus:nil];
+    return [NUIUtilities titleTextAttributesForClass:className withSuffix:nil forHighlighted:NO];
 }
 
 + (NSDictionary*)titleTextAttributesHighlightedForClass:(NSString*)className
 {
-    return [NUIUtilities titleTextAttributesForClass:className withSuffix:nil forStatus:@"-highlighted"];
-}
-
-+ (NSDictionary*)titleTextAttributesSelectedForClass:(NSString*)className
-{
-    return [NUIUtilities titleTextAttributesForClass:className withSuffix:nil forStatus:@"-selected"];
-}
-
-+ (NSDictionary*)titleTextAttributesDisabledForClass:(NSString*)className
-{
-    return [NUIUtilities titleTextAttributesForClass:className withSuffix:nil forStatus:@"-disabled"];
+    return [NUIUtilities titleTextAttributesForClass:className withSuffix:nil forHighlighted:YES];
 }
 
 + (NSString*)selector:(NSString*)selector withSuffix:(NSString*)suffix

@@ -12,10 +12,15 @@
 
 + (void)render:(UIBarButtonItem*)item withClass:(NSString*)className
 {
-    
     if ([NUISettings hasProperty:@"background-image" withClass:className]) {
         [item setBackgroundImage:[NUISettings getImage:@"background-image" withClass:className] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+        
+        if ([NUISettings hasProperty:@"background-image-highlighted" withClass:className]) {
+            [item setBackgroundImage:[NUISettings getImage:@"background-image-highlighted" withClass:className] forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
+        }
     } else if ([NUISettings hasProperty:@"background-tint-color" withClass:className]) {
+        [item setTintColor:[NUISettings getColor:@"tint-color" withClass:className]];
+    } else if ([NUISettings hasProperty:@"tint-color" withClass:className]) {
         [item setTintColor:[NUISettings getColor:@"background-tint-color" withClass:className]];
     } else if ([NUISettings hasProperty:@"background-color" withClass:className] ||
                [NUISettings hasProperty:@"background-color-top" withClass:className]) {
@@ -84,8 +89,6 @@
     
     NSDictionary *titleTextAttributes = [NUIUtilities titleTextAttributesForClass:className];
     NSDictionary *titleTextAttributesHighlighted = [NUIUtilities titleTextAttributesHighlightedForClass:className];
-    NSDictionary *titleTextAttributesSelected = [NUIUtilities titleTextAttributesSelectedForClass:className];
-    NSDictionary *titleTextAttributesDisabled = [NUIUtilities titleTextAttributesDisabledForClass:className];
     
     if ([[titleTextAttributes allKeys] count] > 0) {
         [item setTitleTextAttributes:titleTextAttributes forState:UIControlStateNormal];
@@ -93,14 +96,6 @@
     
     if ([[titleTextAttributesHighlighted allKeys] count] > 0) {
         [item setTitleTextAttributes:titleTextAttributesHighlighted forState:UIControlStateHighlighted];
-    }
-    
-    if ([[titleTextAttributesSelected allKeys] count] > 0) {
-        [item setTitleTextAttributes:titleTextAttributesSelected forState:UIControlStateHighlighted];
-    }
-    
-    if ([[titleTextAttributesDisabled allKeys] count] > 0) {
-        [item setTitleTextAttributes:titleTextAttributesDisabled forState:UIControlStateHighlighted];
     }
 }
 

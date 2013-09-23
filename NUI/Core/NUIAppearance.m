@@ -18,13 +18,11 @@
 
 + (void)initUIBarButtonItem
 {
-    NSString *className = @"BarButton:BarButtonBack";
+    NSString *className = IS_PRE_IOS7 ? @"BarButton_iOS6:BarButtonBack_iOS6" : @"BarButton:BarButtonBack";
     Class uiClass = [UIBarButtonItem class];
     
     NSDictionary *titleTextAttributes = [NUIUtilities titleTextAttributesForClass:className];
     NSDictionary *titleTextAttributesHighlighted = [NUIUtilities titleTextAttributesHighlightedForClass:className];
-    NSDictionary *titleTextAttributesSelected = [NUIUtilities titleTextAttributesSelectedForClass:className];
-    NSDictionary *titleTextAttributesDisabled = [NUIUtilities titleTextAttributesDisabledForClass:className];
     
     if ([[titleTextAttributes allKeys] count] > 0) {
         [[uiClass appearance] setTitleTextAttributes:titleTextAttributes forState:UIControlStateNormal];
@@ -34,16 +32,12 @@
         [[uiClass appearance] setTitleTextAttributes:titleTextAttributesHighlighted forState:UIControlStateHighlighted];
     }
     
-    if ([[titleTextAttributesSelected allKeys] count] > 0) {
-        [[uiClass appearance] setTitleTextAttributes:titleTextAttributesSelected forState:UIControlStateHighlighted];
-    }
-    
-    if ([[titleTextAttributesDisabled allKeys] count] > 0) {
-        [[uiClass appearance] setTitleTextAttributes:titleTextAttributesDisabled forState:UIControlStateHighlighted];
-    }
-    
     if ([NUISettings hasProperty:@"background-tint-color" withClass:className]) {
         [[uiClass appearance] setTintColor:[NUISettings getColor:@"background-tint-color" withClass:className]];
+    }
+    
+    if ([NUISettings hasProperty:@"tint-color" withClass:className]) {
+        [[uiClass appearance] setTintColor:[NUISettings getColor:@"tint-color" withClass:className]];
     }
     
     if ([NUISettings hasProperty:@"background-color" withClass:className] ||
