@@ -10,16 +10,29 @@
 
 @implementation NUIUtilities
 
-+ (NSDictionary*)titleTextAttributesForClass:(NSString*)className withSuffix:(NSString*) suffix
++ (NSDictionary*)titleTextAttributesForClass:(NSString*)className withSuffix:(NSString*)suffix
+{
+    return [self titleTextAttributesForClass:className withSuffix:suffix forStatus:NO];
+}
+
++ (NSDictionary*)titleTextAttributesForClass:(NSString*)className withSuffix:(NSString*)suffix forStatus:(NSString *)status
 {
     NSMutableDictionary *titleTextAttributes = [NSMutableDictionary dictionary];
 
-    NSString *fontNameSelector = [NUIUtilities selector:@"font-name" withSuffix:suffix];
-    NSString *fontSizeSelector = [NUIUtilities selector:@"font-size" withSuffix:suffix];
-    NSString *fontColorSelector = [NUIUtilities selector:@"font-color" withSuffix:suffix];
-    NSString *textShadowColorSelector = [NUIUtilities selector:@"text-shadow-color" withSuffix:suffix];
-    NSString *textShadowOffsetSelector = [NUIUtilities selector:@"text-shadow-offset" withSuffix:suffix];
-
+    NSMutableString *fontNameSelector = [[NUIUtilities selector:@"font-name" withSuffix:suffix] mutableCopy];
+    NSMutableString *fontSizeSelector = [[NUIUtilities selector:@"font-size" withSuffix:suffix] mutableCopy];
+    NSMutableString *fontColorSelector = [[NUIUtilities selector:@"font-color" withSuffix:suffix] mutableCopy];
+    NSMutableString *textShadowColorSelector = [[NUIUtilities selector:@"text-shadow-color" withSuffix:suffix] mutableCopy];
+    NSMutableString *textShadowOffsetSelector = [[NUIUtilities selector:@"text-shadow-offset" withSuffix:suffix] mutableCopy];
+    
+    if (status) {
+        [fontNameSelector appendString:status];
+        [fontSizeSelector appendString:status];
+        [fontColorSelector appendString:status];
+        [textShadowColorSelector appendString:status];
+        [textShadowOffsetSelector appendString:status];
+    }
+    
     if ([NUISettings hasProperty:fontNameSelector withClass:className] || [NUISettings hasProperty:fontSizeSelector withClass:className]) {
         NSString *fontName = [NUISettings get:fontNameSelector withClass:className];
         float fontSize = [NUISettings getFloat:fontSizeSelector withClass:className];
@@ -47,7 +60,22 @@
 
 + (NSDictionary*)titleTextAttributesForClass:(NSString*)className
 {
-    return [NUIUtilities titleTextAttributesForClass:className withSuffix:nil];
+    return [NUIUtilities titleTextAttributesForClass:className withSuffix:nil forStatus:nil];
+}
+
++ (NSDictionary*)titleTextAttributesHighlightedForClass:(NSString*)className
+{
+    return [NUIUtilities titleTextAttributesForClass:className withSuffix:nil forStatus:@"-highlighted"];
+}
+
++ (NSDictionary*)titleTextAttributesSelectedForClass:(NSString*)className
+{
+    return [NUIUtilities titleTextAttributesForClass:className withSuffix:nil forStatus:@"-selected"];
+}
+
++ (NSDictionary*)titleTextAttributesDisabledForClass:(NSString*)className
+{
+    return [NUIUtilities titleTextAttributesForClass:className withSuffix:nil forStatus:@"-disabled"];
 }
 
 + (NSString*)selector:(NSString*)selector withSuffix:(NSString*)suffix

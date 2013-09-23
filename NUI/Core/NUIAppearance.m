@@ -22,9 +22,24 @@
     Class uiClass = [UIBarButtonItem class];
     
     NSDictionary *titleTextAttributes = [NUIUtilities titleTextAttributesForClass:className];
+    NSDictionary *titleTextAttributesHighlighted = [NUIUtilities titleTextAttributesHighlightedForClass:className];
+    NSDictionary *titleTextAttributesSelected = [NUIUtilities titleTextAttributesSelectedForClass:className];
+    NSDictionary *titleTextAttributesDisabled = [NUIUtilities titleTextAttributesDisabledForClass:className];
     
     if ([[titleTextAttributes allKeys] count] > 0) {
         [[uiClass appearance] setTitleTextAttributes:titleTextAttributes forState:UIControlStateNormal];
+    }
+    
+    if ([[titleTextAttributesHighlighted allKeys] count] > 0) {
+        [[uiClass appearance] setTitleTextAttributes:titleTextAttributesHighlighted forState:UIControlStateHighlighted];
+    }
+    
+    if ([[titleTextAttributesSelected allKeys] count] > 0) {
+        [[uiClass appearance] setTitleTextAttributes:titleTextAttributesSelected forState:UIControlStateHighlighted];
+    }
+    
+    if ([[titleTextAttributesDisabled allKeys] count] > 0) {
+        [[uiClass appearance] setTitleTextAttributes:titleTextAttributesDisabled forState:UIControlStateHighlighted];
     }
     
     if ([NUISettings hasProperty:@"background-tint-color" withClass:className]) {
@@ -48,7 +63,6 @@
     if ([NUISettings hasProperty:@"background-image-disabled" withClass:className]) {
         [[uiClass appearance] setBackButtonBackgroundImage:[NUISettings getImage:@"background-image-disabled" withClass:className] forState:UIControlStateDisabled barMetrics:UIBarMetricsDefault];
     }
-    
 }
 
 + (void)initUIPageControl
