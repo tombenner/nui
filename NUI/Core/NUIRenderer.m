@@ -32,8 +32,6 @@ static NUIRenderer *instance = nil;
     [self registerObject:item];
 }
 
-
-
 + (void)renderButton:(UIButton*)button
 {
     [NUIButtonRenderer render:button withClass:@"Button"];
