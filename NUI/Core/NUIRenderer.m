@@ -18,12 +18,16 @@ static NUIRenderer *instance = nil;
 
 + (void)renderBarButtonItem:(UIBarButtonItem*)item
 {
-    [NUIBarButtonItemRenderer render:item withClass:@"BarButton"];
+    [NUIBarButtonItemRenderer render:item withClass: IS_PRE_IOS7 ? @"BarButton_iOS6" : @"BarButton"];
     [self registerObject:item];
 }
 
 + (void)renderBarButtonItem:(UIBarButtonItem*)item withClass:(NSString*)className
 {
+    if (IS_PRE_IOS7) {
+        className = [NSString stringWithFormat:@"%@_iOS6", className];
+    }
+    
     [NUIBarButtonItemRenderer render:item withClass:className];
     [self registerObject:item];
 }
