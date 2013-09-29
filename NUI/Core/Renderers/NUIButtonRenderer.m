@@ -33,11 +33,14 @@
     if ([NUISettings hasProperty:@"background-color" withClass:className]) {
         [button setBackgroundImage:[NUISettings getImageFromColor:@"background-color" withClass:className] forState:UIControlStateNormal];
     }
+    if ([NUISettings hasProperty:@"background-color-highlighted" withClass:className]) {
+        [button setBackgroundImage:[NUISettings getImageFromColor:@"background-color-highlighted" withClass:className] forState:UIControlStateHighlighted];
+    }
     if ([NUISettings hasProperty:@"background-color-selected" withClass:className]) {
         [button setBackgroundImage:[NUISettings getImageFromColor:@"background-color-selected" withClass:className] forState:UIControlStateSelected];
     }
-    if ([NUISettings hasProperty:@"background-color-highlighted" withClass:className]) {
-        [button setBackgroundImage:[NUISettings getImageFromColor:@"background-color-highlighted" withClass:className] forState:UIControlStateHighlighted];
+    if ([NUISettings hasProperty:@"background-color-selected-highlighted" withClass:className]) {
+        [button setBackgroundImage:[NUISettings getImageFromColor:@"background-color-selected-highlighted" withClass:className] forState:UIControlStateSelected|UIControlStateHighlighted];
     }
     if ([NUISettings hasProperty:@"background-color-disabled" withClass:className]) {
         [button setBackgroundImage:[NUISettings getImageFromColor:@"background-color-disabled" withClass:className] forState:UIControlStateDisabled];
@@ -60,11 +63,14 @@
     if ([NUISettings hasProperty:@"background-image" withClass:className]) {
         [button setBackgroundImage:[NUISettings getImage:@"background-image" withClass:className] forState:UIControlStateNormal];
     }
+    if ([NUISettings hasProperty:@"background-image-highlighted" withClass:className]) {
+        [button setBackgroundImage:[NUISettings getImage:@"background-image-highlighted" withClass:className] forState:UIControlStateHighlighted];
+    }
     if ([NUISettings hasProperty:@"background-image-selected" withClass:className]) {
         [button setBackgroundImage:[NUISettings getImage:@"background-image-selected" withClass:className] forState:UIControlStateSelected];
     }
-    if ([NUISettings hasProperty:@"background-image-highlighted" withClass:className]) {
-        [button setBackgroundImage:[NUISettings getImage:@"background-image-highlighted" withClass:className] forState:UIControlStateHighlighted];
+    if ([NUISettings hasProperty:@"background-image-selected-highlighted" withClass:className]) {
+        [button setBackgroundImage:[NUISettings getImage:@"background-image-selected-highlighted" withClass:className] forState:UIControlStateSelected|UIControlStateHighlighted];
     }
     if ([NUISettings hasProperty:@"background-image-disabled" withClass:className]) {
         [button setBackgroundImage:[NUISettings getImage:@"background-image-disabled" withClass:className] forState:UIControlStateDisabled];
@@ -81,11 +87,14 @@
     if ([NUISettings hasProperty:@"font-color" withClass:className]) {
         [button setTitleColor:[NUISettings getColor:@"font-color" withClass:className] forState:UIControlStateNormal];
     }
+    if ([NUISettings hasProperty:@"font-color-highlighted" withClass:className]) {
+        [button setTitleColor:[NUISettings getColor:@"font-color-highlighted" withClass:className] forState:UIControlStateHighlighted];
+    }
     if ([NUISettings hasProperty:@"font-color-selected" withClass:className]) {
         [button setTitleColor:[NUISettings getColor:@"font-color-selected" withClass:className] forState:UIControlStateSelected];
     }
-    if ([NUISettings hasProperty:@"font-color-highlighted" withClass:className]) {
-        [button setTitleColor:[NUISettings getColor:@"font-color-highlighted" withClass:className] forState:UIControlStateHighlighted];
+    if ([NUISettings hasProperty:@"font-color-selected-highlighted" withClass:className]) {
+        [button setTitleColor:[NUISettings getColor:@"font-color-selected-highlighted" withClass:className] forState:UIControlStateSelected|UIControlStateHighlighted];
     }
     if ([NUISettings hasProperty:@"font-color-disabled" withClass:className]) {
         [button setTitleColor:[NUISettings getColor:@"font-color-disabled" withClass:className] forState:UIControlStateDisabled];
@@ -95,11 +104,17 @@
     if ([NUISettings hasProperty:@"text-shadow-color" withClass:className]) {
         [button setTitleShadowColor:[NUISettings getColor:@"text-shadow-color" withClass:className] forState:UIControlStateNormal];
     }
+    if ([NUISettings hasProperty:@"text-shadow-color-highlighted" withClass:className]) {
+        [button setTitleShadowColor:[NUISettings getColor:@"text-shadow-color-highlighted" withClass:className] forState:UIControlStateHighlighted];
+    }
     if ([NUISettings hasProperty:@"text-shadow-color-selected" withClass:className]) {
         [button setTitleShadowColor:[NUISettings getColor:@"text-shadow-color-selected" withClass:className] forState:UIControlStateSelected];
     }
-    if ([NUISettings hasProperty:@"text-shadow-color-highlighted" withClass:className]) {
-        [button setTitleShadowColor:[NUISettings getColor:@"text-shadow-color-highlighted" withClass:className] forState:UIControlStateHighlighted];
+    if ([NUISettings hasProperty:@"text-shadow-colo-selected-highlighted" withClass:className]) {
+        [button setTitleShadowColor:[NUISettings getColor:@"text-shadow-color-selected-highlighted" withClass:className] forState:UIControlStateSelected|UIControlStateHighlighted];
+    }
+    if ([NUISettings hasProperty:@"text-shadow-color-disabled" withClass:className]) {
+        [button setTitleShadowColor:[NUISettings getColor:@"text-shadow-color-disabled" withClass:className] forState:UIControlStateDisabled];
     }
     
     // title insets
