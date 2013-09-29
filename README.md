@@ -217,6 +217,7 @@ Below are all of the currently available style classes, their corresponding UI c
 * background-color-disabled *(Color)*
 * background-color-highlighted *(Color)*
 * background-color-selected *(Color)*
+* background-color-selected-highlighted *(Color)*
 * background-image *(Image)*
 * background-image-insets *(Box)*
 * background-image-disabled *(Image)*
@@ -225,6 +226,8 @@ Below are all of the currently available style classes, their corresponding UI c
 * background-image-highlighted-insets *(Box)*
 * background-image-selected *(Image)*
 * background-image-selected-insets *(Box)*
+* background-image-selected-highlighted *(Image)*
+* background-image-selected-highlighted-insets *(Box)*
 * border-color *(Color)*
 * border-width *(Number)*
 * content-insets *(Box)*
@@ -233,6 +236,7 @@ Below are all of the currently available style classes, their corresponding UI c
 * font-color-disabled *(Color)*
 * font-color-highlighted *(Color)*
 * font-color-selected *(Color)*
+* font-color-selected-highlighted *(Color)*
 * font-name *(FontName)*
 * font-size *(Number)*
 * height *(Number)*
@@ -245,8 +249,10 @@ Below are all of the currently available style classes, their corresponding UI c
 * text-alpha *(Number)*
 * text-auto-fit *(Boolean)*
 * text-shadow-color *(Color)*
+* text-shadow-color-disabled *(Color)*
 * text-shadow-color-highlighted *(Color)*
 * text-shadow-color-selected *(Color)*
+* text-shadow-color-selected-highlighted *(Color)*
 * text-shadow-offset *(Offset)*
 * title-insets *(Box)*
 * width *(Number)*
