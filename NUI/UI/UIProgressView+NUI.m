@@ -19,7 +19,8 @@
 
 - (void)applyNUI
 {
-    if ([self class] == [UIProgressView class] || self.nuiClass) {
+    if ([self isMemberOfClass:[UIProgressView class]] || self.nuiClass) {
+        
         [self initNUI];
         if (![self.nuiClass isEqualToString:kNUIClassNone]) {
             [NUIRenderer renderProgressView:self withClass:self.nuiClass];

@@ -21,7 +21,8 @@
 {
     // Styling shouldn't be applied to inherited classes, unless nuiClass is
     // explictly set
-    if ([self class] == [UISlider class] || self.nuiClass) {
+    if ([self isMemberOfClass:[UISlider class]] || self.nuiClass) {
+        
         [self initNUI];
         if (![self.nuiClass isEqualToString:kNUIClassNone]) {
             [NUIRenderer renderSlider:self withClass:self.nuiClass];
