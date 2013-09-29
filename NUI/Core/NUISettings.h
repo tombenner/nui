@@ -39,6 +39,7 @@
 + (UIColor*)getColorFromImage:(NSString*)property withClass:(NSString*)className;
 + (UIImage*)getImage:(NSString*)property withClass:(NSString*)className;
 + (UIImage*)getImageFromColor:(NSString*)property withClass:(NSString*)className;
++ (UIImage*)getImageFromGradientColors:(NSArray*)colors size:(CGSize)size;
 + (kTextAlignment)getTextAlignment:(NSString*)property withClass:(NSString*)className;
 + (UIControlContentHorizontalAlignment)getControlContentHorizontalAlignment:(NSString*)property withClass:(NSString*)className;
 + (UIControlContentVerticalAlignment)getControlContentVerticalAlignment:(NSString*)property withClass:(NSString*)className;

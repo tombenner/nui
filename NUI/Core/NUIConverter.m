@@ -128,6 +128,8 @@
                                  componentsJoinedByString:@""]
                                  uppercaseString];
     
+    NSArray *rgbaAlphaStrings = [NUIConverter getCapturedStrings:cString
+                                                     withPattern:@"(RGBA)\\((?:0X|#)([0-9A-F]{6}),(\\d{1,3}|[0-9.]+)\\)"];
     NSArray *hexStrings = [NUIConverter getCapturedStrings:cString
                                                withPattern:@"(?:0X|#)([0-9A-F]{6})"];
     NSArray *csStrings = [NUIConverter getCapturedStrings:cString
@@ -135,7 +137,17 @@
     
     UIColor *color = nil;
     
-    if (hexStrings) {        
+    if (rgbaAlphaStrings) {
+        CGFloat a = [NUIConverter parseColorComponent:[rgbaAlphaStrings objectAtIndex:3]];
+        
+        unsigned int c;
+        [[NSScanner scannerWithString:[rgbaAlphaStrings objectAtIndex:2]] scanHexInt:&c];
+        color = [UIColor colorWithRed:(float)((c >> 16) & 0xFF) / 255.0f
+                                green:(float)((c >>  8) & 0xFF) / 255.0f
+                                 blue:(float)((c >>  0) & 0xFF) / 255.0f
+                                alpha:a];
+    }
+    else if (hexStrings) {
         unsigned int c;
         [[NSScanner scannerWithString:[hexStrings objectAtIndex:1]] scanHexInt:&c];
         color = [UIColor colorWithRed:(float)((c >> 16) & 0xFF) / 255.0f
