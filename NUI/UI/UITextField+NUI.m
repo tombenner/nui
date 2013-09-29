@@ -36,7 +36,7 @@
 
 - (BOOL)nuiShouldBeApplied
 {
-    if (![self.nuiClass isEqualToString:@"none"]) {
+    if (![self.nuiClass isEqualToString:kNUIClassNone]) {
         if (![[self superview] isKindOfClass:[UISearchBar class]]) {
             return YES;
         }

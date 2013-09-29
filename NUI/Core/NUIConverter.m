@@ -7,6 +7,7 @@
 //
 
 #import "NUIConverter.h"
+#import "NUIConstants.h"
 
 @implementation NUIConverter
 
@@ -86,7 +87,7 @@
 
 + (UITextBorderStyle)toBorderStyle:(NSString*)value
 {
-    if ([value isEqualToString:@"none"]) {
+    if ([value isEqualToString:kNUIClassNone]) {
         return UITextBorderStyleNone;
     } else if ([value isEqualToString:@"line"]) {
         return UITextBorderStyleLine;
@@ -100,7 +101,7 @@
 
 + (UITableViewCellSeparatorStyle)toSeparatorStyle:(NSString*)value
 {
-    if([value isEqualToString:@"none"]) {
+    if([value isEqualToString:kNUIClassNone]) {
         return UITableViewCellSeparatorStyleNone;
     } else if([value isEqualToString:@"single-line"]) {
         return UITableViewCellSeparatorStyleSingleLine;

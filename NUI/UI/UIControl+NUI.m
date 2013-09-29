@@ -23,7 +23,7 @@
     // explictly set
     if ([self class] == [UIControl class] || self.nuiClass) {
         [self initNUI];
-        if (![self.nuiClass isEqualToString:@"none"]) {
+        if (![self.nuiClass isEqualToString:kNUIClassNone]) {
             [NUIRenderer renderView:self withClass:self.nuiClass];
         }
     }

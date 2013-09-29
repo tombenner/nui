@@ -22,7 +22,7 @@
 - (void)applyNUI
 {
     [self initNUI];
-    if (![self.nuiClass isEqualToString:@"none"]) {
+    if (![self.nuiClass isEqualToString:kNUIClassNone]) {
         [NUIRenderer renderTabBarItem:self withClass:self.nuiClass];
     }
     self.nuiIsApplied = [NSNumber numberWithBool:YES];
@@ -37,19 +37,19 @@
 }
 
 - (void)setNuiClass:(NSString*)value {
-    objc_setAssociatedObject(self, "nuiClass", value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, kNUIAssociatedClassKey, value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (NSString*)nuiClass {
-    return objc_getAssociatedObject(self, "nuiClass");
+    return objc_getAssociatedObject(self, kNUIAssociatedClassKey);
 }
 
 - (void)setNuiIsApplied:(NSNumber*)value {
-    objc_setAssociatedObject(self, "nuiIsApplied", value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, kNUIAssociatedAppliedFlagKey, value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (NSNumber*)nuiIsApplied {
-    return objc_getAssociatedObject(self, "nuiIsApplied");
+    return objc_getAssociatedObject(self, kNUIAssociatedAppliedFlagKey);
 }
 
 @end
