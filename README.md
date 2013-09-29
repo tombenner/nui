@@ -247,6 +247,7 @@ Below are all of the currently available style classes, their corresponding UI c
 * text-shadow-color *(Color)*
 * text-shadow-color-highlighted *(Color)*
 * text-shadow-color-selected *(Color)*
+* text-shadow-color-disabled *(Color)*
 * text-shadow-offset *(Offset)*
 * title-insets *(Box)*
 * width *(Number)*
