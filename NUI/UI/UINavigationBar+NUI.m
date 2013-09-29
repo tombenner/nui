@@ -20,7 +20,7 @@
 - (void)applyNUI
 {
     [self initNUI];
-    if (![self.nuiClass isEqualToString:@"none"]) {
+    if (![self.nuiClass isEqualToString:kNUIClassNone]) {
         [NUIRenderer renderNavigationBar:self withClass:self.nuiClass];
         [NUIRenderer addOrientationDidChangeObserver:self];
         for (UINavigationItem *navigationItem in [self items]) {

@@ -24,7 +24,7 @@
     if (([self class] == [UILabel class] &&
         [[self superview] class] == [UIView class]) || self.nuiClass) {
         [self initNUI];
-        if (![self.nuiClass isEqualToString:@"none"]) {
+        if (![self.nuiClass isEqualToString:kNUIClassNone]) {
             [NUIRenderer renderLabel:self withClass:self.nuiClass];
         }
     }

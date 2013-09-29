@@ -20,7 +20,7 @@
 - (void)applyNUI
 {
     [self initNUI];
-    if (![self.nuiClass isEqualToString:@"none"]) {
+    if (![self.nuiClass isEqualToString:kNUIClassNone]) {
         [NUIRenderer renderSearchBar:self withClass:self.nuiClass];
     }
     self.nuiIsApplied = [NSNumber numberWithBool:YES];

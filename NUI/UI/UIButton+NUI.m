@@ -37,7 +37,7 @@
         }
         forceRender = YES;
     }
-    if (![self.nuiClass isEqualToString:@"none"]) {
+    if (![self.nuiClass isEqualToString:kNUIClassNone]) {
         if ((![bypassedClasses containsObject:selfClass] &&
             ![bypassedSuperviewClasses containsObject:superviewClass]) ||
             forceRender) {
