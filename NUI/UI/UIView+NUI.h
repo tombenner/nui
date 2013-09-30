@@ -16,5 +16,6 @@
 @property (nonatomic, retain) NSNumber* nuiIsApplied;
 
 - (void)applyNUI;
+- (void)addRoundedCorners:(UIRectCorner)corners withRadii:(CGSize)radii;
 
 @end

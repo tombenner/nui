@@ -85,4 +85,20 @@
     return objc_getAssociatedObject(self, "nuiIsApplied");
 }
 
+- (void)addRoundedCorners:(UIRectCorner)corners withRadii:(CGSize)radii {
+    CALayer *tMaskLayer = [self maskForRoundedCorners:corners withRadii:radii];
+    self.layer.mask = tMaskLayer;
+}
+
+- (CALayer *)maskForRoundedCorners:(UIRectCorner)corners withRadii:(CGSize)radii {
+    
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:corners cornerRadii:radii];
+    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+    
+    maskLayer.frame = self.bounds;
+    maskLayer.path = maskPath.CGPath;
+
+	return maskLayer;
+}
+
 @end

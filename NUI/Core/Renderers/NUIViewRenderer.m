@@ -7,6 +7,7 @@
 //
 
 #import "NUIViewRenderer.h"
+#import "UIView+NUI.h"
 
 @implementation NUIViewRenderer
 
@@ -37,6 +38,17 @@
     
     if ([NUISettings hasProperty:@"corner-radius" withClass:className]) {
         [layer setCornerRadius:[NUISettings getFloat:@"corner-radius" withClass:className]];
+    }
+    else {
+        if ([NUISettings hasProperty:@"corner-radius-top" withClass:className]) {
+            double topRadius = [NUISettings getFloat:@"corner-radius-top" withClass:className];
+            [view addRoundedCorners:(UIRectCornerTopLeft|UIRectCornerTopRight) withRadii:CGSizeMake(topRadius, topRadius)];
+        }
+        else
+            if ([NUISettings hasProperty:@"corner-radius-bottom" withClass:className]) {
+            double bottomRadius = [NUISettings getFloat:@"corner-radius-bottom" withClass:className];
+            [view addRoundedCorners:(UIRectCornerBottomLeft|UIRectCornerBottomRight) withRadii:CGSizeMake(bottomRadius, bottomRadius)];
+        }
     }
 }
 
