@@ -28,7 +28,7 @@
             [NUIRenderer renderSlider:self withClass:self.nuiClass];
         }
     }
-    self.nuiApplied = [NSNumber numberWithBool:YES];
+    self.nuiApplied = YES;
 }
 
 - (void)override_didMoveToWindow

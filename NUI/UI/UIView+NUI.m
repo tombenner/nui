@@ -81,12 +81,12 @@
 
 - (void)setNuiApplied:(BOOL)value {
     
-    objc_setAssociatedObject(self, "nuiIsApplied", [NSNumber numberWithBool:value], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, kNUIAssociatedAppliedFlagKey, [NSNumber numberWithBool:value], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 
 }
 
 - (BOOL)isNUIApplied {
-    NSNumber *nuiAppliedFlagNumber = objc_getAssociatedObject(self, "nuiIsApplied");
+    NSNumber *nuiAppliedFlagNumber = objc_getAssociatedObject(self, kNUIAssociatedAppliedFlagKey);
     
     return [nuiAppliedFlagNumber boolValue];
 }
