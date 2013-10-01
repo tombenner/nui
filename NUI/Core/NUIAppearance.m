@@ -14,6 +14,7 @@
 {
     [self initUIBarButtonItem];
     [self initUIPageControl];
+    [self initUIScrollView];
 }
 
 + (void)initUIBarButtonItem
@@ -61,7 +62,7 @@
 
 + (void)initUIPageControl
 {
-    NSString *className = @"UIPageControl";
+    NSString *className = @"PageControl";
     Class uiClass = [UIPageControl class];
     
     if ([NUISettings hasProperty:@"tint-color" withClass:className]) {
@@ -71,6 +72,37 @@
     if ([NUISettings hasProperty:@"current-tint-color" withClass:className]) {
         [[uiClass appearance] setCurrentPageIndicatorTintColor:[NUISettings getColor:@"current-tint-color" withClass:className]];
     }
+}
+
++ (void)initUIScrollView
+{
+    NSString *className = @"ScrollView";
+    Class uiClass = [UIScrollView class];
+    
+    if ([NUISettings hasProperty:@"background-color" withClass:className]) {
+        [[uiClass appearance] setBackgroundColor:[NUISettings getColor:@"background-color" withClass:className]];
+    }
+    
+    if ([NUISettings hasProperty:@"background-image" withClass:className]) {
+        [[uiClass appearance] setBackgroundColor:[UIColor colorWithPatternImage:[NUISettings getImage:@"background-image" withClass:className]]];
+    }
+    
+    if ([NUISettings hasProperty:@"bounce" withClass:className]) {
+        [[uiClass appearance] setBounces:[NUISettings getBoolean:@"bounce" withClass:className]];
+    }
+    
+    if ([NUISettings hasProperty:@"scrolling" withClass:className]) {
+        [[uiClass appearance] setScrollEnabled:[NUISettings getBoolean:@"scrolling" withClass:className]];
+    }
+    
+//    if ([NUISettings hasProperty:@"scroll-indicators" withClass:className]) {
+//        [uiClass appearance].setShowsHorizontalScrollIndicator = NO;
+//        [uiClass appearance].setShowsVerticalScrollIndicator = NO;
+
+        
+//        [[uiClass appearance] setShowsHorizontalScrollIndicator:[NUISettings getBoolean:@"scroll-indicators" withClass:className]];
+//        [[uiClass appearance] setShowsVerticalScrollIndicator:[NUISettings getBoolean:@"scroll-indicators" withClass:className]];
+//    }
 }
 
 @end
