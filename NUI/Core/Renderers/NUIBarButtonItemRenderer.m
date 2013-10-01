@@ -29,7 +29,7 @@
                                               bottom:[NUISettings getColor:@"background-color-bottom" withClass:className]
                                               frame:layer.frame];
             int backgroundLayerIndex = 0;
-            if (item.nuiIsApplied) {
+            if (item.isNUIApplied) {
                 [[layer.sublayers objectAtIndex:backgroundLayerIndex] removeFromSuperlayer];
             }
             [layer insertSublayer:gradientLayer atIndex:backgroundLayerIndex];
