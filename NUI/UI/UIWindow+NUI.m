@@ -22,12 +22,12 @@
     if (![self.nuiClass isEqualToString:kNUIClassNone]) {
         [NUIRenderer renderWindow:self withClass:self.nuiClass];
     }
-    self.nuiIsApplied = [NSNumber numberWithBool:YES];
+    self.nuiApplied = YES;
 }
 
 - (void)override_becomeKeyWindow
 {
-    if (!self.nuiIsApplied) {
+    if (!self.isNUIApplied) {
         [self applyNUI];
     }
     [self override_becomeKeyWindow];
