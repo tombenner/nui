@@ -14,4 +14,14 @@
 + (NSDictionary*)titleTextAttributesForClass:(NSString*)className;
 + (NSDictionary*)titleTextAttributesForClass:(NSString*)className withSuffix:(NSString*) suffix;
 
++ (NSString *)textAttributeFontKey;
++ (NSString *)textAttributeTextColorKey;
+
+// Deprecated in iOS 7
++ (NSString *)textAttributeTextShadowColorKey;
++ (NSString *)textAttributeTextShadowOffsetKey;
+
+// iOS 7 and later
++ (NSString *)textAttributeShadowKey;
+
 @end
