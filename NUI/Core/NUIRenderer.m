@@ -226,6 +226,22 @@ static NUIRenderer *instance = nil;
 }
 
 
+#ifdef __IPHONE_6_0 // iOS6 and later
++ (void)renderTableViewHeaderFooterView:(UITableViewHeaderFooterView*)view
+{
+    [NUITableViewHeaderFooterViewRenderer render:view withClass:@"TableHeaderFooter"];
+    [self registerObject:view];
+}
+
+
++ (void)renderTableViewHeaderFooterView:(UITableViewHeaderFooterView*)view withClass:(NSString*)className
+{
+    [NUITableViewHeaderFooterViewRenderer render:view withClass:className];
+    [self registerObject:view];
+}
+#endif
+
+
 
 + (void)renderToolbar:(UIToolbar*)bar
 {
@@ -303,6 +319,13 @@ static NUIRenderer *instance = nil;
     [NUITableViewRenderer sizeDidChange:tableView];
 }
 
+#ifdef __IPHONE_6_0 // iOS6 and later
++ (void)sizeDidChangeForTableViewHeaderFooterView:(UITableViewHeaderFooterView*)view
+{
+    [NUITableViewHeaderFooterViewRenderer sizeDidChange:view];
+}
+#endif
+
 + (void)addOrientationDidChangeObserver:(id)observer
 {
     [[NSNotificationCenter defaultCenter] addObserver:observer selector:@selector(orientationDidChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
@@ -329,7 +352,7 @@ static NUIRenderer *instance = nil;
 {
     // Classes like UIView and UIButton that have subclasses within UIKit should be
     // given lower priority.
-    NSDictionary *renderedClasses = [[NSDictionary alloc] initWithObjectsAndKeys:
+    NSMutableDictionary *renderedClasses = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
                                    [UIBarButtonItem class], @"renderBarButtonItem",
                                    [UINavigationBar class], @"renderNavigationBar",
                                    [UINavigationItem class], @"renderNavigationItem",
@@ -346,6 +369,11 @@ static NUIRenderer *instance = nil;
                                    [UILabel class], @"renderLabel",
                                    [UIView class], @"renderView",
                                    nil];
+    
+#ifdef __IPHONE_6_0 // iOS6 and later
+    [renderedClasses setObject:[UITableViewHeaderFooterView class] forKey:@"renderTableViewHeaderFooterView"];
+#endif
+    
     for (NSString *renderMethod in renderedClasses) {
         Class renderClass = [renderedClasses valueForKey:renderMethod];
         if ([object isKindOfClass:renderClass]) {
