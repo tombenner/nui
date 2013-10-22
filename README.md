@@ -414,7 +414,7 @@ See SegmentedControl
 * finished-image *(Image)*
 * finished-image-selected *(Image)*
 * font-color *(Color)*
-* font-color-highlighted *(Color)*
+* font-color-selected *(Color)*
 * font-name *(FontName)*
 * font-size *(Number)*
 * text-offset *(Offset)*

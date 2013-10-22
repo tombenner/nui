@@ -18,10 +18,10 @@
         [item setTitleTextAttributes:titleTextAttributes forState:UIControlStateNormal];
     }
     
-    NSDictionary *highlightedTextAttributes = [NUIUtilities titleTextAttributesForClass:className withSuffix:@"highlighted"];
+    NSDictionary *selectedTextAttributes = [NUIUtilities titleTextAttributesForClass:className withSuffix:@"selected"];
     
-    if ([[highlightedTextAttributes allKeys] count] > 0) {
-        [item setTitleTextAttributes:highlightedTextAttributes forState:UIControlStateHighlighted];
+    if ([[selectedTextAttributes allKeys] count] > 0) {
+        [item setTitleTextAttributes:selectedTextAttributes forState:UIControlStateSelected];
     }
     
     if ([NUISettings hasProperty:@"text-offset" withClass:className]) {
