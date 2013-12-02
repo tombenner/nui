@@ -18,3 +18,4 @@
 + (void)sizeDidChange:(UITableView*)tableView;
 
 @end
+

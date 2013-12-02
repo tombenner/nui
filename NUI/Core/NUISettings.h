@@ -46,3 +46,4 @@
 + (void)setGlobalExclusions:(NSArray*)globalExclusions;
 
 @end
+
