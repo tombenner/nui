@@ -303,12 +303,12 @@ static NUIRenderer *instance = nil;
     [NUITableViewRenderer sizeDidChange:tableView];
 }
 
-+ (void)addOrientationDidChangeObserver:(id)observer
++ (void)addOrientationDidChangeObserver:(id<NUIOrientationObserver>)observer
 {
     [[NSNotificationCenter defaultCenter] addObserver:observer selector:@selector(orientationDidChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
 }
 
-+ (void)removeOrientationDidChangeObserver:(id)observer {
++ (void)removeOrientationDidChangeObserver:(id<NUIOrientationObserver>)observer {
     [[NSNotificationCenter defaultCenter] removeObserver:observer name:UIDeviceOrientationDidChangeNotification object:nil];
 }
 

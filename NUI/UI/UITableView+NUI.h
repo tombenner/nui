@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <objc/runtime.h>
 #import "NUIRenderer.h"
+#import "NUIOrientationObserver.h"
 
-@interface UITableView (NUI)
+@interface UITableView (NUI) <NUIOrientationObserver>
 
 @end
