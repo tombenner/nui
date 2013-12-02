@@ -13,7 +13,7 @@
 
 @synthesize renderedObjects;
 @synthesize renderedObjectIdentifiers;
-static NUIRenderer *instance = nil;
+static NUIRenderer *gInstance = nil;
 
 
 + (void)renderBarButtonItem:(UIBarButtonItem*)item
@@ -374,20 +374,20 @@ static NUIRenderer *instance = nil;
 + (NUIRenderer*)getInstance
 {
     @synchronized(self) {
-        if (instance == nil) {
-            instance = [NUIRenderer new];
+        if (gInstance == nil) {
+            gInstance = [NUIRenderer new];
             if ([NUISettings autoUpdateIsEnabled]) {
                 [NUIFileMonitor watch:[NUISettings autoUpdatePath] withCallback:^(){
                     dispatch_async(dispatch_get_main_queue(), ^{
                         [NUIRenderer rerender];
                     });
                 }];
-                instance.renderedObjects = [[NSMutableArray alloc] init];
-                instance.renderedObjectIdentifiers = [[NSMutableArray alloc] init];
+                gInstance.renderedObjects = [[NSMutableArray alloc] init];
+                gInstance.renderedObjectIdentifiers = [[NSMutableArray alloc] init];
             }
         }
     }
-    return instance;
+    return gInstance;
 }
 
 @end
