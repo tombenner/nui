@@ -30,6 +30,7 @@
 #import "NUIViewRenderer.h"
 #import "NUIWindowRenderer.h"
 #import "UIView+NUI.h"
+#import "NUIOrientationObserver.h"
 
 @interface NUIRenderer : NSObject {
     NSMutableArray *renderedObjects;
@@ -105,7 +106,7 @@
 + (void)sizeDidChangeForTableView:(UITableView*)tableView;
 + (void)sizeDidChangeForTableViewCell:(UITableViewCell*)cell;
 
-+ (void)addOrientationDidChangeObserver:(id)observer;
-+ (void)removeOrientationDidChangeObserver:(id)observer;
++ (void)addOrientationDidChangeObserver:(id<NUIOrientationObserver>)observer;
++ (void)removeOrientationDidChangeObserver:(id<NUIOrientationObserver>)observer;
 
 @end

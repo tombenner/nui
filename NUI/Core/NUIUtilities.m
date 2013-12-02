@@ -27,20 +27,42 @@
         fontSize = fontSize ? fontSize : [UIFont systemFontSize];
         UIFont *font = fontName ? [UIFont fontWithName:fontName size:fontSize] : [UIFont systemFontOfSize:fontSize];
 
-        [titleTextAttributes setObject:font forKey:UITextAttributeFont];
+        [titleTextAttributes setObject:font forKey:[self textAttributeFontKey]];
     }
 
     if ([NUISettings hasProperty:fontColorSelector withClass:className]) {
-        [titleTextAttributes setObject:[NUISettings getColor:fontColorSelector withClass:className] forKey:UITextAttributeTextColor];
+        [titleTextAttributes setObject:[NUISettings getColor:fontColorSelector withClass:className] forKey:[self textAttributeTextColorKey]];
     }
 
-    if ([NUISettings hasProperty:textShadowColorSelector withClass:className]) {
-        [titleTextAttributes setObject:[NUISettings getColor:textShadowColorSelector withClass:className] forKey:UITextAttributeTextShadowColor];
+    if ([self iOSVersionIsAtLeastiOS7]) {
+        NSShadow *shadow = [[NSShadow alloc] init];
+        BOOL containsShadow = NO;
+        
+        if ([NUISettings hasProperty:textShadowColorSelector withClass:className]) {
+            containsShadow = YES;
+            shadow.shadowColor = [NUISettings getColor:textShadowColorSelector withClass:className];
+        }
+        
+        if ([NUISettings hasProperty:textShadowOffsetSelector withClass:className]) {
+            containsShadow = YES;
+            UIOffset offset = [NUISettings getOffset:textShadowOffsetSelector withClass:className];
+            CGSize shadowOffset = CGSizeMake(offset.horizontal, offset.vertical);
+            shadow.shadowOffset = shadowOffset;
+        }
+        
+        if (containsShadow) {
+            [titleTextAttributes setObject:shadow forKey:NSShadowAttributeName];
+        }
+    } else {
+        if ([NUISettings hasProperty:textShadowColorSelector withClass:className]) {
+            [titleTextAttributes setObject:[NUISettings getColor:textShadowColorSelector withClass:className] forKey:[self textAttributeTextShadowColorKey]];
+        }
+        
+        if ([NUISettings hasProperty:textShadowOffsetSelector withClass:className]) {
+            [titleTextAttributes setObject:[NSValue valueWithUIOffset:[NUISettings getOffset:textShadowOffsetSelector withClass:className]] forKey:[self textAttributeTextShadowOffsetKey]];
+        }
     }
 
-    if ([NUISettings hasProperty:textShadowOffsetSelector withClass:className]) {
-        [titleTextAttributes setObject:[NSValue valueWithUIOffset:[NUISettings getOffset:textShadowOffsetSelector withClass:className]] forKey:UITextAttributeTextShadowOffset];
-    }
 
     return titleTextAttributes;
 }
@@ -58,5 +80,66 @@
     return selector;
 }
 
++ (NSString *)textAttributeFontKey
+{
+    if ([self iOSVersionIsAtLeastiOS7]) {
+        return NSFontAttributeName;
+    } else {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        return UITextAttributeFont;
+#pragma clang diagnostic pop
+    }
+}
+
++ (NSString *)textAttributeTextColorKey
+{
+    if ([self iOSVersionIsAtLeastiOS7]) {
+        return NSForegroundColorAttributeName;
+    } else {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        return UITextAttributeTextColor;
+#pragma clang diagnostic pop
+    }
+}
+
++ (NSString *)textAttributeTextShadowColorKey
+{
+    if ([self iOSVersionIsAtLeastiOS7]) {
+        return nil;
+    } else {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        return UITextAttributeTextShadowColor;
+#pragma clang diagnostic pop
+    }
+}
+
++ (NSString *)textAttributeTextShadowOffsetKey
+{
+    if ([self iOSVersionIsAtLeastiOS7]) {
+        return nil;
+    } else {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        return UITextAttributeTextShadowOffset;
+#pragma clang diagnostic pop
+    }
+}
+
++ (NSString *)textAttributeShadowKey
+{
+    if ([self iOSVersionIsAtLeastiOS7]) {
+        return NSShadowAttributeName;
+    } else {
+        return nil;
+    }
+}
+
++ (BOOL)iOSVersionIsAtLeastiOS7
+{
+    return (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1);
+}
 
 @end

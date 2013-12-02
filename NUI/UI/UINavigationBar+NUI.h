@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <objc/runtime.h>
 #import "NUIRenderer.h"
+#import "NUIOrientationObserver.h"
 
-@interface UINavigationBar (NUI)
+@interface UINavigationBar (NUI) <NUIOrientationObserver>
 
 @end

@@ -183,6 +183,7 @@
 		89B940451671418100850A9A /* NUIViewRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIViewRenderer.m; sourceTree = "<group>"; };
 		89B940461671418100850A9A /* NUIStyle.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NUIStyle.nss; sourceTree = "<group>"; };
 		89B9404A1671418100850A9A /* NUIViewBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NUIViewBackground.png; sourceTree = "<group>"; };
+		99970C75184CE33300FAE5AE /* NUIOrientationObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIOrientationObserver.h; sourceTree = "<group>"; };
 		B51BC288169724A3004A38F8 /* UISwitch+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISwitch+NUI.h"; sourceTree = "<group>"; };
 		B51BC289169724A3004A38F8 /* UISwitch+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISwitch+NUI.m"; sourceTree = "<group>"; };
 		B51BC28C16972527004A38F8 /* NUISwitchRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUISwitchRenderer.h; sourceTree = "<group>"; };
@@ -329,6 +330,7 @@
 				4A744B18169904500068F3CF /* NUIFileMonitor.m */,
 				89B940271671418100850A9A /* NUIGraphics.h */,
 				89B940281671418100850A9A /* NUIGraphics.m */,
+				99970C75184CE33300FAE5AE /* NUIOrientationObserver.h */,
 				89B940291671418100850A9A /* NUIRenderer.h */,
 				89B9402A1671418100850A9A /* NUIRenderer.m */,
 				89B9402B1671418100850A9A /* NUISettings.h */,
