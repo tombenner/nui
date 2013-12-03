@@ -58,6 +58,11 @@
     if ([NUISettings hasProperty:@"background-image-disabled" withClass:className]) {
         [[uiClass appearance] setBackButtonBackgroundImage:[NUISettings getImage:@"background-image-disabled" withClass:className] forState:UIControlStateDisabled barMetrics:UIBarMetricsDefault];
     }
+    
+    if ([NUISettings hasProperty:@"title-offset" withClass:className]) {
+        UIOffset titleOffset = [NUISettings getOffset:@"title-offset" withClass:className];
+        [[uiClass appearance] setBackButtonTitlePositionAdjustment:titleOffset forBarMetrics:UIBarMetricsDefault];
+    }
 }
 
 + (void)initUIPageControl

@@ -11,7 +11,7 @@
 @implementation NUIBarButtonItemRenderer
 
 + (void)render:(UIBarButtonItem*)item withClass:(NSString*)className
-{
+{    
     if ([NUISettings hasProperty:@"background-image" withClass:className]) {
         [item setBackgroundImage:[NUISettings getImage:@"background-image" withClass:className] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
         

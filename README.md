@@ -129,7 +129,7 @@ If you want to prevent specific view classes from being styled (e.g. third party
 ```css
 Button {
     exclude-views: UIAlertButton;
-    exclude-subviews: UITableViewCell,TDBadgedCell,UITextField;
+    exclude-subviews: UIAlertButtonCell,TDBadgedCell,UITextField;
 }
 ```
 
@@ -237,7 +237,7 @@ Below are all of the currently available style classes, their corresponding UI c
 * font-size-disabled *(Number)*
 * text-shadow-color-disabled *(Color)*
 * text-shadow-offset-disabled *(Offset)*
-
+* title-offset *(UIOffset)*
 #### Button
 
 *UIButton*
@@ -452,8 +452,10 @@ See SegmentedControl
 
 * background-color *(Color)*
 * background-color-top/background-color-bottom *(Gradient)*
+* background-image *(ImageName)*
 * separator-color *(Color)*
 * separator-style *(SeparatorStyle)*
+* separator-insets *(Box)*
 
 #### TableCell
 
