@@ -42,6 +42,16 @@
         [textField setBackground:gradient];
     }
     
+    //TODO: Need to fix this
+    //Set padding
+    if ([NUISettings hasProperty:@"clear-button-image" withClass:className]) {
+        textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+        UIButton *clearButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 16, 16)];
+        [clearButton setTitle:@"" forState:UIControlStateNormal];
+        [clearButton setImage:[NUISettings getImage:@"clear-button-image" withClass:className] forState:UIControlStateNormal];
+        textField.rightView = clearButton;
+    }
+    
     // Set background image
     if ([NUISettings hasProperty:@"background-image" withClass:className]) {
         [textField setBackground:[NUISettings getImage:@"background-image" withClass:className]];

@@ -18,17 +18,19 @@ static NUIRenderer *instance = nil;
 
 + (void)renderBarButtonItem:(UIBarButtonItem*)item
 {
-    [NUIBarButtonItemRenderer render:item withClass:@"BarButton"];
+    [NUIBarButtonItemRenderer render:item withClass: IS_PRE_IOS7 ? @"BarButton_iOS6" : @"BarButton"];
     [self registerObject:item];
 }
 
 + (void)renderBarButtonItem:(UIBarButtonItem*)item withClass:(NSString*)className
 {
+    if (IS_PRE_IOS7) {
+        className = [NSString stringWithFormat:@"%@_iOS6", className];
+    }
+    
     [NUIBarButtonItemRenderer render:item withClass:className];
     [self registerObject:item];
 }
-
-
 
 + (void)renderButton:(UIButton*)button
 {
@@ -305,6 +307,7 @@ static NUIRenderer *instance = nil;
 
 + (void)addOrientationDidChangeObserver:(id)observer
 {
+    //TODO: Uncomment
     [[NSNotificationCenter defaultCenter] addObserver:observer selector:@selector(orientationDidChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
 }
 

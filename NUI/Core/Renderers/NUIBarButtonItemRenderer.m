@@ -11,14 +11,21 @@
 @implementation NUIBarButtonItemRenderer
 
 + (void)render:(UIBarButtonItem*)item withClass:(NSString*)className
-{
-    
+{    
     if ([NUISettings hasProperty:@"background-image" withClass:className]) {
         [item setBackgroundImage:[NUISettings getImage:@"background-image" withClass:className] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    } else if ([NUISettings hasProperty:@"background-tint-color" withClass:className]) {
+        
+        if ([NUISettings hasProperty:@"background-image-highlighted" withClass:className]) {
+            [item setBackgroundImage:[NUISettings getImage:@"background-image-highlighted" withClass:className] forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
+        }
+    }
+    else if ([NUISettings hasProperty:@"background-tint-color" withClass:className]) {
         [item setTintColor:[NUISettings getColor:@"background-tint-color" withClass:className]];
-    } else if ([NUISettings hasProperty:@"background-color" withClass:className] ||
-               [NUISettings hasProperty:@"background-color-top" withClass:className]) {
+    }
+    else if ([NUISettings hasProperty:@"tint-color" withClass:className]) {
+        [item setTintColor:[NUISettings getColor:@"tint-color" withClass:className]];
+    }
+    else if ([NUISettings hasProperty:@"background-color" withClass:className] || [NUISettings hasProperty:@"background-color-top" withClass:className]) {
         CALayer *layer = [CALayer layer];
         [layer setFrame:CGRectMake(0, 0, 30, 26)];
         [layer setMasksToBounds:YES];
@@ -83,11 +90,15 @@
     }
     
     NSDictionary *titleTextAttributes = [NUIUtilities titleTextAttributesForClass:className];
+    NSDictionary *titleTextAttributesHighlighted = [NUIUtilities titleTextAttributesHighlightedForClass:className];
     
     if ([[titleTextAttributes allKeys] count] > 0) {
         [item setTitleTextAttributes:titleTextAttributes forState:UIControlStateNormal];
     }
     
+    if ([[titleTextAttributesHighlighted allKeys] count] > 0) {
+        [item setTitleTextAttributes:titleTextAttributesHighlighted forState:UIControlStateHighlighted];
+    }
 }
 
 @end

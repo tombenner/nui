@@ -16,5 +16,6 @@
 @property (nonatomic, assign, getter = isNUIApplied) BOOL nuiApplied;
 
 - (void)applyNUI;
+- (void)addRoundedCorners:(UIRectCorner)corners withRadii:(CGSize)radii;
 
 @end

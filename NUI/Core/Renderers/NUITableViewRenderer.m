@@ -39,6 +39,18 @@
         tableView.backgroundView = [[UIImageView alloc] initWithImage:colorImage];
     }
     
+    //Set background image
+    if ([NUISettings hasProperty:@"background-image" withClass:className]) {
+        tableView.backgroundColor = [NUISettings getColorFromImage:@"background-image" withClass:className];
+    }
+    
+    //Set separator insets
+    if ([NUISettings hasProperty:@"separator-insets" withClass:className]) {
+        if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+            [tableView setSeparatorInset:[NUISettings getEdgeInsets:@"separator-insets" withClass:className]];
+        }
+    }
+    
     // Set background gradient
     if ([NUISettings hasProperty:@"background-color-top" withClass:className]) {
         UIImage *gradientImage = [NUIGraphics

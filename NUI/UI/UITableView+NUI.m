@@ -32,9 +32,4 @@
     [NUIRenderer performSelector:@selector(sizeDidChangeForTableView:) withObject:self afterDelay:0];
 }
 
-- (void)override_dealloc {
-    [NUIRenderer removeOrientationDidChangeObserver:self];
-    [self override_dealloc];
-}
-
 @end

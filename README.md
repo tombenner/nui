@@ -129,7 +129,7 @@ If you want to prevent specific view classes from being styled (e.g. third party
 ```css
 Button {
     exclude-views: UIAlertButton;
-    exclude-subviews: UITableViewCell,TDBadgedCell,UITextField;
+    exclude-subviews: UIAlertButtonCell,TDBadgedCell,UITextField;
 }
 ```
 
@@ -190,6 +190,21 @@ Below are all of the currently available style classes, their corresponding UI c
 * font-size *(Number)*
 * text-shadow-color *(Color)*
 * text-shadow-offset *(Offset)*
+* font-color-highlighted *(Color)*
+* font-name-highlighted *(FontName)*
+* font-size-highlighted *(Number)*
+* text-shadow-color-highlighted *(Color)*
+* text-shadow-offset-highlighted *(Offset)*
+* font-color-selected *(Color)*
+* font-name-selected *(FontName)*
+* font-size-selected *(Number)*
+* text-shadow-color-selected *(Color)*
+* text-shadow-offset-selected *(Offset)*
+* font-color-disabled *(Color)*
+* font-name-disabled *(FontName)*
+* font-size-disabled *(Number)*
+* text-shadow-color-disabled *(Color)*
+* text-shadow-offset-disabled *(Offset)*
 
 #### BarButtonBack
 
@@ -207,7 +222,22 @@ Below are all of the currently available style classes, their corresponding UI c
 * font-size *(Number)*
 * text-shadow-color *(Color)*
 * text-shadow-offset *(Offset)*
-
+* font-color-highlighted *(Color)*
+* font-name-highlighted *(FontName)*
+* font-size-highlighted *(Number)*
+* text-shadow-color-highlighted *(Color)*
+* text-shadow-offset-highlighted *(Offset)*
+* font-color-selected *(Color)*
+* font-name-selected *(FontName)*
+* font-size-selected *(Number)*
+* text-shadow-color-selected *(Color)*
+* text-shadow-offset-selected *(Offset)*
+* font-color-disabled *(Color)*
+* font-name-disabled *(FontName)*
+* font-size-disabled *(Number)*
+* text-shadow-color-disabled *(Color)*
+* text-shadow-offset-disabled *(Offset)*
+* title-offset *(UIOffset)*
 #### Button
 
 *UIButton*
@@ -256,6 +286,10 @@ Below are all of the currently available style classes, their corresponding UI c
 * text-shadow-offset *(Offset)*
 * title-insets *(Box)*
 * width *(Number)*
+* title-multiline *(Bool)*
+* image *(Image)*
+* image-selected *(Image)*
+* image-highlighted *(Image)*
 
 #### Control
 
@@ -424,8 +458,10 @@ See SegmentedControl
 
 * background-color *(Color)*
 * background-color-top/background-color-bottom *(Gradient)*
+* background-image *(ImageName)*
 * separator-color *(Color)*
 * separator-style *(SeparatorStyle)*
+* separator-insets *(Box)*
 
 #### TableCell
 

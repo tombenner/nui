@@ -12,6 +12,9 @@
 @interface NUIUtilities : NSObject
 
 + (NSDictionary*)titleTextAttributesForClass:(NSString*)className;
-+ (NSDictionary*)titleTextAttributesForClass:(NSString*)className withSuffix:(NSString*) suffix;
++ (NSDictionary*)titleTextAttributesHighlightedForClass:(NSString*)className;
+
++ (NSDictionary*)titleTextAttributesForClass:(NSString*)className withSuffix:(NSString*)suffix;
++ (NSDictionary*)titleTextAttributesForClass:(NSString*)className withSuffix:(NSString*)suffix forHighlighted:(BOOL)highlighted;
 
 @end

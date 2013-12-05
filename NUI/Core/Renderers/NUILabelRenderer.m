@@ -26,9 +26,7 @@
         label.backgroundColor = [NUISettings getColor:@"background-color" withClass:className];
     } else {
         // UILabels created programmatically have a white background by default
-        if (!label.backgroundColor || [label.backgroundColor isEqual:[UIColor whiteColor]]) {
-            label.backgroundColor = [UIColor clearColor];
-        }
+        label.backgroundColor = [UIColor clearColor];
     }
 
     [NUIViewRenderer renderSize:label withClass:className];
