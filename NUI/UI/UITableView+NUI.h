@@ -12,4 +12,6 @@
 
 @interface UITableView (NUI)
 
+- (void)orientationDidChange:(NSNotification*)notification;
+
 @end

@@ -12,4 +12,6 @@
 
 @interface UITabBar (NUI)
 
+- (void)orientationDidChange:(NSNotification*)notification;
+
 @end
