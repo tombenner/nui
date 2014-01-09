@@ -43,6 +43,7 @@
 + (UIEdgeInsets)getEdgeInsets:(NSString*)property withClass:(NSString*)className;
 + (UITextBorderStyle)getBorderStyle:(NSString*)property withClass:(NSString*)className;
 + (UITableViewCellSeparatorStyle)getSeparatorStyle:(NSString*)property withClass:(NSString*)className;
++ (UIFont*)getFontWithClass:(NSString*)className;
 + (UIColor*)getColor:(NSString*)property withClass:(NSString*)className;
 + (UIColor*)getColorFromImage:(NSString*)property withClass:(NSString*)className;
 + (UIImage*)getImage:(NSString*)property withClass:(NSString*)className;

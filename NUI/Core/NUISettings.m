@@ -185,6 +185,32 @@ static NUISettings *instance = nil;
     return [NUIConverter toSeparatorStyle:[self get:property withClass:className]];
 }
 
++ (UIFont*)getFontWithClass:(NSString*)className
+{
+    NSString *propertyName;
+    CGFloat fontSize;
+    UIFont *font = nil;
+    
+    propertyName = @"font-size";
+    
+    if ([self hasProperty:propertyName withClass:className]) {
+        fontSize = [self getFloat:@"font-size" withClass:className];
+    } else {
+        fontSize = [UIFont systemFontSize];
+    }
+    
+    propertyName = @"font-name";
+    
+    if ([self hasProperty:propertyName withClass:className]) {
+        NSString *fontName = [self get:propertyName withClass:className];
+        font = [UIFont fontWithName:fontName size:fontSize];
+    } else {
+        font = [UIFont systemFontOfSize:fontSize];
+    }
+    
+    return font;
+}
+
 + (UIColor*)getColor:(NSString*)property withClass:(NSString*)className
 {   
     return [NUIConverter toColor:[self get:property withClass:className]];
