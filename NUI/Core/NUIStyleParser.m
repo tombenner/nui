@@ -17,13 +17,13 @@
 {
     NSString* path = [[NSBundle mainBundle] pathForResource:fileName ofType:@"nss"];
     NSAssert1(path != nil, @"File \"%@\" does not exist", fileName);
-    NSString* content = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    NSString* content = stripComments([NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil]);
     return [self consolidateRuleSets:[self getRuleSets:content] withTopLevelDeclarations:[self getTopLevelDeclarations:content]];
 }
 
 - (NSMutableDictionary*)getStylesFromPath:(NSString*)path
 {
-    NSString* content = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    NSString* content = stripComments([NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil]);
     return [self consolidateRuleSets:[self getRuleSets:content] withTopLevelDeclarations:[self getTopLevelDeclarations:content]];
 }
 
@@ -132,6 +132,21 @@
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:NSRegularExpressionDotMatchesLineSeparators error:nil];
     NSArray *matches = [regex matchesInString:content options:0 range:NSMakeRange(0, [content length])];
     return matches;
+}
+
+NSString* stripComments(NSString* string)
+{
+    NSMutableString *strippedString = [string mutableCopy];
+    
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"/\\*[^*]*\\*+(?:[^*/][^*]*\\*+)*/"
+                                                                           options:NSRegularExpressionCaseInsensitive
+                                                                             error:nil];
+    [regex replaceMatchesInString:strippedString
+                          options:0
+                            range:NSMakeRange(0, string.length)
+                     withTemplate:@""];
+    
+    return strippedString;
 }
 
 @end
