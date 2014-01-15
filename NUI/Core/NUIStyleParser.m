@@ -6,10 +6,13 @@
 //  Copyright (c) 2012 Tom Benner. All rights reserved.
 //
 
-// N.B.: This would ideally be implemented with something like a lexical analyzer generator, but
-// they all seem to have licenses that wouldn't be suitable for use in the App Store.
-
 #import "NUIStyleParser.h"
+#import "CoreParse.h"
+#import "CPTokeniser.h"
+#import "NUITokeniserDelegate.h"
+#import "NUIParserDelegate.h"
+#import "NUIStyleSheet.h"
+#import "NUIRuleSet.h"
 
 @implementation NUIStyleParser
 
@@ -18,120 +21,106 @@
     NSString* path = [[NSBundle mainBundle] pathForResource:fileName ofType:@"nss"];
     NSAssert1(path != nil, @"File \"%@\" does not exist", fileName);
     NSString* content = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-    return [self consolidateRuleSets:[self getRuleSets:content] withTopLevelDeclarations:[self getTopLevelDeclarations:content]];
+    NUIStyleSheet *styleSheet = [self parse:content];
+    return [self consolidateRuleSets:styleSheet];
 }
 
 - (NSMutableDictionary*)getStylesFromPath:(NSString*)path
 {
     NSString* content = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-    return [self consolidateRuleSets:[self getRuleSets:content] withTopLevelDeclarations:[self getTopLevelDeclarations:content]];
+    NUIStyleSheet *styleSheet = [self parse:content];
+    return [self consolidateRuleSets:styleSheet];
 }
 
-- (NSMutableDictionary*)getTopLevelDeclarations:(NSString*)content
-{
-    NSString *topLevelContent = [self getTopLevelContent:content];
-    return [self getDeclarations:topLevelContent];
-}
-
-- (NSMutableArray*)getRuleSets:(NSString*)content
-{
-    NSString *pattern = @"(\\w[\\w\\s,]+)\\s*\\{([^\\}]+)\\}";
-    NSArray *matches = [self getMatches:content withPattern:pattern];
-    
-    NSMutableArray *ruleSets = [[NSMutableArray alloc] init];
-    for (NSTextCheckingResult *match in matches) {
-        NSRange range1 = [match rangeAtIndex:1];
-        NSRange range2 = [match rangeAtIndex:2];
-        NSString *classExpression = [content substringWithRange:range1];
-        NSString *declarationsContent = [content substringWithRange:range2];
-        NSMutableDictionary *declarations = [self getDeclarations:declarationsContent];
-        NSDictionary *ruleSet = [NSDictionary dictionaryWithObjectsAndKeys:
-                                 classExpression, @"classExpression",
-                                 declarations, @"declarations",
-                                 nil];
-        [ruleSets addObject:ruleSet];
-    }
-    return ruleSets;
-}
-
-- (NSString*)getTopLevelContent:(NSString*)content
-{
-    NSString *startOrClose = @"(?:^|\\})";
-    NSString *rules = @"(.*?)";
-    NSString *endOrOpen = @"(?:$|\\w[\\w\\s,]+\\{[^\\}]+)";
-    NSString *pattern = [NSString stringWithFormat:@"%@%@%@", startOrClose, rules, endOrOpen];
-    NSArray *matches = [self getMatches:content withPattern:pattern];
-    
-    NSMutableArray *lineGroups = [[NSMutableArray alloc] init];
-    for (NSTextCheckingResult *match in matches) {
-        NSRange range = [match rangeAtIndex:1];
-        [lineGroups addObject:[content substringWithRange:range]];
-    }
-    return [lineGroups componentsJoinedByString:@"\n"];
-}
-
-- (NSMutableDictionary*)getDeclarations:(NSString*)content
-{
-    NSString *pattern = @"([^\\s]+):[\\s]*([^;]+);";
-    NSArray *matches = [self getMatches:content withPattern:pattern];
-    
-    NSMutableDictionary *declarations = [[NSMutableDictionary alloc] init];
-    for (NSTextCheckingResult *match in matches) {
-        NSRange range1 = [match rangeAtIndex:1];
-        NSRange range2 = [match rangeAtIndex:2];
-        NSString *property = [content substringWithRange:range1];
-        NSString *value = [content substringWithRange:range2];
-        [declarations setValue:value forKey:property];
-    }
-    return declarations;
-}
-
-- (NSMutableDictionary*)consolidateRuleSets:(NSMutableArray*)ruleSets withTopLevelDeclarations:(NSMutableDictionary*)topLevelDeclarations
+- (NSMutableDictionary*)consolidateRuleSets:(NUIStyleSheet *)styleSheet
 {
     NSMutableDictionary *consolidatedRuleSets = [[NSMutableDictionary alloc] init];
-    for (NSMutableDictionary *ruleSet in ruleSets) {
-        NSString *classExpression = [ruleSet objectForKey:@"classExpression"];
-        NSArray *classes = [self getClassesFromClassExpression:classExpression];
-        for (NSString *class in classes) {
-            if ([consolidatedRuleSets objectForKey:class] == nil) {
-                [consolidatedRuleSets setValue:[[NSMutableDictionary alloc] init] forKey:class];
+    for (NUIRuleSet *ruleSet in styleSheet.ruleSets) {
+        for (NSString *selector in ruleSet.selectors) {
+            if (consolidatedRuleSets[selector] == nil) {
+                consolidatedRuleSets[selector] = [[NSMutableDictionary alloc] init];
             }
-            [self mergeRuleSetIntoConsolidatedRuleSet:ruleSet consolidatedRuleSet:[consolidatedRuleSets objectForKey:class] topLevelDeclarations:topLevelDeclarations];
+            [self mergeRuleSetIntoConsolidatedRuleSet:ruleSet consolidatedRuleSet:consolidatedRuleSets[selector] definitions:styleSheet.definitions];
         }
     }
     return consolidatedRuleSets;
 }
 
-- (NSMutableDictionary*)mergeRuleSetIntoConsolidatedRuleSet:(NSMutableDictionary*)ruleSet consolidatedRuleSet:(NSMutableDictionary*)consolidatedRuleSet topLevelDeclarations:(NSMutableDictionary*)topLevelDeclarations
+- (NSMutableDictionary*)mergeRuleSetIntoConsolidatedRuleSet:(NUIRuleSet*)ruleSet consolidatedRuleSet:(NSMutableDictionary*)consolidatedRuleSet definitions:(NSDictionary*)definitions
 {
-    NSMutableDictionary *declarations = [ruleSet objectForKey:@"declarations"];
-    for (NSString *property in declarations) {
-        NSString *value = [declarations objectForKey:property];
+    for (NSString *property in ruleSet.declarations) {
+        NSString *value = ruleSet.declarations[property];
         if ([value hasPrefix:@"@"]) {
-            value = [topLevelDeclarations objectForKey:value];
+            value = definitions[value];
         }
-        [consolidatedRuleSet setValue:value forKey:property];
+        consolidatedRuleSet[property] = value;
     }
     return consolidatedRuleSet;
 }
 
-- (NSArray*)getClassesFromClassExpression:(NSString*)classExpression
+- (NUIStyleSheet *)parse:(NSString *)styles
 {
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@",[\\s]*" options:0 error:nil];
-    NSString *modifiedClassExpression = [regex stringByReplacingMatchesInString:classExpression options:0 range:NSMakeRange(0, [classExpression length]) withTemplate:@", "];
-    NSArray *separatedClasses = [modifiedClassExpression componentsSeparatedByString:@", "];
-    NSMutableArray *classes = [[NSMutableArray alloc] init];
-    for (NSString *class in separatedClasses) {
-        [classes addObject:[class stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
+    CPTokeniser *tokeniser = [[CPTokeniser alloc] init];
+        
+    [tokeniser addTokenRecogniser:[CPWhiteSpaceRecogniser whiteSpaceRecogniser]];
+    [tokeniser addTokenRecogniser:[CPQuotedRecogniser quotedRecogniserWithStartQuote:@"/*"
+                                                                            endQuote:@"*/"
+                                                                                name:@"Comment"]];
+    
+    NSCharacterSet *idCharacters = [NSCharacterSet characterSetWithCharactersInString:
+                                    @"abcdefghijklmnopqrstuvwxyz"
+                                    @"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                                    @"0123456789"
+                                    @"-_\\."];
+    NSCharacterSet *initialIdCharacters = [NSCharacterSet characterSetWithCharactersInString:
+                                           @"abcdefghijklmnopqrstuvwxyz"
+                                           @"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                                           @"0123456789"
+                                           @"#@-_\\."];
+    [tokeniser addTokenRecogniser:[CPIdentifierRecogniser identifierRecogniserWithInitialCharacters:initialIdCharacters identifierCharacters:idCharacters]];
+   
+    [tokeniser addTokenRecogniser:[CPKeywordRecogniser recogniserForKeyword:@":"]];
+    [tokeniser addTokenRecogniser:[CPKeywordRecogniser recogniserForKeyword:@"{"]];
+    [tokeniser addTokenRecogniser:[CPKeywordRecogniser recogniserForKeyword:@"}"]];
+    [tokeniser addTokenRecogniser:[CPKeywordRecogniser recogniserForKeyword:@"("]];
+    [tokeniser addTokenRecogniser:[CPKeywordRecogniser recogniserForKeyword:@")"]];
+    [tokeniser addTokenRecogniser:[CPKeywordRecogniser recogniserForKeyword:@","]];
+    [tokeniser addTokenRecogniser:[CPKeywordRecogniser recogniserForKeyword:@";"]];
+    
+    NUITokeniserDelegate *tokenizerDelegate = [[NUITokeniserDelegate alloc] init];
+    tokeniser.delegate = tokenizerDelegate;
+    
+    NSString *expressionGrammar =
+       @"NUIStyleSheet            ::= definitions@<NUIDefinition>* ruleSets@<NUIRuleSet>*;\n"
+        "NUIRuleSet               ::= selectors@<NUISelectorSet> '{' declarations@<NUIDeclaration>* '}';\n"
+        "NUISelectorSet           ::= firstSelector@<NUISelector> otherSelectors@<NUIDelimitedSelector>*;\n"
+        "NUISelector              ::= name@'Identifier';\n"
+        "NUIDelimitedSelector     ::= ',' selector@<NUISelector>;\n"
+        "NUIDeclaration           ::= property@'Identifier' ':' value@<NUIValue> ';';\n"
+        "NUIDefinition            ::= variable@'Variable' ':' value@<NUIValue> ';';\n"
+        "NUIValue                 ::= <NUIAny>+;\n"
+        "NUIAny                   ::= 'Identifier' | 'Variable' | '(' | ')' | ',';\n"
+        ;
+    
+    NSError *err = nil;
+    CPGrammar *grammar = [CPGrammar grammarWithStart:@"NUIStyleSheet"
+                                      backusNaurForm:expressionGrammar
+                                               error:&err];
+    if (!grammar) {
+        NSLog(@"Error creating grammar:%@", err);
+        return nil;
     }
-    return classes;
-}
-
-- (NSArray*)getMatches:(NSString*)content withPattern:(NSString*)pattern
-{
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:NSRegularExpressionDotMatchesLineSeparators error:nil];
-    NSArray *matches = [regex matchesInString:content options:0 range:NSMakeRange(0, [content length])];
-    return matches;
+    
+    CPParser *parser = [CPLALR1Parser parserWithGrammar:grammar];
+    
+    if (!parser)
+        return nil;
+    
+    NUIParserDelegate *parserDelegate = [[NUIParserDelegate alloc] init];
+    parser.delegate = parserDelegate;
+    
+    CPTokenStream *tokenStream = [tokeniser tokenise:styles];
+    return [parser parse:tokenStream];
 }
 
 @end
