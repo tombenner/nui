@@ -51,7 +51,12 @@
     for (NSString *property in ruleSet.declarations) {
         NSString *value = ruleSet.declarations[property];
         if ([value hasPrefix:@"@"]) {
-            value = definitions[value];
+            NSString *variable = value;
+            value = definitions[variable];
+            
+            if (!value) {
+                [NSException raise:@"Undefined variable" format:@"Variable %@ is not defined", variable];
+            }
         }
         consolidatedRuleSet[property] = value;
     }
