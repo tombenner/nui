@@ -426,9 +426,9 @@ See SegmentedControl
 
 * background-color *(Color)*
 * background-color-top/background-color-bottom *(Gradient)*
+* row-height *(Number)*
 * separator-color *(Color)*
 * separator-style *(SeparatorStyle)*
-* row-height *(Number)*
 
 #### TableCell
 
