@@ -66,6 +66,8 @@ Installation
 
 NUI can also be installed using [CocoaPods](http://cocoapods.org/) (its pod name is "NUI"). Steps 3. and 4. above are still required.
 
+The Demo uses CocoaPods, so you'll want to [install CocoaPods](http://cocoapods.org/), run `pod install` in the `Demo` directory, and then open the .xcworkspace to open the project.
+
 Usage
 -----
 
