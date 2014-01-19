@@ -11,15 +11,32 @@
 @implementation NUITabBarItemRenderer
 
 + (void)render:(UITabBarItem*)item withClass:(NSString*)className
-{   
+{
     NSDictionary *titleTextAttributes = [NUIUtilities titleTextAttributesForClass:className];
-    
+
     if ([[titleTextAttributes allKeys] count] > 0) {
         [item setTitleTextAttributes:titleTextAttributes forState:UIControlStateNormal];
     }
-    
+
+    NSDictionary *selectedTextAttributes = [NUIUtilities titleTextAttributesForClass:className withSuffix:@"selected"];
+
+    if ([[selectedTextAttributes allKeys] count] > 0) {
+        [item setTitleTextAttributes:selectedTextAttributes forState:UIControlStateSelected];
+    }
+
     if ([NUISettings hasProperty:@"text-offset" withClass:className]) {
         [item setTitlePositionAdjustment:[NUISettings getOffset:@"text-offset" withClass:className]];
+    }
+
+    if ([NUISettings hasProperty:@"finished-image" withClass:className]) {
+        UIImage *unselectedFinishedImage = [NUISettings getImage:@"finished-image" withClass:className];
+        UIImage *selectedFinishedImage = unselectedFinishedImage;
+
+        if ([NUISettings hasProperty:@"finished-image-selected" withClass:className]) {
+            selectedFinishedImage = [NUISettings getImage:@"finished-image-selected" withClass:className];
+        }
+
+        [item setFinishedSelectedImage:selectedFinishedImage withFinishedUnselectedImage:unselectedFinishedImage];
     }
 }
 

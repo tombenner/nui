@@ -413,7 +413,10 @@ See SegmentedControl
 
 * background-image-selected *(Image)*
 * background-image-selected-insets *(Box)*
+* finished-image *(Image)*
+* finished-image-selected *(Image)*
 * font-color *(Color)*
+* font-color-selected *(Color)*
 * font-name *(FontName)*
 * font-size *(Number)*
 * text-offset *(Offset)*
