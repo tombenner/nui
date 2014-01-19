@@ -22,6 +22,10 @@
         [tableView setSeparatorColor:[NUISettings getColor:@"separator-color" withClass:className]];
     }
 
+    // Set row height
+    if ([NUISettings hasProperty:@"row-height" withClass:className]) {
+        [tableView setRowHeight:[NUISettings getFloat:@"row-height" withClass:className]];
+    }
     
     [self renderSizeDependentProperties:tableView withClass:(NSString*)className];
 }
