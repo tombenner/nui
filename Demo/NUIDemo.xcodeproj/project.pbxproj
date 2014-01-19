@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41A0DE98FD464C508748F886 /* libPods-NUIDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8B8BB2BB5E6412588AE14FA /* libPods-NUIDemo.a */; };
 		4A0B8636165EE59A005B5756 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0B8635165EE59A005B5756 /* UIKit.framework */; };
 		4A0B8638165EE59A005B5756 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0B8637165EE59A005B5756 /* Foundation.framework */; };
 		4A0B863A165EE59A005B5756 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0B8639165EE59A005B5756 /* CoreGraphics.framework */; };
@@ -76,10 +77,19 @@
 		D983DF1F169DC87800A3A180 /* NUISliderRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = D983DF1E169DC87500A3A180 /* NUISliderRenderer.m */; };
 		E291BBD7179C89470016BC1D /* NUITableViewRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = E291BBD6179C89470016BC1D /* NUITableViewRenderer.m */; };
 		E291BBDA179C89710016BC1D /* UITableView+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = E291BBD9179C89710016BC1D /* UITableView+NUI.m */; };
+		EAB69D43188625E900358420 /* NUIDeclaration.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB69D30188625E900358420 /* NUIDeclaration.m */; };
+		EAB69D44188625E900358420 /* NUIDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB69D32188625E900358420 /* NUIDefinition.m */; };
+		EAB69D45188625E900358420 /* NUIParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB69D34188625E900358420 /* NUIParserDelegate.m */; };
+		EAB69D46188625E900358420 /* NUIRuleSet.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB69D36188625E900358420 /* NUIRuleSet.m */; };
+		EAB69D47188625E900358420 /* NUISelectorSet.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB69D38188625E900358420 /* NUISelectorSet.m */; };
+		EAB69D48188625E900358420 /* NUIStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB69D3A188625E900358420 /* NUIStyleSheet.m */; };
+		EAB69D4A188625E900358420 /* NUITokeniserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB69D3E188625E900358420 /* NUITokeniserDelegate.m */; };
+		EAB69D4C188625E900358420 /* NUIVariableToken.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB69D42188625E900358420 /* NUIVariableToken.m */; };
 		FC280DB916F127DE00B01664 /* UIProgressView+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = FC280DB816F127DE00B01664 /* UIProgressView+NUI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E043EFF5B2E44ADB1F5461C /* Pods-NUIDemo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NUIDemo.xcconfig"; path = "Pods/Pods-NUIDemo.xcconfig"; sourceTree = "<group>"; };
 		3AE80CFA17E0EB290065FB3D /* NUIConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIConstants.h; sourceTree = "<group>"; };
 		4A0B8631165EE59A005B5756 /* NUIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NUIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A0B8635165EE59A005B5756 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -187,6 +197,7 @@
 		B51BC289169724A3004A38F8 /* UISwitch+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISwitch+NUI.m"; sourceTree = "<group>"; };
 		B51BC28C16972527004A38F8 /* NUISwitchRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUISwitchRenderer.h; sourceTree = "<group>"; };
 		B51BC28D16972527004A38F8 /* NUISwitchRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISwitchRenderer.m; sourceTree = "<group>"; };
+		B8B8BB2BB5E6412588AE14FA /* libPods-NUIDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NUIDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8E7167F16B8AF4300686854 /* NUIControlRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIControlRenderer.h; sourceTree = "<group>"; };
 		D8E7168016B8AF4300686854 /* NUIControlRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIControlRenderer.m; sourceTree = "<group>"; };
 		D8E7168316B9980300686854 /* UIControl+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+NUI.h"; sourceTree = "<group>"; };
@@ -203,6 +214,22 @@
 		E291BBD6179C89470016BC1D /* NUITableViewRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUITableViewRenderer.m; sourceTree = "<group>"; };
 		E291BBD8179C89710016BC1D /* UITableView+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+NUI.h"; sourceTree = "<group>"; };
 		E291BBD9179C89710016BC1D /* UITableView+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+NUI.m"; sourceTree = "<group>"; };
+		EAB69D2F188625E900358420 /* NUIDeclaration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUIDeclaration.h; path = Parser/NUIDeclaration.h; sourceTree = "<group>"; };
+		EAB69D30188625E900358420 /* NUIDeclaration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NUIDeclaration.m; path = Parser/NUIDeclaration.m; sourceTree = "<group>"; };
+		EAB69D31188625E900358420 /* NUIDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUIDefinition.h; path = Parser/NUIDefinition.h; sourceTree = "<group>"; };
+		EAB69D32188625E900358420 /* NUIDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NUIDefinition.m; path = Parser/NUIDefinition.m; sourceTree = "<group>"; };
+		EAB69D33188625E900358420 /* NUIParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUIParserDelegate.h; path = Parser/NUIParserDelegate.h; sourceTree = "<group>"; };
+		EAB69D34188625E900358420 /* NUIParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NUIParserDelegate.m; path = Parser/NUIParserDelegate.m; sourceTree = "<group>"; };
+		EAB69D35188625E900358420 /* NUIRuleSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUIRuleSet.h; path = Parser/NUIRuleSet.h; sourceTree = "<group>"; };
+		EAB69D36188625E900358420 /* NUIRuleSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NUIRuleSet.m; path = Parser/NUIRuleSet.m; sourceTree = "<group>"; };
+		EAB69D37188625E900358420 /* NUISelectorSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUISelectorSet.h; path = Parser/NUISelectorSet.h; sourceTree = "<group>"; };
+		EAB69D38188625E900358420 /* NUISelectorSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NUISelectorSet.m; path = Parser/NUISelectorSet.m; sourceTree = "<group>"; };
+		EAB69D39188625E900358420 /* NUIStyleSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUIStyleSheet.h; path = Parser/NUIStyleSheet.h; sourceTree = "<group>"; };
+		EAB69D3A188625E900358420 /* NUIStyleSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NUIStyleSheet.m; path = Parser/NUIStyleSheet.m; sourceTree = "<group>"; };
+		EAB69D3D188625E900358420 /* NUITokeniserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUITokeniserDelegate.h; path = Parser/NUITokeniserDelegate.h; sourceTree = "<group>"; };
+		EAB69D3E188625E900358420 /* NUITokeniserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NUITokeniserDelegate.m; path = Parser/NUITokeniserDelegate.m; sourceTree = "<group>"; };
+		EAB69D41188625E900358420 /* NUIVariableToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUIVariableToken.h; path = Parser/NUIVariableToken.h; sourceTree = "<group>"; };
+		EAB69D42188625E900358420 /* NUIVariableToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NUIVariableToken.m; path = Parser/NUIVariableToken.m; sourceTree = "<group>"; };
 		FC280DB716F127DE00B01664 /* UIProgressView+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIProgressView+NUI.h"; sourceTree = "<group>"; };
 		FC280DB816F127DE00B01664 /* UIProgressView+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIProgressView+NUI.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -217,6 +244,7 @@
 				4A0B8636165EE59A005B5756 /* UIKit.framework in Frameworks */,
 				4A0B8638165EE59A005B5756 /* Foundation.framework in Frameworks */,
 				4A0B863A165EE59A005B5756 /* CoreGraphics.framework in Frameworks */,
+				41A0DE98FD464C508748F886 /* libPods-NUIDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,11 +254,10 @@
 		4A0B8626165EE59A005B5756 = {
 			isa = PBXGroup;
 			children = (
-				4A4FC62016629C4D0058031B /* CoreImage.framework */,
-				4A0B8680165EE917005B5756 /* QuartzCore.framework */,
 				4A0B863B165EE59A005B5756 /* NUIDemo */,
 				4A0B8634165EE59A005B5756 /* Frameworks */,
 				4A0B8632165EE59A005B5756 /* Products */,
+				1E043EFF5B2E44ADB1F5461C /* Pods-NUIDemo.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -245,9 +272,12 @@
 		4A0B8634165EE59A005B5756 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4A4FC62016629C4D0058031B /* CoreImage.framework */,
+				4A0B8680165EE917005B5756 /* QuartzCore.framework */,
 				4A0B8635165EE59A005B5756 /* UIKit.framework */,
 				4A0B8637165EE59A005B5756 /* Foundation.framework */,
 				4A0B8639165EE59A005B5756 /* CoreGraphics.framework */,
+				B8B8BB2BB5E6412588AE14FA /* libPods-NUIDemo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -340,6 +370,7 @@
 				89B9402F1671418100850A9A /* NUIUtilities.h */,
 				89B940301671418100850A9A /* NUIUtilities.m */,
 				3AE80CFA17E0EB290065FB3D /* NUIConstants.h */,
+				EAB69CA91885E1AE00358420 /* Parser */,
 				89B940311671418100850A9A /* Renderers */,
 			);
 			path = Core;
@@ -443,6 +474,29 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		EAB69CA91885E1AE00358420 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				EAB69D2F188625E900358420 /* NUIDeclaration.h */,
+				EAB69D30188625E900358420 /* NUIDeclaration.m */,
+				EAB69D31188625E900358420 /* NUIDefinition.h */,
+				EAB69D32188625E900358420 /* NUIDefinition.m */,
+				EAB69D33188625E900358420 /* NUIParserDelegate.h */,
+				EAB69D34188625E900358420 /* NUIParserDelegate.m */,
+				EAB69D35188625E900358420 /* NUIRuleSet.h */,
+				EAB69D36188625E900358420 /* NUIRuleSet.m */,
+				EAB69D37188625E900358420 /* NUISelectorSet.h */,
+				EAB69D38188625E900358420 /* NUISelectorSet.m */,
+				EAB69D39188625E900358420 /* NUIStyleSheet.h */,
+				EAB69D3A188625E900358420 /* NUIStyleSheet.m */,
+				EAB69D3D188625E900358420 /* NUITokeniserDelegate.h */,
+				EAB69D3E188625E900358420 /* NUITokeniserDelegate.m */,
+				EAB69D41188625E900358420 /* NUIVariableToken.h */,
+				EAB69D42188625E900358420 /* NUIVariableToken.m */,
+			);
+			name = Parser;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -450,9 +504,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A0B864F165EE59A005B5756 /* Build configuration list for PBXNativeTarget "NUIDemo" */;
 			buildPhases = (
+				1E8011286D7F4F9493ADE186 /* Check Pods Manifest.lock */,
 				4A0B862D165EE59A005B5756 /* Sources */,
 				4A0B862E165EE59A005B5756 /* Frameworks */,
 				4A0B862F165EE59A005B5756 /* Resources */,
+				E24C83133215433AAA630B11 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -512,6 +568,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1E8011286D7F4F9493ADE186 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E24C83133215433AAA630B11 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-NUIDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4A0B862D165EE59A005B5756 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -523,6 +612,8 @@
 				4A0B8687165F1383005B5756 /* NUIDemoTableViewController.m in Sources */,
 				89B940701671418200850A9A /* NUIAppearance.m in Sources */,
 				89B940711671418200850A9A /* NUIConverter.m in Sources */,
+				EAB69D4C188625E900358420 /* NUIVariableToken.m in Sources */,
+				EAB69D43188625E900358420 /* NUIDeclaration.m in Sources */,
 				89B940721671418200850A9A /* NUIGraphics.m in Sources */,
 				89B940731671418200850A9A /* NUIRenderer.m in Sources */,
 				89B940741671418200850A9A /* NUISettings.m in Sources */,
@@ -535,8 +626,10 @@
 				89B9407B1671418200850A9A /* NUINavigationItemRenderer.m in Sources */,
 				89B9407C1671418200850A9A /* NUISegmentedControlRenderer.m in Sources */,
 				89B9407D1671418200850A9A /* NUITabBarRenderer.m in Sources */,
+				EAB69D48188625E900358420 /* NUIStyleSheet.m in Sources */,
 				89B9407E1671418200850A9A /* NUITableViewCellRenderer.m in Sources */,
 				89B9407F1671418200850A9A /* NUITextFieldRenderer.m in Sources */,
+				EAB69D47188625E900358420 /* NUISelectorSet.m in Sources */,
 				89B940801671418200850A9A /* NUIViewRenderer.m in Sources */,
 				4A779342167560FF00B5EE81 /* UIButton+NUI.m in Sources */,
 				4A7793451675619500B5EE81 /* UITabBar+NUI.m in Sources */,
@@ -547,8 +640,11 @@
 				4A55F078167570C10056753C /* UIView+NUI.m in Sources */,
 				4A55F07C1675718F0056753C /* UILabel+NUI.m in Sources */,
 				4A55F07F167573D10056753C /* UINavigationBar+NUI.m in Sources */,
+				EAB69D46188625E900358420 /* NUIRuleSet.m in Sources */,
 				4A55F08216758E4E0056753C /* UINavigationItem+NUI.m in Sources */,
 				4A55F08516758E9D0056753C /* UISegmentedControl+NUI.m in Sources */,
+				EAB69D4A188625E900358420 /* NUITokeniserDelegate.m in Sources */,
+				EAB69D44188625E900358420 /* NUIDefinition.m in Sources */,
 				4A55F08816758EDA0056753C /* UITableViewCell+NUI.m in Sources */,
 				4A55F08B16758F360056753C /* UITextField+NUI.m in Sources */,
 				4A744B0B1691058C0068F3CF /* ProgrammaticallyCreatedViewController.m in Sources */,
@@ -569,6 +665,7 @@
 				4A5B5B2916F6471400CF8D16 /* NUIProgressViewRenderer.m in Sources */,
 				E291BBD7179C89470016BC1D /* NUITableViewRenderer.m in Sources */,
 				E291BBDA179C89710016BC1D /* UITableView+NUI.m in Sources */,
+				EAB69D45188625E900358420 /* NUIParserDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,6 +754,7 @@
 		};
 		4A0B8650165EE59A005B5756 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E043EFF5B2E44ADB1F5461C /* Pods-NUIDemo.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NUIDemo/NUIDemo-Prefix.pch";
@@ -670,6 +768,7 @@
 		};
 		4A0B8651165EE59A005B5756 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E043EFF5B2E44ADB1F5461C /* Pods-NUIDemo.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NUIDemo/NUIDemo-Prefix.pch";
