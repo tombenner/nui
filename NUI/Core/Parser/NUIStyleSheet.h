@@ -11,6 +11,6 @@
 @interface NUIStyleSheet : NSObject <CPParseResult>
 
 @property NSArray *ruleSets;
-@property NSDictionary *definitions;
+@property NSArray *definitions;
 
 @end

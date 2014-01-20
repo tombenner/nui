@@ -314,7 +314,7 @@ static NUIRenderer *gInstance = nil;
 
 + (void)registerObject:(NSObject*)object
 {
-    if ([NUISettings autoUpdateIsEnabled] && object != nil) {
+    if (object != nil) {
         NSString *hash = [NSString stringWithFormat:@"%lu", (unsigned long)object.hash];
         NUIRenderer *instance = [self getInstance];
         if (![instance.renderedObjectIdentifiers containsObject:hash]) {
@@ -361,7 +361,6 @@ static NUIRenderer *gInstance = nil;
 
 + (void)rerender
 {
-    [NUISettings loadStylesheetByPath:[NUISettings autoUpdatePath]];
     NUIRenderer *instance = [self getInstance];
     for (int i = 0; i < [instance.renderedObjects count]; i++) {
         UIView *object = [instance.renderedObjects objectAtIndex:i];
@@ -370,6 +369,20 @@ static NUIRenderer *gInstance = nil;
     [CATransaction flush];
 }
 
++ (void)setRerenderOnOrientationChange:(BOOL)rerender
+{
+    NUIRenderer *instance = [self getInstance];
+    
+    if (instance.rerenderOnOrientationChange != rerender) {
+        instance.rerenderOnOrientationChange = rerender;
+        
+        if (rerender) {
+            [self addOrientationDidChangeObserver:self];
+        } else {
+            [self removeOrientationDidChangeObserver:self];
+        }
+    }
+}
 
 + (NUIRenderer*)getInstance
 {
@@ -379,15 +392,33 @@ static NUIRenderer *gInstance = nil;
             if ([NUISettings autoUpdateIsEnabled]) {
                 [NUIFileMonitor watch:[NUISettings autoUpdatePath] withCallback:^(){
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        [NUIRenderer rerender];
+                        [self stylesheetFileChanged];
                     });
                 }];
-                gInstance.renderedObjects = [[NSMutableArray alloc] init];
-                gInstance.renderedObjectIdentifiers = [[NSMutableArray alloc] init];
             }
+            gInstance.renderedObjects = [[NSMutableArray alloc] init];
+            gInstance.renderedObjectIdentifiers = [[NSMutableArray alloc] init];
         }
     }
     return gInstance;
+}
+
++ (void)orientationDidChange:(NSNotification *)notification
+{
+    NUIRenderer *instance = [self getInstance];
+    
+    if (instance.renderedObjects.count > 0) {
+        if ([NUISettings isOrientationChanged]) {
+            [NUISettings reloadStylesheets];
+            [NUIRenderer rerender];
+        }
+    }
+}
+
++ (void)stylesheetFileChanged
+{
+    [NUISettings loadStylesheetByPath:[NUISettings autoUpdatePath]];
+    [NUIRenderer rerender];
 }
 
 @end

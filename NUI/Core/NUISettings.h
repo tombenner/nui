@@ -14,16 +14,23 @@
 @interface NUISettings : NSObject {
     NSString *autoUpdatePath;
     NSMutableDictionary *styles;
+    NSString *stylesheetName;
+    NSMutableArray *additionalStylesheetNames;
+    NSString *stylesheetOrientation;
 }
 
 @property(nonatomic,retain)NSString *autoUpdatePath;
 @property(nonatomic,retain)NSMutableDictionary *styles;
+@property(nonatomic,retain)NSString *stylesheetName;
+@property(nonatomic,retain)NSMutableArray *additionalStylesheetNames;
 @property(nonatomic,retain)NSMutableArray *globalExclusions;
+@property(nonatomic,retain)NSString* stylesheetOrientation;
 
 + (void)init;
 + (void)initWithStylesheet:(NSString*)name;
 + (void)appendStylesheet:(NSString*)name;
 + (void)loadStylesheetByPath:(NSString*)path;
++ (void)reloadStylesheets;
 + (BOOL)autoUpdateIsEnabled;
 + (NSString*)autoUpdatePath;
 + (void)setAutoUpdatePath:(NSString*)path;
@@ -45,6 +52,8 @@
 + (UIControlContentVerticalAlignment)getControlContentVerticalAlignment:(NSString*)property withClass:(NSString*)className;
 + (NSMutableArray*)getGlobalExclusions;
 + (void)setGlobalExclusions:(NSArray*)globalExclusions;
++ (BOOL)isOrientationChanged;
++ (NSString *)stylesheetOrientation;
 
 @end
 

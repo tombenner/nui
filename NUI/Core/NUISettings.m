@@ -12,6 +12,9 @@
 
 @synthesize autoUpdatePath;
 @synthesize styles;
+@synthesize stylesheetName, additionalStylesheetNames;
+@synthesize stylesheetOrientation;
+
 static NUISettings *instance = nil;
 
 + (void)init
@@ -22,14 +25,20 @@ static NUISettings *instance = nil;
 + (void)initWithStylesheet:(NSString*)name
 {
     instance = [self getInstance];
+    instance.stylesheetName = name;
+    instance.stylesheetOrientation = currentDeviceOrientationString();
     NUIStyleParser *parser = [[NUIStyleParser alloc] init];
     instance.styles = [parser getStylesFromFile:name];
 }
 
-
 + (void)appendStylesheet:(NSString *)name
 {
     instance = [self getInstance];
+    
+    if (!instance.additionalStylesheetNames)
+        instance.additionalStylesheetNames = [NSMutableArray array];
+    
+    [instance.additionalStylesheetNames addObject:name];
     NUIStyleParser *parser = [[NUIStyleParser alloc] init];
     [instance appendStyles:[parser getStylesFromFile:name]];
 }
@@ -55,6 +64,20 @@ static NUISettings *instance = nil;
     instance = [self getInstance];
     NUIStyleParser *parser = [[NUIStyleParser alloc] init];
     instance.styles = [parser getStylesFromPath:path];
+}
+
++ (void)reloadStylesheets
+{
+    instance = [self getInstance];
+    instance.stylesheetOrientation = currentDeviceOrientationString();
+    NUIStyleParser *parser = [[NUIStyleParser alloc] init];
+    instance.styles = [parser getStylesFromFile:instance.stylesheetName];
+    
+    if (instance.additionalStylesheetNames) {
+        for (NSString *name in instance.additionalStylesheetNames) {
+            [instance appendStyles:[parser getStylesFromFile:name]];
+        }
+    }
 }
 
 + (BOOL)autoUpdateIsEnabled
@@ -197,17 +220,6 @@ static NUISettings *instance = nil;
     return classes;
 }
 
-+ (NUISettings*)getInstance
-{
-    @synchronized(self) {    
-        if (instance == nil) {
-            [[NUISwizzler new] swizzleAll];
-            instance = [NUISettings new];
-        }
-    }
-    
-    return instance;
-}
 
 + (void)setGlobalExclusions:(NSArray *)array
 {
@@ -219,6 +231,38 @@ static NUISettings *instance = nil;
 {
     instance = [self getInstance];
     return instance.globalExclusions;
+}
+
++ (BOOL)isOrientationChanged
+{
+    instance = [self getInstance];
+    return (instance.stylesheetOrientation != currentDeviceOrientationString());
+}
+
++ (NSString *)stylesheetOrientation
+{
+    instance = [self getInstance];
+    return instance.stylesheetOrientation;
+}
+
++ (NUISettings*)getInstance
+{
+    @synchronized(self) {
+        if (instance == nil) {
+            [[NUISwizzler new] swizzleAll];
+            instance = [NUISettings new];
+        }
+    }
+    
+    return instance;
+}
+
+#pragma mark -
+
+NSString *currentDeviceOrientationString()
+{
+    UIDeviceOrientation deviceOrientation = [[UIDevice currentDevice] orientation];
+    return UIDeviceOrientationIsLandscape(deviceOrientation) ? @"landscape" : @"portrait";
 }
 
 @end

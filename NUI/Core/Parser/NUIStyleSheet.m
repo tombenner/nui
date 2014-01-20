@@ -7,6 +7,7 @@
 //
 
 #import "NUIStyleSheet.h"
+#import "NUIStyleSheetItem.h"
 #import "NUIDefinition.h"
 
 @implementation NUIStyleSheet
@@ -17,16 +18,20 @@
     
     if (nil != self)
     {
-        self.ruleSets = [syntaxTree valueForTag:@"ruleSets"];
+        NSArray *items = [syntaxTree valueForTag:@"items"];
         
-        NSArray *definitionList = [syntaxTree valueForTag:@"definitions"];
+        NSMutableArray *ruleSets    = [NSMutableArray array];
+        NSMutableArray *definitions = [NSMutableArray array];
         
-        NSMutableDictionary *definitions = [NSMutableDictionary dictionary];
-        
-        for (NUIDefinition *definition in definitionList) {
-            definitions[definition.variable] = definition.value;
+        for (NUIStyleSheetItem *item in items) {
+            if (item.ruleSets)
+                [ruleSets addObjectsFromArray:item.ruleSets];
+            
+            if (item.definitions)
+                [definitions addObjectsFromArray:item.definitions];
         }
         
+        self.ruleSets    = ruleSets;
         self.definitions = definitions;
     }
     

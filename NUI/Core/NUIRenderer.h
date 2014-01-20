@@ -38,6 +38,7 @@
 
 @property(nonatomic,retain)NSMutableArray *renderedObjects;
 @property(nonatomic,retain)NSMutableArray *renderedObjectIdentifiers;
+@property(nonatomic)BOOL rerenderOnOrientationChange;
 
 + (void)render:(UIView*)object;
 + (void)rerender;
@@ -107,5 +108,7 @@
 
 + (void)addOrientationDidChangeObserver:(id)observer;
 + (void)removeOrientationDidChangeObserver:(id)observer;
+
++ (void)setRerenderOnOrientationChange:(BOOL)rerender;
 
 @end
