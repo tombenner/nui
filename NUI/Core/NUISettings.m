@@ -26,7 +26,8 @@ static NUISettings *instance = nil;
 {
     instance = [self getInstance];
     instance.stylesheetName = name;
-    instance.stylesheetOrientation = currentDeviceOrientationString();
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+    instance.stylesheetOrientation = [self stylesheetOrientationFromInterfaceOrientation:orientation];
     NUIStyleParser *parser = [[NUIStyleParser alloc] init];
     instance.styles = [parser getStylesFromFile:name];
 }
@@ -68,8 +69,6 @@ static NUISettings *instance = nil;
 
 + (void)reloadStylesheets
 {
-    instance = [self getInstance];
-    instance.stylesheetOrientation = currentDeviceOrientationString();
     NUIStyleParser *parser = [[NUIStyleParser alloc] init];
     instance.styles = [parser getStylesFromFile:instance.stylesheetName];
     
@@ -78,6 +77,19 @@ static NUISettings *instance = nil;
             [instance appendStyles:[parser getStylesFromFile:name]];
         }
     }
+}
+
++ (BOOL)reloadStylesheetsOnOrientationChange:(UIInterfaceOrientation)orientation
+{
+    instance = [self getInstance];
+    NSString *newStylesheetOrientation = [self stylesheetOrientationFromInterfaceOrientation:orientation];
+    
+    if ([newStylesheetOrientation isEqualToString:instance.stylesheetOrientation])
+        return NO;
+    
+    instance.stylesheetOrientation = newStylesheetOrientation;
+    [self reloadStylesheets];
+    return YES;
 }
 
 + (BOOL)autoUpdateIsEnabled
@@ -233,16 +245,15 @@ static NUISettings *instance = nil;
     return instance.globalExclusions;
 }
 
-+ (BOOL)isOrientationChanged
-{
-    instance = [self getInstance];
-    return (instance.stylesheetOrientation != currentDeviceOrientationString());
-}
-
 + (NSString *)stylesheetOrientation
 {
     instance = [self getInstance];
     return instance.stylesheetOrientation;
+}
+
++ (NSString *)stylesheetOrientationFromInterfaceOrientation:(UIInterfaceOrientation)orientation
+{
+    return UIInterfaceOrientationIsLandscape(orientation) ? @"landscape" : @"portrait";
 }
 
 + (NUISettings*)getInstance
@@ -255,14 +266,6 @@ static NUISettings *instance = nil;
     }
     
     return instance;
-}
-
-#pragma mark -
-
-NSString *currentDeviceOrientationString()
-{
-    UIDeviceOrientation deviceOrientation = [[UIDevice currentDevice] orientation];
-    return UIDeviceOrientationIsLandscape(deviceOrientation) ? @"landscape" : @"portrait";
 }
 
 @end

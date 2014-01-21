@@ -30,7 +30,7 @@
 + (void)initWithStylesheet:(NSString*)name;
 + (void)appendStylesheet:(NSString*)name;
 + (void)loadStylesheetByPath:(NSString*)path;
-+ (void)reloadStylesheets;
++ (BOOL)reloadStylesheetsOnOrientationChange:(UIInterfaceOrientation)orientation;
 + (BOOL)autoUpdateIsEnabled;
 + (NSString*)autoUpdatePath;
 + (void)setAutoUpdatePath:(NSString*)path;
@@ -52,7 +52,6 @@
 + (UIControlContentVerticalAlignment)getControlContentVerticalAlignment:(NSString*)property withClass:(NSString*)className;
 + (NSMutableArray*)getGlobalExclusions;
 + (void)setGlobalExclusions:(NSArray*)globalExclusions;
-+ (BOOL)isOrientationChanged;
 + (NSString *)stylesheetOrientation;
 
 @end

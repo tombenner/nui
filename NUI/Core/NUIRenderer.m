@@ -305,11 +305,11 @@ static NUIRenderer *gInstance = nil;
 
 + (void)addOrientationDidChangeObserver:(id)observer
 {
-    [[NSNotificationCenter defaultCenter] addObserver:observer selector:@selector(orientationDidChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:observer selector:@selector(orientationDidChange:) name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];
 }
 
 + (void)removeOrientationDidChangeObserver:(id)observer {
-    [[NSNotificationCenter defaultCenter] removeObserver:observer name:UIDeviceOrientationDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:observer name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];
 }
 
 + (void)registerObject:(NSObject*)object
@@ -405,14 +405,12 @@ static NUIRenderer *gInstance = nil;
 
 + (void)orientationDidChange:(NSNotification *)notification
 {
-    NUIRenderer *instance = [self getInstance];
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
     
-    if (instance.renderedObjects.count > 0) {
-        if ([NUISettings isOrientationChanged]) {
-            [NUISettings reloadStylesheets];
-            [NUIRenderer rerender];
-        }
-    }
+    BOOL didReload = [NUISettings reloadStylesheetsOnOrientationChange:orientation];
+    
+    if (didReload)
+        [NUIRenderer rerender];
 }
 
 + (void)stylesheetFileChanged
