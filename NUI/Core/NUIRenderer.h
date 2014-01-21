@@ -31,16 +31,10 @@
 #import "NUIWindowRenderer.h"
 #import "UIView+NUI.h"
 
-@interface NUIRenderer : NSObject {
-    NSMutableArray *renderedObjects;
-    NSMutableArray *renderedObjectIdentifiers;
-}
+@interface NUIRenderer : NSObject
 
-@property(nonatomic,retain)NSMutableArray *renderedObjects;
-@property(nonatomic,retain)NSMutableArray *renderedObjectIdentifiers;
 @property(nonatomic)BOOL rerenderOnOrientationChange;
 
-+ (void)render:(UIView*)object;
 + (void)rerender;
 
 + (void)renderBarButtonItem:(UIBarButtonItem*)item;
