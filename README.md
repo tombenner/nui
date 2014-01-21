@@ -151,6 +151,33 @@ int main(int argc, char *argv[])
 }
 ```
 
+### Styles specific to a device or orientation
+
+You can have styles or variable definitions only be applied for a particular device and/or orientation by using a @media query:
+
+````
+@media (device:ipad) {
+    /* styles or definitions for iPad */
+}
+
+@media (device:iphone) {
+    /* styles or definitions for iPhone */
+}
+
+@media (orientation:landscape) {
+    /* styles or definitions for landscape orientation */
+}
+
+@media (orientation:portrait) {
+    /* styles or definitions for portrait orientation  */
+}
+
+@media (orientation:portrait) and (device:ipad) {
+    /* styles or definitions for portrait orientation on iPad */
+}
+
+````
+
 ### Modifying Styling While The Application Is Running
 
 To do this, add the following line after `[NUISettings init];` in [main.m](https://github.com/tombenner/nui/blob/master/Demo/NUIDemo/main.m), replacing `@"/path/to/Style.nss"` with the absolute file path of your .nss file (e.g. `/Users/myusername/projects/ios/MyApp/Style.nss`):
