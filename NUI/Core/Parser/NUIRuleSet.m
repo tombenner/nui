@@ -17,7 +17,7 @@
     
     if (nil != self)
     {
-        self.selectors    = [[syntaxTree valueForTag:@"selectors"] selectors];
+        self.selectors = [[syntaxTree valueForTag:@"selectors"] selectors];
         
         NSArray *declarationList = [syntaxTree valueForTag:@"declarations"];
         

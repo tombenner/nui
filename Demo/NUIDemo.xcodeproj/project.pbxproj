@@ -85,6 +85,9 @@
 		EAB69D48188625E900358420 /* NUIStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB69D3A188625E900358420 /* NUIStyleSheet.m */; };
 		EAB69D4A188625E900358420 /* NUITokeniserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB69D3E188625E900358420 /* NUITokeniserDelegate.m */; };
 		EAB69D4C188625E900358420 /* NUIVariableToken.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB69D42188625E900358420 /* NUIVariableToken.m */; };
+		EADA4809188DD9080060F8BC /* NUIMediaBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = EADA4808188DD9080060F8BC /* NUIMediaBlock.m */; };
+		EADA480C188DE0E00060F8BC /* NUIMediaOptionSet.m in Sources */ = {isa = PBXBuildFile; fileRef = EADA480B188DE0E00060F8BC /* NUIMediaOptionSet.m */; };
+		EADA480F188F10270060F8BC /* NUIStyleSheetItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EADA480E188F10270060F8BC /* NUIStyleSheetItem.m */; };
 		FC280DB916F127DE00B01664 /* UIProgressView+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = FC280DB816F127DE00B01664 /* UIProgressView+NUI.m */; };
 /* End PBXBuildFile section */
 
@@ -230,6 +233,12 @@
 		EAB69D3E188625E900358420 /* NUITokeniserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NUITokeniserDelegate.m; path = Parser/NUITokeniserDelegate.m; sourceTree = "<group>"; };
 		EAB69D41188625E900358420 /* NUIVariableToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUIVariableToken.h; path = Parser/NUIVariableToken.h; sourceTree = "<group>"; };
 		EAB69D42188625E900358420 /* NUIVariableToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NUIVariableToken.m; path = Parser/NUIVariableToken.m; sourceTree = "<group>"; };
+		EADA4807188DD8FF0060F8BC /* NUIMediaBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUIMediaBlock.h; path = Parser/NUIMediaBlock.h; sourceTree = "<group>"; };
+		EADA4808188DD9080060F8BC /* NUIMediaBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NUIMediaBlock.m; path = Parser/NUIMediaBlock.m; sourceTree = "<group>"; };
+		EADA480A188DE0D80060F8BC /* NUIMediaOptionSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUIMediaOptionSet.h; path = Parser/NUIMediaOptionSet.h; sourceTree = "<group>"; };
+		EADA480B188DE0E00060F8BC /* NUIMediaOptionSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NUIMediaOptionSet.m; path = Parser/NUIMediaOptionSet.m; sourceTree = "<group>"; };
+		EADA480D188F10270060F8BC /* NUIStyleSheetItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUIStyleSheetItem.h; path = Parser/NUIStyleSheetItem.h; sourceTree = "<group>"; };
+		EADA480E188F10270060F8BC /* NUIStyleSheetItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NUIStyleSheetItem.m; path = Parser/NUIStyleSheetItem.m; sourceTree = "<group>"; };
 		FC280DB716F127DE00B01664 /* UIProgressView+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIProgressView+NUI.h"; sourceTree = "<group>"; };
 		FC280DB816F127DE00B01664 /* UIProgressView+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIProgressView+NUI.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -485,8 +494,14 @@
 				EAB69D34188625E900358420 /* NUIParserDelegate.m */,
 				EAB69D35188625E900358420 /* NUIRuleSet.h */,
 				EAB69D36188625E900358420 /* NUIRuleSet.m */,
+				EADA4807188DD8FF0060F8BC /* NUIMediaBlock.h */,
+				EADA4808188DD9080060F8BC /* NUIMediaBlock.m */,
 				EAB69D37188625E900358420 /* NUISelectorSet.h */,
 				EAB69D38188625E900358420 /* NUISelectorSet.m */,
+				EADA480D188F10270060F8BC /* NUIStyleSheetItem.h */,
+				EADA480E188F10270060F8BC /* NUIStyleSheetItem.m */,
+				EADA480A188DE0D80060F8BC /* NUIMediaOptionSet.h */,
+				EADA480B188DE0E00060F8BC /* NUIMediaOptionSet.m */,
 				EAB69D39188625E900358420 /* NUIStyleSheet.h */,
 				EAB69D3A188625E900358420 /* NUIStyleSheet.m */,
 				EAB69D3D188625E900358420 /* NUITokeniserDelegate.h */,
@@ -633,15 +648,18 @@
 				89B940801671418200850A9A /* NUIViewRenderer.m in Sources */,
 				4A779342167560FF00B5EE81 /* UIButton+NUI.m in Sources */,
 				4A7793451675619500B5EE81 /* UITabBar+NUI.m in Sources */,
+				EADA480F188F10270060F8BC /* NUIStyleSheetItem.m in Sources */,
 				4A7793481675625800B5EE81 /* NUITabBarItemRenderer.m in Sources */,
 				4A77934B1675635100B5EE81 /* UITabBarItem+NUI.m in Sources */,
 				4A77934E1675647A00B5EE81 /* NUISwizzler.m in Sources */,
 				4A7793511675687C00B5EE81 /* UIBarButtonItem+NUI.m in Sources */,
 				4A55F078167570C10056753C /* UIView+NUI.m in Sources */,
+				EADA4809188DD9080060F8BC /* NUIMediaBlock.m in Sources */,
 				4A55F07C1675718F0056753C /* UILabel+NUI.m in Sources */,
 				4A55F07F167573D10056753C /* UINavigationBar+NUI.m in Sources */,
 				EAB69D46188625E900358420 /* NUIRuleSet.m in Sources */,
 				4A55F08216758E4E0056753C /* UINavigationItem+NUI.m in Sources */,
+				EADA480C188DE0E00060F8BC /* NUIMediaOptionSet.m in Sources */,
 				4A55F08516758E9D0056753C /* UISegmentedControl+NUI.m in Sources */,
 				EAB69D4A188625E900358420 /* NUITokeniserDelegate.m in Sources */,
 				EAB69D44188625E900358420 /* NUIDefinition.m in Sources */,

@@ -1,5 +1,5 @@
 //
-//  Definition.h
+//  NUIMediaOptionSet.h
 //  ParseTest
 //
 //  Created by Tony Mann on 1/14/14.
@@ -8,10 +8,18 @@
 
 #import "CoreParse.h"
 
-@interface NUIDefinition : NSObject<CPParseResult>
+@interface NUIMediaOption : NSObject<CPParseResult>
 
-@property (strong) NSString *variable;
+@property (strong) NSString *property;
 @property (strong) NSString *value;
+
+@end
+
+
+@interface NUIMediaOptionSet : NSObject<CPParseResult>
+
 @property (strong) NSDictionary *mediaOptions;
 
 @end
+
+
