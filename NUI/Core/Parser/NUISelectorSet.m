@@ -51,7 +51,7 @@
 
 - (NSString *) description
 {
-    return [NSString stringWithFormat:@"<NUIDelimitedSelector: %@>", self.selector.name];
+    return [NSString stringWithFormat:@"<NUIDelimitedSelector: %@>", self.selector];
 }
 
 @end

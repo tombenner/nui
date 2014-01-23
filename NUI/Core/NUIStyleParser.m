@@ -13,6 +13,9 @@
 #import "NUIParserDelegate.h"
 #import "NUIStyleSheet.h"
 #import "NUIRuleSet.h"
+#import "NUIRenderer.h"
+#import "NUISettings.h"
+#import "NUIDefinition.h"
 
 @implementation NUIStyleParser
 
@@ -34,13 +37,25 @@
 
 - (NSMutableDictionary*)consolidateRuleSets:(NUIStyleSheet *)styleSheet
 {
-    NSMutableDictionary *consolidatedRuleSets = [[NSMutableDictionary alloc] init];
+    [NUIRenderer setRerenderOnOrientationChange:NO];
+    
+    NSMutableDictionary *consolidatedRuleSets = [NSMutableDictionary dictionary];
+    NSMutableDictionary *definitions          = [NSMutableDictionary dictionary];
+    
+    for (NUIDefinition *definition in styleSheet.definitions) {
+        if ([self mediaOptionsSatisified:definition.mediaOptions])
+            definitions[definition.variable] = definition.value;
+    }
+    
     for (NUIRuleSet *ruleSet in styleSheet.ruleSets) {
+        if (![self mediaOptionsSatisified:ruleSet.mediaOptions])
+            continue;
+        
         for (NSString *selector in ruleSet.selectors) {
             if (consolidatedRuleSets[selector] == nil) {
                 consolidatedRuleSets[selector] = [[NSMutableDictionary alloc] init];
             }
-            [self mergeRuleSetIntoConsolidatedRuleSet:ruleSet consolidatedRuleSet:consolidatedRuleSets[selector] definitions:styleSheet.definitions];
+            [self mergeRuleSetIntoConsolidatedRuleSet:ruleSet consolidatedRuleSet:consolidatedRuleSets[selector] definitions:definitions];
         }
     }
     return consolidatedRuleSets;
@@ -63,15 +78,48 @@
     return consolidatedRuleSet;
 }
 
+- (BOOL)mediaOptionsSatisified:(NSDictionary *)mediaOptions
+{
+    if (!mediaOptions)
+        return YES;
+    
+    static NSString *device;
+    NSString *mediaDevice = mediaOptions[@"device"];
+    
+    if (mediaDevice) {
+        if (!device) {
+            device = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? @"ipad" : @"iphone";
+        }
+        
+        if (![mediaDevice isEqualToString:device])
+            return NO;
+    }
+    
+    NSString *mediaOrientation = mediaOptions[@"orientation"];
+    
+    if (mediaOrientation) {
+        [NUIRenderer setRerenderOnOrientationChange:YES];
+        
+        if (![mediaOrientation isEqualToString:[NUISettings stylesheetOrientation]])
+            return NO;
+    }
+    
+    return YES;
+}
+
 - (NUIStyleSheet *)parse:(NSString *)styles
 {
     CPTokeniser *tokeniser = [[CPTokeniser alloc] init];
         
+
     [tokeniser addTokenRecogniser:[CPWhiteSpaceRecogniser whiteSpaceRecogniser]];
     [tokeniser addTokenRecogniser:[CPQuotedRecogniser quotedRecogniserWithStartQuote:@"/*"
                                                                             endQuote:@"*/"
                                                                                 name:@"Comment"]];
     
+    [tokeniser addTokenRecogniser:[CPKeywordRecogniser recogniserForKeyword:@"@media"]];
+    [tokeniser addTokenRecogniser:[CPKeywordRecogniser recogniserForKeyword:@"and"]];
+
     NSCharacterSet *idCharacters = [NSCharacterSet characterSetWithCharactersInString:
                                     @"abcdefghijklmnopqrstuvwxyz"
                                     @"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -96,7 +144,13 @@
     tokeniser.delegate = tokenizerDelegate;
     
     NSString *expressionGrammar =
-       @"NUIStyleSheet            ::= definitions@<NUIDefinition>* ruleSets@<NUIRuleSet>*;\n"
+       @"NUIStyleSheet            ::= items@<NUIStyleSheetItem>*;\n"
+        "NUIStyleSheetItem        ::= ruleSet@<NUIRuleSet> | mediaBlock@<NUIMediaBlock> | definition@<NUIDefinition>;\n"
+        "NUIMediaBlock            ::= '@media' mediaOptions@<NUIMediaOptionSet> '{' items@<NUIMediaBlockItem>* '}';\n"
+        "NUIMediaBlockItem        ::= ruleSet@<NUIRuleSet> | definition@<NUIDefinition>;\n"
+        "NUIMediaOptionSet        ::= firstMediaOption@<NUIMediaOption> otherMediaOptions@<NUIDelimitedMediaOption>*;\n"
+        "NUIMediaOption           ::= '(' property@'Identifier' ':' value@'Identifier' ')';\n"
+        "NUIDelimitedMediaOption  ::= 'and' mediaOption@<NUIMediaOption>;\n"
         "NUIRuleSet               ::= selectors@<NUISelectorSet> '{' declarations@<NUIDeclaration>* '}';\n"
         "NUISelectorSet           ::= firstSelector@<NUISelector> otherSelectors@<NUIDelimitedSelector>*;\n"
         "NUISelector              ::= name@'Identifier';\n"

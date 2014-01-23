@@ -12,5 +12,6 @@
 
 @property (strong) NSArray  *selectors;
 @property (strong) NSDictionary *declarations;
+@property (strong) NSDictionary *mediaOptions;
 
 @end
