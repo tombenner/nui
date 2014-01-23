@@ -67,6 +67,9 @@
 		89B940801671418200850A9A /* NUIViewRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B940451671418100850A9A /* NUIViewRenderer.m */; };
 		89B940811671418200850A9A /* NUIStyle.nss in Resources */ = {isa = PBXBuildFile; fileRef = 89B940461671418100850A9A /* NUIStyle.nss */; };
 		89B940841671418200850A9A /* NUIViewBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B9404A1671418100850A9A /* NUIViewBackground.png */; };
+		AC370C7F1890EB31007E71D1 /* UIImageView+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = AC370C7E1890EB31007E71D1 /* UIImageView+NUI.m */; };
+		AC370C821890ECC1007E71D1 /* NUIImageViewRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = AC370C811890ECC0007E71D1 /* NUIImageViewRenderer.m */; };
+		AC6F6BCA1890F75E00C0246C /* defaultImage.png in Resources */ = {isa = PBXBuildFile; fileRef = AC6F6BC91890F75E00C0246C /* defaultImage.png */; };
 		B51BC28A169724A3004A38F8 /* UISwitch+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = B51BC289169724A3004A38F8 /* UISwitch+NUI.m */; };
 		B51BC28E16972527004A38F8 /* NUISwitchRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = B51BC28D16972527004A38F8 /* NUISwitchRenderer.m */; };
 		D8E7168116B8AF4400686854 /* NUIControlRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E7168016B8AF4300686854 /* NUIControlRenderer.m */; };
@@ -191,8 +194,13 @@
 		89B940431671418100850A9A /* NUITextFieldRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUITextFieldRenderer.m; sourceTree = "<group>"; };
 		89B940441671418100850A9A /* NUIViewRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIViewRenderer.h; sourceTree = "<group>"; };
 		89B940451671418100850A9A /* NUIViewRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIViewRenderer.m; sourceTree = "<group>"; };
-		89B940461671418100850A9A /* NUIStyle.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NUIStyle.nss; sourceTree = "<group>"; };
+		89B940461671418100850A9A /* NUIStyle.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NUIStyle.nss; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.css; };
 		89B9404A1671418100850A9A /* NUIViewBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NUIViewBackground.png; sourceTree = "<group>"; };
+		AC370C7D1890EB31007E71D1 /* UIImageView+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+NUI.h"; sourceTree = "<group>"; };
+		AC370C7E1890EB31007E71D1 /* UIImageView+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+NUI.m"; sourceTree = "<group>"; };
+		AC370C801890ECC0007E71D1 /* NUIImageViewRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIImageViewRenderer.h; sourceTree = "<group>"; };
+		AC370C811890ECC0007E71D1 /* NUIImageViewRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIImageViewRenderer.m; sourceTree = "<group>"; };
+		AC6F6BC91890F75E00C0246C /* defaultImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultImage.png; sourceTree = "<group>"; };
 		B51BC288169724A3004A38F8 /* UISwitch+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISwitch+NUI.h"; sourceTree = "<group>"; };
 		B51BC289169724A3004A38F8 /* UISwitch+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISwitch+NUI.m"; sourceTree = "<group>"; };
 		B51BC28C16972527004A38F8 /* NUISwitchRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUISwitchRenderer.h; sourceTree = "<group>"; };
@@ -330,6 +338,7 @@
 		4AAAFE7A166FD2EC00A0D34D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AC6F6BC91890F75E00C0246C /* defaultImage.png */,
 				4AAAFE7B166FD32600A0D34D /* Default-568h@2x.png */,
 			);
 			name = Resources;
@@ -417,6 +426,8 @@
 				89B940451671418100850A9A /* NUIViewRenderer.m */,
 				4A38830F16C7268000DB99C2 /* NUIWindowRenderer.h */,
 				4A38831016C7268000DB99C2 /* NUIWindowRenderer.m */,
+				AC370C801890ECC0007E71D1 /* NUIImageViewRenderer.h */,
+				AC370C811890ECC0007E71D1 /* NUIImageViewRenderer.m */,
 			);
 			path = Renderers;
 			sourceTree = "<group>";
@@ -470,6 +481,8 @@
 				4A55F077167570C10056753C /* UIView+NUI.m */,
 				4A38831316C7269F00DB99C2 /* UIWindow+NUI.h */,
 				4A38831416C7269F00DB99C2 /* UIWindow+NUI.m */,
+				AC370C7D1890EB31007E71D1 /* UIImageView+NUI.h */,
+				AC370C7E1890EB31007E71D1 /* UIImageView+NUI.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -563,6 +576,7 @@
 				4A9965EB169FB56800DAA38A /* Switchboard.NUI.nss in Resources */,
 				832B9C1B176AEADA0054F06E /* iPad Storyboard.storyboard in Resources */,
 				832B9C1E176AEAED0054F06E /* iPhone Storyboard.storyboard in Resources */,
+				AC6F6BCA1890F75E00C0246C /* defaultImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,6 +680,8 @@
 				E291BBD7179C89470016BC1D /* NUITableViewRenderer.m in Sources */,
 				E291BBDA179C89710016BC1D /* UITableView+NUI.m in Sources */,
 				EAB69D45188625E900358420 /* NUIParserDelegate.m in Sources */,
+				AC370C7F1890EB31007E71D1 /* UIImageView+NUI.m in Sources */,
+				AC370C821890ECC1007E71D1 /* NUIImageViewRenderer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

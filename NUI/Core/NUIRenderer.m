@@ -253,6 +253,18 @@ static NUIRenderer *gInstance = nil;
     [self registerObject:textField];
 }
 
++ (void)renderImageView:(UIImageView*)imageView
+{
+    [NUIImageViewRenderer render:imageView withClass:@"ImageView"];
+    [self registerObject:imageView];
+}
+
++ (void)renderImageView:(UIImageView*)imageView withClass:(NSString*)className
+{
+    [NUIImageViewRenderer render:imageView withClass:className];
+    [self registerObject:imageView];
+}
+
 
 
 + (void)renderView:(UIView*)view
