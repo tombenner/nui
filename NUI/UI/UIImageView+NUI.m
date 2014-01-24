@@ -18,8 +18,10 @@
 }
 - (void)applyNUI
 {
+    //unclear uiswitch hierarchical, but this effect.
     if (([self isMemberOfClass:[UIImageView class]] &&
-         [[self superview] isMemberOfClass:[UIView class]]) ||
+         [[self superview] isMemberOfClass:[UIView class]]&&
+         ![[[[self superview]superview]superview] isMemberOfClass:[UISwitch class]]) ||
         self.nuiClass)
     {
         [self initNUI];
