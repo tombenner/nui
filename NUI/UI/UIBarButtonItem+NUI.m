@@ -46,7 +46,6 @@
 
 - (void)setNuiClass:(NSString*)value {
     objc_setAssociatedObject(self, kNUIAssociatedClassKey, value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    [self applyNUI];
 }
 
 - (NSString*)nuiClass {
