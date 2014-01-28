@@ -1,4 +1,4 @@
 target "NUIDemo" do
-pod 'CoreParse', :git => 'https://github.com/phatmann/CoreParse.git', :branch => 'pod'
+pod 'CoreParse'
 end
 

@@ -2,14 +2,9 @@ PODS:
   - CoreParse (1.1)
 
 DEPENDENCIES:
-  - CoreParse (from `https://github.com/phatmann/CoreParse.git`, branch `pod`)
-
-EXTERNAL SOURCES:
-  CoreParse:
-    :branch: pod
-    :git: https://github.com/phatmann/CoreParse.git
+  - CoreParse
 
 SPEC CHECKSUMS:
-  CoreParse: c8da33c94916683f2448e3cbc51ced058aa68c45
+  CoreParse: 11f0ec66ac10a637fc16995b13ca372e2eeb61dc
 
 COCOAPODS: 0.29.0
