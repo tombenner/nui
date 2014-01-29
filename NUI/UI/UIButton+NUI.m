@@ -42,9 +42,35 @@
             ![bypassedSuperviewClasses containsObject:superviewClass]) ||
             forceRender) {
             [NUIRenderer renderButton:self withClass:self.nuiClass];
+            [self transformText];
         }
     }
     self.nuiApplied = YES;
+}
+
+- (void)transformText
+{
+    if (![NUIRenderer needsTextTransformWithClass:self.nuiClass])
+        return;
+    
+    [self transformTitleForState:UIControlStateNormal];
+    [self transformTitleForState:UIControlStateSelected];
+    [self transformTitleForState:UIControlStateHighlighted];
+    [self transformTitleForState:UIControlStateDisabled];
+}
+
+- (void)transformTitleForState:(UIControlState)state
+{
+    if ((NSFoundationVersionNumber >= NSFoundationVersionNumber_iOS_6_0)) {
+        NSAttributedString *attributedTitle = [self attributedTitleForState:state];
+        
+        if (attributedTitle)
+            [self setAttributedTitle:attributedTitle forState:state];
+        else
+            [self setTitle:[self titleForState:state] forState:state];
+    } else {
+        [self setTitle:[self titleForState:state] forState:state];
+    }
 }
 
 - (void)override_didMoveToWindow
@@ -53,6 +79,26 @@
         [self applyNUI];
     }
     [self override_didMoveToWindow];
+}
+
+- (void)override_setTitle:(NSString *)title forState:(UIControlState)state
+{
+    NSString *transformedTitle = title;
+    
+    if (title && self.nuiClass && ![self.nuiClass isEqualToString:kNUIClassNone])
+        transformedTitle = [NUIRenderer transformText:title withClass:self.nuiClass];
+    
+    [self override_setTitle:transformedTitle forState:state];
+}
+
+- (void)override_setAttributedTitle:(NSAttributedString *)title forState:(UIControlState)state
+{
+    NSAttributedString *transformedTitle = title;
+    
+    if (title && self.nuiClass && ![self.nuiClass isEqualToString:kNUIClassNone])
+        transformedTitle = [NUIRenderer transformAttributedText:title withClass:self.nuiClass];
+    
+    [self override_setAttributedTitle:transformedTitle forState:state];
 }
 
 @end

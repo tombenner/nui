@@ -38,6 +38,14 @@
     [self swizzle:[UITextField class] methodName:@"editingRectForBounds:"];
     [self swizzle:[UIWindow class] methodName:@"becomeKeyWindow"];
     
+    [self swizzle:[UILabel class] methodName:@"setText:"];
+    [self swizzle:[UIButton class] methodName:@"setTitle:forState:"];
+    
+    if ((NSFoundationVersionNumber >= NSFoundationVersionNumber_iOS_6_0)) {
+        [self swizzle:[UILabel class] methodName:@"setAttributedText:"];
+        [self swizzle:[UIButton class] methodName:@"setAttributedTitle:forState:"];
+    }
+    
     [self swizzleDealloc:[UINavigationBar class]];
     [self swizzleDealloc:[UITabBar class]];
     [self swizzleDealloc:[UITableViewCell class]];
