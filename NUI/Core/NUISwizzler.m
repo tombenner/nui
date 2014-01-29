@@ -38,6 +38,9 @@
     [self swizzle:[UITextField class] methodName:@"editingRectForBounds:"];
     [self swizzle:[UIWindow class] methodName:@"becomeKeyWindow"];
     
+    [self swizzle:[UILabel class] methodName:@"setText:"];
+    [self swizzle:[UIButton class] methodName:@"setTitle:forState:"];
+    
     [self swizzleDealloc:[UINavigationBar class]];
     [self swizzleDealloc:[UITabBar class]];
     [self swizzleDealloc:[UITableViewCell class]];

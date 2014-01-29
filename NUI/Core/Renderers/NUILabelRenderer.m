@@ -87,4 +87,26 @@
     }
 }
 
++ (NSString *)transformText:(NSString*)text withClass:(NSString*)className
+{
+    NSString *property;
+    NSString *transformedText = text;
+    
+    property = @"text-transform";
+    
+    if ([NUISettings hasProperty:property withClass:className]) {
+        NSString *transform = [NUISettings get:property withClass:className];
+        
+        if ([transform isEqualToString:@"uppercase"]) {
+            transformedText = [text uppercaseString];
+        } else if ([transform isEqualToString:@"lowercase"]) {
+            transformedText = [text lowercaseString];
+        } else if ([transform isEqualToString:@"capitalize"]) {
+            transformedText = [text capitalizedString];
+        }
+    }
+    
+    return transformedText;
+}
+
 @end

@@ -208,6 +208,11 @@ static NUIRenderer *gInstance = nil;
     [NUIWindowRenderer render:window withClass:className];
 }
 
++ (NSString *)transformText:(NSString*)text withClass:(NSString*)className
+{
+    return [NUILabelRenderer transformText:text withClass:className];
+}
+
 + (void)sizeDidChangeForNavigationBar:(UINavigationBar*)bar
 {
     [NUINavigationBarRenderer sizeDidChange:bar];

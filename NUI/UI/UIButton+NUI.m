@@ -42,9 +42,24 @@
             ![bypassedSuperviewClasses containsObject:superviewClass]) ||
             forceRender) {
             [NUIRenderer renderButton:self withClass:self.nuiClass];
+            [self transformText];
         }
     }
     self.nuiApplied = YES;
+}
+
+- (void)transformText
+{
+    [self transformTitleForState:UIControlStateNormal];
+    [self transformTitleForState:UIControlStateSelected];
+    [self transformTitleForState:UIControlStateHighlighted];
+    [self transformTitleForState:UIControlStateDisabled];
+}
+
+- (void)transformTitleForState:(UIControlState)state
+{
+    if (![self attributedTitleForState:state] && [self titleForState:state])
+        [self setTitle:[self titleForState:state] forState:state];
 }
 
 - (void)override_didMoveToWindow
@@ -53,6 +68,16 @@
         [self applyNUI];
     }
     [self override_didMoveToWindow];
+}
+
+- (void)override_setTitle:(NSString *)title forState:(UIControlState)state
+{
+    NSString *transformedTitle = title;
+    
+    if (title && self.nuiClass && ![self.nuiClass isEqualToString:kNUIClassNone])
+        transformedTitle = [NUIRenderer transformText:title withClass:self.nuiClass];
+    
+    [self override_setTitle:transformedTitle forState:state];
 }
 
 @end

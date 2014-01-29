@@ -28,9 +28,16 @@
         [self initNUI];
         if (![self.nuiClass isEqualToString:kNUIClassNone]) {
             [NUIRenderer renderLabel:self withClass:self.nuiClass];
+            [self transformText];
         }
     }
     self.nuiApplied = YES;
+}
+
+- (void)transformText
+{
+    if (!self.attributedText && self.text)
+        [self setText:[self text]];
 }
 
 - (void)override_didMoveToWindow
@@ -39,6 +46,16 @@
         [self applyNUI];
     }
     [self override_didMoveToWindow];
+}
+
+- (void)override_setText:(NSString *)text
+{
+    NSString *transformedText = text;
+    
+    if (text && self.nuiClass && ![self.nuiClass isEqualToString:kNUIClassNone])
+        transformedText = [NUIRenderer transformText:text withClass:self.nuiClass];
+        
+    [self override_setText:transformedText];
 }
 
 @end
