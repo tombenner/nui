@@ -15,5 +15,6 @@
 + (void)render:(UILabel*)label withClass:(NSString*)className;
 + (void)render:(UILabel*)label withClass:(NSString*)className withSuffix:(NSString*)suffix;
 + (void)renderText:(UILabel*)label withClass:(NSString*)className;
++ (NSString *)transformText:(NSString*)text withClass:(NSString*)className;
 
 @end

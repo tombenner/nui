@@ -284,6 +284,7 @@ Below are all of the currently available style classes, their corresponding UI c
 * text-shadow-color-selected *(Color)*
 * text-shadow-color-selected-highlighted *(Color)*
 * text-shadow-offset *(Offset)*
+* text-transform *(TextTransform)*
 * title-insets *(Box)*
 * width *(Number)*
 
@@ -323,6 +324,7 @@ Below are all of the currently available style classes, their corresponding UI c
 * text-auto-fit *(Boolean)*
 * text-shadow-color *(Color)*
 * text-shadow-offset *(Offset)*
+* text-transform *(TextTransform)*
 * width *(Number)*
 
 #### NavigationBar
@@ -567,6 +569,7 @@ Style Value Types
 * **Offset** - Two numbers comprising the horizontal and vertical values of an offset (e.g. `-1,1`)
 * **SeparatorStyle** - A separator style, as rendered by a UITableViewSeparatorStyle. Accepted values are `none`, `single-line`, and `single-line-etched`.
 * **TextAlign** - A text alignment (e.g. `left`, `right`, `center`)
+* **TextTransform** - A text transform (e.g. `uppercase`, `lowercase`, `capitalize`, `none`)
 * **VerticalAlign** - A vertical alignment (e.g. `top`, `center`, `bottom`, `fill`)
 
 FAQ
