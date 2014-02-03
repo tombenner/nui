@@ -28,19 +28,26 @@ NSString *flattenTokens(NSArray *tokens)
     NSMutableString *contents = [NSMutableString string];
     
     for (id token in tokens) {
+        NSString *tokenString;
+        
         if ([token isKeywordToken]) {
-            [contents appendString:[token keyword]];
+            tokenString = [token keyword];
         } else if ([token isIdentifierToken]) {
-            [contents appendString:[token identifier]];
+            tokenString = [token identifier];
         } else if ([token isKindOfClass:[NUIVariableToken class]]) {
-            [contents appendString:[token variable]];
+            tokenString = [token variable];
         } else if ([token isKindOfClass:[NSString class]]) {
-            [contents appendString:token];
+            tokenString = token;
         } else if ([token isKindOfClass:[NSArray class]]) {
-            [contents appendString:flattenTokens(token)];
+            tokenString = flattenTokens(token);
         } else {
             [NSException raise:@"Unexpected value token" format:nil];
         }
+        
+        if (contents.length > 0)
+            [contents appendFormat:@" %@", tokenString];
+        else
+            [contents appendString:tokenString];
     }
     
     return contents;
