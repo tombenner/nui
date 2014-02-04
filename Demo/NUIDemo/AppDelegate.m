@@ -16,6 +16,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [NUISettings init];
+        
+    // Or use this call to use a specific stylesheet
+    //[NUISettings initWithStylesheet:@"Blue.NUI"];
+
     [NUIAppearance init];
     
     demoItems = [NSMutableArray arrayWithCapacity:20];
