@@ -214,7 +214,16 @@ static NUISettings *instance = nil;
     
     if ([self hasProperty:propertyName withClass:className]) {
         NSString *fontName = [self get:propertyName withClass:className];
-        font = [UIFont fontWithName:fontName size:fontSize];
+        
+        if ([fontName isEqualToString:@"system"]) {
+            font = [UIFont systemFontOfSize:fontSize];
+        } else if ([fontName isEqualToString:@"boldSystem"]) {
+            font = [UIFont boldSystemFontOfSize:fontSize];
+        } else if ([fontName isEqualToString:@"italicSystem"]) {
+            font = [UIFont italicSystemFontOfSize:fontSize];
+        } else {
+            font = [UIFont fontWithName:fontName size:fontSize];
+        }
     } else {
         font = baseFont ? [baseFont fontWithSize:fontSize] : [UIFont systemFontOfSize:fontSize];
     }
