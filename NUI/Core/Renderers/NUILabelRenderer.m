@@ -51,14 +51,8 @@
         label.highlightedTextColor = [NUISettings getColor:property withClass:className];
     }
     
-    property = @"font-size";
-    if ([NUISettings hasProperty:property withClass:className]) {
-        label.font = [label.font fontWithSize:[NUISettings getFloat:property withClass:className]];
-    }
-    
-    property = @"font-name";
-    if ([NUISettings hasProperty:property withClass:className]) {
-        label.font = [UIFont fontWithName:[NUISettings get:property withClass:className] size:label.font.pointSize];
+    if ([NUISettings hasFontPropertiesWithClass:className]) {
+        label.font = [NUISettings getFontWithClass:className baseFont:label.font];
     }
     
     property = @"text-align";

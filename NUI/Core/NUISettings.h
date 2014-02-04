@@ -35,6 +35,7 @@
 + (NSString*)autoUpdatePath;
 + (void)setAutoUpdatePath:(NSString*)path;
 + (BOOL)hasProperty:(NSString*)property withClass:(NSString*)className;
++ (BOOL)hasFontPropertiesWithClass:(NSString*)className;
 + (id)get:(NSString*)property withClass:(NSString*)className;
 + (BOOL)getBoolean:(NSString*)property withClass:(NSString*)className;
 + (float)getFloat:(NSString*)property withClass:(NSString*)className;
@@ -44,6 +45,7 @@
 + (UITextBorderStyle)getBorderStyle:(NSString*)property withClass:(NSString*)className;
 + (UITableViewCellSeparatorStyle)getSeparatorStyle:(NSString*)property withClass:(NSString*)className;
 + (UIFont*)getFontWithClass:(NSString*)className;
++ (UIFont*)getFontWithClass:(NSString*)className baseFont:(UIFont *)baseFont;
 + (UIColor*)getColor:(NSString*)property withClass:(NSString*)className;
 + (UIColor*)getColorFromImage:(NSString*)property withClass:(NSString*)className;
 + (UIImage*)getImage:(NSString*)property withClass:(NSString*)className;

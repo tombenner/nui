@@ -133,6 +133,12 @@ static NUISettings *instance = nil;
     return NO;
 }
 
++ (BOOL)hasFontPropertiesWithClass:(NSString*)className
+{
+    return [self hasProperty:@"font-name" withClass:className] ||
+           [self hasProperty:@"font-size" withClass:className];
+}
+
 + (id)get:(NSString*)property withExplicitClass:(NSString*)className
 {
     NSMutableDictionary *ruleSet = [instance.styles objectForKey:className];
@@ -187,6 +193,11 @@ static NUISettings *instance = nil;
 
 + (UIFont*)getFontWithClass:(NSString*)className
 {
+    return [self getFontWithClass:className baseFont:nil];
+}
+
++ (UIFont*)getFontWithClass:(NSString*)className baseFont:(UIFont *)baseFont
+{
     NSString *propertyName;
     CGFloat fontSize;
     UIFont *font = nil;
@@ -196,7 +207,7 @@ static NUISettings *instance = nil;
     if ([self hasProperty:propertyName withClass:className]) {
         fontSize = [self getFloat:@"font-size" withClass:className];
     } else {
-        fontSize = [UIFont systemFontSize];
+        fontSize = baseFont ? baseFont.pointSize : [UIFont systemFontSize];
     }
     
     propertyName = @"font-name";
@@ -205,7 +216,7 @@ static NUISettings *instance = nil;
         NSString *fontName = [self get:propertyName withClass:className];
         font = [UIFont fontWithName:fontName size:fontSize];
     } else {
-        font = [UIFont systemFontOfSize:fontSize];
+        font = baseFont ? [baseFont fontWithSize:fontSize] : [UIFont systemFontOfSize:fontSize];
     }
     
     return font;
