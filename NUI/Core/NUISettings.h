@@ -17,6 +17,10 @@
     NSString *stylesheetName;
     NSMutableArray *additionalStylesheetNames;
     NSString *stylesheetOrientation;
+    
+#ifdef DEBUG
+    UIColor* debugColor;
+#endif
 }
 
 @property(nonatomic,retain)NSString *autoUpdatePath;
@@ -25,6 +29,10 @@
 @property(nonatomic,retain)NSMutableArray *additionalStylesheetNames;
 @property(nonatomic,retain)NSMutableArray *globalExclusions;
 @property(nonatomic,retain)NSString* stylesheetOrientation;
+
+#ifdef DEBUG
+@property(nonatomic,retain)UIColor* debugColor;
+#endif
 
 + (void)init;
 + (void)initWithStylesheet:(NSString*)name;
@@ -53,6 +61,7 @@
 + (NSMutableArray*)getGlobalExclusions;
 + (void)setGlobalExclusions:(NSArray*)globalExclusions;
 + (NSString *)stylesheetOrientation;
++ (void)setDebugColor:(UIColor *)color;
 
 @end
 

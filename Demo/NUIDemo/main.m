@@ -22,6 +22,9 @@ int main(int argc, char *argv[])
         // file at runtime
         //[NUISettings setAutoUpdatePath:@"/path/to/Style.nss"];
         
+        // To see which font and border colors are being set via NUI, uncomment this:
+        //[NUISettings setDebugColor:[UIColor greenColor]];
+        
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
 }

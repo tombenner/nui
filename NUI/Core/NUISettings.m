@@ -15,6 +15,10 @@
 @synthesize stylesheetName, additionalStylesheetNames;
 @synthesize stylesheetOrientation;
 
+#ifdef DEBUG
+@synthesize debugColor;
+#endif
+
 static NUISettings *instance = nil;
 
 + (void)init
@@ -186,7 +190,15 @@ static NUISettings *instance = nil;
 }
 
 + (UIColor*)getColor:(NSString*)property withClass:(NSString*)className
-{   
+{
+#ifdef DEBUG
+    instance = [self getInstance];
+    
+    if (instance.debugColor && [self shouldUseDebugColorForProperty:property]) {
+        return instance.debugColor;
+    }
+#endif
+    
     return [NUIConverter toColor:[self get:property withClass:className]];
 }
 
@@ -254,6 +266,29 @@ static NUISettings *instance = nil;
 + (NSString *)stylesheetOrientationFromInterfaceOrientation:(UIInterfaceOrientation)orientation
 {
     return UIInterfaceOrientationIsLandscape(orientation) ? @"landscape" : @"portrait";
+}
+
++ (void)setDebugColor:(UIColor *)color
+{
+#ifdef DEBUG
+    instance = [self getInstance];
+    instance.debugColor = color;
+#endif
+}
+
++ (BOOL)shouldUseDebugColorForProperty:(NSString*)property
+{
+    static NSArray *debugProperties;
+    
+    if (!debugProperties)
+        debugProperties = @[@"font-color", @"border-color"];
+    
+    for (NSString *debugProperty in debugProperties) {
+        if ([property hasPrefix:debugProperty])
+            return YES;
+    }
+    
+    return NO;
 }
 
 + (NUISettings*)getInstance
