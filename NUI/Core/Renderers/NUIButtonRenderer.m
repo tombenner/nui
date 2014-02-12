@@ -76,6 +76,23 @@
         [button setBackgroundImage:[NUISettings getImage:@"background-image-disabled" withClass:className] forState:UIControlStateDisabled];
     }
     
+    // Set image
+    if ([NUISettings hasProperty:@"image" withClass:className]) {
+        [button setImage:[NUISettings getImage:@"image" withClass:className] forState:UIControlStateNormal];
+    }
+    if ([NUISettings hasProperty:@"image-highlighted" withClass:className]) {
+        [button setImage:[NUISettings getImage:@"image-highlighted" withClass:className] forState:UIControlStateHighlighted];
+    }
+    if ([NUISettings hasProperty:@"image-selected" withClass:className]) {
+        [button setImage:[NUISettings getImage:@"image-selected" withClass:className] forState:UIControlStateSelected];
+    }
+    if ([NUISettings hasProperty:@"image-selected-highlighted" withClass:className]) {
+        [button setImage:[NUISettings getImage:@"image-selected-highlighted" withClass:className] forState:UIControlStateSelected|UIControlStateHighlighted];
+    }
+    if ([NUISettings hasProperty:@"image-disabled" withClass:className]) {
+        [button setImage:[NUISettings getImage:@"image-disabled" withClass:className] forState:UIControlStateDisabled];
+    }
+    
     [NUILabelRenderer renderText:button.titleLabel withClass:className];
     
     // Set text align
@@ -110,7 +127,7 @@
     if ([NUISettings hasProperty:@"text-shadow-color-selected" withClass:className]) {
         [button setTitleShadowColor:[NUISettings getColor:@"text-shadow-color-selected" withClass:className] forState:UIControlStateSelected];
     }
-    if ([NUISettings hasProperty:@"text-shadow-colo-selected-highlighted" withClass:className]) {
+    if ([NUISettings hasProperty:@"text-shadow-color-selected-highlighted" withClass:className]) {
         [button setTitleShadowColor:[NUISettings getColor:@"text-shadow-color-selected-highlighted" withClass:className] forState:UIControlStateSelected|UIControlStateHighlighted];
     }
     if ([NUISettings hasProperty:@"text-shadow-color-disabled" withClass:className]) {

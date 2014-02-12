@@ -270,6 +270,16 @@ Below are all of the currently available style classes, their corresponding UI c
 * font-name *(FontName)*
 * font-size *(Number)*
 * height *(Number)*
+* image *(Image)*
+* image-insets *(Box)*
+* image-disabled *(Image)*
+* image-disabled-insets *(Box)*
+* image-highlighted *(Image)*
+* image-highlighted-insets *(Box)*
+* image-selected *(Image)*
+* image-selected-insets *(Box)*
+* image-selected-highlighted *(Image)*
+* image-selected-highlighted-insets *(Box)*
 * padding *(Box)*
 * shadow-color *(Color)*
 * shadow-offset *(Offset)*
