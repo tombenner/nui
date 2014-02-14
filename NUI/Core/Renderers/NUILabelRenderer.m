@@ -30,6 +30,14 @@
             label.backgroundColor = [UIColor clearColor];
         }
     }
+    
+    if ([NUISettings hasProperty:@"font-color" withClass:className]) {
+        label.textColor = [NUISettings getColor:@"font-color" withClass:className];
+    }
+    
+    if ([NUISettings hasProperty:@"font-color-highlighted" withClass:className]) {
+        label.highlightedTextColor = [NUISettings getColor:@"font-color-highlighted" withClass:className];
+    }
 
     [NUIViewRenderer renderSize:label withClass:className];
     [NUIViewRenderer renderBorder:label withClass:className];
@@ -40,16 +48,6 @@
 + (void)renderText:(UILabel*)label withClass:(NSString*)className
 {
     NSString *property;
-    
-    property = @"font-color";
-    if ([NUISettings hasProperty:property withClass:className]) {
-        label.textColor = [NUISettings getColor:property withClass:className];
-    }
-    
-    property = @"font-color-highlighted";
-    if ([NUISettings hasProperty:property withClass:className]) {
-        label.highlightedTextColor = [NUISettings getColor:property withClass:className];
-    }
     
     if ([NUISettings hasFontPropertiesWithClass:className]) {
         label.font = [NUISettings getFontWithClass:className baseFont:label.font];
