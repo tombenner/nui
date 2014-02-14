@@ -256,6 +256,8 @@ Below are all of the currently available style classes, their corresponding UI c
 * background-image-highlighted-insets *(Box)*
 * background-image-selected *(Image)*
 * background-image-selected-insets *(Box)*
+* background-image-selected-disabled *(Image)*
+* background-image-selected-disabled-insets *(Box)*
 * background-image-selected-highlighted *(Image)*
 * background-image-selected-highlighted-insets *(Box)*
 * border-color *(Color)*
@@ -266,6 +268,7 @@ Below are all of the currently available style classes, their corresponding UI c
 * font-color-disabled *(Color)*
 * font-color-highlighted *(Color)*
 * font-color-selected *(Color)*
+* font-color-selected-disabled *(Color)*
 * font-color-selected-highlighted *(Color)*
 * font-name *(FontName)*
 * font-size *(Number)*
@@ -278,6 +281,8 @@ Below are all of the currently available style classes, their corresponding UI c
 * image-highlighted-insets *(Box)*
 * image-selected *(Image)*
 * image-selected-insets *(Box)*
+* image-selected-disabled *(Image)*
+* image-selected-disabled-insets *(Box)*
 * image-selected-highlighted *(Image)*
 * image-selected-highlighted-insets *(Box)*
 * padding *(Box)*
@@ -292,6 +297,7 @@ Below are all of the currently available style classes, their corresponding UI c
 * text-shadow-color-disabled *(Color)*
 * text-shadow-color-highlighted *(Color)*
 * text-shadow-color-selected *(Color)*
+* text-shadow-color-selected-disabled *(Color)*
 * text-shadow-color-selected-highlighted *(Color)*
 * text-shadow-offset *(Offset)*
 * title-insets *(Box)*
