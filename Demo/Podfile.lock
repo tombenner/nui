@@ -1,10 +1,10 @@
 PODS:
-  - CoreParse (1.1)
+  - CoreParse@siuying (1.1.0.20140123)
 
 DEPENDENCIES:
-  - CoreParse
+  - CoreParse@siuying
 
 SPEC CHECKSUMS:
-  CoreParse: 11f0ec66ac10a637fc16995b13ca372e2eeb61dc
+  CoreParse@siuying: ba41a5dce2b739e59dc6baf43e85186f14b50c91
 
 COCOAPODS: 0.29.0
