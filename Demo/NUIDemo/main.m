@@ -16,12 +16,13 @@ int main(int argc, char *argv[])
         [NUISettings init];
         
         // Or use this call to use a specific stylesheet
-        //[NUISettings initWithStylesheet:@"Blue.NUI"];
-        
-        // If you uncomment this and set the path to your .nss file, you can modify your .nss
-        // file at runtime
-        //[NUISettings setAutoUpdatePath:@"/path/to/Style.nss"];
-        
+        // [NUISettings initWithStylesheet:@"Blue.NUI"];
+
+        // If you want to use the autoupdate capability uncomment this and set the path
+        // to your .nss file. Comment the lines above.
+        // [NUISettings setAutoUpdatePath:@"/path/to/Style.nss"];
+        // [NUISettings initWithStylesheet:@"Style"];
+
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
 }
