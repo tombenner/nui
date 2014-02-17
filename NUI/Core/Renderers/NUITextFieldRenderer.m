@@ -13,14 +13,8 @@
 
 + (void)render:(UITextField*)textField withClass:(NSString*)className
 {
-    NSString *fontSizeProperty = @"font-size";
-    
-    // Set font name
-    if ([NUISettings hasProperty:@"font-name" withClass:className]) {
-        [textField setFont:[UIFont fontWithName:[NUISettings get:@"font-name" withClass:className] size:[NUISettings getFloat:fontSizeProperty withClass:className]]];
-        // If font-name is undefined but font-size is defined, use systemFont
-    } else if ([NUISettings getFloat:fontSizeProperty withClass:className]) {
-        [textField setFont:[UIFont systemFontOfSize:[NUISettings getFloat:fontSizeProperty withClass:className]]];
+    if ([NUISettings hasFontPropertiesWithClass:className]) {
+        [textField setFont:[NUISettings getFontWithClass:className baseFont:textField.font]];
     }
     
     // Set font color

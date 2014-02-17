@@ -133,6 +133,12 @@ static NUISettings *instance = nil;
     return NO;
 }
 
++ (BOOL)hasFontPropertiesWithClass:(NSString*)className
+{
+    return [self hasProperty:@"font-name" withClass:className] ||
+           [self hasProperty:@"font-size" withClass:className];
+}
+
 + (id)get:(NSString*)property withExplicitClass:(NSString*)className
 {
     NSMutableDictionary *ruleSet = [instance.styles objectForKey:className];
@@ -183,6 +189,46 @@ static NUISettings *instance = nil;
 + (UITableViewCellSeparatorStyle)getSeparatorStyle:(NSString*)property withClass:(NSString*)className
 {
     return [NUIConverter toSeparatorStyle:[self get:property withClass:className]];
+}
+
++ (UIFont*)getFontWithClass:(NSString*)className
+{
+    return [self getFontWithClass:className baseFont:nil];
+}
+
++ (UIFont*)getFontWithClass:(NSString*)className baseFont:(UIFont *)baseFont
+{
+    NSString *propertyName;
+    CGFloat fontSize;
+    UIFont *font = nil;
+    
+    propertyName = @"font-size";
+    
+    if ([self hasProperty:propertyName withClass:className]) {
+        fontSize = [self getFloat:@"font-size" withClass:className];
+    } else {
+        fontSize = baseFont ? baseFont.pointSize : [UIFont systemFontSize];
+    }
+    
+    propertyName = @"font-name";
+    
+    if ([self hasProperty:propertyName withClass:className]) {
+        NSString *fontName = [self get:propertyName withClass:className];
+        
+        if ([fontName isEqualToString:@"system"]) {
+            font = [UIFont systemFontOfSize:fontSize];
+        } else if ([fontName isEqualToString:@"boldSystem"]) {
+            font = [UIFont boldSystemFontOfSize:fontSize];
+        } else if ([fontName isEqualToString:@"italicSystem"]) {
+            font = [UIFont italicSystemFontOfSize:fontSize];
+        } else {
+            font = [UIFont fontWithName:fontName size:fontSize];
+        }
+    } else {
+        font = baseFont ? [baseFont fontWithSize:fontSize] : [UIFont systemFontOfSize:fontSize];
+    }
+    
+    return font;
 }
 
 + (UIColor*)getColor:(NSString*)property withClass:(NSString*)className

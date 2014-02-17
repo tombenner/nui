@@ -14,18 +14,12 @@
 {
     NSMutableDictionary *titleTextAttributes = [NSMutableDictionary dictionary];
     
-    NSString *fontNameSelector = [NUIUtilities selector:@"font-name" withSuffix:suffix];
-    NSString *fontSizeSelector = [NUIUtilities selector:@"font-size" withSuffix:suffix];
     NSString *fontColorSelector = [NUIUtilities selector:@"font-color" withSuffix:suffix];
     NSString *textShadowColorSelector = [NUIUtilities selector:@"text-shadow-color" withSuffix:suffix];
     NSString *textShadowOffsetSelector = [NUIUtilities selector:@"text-shadow-offset" withSuffix:suffix];
     
-    if ([NUISettings hasProperty:fontNameSelector withClass:className] || [NUISettings hasProperty:fontSizeSelector withClass:className]) {
-        NSString *fontName = [NUISettings get:fontNameSelector withClass:className];
-        float fontSize = [NUISettings getFloat:fontSizeSelector withClass:className];
-        
-        fontSize = fontSize ? fontSize : [UIFont systemFontSize];
-        UIFont *font = fontName ? [UIFont fontWithName:fontName size:fontSize] : [UIFont systemFontOfSize:fontSize];
+    if ([NUISettings hasFontPropertiesWithClass:className]) {
+        UIFont *font = [NUISettings getFontWithClass:className];
         
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= 70000
         [titleTextAttributes setObject:font forKey:NSFontAttributeName];
