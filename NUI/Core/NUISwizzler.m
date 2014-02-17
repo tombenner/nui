@@ -28,12 +28,7 @@
     [self swizzleDidMoveToWindow:[UIToolbar class]];
     [self swizzleDidMoveToWindow:[UIControl class]];
     [self swizzleDidMoveToWindow:[UIView class]];
-
-    // didMoveToWindow isn't called on UITabBarItems, so we need to use awakeFromNib instead.
-    [self swizzleAwakeFromNib:[UITabBarItem class]];
-    // didMoveToWindow isn't called on UIBarButtonItem when loaded from a pushed storyboard, use awakeFromNib instead
-    [self swizzleAwakeFromNib:[UIBarButtonItem class]];
-    
+  
     [self swizzle:[UITextField class] methodName:@"textRectForBounds:"];
     [self swizzle:[UITextField class] methodName:@"editingRectForBounds:"];
     [self swizzle:[UIWindow class] methodName:@"becomeKeyWindow"];
@@ -42,11 +37,6 @@
     [self swizzleDealloc:[UITabBar class]];
     [self swizzleDealloc:[UITableViewCell class]];
     [self swizzleDealloc:[UITableView class]];
-}
-
-- (void)swizzleAwakeFromNib:(Class)class
-{
-    [self swizzle:class methodName:@"awakeFromNib"];
 }
 
 - (void)swizzleDidMoveToWindow:(Class)class

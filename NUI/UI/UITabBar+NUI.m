@@ -23,6 +23,10 @@
     if (![self.nuiClass isEqualToString:kNUIClassNone]) {
         [NUIRenderer renderTabBar:self withClass:self.nuiClass];
         [NUIRenderer addOrientationDidChangeObserver:self];
+        
+        for (UITabBarItem *item in self.items) {
+            [item applyNUI];
+        }
     }
     self.nuiApplied = YES;
 }

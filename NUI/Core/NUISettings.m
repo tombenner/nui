@@ -7,6 +7,7 @@
 //
 
 #import "NUISettings.h"
+#import "NUIAppearance.h"
 
 @implementation NUISettings
 
@@ -30,6 +31,8 @@ static NUISettings *instance = nil;
     instance.stylesheetOrientation = [self stylesheetOrientationFromInterfaceOrientation:orientation];
     NUIStyleParser *parser = [[NUIStyleParser alloc] init];
     instance.styles = [parser getStylesFromFile:name];
+    
+    [NUIAppearance init];
 }
 
 + (void)appendStylesheet:(NSString *)name
