@@ -87,4 +87,57 @@
     }
 }
 
++ (BOOL)needsTextTransformWithClass:(NSString*)className
+{
+    return [NUISettings hasProperty:@"text-transform" withClass:className];
+}
+
++ (NSString *)transformText:(NSString*)text withClass:(NSString*)className
+{
+    if (![self needsTextTransformWithClass:className])
+        return text;
+    
+    NSString *property;
+    NSString *transformedText = text;
+    
+    property = @"text-transform";
+    
+    if ([NUISettings hasProperty:property withClass:className]) {
+        NSString *transform = [NUISettings get:property withClass:className];
+        
+        if ([transform isEqualToString:@"uppercase"]) {
+            transformedText = [text uppercaseString];
+        } else if ([transform isEqualToString:@"lowercase"]) {
+            transformedText = [text lowercaseString];
+        } else if ([transform isEqualToString:@"capitalize"]) {
+            transformedText = [text capitalizedString];
+        }
+    }
+    
+    return transformedText;
+}
+
++ (NSAttributedString *)transformAttributedText:(NSAttributedString*)attributedText withClass:(NSString*)className
+{
+    if (![self needsTextTransformWithClass:className])
+        return attributedText;
+    
+    NSMutableArray *attributes = [NSMutableArray array];
+    
+    [attributedText enumerateAttributesInRange:NSMakeRange(0, attributedText.length) options:0 usingBlock:^(NSDictionary *attrs, NSRange range, BOOL *stop) {
+        [attributes addObject:@{@"attrs":attrs, @"range":[NSValue valueWithRange:range]}];
+    }];
+    
+    NSString *transformedText = [self transformText:[attributedText string] withClass:className];
+    
+    NSMutableAttributedString *transformedAttributedText = [attributedText mutableCopy];
+    [transformedAttributedText replaceCharactersInRange:NSMakeRange(0, transformedAttributedText.length) withString:transformedText];
+    
+    for (NSDictionary *attribute in attributes) {
+        [transformedAttributedText setAttributes:attribute[@"attrs"] range:[attribute[@"range"] rangeValue]];
+    }
+
+    return transformedAttributedText;
+}
+
 @end

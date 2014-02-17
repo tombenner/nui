@@ -95,6 +95,10 @@
 + (void)renderWindow:(UIWindow*)window;
 + (void)renderWindow:(UIWindow*)window withClass:(NSString*)className;
 
++ (BOOL)needsTextTransformWithClass:(NSString*)className;
++ (NSString *)transformText:(NSString*)text withClass:(NSString*)className;
++ (NSAttributedString *)transformAttributedText:(NSAttributedString*)text withClass:(NSString*)className;
+
 + (void)sizeDidChangeForNavigationBar:(UINavigationBar*)bar;
 + (void)sizeDidChangeForTabBar:(UITabBar*)bar;
 + (void)sizeDidChangeForTableView:(UITableView*)tableView;
