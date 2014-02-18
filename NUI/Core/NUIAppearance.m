@@ -30,6 +30,10 @@
         [[uiClass appearance] setTintColor:[NUISettings getColor:@"background-tint-color" withClass:className]];
     }
     
+    if ([NUISettings hasProperty:@"tint-color" withClass:className]) {
+        [[uiClass appearance] setTintColor:[NUISettings getColor:@"tint-color" withClass:className]];
+    }
+    
     if ([NUISettings hasProperty:@"background-color" withClass:className] ||
                [NUISettings hasProperty:@"background-color-top" withClass:className]) {
         [[uiClass appearance] setBackButtonBackgroundImage:[NUIGraphics backButtonWithClass:className] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
@@ -48,6 +52,10 @@
         [[uiClass appearance] setBackButtonBackgroundImage:[NUISettings getImage:@"background-image-disabled" withClass:className] forState:UIControlStateDisabled barMetrics:UIBarMetricsDefault];
     }
     
+    if ([NUISettings hasProperty:@"title-offset" withClass:className]) {
+        UIOffset titleOffset = [NUISettings getOffset:@"title-offset" withClass:className];
+        [[uiClass appearance] setBackButtonTitlePositionAdjustment:titleOffset forBarMetrics:UIBarMetricsDefault];
+    }
 }
 
 @end
