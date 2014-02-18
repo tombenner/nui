@@ -28,14 +28,6 @@
     self.nuiApplied = YES;
 }
 
-- (void)override_awakeFromNib
-{
-    if (!self.isNUIApplied) {
-        [self applyNUI];
-    }
-    [self override_awakeFromNib];
-}
-
 - (void)setNuiClass:(NSString*)value {
     objc_setAssociatedObject(self, kNUIAssociatedClassKey, value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
@@ -47,7 +39,6 @@
 - (void)setNuiApplied:(BOOL)value {
     
     objc_setAssociatedObject(self, kNUIAssociatedAppliedFlagKey, [NSNumber numberWithBool:value], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    
 }
 
 - (BOOL)isNUIApplied {

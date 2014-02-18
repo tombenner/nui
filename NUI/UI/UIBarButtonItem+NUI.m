@@ -28,22 +28,6 @@
     self.nuiApplied = YES;
 }
 
-- (void)override_awakeFromNib
-{
-    if (!self.isNUIApplied) {
-        [self applyNUI];
-    }
-    [self override_awakeFromNib];
-}
-
-- (void)override_didMoveToWindow
-{
-    if (!self.isNUIApplied) {
-        [self applyNUI];
-    }
-    [self override_didMoveToWindow];
-}
-
 - (void)setNuiClass:(NSString*)value {
     objc_setAssociatedObject(self, kNUIAssociatedClassKey, value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
