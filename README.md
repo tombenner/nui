@@ -217,8 +217,13 @@ Below are all of the currently available style classes, their corresponding UI c
 * font-color *(Color)*
 * font-name *(FontName)*
 * font-size *(Number)*
+* tint-color *(Color)*
+* background-tint-color *(Color)*
 * text-shadow-color *(Color)*
 * text-shadow-offset *(Offset)*
+
+#### BarButton-highlighted
+*Same properties as BarButton but for highlighted state*
 
 #### BarButtonBack
 
@@ -234,8 +239,13 @@ Below are all of the currently available style classes, their corresponding UI c
 * font-color *(Color)*
 * font-name *(FontName)*
 * font-size *(Number)*
+* tint-color *(Color)*
+* background-tint-color *(Color)*
 * text-shadow-color *(Color)*
 * text-shadow-offset *(Offset)*
+
+#### BarButtonBack-highlighted
+*Same properties as BarButtonBack but for highlighted state*
 
 #### Button
 
