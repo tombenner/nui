@@ -21,9 +21,14 @@
     Class uiClass = [UIBarButtonItem class];
     
     NSDictionary *titleTextAttributes = [NUIUtilities titleTextAttributesForClass:className];
+    NSDictionary *titleTextAttributesHighlighted = [NUIUtilities titleTextAttributesHighlightedForClass:className];
     
     if ([[titleTextAttributes allKeys] count] > 0) {
         [[uiClass appearance] setTitleTextAttributes:titleTextAttributes forState:UIControlStateNormal];
+    }
+    
+    if ([[titleTextAttributesHighlighted allKeys] count] > 0) {
+        [[uiClass appearance] setTitleTextAttributes:titleTextAttributesHighlighted forState:UIControlStateHighlighted];
     }
     
     if ([NUISettings hasProperty:@"background-tint-color" withClass:className]) {

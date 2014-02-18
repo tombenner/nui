@@ -12,11 +12,16 @@
 
 + (NSDictionary*)titleTextAttributesForClass:(NSString*)className withSuffix:(NSString*) suffix
 {
+    return [self titleTextAttributesForClass:className withSuffix:suffix highlightedState:NO];
+}
+
++ (NSDictionary*)titleTextAttributesForClass:(NSString*)className withSuffix:(NSString*) suffix highlightedState:(BOOL)highlighted
+{
     NSMutableDictionary *titleTextAttributes = [NSMutableDictionary dictionary];
     
-    NSString *fontColorSelector = [NUIUtilities selector:@"font-color" withSuffix:suffix];
-    NSString *textShadowColorSelector = [NUIUtilities selector:@"text-shadow-color" withSuffix:suffix];
-    NSString *textShadowOffsetSelector = [NUIUtilities selector:@"text-shadow-offset" withSuffix:suffix];
+    NSString *fontColorSelector = [NUIUtilities selector:@"font-color" withSuffix:suffix highlightedState:highlighted];
+    NSString *textShadowColorSelector = [NUIUtilities selector:@"text-shadow-color" withSuffix:suffix highlightedState:highlighted];
+    NSString *textShadowOffsetSelector = [NUIUtilities selector:@"text-shadow-offset" withSuffix:suffix highlightedState:highlighted];
     
     if ([NUISettings hasFontPropertiesWithClass:className]) {
         UIFont *font = [NUISettings getFontWithClass:className];
@@ -68,10 +73,21 @@
     return [NUIUtilities titleTextAttributesForClass:className withSuffix:nil];
 }
 
-+ (NSString*)selector:(NSString*)selector withSuffix:(NSString*)suffix
++ (NSDictionary*)titleTextAttributesHighlightedForClass:(NSString*)className
+{
+    return [NUIUtilities titleTextAttributesForClass:className withSuffix:nil highlightedState:YES];
+}
+
++ (NSString*)selector:(NSString*)selector withSuffix:(NSString*)suffix highlightedState:(BOOL)highlighted
 {
     if (suffix) {
-        return [NSString stringWithFormat:@"%@-%@", selector, suffix];
+        selector = [NSString stringWithFormat:@"%@-%@", selector, suffix];
+    }
+    
+    if (highlighted) {
+        static NSString *highlightedSuffix = @"highlighted";
+        selector = [NSString stringWithFormat:@"%@-%@", selector, highlightedSuffix];
+        
     }
     return selector;
 }
