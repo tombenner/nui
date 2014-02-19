@@ -27,6 +27,7 @@
     [self swizzleDidMoveToWindow:[UITextField class]];
     [self swizzleDidMoveToWindow:[UIToolbar class]];
     [self swizzleDidMoveToWindow:[UIControl class]];
+    [self swizzleDidMoveToWindow:[UIImageView class]];
     [self swizzleDidMoveToWindow:[UIView class]];
   
     [self swizzle:[UITextField class] methodName:@"textRectForBounds:"];

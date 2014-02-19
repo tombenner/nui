@@ -127,6 +127,10 @@ LargeTextField {
     height: 50;
     font-size: 28;
 }
+ImageView{
+    image:defaultImage.png;
+    image-highlighted:Default-568h@2x.png;
+}
 View {
     background-color: @primaryBackgroundColor;
     background-image: NUIViewBackground.png;

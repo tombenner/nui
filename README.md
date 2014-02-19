@@ -532,6 +532,25 @@ The detail label of a *UITableViewCell*
 * vertical-align *(VerticalAlign)*
 * width *(Number)*
 
+#### ImageView
+
+*UIImageView*
+
+* background-color *(Color)*
+* background-image *(Image)*
+* border-color *(Color)*
+* border-width *(Number)*
+* corner-radius *(Number)*
+* height *(Number)*
+* image *(Image)*
+* image-highlighted*(Image)*
+* shadow-color *(Color)*
+* shadow-offset *(Offset)*
+* shadow-opacity *(Number)*
+* shadow-radius *(Number)*
+* width *(Number)*
+
+
 #### View
 
 *UIView*
