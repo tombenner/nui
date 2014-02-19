@@ -279,6 +279,15 @@ static NUIRenderer *gInstance = nil;
     if ([view respondsToSelector:@selector(applyNUI)]){
         [view applyNUI];
     }
+    
+    if ([view respondsToSelector:@selector(inputAccessoryView)]){
+        if ([view isFirstResponder]) {
+            UIView *inputAccessoryView = [view inputAccessoryView];
+            
+            if (inputAccessoryView)
+                [self rerenderView:inputAccessoryView];
+        }
+    }
 }
 
 + (void)setRerenderOnOrientationChange:(BOOL)rerender
