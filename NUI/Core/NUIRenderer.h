@@ -27,6 +27,7 @@
 #import "NUITableViewCellRenderer.h"
 #import "NUIToolbarRenderer.h"
 #import "NUITextFieldRenderer.h"
+#import "NUITextViewRenderer.h"
 #import "NUIViewRenderer.h"
 #import "NUIWindowRenderer.h"
 #import "UIView+NUI.h"
@@ -88,6 +89,9 @@
 
 + (void)renderTextField:(UITextField*)textField;
 + (void)renderTextField:(UITextField*)textField withClass:(NSString*)className;
+
++ (void)renderTextView:(UITextView*)textView;
++ (void)renderTextView:(UITextView*)textView withClass:(NSString*)className;
 
 + (void)renderView:(UIView*)view;
 + (void)renderView:(UIView*)view withClass:(NSString*)className;

@@ -69,6 +69,8 @@
 		89B940841671418200850A9A /* NUIViewBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B9404A1671418100850A9A /* NUIViewBackground.png */; };
 		B51BC28A169724A3004A38F8 /* UISwitch+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = B51BC289169724A3004A38F8 /* UISwitch+NUI.m */; };
 		B51BC28E16972527004A38F8 /* NUISwitchRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = B51BC28D16972527004A38F8 /* NUISwitchRenderer.m */; };
+		CB8A031017CC1F7C0065A7DD /* NUITextViewRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8A030F17CC1F7C0065A7DD /* NUITextViewRenderer.m */; };
+		CB8A031317CC1FCB0065A7DD /* UITextView+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8A031217CC1FCB0065A7DD /* UITextView+NUI.m */; };
 		D8E7168116B8AF4400686854 /* NUIControlRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E7168016B8AF4300686854 /* NUIControlRenderer.m */; };
 		D8E7168516B9980300686854 /* UIControl+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E7168416B9980300686854 /* UIControl+NUI.m */; };
 		D983DEE5169DBCCD00A3A180 /* NUIToolbarRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = D983DEE4169DBCCC00A3A180 /* NUIToolbarRenderer.m */; };
@@ -201,6 +203,10 @@
 		B51BC28C16972527004A38F8 /* NUISwitchRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUISwitchRenderer.h; sourceTree = "<group>"; };
 		B51BC28D16972527004A38F8 /* NUISwitchRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISwitchRenderer.m; sourceTree = "<group>"; };
 		B8B8BB2BB5E6412588AE14FA /* libPods-NUIDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NUIDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB8A030E17CC1F7C0065A7DD /* NUITextViewRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUITextViewRenderer.h; sourceTree = "<group>"; };
+		CB8A030F17CC1F7C0065A7DD /* NUITextViewRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUITextViewRenderer.m; sourceTree = "<group>"; };
+		CB8A031117CC1FCB0065A7DD /* UITextView+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+NUI.h"; sourceTree = "<group>"; };
+		CB8A031217CC1FCB0065A7DD /* UITextView+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+NUI.m"; sourceTree = "<group>"; };
 		D8E7167F16B8AF4300686854 /* NUIControlRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIControlRenderer.h; sourceTree = "<group>"; };
 		D8E7168016B8AF4300686854 /* NUIControlRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIControlRenderer.m; sourceTree = "<group>"; };
 		D8E7168316B9980300686854 /* UIControl+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+NUI.h"; sourceTree = "<group>"; };
@@ -420,6 +426,8 @@
 				89B940411671418100850A9A /* NUITableViewCellRenderer.m */,
 				89B940421671418100850A9A /* NUITextFieldRenderer.h */,
 				89B940431671418100850A9A /* NUITextFieldRenderer.m */,
+				CB8A030E17CC1F7C0065A7DD /* NUITextViewRenderer.h */,
+				CB8A030F17CC1F7C0065A7DD /* NUITextViewRenderer.m */,
 				D983DEE3169DBCCB00A3A180 /* NUIToolbarRenderer.h */,
 				D983DEE4169DBCCC00A3A180 /* NUIToolbarRenderer.m */,
 				89B940441671418100850A9A /* NUIViewRenderer.h */,
@@ -473,6 +481,8 @@
 				4A55F08716758EDA0056753C /* UITableViewCell+NUI.m */,
 				4A55F08916758F360056753C /* UITextField+NUI.h */,
 				4A55F08A16758F360056753C /* UITextField+NUI.m */,
+				CB8A031117CC1FCB0065A7DD /* UITextView+NUI.h */,
+				CB8A031217CC1FCB0065A7DD /* UITextView+NUI.m */,
 				D983DEE6169DC05300A3A180 /* UIToolbar+NUI.h */,
 				D983DEE7169DC05300A3A180 /* UIToolbar+NUI.m */,
 				4A55F076167570C10056753C /* UIView+NUI.h */,
@@ -684,6 +694,8 @@
 				E291BBD7179C89470016BC1D /* NUITableViewRenderer.m in Sources */,
 				E291BBDA179C89710016BC1D /* UITableView+NUI.m in Sources */,
 				EAB69D45188625E900358420 /* NUIParserDelegate.m in Sources */,
+				CB8A031017CC1F7C0065A7DD /* NUITextViewRenderer.m in Sources */,
+				CB8A031317CC1FCB0065A7DD /* UITextView+NUI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
