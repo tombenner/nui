@@ -11,5 +11,6 @@
 #import "NUIRenderer.h"
 
 @interface UIButton (NUI)
-
+@property (nonatomic, retain) CALayer* gradientLayer;
 @end
+
