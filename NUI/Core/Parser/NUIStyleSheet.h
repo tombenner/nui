@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Tom Benner. All rights reserved.
 //
 
-#import "CoreParse.h"
+#import "NUIParse.h"
 
-@interface NUIStyleSheet : NSObject <CPParseResult>
+@interface NUIStyleSheet : NSObject <NUIPParseResult>
 
 @property NSArray *ruleSets;
 @property NSArray *definitions;

@@ -8,13 +8,13 @@
 
 #import "NUIMediaOptionSet.h"
 
-@interface NUIDelimitedMediaOption : NSObject<CPParseResult>
+@interface NUIDelimitedMediaOption : NSObject<NUIPParseResult>
 @property (strong) NUIMediaOption *mediaOption;
 @end
 
 @implementation NUIMediaOption
 
-- (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree
+- (id)initWithSyntaxTree:(NUIPSyntaxTree *)syntaxTree
 {
     self = [self init];
     
@@ -35,7 +35,7 @@
 
 @implementation NUIDelimitedMediaOption
 
-- (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree
+- (id)initWithSyntaxTree:(NUIPSyntaxTree *)syntaxTree
 {
     self = [self init];
     
@@ -55,7 +55,7 @@
 
 @implementation NUIMediaOptionSet
 
-- (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree
+- (id)initWithSyntaxTree:(NUIPSyntaxTree *)syntaxTree
 {
     self = [self init];
     

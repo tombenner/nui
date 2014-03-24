@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Tom Benner. All rights reserved.
 //
 
-#import "CoreParse.h"
+#import "NUIParse.h"
 
-@interface NUIDefinition : NSObject<CPParseResult>
+@interface NUIDefinition : NSObject<NUIPParseResult>
 
 @property (strong) NSString *variable;
 @property (strong) NSString *value;

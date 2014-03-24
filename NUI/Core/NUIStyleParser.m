@@ -7,8 +7,8 @@
 //
 
 #import "NUIStyleParser.h"
-#import "CoreParse.h"
-#import "CPTokeniser.h"
+#import "NUIParse.h"
+#import "NUIPTokeniser.h"
 #import "NUITokeniserDelegate.h"
 #import "NUIParserDelegate.h"
 #import "NUIStyleSheet.h"
@@ -109,16 +109,16 @@
 
 - (NUIStyleSheet *)parse:(NSString *)styles
 {
-    CPTokeniser *tokeniser = [[CPTokeniser alloc] init];
+    NUIPTokeniser *tokeniser = [[NUIPTokeniser alloc] init];
         
 
-    [tokeniser addTokenRecogniser:[CPWhiteSpaceRecogniser whiteSpaceRecogniser]];
-    [tokeniser addTokenRecogniser:[CPQuotedRecogniser quotedRecogniserWithStartQuote:@"/*"
+    [tokeniser addTokenRecogniser:[NUIPWhiteSpaceRecogniser whiteSpaceRecogniser]];
+    [tokeniser addTokenRecogniser:[NUIPQuotedRecogniser quotedRecogniserWithStartQuote:@"/*"
                                                                             endQuote:@"*/"
                                                                                 name:@"Comment"]];
     
-    [tokeniser addTokenRecogniser:[CPKeywordRecogniser recogniserForKeyword:@"@media"]];
-    [tokeniser addTokenRecogniser:[CPKeywordRecogniser recogniserForKeyword:@"and"]];
+    [tokeniser addTokenRecogniser:[NUIPKeywordRecogniser recogniserForKeyword:@"@media"]];
+    [tokeniser addTokenRecogniser:[NUIPKeywordRecogniser recogniserForKeyword:@"and"]];
 
     NSCharacterSet *idCharacters = [NSCharacterSet characterSetWithCharactersInString:
                                     @"abcdefghijklmnopqrstuvwxyz"
@@ -130,15 +130,15 @@
                                            @"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                                            @"0123456789"
                                            @"#@-_\\."];
-    [tokeniser addTokenRecogniser:[CPIdentifierRecogniser identifierRecogniserWithInitialCharacters:initialIdCharacters identifierCharacters:idCharacters]];
+    [tokeniser addTokenRecogniser:[NUIPIdentifierRecogniser identifierRecogniserWithInitialCharacters:initialIdCharacters identifierCharacters:idCharacters]];
    
-    [tokeniser addTokenRecogniser:[CPKeywordRecogniser recogniserForKeyword:@":"]];
-    [tokeniser addTokenRecogniser:[CPKeywordRecogniser recogniserForKeyword:@"{"]];
-    [tokeniser addTokenRecogniser:[CPKeywordRecogniser recogniserForKeyword:@"}"]];
-    [tokeniser addTokenRecogniser:[CPKeywordRecogniser recogniserForKeyword:@"("]];
-    [tokeniser addTokenRecogniser:[CPKeywordRecogniser recogniserForKeyword:@")"]];
-    [tokeniser addTokenRecogniser:[CPKeywordRecogniser recogniserForKeyword:@","]];
-    [tokeniser addTokenRecogniser:[CPKeywordRecogniser recogniserForKeyword:@";"]];
+    [tokeniser addTokenRecogniser:[NUIPKeywordRecogniser recogniserForKeyword:@":"]];
+    [tokeniser addTokenRecogniser:[NUIPKeywordRecogniser recogniserForKeyword:@"{"]];
+    [tokeniser addTokenRecogniser:[NUIPKeywordRecogniser recogniserForKeyword:@"}"]];
+    [tokeniser addTokenRecogniser:[NUIPKeywordRecogniser recogniserForKeyword:@"("]];
+    [tokeniser addTokenRecogniser:[NUIPKeywordRecogniser recogniserForKeyword:@")"]];
+    [tokeniser addTokenRecogniser:[NUIPKeywordRecogniser recogniserForKeyword:@","]];
+    [tokeniser addTokenRecogniser:[NUIPKeywordRecogniser recogniserForKeyword:@";"]];
     
     NUITokeniserDelegate *tokenizerDelegate = [[NUITokeniserDelegate alloc] init];
     tokeniser.delegate = tokenizerDelegate;
@@ -162,7 +162,7 @@
         ;
     
     NSError *err = nil;
-    CPGrammar *grammar = [CPGrammar grammarWithStart:@"NUIStyleSheet"
+    NUIPGrammar *grammar = [NUIPGrammar grammarWithStart:@"NUIStyleSheet"
                                       backusNaurForm:expressionGrammar
                                                error:&err];
     if (!grammar) {
@@ -170,7 +170,7 @@
         return nil;
     }
     
-    CPParser *parser = [CPLALR1Parser parserWithGrammar:grammar];
+    NUIPParser *parser = [NUIPLALR1Parser parserWithGrammar:grammar];
     
     if (!parser)
         return nil;
@@ -178,7 +178,7 @@
     NUIParserDelegate *parserDelegate = [[NUIParserDelegate alloc] init];
     parser.delegate = parserDelegate;
     
-    CPTokenStream *tokenStream = [tokeniser tokenise:styles];
+    NUIPTokenStream *tokenStream = [tokeniser tokenise:styles];
     return [parser parse:tokenStream];
 }
 

@@ -36,6 +36,14 @@
 			<key>IDESourceControlWCCName</key>
 			<string>nui</string>
 		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>692A6072-293F-45FE-A857-43303F827BCE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>NUIParse</string>
+		</dict>
 	</array>
 </dict>
 </plist>

@@ -1,10 +1,1 @@
-PODS:
-  - CoreParse (1.1)
-
-DEPENDENCIES:
-  - CoreParse
-
-SPEC CHECKSUMS:
-  CoreParse: 11f0ec66ac10a637fc16995b13ca372e2eeb61dc
-
 COCOAPODS: 0.29.0
