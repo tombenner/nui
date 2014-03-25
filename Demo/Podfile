@@ -1,3 +1,4 @@
 target "NUIDemo" do
+  pod "NUIParse", :git => "https://github.com/tombenner/NUIParse"
 end
 
