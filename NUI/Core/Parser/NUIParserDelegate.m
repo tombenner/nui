@@ -13,14 +13,14 @@ NSString *flattenTokens(NSArray *tokens);
 
 @implementation NUIParserDelegate
 
-- (id)parser:(CPParser *)parser didProduceSyntaxTree:(CPSyntaxTree *)syntaxTree
+- (id)parser:(NUIPParser *)parser didProduceSyntaxTree:(NUIPSyntaxTree *)syntaxTree
 {
     return flattenTokens(syntaxTree.children);
 }
 
-- (CPRecoveryAction *)parser:(CPParser *)parser didEncounterErrorOnInput:(CPTokenStream *)inputStream expecting:(NSSet *)acceptableTokens
+- (NUIPRecoveryAction *)parser:(NUIPParser *)parser didEncounterErrorOnInput:(NUIPTokenStream *)inputStream expecting:(NSSet *)acceptableTokens
 {
-    return [CPRecoveryAction recoveryActionStop];
+    return [NUIPRecoveryAction recoveryActionStop];
 }
 
 NSString *flattenTokens(NSArray *tokens)

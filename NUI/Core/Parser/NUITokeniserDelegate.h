@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Tom Benner. All rights reserved.
 //
 
-#import "CoreParse.h"
+#import "NUIParse.h"
 
-@interface NUITokeniserDelegate : NSObject <CPTokeniserDelegate>
+@interface NUITokeniserDelegate : NSObject <NUIPTokeniserDelegate>
 
 @end

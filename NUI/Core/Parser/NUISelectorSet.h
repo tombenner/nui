@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Tom Benner. All rights reserved.
 //
 
-#import "CoreParse.h"
+#import "NUIParse.h"
 
-@interface NUISelectorSet : NSObject<CPParseResult>
+@interface NUISelectorSet : NSObject<NUIPParseResult>
 
 @property (strong) NSArray *selectors;
 

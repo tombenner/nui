@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Tom Benner. All rights reserved.
 //
 
-#import "CoreParse.h"
+#import "NUIParse.h"
 
-@interface NUIParserDelegate : NSObject <CPParserDelegate>
+@interface NUIParserDelegate : NSObject <NUIPParserDelegate>
 
 @end

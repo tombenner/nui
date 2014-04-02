@@ -11,14 +11,14 @@
 #import "NUIDefinition.h"
 #import "NUIMediaOptionSet.h"
 
-@interface NUIMediaBlockItem : NSObject<CPParseResult>
+@interface NUIMediaBlockItem : NSObject<NUIPParseResult>
 @property (strong) NUIRuleSet *ruleSet;
 @property (strong) NUIDefinition *definition;
 @end
 
 @implementation NUIMediaBlockItem
 
-- (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree
+- (id)initWithSyntaxTree:(NUIPSyntaxTree *)syntaxTree
 {
     self = [self init];
     
@@ -40,7 +40,7 @@
 
 @implementation NUIMediaBlock
 
-- (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree
+- (id)initWithSyntaxTree:(NUIPSyntaxTree *)syntaxTree
 {
     self = [self init];
     

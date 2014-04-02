@@ -8,17 +8,17 @@
 
 #import "NUISelectorSet.h"
 
-@interface NUISelector : NSObject<CPParseResult>
+@interface NUISelector : NSObject<NUIPParseResult>
 @property (strong) NSString *name;
 @end
 
-@interface NUIDelimitedSelector : NSObject<CPParseResult>
+@interface NUIDelimitedSelector : NSObject<NUIPParseResult>
 @property (strong) NUISelector *selector;
 @end
 
 @implementation NUISelector
 
-- (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree
+- (id)initWithSyntaxTree:(NUIPSyntaxTree *)syntaxTree
 {
     self = [self init];
     
@@ -38,7 +38,7 @@
 
 @implementation NUIDelimitedSelector
 
-- (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree
+- (id)initWithSyntaxTree:(NUIPSyntaxTree *)syntaxTree
 {
     self = [self init];
     
@@ -58,7 +58,7 @@
 
 @implementation NUISelectorSet
 
-- (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree
+- (id)initWithSyntaxTree:(NUIPSyntaxTree *)syntaxTree
 {
     self = [self init];
     

@@ -11,7 +11,7 @@
 
 @implementation NUIDefinition
 
-- (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree
+- (id)initWithSyntaxTree:(NUIPSyntaxTree *)syntaxTree
 {
     self = [self init];
     

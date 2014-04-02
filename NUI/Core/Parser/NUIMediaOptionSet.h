@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Tom Benner. All rights reserved.
 //
 
-#import "CoreParse.h"
+#import "NUIParse.h"
 
-@interface NUIMediaOption : NSObject<CPParseResult>
+@interface NUIMediaOption : NSObject<NUIPParseResult>
 
 @property (strong) NSString *property;
 @property (strong) NSString *value;
@@ -16,7 +16,7 @@
 @end
 
 
-@interface NUIMediaOptionSet : NSObject<CPParseResult>
+@interface NUIMediaOptionSet : NSObject<NUIPParseResult>
 
 @property (strong) NSDictionary *mediaOptions;
 

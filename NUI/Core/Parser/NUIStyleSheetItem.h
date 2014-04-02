@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Tom Benner. All rights reserved.
 //
 
-#import "CoreParse.h"
+#import "NUIParse.h"
 
 @class NUIRuleSet, NUIDefinition, NUIMediaBlock;
 
-@interface NUIStyleSheetItem : NSObject<CPParseResult>
+@interface NUIStyleSheetItem : NSObject<NUIPParseResult>
 
 @property (strong) NSArray *ruleSets;
 @property (strong) NSArray *definitions;

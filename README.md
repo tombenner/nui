@@ -59,12 +59,19 @@ Some exciting features are on the horizon, and contributions are very encouraged
 
 Installation
 ------------
+
+### CocoaPods
+
+NUI is most easily installed using [CocoaPods](http://cocoapods.org/). Its pod name is "NUI". After installing it, add `[NUISettings init];` to `application:didFinishLaunchingWithOptions` in AppDelegate.m (like [this](https://github.com/tombenner/nui/blob/master/Demo/NUIDemo/AppDelegate.m)).
+
+### Without CocoaPods
+
+If you choose not to use CocoaPods, you can install NUI with these steps:
+
 1. Copy the NUI directory into your application
 2. Add the CoreImage and QuartzCore frameworks to your application if you haven't already (like [this](http://stackoverflow.com/a/3377682))
 3. Add [CoreParse](https://github.com/beelsebob/CoreParse) as a subproject, set its iOSCoreParse target as a dependency of your target, and add libCoreParse.a to your linked libraries.
 4. Add `[NUISettings init];` to `application:didFinishLaunchingWithOptions` in AppDelegate.m (like [this](https://github.com/tombenner/nui/blob/master/Demo/NUIDemo/AppDelegate.m))
-
-NUI can also be installed using [CocoaPods](http://cocoapods.org/) (its pod name is "NUI"). Steps 4 is still required.
 
 The Demo uses CocoaPods, so you'll want to [install CocoaPods](http://cocoapods.org/), run `pod install` in the `Demo` directory, and then open the .xcworkspace to open the project.
 

@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Tom Benner. All rights reserved.
 //
 
-#import "CoreParse.h"
+#import "NUIParse.h"
 
-@interface NUIMediaBlock : NSObject<CPParseResult>
+@interface NUIMediaBlock : NSObject<NUIPParseResult>
 
 @property (strong) NSArray *ruleSets;
 @property (strong) NSArray *definitions;
