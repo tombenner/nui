@@ -14,11 +14,7 @@
 {
     if ([NUISettings hasProperty:@"background-image" withClass:className]) {
         UIImage *image = [NUISettings getImage:@"background-image" withClass:className];
-        if ([view isKindOfClass:[UIImageView class]]) {
-            [(UIImageView *) view setImage:image];
-        } else {
-            view.layer.contents = (id)image.CGImage;
-        }
+        view.layer.contents = (id)image.CGImage;
     } else if ([NUISettings hasProperty:@"background-color" withClass:className]) {
         [view setBackgroundColor: [NUISettings getColor:@"background-color" withClass: className]];
     } else if ([NUISettings hasProperty:@"background-image-pattern" withClass:className]) {
