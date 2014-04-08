@@ -13,7 +13,11 @@
 + (void)render:(UIView*)view withClass:(NSString*)className
 {
     if ([NUISettings hasProperty:@"background-image" withClass:className]) {
-        [view setBackgroundColor: [NUISettings getColorFromImage:@"background-image" withClass: className]];
+        if ([NUISettings hasProperty:@"background-repeat" withClass:className] && ![NUISettings getBoolean:@"background-repeat" withClass:className]) {
+            view.layer.contents = (__bridge id)[NUISettings getImage:@"background-image" withClass:className].CGImage;
+        } else {
+            [view setBackgroundColor: [NUISettings getColorFromImage:@"background-image" withClass: className]];
+        }
     } else if ([NUISettings hasProperty:@"background-color" withClass:className]) {
         [view setBackgroundColor: [NUISettings getColor:@"background-color" withClass: className]];
     }
