@@ -130,19 +130,25 @@
                                  uppercaseString];
     
     NSArray *hexStrings = [NUIConverter getCapturedStrings:cString
-                                               withPattern:@"(?:0X|#)([0-9A-F]{6})"];
+                                               withPattern:@"(?:0X|#)([0-9A-F]{8}|[0-9A-F]{6})"];
     NSArray *csStrings = [NUIConverter getCapturedStrings:cString
                                               withPattern:@"(RGB|RGBA|HSL|HSLA)\\((\\d{1,3}|[0-9.]+),(\\d{1,3}|[0-9.]+),(\\d{1,3}|[0-9.]+)(?:,(\\d{1,3}|[0-9.]+))?\\)"];
     
     UIColor *color = nil;
     
-    if (hexStrings) {        
+    if (hexStrings) {
         unsigned int c;
-        [[NSScanner scannerWithString:[hexStrings objectAtIndex:1]] scanHexInt:&c];
-        color = [UIColor colorWithRed:(float)((c >> 16) & 0xFF) / 255.0f
+        NSString *hexString = [hexStrings objectAtIndex:1];
+        [[NSScanner scannerWithString:hexString] scanHexInt:&c];
+        color = [hexString length] == 6?
+                [UIColor colorWithRed:(float)((c >> 16) & 0xFF) / 255.0f
                                 green:(float)((c >>  8) & 0xFF) / 255.0f
                                  blue:(float)((c >>  0) & 0xFF) / 255.0f
-                                alpha:1.0f];
+                                alpha:1.f]
+               :[UIColor colorWithRed:(float)((c >> 24) & 0xFF) / 255.0f
+                                green:(float)((c >> 16) & 0xFF) / 255.0f
+                                 blue:(float)((c >>  8) & 0xFF) / 255.0f
+                                alpha:(float)((c >>  0) & 0xFF) / 255.0f];
     } else if (csStrings) {
         BOOL isRGB = [[csStrings objectAtIndex:1] hasPrefix:@"RGB"];
         BOOL isAlpha = [[csStrings objectAtIndex:1] hasSuffix:@"A"];
