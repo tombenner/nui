@@ -144,7 +144,7 @@
                 [UIColor colorWithRed:(float)((c >> 16) & 0xFF) / 255.0f
                                 green:(float)((c >>  8) & 0xFF) / 255.0f
                                  blue:(float)((c >>  0) & 0xFF) / 255.0f
-                                alpha:1.f]
+                                alpha:1.0f]
                :[UIColor colorWithRed:(float)((c >> 24) & 0xFF) / 255.0f
                                 green:(float)((c >> 16) & 0xFF) / 255.0f
                                  blue:(float)((c >>  8) & 0xFF) / 255.0f
