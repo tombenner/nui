@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E8A86B218EC07C40027F275 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0B8637165EE59A005B5756 /* Foundation.framework */; };
+		0E8A86B318EC07C40027F275 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0B8635165EE59A005B5756 /* UIKit.framework */; };
+		0E8A86B918EC07C40027F275 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E8A86B718EC07C40027F275 /* InfoPlist.strings */; };
+		0E8A86C318EC08970027F275 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8A86C218EC08970027F275 /* XCTest.framework */; };
 		41A0DE98FD464C508748F886 /* libPods-NUIDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8B8BB2BB5E6412588AE14FA /* libPods-NUIDemo.a */; };
 		4A0B8636165EE59A005B5756 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0B8635165EE59A005B5756 /* UIKit.framework */; };
 		4A0B8638165EE59A005B5756 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0B8637165EE59A005B5756 /* Foundation.framework */; };
@@ -93,7 +97,23 @@
 		FC280DB916F127DE00B01664 /* UIProgressView+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = FC280DB816F127DE00B01664 /* UIProgressView+NUI.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0E8A86BD18EC07C40027F275 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A0B8628165EE59A005B5756 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A0B8630165EE59A005B5756;
+			remoteInfo = NUIDemo;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		0E8A86AF18EC07C40027F275 /* NUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E8A86B018EC07C40027F275 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		0E8A86B618EC07C40027F275 /* NUITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NUITests-Info.plist"; sourceTree = "<group>"; };
+		0E8A86B818EC07C40027F275 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0E8A86BC18EC07C40027F275 /* NUITests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NUITests-Prefix.pch"; sourceTree = "<group>"; };
+		0E8A86C218EC08970027F275 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		1E043EFF5B2E44ADB1F5461C /* Pods-NUIDemo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NUIDemo.xcconfig"; path = "Pods/Pods-NUIDemo.xcconfig"; sourceTree = "<group>"; };
 		3AE80CFA17E0EB290065FB3D /* NUIConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIConstants.h; sourceTree = "<group>"; };
 		4A0B8631165EE59A005B5756 /* NUIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NUIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -250,6 +270,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0E8A86AC18EC07C40027F275 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E8A86C318EC08970027F275 /* XCTest.framework in Frameworks */,
+				0E8A86B318EC07C40027F275 /* UIKit.framework in Frameworks */,
+				0E8A86B218EC07C40027F275 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4A0B862E165EE59A005B5756 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -266,10 +296,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E8A86B418EC07C40027F275 /* NUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0E8A86B518EC07C40027F275 /* Supporting Files */,
+			);
+			path = NUITests;
+			sourceTree = "<group>";
+		};
+		0E8A86B518EC07C40027F275 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0E8A86B618EC07C40027F275 /* NUITests-Info.plist */,
+				0E8A86B718EC07C40027F275 /* InfoPlist.strings */,
+				0E8A86BC18EC07C40027F275 /* NUITests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		4A0B8626165EE59A005B5756 = {
 			isa = PBXGroup;
 			children = (
 				4A0B863B165EE59A005B5756 /* NUIDemo */,
+				0E8A86B418EC07C40027F275 /* NUITests */,
 				4A0B8634165EE59A005B5756 /* Frameworks */,
 				4A0B8632165EE59A005B5756 /* Products */,
 				1E043EFF5B2E44ADB1F5461C /* Pods-NUIDemo.xcconfig */,
@@ -280,6 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				4A0B8631165EE59A005B5756 /* NUIDemo.app */,
+				0E8A86AF18EC07C40027F275 /* NUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -287,12 +337,14 @@
 		4A0B8634165EE59A005B5756 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0E8A86C218EC08970027F275 /* XCTest.framework */,
 				4A4FC62016629C4D0058031B /* CoreImage.framework */,
 				4A0B8680165EE917005B5756 /* QuartzCore.framework */,
 				4A0B8635165EE59A005B5756 /* UIKit.framework */,
 				4A0B8637165EE59A005B5756 /* Foundation.framework */,
 				4A0B8639165EE59A005B5756 /* CoreGraphics.framework */,
 				B8B8BB2BB5E6412588AE14FA /* libPods-NUIDemo.a */,
+				0E8A86B018EC07C40027F275 /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -525,6 +577,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0E8A86AE18EC07C40027F275 /* NUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E8A86BF18EC07C40027F275 /* Build configuration list for PBXNativeTarget "NUITests" */;
+			buildPhases = (
+				0E8A86AB18EC07C40027F275 /* Sources */,
+				0E8A86AC18EC07C40027F275 /* Frameworks */,
+				0E8A86AD18EC07C40027F275 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0E8A86BE18EC07C40027F275 /* PBXTargetDependency */,
+			);
+			name = NUITests;
+			productName = NUITests;
+			productReference = 0E8A86AF18EC07C40027F275 /* NUITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		4A0B8630165EE59A005B5756 /* NUIDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A0B864F165EE59A005B5756 /* Build configuration list for PBXNativeTarget "NUIDemo" */;
@@ -552,6 +622,11 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Tom Benner";
+				TargetAttributes = {
+					0E8A86AE18EC07C40027F275 = {
+						TestTargetID = 4A0B8630165EE59A005B5756;
+					};
+				};
 			};
 			buildConfigurationList = 4A0B862B165EE59A005B5756 /* Build configuration list for PBXProject "NUIDemo" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -566,11 +641,20 @@
 			projectRoot = "";
 			targets = (
 				4A0B8630165EE59A005B5756 /* NUIDemo */,
+				0E8A86AE18EC07C40027F275 /* NUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0E8A86AD18EC07C40027F275 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E8A86B918EC07C40027F275 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4A0B862F165EE59A005B5756 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -627,6 +711,13 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0E8A86AB18EC07C40027F275 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4A0B862D165EE59A005B5756 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -701,7 +792,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		0E8A86BE18EC07C40027F275 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A0B8630165EE59A005B5756 /* NUIDemo */;
+			targetProxy = 0E8A86BD18EC07C40027F275 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		0E8A86B718EC07C40027F275 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0E8A86B818EC07C40027F275 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		4A0B863E165EE59A005B5756 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -729,6 +836,63 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0E8A86C018EC07C40027F275 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NUIDemo.app/NUIDemo";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NUITests/NUITests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "NUITests/NUITests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		0E8A86C118EC07C40027F275 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NUIDemo.app/NUIDemo";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NUITests/NUITests-Prefix.pch";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "NUITests/NUITests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 		4A0B864D165EE59A005B5756 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -822,6 +986,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0E8A86BF18EC07C40027F275 /* Build configuration list for PBXNativeTarget "NUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E8A86C018EC07C40027F275 /* Debug */,
+				0E8A86C118EC07C40027F275 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4A0B862B165EE59A005B5756 /* Build configuration list for PBXProject "NUIDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
