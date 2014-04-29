@@ -7,6 +7,7 @@
 //
 
 #import "NUIBarButtonItemRenderer.h"
+#import "UIBarButtonItem+NUI.h"
 
 @implementation NUIBarButtonItemRenderer
 
@@ -28,11 +29,15 @@
                                               gradientLayerWithTop:[NUISettings getColor:@"background-color-top" withClass:className]
                                               bottom:[NUISettings getColor:@"background-color-bottom" withClass:className]
                                               frame:layer.frame];
-            int backgroundLayerIndex = 0;
-            if (item.isNUIApplied) {
-                [[layer.sublayers objectAtIndex:backgroundLayerIndex] removeFromSuperlayer];
+            
+            if (item.gradientLayer) {
+                [layer replaceSublayer:item.gradientLayer with:gradientLayer];
+            } else {
+                int backgroundLayerIndex = 0;
+                [layer insertSublayer:gradientLayer atIndex:backgroundLayerIndex];
             }
-            [layer insertSublayer:gradientLayer atIndex:backgroundLayerIndex];
+            
+            item.gradientLayer = gradientLayer;
         }
         
         if ([NUISettings hasProperty:@"background-color" withClass:className]) {
