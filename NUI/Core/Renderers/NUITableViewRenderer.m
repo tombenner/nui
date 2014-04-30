@@ -41,6 +41,7 @@
     if ([NUISettings hasProperty:@"background-color" withClass:className]) {
         UIImage *colorImage = [NUISettings getImageFromColor:@"background-color" withClass:className];
         tableView.backgroundView = [[UIImageView alloc] initWithImage:colorImage];
+        tableView.backgroundView.layer.zPosition -= 1;
     }
     
     // Set background gradient
