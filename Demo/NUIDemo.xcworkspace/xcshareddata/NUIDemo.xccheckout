@@ -5,44 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>B9667FE7-C459-4DDD-B66F-BB348A30B6BB</string>
+	<string>A46DCE8E-2747-4AE8-B2D7-5BEE7F39F863</string>
 	<key>IDESourceControlProjectName</key>
 	<string>NUIDemo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>E3A5F644-F3C5-4603-BEE6-2B513C9EE613</key>
-		<string>ssh://github.com/tombenner/nui.git</string>
+		<key>EA68DD74-875E-4BED-AA63-9E80568D4D5B</key>
+		<string>ssh://github.com/squarefrog/nui.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Demo/NUIDemo.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>E3A5F644-F3C5-4603-BEE6-2B513C9EE613</key>
+		<key>EA68DD74-875E-4BED-AA63-9E80568D4D5B</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/tombenner/nui.git</string>
+	<string>ssh://github.com/squarefrog/nui.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>E3A5F644-F3C5-4603-BEE6-2B513C9EE613</string>
+	<string>EA68DD74-875E-4BED-AA63-9E80568D4D5B</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>E3A5F644-F3C5-4603-BEE6-2B513C9EE613</string>
+			<string>EA68DD74-875E-4BED-AA63-9E80568D4D5B</string>
 			<key>IDESourceControlWCCName</key>
 			<string>nui</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>692A6072-293F-45FE-A857-43303F827BCE</string>
-			<key>IDESourceControlWCCName</key>
-			<string>NUIParse</string>
 		</dict>
 	</array>
 </dict>

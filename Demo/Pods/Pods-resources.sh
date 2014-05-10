@@ -41,6 +41,15 @@ install_resource()
       ;;
   esac
 }
+install_resource "NUI/NUI/Resources/NUIViewBackground.png"
+install_resource "NUI/NUI/NUIStyle.nss"
+install_resource "NUI/NUI/Themes/Blue.NUI.nss"
+install_resource "NUI/NUI/Themes/Default.NUI.nss"
+install_resource "NUI/NUI/Themes/Googolplex.NUI.nss"
+install_resource "NUI/NUI/Themes/Round.NUI.nss"
+install_resource "NUI/NUI/Themes/Route.NUI.nss"
+install_resource "NUI/NUI/Themes/SkyBlue.NUI.nss"
+install_resource "NUI/NUI/Themes/Switchboard.NUI.nss"
 
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 if [[ "${ACTION}" == "install" ]]; then
