@@ -125,10 +125,12 @@
         [button setTitleColor:[NUISettings getColor:@"font-color-selected" withClass:className] forState:UIControlStateSelected];
     }
     if ([NUISettings hasProperty:@"font-color-selected-highlighted" withClass:className]) {
-        [button setTitleColor:[NUISettings getColor:@"font-color-selected-highlighted" withClass:className] forState:UIControlStateSelected|UIControlStateHighlighted];
+        [button setTitleColor:[NUISettings getColor:@"font-color-selected-highlighted" withClass:className] forState:UIControlStateSelected];
+        [button setTitleColor:[NUISettings getColor:@"font-color-selected-highlighted" withClass:className] forState:UIControlStateHighlighted];
     }
     if ([NUISettings hasProperty:@"font-color-selected-disabled" withClass:className]) {
-        [button setTitleColor:[NUISettings getColor:@"font-color-selected-disabled" withClass:className] forState:UIControlStateSelected|UIControlStateDisabled];
+        [button setTitleColor:[NUISettings getColor:@"font-color-selected-disabled" withClass:className] forState:UIControlStateSelected];
+        [button setTitleColor:[NUISettings getColor:@"font-color-selected-disabled" withClass:className] forState:UIControlStateDisabled];
     }
     if ([NUISettings hasProperty:@"font-color-disabled" withClass:className]) {
         [button setTitleColor:[NUISettings getColor:@"font-color-disabled" withClass:className] forState:UIControlStateDisabled];
@@ -145,10 +147,12 @@
         [button setTitleShadowColor:[NUISettings getColor:@"text-shadow-color-selected" withClass:className] forState:UIControlStateSelected];
     }
     if ([NUISettings hasProperty:@"text-shadow-color-selected-highlighted" withClass:className]) {
-        [button setTitleShadowColor:[NUISettings getColor:@"text-shadow-color-selected-highlighted" withClass:className] forState:UIControlStateSelected|UIControlStateHighlighted];
+        [button setTitleShadowColor:[NUISettings getColor:@"text-shadow-color-selected-highlighted" withClass:className] forState:UIControlStateSelected];
+        [button setTitleShadowColor:[NUISettings getColor:@"text-shadow-color-selected-highlighted" withClass:className] forState:UIControlStateHighlighted];
     }
     if ([NUISettings hasProperty:@"text-shadow-color-selected-disabled" withClass:className]) {
-        [button setTitleShadowColor:[NUISettings getColor:@"text-shadow-color-selected-disabled" withClass:className] forState:UIControlStateSelected|UIControlStateDisabled];
+        [button setTitleShadowColor:[NUISettings getColor:@"text-shadow-color-selected-disabled" withClass:className] forState:UIControlStateSelected];
+        [button setTitleShadowColor:[NUISettings getColor:@"text-shadow-color-selected-disabled" withClass:className] forState:UIControlStateDisabled];
     }
     if ([NUISettings hasProperty:@"text-shadow-color-disabled" withClass:className]) {
         [button setTitleShadowColor:[NUISettings getColor:@"text-shadow-color-disabled" withClass:className] forState:UIControlStateDisabled];
