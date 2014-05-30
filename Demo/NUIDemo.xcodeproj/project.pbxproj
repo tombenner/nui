@@ -348,6 +348,7 @@
 			children = (
 				0E55162A1938BD9200B293B7 /* UIBarButton */,
 				0E5516191938891000B293B7 /* UIButton */,
+				0EE342971939405900306AC7 /* UIControl */,
 			);
 			path = UIKitTests;
 			sourceTree = "<group>";
@@ -394,6 +395,13 @@
 				0E8A86BC18EC07C40027F275 /* NUITests-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0EE342971939405900306AC7 /* UIControl */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIControl;
 			sourceTree = "<group>";
 		};
 		4A0B8626165EE59A005B5756 = {
