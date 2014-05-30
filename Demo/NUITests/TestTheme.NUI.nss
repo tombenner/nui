@@ -1,3 +1,36 @@
+BarButton {
+    border-color: red;
+    border-width: 2;
+    corner-radius: 2;
+    font-color: black;
+    font-name: Avenir;
+    font-size: 12;
+    text-shadow-color: darkGray;
+    text-shadow-offset: 1,2;
+    background-tint-color: orange;
+}
+
+BarButtonWithBackgroundColor {
+    background-color: green;
+    background-color-highlighted: yellow;
+}
+
+BarButtonWithBackgroundImage {
+    background-image: background_image;
+    background-image-insets: 2;
+}
+
+BarButtonWithGradientColor {
+    background-color-top: lightGray;
+    background-color-bottom: darkGray;
+}
+
+BarButtonWithBorder {
+    border-color: red;
+    border-width: 2px;
+    corner-radius: 2px;
+}
+
 Button {
     background-color-bottom: green;
     background-color-disabled: blue;
