@@ -12,6 +12,12 @@
 
 + (void)render:(UINavigationBar*)bar withClass:(NSString*)className
 {
+    if ([bar respondsToSelector:@selector(setBarTintColor:)]) {
+        if ([NUISettings hasProperty:@"bar-tint-color" withClass:className]) {
+            [bar setBarTintColor:[NUISettings getColor:@"bar-tint-color" withClass:className]];
+        }
+    }
+    
     if ([NUISettings hasProperty:@"background-tint-color" withClass:className]) {
         [bar setTintColor:[NUISettings getColor:@"background-tint-color" withClass:className]];
     }
