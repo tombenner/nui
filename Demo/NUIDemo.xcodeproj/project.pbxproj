@@ -7,10 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E5516101938727100B293B7 /* background_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E55160F1938727100B293B7 /* background_image@2x.png */; };
+		0E5516121938738C00B293B7 /* background_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E5516111938738C00B293B7 /* background_image.png */; };
+		0E5516131938751100B293B7 /* background_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E5516111938738C00B293B7 /* background_image.png */; };
+		0E5516141938751400B293B7 /* background_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E55160F1938727100B293B7 /* background_image@2x.png */; };
+		0E55161C1938891000B293B7 /* NUIButtonRendererBackgroundImageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E55161A1938891000B293B7 /* NUIButtonRendererBackgroundImageTests.m */; };
+		0E55161D1938891000B293B7 /* NUIButtonRendererTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E55161B1938891000B293B7 /* NUIButtonRendererTests.m */; };
+		0E55162019388C1E00B293B7 /* foreground_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E55161E19388C1E00B293B7 /* foreground_image.png */; };
+		0E55162119388C1E00B293B7 /* foreground_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E55161E19388C1E00B293B7 /* foreground_image.png */; };
+		0E55162219388C1E00B293B7 /* foreground_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E55161F19388C1E00B293B7 /* foreground_image@2x.png */; };
+		0E55162319388C1E00B293B7 /* foreground_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E55161F19388C1E00B293B7 /* foreground_image@2x.png */; };
+		0E55162519388CC500B293B7 /* NUIButtonRendererForegroundImageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E55162419388CC500B293B7 /* NUIButtonRendererForegroundImageTests.m */; };
+		0E55162719388EC900B293B7 /* NUIButtonRendererBackgroundColorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E55162619388EC900B293B7 /* NUIButtonRendererBackgroundColorTests.m */; };
+		0E5516291938A15000B293B7 /* NUIButtonGradientSnapshotTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5516281938A15000B293B7 /* NUIButtonGradientSnapshotTest.m */; };
 		0E8A86B218EC07C40027F275 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0B8637165EE59A005B5756 /* Foundation.framework */; };
 		0E8A86B318EC07C40027F275 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0B8635165EE59A005B5756 /* UIKit.framework */; };
 		0E8A86B918EC07C40027F275 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E8A86B718EC07C40027F275 /* InfoPlist.strings */; };
 		0E8A86C318EC08970027F275 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8A86C218EC08970027F275 /* XCTest.framework */; };
+		0EE9CA7C191EC96D00C84934 /* TestTheme.NUI.nss in Resources */ = {isa = PBXBuildFile; fileRef = 0EE9CA7B191EC96D00C84934 /* TestTheme.NUI.nss */; };
+		0EE9CA7D191ECA0F00C84934 /* TestTheme.NUI.nss in Resources */ = {isa = PBXBuildFile; fileRef = 0EE9CA7B191EC96D00C84934 /* TestTheme.NUI.nss */; };
+		3830C7C440594F829971E4C2 /* libPods-NUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC7736AC8944034A5E10550 /* libPods-NUITests.a */; };
 		41A0DE98FD464C508748F886 /* libPods-NUIDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8B8BB2BB5E6412588AE14FA /* libPods-NUIDemo.a */; };
 		4A0B8636165EE59A005B5756 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0B8635165EE59A005B5756 /* UIKit.framework */; };
 		4A0B8638165EE59A005B5756 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0B8637165EE59A005B5756 /* Foundation.framework */; };
@@ -108,12 +124,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E55160F1938727100B293B7 /* background_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background_image@2x.png"; sourceTree = "<group>"; };
+		0E5516111938738C00B293B7 /* background_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_image.png; sourceTree = "<group>"; };
+		0E55161A1938891000B293B7 /* NUIButtonRendererBackgroundImageTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIButtonRendererBackgroundImageTests.m; sourceTree = "<group>"; };
+		0E55161B1938891000B293B7 /* NUIButtonRendererTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIButtonRendererTests.m; sourceTree = "<group>"; };
+		0E55161E19388C1E00B293B7 /* foreground_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foreground_image.png; sourceTree = "<group>"; };
+		0E55161F19388C1E00B293B7 /* foreground_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "foreground_image@2x.png"; sourceTree = "<group>"; };
+		0E55162419388CC500B293B7 /* NUIButtonRendererForegroundImageTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIButtonRendererForegroundImageTests.m; sourceTree = "<group>"; };
+		0E55162619388EC900B293B7 /* NUIButtonRendererBackgroundColorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIButtonRendererBackgroundColorTests.m; sourceTree = "<group>"; };
+		0E5516281938A15000B293B7 /* NUIButtonGradientSnapshotTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIButtonGradientSnapshotTest.m; sourceTree = "<group>"; };
 		0E8A86AF18EC07C40027F275 /* NUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0E8A86B018EC07C40027F275 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		0E8A86B618EC07C40027F275 /* NUITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NUITests-Info.plist"; sourceTree = "<group>"; };
 		0E8A86B818EC07C40027F275 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0E8A86BC18EC07C40027F275 /* NUITests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NUITests-Prefix.pch"; sourceTree = "<group>"; };
 		0E8A86C218EC08970027F275 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		0EE9CA7B191EC96D00C84934 /* TestTheme.NUI.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestTheme.NUI.nss; sourceTree = "<group>"; };
 		1E043EFF5B2E44ADB1F5461C /* Pods-NUIDemo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NUIDemo.xcconfig"; path = "Pods/Pods-NUIDemo.xcconfig"; sourceTree = "<group>"; };
 		3AE80CFA17E0EB290065FB3D /* NUIConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIConstants.h; sourceTree = "<group>"; };
 		4A0B8631165EE59A005B5756 /* NUIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NUIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,6 +205,7 @@
 		4ADA71C516A0F15C00BDCF81 /* UISearchBar+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+NUI.m"; sourceTree = "<group>"; };
 		4ADA71C816A103CD00BDCF81 /* NUISearchBarRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUISearchBarRenderer.h; sourceTree = "<group>"; };
 		4ADA71C916A103CD00BDCF81 /* NUISearchBarRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISearchBarRenderer.m; sourceTree = "<group>"; };
+		7CC7736AC8944034A5E10550 /* libPods-NUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		832B9C1A176AEADA0054F06E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = "en.lproj/iPad Storyboard.storyboard"; sourceTree = "<group>"; };
 		832B9C1D176AEAED0054F06E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = "en.lproj/iPhone Storyboard.storyboard"; sourceTree = "<group>"; };
 		89B940231671418100850A9A /* NUIAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIAppearance.h; sourceTree = "<group>"; };
@@ -243,6 +269,7 @@
 		E291BBD6179C89470016BC1D /* NUITableViewRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUITableViewRenderer.m; sourceTree = "<group>"; };
 		E291BBD8179C89710016BC1D /* UITableView+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+NUI.h"; sourceTree = "<group>"; };
 		E291BBD9179C89710016BC1D /* UITableView+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+NUI.m"; sourceTree = "<group>"; };
+		E63F8E69CA494E1A8AD11211 /* Pods-NUITests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NUITests.xcconfig"; path = "Pods/Pods-NUITests.xcconfig"; sourceTree = "<group>"; };
 		EAB69D2F188625E900358420 /* NUIDeclaration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUIDeclaration.h; path = Parser/NUIDeclaration.h; sourceTree = "<group>"; };
 		EAB69D30188625E900358420 /* NUIDeclaration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NUIDeclaration.m; path = Parser/NUIDeclaration.m; sourceTree = "<group>"; };
 		EAB69D31188625E900358420 /* NUIDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUIDefinition.h; path = Parser/NUIDefinition.h; sourceTree = "<group>"; };
@@ -277,6 +304,7 @@
 				0E8A86C318EC08970027F275 /* XCTest.framework in Frameworks */,
 				0E8A86B318EC07C40027F275 /* UIKit.framework in Frameworks */,
 				0E8A86B218EC07C40027F275 /* Foundation.framework in Frameworks */,
+				3830C7C440594F829971E4C2 /* libPods-NUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,10 +324,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E55160E1938727100B293B7 /* TestResources */ = {
+			isa = PBXGroup;
+			children = (
+				0E55161E19388C1E00B293B7 /* foreground_image.png */,
+				0E55161F19388C1E00B293B7 /* foreground_image@2x.png */,
+				0E5516111938738C00B293B7 /* background_image.png */,
+				0E55160F1938727100B293B7 /* background_image@2x.png */,
+			);
+			path = TestResources;
+			sourceTree = "<group>";
+		};
+		0E5516181938891000B293B7 /* UIKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				0E5516191938891000B293B7 /* UIButton */,
+			);
+			path = UIKitTests;
+			sourceTree = "<group>";
+		};
+		0E5516191938891000B293B7 /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				0E5516281938A15000B293B7 /* NUIButtonGradientSnapshotTest.m */,
+				0E55162619388EC900B293B7 /* NUIButtonRendererBackgroundColorTests.m */,
+				0E55161A1938891000B293B7 /* NUIButtonRendererBackgroundImageTests.m */,
+				0E55162419388CC500B293B7 /* NUIButtonRendererForegroundImageTests.m */,
+				0E55161B1938891000B293B7 /* NUIButtonRendererTests.m */,
+			);
+			path = UIButton;
+			sourceTree = "<group>";
+		};
 		0E8A86B418EC07C40027F275 /* NUITests */ = {
 			isa = PBXGroup;
 			children = (
+				0EE9CA7B191EC96D00C84934 /* TestTheme.NUI.nss */,
+				0E55160E1938727100B293B7 /* TestResources */,
 				0E8A86B518EC07C40027F275 /* Supporting Files */,
+				0E5516181938891000B293B7 /* UIKitTests */,
 			);
 			path = NUITests;
 			sourceTree = "<group>";
@@ -322,6 +384,7 @@
 				4A0B8634165EE59A005B5756 /* Frameworks */,
 				4A0B8632165EE59A005B5756 /* Products */,
 				1E043EFF5B2E44ADB1F5461C /* Pods-NUIDemo.xcconfig */,
+				E63F8E69CA494E1A8AD11211 /* Pods-NUITests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -344,7 +407,7 @@
 				4A0B8637165EE59A005B5756 /* Foundation.framework */,
 				4A0B8639165EE59A005B5756 /* CoreGraphics.framework */,
 				B8B8BB2BB5E6412588AE14FA /* libPods-NUIDemo.a */,
-				0E8A86B018EC07C40027F275 /* XCTest.framework */,
+				7CC7736AC8944034A5E10550 /* libPods-NUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -581,9 +644,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0E8A86BF18EC07C40027F275 /* Build configuration list for PBXNativeTarget "NUITests" */;
 			buildPhases = (
+				D18DC955A3494F55929BE412 /* Check Pods Manifest.lock */,
 				0E8A86AB18EC07C40027F275 /* Sources */,
 				0E8A86AC18EC07C40027F275 /* Frameworks */,
 				0E8A86AD18EC07C40027F275 /* Resources */,
+				5A93E79F762742CE9B93D7BF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -651,7 +716,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E5516101938727100B293B7 /* background_image@2x.png in Resources */,
+				0E5516121938738C00B293B7 /* background_image.png in Resources */,
+				0E55162119388C1E00B293B7 /* foreground_image.png in Resources */,
+				0EE9CA7C191EC96D00C84934 /* TestTheme.NUI.nss in Resources */,
 				0E8A86B918EC07C40027F275 /* InfoPlist.strings in Resources */,
+				0E55162319388C1E00B293B7 /* foreground_image@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -659,17 +729,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EE9CA7D191ECA0F00C84934 /* TestTheme.NUI.nss in Resources */,
 				4A0B8640165EE59A005B5756 /* InfoPlist.strings in Resources */,
 				4AAAFE7C166FD32600A0D34D /* Default-568h@2x.png in Resources */,
 				89B940811671418200850A9A /* NUIStyle.nss in Resources */,
 				89B940841671418200850A9A /* NUIViewBackground.png in Resources */,
 				4A9965E5169FB56800DAA38A /* Blue.NUI.nss in Resources */,
+				0E5516141938751400B293B7 /* background_image@2x.png in Resources */,
 				4A9965E6169FB56800DAA38A /* Default.NUI.nss in Resources */,
+				0E5516131938751100B293B7 /* background_image.png in Resources */,
 				4A9965E7169FB56800DAA38A /* Googolplex.NUI.nss in Resources */,
 				4A9965E8169FB56800DAA38A /* Round.NUI.nss in Resources */,
+				0E55162219388C1E00B293B7 /* foreground_image@2x.png in Resources */,
 				4A9965E9169FB56800DAA38A /* Route.NUI.nss in Resources */,
 				4A9965EA169FB56800DAA38A /* SkyBlue.NUI.nss in Resources */,
 				4A9965EB169FB56800DAA38A /* Switchboard.NUI.nss in Resources */,
+				0E55162019388C1E00B293B7 /* foreground_image.png in Resources */,
 				832B9C1B176AEADA0054F06E /* iPad Storyboard.storyboard in Resources */,
 				832B9C1E176AEAED0054F06E /* iPhone Storyboard.storyboard in Resources */,
 			);
@@ -679,6 +754,36 @@
 
 /* Begin PBXShellScriptBuildPhase section */
 		1E8011286D7F4F9493ADE186 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5A93E79F762742CE9B93D7BF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-NUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D18DC955A3494F55929BE412 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -715,6 +820,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E55162719388EC900B293B7 /* NUIButtonRendererBackgroundColorTests.m in Sources */,
+				0E55161D1938891000B293B7 /* NUIButtonRendererTests.m in Sources */,
+				0E55162519388CC500B293B7 /* NUIButtonRendererForegroundImageTests.m in Sources */,
+				0E5516291938A15000B293B7 /* NUIButtonGradientSnapshotTest.m in Sources */,
+				0E55161C1938891000B293B7 /* NUIButtonRendererBackgroundImageTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -838,6 +948,7 @@
 /* Begin XCBuildConfiguration section */
 		0E8A86C018EC07C40027F275 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E63F8E69CA494E1A8AD11211 /* Pods-NUITests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NUIDemo.app/NUIDemo";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -855,6 +966,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
+					"FB_REFERENCE_IMAGE_DIR=\"\\\"$(SOURCE_ROOT)/NUITests/ReferenceImages\\\"\"",
 				);
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
@@ -868,6 +980,7 @@
 		};
 		0E8A86C118EC07C40027F275 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E63F8E69CA494E1A8AD11211 /* Pods-NUITests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NUIDemo.app/NUIDemo";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

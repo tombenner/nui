@@ -1,0 +1,1 @@
+PODS_NUI_OTHER_LDFLAGS = -framework CoreGraphics -framework CoreImage -framework QuartzCore -framework UIKit
