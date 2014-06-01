@@ -128,3 +128,26 @@ Control {
 ControlWithBackgroundImage {
     background-image: background_image;
 }
+
+Label {
+    background-color: red;
+    border-color: green;
+    border-width: 2;
+    corner-radius: 2;
+    font-color: blue;
+    font-color-highlighted: yellow;
+    font-name: Avenir;
+    font-size: 15;
+    height: 50;
+    shadow-color: black;
+    shadow-offset: 1, 2;
+    shadow-opacity: 0.5;
+    shadow-radius: 2;
+    text-align: center;
+    text-alpha: 0.9;
+    text-auto-fit: true;
+    text-shadow-color: black;
+    text-shadow-offset: 1, 2;
+    text-transform: uppercase;
+    width: 100;
+}
