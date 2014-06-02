@@ -26,6 +26,12 @@
     [_sut applyNUI];
 }
 
+- (void)tearDown
+{
+    _sut = nil;
+    [super tearDown];
+}
+
 // progress-image (Image)
 - (void)testSetProgressImage
 {
