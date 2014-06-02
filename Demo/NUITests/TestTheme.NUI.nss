@@ -191,3 +191,14 @@ NavigationBarWithBackgroundImage {
     background-image: background_image;
     background-image-insets: 2;
 }
+
+Progress {
+    progress-tint-color: orange;
+    track-tint-color: yellow;
+    width: 80;
+}
+
+ProgressViewWithImages {
+    progress-image: background_image;
+    track-image: foreground_image;
+}
