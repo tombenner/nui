@@ -41,6 +41,7 @@
 		0EA8AA7B193CC01F00E1BD29 /* NUISegmentedControlRendererTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA8AA7A193CC01F00E1BD29 /* NUISegmentedControlRendererTests.m */; };
 		0EA8AA7D193CCB2C00E1BD29 /* NUISegmentedControlRendererBackgroundImagesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA8AA7C193CCB2C00E1BD29 /* NUISegmentedControlRendererBackgroundImagesTests.m */; };
 		0EA8AA7F193CCD8A00E1BD29 /* NUISegmentedControlSnapshotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA8AA7E193CCD8A00E1BD29 /* NUISegmentedControlSnapshotTests.m */; };
+		0EA8AA82193CD38100E1BD29 /* UISliderRendererTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA8AA81193CD38100E1BD29 /* UISliderRendererTests.m */; };
 		0EE34299193A116700306AC7 /* NUIControlRendererTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE34298193A116700306AC7 /* NUIControlRendererTests.m */; };
 		0EE9CA7C191EC96D00C84934 /* TestTheme.NUI.nss in Resources */ = {isa = PBXBuildFile; fileRef = 0EE9CA7B191EC96D00C84934 /* TestTheme.NUI.nss */; };
 		0EE9CA7D191ECA0F00C84934 /* TestTheme.NUI.nss in Resources */ = {isa = PBXBuildFile; fileRef = 0EE9CA7B191EC96D00C84934 /* TestTheme.NUI.nss */; };
@@ -175,6 +176,7 @@
 		0EA8AA7A193CC01F00E1BD29 /* NUISegmentedControlRendererTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISegmentedControlRendererTests.m; sourceTree = "<group>"; };
 		0EA8AA7C193CCB2C00E1BD29 /* NUISegmentedControlRendererBackgroundImagesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISegmentedControlRendererBackgroundImagesTests.m; sourceTree = "<group>"; };
 		0EA8AA7E193CCD8A00E1BD29 /* NUISegmentedControlSnapshotTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISegmentedControlSnapshotTests.m; sourceTree = "<group>"; };
+		0EA8AA81193CD38100E1BD29 /* UISliderRendererTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UISliderRendererTests.m; sourceTree = "<group>"; };
 		0EE34298193A116700306AC7 /* NUIControlRendererTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIControlRendererTests.m; sourceTree = "<group>"; };
 		0EE9CA7B191EC96D00C84934 /* TestTheme.NUI.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestTheme.NUI.nss; sourceTree = "<group>"; };
 		1B8E11A50FE5F75C66ACDBBD /* Pods-NUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NUITests/Pods-NUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -419,6 +421,7 @@
 				0E3F5E06193C765A003F6A77 /* UIProgressView */,
 				0E3F5E09193C7BEE003F6A77 /* UISearchBar */,
 				0EA8AA79193CBFF100E1BD29 /* UISegmentedControl */,
+				0EA8AA80193CD35200E1BD29 /* UISlider */,
 			);
 			path = UIKitTests;
 			sourceTree = "<group>";
@@ -484,6 +487,14 @@
 				0EA8AA7C193CCB2C00E1BD29 /* NUISegmentedControlRendererBackgroundImagesTests.m */,
 			);
 			path = UISegmentedControl;
+			sourceTree = "<group>";
+		};
+		0EA8AA80193CD35200E1BD29 /* UISlider */ = {
+			isa = PBXGroup;
+			children = (
+				0EA8AA81193CD38100E1BD29 /* UISliderRendererTests.m */,
+			);
+			path = UISlider;
 			sourceTree = "<group>";
 		};
 		0EE342971939405900306AC7 /* UIControl */ = {
@@ -1006,6 +1017,7 @@
 				0E3F5DFD193C5FB9003F6A77 /* NUINavigationBarRendererTests.m in Sources */,
 				0E3F5E0D193C7EA1003F6A77 /* NUISearchBarRendererGradientTest.m in Sources */,
 				0E55161C1938891000B293B7 /* NUIButtonRendererBackgroundImageTests.m in Sources */,
+				0EA8AA82193CD38100E1BD29 /* UISliderRendererTests.m in Sources */,
 				0EA8AA7B193CC01F00E1BD29 /* NUISegmentedControlRendererTests.m in Sources */,
 				0E5516321938D63300B293B7 /* NUIBarButtonSnapshotTests.m in Sources */,
 			);
