@@ -247,3 +247,15 @@ SegmentedControlWithImages {
     background-image-selected-insets: 2;
     divider-image: foreground_image;
 }
+
+Slider {
+    minimum-track-tint-color: orange;
+    maximum-track-tint-color: red;
+    minimum-value-image: background_image;
+    maximum-value-image: foreground_image;
+    thumb-tint-color: blue;
+}
+
+SliderWithImage {
+    thumb-image: background_image;
+}
