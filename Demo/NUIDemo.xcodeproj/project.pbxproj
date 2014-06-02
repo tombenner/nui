@@ -38,6 +38,9 @@
 		0E8A86B918EC07C40027F275 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E8A86B718EC07C40027F275 /* InfoPlist.strings */; };
 		0E8A86C318EC08970027F275 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8A86C218EC08970027F275 /* XCTest.framework */; };
 		0E921406193B791E00101B27 /* NUILabelRendererTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E921405193B791E00101B27 /* NUILabelRendererTests.m */; };
+		0EA8AA7B193CC01F00E1BD29 /* NUISegmentedControlRendererTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA8AA7A193CC01F00E1BD29 /* NUISegmentedControlRendererTests.m */; };
+		0EA8AA7D193CCB2C00E1BD29 /* NUISegmentedControlRendererBackgroundImagesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA8AA7C193CCB2C00E1BD29 /* NUISegmentedControlRendererBackgroundImagesTests.m */; };
+		0EA8AA7F193CCD8A00E1BD29 /* NUISegmentedControlSnapshotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA8AA7E193CCD8A00E1BD29 /* NUISegmentedControlSnapshotTests.m */; };
 		0EE34299193A116700306AC7 /* NUIControlRendererTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE34298193A116700306AC7 /* NUIControlRendererTests.m */; };
 		0EE9CA7C191EC96D00C84934 /* TestTheme.NUI.nss in Resources */ = {isa = PBXBuildFile; fileRef = 0EE9CA7B191EC96D00C84934 /* TestTheme.NUI.nss */; };
 		0EE9CA7D191ECA0F00C84934 /* TestTheme.NUI.nss in Resources */ = {isa = PBXBuildFile; fileRef = 0EE9CA7B191EC96D00C84934 /* TestTheme.NUI.nss */; };
@@ -165,6 +168,9 @@
 		0E8A86BC18EC07C40027F275 /* NUITests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NUITests-Prefix.pch"; sourceTree = "<group>"; };
 		0E8A86C218EC08970027F275 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		0E921405193B791E00101B27 /* NUILabelRendererTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUILabelRendererTests.m; sourceTree = "<group>"; };
+		0EA8AA7A193CC01F00E1BD29 /* NUISegmentedControlRendererTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISegmentedControlRendererTests.m; sourceTree = "<group>"; };
+		0EA8AA7C193CCB2C00E1BD29 /* NUISegmentedControlRendererBackgroundImagesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISegmentedControlRendererBackgroundImagesTests.m; sourceTree = "<group>"; };
+		0EA8AA7E193CCD8A00E1BD29 /* NUISegmentedControlSnapshotTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISegmentedControlSnapshotTests.m; sourceTree = "<group>"; };
 		0EE34298193A116700306AC7 /* NUIControlRendererTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIControlRendererTests.m; sourceTree = "<group>"; };
 		0EE9CA7B191EC96D00C84934 /* TestTheme.NUI.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestTheme.NUI.nss; sourceTree = "<group>"; };
 		1E043EFF5B2E44ADB1F5461C /* Pods-NUIDemo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NUIDemo.xcconfig"; path = "Pods/Pods-NUIDemo.xcconfig"; sourceTree = "<group>"; };
@@ -401,6 +407,7 @@
 				0E3F5DFB193C5F02003F6A77 /* UINavigationBar */,
 				0E3F5E06193C765A003F6A77 /* UIProgressView */,
 				0E3F5E09193C7BEE003F6A77 /* UISearchBar */,
+				0EA8AA79193CBFF100E1BD29 /* UISegmentedControl */,
 			);
 			path = UIKitTests;
 			sourceTree = "<group>";
@@ -455,6 +462,16 @@
 				0E921405193B791E00101B27 /* NUILabelRendererTests.m */,
 			);
 			path = UILabel;
+			sourceTree = "<group>";
+		};
+		0EA8AA79193CBFF100E1BD29 /* UISegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				0EA8AA7A193CC01F00E1BD29 /* NUISegmentedControlRendererTests.m */,
+				0EA8AA7E193CCD8A00E1BD29 /* NUISegmentedControlSnapshotTests.m */,
+				0EA8AA7C193CCB2C00E1BD29 /* NUISegmentedControlRendererBackgroundImagesTests.m */,
+			);
+			path = UISegmentedControl;
 			sourceTree = "<group>";
 		};
 		0EE342971939405900306AC7 /* UIControl */ = {
@@ -920,14 +937,17 @@
 				0E3F5E05193C6D90003F6A77 /* NUINavigationBarRendererGradientTest.m in Sources */,
 				0E921406193B791E00101B27 /* NUILabelRendererTests.m in Sources */,
 				0E3F5E0B193C7C1F003F6A77 /* NUISearchBarRendererTests.m in Sources */,
+				0EA8AA7F193CCD8A00E1BD29 /* NUISegmentedControlSnapshotTests.m in Sources */,
 				0E55162C1938BDC500B293B7 /* UIBarButtonRendererTests.m in Sources */,
 				0E55162519388CC500B293B7 /* NUIButtonRendererForegroundImageTests.m in Sources */,
 				0E5516291938A15000B293B7 /* NUIButtonGradientSnapshotTest.m in Sources */,
 				0E3F5E08193C76C3003F6A77 /* NUIProgressViewRendererTests.m in Sources */,
 				0E55162E1938D5FD00B293B7 /* UIBarButtonRendererBackgroundColorTests.m in Sources */,
+				0EA8AA7D193CCB2C00E1BD29 /* NUISegmentedControlRendererBackgroundImagesTests.m in Sources */,
 				0E3F5DFD193C5FB9003F6A77 /* NUINavigationBarRendererTests.m in Sources */,
 				0E3F5E0D193C7EA1003F6A77 /* NUISearchBarRendererGradientTest.m in Sources */,
 				0E55161C1938891000B293B7 /* NUIButtonRendererBackgroundImageTests.m in Sources */,
+				0EA8AA7B193CC01F00E1BD29 /* NUISegmentedControlRendererTests.m in Sources */,
 				0E5516321938D63300B293B7 /* NUIBarButtonSnapshotTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
