@@ -168,3 +168,26 @@ Label {
     text-transform: uppercase;
     width: 100;
 }
+
+NavigationBar {
+    bar-tint-color: orange;
+    background-color: yellow;
+    background-tint-color: red;
+    font-color: green;
+    font-name: Avenir;
+    font-size: 13;
+    shadow-image: shadow_image;
+    text-shadow-color: darkGray;
+    text-shadow-offset: 1, 2;
+    title-vertical-offset: 2;
+}
+
+NavigationBarWithGradient {
+    background-color-top: lightGray;
+    background-color-bottom: darkGray;
+}
+
+NavigationBarWithBackgroundImage {
+    background-image: background_image;
+    background-image-insets: 2;
+}
