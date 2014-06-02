@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E3F5DFD193C5FB9003F6A77 /* NUINavigationBarRendererTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3F5DFC193C5FB9003F6A77 /* NUINavigationBarRendererTests.m */; };
+		0E3F5E00193C64AD003F6A77 /* shadow_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E3F5DFE193C64AD003F6A77 /* shadow_image.png */; };
+		0E3F5E01193C64AD003F6A77 /* shadow_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E3F5DFE193C64AD003F6A77 /* shadow_image.png */; };
+		0E3F5E02193C64AD003F6A77 /* shadow_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E3F5DFF193C64AD003F6A77 /* shadow_image@2x.png */; };
+		0E3F5E03193C64AD003F6A77 /* shadow_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E3F5DFF193C64AD003F6A77 /* shadow_image@2x.png */; };
+		0E3F5E05193C6D90003F6A77 /* NUINavigationBarRendererGradientTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3F5E04193C6D90003F6A77 /* NUINavigationBarRendererGradientTest.m */; };
 		0E5516101938727100B293B7 /* background_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E55160F1938727100B293B7 /* background_image@2x.png */; };
 		0E5516121938738C00B293B7 /* background_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E5516111938738C00B293B7 /* background_image.png */; };
 		0E5516131938751100B293B7 /* background_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E5516111938738C00B293B7 /* background_image.png */; };
@@ -134,6 +140,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E3F5DFC193C5FB9003F6A77 /* NUINavigationBarRendererTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUINavigationBarRendererTests.m; sourceTree = "<group>"; };
+		0E3F5DFE193C64AD003F6A77 /* shadow_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadow_image.png; sourceTree = "<group>"; };
+		0E3F5DFF193C64AD003F6A77 /* shadow_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shadow_image@2x.png"; sourceTree = "<group>"; };
+		0E3F5E04193C6D90003F6A77 /* NUINavigationBarRendererGradientTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUINavigationBarRendererGradientTest.m; sourceTree = "<group>"; };
 		0E55160F1938727100B293B7 /* background_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background_image@2x.png"; sourceTree = "<group>"; };
 		0E5516111938738C00B293B7 /* background_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_image.png; sourceTree = "<group>"; };
 		0E55161A1938891000B293B7 /* NUIButtonRendererBackgroundImageTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIButtonRendererBackgroundImageTests.m; sourceTree = "<group>"; };
@@ -346,14 +356,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E3F5DFB193C5F02003F6A77 /* UINavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				0E3F5DFC193C5FB9003F6A77 /* NUINavigationBarRendererTests.m */,
+				0E3F5E04193C6D90003F6A77 /* NUINavigationBarRendererGradientTest.m */,
+			);
+			path = UINavigationBar;
+			sourceTree = "<group>";
+		};
 		0E55160E1938727100B293B7 /* TestResources */ = {
 			isa = PBXGroup;
 			children = (
 				5B5888C21992BD15005F1ACB /* Assets */,
-				0E55161E19388C1E00B293B7 /* foreground_image.png */,
-				0E55161F19388C1E00B293B7 /* foreground_image@2x.png */,
 				0E5516111938738C00B293B7 /* background_image.png */,
 				0E55160F1938727100B293B7 /* background_image@2x.png */,
+				0E55161E19388C1E00B293B7 /* foreground_image.png */,
+				0E55161F19388C1E00B293B7 /* foreground_image@2x.png */,
+				0E3F5DFE193C64AD003F6A77 /* shadow_image.png */,
+				0E3F5DFF193C64AD003F6A77 /* shadow_image@2x.png */,
 			);
 			path = TestResources;
 			sourceTree = "<group>";
@@ -365,6 +386,7 @@
 				0E5516191938891000B293B7 /* UIButton */,
 				0EE342971939405900306AC7 /* UIControl */,
 				0E921404193B78DE00101B27 /* UILabel */,
+				0E3F5DFB193C5F02003F6A77 /* UINavigationBar */,
 			);
 			path = UIKitTests;
 			sourceTree = "<group>";
@@ -783,11 +805,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E3F5E03193C64AD003F6A77 /* shadow_image@2x.png in Resources */,
 				0E5516101938727100B293B7 /* background_image@2x.png in Resources */,
 				0E5516121938738C00B293B7 /* background_image.png in Resources */,
 				0E55162119388C1E00B293B7 /* foreground_image.png in Resources */,
 				0EE9CA7C191EC96D00C84934 /* TestTheme.NUI.nss in Resources */,
 				0E8A86B918EC07C40027F275 /* InfoPlist.strings in Resources */,
+				0E3F5E01193C64AD003F6A77 /* shadow_image.png in Resources */,
 				0E55162319388C1E00B293B7 /* foreground_image@2x.png in Resources */,
 				5B5888C31992BD15005F1ACB /* Assets in Resources */,
 			);
@@ -806,6 +830,7 @@
 				89B940841671418200850A9A /* NUIViewBackground.png in Resources */,
 				4A9965E5169FB56800DAA38A /* Blue.NUI.nss in Resources */,
 				0E5516141938751400B293B7 /* background_image@2x.png in Resources */,
+				0E3F5E00193C64AD003F6A77 /* shadow_image.png in Resources */,
 				4A9965E6169FB56800DAA38A /* Default.NUI.nss in Resources */,
 				0E5516131938751100B293B7 /* background_image.png in Resources */,
 				4A9965E7169FB56800DAA38A /* Googolplex.NUI.nss in Resources */,
@@ -814,6 +839,7 @@
 				4A9965E9169FB56800DAA38A /* Route.NUI.nss in Resources */,
 				4A9965EA169FB56800DAA38A /* SkyBlue.NUI.nss in Resources */,
 				4A9965EB169FB56800DAA38A /* Switchboard.NUI.nss in Resources */,
+				0E3F5E02193C64AD003F6A77 /* shadow_image@2x.png in Resources */,
 				0E55162019388C1E00B293B7 /* foreground_image.png in Resources */,
 				832B9C1B176AEADA0054F06E /* iPad Storyboard.storyboard in Resources */,
 				832B9C1E176AEAED0054F06E /* iPhone Storyboard.storyboard in Resources */,
@@ -925,11 +951,13 @@
 				0E55162719388EC900B293B7 /* NUIButtonRendererBackgroundColorTests.m in Sources */,
 				0E55161D1938891000B293B7 /* NUIButtonRendererTests.m in Sources */,
 				0EE34299193A116700306AC7 /* NUIControlRendererTests.m in Sources */,
+				0E3F5E05193C6D90003F6A77 /* NUINavigationBarRendererGradientTest.m in Sources */,
 				0E921406193B791E00101B27 /* NUILabelRendererTests.m in Sources */,
 				0E55162C1938BDC500B293B7 /* UIBarButtonRendererTests.m in Sources */,
 				0E55162519388CC500B293B7 /* NUIButtonRendererForegroundImageTests.m in Sources */,
 				0E5516291938A15000B293B7 /* NUIButtonGradientSnapshotTest.m in Sources */,
 				0E55162E1938D5FD00B293B7 /* UIBarButtonRendererBackgroundColorTests.m in Sources */,
+				0E3F5DFD193C5FB9003F6A77 /* NUINavigationBarRendererTests.m in Sources */,
 				0E55161C1938891000B293B7 /* NUIButtonRendererBackgroundImageTests.m in Sources */,
 				0E5516321938D63300B293B7 /* NUIBarButtonSnapshotTests.m in Sources */,
 			);
