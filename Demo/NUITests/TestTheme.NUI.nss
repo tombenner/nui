@@ -259,3 +259,14 @@ Slider {
 SliderWithImage {
     thumb-image: background_image;
 }
+
+Switch {
+    background-color: orange;
+    off-image: background_image;
+    off-image-insets: 2;
+    on-image: foreground_image;
+    on-image-insets: 3;
+    on-tint-color: red;
+    thumb-tint-color: yellow;
+    tint-color: green;
+}
