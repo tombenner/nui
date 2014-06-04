@@ -18,6 +18,10 @@
         }
     }
     
+    if ([NUISettings hasProperty:@"background-color" withClass:className]) {
+        [bar setBackgroundColor:[NUISettings getColor:@"background-color" withClass:className]];
+    }
+    
     if ([NUISettings hasProperty:@"background-tint-color" withClass:className]) {
         [bar setTintColor:[NUISettings getColor:@"background-tint-color" withClass:className]];
     }
