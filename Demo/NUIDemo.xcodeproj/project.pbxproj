@@ -43,6 +43,9 @@
 		0EA8AA7F193CCD8A00E1BD29 /* NUISegmentedControlSnapshotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA8AA7E193CCD8A00E1BD29 /* NUISegmentedControlSnapshotTests.m */; };
 		0EA8AA82193CD38100E1BD29 /* UISliderRendererTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA8AA81193CD38100E1BD29 /* UISliderRendererTests.m */; };
 		0EA8AA85193DB62900E1BD29 /* NUISwitchRendererTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA8AA84193DB62900E1BD29 /* NUISwitchRendererTests.m */; };
+		0EA8AA88193DBB5500E1BD29 /* NUITabBarRendererTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA8AA87193DBB5500E1BD29 /* NUITabBarRendererTests.m */; };
+		0EA8AA8A193DBD3200E1BD29 /* NUITabBarRendererGradientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA8AA89193DBD3200E1BD29 /* NUITabBarRendererGradientTests.m */; };
+		0EA8AA8C193DBDF300E1BD29 /* NUITabBarRendererBackgroundImageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA8AA8B193DBDF300E1BD29 /* NUITabBarRendererBackgroundImageTests.m */; };
 		0EE34299193A116700306AC7 /* NUIControlRendererTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE34298193A116700306AC7 /* NUIControlRendererTests.m */; };
 		0EE9CA7C191EC96D00C84934 /* TestTheme.NUI.nss in Resources */ = {isa = PBXBuildFile; fileRef = 0EE9CA7B191EC96D00C84934 /* TestTheme.NUI.nss */; };
 		0EE9CA7D191ECA0F00C84934 /* TestTheme.NUI.nss in Resources */ = {isa = PBXBuildFile; fileRef = 0EE9CA7B191EC96D00C84934 /* TestTheme.NUI.nss */; };
@@ -175,6 +178,9 @@
 		0EA8AA7E193CCD8A00E1BD29 /* NUISegmentedControlSnapshotTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISegmentedControlSnapshotTests.m; sourceTree = "<group>"; };
 		0EA8AA81193CD38100E1BD29 /* UISliderRendererTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UISliderRendererTests.m; sourceTree = "<group>"; };
 		0EA8AA84193DB62900E1BD29 /* NUISwitchRendererTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISwitchRendererTests.m; sourceTree = "<group>"; };
+		0EA8AA87193DBB5500E1BD29 /* NUITabBarRendererTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUITabBarRendererTests.m; sourceTree = "<group>"; };
+		0EA8AA89193DBD3200E1BD29 /* NUITabBarRendererGradientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUITabBarRendererGradientTests.m; sourceTree = "<group>"; };
+		0EA8AA8B193DBDF300E1BD29 /* NUITabBarRendererBackgroundImageTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUITabBarRendererBackgroundImageTests.m; sourceTree = "<group>"; };
 		0EE34298193A116700306AC7 /* NUIControlRendererTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIControlRendererTests.m; sourceTree = "<group>"; };
 		0EE9CA7B191EC96D00C84934 /* TestTheme.NUI.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestTheme.NUI.nss; sourceTree = "<group>"; };
 		1E043EFF5B2E44ADB1F5461C /* Pods-NUIDemo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NUIDemo.xcconfig"; path = "Pods/Pods-NUIDemo.xcconfig"; sourceTree = "<group>"; };
@@ -414,6 +420,7 @@
 				0EA8AA79193CBFF100E1BD29 /* UISegmentedControl */,
 				0EA8AA80193CD35200E1BD29 /* UISlider */,
 				0EA8AA83193DB5FC00E1BD29 /* UISwitch */,
+				0EA8AA86193DBB1100E1BD29 /* UITabBar */,
 			);
 			path = UIKitTests;
 			sourceTree = "<group>";
@@ -494,6 +501,16 @@
 				0EA8AA84193DB62900E1BD29 /* NUISwitchRendererTests.m */,
 			);
 			path = UISwitch;
+			sourceTree = "<group>";
+		};
+		0EA8AA86193DBB1100E1BD29 /* UITabBar */ = {
+			isa = PBXGroup;
+			children = (
+				0EA8AA87193DBB5500E1BD29 /* NUITabBarRendererTests.m */,
+				0EA8AA8B193DBDF300E1BD29 /* NUITabBarRendererBackgroundImageTests.m */,
+				0EA8AA89193DBD3200E1BD29 /* NUITabBarRendererGradientTests.m */,
+			);
+			path = UITabBar;
 			sourceTree = "<group>";
 		};
 		0EE342971939405900306AC7 /* UIControl */ = {
@@ -959,12 +976,15 @@
 				0E3F5E05193C6D90003F6A77 /* NUINavigationBarRendererGradientTest.m in Sources */,
 				0E921406193B791E00101B27 /* NUILabelRendererTests.m in Sources */,
 				0E3F5E0B193C7C1F003F6A77 /* NUISearchBarRendererTests.m in Sources */,
+				0EA8AA8C193DBDF300E1BD29 /* NUITabBarRendererBackgroundImageTests.m in Sources */,
 				0EA8AA7F193CCD8A00E1BD29 /* NUISegmentedControlSnapshotTests.m in Sources */,
 				0E55162C1938BDC500B293B7 /* UIBarButtonRendererTests.m in Sources */,
 				0E55162519388CC500B293B7 /* NUIButtonRendererForegroundImageTests.m in Sources */,
 				0E5516291938A15000B293B7 /* NUIButtonGradientSnapshotTest.m in Sources */,
+				0EA8AA88193DBB5500E1BD29 /* NUITabBarRendererTests.m in Sources */,
 				0E3F5E08193C76C3003F6A77 /* NUIProgressViewRendererTests.m in Sources */,
 				0EA8AA85193DB62900E1BD29 /* NUISwitchRendererTests.m in Sources */,
+				0EA8AA8A193DBD3200E1BD29 /* NUITabBarRendererGradientTests.m in Sources */,
 				0E55162E1938D5FD00B293B7 /* UIBarButtonRendererBackgroundColorTests.m in Sources */,
 				0EA8AA7D193CCB2C00E1BD29 /* NUISegmentedControlRendererBackgroundImagesTests.m in Sources */,
 				0E3F5DFD193C5FB9003F6A77 /* NUINavigationBarRendererTests.m in Sources */,
