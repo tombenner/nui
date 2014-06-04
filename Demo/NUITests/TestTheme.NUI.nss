@@ -270,3 +270,20 @@ Switch {
     thumb-tint-color: yellow;
     tint-color: green;
 }
+
+TabBar {
+    background-color: red;
+    background-tint-color: yellow;
+    selected-image-tint-color: orange;
+}
+
+TabBarWithImages {
+    background-image: background_image;
+    background-image-insets: 2;
+    selected-image: foreground_image;
+}
+
+TabBarWithGradient {
+    background-color-top: lightGray;
+    background-color-bottom: darkGray;
+}

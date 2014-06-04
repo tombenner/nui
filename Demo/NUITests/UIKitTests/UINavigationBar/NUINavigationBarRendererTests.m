@@ -24,7 +24,8 @@
     
     [NUISettings initWithStylesheet:@"TestTheme.NUI"];
     
-    _sut = [[UINavigationBar alloc] init];
+    // Have to set frame to avoid invalid context warnings
+    _sut = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
     [_sut applyNUI];
     _textAttributes = [_sut titleTextAttributes];
 }
