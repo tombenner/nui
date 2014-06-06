@@ -72,10 +72,10 @@
     return image;
 }
 
-+ (CALayer*)roundedRectLayerWithClass:(NSString*)className
++ (CALayer*)roundedRectLayerWithClass:(NSString*)className size:(CGSize)size
 {
     CALayer *layer = [CALayer layer];
-    [layer setFrame:CGRectMake(0, 0, 50, 50)];
+    [layer setFrame:CGRectMake(0, 0, size.width, size.height)];
     [layer setMasksToBounds:YES];
     
     if ([NUISettings hasProperty:@"background-color" withClass:className]) {
@@ -97,10 +97,10 @@
     return layer;
 }
 
-+ (UIImage*)roundedRectImageWithClass:(NSString*)className
++ (UIImage*)roundedRectImageWithClass:(NSString*)className size:(CGSize)size
 {
-    CALayer *layer = [self roundedRectLayerWithClass:className];
-    return [self roundedRectImageWithClass:className layer:layer];
+  CALayer *layer = [self roundedRectLayerWithClass:className size:size];
+  return [self roundedRectImageWithClass:className layer:layer];
 }
 
 + (UIImage*)roundedRectImageWithClass:(NSString*)className layer:(CALayer*)layer

@@ -21,7 +21,7 @@
         }
     } else if ([NUISettings hasProperty:@"background-color" withClass:className] ||
                [NUISettings hasProperty:@"border-color" withClass:className]) {
-        CALayer *layer = [NUIGraphics roundedRectLayerWithClass:className];
+        CALayer *layer = [NUIGraphics roundedRectLayerWithClass:className size:control.bounds.size];
         UIImage *normalImage = [NUIGraphics roundedRectImageWithClass:className layer:layer];
         
         if ([NUISettings hasProperty:@"background-color-selected" withClass:className]) {

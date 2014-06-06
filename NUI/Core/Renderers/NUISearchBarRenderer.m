@@ -51,7 +51,7 @@
     
     if ([NUISettings hasProperty:@"background-color" withClass:scopeBarClassName] ||
         [NUISettings hasProperty:@"border-color" withClass:scopeBarClassName]) {
-        CALayer *layer = [NUIGraphics roundedRectLayerWithClass:scopeBarClassName];
+        CALayer *layer = [NUIGraphics roundedRectLayerWithClass:scopeBarClassName size:bar.bounds.size];
         UIImage *normalImage = [NUIGraphics roundedRectImageWithClass:scopeBarClassName layer:layer];
         
         if ([NUISettings hasProperty:@"background-color-selected" withClass:scopeBarClassName]) {
