@@ -7,11 +7,14 @@
 //
 
 #import "NUISegmentedControlRenderer.h"
+#import "NUIViewRenderer.h"
 
 @implementation NUISegmentedControlRenderer
 
 + (void)render:(UISegmentedControl*)control withClass:(NSString*)className
 {
+    [NUIViewRenderer renderSize:control withClass:className];
+  
     if ([NUISettings hasProperty:@"background-image" withClass:className]) {
         if ([NUISettings hasProperty:@"background-image" withClass:className]) {
             [control setBackgroundImage:[NUISettings getImage:@"background-image" withClass:className] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
