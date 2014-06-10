@@ -13,8 +13,8 @@
 @interface NUIGraphics : NSObject
 
 + (UIImage*)backButtonWithClass:(NSString*)className;
-+ (CALayer*)roundedRectLayerWithClass:(NSString*)className;
-+ (UIImage*)roundedRectImageWithClass:(NSString*)className;
++ (CALayer*)roundedRectLayerWithClass:(NSString*)className size:(CGSize)size;
++ (UIImage*)roundedRectImageWithClass:(NSString*)className size:(CGSize)size;
 + (UIImage*)roundedRectImageWithClass:(NSString*)className layer:(CALayer*)layer;
 + (UIImage*)caLayerToUIImage:(CALayer*)layer;
 + (CALayer*)uiImageToCALayer:(UIImage*)image;
