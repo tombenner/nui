@@ -100,6 +100,21 @@ ButtonWithImage {
     image-selected-highlighted-insets: 2;
 }
 
+ButtonWithImageFromSubdirectory {
+    background-image: Assets/subdirectory_image;
+    background-image-disabled: Assets/subdirectory_image;
+    background-image-highlighted: Assets/subdirectory_image;
+    background-image-selected: Assets/subdirectory_image;
+    background-image-selected-disabled: Assets/subdirectory_image;
+    background-image-selected-highlighted: Assets/subdirectory_image;
+    image: Assets/subdirectory_image;
+    image-disabled: Assets/subdirectory_image;
+    image-highlighted: Assets/subdirectory_image;
+    image-selected: Assets/subdirectory_image;
+    image-selected-disabled: Assets/subdirectory_image;
+    image-selected-highlighted: Assets/subdirectory_image;
+}
+
 ButtonWithColor {
     background-color: red;
     background-color-disabled: green;
