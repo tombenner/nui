@@ -3,4 +3,4 @@ before_install:
   - export LANG=en_US.UTF-8
   - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
   - cd Demo && pod install
-script: "xcodebuild -workspace NUIDemo.xcworkspace -scheme NUITests -destination 'platform=iOS Simulator,name=iPhone Retina (4-inch),OS=7.0' clean test | xcpretty -c && exit ${PIPESTATUS[0]}"
+script: "xcodebuild -workspace NUIDemo.xcworkspace -scheme NUITests -destination 'platform=iOS Simulator,name=iPhone Retina (4-inch),OS=7.1' clean test | xcpretty -c && exit ${PIPESTATUS[0]}"
