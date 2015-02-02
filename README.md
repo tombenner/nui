@@ -453,6 +453,7 @@ See SegmentedControl
 
 *UITabBar*
 
+* bar-tint-color *(Color)*
 * background-color *(Color)*
 * background-color-top/background-color-bottom *(Gradient)*
 * background-image *(Image)*
