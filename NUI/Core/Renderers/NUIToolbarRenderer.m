@@ -18,6 +18,12 @@
         [bar setBackgroundImage:[NUISettings getImageFromColor:@"background-color" withClass:className] forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsDefault];
     }
     
+    if ([bar respondsToSelector:@selector(setBarTintColor:)]) {
+        if ([NUISettings hasProperty:@"bar-tint-color" withClass:className]) {
+            [bar setBarTintColor:[NUISettings getColor:@"bar-tint-color" withClass:className]];
+        }
+    }
+    
     if ([NUISettings hasProperty:@"background-tint-color" withClass:className]) {
         [bar setTintColor:[NUISettings getColor:@"background-tint-color" withClass:className]];
     }
