@@ -30,6 +30,8 @@
     
     if ([NUISettings hasProperty:@"thumb-tint-color" withClass:className]) {
         [uiSwitch setThumbTintColor:[NUISettings getColor:@"thumb-tint-color" withClass:className]];
+    } else {
+        [uiSwitch setThumbTintColor:nil];
     }
     
     if ([NUISettings hasProperty:@"tint-color" withClass:className]) {
