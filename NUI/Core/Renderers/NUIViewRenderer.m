@@ -27,6 +27,10 @@
             [view setBackgroundColor: [NUISettings getColor:@"background-color" withClass: className]];
         }
     }
+    
+    if ([NUISettings hasProperty:@"hidden" withClass:className]) {
+        view.hidden = [NUISettings getBoolean:@"hidden" withClass:className];
+    }
 
     [self renderSize:view withClass:className];
     [self renderBorder:view withClass:className];
