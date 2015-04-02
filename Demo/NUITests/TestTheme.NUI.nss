@@ -128,3 +128,18 @@ ButtonWithGradientColor {
     background-color-top: lightGray;
     background-color-bottom: darkGray;
 }
+
+Control {
+    background-color: green;
+    border-color: red;
+    border-width: 2;
+    corner-radius: 2;
+    shadow-color: black;
+    shadow-offset: 1, 2;
+    shadow-opacity: 0.5;
+    shadow-radius: 2;
+}
+
+ControlWithBackgroundImage {
+    background-image: background_image;
+}

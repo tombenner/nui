@@ -7,4 +7,5 @@ end
 
 target "NUITests" do
   pod 'FBSnapshotTestCase', '~> 1.1'
+  pod 'UIImage+ColorFromImage', '0.0.2'
 end
