@@ -190,7 +190,7 @@ SearchBar {
     background-color: red;
     background-tint-color: orange;
     scope-background-color: blue;
-}    
+}
 
 SearchBarWithGradient {
     background-color-top: lightGray;
@@ -200,4 +200,33 @@ SearchBarWithGradient {
 SearchBarWithImages {
     background-image: background_image;
     scope-background-image: foreground_image;
+}
+
+SegmentedControl {
+    background-tint-color: yellow;
+    font-color: black;
+    font-color-selected: gray;
+    font-name: Avenir;
+    font-size: 12;
+    text-shadow-color: darkGray;
+    text-shadow-color-selected: lightGray;
+    text-shadow-offset: 1, 2;
+    text-shadow-offset-selected: 2, 3;
+}
+
+SegmentedControlColors {
+    background-color: lightGray;
+    background-color-selected: darkGray;
+    border-color: black;
+    border-width: 2;
+    corner-radius: 5;
+    divider-color: purple;
+}
+
+SegmentedControlWithImages {
+    background-image: background_image;
+    background-image-insets: 2;
+    background-image-selected: foreground_image;
+    background-image-selected-insets: 2;
+    divider-image: foreground_image;
 }
