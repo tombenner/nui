@@ -41,6 +41,7 @@
     
     if ([NUISettings hasProperty:@"corner-radius" withClass:className]) {
         [layer setCornerRadius:[NUISettings getFloat:@"corner-radius" withClass:className]];
+        layer.masksToBounds = YES;
     }
 }
 
@@ -80,6 +81,15 @@
     if (height != view.frame.size.height || width != view.frame.size.width) {
         view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y, width, height);
     }
+}
+
++ (BOOL)hasShadowProperties:(UIView*)view withClass:(NSString*)className {
+    
+    BOOL hasAnyShadowProperty = NO;
+    for (NSString *property in @[@"shadow-radius", @"shadow-offset", @"shadow-color", @"shadow-opacity"]) {
+        hasAnyShadowProperty |= [NUISettings hasProperty:property withClass:className];
+    }
+    return hasAnyShadowProperty;
 }
 
 @end

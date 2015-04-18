@@ -166,12 +166,16 @@
     
     [NUIViewRenderer renderBorder:button withClass:className];
     
-    // We need to apply the corner radius to all sublayers so that the shadow displays correctly
-    if ([NUISettings hasProperty:@"corner-radius" withClass:className]) {
+    // If a shadow-* is configured and corner-radius is set disable mask to bounds and fall back to manually applying corner radius to all sub-views (except the label)
+    if ([NUIViewRenderer hasShadowProperties:button withClass:className] &&
+        [NUISettings hasProperty:@"corner-radius" withClass:className]) {
         CGFloat r = [NUISettings getFloat:@"corner-radius" withClass:className];
-        for (CALayer* layer in button.layer.sublayers) {
-            layer.cornerRadius = r;
+        for (UIView* subview in button.subviews) {
+            if ([subview isKindOfClass:[UILabel class]] == NO) {
+                subview.layer.cornerRadius = r;
+            }
         }
+        button.layer.masksToBounds = NO;
     }
     
     [NUIViewRenderer renderShadow:button withClass:className];

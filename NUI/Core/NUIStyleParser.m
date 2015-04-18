@@ -124,7 +124,7 @@
                                     @"abcdefghijklmnopqrstuvwxyz"
                                     @"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                                     @"0123456789"
-                                    @"-_\\."];
+                                    @"-_\\/."];
     NSCharacterSet *initialIdCharacters = [NSCharacterSet characterSetWithCharactersInString:
                                            @"abcdefghijklmnopqrstuvwxyz"
                                            @"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
