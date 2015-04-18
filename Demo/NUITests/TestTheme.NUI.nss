@@ -185,3 +185,19 @@ ProgressViewWithImages {
     progress-image: background_image;
     track-image: foreground_image;
 }
+
+SearchBar {
+    background-color: red;
+    background-tint-color: orange;
+    scope-background-color: blue;
+}    
+
+SearchBarWithGradient {
+    background-color-top: lightGray;
+    background-color-bottom: darkGray;
+}
+
+SearchBarWithImages {
+    background-image: background_image;
+    scope-background-image: foreground_image;
+}
