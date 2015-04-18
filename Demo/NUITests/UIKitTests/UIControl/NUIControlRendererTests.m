@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Tom Benner. All rights reserved.
 //
 
-#import <XCTest/XCTest.h>
+#import "FBSnapshotTestCase.h"
 
 #import "NUIRenderer.h"
 
-@interface NUIControlRendererTests : XCTestCase
+@interface NUIControlRendererTests : FBSnapshotTestCase
 @property (strong, nonatomic) UIControl *sut;
 @end
 
@@ -22,8 +22,10 @@
     
     [NUISettings initWithStylesheet:@"TestTheme.NUI"];
     
-    _sut = [[UIControl alloc] init];
+    _sut = [[UIControl alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     [_sut applyNUI];
+    
+    self.recordMode = NO;
 }
 
 - (void)tearDown
@@ -42,13 +44,10 @@
 // background-image (Image)
 - (void)testSetBackgroundImage
 {
-    UIImage *image = [UIImage imageNamed:@"background_image"];
-    UIColor *backgroundColor = [UIColor colorWithPatternImage:image];
-    
     _sut.nuiClass = @"ControlWithBackgroundImage";
     [_sut applyNUI];
     
-    XCTAssertEqualObjects(_sut.backgroundColor, backgroundColor, @"NUI should set control background image");
+    FBSnapshotVerifyView(_sut, nil);
 }
 
 // border-color (Color)
