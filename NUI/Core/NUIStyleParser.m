@@ -7,7 +7,13 @@
 //
 
 #import "NUIStyleParser.h"
-#import "NUIParse.h"
+
+#if __has_include(<NUIParse/NUIParse.h>)
+#    import <NUIParse/NUIParse.h>
+#else
+#    import "NUIParse.h"
+#endif
+
 #import "NUIPTokeniser.h"
 #import "NUITokeniserDelegate.h"
 #import "NUIParserDelegate.h"
