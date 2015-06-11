@@ -30,6 +30,11 @@
         [button setTitleEdgeInsets:[NUISettings getEdgeInsets:@"padding" withClass:className]];
     }
     
+    // Set tint
+    if ([NUISettings hasProperty:@"tint-color" withClass:className]) {
+        [button setTintColor:[NUISettings getColor:@"tint-color" withClass:className]];
+    }
+
     // Set background color
     if ([NUISettings hasProperty:@"background-color" withClass:className]) {
         [button setBackgroundImage:[NUISettings getImageFromColor:@"background-color" withClass:className] forState:UIControlStateNormal];

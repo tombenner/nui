@@ -217,7 +217,7 @@ Below are all of the currently available style classes, their corresponding UI c
 * background-color-highlighted *(Color)*
 * background-image *(Image)*
 * background-image-insets *(Box)*
-* background-tint-color *(Color)*
+* ~~background-tint-color *(Color)*~~ _deprecated; use tint-color_
 * border-color *(Color)*
 * border-width *(Number)*
 * corner-radius *(Number)*
@@ -226,6 +226,7 @@ Below are all of the currently available style classes, their corresponding UI c
 * font-size *(Number)*
 * text-shadow-color *(Color)*
 * text-shadow-offset *(Offset)*
+* tint-color *(Color)* _new_
 
 #### BarButtonBack
 
@@ -234,7 +235,7 @@ Below are all of the currently available style classes, their corresponding UI c
 * background-color *(Color)*
 * background-image *(Image)*
 * background-image-insets *(Box)*
-* background-tint-color *(Color)*
+* ~~background-tint-color *(Color)*~~ _deprecated; use tint-color_
 * border-color *(Color)*
 * border-width *(Number)*
 * corner-radius *(Number)*
@@ -243,6 +244,7 @@ Below are all of the currently available style classes, their corresponding UI c
 * font-size *(Number)*
 * text-shadow-color *(Color)*
 * text-shadow-offset *(Offset)*
+* tint-color *(Color)* _new_
 
 #### Button
 
@@ -307,6 +309,7 @@ Below are all of the currently available style classes, their corresponding UI c
 * text-shadow-color-selected-highlighted *(Color)*
 * text-shadow-offset *(Offset)*
 * text-transform *(TextTransform)*
+* tint-color *(Color)* _new_
 * title-insets *(Box)*
 * width *(Number)*
 
@@ -323,6 +326,7 @@ Below are all of the currently available style classes, their corresponding UI c
 * shadow-offset *(Offset)*
 * shadow-opacity *(Number)*
 * shadow-radius *(Number)*
+* tint-color *(Color)* _new_
 
 #### Label
 
@@ -347,6 +351,7 @@ Below are all of the currently available style classes, their corresponding UI c
 * text-shadow-color *(Color)*
 * text-shadow-offset *(Offset)*
 * text-transform *(TextTransform)*
+* tint-color *(Color)* _new_
 * width *(Number)*
 
 #### NavigationBar
@@ -358,13 +363,14 @@ Below are all of the currently available style classes, their corresponding UI c
 * background-color-top/background-color-bottom *(Gradient)*
 * background-image *(Image)*
 * background-image-insets *(Box)*
-* background-tint-color *(Color)*
+* ~~background-tint-color *(Color)*~~ _deprecated; use tint-color_
 * font-color *(Color)*
 * font-name *(FontName)*
 * font-size *(Number)*
 * shadow-image *(Image)*
 * text-shadow-color *(Color)*
 * text-shadow-offset *(Offset)*
+* tint-color *(Color)* _new_
 * title-vertical-offset *(Number)*
 
 #### Progress
@@ -384,9 +390,10 @@ Below are all of the currently available style classes, their corresponding UI c
 * background-color *(Color)*
 * background-color-top/background-color-bottom *(Gradient)*
 * background-image *(Image)*
-* background-tint-color *(Color)*
+* ~~background-tint-color *(Color)*~~ _deprecated; use tint-color_
 * scope-background-color *(Color)*
 * scope-background-image *(Image)*
+* tint-color *(Color)* _new_
 
 #### SearchBarButton
 
@@ -410,7 +417,7 @@ See SegmentedControl
 * background-image-insets *(Box)*
 * background-image-selected *(Image)*
 * background-image-selected-insets *(Box)*
-* background-tint-color *(Color)*
+* ~~background-tint-color *(Color)*~~ _deprecated; use tint-color_
 * border-color *(Color)*
 * border-width *(Number)*
 * corner-radius *(Number)*
@@ -424,6 +431,7 @@ See SegmentedControl
 * text-shadow-color-selected *(Color)*
 * text-shadow-offset *(Offset)*
 * text-shadow-offset-selected *(Offset)*
+* tint-color *(Color)* _new_
 
 #### Slider
 
@@ -457,9 +465,10 @@ See SegmentedControl
 * background-color-top/background-color-bottom *(Gradient)*
 * background-image *(Image)*
 * background-image-insets *(Box)*
-* background-tint-color *(Color)*
+* ~~background-tint-color *(Color)*~~ _deprecated; use tint-color_
 * selected-image *(Image)*
 * selected-image-tint-color *(Color)*
+* tint-color *(Color)* _new_
 
 #### TabBarItem
 
@@ -486,6 +495,7 @@ See SegmentedControl
 * row-height *(Number)*
 * separator-color *(Color)*
 * separator-style *(SeparatorStyle)*
+* tint-color *(Color)* _new_
 
 #### TableCell
 
@@ -504,6 +514,7 @@ See SegmentedControl
 * text-auto-fit *(Boolean)*
 * text-shadow-color *(Color)*
 * text-shadow-offset *(Offset)*
+* tint-color *(Color)* _new_
 
 #### TableCellDetail
 
@@ -528,10 +539,11 @@ The detail label of a *UITableViewCell*
 * background-image-bottom *(Image)*
 * background-image-top-landscape *(Image)*
 * background-image-bottom-landscape *(Image)*
-* background-tint-color *(Color)*
+* ~~background-tint-color *(Color)*~~ _deprecated; use tint-color_
 * shadow-image *(Image)*
 * shadow-image-top *(Image)*
 * shadow-image-bottom *(Image)*
+* tint-color *(Color)* _new_
 
 #### TextField
 
@@ -553,6 +565,7 @@ The detail label of a *UITableViewCell*
 * shadow-offset *(Offset)*
 * shadow-opacity *(Number)*
 * shadow-radius *(Number)*
+* tint-color *(Color)* _new_
 * vertical-align *(VerticalAlign)*
 * width *(Number)*
 
@@ -564,6 +577,7 @@ The detail label of a *UITableViewCell*
 * font-name *(FontName)*
 * font-size *(Number)*
 * padding *(Box)*
+* tint-color *(Color)* _new_
 
 #### View
 
@@ -579,6 +593,7 @@ The detail label of a *UITableViewCell*
 * shadow-offset *(Offset)*
 * shadow-opacity *(Number)*
 * shadow-radius *(Number)*
+* tint-color *(Color)* _new_
 * width *(Number)*
 
 #### Window
@@ -586,6 +601,7 @@ The detail label of a *UITableViewCell*
 *UIWindow*
 
 * background-color *(Color)*
+* tint-color *(Color)* _new_
 
 Style Value Types
 -----------------

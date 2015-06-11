@@ -14,6 +14,12 @@
     if ([NUISettings hasProperty:@"background-color" withClass:className]) {
         [window.rootViewController.view setBackgroundColor:[NUISettings getColor:@"background-color" withClass:className]];
     }
+    
+    // Set tint
+    if ([NUISettings hasProperty:@"tint-color" withClass:className]) {
+        [window.rootViewController.view setTintColor:[NUISettings getColor:@"tint-color" withClass:className]];
+    }
+
 }
 
 @end

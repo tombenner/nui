@@ -26,7 +26,9 @@
         [[uiClass appearance] setTitleTextAttributes:titleTextAttributes forState:UIControlStateNormal];
     }
     
-    if ([NUISettings hasProperty:@"background-tint-color" withClass:className]) {
+    if ([NUISettings hasProperty:@"tint-color" withClass:className]) {
+        [[uiClass appearance] setTintColor:[NUISettings getColor:@"tint-color" withClass:className]];
+    } else if ([NUISettings hasProperty:@"background-tint-color" withClass:className]) {
         [[uiClass appearance] setTintColor:[NUISettings getColor:@"background-tint-color" withClass:className]];
     }
     
