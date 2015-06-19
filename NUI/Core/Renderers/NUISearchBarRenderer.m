@@ -34,6 +34,10 @@
         [bar setBackgroundImage:[NUISettings getImage:@"background-image" withClass:className]];
     }
     
+    if ([NUISettings hasProperty:@"bar-tint-color" withClass:className]) {
+        [bar setBarTintColor:[NUISettings getColor:@"bar-tint-color" withClass:className]];
+    }
+    
     // Render scope bar
     
     if ([NUISettings hasProperty:@"scope-background-color" withClass:className]) {

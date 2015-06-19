@@ -391,6 +391,7 @@ Below are all of the currently available style classes, their corresponding UI c
 * background-color-top/background-color-bottom *(Gradient)*
 * background-image *(Image)*
 * ~~background-tint-color *(Color)*~~ _deprecated; use tint-color_
+* bar-tint-color *(Color)*
 * scope-background-color *(Color)*
 * scope-background-image *(Image)*
 * tint-color *(Color)* _new_
