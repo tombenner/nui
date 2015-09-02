@@ -75,6 +75,14 @@ If you choose not to use CocoaPods, you can install NUI with these steps:
 
 The Demo uses CocoaPods, so you'll want to [install CocoaPods](http://cocoapods.org/), run `pod install` in the `Demo` directory, and then open the .xcworkspace to open the project.
 
+### Swift
+
+If you're using Swift, in addition to the steps above, you'll also want to add the following `#import` in your bridging header:
+
+```objective-c
+#import <NUI/NUISettings.h>
+```
+
 Usage
 -----
 
