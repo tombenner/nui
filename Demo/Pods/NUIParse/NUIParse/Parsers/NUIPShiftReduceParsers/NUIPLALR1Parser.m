@@ -11,8 +11,8 @@
 #import "NUIPShiftReduceParserProtectedMethods.h"
 
 #import "NUIPLR1Item.h"
-#import "NSSetFunctional.h"
-#import "NSArray+Functional.h"
+#import "NSSet+NUIFunctional.h"
+#import "NSArray+NUIFunctional.h"
 
 #import "NUIPShiftReduceAction.h"
 

@@ -18,7 +18,7 @@
 #import "NUIPRHSItem+Private.h"
 #import "NUIPRHSItemResult.h"
 
-#import "NSSetFunctional.h"
+#import "NSSet+NUIFunctional.h"
 
 @implementation NUIPGrammar (NUIPGrammarInternal)
 

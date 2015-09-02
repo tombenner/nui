@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Tom Benner. All rights reserved.
 //
 
-#import "NUIParse.h"
+#import <NUIParse/NUIParse.h>
 
 @interface NUIStyleSheet : NSObject <NUIPParseResult>
 

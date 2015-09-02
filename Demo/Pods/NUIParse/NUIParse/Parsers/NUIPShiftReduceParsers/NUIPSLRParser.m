@@ -15,7 +15,7 @@
 #import "NUIPShiftReduceAction.h"
 #import "NUIPShiftReduceParserProtectedMethods.h"
 
-#import "NSSetFunctional.h"
+#import "NSSet+NUIFunctional.h"
 
 @interface NUIPSLRParser ()
 

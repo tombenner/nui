@@ -1,1 +1,6 @@
 .DS_Store
+Demo/Pods
+Demo/Podfile.lock
+Demo/NUIDemo.xcodeproj/project.xcworkspace
+Demo/NUIDemo.xcodeproj/xcuserdata
+Demo/NUIDemo.xcworkspace

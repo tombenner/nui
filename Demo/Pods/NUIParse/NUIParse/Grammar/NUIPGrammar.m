@@ -29,7 +29,7 @@
 #import "NUIPRHSItem.h"
 #import "NUIPRHSItem+Private.h"
 
-#import "NSSetFunctional.h"
+#import "NSSet+NUIFunctional.h"
 
 #import <objc/runtime.h>
 
