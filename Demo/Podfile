@@ -1,8 +1,9 @@
 # 6.0 required for FBSnapshotTestCase
 platform :ios, '6.0'
+use_frameworks!
 
 target "NUIDemo" do
-  pod "NUIParse", :git => "https://github.com/tombenner/NUIParse"
+  pod "NUIParse"
 end
 
 target "NUITests" do
