@@ -128,3 +128,160 @@ ButtonWithGradientColor {
     background-color-top: lightGray;
     background-color-bottom: darkGray;
 }
+
+Control {
+    background-color: green;
+    border-color: red;
+    border-width: 2;
+    corner-radius: 2;
+    shadow-color: black;
+    shadow-offset: 1, 2;
+    shadow-opacity: 0.5;
+    shadow-radius: 2;
+}
+
+ControlWithBackgroundImage {
+    background-image: background_image;
+}
+
+Label {
+    background-color: red;
+    border-color: green;
+    border-width: 2;
+    corner-radius: 2;
+    font-color: blue;
+    font-color-highlighted: yellow;
+    font-name: Avenir;
+    font-size: 15;
+    height: 50;
+    shadow-color: black;
+    shadow-offset: 1, 2;
+    shadow-opacity: 0.5;
+    shadow-radius: 2;
+    text-align: center;
+    text-alpha: 0.9;
+    text-auto-fit: true;
+    text-shadow-color: black;
+    text-shadow-offset: 1, 2;
+    text-transform: uppercase;
+    width: 100;
+}
+
+NavigationBar {
+    bar-tint-color: orange;
+    background-color: yellow;
+    background-tint-color: red;
+    font-color: green;
+    font-name: Avenir;
+    font-size: 13;
+    shadow-image: shadow_image;
+    text-shadow-color: darkGray;
+    text-shadow-offset: 1, 2;
+    title-vertical-offset: 2;
+}
+
+NavigationBarWithGradient {
+    background-color-top: lightGray;
+    background-color-bottom: darkGray;
+}
+
+NavigationBarWithBackgroundImage {
+    background-image: background_image;
+    background-image-insets: 2;
+}
+
+Progress {
+    progress-tint-color: orange;
+    track-tint-color: yellow;
+    width: 80;
+}
+
+ProgressViewWithImages {
+    progress-image: background_image;
+    track-image: foreground_image;
+}
+
+SearchBar {
+    background-color: red;
+    background-tint-color: orange;
+    scope-background-color: blue;
+}
+
+SearchBarWithGradient {
+    background-color-top: lightGray;
+    background-color-bottom: darkGray;
+}
+
+SearchBarWithImages {
+    background-image: background_image;
+    scope-background-image: foreground_image;
+}
+
+SegmentedControl {
+    background-tint-color: yellow;
+    font-color: black;
+    font-color-selected: gray;
+    font-name: Avenir;
+    font-size: 12;
+    text-shadow-color: darkGray;
+    text-shadow-color-selected: lightGray;
+    text-shadow-offset: 1, 2;
+    text-shadow-offset-selected: 2, 3;
+}
+
+SegmentedControlColors {
+    background-color: lightGray;
+    background-color-selected: darkGray;
+    border-color: black;
+    border-width: 2;
+    corner-radius: 5;
+    divider-color: purple;
+}
+
+SegmentedControlWithImages {
+    background-image: background_image;
+    background-image-insets: 2;
+    background-image-selected: foreground_image;
+    background-image-selected-insets: 2;
+    divider-image: foreground_image;
+}
+
+Slider {
+    minimum-track-tint-color: orange;
+    maximum-track-tint-color: red;
+    minimum-value-image: background_image;
+    maximum-value-image: foreground_image;
+    thumb-tint-color: blue;
+}
+
+SliderWithImage {
+    thumb-image: background_image;
+}
+
+Switch {
+    background-color: orange;
+    off-image: background_image;
+    off-image-insets: 2;
+    on-image: foreground_image;
+    on-image-insets: 3;
+    on-tint-color: red;
+    thumb-tint-color: yellow;
+    tint-color: green;
+}
+
+TabBar {
+    background-color: red;
+    background-tint-color: yellow;
+    selected-image-tint-color: orange;
+}
+
+TabBarWithImages {
+    background-image: background_image;
+    background-image-insets: 2;
+    selected-image: foreground_image;
+}
+
+TabBarWithGradient {
+    background-color-top: lightGray;
+    background-color-bottom: darkGray;
+}

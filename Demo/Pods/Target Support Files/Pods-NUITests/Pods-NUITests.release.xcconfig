@@ -1,0 +1,7 @@
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$(SDKROOT)/Developer/Library/Frameworks" "$(PLATFORM_DIR)/Developer/Library/Frameworks"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/FBSnapshotTestCase" "${PODS_ROOT}/Headers/Public/NUIParse" "${PODS_ROOT}/Headers/Public/UIImage+ColorFromImage"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/FBSnapshotTestCase" -isystem "${PODS_ROOT}/Headers/Public/NUIParse" -isystem "${PODS_ROOT}/Headers/Public/UIImage+ColorFromImage"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"Pods-NUITests-FBSnapshotTestCase" -l"Pods-NUITests-UIImage+ColorFromImage" -framework "XCTest"
+OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
+PODS_ROOT = ${SRCROOT}/Pods

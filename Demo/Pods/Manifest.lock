@@ -1,17 +1,20 @@
 PODS:
-  - FBSnapshotTestCase (1.1)
+  - FBSnapshotTestCase (1.6)
   - NUIParse (1.2)
+  - UIImage+ColorFromImage (0.0.2)
 
 DEPENDENCIES:
-  - FBSnapshotTestCase (~> 1.1)
+  - FBSnapshotTestCase (~> 1.6)
   - NUIParse (from `https://github.com/tombenner/NUIParse`)
+  - UIImage+ColorFromImage (= 0.0.2)
 
 EXTERNAL SOURCES:
   NUIParse:
     :git: https://github.com/tombenner/NUIParse
 
 SPEC CHECKSUMS:
-  FBSnapshotTestCase: 9053afee1d66b4c7c313fcb0ae582a5e47bea9d0
-  NUIParse: 14e226aa09f10f109dbd6863759e07f80276f397
+  FBSnapshotTestCase: 9d5fe43b29ae3a0ed8fc829477971b281038f748
+  NUIParse: 143a5aa2a91feba74f33d55af88ed2d996777528
+  UIImage+ColorFromImage: b84b5f8b4dc9d996d17d2b736e1429f4a13b37e4
 
-COCOAPODS: 0.33.1
+COCOAPODS: 0.36.3
