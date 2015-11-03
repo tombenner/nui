@@ -1,5 +1,11 @@
 NUI
 ===
+
+[![Build Status](https://travis-ci.org/tombenner/nui.svg?branch=master)](https://travis-ci.org/tombenner/nui)
+[![Version](https://img.shields.io/cocoapods/v/NUI.svg?style=flat)](http://cocoapods.org/pods/KeepBackgroundCell)
+[![License](https://img.shields.io/cocoapods/l/NUI.svg?style=flat)](http://cocoapods.org/pods/KeepBackgroundCell)
+[![Platform](https://img.shields.io/cocoapods/p/NUI.svg?style=flat)](http://cocoapods.org/pods/KeepBackgroundCell)
+
 Style iOS apps with a stylesheet, similar to CSS
 
 Description
