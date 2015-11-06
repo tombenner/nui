@@ -4,19 +4,12 @@ PODS:
 
 DEPENDENCIES:
   - FBSnapshotTestCase (~> 1.1)
-  - NUIParse (from `https://github.com/tombenner/NUIParse`)
-
-EXTERNAL SOURCES:
-  NUIParse:
-    :git: https://github.com/tombenner/NUIParse
-
-CHECKOUT OPTIONS:
-  NUIParse:
-    :commit: 25d551f5976fdcea7bf580f29fe11a7d2b49f5e1
-    :git: https://github.com/tombenner/NUIParse
+  - NUIParse
 
 SPEC CHECKSUMS:
   FBSnapshotTestCase: 9d5fe43b29ae3a0ed8fc829477971b281038f748
   NUIParse: 9b6d5a6b782dc654ac6c846d623885080306f07f
+
+PODFILE CHECKSUM: e265a2d81d21da524e84f05b66ece67bcd063046
 
 COCOAPODS: 0.39.0

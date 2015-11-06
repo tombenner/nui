@@ -1,1 +1,0 @@
-PODS_NUIPARSE_OTHER_LDFLAGS = -framework Foundation
