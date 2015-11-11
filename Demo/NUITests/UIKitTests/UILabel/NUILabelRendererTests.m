@@ -25,9 +25,6 @@
     _sut = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 12, 12)];
     _sut.text = @"label";
     
-    // Shouldn't need to set this. Relates to issue #260
-    _sut.nuiClass = @"Label";
-    
     [_sut applyNUI];
 }
 
