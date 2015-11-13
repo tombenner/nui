@@ -1,7 +1,41 @@
 language: objective-c
+matrix:
+  include:
+    - osx_image: xcode6.1
+      env: DEVICE="iPhone Retina (4-inch)" VERSION=7.0.3
+    - osx_image: xcode6.1
+      env: DEVICE="iPhone Retina (4-inch)" VERSION=7.1
+    - osx_image: xcode6.1
+      env: DEVICE="iPhone Retina (4-inch)" VERSION=8.1
+    - osx_image: xcode7
+      env: DEVICE="iPhone Retina (4-inch)" VERSION=8.1
+    - osx_image: xcode7
+      env: DEVICE="iPhone Retina (4-inch)" VERSION=8.2
+    - osx_image: xcode7
+      env: DEVICE="iPhone Retina (4-inch)" VERSION=8.3
+    - osx_image: xcode7
+      env: DEVICE="iPhone Retina (4-inch)" VERSION=8.4
+    - osx_image: xcode7
+      env: DEVICE="iPhone Retina (4-inch)" VERSION=9.0
+    - osx_image: xcode7.1
+      env: DEVICE="iPhone 4s" VERSION=9.1
+    - osx_image: xcode7.1
+      env: DEVICE="iPhone 5s" VERSION=9.1
+    - osx_image: xcode7.1
+      env: DEVICE="iPhone 6s" VERSION=9.1
+    - osx_image: xcode7.1
+      env: DEVICE="iPhone 6s Plus" VERSION=9.1
+    - osx_image: xcode7.1
+      env: DEVICE="iPad 2" VERSION=9.1
+    - osx_image: xcode7.1
+      env: DEVICE="iPad Retina" VERSION=9.1
+    - osx_image: xcode7.1
+      env: DEVICE="iPad Air 2" VERSION=9.1
+    - osx_image: xcode7.1
+      env: DEVICE="iPad Pro" VERSION=9.1
 before_install:
   - export LANG=en_US.UTF-8
   - gem install cocoapods  # Update CocoaPods if needed
-  - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
   - cd Demo && pod install
-script: "xcodebuild -workspace NUIDemo.xcworkspace -scheme NUITests -destination 'platform=iOS Simulator,name=iPhone Retina (4-inch),OS=7.1' clean test | xcpretty -c && exit ${PIPESTATUS[0]}"
+script:
+  - xctool -sdk iphonesimulator -workspace NUIDemo.xcworkspace -scheme NUITests -destination "platform=iOS Simulator,name=$DEVICE,OS=$VERSION" clean test
