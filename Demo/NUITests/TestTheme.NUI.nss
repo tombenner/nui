@@ -122,6 +122,8 @@ ButtonWithColor {
     background-color-selected: green;
     background-color-selected-disabled: blue;
     background-color-selected-highlighted: blue;
+    font-name: ultraLightSystem;
+    font-size: 13;
 }
 
 ButtonWithGradientColor {
