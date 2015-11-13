@@ -9,6 +9,7 @@
 #import <XCTest/XCTest.h>
 
 #import "UIButton+NUI.h"
+#import "NUIRenderer.h"
 
 static NSString * const NUIButtonBackgroundColorTestsStyleClass = @"ButtonWithColor";
 
@@ -100,5 +101,23 @@ static NSString * const NUIButtonBackgroundColorTestsStyleClass = @"ButtonWithCo
 {
     XCTAssertEqualObjects([self backgroundColorForState:UIControlStateSelected|UIControlStateHighlighted], [UIColor blueColor], @"NUI should set button background color when selected and highlighted");
 }
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_2
+
+// font-name (FontName)
+- (void)testSetFontName
+{
+    UIFont *font = _sut.titleLabel.font;
+    XCTAssertEqualObjects(font.fontName, @".HelveticaNeueInterface-UltraLightP2", @"NUI should set button font name");
+}
+
+// font-size (Number)
+- (void)testSetFontSize
+{
+    UIFont *font = _sut.titleLabel.font;
+    XCTAssertEqual(font.pointSize, 13, @"NUI should set button font size");
+}
+
+#endif
 
 @end
