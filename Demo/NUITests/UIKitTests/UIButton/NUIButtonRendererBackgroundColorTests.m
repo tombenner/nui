@@ -102,7 +102,7 @@ static NSString * const NUIButtonBackgroundColorTestsStyleClass = @"ButtonWithCo
     XCTAssertEqualObjects([self backgroundColorForState:UIControlStateSelected|UIControlStateHighlighted], [UIColor blueColor], @"NUI should set button background color when selected and highlighted");
 }
 
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_2
+#if defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && __IPHONE_OS_VERSION_MAX_ALLOWED >= 80200
 
 // font-name (FontName)
 - (void)testSetFontName
