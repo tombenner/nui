@@ -218,7 +218,8 @@ static NUISettings *instance = nil;
     if ([self hasProperty:propertyName withClass:className]) {
         NSString *fontName = [self get:propertyName withClass:className];
         
-        if ([[UIFont class] respondsToSelector:@selector(systemFontOfSize:weight:)]) {
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_2
+        if (&UIFontWeightBlack != NULL) {
             if ([fontName isEqualToString:@"blackSystem"]) {
                 font = [UIFont systemFontOfSize:fontSize weight:UIFontWeightBlack];
             } else if ([fontName isEqualToString:@"heavySystem"]) {
@@ -235,6 +236,7 @@ static NUISettings *instance = nil;
                 font = [UIFont systemFontOfSize:fontSize weight:UIFontWeightUltraLight];
             }
         }
+#endif
         if (!font) {
             if ([fontName isEqualToString:@"system"]) {
                 font = [UIFont systemFontOfSize:fontSize];
