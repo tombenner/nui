@@ -87,6 +87,11 @@ static NSString * const NUIButtonBackgroundColorTestsStyleClass = @"ButtonWithCo
 // font-name (FontName)
 - (void)testSetFontName
 {
+    if (&UIFontWeightUltraLight == NULL) {
+      // Skip test when iOS Version doesn't offer ultra light system font
+      return;
+    }
+  
     UIFont *font = _sut.titleLabel.font;
     NSString *expectedFontName = @".HelveticaNeueInterface-UltraLightP2";
     NSOperatingSystemVersion ios9_0_0 = (NSOperatingSystemVersion){9, 0, 0};
@@ -99,6 +104,11 @@ static NSString * const NUIButtonBackgroundColorTestsStyleClass = @"ButtonWithCo
 // font-size (Number)
 - (void)testSetFontSize
 {
+    if (&UIFontWeightUltraLight == NULL) {
+      // Skip test when iOS Version doesn't offer ultra light system font
+      return;
+    }
+  
     UIFont *font = _sut.titleLabel.font;
     XCTAssertEqual(font.pointSize, 13, @"NUI should set button font size");
 }
