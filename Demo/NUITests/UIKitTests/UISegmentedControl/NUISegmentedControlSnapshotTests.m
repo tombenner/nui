@@ -32,7 +32,7 @@ static NSString * const NUISegmentedControlTestsStyleClass = @"SegmentedControlC
     _sut.selectedSegmentIndex = 0;
     
     // Flip this to YES to record images in the reference image directory.
-    self.recordMode = NO;
+    self.recordMode = YES;
 }
 
 // background-color (Color)
@@ -43,7 +43,13 @@ static NSString * const NUISegmentedControlTestsStyleClass = @"SegmentedControlC
 // divider-color (Color)
 - (void)testSegmentedControlColorsRenderCorrectly
 {
-    FBSnapshotVerifyView(_sut, nil);
+    NSString* identifier;
+    NSString* version = [[UIDevice currentDevice] systemVersion];
+    if ([@"8.0" compare:version options:NSNumericSearch] == NSOrderedDescending) {
+      identifier = @"iOS7";
+    }
+  
+    FBSnapshotVerifyView(_sut, identifier);
 }
 
 @end

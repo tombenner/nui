@@ -29,7 +29,7 @@ static NSString * const NUISearchBarGradientTestsStyleClass = @"SearchBarWithGra
     [_sut applyNUI];
     
     // Flip this to YES to record images in the reference image directory.
-    self.recordMode = NO;
+    self.recordMode = YES;
 }
 
 #pragma mark - Button Gradients
@@ -37,7 +37,13 @@ static NSString * const NUISearchBarGradientTestsStyleClass = @"SearchBarWithGra
 // background-color-top/background-color-bottom (Gradient)
 - (void)testButtonWithGradient
 {
-    FBSnapshotVerifyView(_sut, nil);
+    NSString* identifier;
+    NSString* version = [[UIDevice currentDevice] systemVersion];
+    if ([@"8.0" compare:version options:NSNumericSearch] == NSOrderedDescending) {
+      identifier = @"iOS7";
+    }
+  
+    FBSnapshotVerifyView(_sut, identifier);
 }
 
 @end
