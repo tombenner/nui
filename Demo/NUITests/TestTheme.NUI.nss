@@ -232,6 +232,8 @@ SegmentedControl {
 }
 
 SegmentedControlColors {
+    font-name: HelveticaNeue;
+    font-size: 12;
     background-color: lightGray;
     background-color-selected: darkGray;
     border-color: black;
