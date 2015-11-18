@@ -42,6 +42,13 @@
 // maximum-track-tint-color (Color)
 - (void)testSetMaximumTrackTintColor
 {
+    NSString* version = [[UIDevice currentDevice] systemVersion];
+    if ([@"9.0" compare:version options:NSNumericSearch] == NSOrderedDescending
+        && [@"8.2" compare:version options:NSNumericSearch] == NSOrderedAscending) {
+        // maximumTrackTintColor getter is broken on iOS 8.3 and 8.4
+        return;
+    }
+    
     XCTAssertEqualObjects(_sut.maximumTrackTintColor, [UIColor redColor], @"NUI should set slider maximum track tint color");
 }
 
