@@ -43,8 +43,13 @@ static NSString * const NUISegmentedControlTestsStyleClass = @"SegmentedControlC
 // divider-color (Color)
 - (void)testSegmentedControlColorsRenderCorrectly
 {
-    NSString* identifier;
     NSString* version = [[UIDevice currentDevice] systemVersion];
+    if ([@"7.1" compare:version options:NSNumericSearch] == NSOrderedDescending) {
+      // Skip this test on iOS 7.0.3 or lower
+      return;
+    }
+  
+    NSString* identifier;
     if ([@"8.0" compare:version options:NSNumericSearch] == NSOrderedDescending) {
       identifier = @"iOS7";
     }
