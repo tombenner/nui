@@ -16,10 +16,6 @@
         [bar setBackgroundImage:[NUISettings getImage:@"background-image" withClass:className]];
     }
     
-    if ([NUISettings hasProperty:@"background-tint-color" withClass:className]) {
-        [bar setTintColor:[NUISettings getColor:@"background-tint-color" withClass:className]];
-    }
-    
     if ([NUISettings hasProperty:@"selected-image" withClass:className]) {
         [bar setSelectionIndicatorImage:[NUISettings getImage:@"selected-image" withClass:className]];
     }
@@ -39,6 +35,14 @@
                 [bar setSelectionIndicatorImage:[NUISettings getImage:@"background-image-selected" withClass:itemClass]];
             }
         }
+    }
+    
+    if ([NUISettings hasProperty:@"background-tint-color" withClass:className]) {
+        [bar setTintColor:[NUISettings getColor:@"background-tint-color" withClass:className]];
+    }
+    
+    if ([NUISettings hasProperty:@"background-color" withClass:className]) {
+        [bar setBackgroundColor:[NUISettings getColor:@"background-color" withClass:className]];
     }
 }
 
