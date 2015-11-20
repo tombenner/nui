@@ -69,6 +69,8 @@ Installation
 ### CocoaPods
 
 NUI is most easily installed using [CocoaPods](http://cocoapods.org/). Its pod name is "NUI". After installing it, add `[NUISettings init];` to `application:didFinishLaunchingWithOptions` in AppDelegate.m (like [this](https://github.com/tombenner/nui/blob/master/Demo/NUIDemo/AppDelegate.m)).
+When installed as a framework, NUI can be natively imported in Swift. Just add
+`import NUI` to the top of your file.
 
 ### Without CocoaPods
 
@@ -76,18 +78,11 @@ If you choose not to use CocoaPods, you can install NUI with these steps:
 
 1. Copy the NUI directory into your application
 2. Add the CoreImage and QuartzCore frameworks to your application if you haven't already (like [this](http://stackoverflow.com/a/3377682))
-3. Add [CoreParse](https://github.com/beelsebob/CoreParse) as a subproject, set its iOSCoreParse target as a dependency of your target, and add libCoreParse.a to your linked libraries.
+3. Add [NUIParse](https://github.com/tombenner/NUIParse) as a subproject, set its iOSNUIParse target as a dependency of your target, and add libNUIParse.a to your linked libraries.
 4. Add `[NUISettings init];` to `application:didFinishLaunchingWithOptions` in AppDelegate.m (like [this](https://github.com/tombenner/nui/blob/master/Demo/NUIDemo/AppDelegate.m))
+5. To use NUI in Swift add `#import <NUI/NUISettings.h>` to your bridging header.
 
 The Demo uses CocoaPods, so you'll want to [install CocoaPods](http://cocoapods.org/), run `pod install` in the `Demo` directory, and then open the .xcworkspace to open the project.
-
-### Swift
-
-If you're using Swift, in addition to the steps above, you'll also want to add the following `#import` in your bridging header:
-
-```objective-c
-#import <NUI/NUISettings.h>
-```
 
 Usage
 -----

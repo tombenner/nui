@@ -6,7 +6,11 @@
 //  Copyright (c) 2014 Tom Benner. All rights reserved.
 //
 
-#import "NUIParse.h"
+#if __has_include(<NUIParse/NUIParse.h>)
+#    import <NUIParse/NUIParse.h>
+#else
+#    import "NUIParse.h"
+#endif
 
 @interface NUIParserDelegate : NSObject <NUIPParserDelegate>
 
