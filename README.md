@@ -573,6 +573,7 @@ The detail label of a *UITableViewCell*
 * font-name *(FontName)*
 * font-size *(Number)*
 * padding *(Box)*
+* *all other attributes supported by UIView*
 
 #### View
 
