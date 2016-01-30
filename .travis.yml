@@ -35,7 +35,7 @@ matrix:
       env: DEVICE="iPad Pro" VERSION=9.1
 before_install:
   - export LANG=en_US.UTF-8
-  - gem install cocoapods  # Update CocoaPods if needed
-  - cd Demo && pod install
+before_script:
+  - bundle exec pod install --project-directory=Demo
 script:
-  - xctool -sdk iphonesimulator -workspace NUIDemo.xcworkspace -scheme NUITests -destination "platform=iOS Simulator,name=$DEVICE,OS=$VERSION" clean test
+  - xctool -sdk iphonesimulator -workspace Demo/NUIDemo.xcworkspace -scheme NUITests -destination "platform=iOS Simulator,name=$DEVICE,OS=$VERSION" clean test
