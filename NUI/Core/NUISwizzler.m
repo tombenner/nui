@@ -27,6 +27,7 @@
     [self swizzleDidMoveToWindow:[UITextField class]];
     [self swizzleDidMoveToWindow:[UITextView class]];
     [self swizzleDidMoveToWindow:[UIToolbar class]];
+    [self swizzleDidMoveToWindow:[UIPageControl class]];
     [self swizzleDidMoveToWindow:[UIControl class]];
     [self swizzleDidMoveToWindow:[UIView class]];
   

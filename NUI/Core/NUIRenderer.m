@@ -128,6 +128,14 @@ static NUIRenderer *gInstance = nil;
     [NUISwitchRenderer render:uiSwitch withClass:className];
 }
 
++ (void)renderPageControl:(UIPageControl*)pageControl {
+    [NUIPageControlRenderer render:pageControl withClass:@"PageControl"];
+}
+
++ (void)renderPageControl:(UIPageControl*)pageControl withClass:(NSString*)className {
+    [NUIPageControlRenderer render:pageControl withClass:className];
+}
+
 + (void)renderTabBar:(UITabBar*)bar
 {
     [NUITabBarRenderer render:bar withClass:@"TabBar"];

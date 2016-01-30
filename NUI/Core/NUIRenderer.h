@@ -21,6 +21,7 @@
 #import "NUISegmentedControlRenderer.h"
 #import "NUISliderRenderer.h"
 #import "NUISwitchRenderer.h"
+#import "NUIPageControlRenderer.h"
 #import "NUITabBarRenderer.h"
 #import "NUITabBarItemRenderer.h"
 #import "NUITableViewRenderer.h"
@@ -71,6 +72,9 @@
 
 + (void)renderSwitch:(UISwitch*)uiSwitch;
 + (void)renderSwitch:(UISwitch*)uiSwitch withClass:(NSString*)className;
+
++ (void)renderPageControl:(UIPageControl*)pageControl;
++ (void)renderPageControl:(UIPageControl*)pageControl withClass:(NSString*)className;
 
 + (void)renderTabBar:(UITabBar*)bar;
 + (void)renderTabBar:(UITabBar*)bar withClass:(NSString*)className;
