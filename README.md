@@ -376,6 +376,13 @@ Below are all of the currently available style classes, their corresponding UI c
 * text-shadow-offset *(Offset)*
 * title-vertical-offset *(Number)*
 
+#### PageControl
+
+*UIPageControl*
+
+* color *(Color)*   `pageIndicatorTintColor`
+* current-color *(Color)* `currentPageIndicatorTintColor`
+
 #### Progress
 
 *UIProgressView*
