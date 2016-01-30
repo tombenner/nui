@@ -2,8 +2,9 @@
 #import <QuartzCore/QuartzCore.h>
 #import "NUIGraphics.h"
 #import "NUISettings.h"
+#import "NUIViewRenderer.h"
 
-@interface NUITextViewRenderer : NSObject
+@interface NUITextViewRenderer : NUIViewRenderer
 
 + (void)render:(UITextView*)textView withClass:(NSString*)className;
 

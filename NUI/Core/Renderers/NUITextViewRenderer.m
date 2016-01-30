@@ -6,6 +6,8 @@
 {
     NSString *property;
     
+    [super render:textView withClass: className];
+
     property = @"font-color";
     if ([NUISettings hasProperty:property withClass:className]) {
         textView.textColor = [NUISettings getColor:property withClass:className];
