@@ -87,6 +87,8 @@ The Demo uses CocoaPods, so you'll want to [install CocoaPods](http://cocoapods.
 Usage
 -----
 
+Here's a [walkthrough on how to get up and running with NUI](http://h4ckish.com/2015/12/31/how-to-style-your-ios-app-with-nui/).
+
 After dropping in NUI, you can modify your app's styling by simply editing NUIStyle.nss. If you want to avoid modifying NUI's files, you can copy NUIStyle.nss into your app, rename it (e.g. MyTheme.nss), then replace `[NUISettings init]` with `[NUISettings initWithStylesheet:@"MyTheme"];` (step 4 in Installation).
 
 Due to the nature of UIKit's usage of simple UI components within more complex UI components, NUI doesn't style some UIKit components in some very rare cases. If you ever need to apply styling for these cases, you can simply use NUIRenderer:
