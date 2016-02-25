@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "NUI"
-  s.version      = "0.5.5"
+  s.version      = "0.5.5.1"
   s.summary      = "Style iOS apps with a stylesheet, similar to CSS."
   s.description  = "NUI is a drop-in UI kit for iOS that lets you style UI elements using a stylesheet, similar to CSS. It lets you style an entire app in minutes."
   s.homepage     = "https://github.com/tombenner/nui"
