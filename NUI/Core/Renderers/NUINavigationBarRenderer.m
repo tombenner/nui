@@ -33,6 +33,23 @@
         [bar setShadowImage:[NUISettings getImage:@"shadow-image" withClass:className]];
     }
 
+    if ([NUISettings hasProperty:@"bar-style" withClass:className]) {
+        NSString* barstyle = [NUISettings get:@"bar-style" withClass:className];
+        if ([barstyle isEqual:@"Default"]) {
+            [bar setBarStyle:UIBarStyleDefault];
+        } else if ([barstyle isEqual:@"Black"]) {
+            [bar setBarStyle:UIBarStyleBlack];
+        } else if ([barstyle isEqual:@"BlackOpaque"]) {
+            [bar setBarStyle:UIBarStyleBlackOpaque];
+        } else if ([barstyle isEqual:@"BlackTranslucent"]) {
+            [bar setBarStyle:UIBarStyleBlackTranslucent];
+        } else {
+            NSLog(@"[NUI] Use of unkown bar-style %@ for style class %@."
+                  @"Allowed values are Default, Black, BlackOpaque and BlackTranslucent",
+                  barstyle, className);
+        }
+    }
+
     NSString *property = @"title-vertical-offset";
     if ([NUISettings hasProperty:property withClass:className]) {
         float offset = [NUISettings getFloat:property withClass:className];
