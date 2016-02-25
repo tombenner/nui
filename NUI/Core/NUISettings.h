@@ -30,6 +30,7 @@
 + (void)initWithStylesheet:(NSString*)name;
 + (void)appendStylesheet:(NSString*)name;
 + (void)loadStylesheetByPath:(NSString*)path;
++ (void)appendStylesheetByPath:(NSString*)path;
 + (BOOL)reloadStylesheetsOnOrientationChange:(UIInterfaceOrientation)orientation;
 + (BOOL)autoUpdateIsEnabled;
 + (NSString*)autoUpdatePath;
