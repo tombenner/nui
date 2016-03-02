@@ -9,7 +9,7 @@
 #if __has_include(<NUIParse/NUIParse.h>)
 #    import <NUIParse/NUIParse.h>
 #else
-#    import "NUIParse.h"
+#import "NUIParse.h"
 #endif
 
 @interface NUIMediaBlock : NSObject<NUIPParseResult>
