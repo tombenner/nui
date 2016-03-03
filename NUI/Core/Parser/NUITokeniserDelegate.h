@@ -7,7 +7,7 @@
 //
 
 
-
+@protocol NUIPTokeniserDelegate;
 @interface NUITokeniserDelegate : NSObject <NUIPTokeniserDelegate>
 
 @end

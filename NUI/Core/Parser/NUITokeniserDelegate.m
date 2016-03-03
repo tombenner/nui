@@ -7,7 +7,7 @@
 
 #import <NUIParse/NUIParse.h>
 #import "NUITokeniserDelegate.h"
-#import "NUIVariableToken.h"
+#import "NUIVariableTokenWrapper.h"
 
 @implementation NUITokeniserDelegate
 
@@ -24,9 +24,10 @@
     if ([token isIdentifierToken]) {
         NUIPIdentifierToken *idToken =  (NUIPIdentifierToken *)token;
         
+        
         if ([idToken.identifier hasPrefix:@"@"]) {
-            NUIVariableToken *varToken  = [[NUIVariableToken alloc] initWithIdentifierToken:idToken];
-            [stream pushToken:varToken];
+            NUIVariableTokenWrapper *varToken  = [[NUIVariableTokenWrapper alloc] initWithIdentifierToken:idToken];
+            [stream pushToken:[varToken getToken]];
             return;
         }
     }

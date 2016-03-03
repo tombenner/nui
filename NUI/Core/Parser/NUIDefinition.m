@@ -8,7 +8,7 @@
 
 #import <NUIParse/NUIParse.h>
 #import "NUIDefinition.h"
-#import "NUIVariableToken.h"
+#import "NUIVariableTokenWrapper.h"
 
 @implementation NUIDefinition
 

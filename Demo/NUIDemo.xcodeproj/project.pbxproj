@@ -135,7 +135,7 @@
 		EAB69D47188625E900358420 /* NUISelectorSet.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB69D38188625E900358420 /* NUISelectorSet.m */; };
 		EAB69D48188625E900358420 /* NUIStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB69D3A188625E900358420 /* NUIStyleSheet.m */; };
 		EAB69D4A188625E900358420 /* NUITokeniserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB69D3E188625E900358420 /* NUITokeniserDelegate.m */; };
-		EAB69D4C188625E900358420 /* NUIVariableToken.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB69D42188625E900358420 /* NUIVariableToken.m */; };
+		EAB69D4C188625E900358420 /* NUIVariableTokenWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB69D42188625E900358420 /* NUIVariableTokenWrapper.m */; };
 		EADA4809188DD9080060F8BC /* NUIMediaBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = EADA4808188DD9080060F8BC /* NUIMediaBlock.m */; };
 		EADA480C188DE0E00060F8BC /* NUIMediaOptionSet.m in Sources */ = {isa = PBXBuildFile; fileRef = EADA480B188DE0E00060F8BC /* NUIMediaOptionSet.m */; };
 		EADA480F188F10270060F8BC /* NUIStyleSheetItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EADA480E188F10270060F8BC /* NUIStyleSheetItem.m */; };
@@ -343,8 +343,8 @@
 		EAB69D3A188625E900358420 /* NUIStyleSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NUIStyleSheet.m; path = Parser/NUIStyleSheet.m; sourceTree = "<group>"; };
 		EAB69D3D188625E900358420 /* NUITokeniserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUITokeniserDelegate.h; path = Parser/NUITokeniserDelegate.h; sourceTree = "<group>"; };
 		EAB69D3E188625E900358420 /* NUITokeniserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NUITokeniserDelegate.m; path = Parser/NUITokeniserDelegate.m; sourceTree = "<group>"; };
-		EAB69D41188625E900358420 /* NUIVariableToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUIVariableToken.h; path = Parser/NUIVariableToken.h; sourceTree = "<group>"; };
-		EAB69D42188625E900358420 /* NUIVariableToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NUIVariableToken.m; path = Parser/NUIVariableToken.m; sourceTree = "<group>"; };
+		EAB69D41188625E900358420 /* NUIVariableTokenWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUIVariableTokenWrapper.h; path = Parser/NUIVariableTokenWrapper.h; sourceTree = "<group>"; };
+		EAB69D42188625E900358420 /* NUIVariableTokenWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NUIVariableTokenWrapper.m; path = Parser/NUIVariableTokenWrapper.m; sourceTree = "<group>"; };
 		EADA4807188DD8FF0060F8BC /* NUIMediaBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUIMediaBlock.h; path = Parser/NUIMediaBlock.h; sourceTree = "<group>"; };
 		EADA4808188DD9080060F8BC /* NUIMediaBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NUIMediaBlock.m; path = Parser/NUIMediaBlock.m; sourceTree = "<group>"; };
 		EADA480A188DE0D80060F8BC /* NUIMediaOptionSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUIMediaOptionSet.h; path = Parser/NUIMediaOptionSet.h; sourceTree = "<group>"; };
@@ -797,8 +797,8 @@
 				EAB69D3A188625E900358420 /* NUIStyleSheet.m */,
 				EAB69D3D188625E900358420 /* NUITokeniserDelegate.h */,
 				EAB69D3E188625E900358420 /* NUITokeniserDelegate.m */,
-				EAB69D41188625E900358420 /* NUIVariableToken.h */,
-				EAB69D42188625E900358420 /* NUIVariableToken.m */,
+				EAB69D41188625E900358420 /* NUIVariableTokenWrapper.h */,
+				EAB69D42188625E900358420 /* NUIVariableTokenWrapper.m */,
 			);
 			name = Parser;
 			sourceTree = "<group>";
@@ -1075,7 +1075,7 @@
 				89B940701671418200850A9A /* NUIAppearance.m in Sources */,
 				89B940711671418200850A9A /* NUIConverter.m in Sources */,
 				DBB82A8E1C5C2FC900A483D3 /* UIPageControl+NUI.m in Sources */,
-				EAB69D4C188625E900358420 /* NUIVariableToken.m in Sources */,
+				EAB69D4C188625E900358420 /* NUIVariableTokenWrapper.m in Sources */,
 				EAB69D43188625E900358420 /* NUIDeclaration.m in Sources */,
 				89B940721671418200850A9A /* NUIGraphics.m in Sources */,
 				89B940731671418200850A9A /* NUIRenderer.m in Sources */,
@@ -1272,7 +1272,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -1299,7 +1299,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
