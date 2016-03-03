@@ -6,8 +6,9 @@
 //  Copyright (c) 2014 Tom Benner. All rights reserved.
 //
 
+#import <NUIParse/NUIParse.h>
 #import "NUIParserDelegate.h"
-#import "NUIVariableToken.h"
+#import "NUIVariableTokenWrapper.h"
 
 NSString *flattenTokens(NSArray *tokens);
 
@@ -34,7 +35,7 @@ NSString *flattenTokens(NSArray *tokens)
             tokenString = [token keyword];
         } else if ([token isIdentifierToken]) {
             tokenString = [token identifier];
-        } else if ([token isKindOfClass:[NUIVariableToken class]]) {
+        } else if ([token isKindOfClass:[NUIPToken class]]) {
             tokenString = [token variable];
         } else if ([token isKindOfClass:[NSString class]]) {
             tokenString = token;
