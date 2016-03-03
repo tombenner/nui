@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 Tom Benner. All rights reserved.
 //
 
-#import <NUIParse/NUIParse.h>
-
 @class NUIRuleSet, NUIDefinition, NUIMediaBlock;
 
 @interface NUIStyleSheetItem : NSObject<NUIPParseResult>

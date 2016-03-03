@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Tom Benner. All rights reserved.
 //
 
+#import <NUIParse/NUIParse.h>
 #import "NUIStyleSheet.h"
 #import "NUIStyleSheetItem.h"
 #import "NUIDefinition.h"

@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Tom Benner. All rights reserved.
 //
 
+#import <NUIParse/NUIParse.h>
 #import "NUISelectorSet.h"
 
 @interface NUISelector : NSObject<NUIPParseResult>

@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 Tom Benner. All rights reserved.
 //
 
-#import <NUIParse/NUIParse.h>
 
 @interface NUIRuleSet : NSObject<NUIPParseResult>
 

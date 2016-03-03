@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Tom Benner. All rights reserved.
 //
 
+#import <NUIParse/NUIParse.h>
 #import "NUIMediaOptionSet.h"
 
 @interface NUIDelimitedMediaOption : NSObject<NUIPParseResult>

@@ -305,6 +305,7 @@
 		B51BC289169724A3004A38F8 /* UISwitch+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISwitch+NUI.m"; sourceTree = "<group>"; };
 		B51BC28C16972527004A38F8 /* NUISwitchRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUISwitchRenderer.h; sourceTree = "<group>"; };
 		B51BC28D16972527004A38F8 /* NUISwitchRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISwitchRenderer.m; sourceTree = "<group>"; };
+		B69E227A1C88987600DE6E53 /* NUIStyleSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUIStyleSheet.h; path = Parser/NUIStyleSheet.h; sourceTree = "<group>"; };
 		CB8A030E17CC1F7C0065A7DD /* NUITextViewRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUITextViewRenderer.h; sourceTree = "<group>"; };
 		CB8A030F17CC1F7C0065A7DD /* NUITextViewRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUITextViewRenderer.m; sourceTree = "<group>"; };
 		CB8A031117CC1FCB0065A7DD /* UITextView+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+NUI.h"; sourceTree = "<group>"; };
@@ -339,7 +340,6 @@
 		EAB69D36188625E900358420 /* NUIRuleSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NUIRuleSet.m; path = Parser/NUIRuleSet.m; sourceTree = "<group>"; };
 		EAB69D37188625E900358420 /* NUISelectorSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUISelectorSet.h; path = Parser/NUISelectorSet.h; sourceTree = "<group>"; };
 		EAB69D38188625E900358420 /* NUISelectorSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NUISelectorSet.m; path = Parser/NUISelectorSet.m; sourceTree = "<group>"; };
-		EAB69D39188625E900358420 /* NUIStyleSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUIStyleSheet.h; path = Parser/NUIStyleSheet.h; sourceTree = "<group>"; };
 		EAB69D3A188625E900358420 /* NUIStyleSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NUIStyleSheet.m; path = Parser/NUIStyleSheet.m; sourceTree = "<group>"; };
 		EAB69D3D188625E900358420 /* NUITokeniserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUITokeniserDelegate.h; path = Parser/NUITokeniserDelegate.h; sourceTree = "<group>"; };
 		EAB69D3E188625E900358420 /* NUITokeniserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NUITokeniserDelegate.m; path = Parser/NUITokeniserDelegate.m; sourceTree = "<group>"; };
@@ -793,7 +793,7 @@
 				EADA480E188F10270060F8BC /* NUIStyleSheetItem.m */,
 				EADA480A188DE0D80060F8BC /* NUIMediaOptionSet.h */,
 				EADA480B188DE0E00060F8BC /* NUIMediaOptionSet.m */,
-				EAB69D39188625E900358420 /* NUIStyleSheet.h */,
+				B69E227A1C88987600DE6E53 /* NUIStyleSheet.h */,
 				EAB69D3A188625E900358420 /* NUIStyleSheet.m */,
 				EAB69D3D188625E900358420 /* NUITokeniserDelegate.h */,
 				EAB69D3E188625E900358420 /* NUITokeniserDelegate.m */,

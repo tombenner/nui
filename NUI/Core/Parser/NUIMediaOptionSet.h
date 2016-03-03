@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 Tom Benner. All rights reserved.
 //
 
-#import <NUIParse/NUIParse.h>
-
 @interface NUIMediaOption : NSObject<NUIPParseResult>
 
 @property (strong) NSString *property;

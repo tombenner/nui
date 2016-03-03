@@ -6,7 +6,9 @@
 //  Copyright (c) 2014 Tom Benner. All rights reserved.
 //
 
+#import <NUIParse/NUIParse.h>
 #import "NUIDeclaration.h"
+
 
 @implementation NUIDeclaration
 

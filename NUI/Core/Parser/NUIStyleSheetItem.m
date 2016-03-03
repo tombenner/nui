@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Tom Benner. All rights reserved.
 //
 
+#import <NUIParse/NUIParse.h>
 #import "NUIStylesheetItem.h"
 #import "NUIMediaBlock.h"
 
