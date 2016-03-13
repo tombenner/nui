@@ -166,6 +166,7 @@ Label {
     text-shadow-color: black;
     text-shadow-offset: 1, 2;
     text-transform: uppercase;
+    text-line-clamp:6;
     width: 100;
 }
 
