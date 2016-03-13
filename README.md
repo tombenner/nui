@@ -355,6 +355,7 @@ Below are all of the currently available style classes, their corresponding UI c
 * text-align *(TextAlign)*
 * text-alpha *(Number)*
 * text-auto-fit *(Boolean)*
+* text-line-clamp *(Integer)*
 * text-shadow-color *(Color)*
 * text-shadow-offset *(Offset)*
 * text-transform *(TextTransform)*

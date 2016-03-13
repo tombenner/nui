@@ -24,6 +24,7 @@
 
 + (BOOL)toBoolean:(id)value;
 + (float)toFloat:(id)value;
++ (NSInteger)toInteger:(id)value;
 + (CGSize)toSize:(NSString*)value;
 + (UIOffset)toOffset:(NSString*)value;
 + (UIEdgeInsets)toEdgeInsets:(NSString*)value;
