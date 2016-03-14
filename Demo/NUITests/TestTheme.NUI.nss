@@ -294,3 +294,7 @@ TabBarWithGradient {
 TextField{
     keyboard-appearance: dark;
 }
+
+TextView {
+    keyboard-appearance: dark;
+}

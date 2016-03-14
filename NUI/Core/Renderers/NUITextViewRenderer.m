@@ -1,5 +1,5 @@
 #import "NUITextViewRenderer.h"
-
+#import "NUITextInputTraitsRenderer.h"
 @implementation NUITextViewRenderer
 
 + (void)render:(UITextView*)textView withClass:(NSString*)className
@@ -21,6 +21,11 @@
     if ([NUISettings hasProperty:property withClass:className]) {
         [textView setContentInset:[NUISettings getEdgeInsets:@"padding" withClass:className]];
     }
+    
+    if([textView conformsToProtocol:@protocol(UITextInputTraits)]) {
+        [NUITextInputTraitsRenderer renderKeyboard:(id<UITextInputTraits>)textView withClass:className];
+    }
+
 }
 
 @end
