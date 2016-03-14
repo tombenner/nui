@@ -301,6 +301,11 @@ static NUISettings *instance = nil;
     return [NUIConverter toControlContentVerticalAlignment:[self get:property withClass:className]];
 }
 
++ (UIKeyboardAppearance)getKeyboardAppearance:(NSString*)property withClass:(NSString*)className
+{
+    return [NUIConverter toKeyboardAppearance:[self get:property withClass:className]];
+}
+
 + (NSArray*)getClasses:(NSString*)className
 {
     NSArray *classes = [[[className componentsSeparatedByString: @":"] reverseObjectEnumerator] allObjects];
