@@ -634,7 +634,7 @@ Style Value Types
 * **TextAlign** - A text alignment (e.g. `left`, `right`, `center`)
 * **TextTransform** - A text transform (e.g. `uppercase`, `lowercase`, `capitalize`, `none`)
 * **VerticalAlign** - A vertical alignment (e.g. `top`, `center`, `bottom`, `fill`)
-* **KeyboardAppearance** - A keyboard appearance (e.g. `dark`, `light`, `aleart`)
+* **KeyboardAppearance** - A keyboard appearance (e.g.  `default`, `dark`, `light`, `alert`)
 
 FAQ
 ---
