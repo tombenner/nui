@@ -36,4 +36,5 @@
 + (kTextAlignment)toTextAlignment:(NSString*)value;
 + (UIControlContentHorizontalAlignment)toControlContentHorizontalAlignment:(NSString*)value;
 + (UIControlContentVerticalAlignment)toControlContentVerticalAlignment:(NSString*)value;
++ (UIKeyboardAppearance)toKeyboardAppearance:(NSString*)value;
 @end

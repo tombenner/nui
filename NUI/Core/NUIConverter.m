@@ -253,6 +253,20 @@
     return alignment;
 }
 
++ (UIKeyboardAppearance)toKeyboardAppearance:(NSString*)value
+{
+    UIKeyboardAppearance appearance = UIKeyboardAppearanceDefault;
+    
+    if ([value isEqualToString:@"dark"]) {
+        appearance =  UIKeyboardAppearanceDark;
+    } else if ([value isEqualToString:@"light"]) {
+        appearance =  UIKeyboardAppearanceLight;
+    } else if ([value isEqualToString:@"alert"]) {
+        appearance =  UIKeyboardAppearanceAlert;
+    }
+    return appearance;
+}
+
 /** Matches the given content against the regular expression pattern, extracting
  *  any captured groups into an NSArray. Unmatched captured groups are represented
  *  by NSNull instances in the returned array.
