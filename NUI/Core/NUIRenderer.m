@@ -216,6 +216,11 @@ static NUIRenderer *gInstance = nil;
     [NUIViewRenderer render:view withClass:className];
 }
 
++ (void)renderView:(UIView*)view withClass:(NSString*)className withSuffix:(NSString*)suffix
+{
+    [NUIViewRenderer render:view withClass:className withSuffix:suffix];
+}
+
 + (void)renderWindow:(UIWindow*)window
 {
     [NUIWindowRenderer render:window withClass:@"Window"];

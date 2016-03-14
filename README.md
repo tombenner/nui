@@ -523,6 +523,12 @@ See SegmentedControl
 * text-shadow-color *(Color)*
 * text-shadow-offset *(Offset)*
 
+#### TableCellContentView
+
+The content view of a *UITableViewCell*
+
+* *all attributes supported by UIView*
+
 #### TableCellDetail
 
 The detail label of a *UITableViewCell*
