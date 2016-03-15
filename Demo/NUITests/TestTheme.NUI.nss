@@ -289,3 +289,11 @@ TabBarWithGradient {
     background-color-top: lightGray;
     background-color-bottom: darkGray;
 }
+
+TextField{
+    keyboard-appearance: dark;
+}
+
+TextView {
+    keyboard-appearance: dark;
+}

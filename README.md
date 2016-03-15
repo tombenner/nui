@@ -573,6 +573,7 @@ The detail label of a *UITableViewCell*
 * shadow-radius *(Number)*
 * vertical-align *(VerticalAlign)*
 * width *(Number)*
+* keyboard-appearance *(KeyboardAppearance)*
 
 #### TextView
 
@@ -582,6 +583,7 @@ The detail label of a *UITableViewCell*
 * font-name *(FontName)*
 * font-size *(Number)*
 * padding *(Box)*
+* keyboard-appearance *(KeyboardAppearance)*
 * *all other attributes supported by UIView*
 
 #### View
@@ -632,6 +634,7 @@ Style Value Types
 * **TextAlign** - A text alignment (e.g. `left`, `right`, `center`)
 * **TextTransform** - A text transform (e.g. `uppercase`, `lowercase`, `capitalize`, `none`)
 * **VerticalAlign** - A vertical alignment (e.g. `top`, `center`, `bottom`, `fill`)
+* **KeyboardAppearance** - A keyboard appearance (e.g.  `default`, `dark`, `light`, `alert`)
 
 FAQ
 ---

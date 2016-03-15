@@ -53,6 +53,8 @@
 + (kTextAlignment)getTextAlignment:(NSString*)property withClass:(NSString*)className;
 + (UIControlContentHorizontalAlignment)getControlContentHorizontalAlignment:(NSString*)property withClass:(NSString*)className;
 + (UIControlContentVerticalAlignment)getControlContentVerticalAlignment:(NSString*)property withClass:(NSString*)className;
++ (UIKeyboardAppearance)getKeyboardAppearance:(NSString*)property withClass:(NSString*)className;
+
 + (NSMutableArray*)getGlobalExclusions;
 + (void)setGlobalExclusions:(NSArray*)globalExclusions;
 + (NSString *)stylesheetOrientation;
