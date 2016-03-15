@@ -77,6 +77,11 @@
     if ([NUISettings hasProperty:property withClass:className]) {
         label.shadowOffset = [NUISettings getSize:property withClass:className];
     }
+    
+    property = @"text-line-clamp";
+    if ([NUISettings hasProperty:property withClass:className]) {
+        label.numberOfLines = [NUISettings getInteger:property withClass:className];
+    }
 }
 
 + (BOOL)needsTextTransformWithClass:(NSString*)className

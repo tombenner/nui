@@ -29,6 +29,11 @@
     return [value floatValue];
 }
 
++ (NSInteger)toInteger:(id)value
+{
+    return [value integerValue];
+}
+
 + (NSNumber*)toNumber:(id)value
 {
     return [NSNumber numberWithFloat:[value floatValue]];
