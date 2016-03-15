@@ -169,6 +169,11 @@ static NUISettings *instance = nil;
     return [NUIConverter toFloat:[self get:property withClass:className]];
 }
 
++ (NSInteger)getInteger:(NSString*)property withClass:(NSString*)className
+{
+    return [NUIConverter toInteger:[self get:property withClass:className]];
+}
+
 + (CGSize)getSize:(NSString*)property withClass:(NSString*)className
 {   
     return [NUIConverter toSize:[self get:property withClass:className]];
@@ -294,6 +299,11 @@ static NUISettings *instance = nil;
 + (UIControlContentVerticalAlignment)getControlContentVerticalAlignment:(NSString*)property withClass:(NSString*)className
 {
     return [NUIConverter toControlContentVerticalAlignment:[self get:property withClass:className]];
+}
+
++ (UIKeyboardAppearance)getKeyboardAppearance:(NSString*)property withClass:(NSString*)className
+{
+    return [NUIConverter toKeyboardAppearance:[self get:property withClass:className]];
 }
 
 + (NSArray*)getClasses:(NSString*)className

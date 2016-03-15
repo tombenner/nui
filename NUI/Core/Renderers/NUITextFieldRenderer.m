@@ -8,6 +8,7 @@
 
 #import "NUITextFieldRenderer.h"
 #import "NUIViewRenderer.h"
+#import "NUITextInputTraitsRenderer.h"
 
 @implementation NUITextFieldRenderer
 
@@ -53,6 +54,9 @@
     [NUIViewRenderer renderSize:textField withClass:className];
     [NUIViewRenderer renderBorder:textField withClass:className];
     [NUIViewRenderer renderShadow:textField withClass:className];
+    if([textField conformsToProtocol:@protocol(UITextInputTraits)]) {
+        [NUITextInputTraitsRenderer renderKeyboard:(id<UITextInputTraits>)textField withClass:className];
+    }
 }
 
 @end

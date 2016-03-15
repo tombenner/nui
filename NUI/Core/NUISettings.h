@@ -39,6 +39,7 @@
 + (id)get:(NSString*)property withClass:(NSString*)className;
 + (BOOL)getBoolean:(NSString*)property withClass:(NSString*)className;
 + (float)getFloat:(NSString*)property withClass:(NSString*)className;
++ (NSInteger)getInteger:(NSString*)property withClass:(NSString*)className;
 + (CGSize)getSize:(NSString*)property withClass:(NSString*)className;
 + (UIOffset)getOffset:(NSString*)property withClass:(NSString*)className;
 + (UIEdgeInsets)getEdgeInsets:(NSString*)property withClass:(NSString*)className;
@@ -53,6 +54,8 @@
 + (kTextAlignment)getTextAlignment:(NSString*)property withClass:(NSString*)className;
 + (UIControlContentHorizontalAlignment)getControlContentHorizontalAlignment:(NSString*)property withClass:(NSString*)className;
 + (UIControlContentVerticalAlignment)getControlContentVerticalAlignment:(NSString*)property withClass:(NSString*)className;
++ (UIKeyboardAppearance)getKeyboardAppearance:(NSString*)property withClass:(NSString*)className;
+
 + (NSMutableArray*)getGlobalExclusions;
 + (void)setGlobalExclusions:(NSArray*)globalExclusions;
 + (NSString *)stylesheetOrientation;

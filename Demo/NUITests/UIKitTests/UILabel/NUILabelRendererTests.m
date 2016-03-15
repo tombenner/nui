@@ -158,4 +158,10 @@
     XCTAssertEqual(CGRectGetWidth(_sut.frame), 100, @"NUI should set label width");
 }
 
+// text-line-clamp (Integer)
+- (void) testTextLineClamp
+{
+    XCTAssertEqual(_sut.numberOfLines, 6, @"NUI should set label numberOfLines");
+}
+
 @end

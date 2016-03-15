@@ -91,6 +91,9 @@
 		4ADA71C616A0F15C00BDCF81 /* UISearchBar+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADA71C516A0F15C00BDCF81 /* UISearchBar+NUI.m */; };
 		4ADA71CA16A103CD00BDCF81 /* NUISearchBarRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADA71C916A103CD00BDCF81 /* NUISearchBarRenderer.m */; };
 		4E6135741C97523C0005CA52 /* NUITableViewCellRendererTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6135731C97523C0005CA52 /* NUITableViewCellRendererTests.m */; };
+		4E61356E1C964C7A0005CA52 /* NUITextInputTraitsRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E860DD71C9642EF006F3B0E /* NUITextInputTraitsRenderer.m */; };
+		4E6135711C968D520005CA52 /* NUITextViewRendererTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6135701C968D520005CA52 /* NUITextViewRendererTests.m */; };
+		4E860DDA1C964897006F3B0E /* NUITextFieldRendererTextInputTraitsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E860DD91C964897006F3B0E /* NUITextFieldRendererTextInputTraitsTests.m */; };
 		5B5888C31992BD15005F1ACB /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5888C21992BD15005F1ACB /* Assets */; };
 		5B5888C41992BD1C005F1ACB /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5888C21992BD15005F1ACB /* Assets */; };
 		5B5888C61992BDA7005F1ACB /* NUIButtonRendererSubdirectoryImageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B5888C51992BDA7005F1ACB /* NUIButtonRendererSubdirectoryImageTests.m */; };
@@ -258,6 +261,10 @@
 		4ADA71C816A103CD00BDCF81 /* NUISearchBarRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUISearchBarRenderer.h; sourceTree = "<group>"; };
 		4ADA71C916A103CD00BDCF81 /* NUISearchBarRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISearchBarRenderer.m; sourceTree = "<group>"; };
 		4E6135731C97523C0005CA52 /* NUITableViewCellRendererTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NUITableViewCellRendererTests.m; path = UITableViewCell/NUITableViewCellRendererTests.m; sourceTree = "<group>"; };
+		4E6135701C968D520005CA52 /* NUITextViewRendererTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NUITextViewRendererTests.m; path = UITextView/NUITextViewRendererTests.m; sourceTree = "<group>"; };
+		4E860DD61C9642EF006F3B0E /* NUITextInputTraitsRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NUITextInputTraitsRenderer.h; sourceTree = "<group>"; };
+		4E860DD71C9642EF006F3B0E /* NUITextInputTraitsRenderer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NUITextInputTraitsRenderer.m; sourceTree = "<group>"; };
+		4E860DD91C964897006F3B0E /* NUITextFieldRendererTextInputTraitsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NUITextFieldRendererTextInputTraitsTests.m; path = UITextField/NUITextFieldRendererTextInputTraitsTests.m; sourceTree = "<group>"; };
 		5B5888C21992BD15005F1ACB /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
 		5B5888C51992BDA7005F1ACB /* NUIButtonRendererSubdirectoryImageTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIButtonRendererSubdirectoryImageTests.m; sourceTree = "<group>"; };
 		6327BDA600E6A42FDF1220F4 /* Pods-NUIDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NUIDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-NUIDemo/Pods-NUIDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -429,6 +436,8 @@
 			isa = PBXGroup;
 			children = (
 				4E6135721C9751EB0005CA52 /* UITableViewCell */,
+				4E61356F1C968D260005CA52 /* UITextView */,
+				4E860DD81C9647F7006F3B0E /* UITextField */,
 				0E55162A1938BD9200B293B7 /* UIBarButton */,
 				0E5516191938891000B293B7 /* UIButton */,
 				0EE342971939405900306AC7 /* UIControl */,
@@ -638,6 +647,22 @@
 			name = UITableViewCell;
 			sourceTree = "<group>";
 		};
+		4E61356F1C968D260005CA52 /* UITextView */ = {
+			isa = PBXGroup;
+			children = (
+				4E6135701C968D520005CA52 /* NUITextViewRendererTests.m */,
+			);
+			name = UITextView;
+			sourceTree = "<group>";
+		};
+		4E860DD81C9647F7006F3B0E /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				4E860DD91C964897006F3B0E /* NUITextFieldRendererTextInputTraitsTests.m */,
+			);
+			name = UITextField;
+			sourceTree = "<group>";
+		};
 		89B940211671418100850A9A /* NUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -724,6 +749,8 @@
 				89B940451671418100850A9A /* NUIViewRenderer.m */,
 				4A38830F16C7268000DB99C2 /* NUIWindowRenderer.h */,
 				4A38831016C7268000DB99C2 /* NUIWindowRenderer.m */,
+				4E860DD61C9642EF006F3B0E /* NUITextInputTraitsRenderer.h */,
+				4E860DD71C9642EF006F3B0E /* NUITextInputTraitsRenderer.m */,
 			);
 			path = Renderers;
 			sourceTree = "<group>";
@@ -1054,6 +1081,7 @@
 				0EE34299193A116700306AC7 /* NUIControlRendererTests.m in Sources */,
 				0E3F5E05193C6D90003F6A77 /* NUINavigationBarRendererGradientTest.m in Sources */,
 				4E6135741C97523C0005CA52 /* NUITableViewCellRendererTests.m in Sources */,
+				4E860DDA1C964897006F3B0E /* NUITextFieldRendererTextInputTraitsTests.m in Sources */,
 				0E921406193B791E00101B27 /* NUILabelRendererTests.m in Sources */,
 				0E3F5E0B193C7C1F003F6A77 /* NUISearchBarRendererTests.m in Sources */,
 				0EA8AA8C193DBDF300E1BD29 /* NUITabBarRendererBackgroundImageTests.m in Sources */,
@@ -1064,6 +1092,7 @@
 				0EA8AA88193DBB5500E1BD29 /* NUITabBarRendererTests.m in Sources */,
 				0E3F5E08193C76C3003F6A77 /* NUIProgressViewRendererTests.m in Sources */,
 				0EA8AA85193DB62900E1BD29 /* NUISwitchRendererTests.m in Sources */,
+				4E6135711C968D520005CA52 /* NUITextViewRendererTests.m in Sources */,
 				0EA8AA8A193DBD3200E1BD29 /* NUITabBarRendererGradientTests.m in Sources */,
 				0E55162E1938D5FD00B293B7 /* UIBarButtonRendererBackgroundColorTests.m in Sources */,
 				0EA8AA7D193CCB2C00E1BD29 /* NUISegmentedControlRendererBackgroundImagesTests.m in Sources */,
@@ -1142,6 +1171,7 @@
 				4A38831516C7269F00DB99C2 /* UIWindow+NUI.m in Sources */,
 				FC280DB916F127DE00B01664 /* UIProgressView+NUI.m in Sources */,
 				4A5B5B2916F6471400CF8D16 /* NUIProgressViewRenderer.m in Sources */,
+				4E61356E1C964C7A0005CA52 /* NUITextInputTraitsRenderer.m in Sources */,
 				E291BBD7179C89470016BC1D /* NUITableViewRenderer.m in Sources */,
 				E291BBDA179C89710016BC1D /* UITableView+NUI.m in Sources */,
 				EAB69D45188625E900358420 /* NUIParserDelegate.m in Sources */,
