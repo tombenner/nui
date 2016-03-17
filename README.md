@@ -510,6 +510,7 @@ See SegmentedControl
 
 *UITableViewCell*
 
+* tint-color *(Color)*
 * background-color *(Color)*
 * background-color-top/background-color-bottom *(Gradient)*
 * background-color-selected *(Color)*
