@@ -90,6 +90,7 @@
 		4AAAFE7C166FD32600A0D34D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AAAFE7B166FD32600A0D34D /* Default-568h@2x.png */; };
 		4ADA71C616A0F15C00BDCF81 /* UISearchBar+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADA71C516A0F15C00BDCF81 /* UISearchBar+NUI.m */; };
 		4ADA71CA16A103CD00BDCF81 /* NUISearchBarRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADA71C916A103CD00BDCF81 /* NUISearchBarRenderer.m */; };
+		4E6135741C97523C0005CA52 /* NUITableViewCellRendererTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6135731C97523C0005CA52 /* NUITableViewCellRendererTests.m */; };
 		4E61356E1C964C7A0005CA52 /* NUITextInputTraitsRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E860DD71C9642EF006F3B0E /* NUITextInputTraitsRenderer.m */; };
 		4E6135711C968D520005CA52 /* NUITextViewRendererTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6135701C968D520005CA52 /* NUITextViewRendererTests.m */; };
 		4E860DDA1C964897006F3B0E /* NUITextFieldRendererTextInputTraitsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E860DD91C964897006F3B0E /* NUITextFieldRendererTextInputTraitsTests.m */; };
@@ -259,6 +260,7 @@
 		4ADA71C516A0F15C00BDCF81 /* UISearchBar+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+NUI.m"; sourceTree = "<group>"; };
 		4ADA71C816A103CD00BDCF81 /* NUISearchBarRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUISearchBarRenderer.h; sourceTree = "<group>"; };
 		4ADA71C916A103CD00BDCF81 /* NUISearchBarRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISearchBarRenderer.m; sourceTree = "<group>"; };
+		4E6135731C97523C0005CA52 /* NUITableViewCellRendererTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NUITableViewCellRendererTests.m; path = UITableViewCell/NUITableViewCellRendererTests.m; sourceTree = "<group>"; };
 		4E6135701C968D520005CA52 /* NUITextViewRendererTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NUITextViewRendererTests.m; path = UITextView/NUITextViewRendererTests.m; sourceTree = "<group>"; };
 		4E860DD61C9642EF006F3B0E /* NUITextInputTraitsRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NUITextInputTraitsRenderer.h; sourceTree = "<group>"; };
 		4E860DD71C9642EF006F3B0E /* NUITextInputTraitsRenderer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NUITextInputTraitsRenderer.m; sourceTree = "<group>"; };
@@ -433,6 +435,7 @@
 		0E5516181938891000B293B7 /* UIKitTests */ = {
 			isa = PBXGroup;
 			children = (
+				4E6135721C9751EB0005CA52 /* UITableViewCell */,
 				4E61356F1C968D260005CA52 /* UITextView */,
 				4E860DD81C9647F7006F3B0E /* UITextField */,
 				0E55162A1938BD9200B293B7 /* UIBarButton */,
@@ -634,6 +637,14 @@
 				4AAAFE7B166FD32600A0D34D /* Default-568h@2x.png */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		4E6135721C9751EB0005CA52 /* UITableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				4E6135731C97523C0005CA52 /* NUITableViewCellRendererTests.m */,
+			);
+			name = UITableViewCell;
 			sourceTree = "<group>";
 		};
 		4E61356F1C968D260005CA52 /* UITextView */ = {
@@ -1069,6 +1080,7 @@
 				0E55161D1938891000B293B7 /* NUIButtonRendererTests.m in Sources */,
 				0EE34299193A116700306AC7 /* NUIControlRendererTests.m in Sources */,
 				0E3F5E05193C6D90003F6A77 /* NUINavigationBarRendererGradientTest.m in Sources */,
+				4E6135741C97523C0005CA52 /* NUITableViewCellRendererTests.m in Sources */,
 				4E860DDA1C964897006F3B0E /* NUITextFieldRendererTextInputTraitsTests.m in Sources */,
 				0E921406193B791E00101B27 /* NUILabelRendererTests.m in Sources */,
 				0E3F5E0B193C7C1F003F6A77 /* NUISearchBarRendererTests.m in Sources */,

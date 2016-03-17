@@ -99,6 +99,7 @@
 
 + (void)renderView:(UIView*)view;
 + (void)renderView:(UIView*)view withClass:(NSString*)className;
++ (void)renderView:(UIView*)view withClass:(NSString*)className withSuffix:(NSString*)suffix;
 
 + (void)renderWindow:(UIWindow*)window;
 + (void)renderWindow:(UIWindow*)window withClass:(NSString*)className;

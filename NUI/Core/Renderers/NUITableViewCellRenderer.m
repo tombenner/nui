@@ -28,6 +28,8 @@
         [NUIRenderer renderLabel:cell.detailTextLabel withClass:className withSuffix:@"Detail"];
     }
     
+    [NUIRenderer renderView:cell.contentView withClass:className withSuffix:@"ContentView"];
+    
 }
 
 + (void)sizeDidChange:(UITableViewCell*)cell
