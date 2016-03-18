@@ -291,6 +291,10 @@ TabBarWithGradient {
     background-color-bottom: darkGray;
 }
 
+TableCellContentView {
+    background-color: orange;
+}
+
 TextField{
     keyboard-appearance: dark;
 }

@@ -1080,6 +1080,7 @@
 				0E55161D1938891000B293B7 /* NUIButtonRendererTests.m in Sources */,
 				0EE34299193A116700306AC7 /* NUIControlRendererTests.m in Sources */,
 				0E3F5E05193C6D90003F6A77 /* NUINavigationBarRendererGradientTest.m in Sources */,
+				4E6135741C97523C0005CA52 /* NUITableViewCellRendererTests.m in Sources */,
 				4E860DDA1C964897006F3B0E /* NUITextFieldRendererTextInputTraitsTests.m in Sources */,
 				0E921406193B791E00101B27 /* NUILabelRendererTests.m in Sources */,
 				0E3F5E0B193C7C1F003F6A77 /* NUISearchBarRendererTests.m in Sources */,

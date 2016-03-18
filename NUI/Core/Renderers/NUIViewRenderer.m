@@ -27,6 +27,15 @@
     [self renderShadow:view withClass:className];
 }
 
++ (void)render:(UIView *)view withClass:(NSString *)className withSuffix:(NSString*)suffix
+{
+    if (![suffix isEqualToString:@""]) {
+        className = [NSString stringWithFormat:@"%@%@", className, suffix];
+    }
+    
+    [self render:view withClass:className];
+}
+
 + (void)renderBorder:(UIView*)view withClass:(NSString*)className
 {
     CALayer *layer = [view layer];
