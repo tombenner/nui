@@ -30,5 +30,9 @@
     XCTAssertEqualObjects(self.sut.contentView.backgroundColor, [UIColor orangeColor], @"NUI should set content view background color");
 }
 
+- (void)testTintColor {
+    XCTAssertEqual(_sut.tintColor, [UIColor greenColor] , @"NUI should set tintColor");
+}
+
 
 @end

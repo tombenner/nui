@@ -90,9 +90,9 @@
 		4AAAFE7C166FD32600A0D34D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AAAFE7B166FD32600A0D34D /* Default-568h@2x.png */; };
 		4ADA71C616A0F15C00BDCF81 /* UISearchBar+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADA71C516A0F15C00BDCF81 /* UISearchBar+NUI.m */; };
 		4ADA71CA16A103CD00BDCF81 /* NUISearchBarRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADA71C916A103CD00BDCF81 /* NUISearchBarRenderer.m */; };
+		4E22C2E21C9BC86D00B0847E /* NUITableViewCellRendererTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E22C2E11C9BC86D00B0847E /* NUITableViewCellRendererTests.m */; };
 		4E61356E1C964C7A0005CA52 /* NUITextInputTraitsRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E860DD71C9642EF006F3B0E /* NUITextInputTraitsRenderer.m */; };
 		4E6135711C968D520005CA52 /* NUITextViewRendererTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6135701C968D520005CA52 /* NUITextViewRendererTests.m */; };
-		4E642BB11C9A56C100F31064 /* UITableViewCellRendererTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E642BB01C9A56C100F31064 /* UITableViewCellRendererTests.m */; };
 		4E860DDA1C964897006F3B0E /* NUITextFieldRendererTextInputTraitsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E860DD91C964897006F3B0E /* NUITextFieldRendererTextInputTraitsTests.m */; };
 		5B5888C31992BD15005F1ACB /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5888C21992BD15005F1ACB /* Assets */; };
 		5B5888C41992BD1C005F1ACB /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5888C21992BD15005F1ACB /* Assets */; };
@@ -260,8 +260,8 @@
 		4ADA71C516A0F15C00BDCF81 /* UISearchBar+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+NUI.m"; sourceTree = "<group>"; };
 		4ADA71C816A103CD00BDCF81 /* NUISearchBarRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUISearchBarRenderer.h; sourceTree = "<group>"; };
 		4ADA71C916A103CD00BDCF81 /* NUISearchBarRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISearchBarRenderer.m; sourceTree = "<group>"; };
+		4E22C2E11C9BC86D00B0847E /* NUITableViewCellRendererTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NUITableViewCellRendererTests.m; path = UITableViewCell/NUITableViewCellRendererTests.m; sourceTree = "<group>"; };
 		4E6135701C968D520005CA52 /* NUITextViewRendererTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NUITextViewRendererTests.m; path = UITextView/NUITextViewRendererTests.m; sourceTree = "<group>"; };
-		4E642BB01C9A56C100F31064 /* UITableViewCellRendererTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UITableViewCellRendererTests.m; path = UITableViewCell/UITableViewCellRendererTests.m; sourceTree = "<group>"; };
 		4E860DD61C9642EF006F3B0E /* NUITextInputTraitsRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NUITextInputTraitsRenderer.h; sourceTree = "<group>"; };
 		4E860DD71C9642EF006F3B0E /* NUITextInputTraitsRenderer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NUITextInputTraitsRenderer.m; sourceTree = "<group>"; };
 		4E860DD91C964897006F3B0E /* NUITextFieldRendererTextInputTraitsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NUITextFieldRendererTextInputTraitsTests.m; path = UITextField/NUITextFieldRendererTextInputTraitsTests.m; sourceTree = "<group>"; };
@@ -650,7 +650,7 @@
 		4E642BAF1C9A567700F31064 /* UITableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				4E642BB01C9A56C100F31064 /* UITableViewCellRendererTests.m */,
+				4E22C2E11C9BC86D00B0847E /* NUITableViewCellRendererTests.m */,
 			);
 			name = UITableViewCell;
 			sourceTree = "<group>";
@@ -1078,9 +1078,9 @@
 				0E5516301938D61300B293B7 /* UIBarButtonRendererBackgroundImageTests.m in Sources */,
 				0E55162719388EC900B293B7 /* NUIButtonRendererBackgroundColorTests.m in Sources */,
 				0E55161D1938891000B293B7 /* NUIButtonRendererTests.m in Sources */,
+				4E22C2E21C9BC86D00B0847E /* NUITableViewCellRendererTests.m in Sources */,
 				0EE34299193A116700306AC7 /* NUIControlRendererTests.m in Sources */,
 				0E3F5E05193C6D90003F6A77 /* NUINavigationBarRendererGradientTest.m in Sources */,
-				4E6135741C97523C0005CA52 /* NUITableViewCellRendererTests.m in Sources */,
 				4E860DDA1C964897006F3B0E /* NUITextFieldRendererTextInputTraitsTests.m in Sources */,
 				0E921406193B791E00101B27 /* NUILabelRendererTests.m in Sources */,
 				0E3F5E0B193C7C1F003F6A77 /* NUISearchBarRendererTests.m in Sources */,
@@ -1099,7 +1099,6 @@
 				0E3F5DFD193C5FB9003F6A77 /* NUINavigationBarRendererTests.m in Sources */,
 				0E3F5E0D193C7EA1003F6A77 /* NUISearchBarRendererGradientTest.m in Sources */,
 				0E55161C1938891000B293B7 /* NUIButtonRendererBackgroundImageTests.m in Sources */,
-				4E642BB11C9A56C100F31064 /* UITableViewCellRendererTests.m in Sources */,
 				0EA8AA82193CD38100E1BD29 /* UISliderRendererTests.m in Sources */,
 				0EA8AA7B193CC01F00E1BD29 /* NUISegmentedControlRendererTests.m in Sources */,
 				0E5516321938D63300B293B7 /* NUIBarButtonSnapshotTests.m in Sources */,
