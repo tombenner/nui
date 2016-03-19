@@ -47,6 +47,13 @@
     XCTAssertEqualObjects(_sut.tintColor, [UIColor yellowColor], @"NUI should set tab bar tint color");
 }
 
+// bar-tint-color (Color)
+- (void)testSetBarTintColor
+{
+    XCTAssertEqualObjects(_sut.barTintColor, [UIColor blueColor], @"NUI should set tab bar bar-tint color");
+}
+
+
 // selected-image-tint-color (Color)
 // Note: This property no longer gets set in iOS 7. This seems to be
 // a known bug. http://stackoverflow.com/a/19307700/816002
