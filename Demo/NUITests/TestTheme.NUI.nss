@@ -277,6 +277,7 @@ Switch {
 TabBar {
     background-color: red;
     background-tint-color: yellow;
+    bar-tint-color: blue;
     selected-image-tint-color: orange;
 }
 
