@@ -258,8 +258,8 @@ Below are all of the currently available style classes, their corresponding UI c
 #### Button
 
 *UIButton*
-
 * background-color *(Color)*
+* background-color-normal *(Color)*
 * background-color-top/background-color-bottom *(Gradient)*
 * background-color-disabled *(Color)*
 * background-color-highlighted *(Color)*
@@ -580,6 +580,7 @@ The detail label of a *UITableViewCell*
 * shadow-offset *(Offset)*
 * shadow-opacity *(Number)*
 * shadow-radius *(Number)*
+* tint-color *(Color)*
 * vertical-align *(VerticalAlign)*
 * width *(Number)*
 * keyboard-appearance *(KeyboardAppearance)*
