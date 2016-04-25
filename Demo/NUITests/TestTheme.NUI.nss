@@ -303,6 +303,7 @@ TableCellContentView {
 
 TextField{
     keyboard-appearance: dark;
+    tint-color: red;
 }
 
 TextView {
