@@ -1,3 +1,7 @@
+ActivityIndicator{
+    color: red;
+}
+
 BarButton {
     border-color: red;
     border-width: 2;
@@ -116,7 +120,8 @@ ButtonWithImageFromSubdirectory {
 }
 
 ButtonWithColor {
-    background-color: red;
+    background-color: yellow;
+    background-color-normal: red;
     background-color-disabled: green;
     background-color-highlighted: green;
     background-color-selected: green;
