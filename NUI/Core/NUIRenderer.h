@@ -10,6 +10,7 @@
 #import "NUIConstants.h"
 #import "NUIFileMonitor.h"
 #import "NUISettings.h"
+#import "NUIActivityIndicatorRenderer.h"
 #import "NUIBarButtonItemRenderer.h"
 #import "NUIButtonRenderer.h"
 #import "NUIControlRenderer.h"
@@ -38,6 +39,9 @@
 @property(nonatomic)BOOL rerenderOnOrientationChange;
 
 + (void)rerender;
+
++ (void)renderActivityIndicator:(UIActivityIndicatorView *)activityIndicator;
++ (void)renderActivityIndicator:(UIActivityIndicatorView *)activityIndicator withClass:(NSString*)className;
 
 + (void)renderBarButtonItem:(UIBarButtonItem*)item;
 + (void)renderBarButtonItem:(UIBarButtonItem*)item withClass:(NSString*)className;
