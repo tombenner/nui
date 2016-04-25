@@ -33,4 +33,9 @@
     XCTAssertEqual(_sut.keyboardAppearance, UIKeyboardAppearanceDark, @"NUI should set keyboardAppearance");
 }
 
+// tint-color (Color)
+- (void)testSetTintColor{
+    XCTAssertEqualObjects(_sut.tintColor, [UIColor redColor], @"NUI should set textfield tint-color");
+}
+
 @end

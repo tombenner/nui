@@ -13,6 +13,14 @@
 
 static NUIRenderer *gInstance = nil;
 
++ (void)renderActivityIndicator:(UIActivityIndicatorView *)activityIndicator {
+    [NUIActivityIndicatorRenderer render:activityIndicator withClass:@"ActivityIndicator"];
+}
+
++ (void)renderActivityIndicator:(UIActivityIndicatorView *)activityIndicator withClass:(NSString*)className {
+    [NUIActivityIndicatorRenderer render:activityIndicator withClass:className];
+}
+
 + (void)renderBarButtonItem:(UIBarButtonItem*)item
 {
     [NUIBarButtonItemRenderer render:item withClass:@"BarButton"];

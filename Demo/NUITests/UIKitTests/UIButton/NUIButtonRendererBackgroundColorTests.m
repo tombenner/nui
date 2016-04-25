@@ -49,7 +49,13 @@ static NSString * const NUIButtonBackgroundColorTestsStyleClass = @"ButtonWithCo
 // background-color (Color)
 - (void)testBackgroundColor
 {
-    XCTAssertEqualObjects([self backgroundColorForState:UIControlStateNormal], [UIColor redColor], @"NUI should set button background color");
+    XCTAssertEqualObjects([_sut backgroundColor], [UIColor yellowColor], @"NUI should set button background color (regardless of state)");
+}
+
+// background-color-normal (Color)
+- (void)testBackgroundColorNormal
+{
+    XCTAssertEqualObjects([self backgroundColorForState:UIControlStateNormal], [UIColor redColor], @"NUI should set button background color for normal state");
 }
 
 
