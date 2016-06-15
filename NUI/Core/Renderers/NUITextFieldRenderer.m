@@ -45,6 +45,10 @@
     if ([NUISettings hasProperty:@"vertical-align" withClass:className]) {
         [textField setContentVerticalAlignment:[NUISettings getControlContentVerticalAlignment:@"vertical-align" withClass:className]];
     }
+    
+    if ([NUISettings hasProperty:@"horizontal-align" withClass:className]) {
+	[textField setContentHorizontalAlignment:[NUISettings getControlContentHorizontalAlignment:@"horizontal" withClass:className]];
+    }
 
     // Set border style
     if ([NUISettings hasProperty:@"border-style" withClass:className]) {
