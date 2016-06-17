@@ -47,7 +47,7 @@
     }
     
     if ([NUISettings hasProperty:@"horizontal-align" withClass:className]) {
-	[textField setContentHorizontalAlignment:[NUISettings getControlContentHorizontalAlignment:@"horizontal" withClass:className]];
+        [textField setContentHorizontalAlignment:[NUISettings getControlContentHorizontalAlignment:@"horizontal" withClass:className]];
     }
 
     // Set border style
@@ -71,21 +71,21 @@
 
 +(void)renderText:(UITextField*)textField withClass:(NSString*)className
 {
-		NSString *property;
+    NSString *property;
 	
-		property = @"text-align";
-		if ([NUISettings hasProperty:property withClass:className]) {
-			textField.textAlignment = [NUISettings getTextAlignment:property withClass:className];
-		}
-		
-		property = @"text-alpha";
-		if ([NUISettings hasProperty:property withClass:className]) {
-			textField.alpha = [NUISettings getFloat:property withClass:className];
-		}
-		
-		property = @"text-auto-fit";
-		if ([NUISettings hasProperty:property withClass:className]) {
-			[textField setAdjustsFontSizeToFitWidth:[NUISettings getBoolean:property withClass:className]];
-		}
+    property = @"text-align";
+    if ([NUISettings hasProperty:property withClass:className]) {
+        textField.textAlignment = [NUISettings getTextAlignment:property withClass:className];
+    }
+	
+    property = @"text-alpha";
+    if ([NUISettings hasProperty:property withClass:className]) {
+        textField.alpha = [NUISettings getFloat:property withClass:className];
+}
+	
+    property = @"text-auto-fit";
+    if ([NUISettings hasProperty:property withClass:className]) {
+        [textField setAdjustsFontSizeToFitWidth:[NUISettings getBoolean:property withClass:className]];
+    }
 }
 @end
