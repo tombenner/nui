@@ -8,6 +8,7 @@
 
 #import "NUIRenderer.h"
 #import "UIProgressView+NUI.h"
+#import "NUIPreprocessor.h"
 
 @implementation NUIRenderer
 
@@ -331,13 +332,7 @@ static NUIRenderer *gInstance = nil;
     @synchronized(self) {
         if (gInstance == nil) {
             gInstance = [NUIRenderer new];
-            if ([NUISettings autoUpdateIsEnabled]) {
-                [NUIFileMonitor watch:[NUISettings autoUpdatePath] withCallback:^(){
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [self stylesheetFileChanged];
-                    });
-                }];
-            }
+			[self resetFileMonitor];
         }
     }
     return gInstance;
@@ -355,9 +350,35 @@ static NUIRenderer *gInstance = nil;
 
 + (void)stylesheetFileChanged
 {
-    [NUISettings loadStylesheetByPath:[NUISettings autoUpdatePath]];
+	@try {
+		[NUISettings loadStylesheetByPath:[NUISettings autoUpdatePath]];
+	} @catch (NSException *exception) {
+		NSLog(@"Error: %@", exception);
+	}
     [NUIRenderer rerender];
     [CATransaction flush];
+	dispatch_async(dispatch_get_main_queue(), ^{
+		[self resetFileMonitor];
+	});
+}
+
++ (void)resetFileMonitor {
+	if ([NUISettings autoUpdateIsEnabled]) {
+		NSArray *pathesToMonitor = @[[NUISettings autoUpdatePath]];
+		@try {
+			pathesToMonitor = [NUIPreprocessor dependenciesOfFileAtPath:[NUISettings autoUpdatePath]];
+		} @catch (NSException *exception) {
+			NSLog(@"Error: %@", exception);
+		}
+		
+		for(NSString *path in pathesToMonitor) {
+			[NUIFileMonitor watch:path withCallback:^(){
+				dispatch_async(dispatch_get_main_queue(), ^{
+					[self stylesheetFileChanged];
+				});
+			}];
+		}
+	}
 }
 
 @end

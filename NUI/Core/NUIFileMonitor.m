@@ -24,7 +24,6 @@
                                           if (flags) {
                                               dispatch_source_cancel(source);
                                               callback();
-                                              [self watch:path withCallback:callback];
                                           }
                                       });
     dispatch_source_set_cancel_handler(source, ^(void)
