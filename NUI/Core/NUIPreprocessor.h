@@ -11,6 +11,6 @@
 @interface NUIPreprocessor : NSObject
 
 + (NSString *)preprocessFileAtPath:(NSString *)path;
-+ (NSArray<NSString *> *)dependenciesOfFileAtPath:(NSString *)path;
++ (NSArray *)dependenciesOfFileAtPath:(NSString *)path;
 
 @end

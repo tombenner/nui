@@ -18,7 +18,7 @@
 				   importStack:@[path]];
 }
 
-+ (NSArray<NSString *> *)dependenciesOfFileAtPath:(NSString *)path {
++ (NSArray *)dependenciesOfFileAtPath:(NSString *)path {
 	NSMutableArray *dependencies = [NSMutableArray arrayWithObject:path];
 	NSString *content = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
 	[self processString:content
