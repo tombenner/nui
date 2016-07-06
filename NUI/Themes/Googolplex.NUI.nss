@@ -38,6 +38,9 @@ Button {
     exclude-views: UIAlertButton;
     exclude-subviews: UITableViewCell,UITextField;
 }
+ImageViewTint{
+    tint-color: #00A366;
+}
 LargeButton {
     background-color: #FFFFFF;
     border-color: @primaryBorderColor;

@@ -33,6 +33,7 @@
 #import "NUIViewRenderer.h"
 #import "NUIWindowRenderer.h"
 #import "UIView+NUI.h"
+#import "NUIImageViewRenderer.h"
 
 @interface NUIRenderer : NSObject
 
@@ -51,6 +52,9 @@
 
 + (void)renderControl:(UIControl*)control;
 + (void)renderControl:(UIControl*)control withClass:(NSString*)className;
+
++ (void)renderImageView:(UIImageView *)imageView;
++ (void)renderImageView:(UIImageView *)imageView withClass:(NSString*)className;
 
 + (void)renderLabel:(UILabel*)label;
 + (void)renderLabel:(UILabel*)label withClass:(NSString*)className;

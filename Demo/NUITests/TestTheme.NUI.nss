@@ -151,6 +151,10 @@ ControlWithBackgroundImage {
     background-image: background_image;
 }
 
+ImageViewTint{
+    tint-color: red;
+}
+
 Label {
     background-color: red;
     border-color: green;

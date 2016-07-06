@@ -335,6 +335,12 @@ Below are all of the currently available style classes, their corresponding UI c
 * shadow-opacity *(Number)*
 * shadow-radius *(Number)*
 
+#### ImageView
+
+*UIImageView*
+
+* tint-color *(Color)*
+
 #### Label
 
 *UILabel*

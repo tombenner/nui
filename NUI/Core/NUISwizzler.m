@@ -15,6 +15,7 @@
     [self swizzleDidMoveToWindow:[UIActivityIndicatorView class]];
     [self swizzleDidMoveToWindow:[UIBarButtonItem class]];
     [self swizzleDidMoveToWindow:[UIButton class]];
+    [self swizzleDidMoveToWindow:[UIImageView class]];
     [self swizzleDidMoveToWindow:[UILabel class]];
     [self swizzleDidMoveToWindow:[UINavigationBar class]];
     [self swizzleDidMoveToWindow:[UINavigationItem class]];
