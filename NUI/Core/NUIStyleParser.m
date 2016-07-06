@@ -22,6 +22,7 @@
 #import "NUIRenderer.h"
 #import "NUISettings.h"
 #import "NUIDefinition.h"
+#import "NUIPreprocessor.h"
 
 @implementation NUIStyleParser
 
@@ -29,14 +30,12 @@
 {
     NSString* path = [[NSBundle mainBundle] pathForResource:fileName ofType:@"nss"];
     NSAssert1(path != nil, @"File \"%@\" does not exist", fileName);
-    NSString* content = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-    NUIStyleSheet *styleSheet = [self parse:content];
-    return [self consolidateRuleSets:styleSheet];
+	return [self getStylesFromPath:path];
 }
 
 - (NSMutableDictionary*)getStylesFromPath:(NSString*)path
 {
-    NSString* content = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+	NSString* content = [NUIPreprocessor preprocessFileAtPath:path];
     NUIStyleSheet *styleSheet = [self parse:content];
     return [self consolidateRuleSets:styleSheet];
 }
@@ -119,10 +118,6 @@
         
 
     [tokeniser addTokenRecogniser:[NUIPWhiteSpaceRecogniser whiteSpaceRecogniser]];
-    [tokeniser addTokenRecogniser:[NUIPQuotedRecogniser quotedRecogniserWithStartQuote:@"/*"
-                                                                            endQuote:@"*/"
-                                                                                name:@"Comment"]];
-    
     [tokeniser addTokenRecogniser:[NUIPKeywordRecogniser recogniserForKeyword:@"@media"]];
     [tokeniser addTokenRecogniser:[NUIPKeywordRecogniser recogniserForKeyword:@"and"]];
 
