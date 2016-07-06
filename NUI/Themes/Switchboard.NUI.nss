@@ -37,6 +37,9 @@ Button {
     exclude-views: UIAlertButton;
     exclude-subviews: UITableViewCell,UITextField;
 }
+ImageViewTint{
+    tint-color: @primaryFontColor;
+}
 LargeButton {
     height: 50;
     font-size: 24;
