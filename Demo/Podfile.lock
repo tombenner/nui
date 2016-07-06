@@ -1,6 +1,6 @@
 PODS:
   - FBSnapshotTestCase (1.6)
-  - NUIParse (1.2.1)
+  - NUIParse (1.3)
   - UIImage+ColorFromImage (0.0.2)
 
 DEPENDENCIES:
@@ -10,7 +10,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   FBSnapshotTestCase: 9d5fe43b29ae3a0ed8fc829477971b281038f748
-  NUIParse: 9b6d5a6b782dc654ac6c846d623885080306f07f
+  NUIParse: 2e3885ba7807477266396292626bd387d34c2338
   UIImage+ColorFromImage: b84b5f8b4dc9d996d17d2b736e1429f4a13b37e4
 
 COCOAPODS: 0.39.0
