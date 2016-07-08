@@ -21,13 +21,22 @@
     Class uiClass = [UIBarButtonItem class];
     
     NSDictionary *titleTextAttributes = [NUIUtilities titleTextAttributesForClass:className];
+    NSDictionary *titleTextAttributesHighlighted = [NUIUtilities titleTextAttributesHighlightedForClass:className];
     
     if ([[titleTextAttributes allKeys] count] > 0) {
         [[uiClass appearance] setTitleTextAttributes:titleTextAttributes forState:UIControlStateNormal];
     }
     
+    if ([[titleTextAttributesHighlighted allKeys] count] > 0) {
+        [[uiClass appearance] setTitleTextAttributes:titleTextAttributesHighlighted forState:UIControlStateHighlighted];
+    }
+    
     if ([NUISettings hasProperty:@"background-tint-color" withClass:className]) {
         [[uiClass appearance] setTintColor:[NUISettings getColor:@"background-tint-color" withClass:className]];
+    }
+    
+    if ([NUISettings hasProperty:@"tint-color" withClass:className]) {
+        [[uiClass appearance] setTintColor:[NUISettings getColor:@"tint-color" withClass:className]];
     }
     
     if ([NUISettings hasProperty:@"background-color" withClass:className] ||
@@ -48,6 +57,10 @@
         [[uiClass appearance] setBackButtonBackgroundImage:[NUISettings getImage:@"background-image-disabled" withClass:className] forState:UIControlStateDisabled barMetrics:UIBarMetricsDefault];
     }
     
+    if ([NUISettings hasProperty:@"title-offset" withClass:className]) {
+        UIOffset titleOffset = [NUISettings getOffset:@"title-offset" withClass:className];
+        [[uiClass appearance] setBackButtonTitlePositionAdjustment:titleOffset forBarMetrics:UIBarMetricsDefault];
+    }
 }
 
 @end
