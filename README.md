@@ -42,6 +42,7 @@ Button {
     corner-radius: 7;
 }
 NavigationBar {
+    bar-style: Default;
     background-tint-color: @primaryBackgroundColor;
     font-name: @secondaryFontName;
     font-size: 20;
@@ -365,6 +366,7 @@ Below are all of the currently available style classes, their corresponding UI c
 
 *UINavigationBar*
 
+* bar-style *(Default, Black, BlackOpaque `deprecated`, BlackTranslucent `deprecated`)*
 * bar-tint-color *(Color)*
 * background-color *(Color)*
 * background-color-top/background-color-bottom *(Gradient)*
