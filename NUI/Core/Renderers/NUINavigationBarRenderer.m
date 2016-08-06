@@ -29,6 +29,11 @@
     if ([NUISettings hasProperty:@"background-image" withClass:className]) {
         [bar setBackgroundImage:[NUISettings getImage:@"background-image" withClass:className] forBarMetrics:UIBarMetricsDefault];
     }
+    
+    if ([NUISettings hasProperty:@"background-image-landscape" withClass:className]) {
+        [bar setBackgroundImage:[NUISettings getImage:@"background-image-landscape" withClass:className] forBarMetrics:UIBarMetricsLandscapePhone];
+    }
+    
     if ([NUISettings hasProperty:@"shadow-image" withClass:className]) {
         [bar setShadowImage:[NUISettings getImage:@"shadow-image" withClass:className]];
     }
