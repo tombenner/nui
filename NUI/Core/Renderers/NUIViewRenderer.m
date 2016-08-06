@@ -19,7 +19,17 @@
             [view setBackgroundColor: [NUISettings getColorFromImage:@"background-image" withClass: className]];
         }
     } else if ([NUISettings hasProperty:@"background-color" withClass:className]) {
-        [view setBackgroundColor: [NUISettings getColor:@"background-color" withClass: className]];
+        if ([NUISettings hasProperty:@"background-color-alpha" withClass:className]) {
+            UIColor *color = [NUISettings getColor:@"background-color" withClass: className];
+            float alpha = [NUISettings getFloat:@"background-color-alpha" withClass:className];
+            [view setBackgroundColor:[color colorWithAlphaComponent:alpha]];
+        } else {
+            [view setBackgroundColor: [NUISettings getColor:@"background-color" withClass: className]];
+        }
+    }
+    
+    if ([NUISettings hasProperty:@"hidden" withClass:className]) {
+        view.hidden = [NUISettings getBoolean:@"hidden" withClass:className];
     }
 
     [self renderSize:view withClass:className];
