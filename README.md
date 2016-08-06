@@ -567,6 +567,7 @@ The detail label of a *UITableViewCell*
 * background-color *(Color)*
 * background-image *(Image)*
 * background-image-insets *(Box)*
+* border *(Box)*
 * border-color *(Color)*
 * border-style *(BorderStyle)*
 * border-width *(Number)*
@@ -626,7 +627,9 @@ Style Value Types
 -----------------
 
 * **Boolean** - A boolean (`true` or `false`)
-* **BorderStyle** - A border style, as rendered by a UITextBorderStyle. Accepted values are `none`, `line`, `bezel`, and `rounded`.
+* **BorderStyle** - A border style, as rendered by a UITextBorderStyle.
+Accepted values are `none`, `line`, `bezel`, and `rounded`. Note: single
+borders can be drawn using border style `none` and specifying `border`.
 * **Box** - A series of 1 to 4 integers that specify the widths of a box's edges. Interpreted like CSS's `padding` and `margin` properties (top, right, bottom, left). Examples: `15` (a box with a width of 15 for each edge), `10 15` (a box with a width of 10 for the top and bottom edges and 15 for the right and left edges)
 * **Color** - A hex color (e.g. `#FF0000`); a rgb, rgba, hsl, or hsla expression (e.g. `rgb(255,0,0)` or `hsla(0.5, 0, 1.0, 0.5)`); or a color name that UIColor has a related method name for (e.g. `red`, `yellow`, `clear`). If `[UIColor redColor]` is supported, then `red` is supported.
 * **FontName** - A font name. See available values [here](http://iosfonts.com/). Can also be one of the following:
