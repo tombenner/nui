@@ -12,9 +12,31 @@
 
 + (void)render:(UINavigationBar*)bar withClass:(NSString*)className
 {
+    if ([NUISettings hasProperty:@"bar-style" withClass:className]) {
+        NSString *barStyle = [NUISettings get:@"bar-style" withClass:className];
+        if ([barStyle isEqualToString:@"black"]) {
+            [bar setBarStyle:UIBarStyleBlack];
+        } else if ([barStyle isEqualToString:@"black-opaque"]) {
+            [bar setBarStyle:UIBarStyleBlackOpaque];
+        } else if ([barStyle isEqualToString:@"black-translucent"]) {
+            [bar setBarStyle:UIBarStyleBlackTranslucent];
+        } else if ([barStyle isEqualToString:@"default"]) {
+            [bar setBarStyle:UIBarStyleDefault];
+        } else {
+            [bar setBarStyle:UIBarStyleDefault];
+        }
+    }
+    
+    if ([NUISettings hasProperty:@"translucent" withClass:className]) {
+        BOOL translucent = [NUISettings getBoolean:@"translucent" withClass:className];
+        [bar setTranslucent:translucent];
+    }
+    
     if ([bar respondsToSelector:@selector(setBarTintColor:)]) {
         if ([NUISettings hasProperty:@"bar-tint-color" withClass:className]) {
             [bar setBarTintColor:[NUISettings getColor:@"bar-tint-color" withClass:className]];
+        } else {
+            [bar setBarTintColor:nil];
         }
     }
     
