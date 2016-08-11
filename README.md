@@ -610,6 +610,7 @@ The detail label of a *UITableViewCell*
 * shadow-offset *(Offset)*
 * shadow-opacity *(Number)*
 * shadow-radius *(Number)*
+* tint-color *(Color)*
 * width *(Number)*
 
 #### Window
