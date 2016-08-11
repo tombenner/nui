@@ -37,5 +37,10 @@
     XCTAssertEqualObjects(_sut.tintColor, [UIColor redColor], @"NUI should set image view tint color");
 }
 
+- (void)testSetBackgroundColor{
+    
+    XCTAssertEqualObjects(_sut.backgroundColor, [UIColor greenColor], @"NUI should set image view background color");
+    
+}
 
 @end

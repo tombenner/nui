@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NUIViewRenderer.h"
 
-@interface NUIImageViewRenderer : NSObject
+@interface NUIImageViewRenderer : NUIViewRenderer
 
 + (void)render:(UIImageView*)imageView withClass:(NSString*)className;
 

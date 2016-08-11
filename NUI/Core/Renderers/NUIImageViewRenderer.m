@@ -7,12 +7,14 @@
 //
 
 #import "NUIImageViewRenderer.h"
-#import "NUIViewRenderer.h"
 
 @implementation NUIImageViewRenderer
 
 + (void)render:(UIImageView*)imageView withClass:(NSString*)className
 {
+    
+    [super render: imageView withClass: className];
+    
     // Set image view tint color
     if ([NUISettings hasProperty:@"tint-color" withClass:className]) {
         imageView.image = [imageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
