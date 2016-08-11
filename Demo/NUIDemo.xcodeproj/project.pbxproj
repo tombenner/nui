@@ -325,7 +325,7 @@
 		89B940431671418100850A9A /* NUITextFieldRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUITextFieldRenderer.m; sourceTree = "<group>"; };
 		89B940441671418100850A9A /* NUIViewRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIViewRenderer.h; sourceTree = "<group>"; };
 		89B940451671418100850A9A /* NUIViewRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIViewRenderer.m; sourceTree = "<group>"; };
-		89B940461671418100850A9A /* NUIStyle.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NUIStyle.nss; sourceTree = "<group>"; };
+		89B940461671418100850A9A /* NUIStyle.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NUIStyle.nss; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.css; };
 		89B9404A1671418100850A9A /* NUIViewBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NUIViewBackground.png; sourceTree = "<group>"; };
 		A4AC0DB691720ED8B29ACAF9 /* libPods-NUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B51BC288169724A3004A38F8 /* UISwitch+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISwitch+NUI.h"; sourceTree = "<group>"; };

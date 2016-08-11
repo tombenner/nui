@@ -153,6 +153,7 @@ ControlWithBackgroundImage {
 
 ImageViewTint{
     tint-color: red;
+    background-color: green;
 }
 
 Label {
