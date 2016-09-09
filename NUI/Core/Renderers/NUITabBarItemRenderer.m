@@ -28,6 +28,10 @@
         [item setTitlePositionAdjustment:[NUISettings getOffset:@"text-offset" withClass:className]];
     }
 
+    if ([NUISettings hasProperty:@"image-insets" withClass:className]) {
+        item.imageInsets = [NUISettings getEdgeInsets:@"image-insets" withClass:className];
+    }
+
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= 70000
     if ([NUISettings hasProperty:@"finished-image" withClass:className]) {
         UIImage *unselectedFinishedImage = [[NUISettings getImage:@"finished-image" withClass:className] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
