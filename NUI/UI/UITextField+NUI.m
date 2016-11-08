@@ -59,7 +59,7 @@
 }
 
 - (CGRect)override_editingRectForBounds:(CGRect)bounds {
-    return [self textRectForBounds:bounds];
+    return [self override_editingRectForBounds:bounds];
 }
 
 @end
