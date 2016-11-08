@@ -571,6 +571,9 @@ The detail label of a *UITableViewCell*
 * border-style *(BorderStyle)*
 * border-width *(Number)*
 * corner-radius *(Number)*
+* text-align *(TextAlign)*
+* text-alpha *(Number)*
+* text-auto-fit *(Boolean)*
 * font-color *(Color)*
 * font-name *(FontName)*
 * font-size *(Number)*
@@ -582,6 +585,7 @@ The detail label of a *UITableViewCell*
 * shadow-radius *(Number)*
 * tint-color *(Color)*
 * vertical-align *(VerticalAlign)*
+* horizontal-align *(HorizontalAlign)*
 * width *(Number)*
 * keyboard-appearance *(KeyboardAppearance)*
 
