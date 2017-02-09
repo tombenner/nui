@@ -12,6 +12,11 @@
 
 + (void)render:(UITableView*)tableView withClass:(NSString*)className
 {
+    // Set tint
+    if ([NUISettings hasProperty:@"tint-color" withClass:className]) {
+        [tableView setTintColor:[NUISettings getColor:@"tint-color" withClass:className]];
+    }
+    
     // Set seperator style
     if ([NUISettings hasProperty:@"separator-style" withClass:className]) {
         [tableView setSeparatorStyle:[NUISettings getSeparatorStyle:@"separator-style" withClass:className]];

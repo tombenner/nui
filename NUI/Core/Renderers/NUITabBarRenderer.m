@@ -17,6 +17,12 @@
         [bar setBackgroundImage:[NUISettings getImage:property withClass:className]];
     }
     
+    if ([NUISettings hasProperty:@"tint-color" withClass:className]) {
+        [bar setTintColor:[NUISettings getColor:@"tint-color" withClass:className]];
+    } else if ([NUISettings hasProperty:@"background-tint-color" withClass:className]) {
+        [bar setTintColor:[NUISettings getColor:@"background-tint-color" withClass:className]];
+    }
+    
     property = @"selected-image";
     if ([NUISettings hasProperty:property withClass:className]) {
         [bar setSelectionIndicatorImage:[NUISettings getImage:property withClass:className]];

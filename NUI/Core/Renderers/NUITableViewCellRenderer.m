@@ -75,6 +75,12 @@
                                   frame:cell.bounds];
         cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:gradientImage];
     }
+    
+    // Set tint
+    if ([NUISettings hasProperty:@"tint-color" withClass:className]) {
+        [cell setTintColor:[NUISettings getColor:@"tint-color" withClass:className]];
+    }
+    
 }
 
 @end

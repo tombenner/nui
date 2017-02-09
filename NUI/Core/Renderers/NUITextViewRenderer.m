@@ -8,6 +8,12 @@
     
     [super render:textView withClass: className];
 
+    // Set tint
+    property = @"tint-color";
+    if ([NUISettings hasProperty:property withClass:className]) {
+        textView.tintColor = [NUISettings getColor:property withClass:className];
+    }
+    
     property = @"font-color";
     if ([NUISettings hasProperty:property withClass:className]) {
         textView.textColor = [NUISettings getColor:property withClass:className];
