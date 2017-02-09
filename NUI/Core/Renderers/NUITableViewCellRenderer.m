@@ -14,6 +14,11 @@
 {
     [self renderSizeDependentProperties:cell];
     
+    NSString * property = @"tint-color";
+    if ([NUISettings hasProperty:property withClass:className]) {
+        [cell setTintColor:[NUISettings getColor:property withClass:className]];
+    }
+
     // Set the labels' background colors to clearColor by default, so they don't show a white
     // background on top of the cell background color
     if (cell.textLabel != nil) {
@@ -27,6 +32,8 @@
         // Set font
         [NUIRenderer renderLabel:cell.detailTextLabel withClass:className withSuffix:@"Detail"];
     }
+    
+    [NUIRenderer renderView:cell.contentView withClass:className withSuffix:@"ContentView"];
     
 }
 

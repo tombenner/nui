@@ -9,6 +9,8 @@
 #import <XCTest/XCTest.h>
 
 #import "UIButton+NUI.h"
+#import "NUIRenderer.h"
+#import <UIImage+ColorFromImage/UIImage+ColorFromImage.h>
 
 static NSString * const NUIButtonBackgroundColorTestsStyleClass = @"ButtonWithColor";
 
@@ -38,29 +40,8 @@ static NSString * const NUIButtonBackgroundColorTestsStyleClass = @"ButtonWithCo
 
 - (UIColor *)backgroundColorForState:(UIControlState)state
 {
-    return [self colorFromImage:[_sut backgroundImageForState:state]];
-}
-
-- (UIColor *)colorFromImage:(UIImage *)image
-{
-    if (!image) {
-        return nil;
-    }
-    
-    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    unsigned char *buffer = malloc(4);
-    CGBitmapInfo bitmapInfo = kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big;
-    CGContextRef context = CGBitmapContextCreate(buffer, 1, 1, 8, 4, colorSpace, bitmapInfo);
-    CGColorSpaceRelease(colorSpace);
-    CGContextDrawImage(context, CGRectMake(0.f, 0.f, 1.f, 1.f), image.CGImage);
-    CGContextRelease(context);
-    
-    CGFloat r = buffer[0] / 255.f;
-    CGFloat g = buffer[1] / 255.f;
-    CGFloat b = buffer[2] / 255.f;
-    CGFloat a = buffer[3] / 255.f;
-    
-    return [UIColor colorWithRed:r green:g blue:b alpha:a];
+    UIImage *backgroundImage = [_sut backgroundImageForState:state];
+    return [backgroundImage sqf_colorFromImage];
 }
 
 #pragma mark - Background Color
@@ -68,7 +49,13 @@ static NSString * const NUIButtonBackgroundColorTestsStyleClass = @"ButtonWithCo
 // background-color (Color)
 - (void)testBackgroundColor
 {
-    XCTAssertEqualObjects([self backgroundColorForState:UIControlStateNormal], [UIColor redColor], @"NUI should set button background color");
+    XCTAssertEqualObjects([_sut backgroundColor], [UIColor yellowColor], @"NUI should set button background color (regardless of state)");
+}
+
+// background-color-normal (Color)
+- (void)testBackgroundColorNormal
+{
+    XCTAssertEqualObjects([self backgroundColorForState:UIControlStateNormal], [UIColor redColor], @"NUI should set button background color for normal state");
 }
 
 
@@ -100,5 +87,38 @@ static NSString * const NUIButtonBackgroundColorTestsStyleClass = @"ButtonWithCo
 {
     XCTAssertEqualObjects([self backgroundColorForState:UIControlStateSelected|UIControlStateHighlighted], [UIColor blueColor], @"NUI should set button background color when selected and highlighted");
 }
+
+#if defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && __IPHONE_OS_VERSION_MAX_ALLOWED >= 80200
+
+// font-name (FontName)
+- (void)testSetFontName
+{
+    if (&UIFontWeightUltraLight == NULL) {
+      // Skip test when iOS Version doesn't offer ultra light system font
+      return;
+    }
+  
+    UIFont *font = _sut.titleLabel.font;
+    NSString *expectedFontName = @".HelveticaNeueInterface-UltraLightP2";
+    NSOperatingSystemVersion ios9_0_0 = (NSOperatingSystemVersion){9, 0, 0};
+    if ([[NSProcessInfo processInfo] isOperatingSystemAtLeastVersion:ios9_0_0]) {
+        expectedFontName = @".SFUIText-Light";
+    }
+    XCTAssertEqualObjects(font.fontName, expectedFontName, @"NUI should set button font name");
+}
+
+// font-size (Number)
+- (void)testSetFontSize
+{
+    if (&UIFontWeightUltraLight == NULL) {
+      // Skip test when iOS Version doesn't offer ultra light system font
+      return;
+    }
+  
+    UIFont *font = _sut.titleLabel.font;
+    XCTAssertEqual(font.pointSize, 13, @"NUI should set button font size");
+}
+
+#endif
 
 @end

@@ -9,6 +9,7 @@
 #import <XCTest/XCTest.h>
 
 #import "NUIRenderer.h"
+#import <UIImage+ColorFromImage/UIImage+ColorFromImage.h>
 
 @interface UIBarButtonRendererBackgroundColorTests : XCTestCase
 @property (strong, nonatomic) UIBarButtonItem *sut;
@@ -32,26 +33,11 @@
     [super tearDown];
 }
 
-- (UIColor *)colorFromImage:(UIImage *)image
+#pragma mark - Test Helpers
+
+- (UIImage *)backgroundImageForState:(UIControlState)state
 {
-    if (!image) {
-        return nil;
-    }
-    
-    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    unsigned char *buffer = malloc(4);
-    CGBitmapInfo bitmapInfo = kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big;
-    CGContextRef context = CGBitmapContextCreate(buffer, 1, 1, 8, 4, colorSpace, bitmapInfo);
-    CGColorSpaceRelease(colorSpace);
-    CGContextDrawImage(context, CGRectMake(0.f, 0.f, 1.f, 1.f), image.CGImage);
-    CGContextRelease(context);
-    
-    CGFloat r = buffer[0] / 255.f;
-    CGFloat g = buffer[1] / 255.f;
-    CGFloat b = buffer[2] / 255.f;
-    CGFloat a = buffer[3] / 255.f;
-    
-    return [UIColor colorWithRed:r green:g blue:b alpha:a];
+    return [_sut backgroundImageForState:state barMetrics:UIBarMetricsDefault];
 }
 
 // background-color (Color)
@@ -60,10 +46,9 @@
     _sut.nuiClass = @"BarButtonWithBackgroundColor";
     [_sut applyNUI];
     
+    UIImage *backgroundImage = [self backgroundImageForState:UIControlStateNormal];
     
-    UIColor *color = [self colorFromImage:[_sut backgroundImageForState:UIControlStateNormal barMetrics:UIBarMetricsDefault]];
-    
-    XCTAssertEqualObjects(color, [UIColor greenColor], @"NUI should set button background color");
+    XCTAssertEqualObjects([backgroundImage sqf_colorFromImage], [UIColor greenColor], @"NUI should set button background color");
 }
 
 // background-color-highlighted (Color)
@@ -72,9 +57,9 @@
     _sut.nuiClass = @"BarButtonWithBackgroundColor";
     [_sut applyNUI];
     
-    UIColor *color = [self colorFromImage:[_sut backgroundImageForState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault]];
+    UIImage *backgroundImage = [self backgroundImageForState:UIControlStateHighlighted];
     
-    XCTAssertEqualObjects(color, [UIColor yellowColor], @"NUI should set button background color for highlighted state");
+    XCTAssertEqualObjects([backgroundImage sqf_colorFromImage], [UIColor yellowColor], @"NUI should set button background color for highlighted state");
 }
 
 @end

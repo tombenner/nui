@@ -1,5 +1,11 @@
 NUI
 ===
+
+[![Build Status](https://travis-ci.org/tombenner/nui.svg?branch=master)](https://travis-ci.org/tombenner/nui)
+[![Version](https://img.shields.io/cocoapods/v/NUI.svg?style=flat)](http://cocoapods.org/pods/KeepBackgroundCell)
+[![License](https://img.shields.io/cocoapods/l/NUI.svg?style=flat)](http://cocoapods.org/pods/KeepBackgroundCell)
+[![Platform](https://img.shields.io/cocoapods/p/NUI.svg?style=flat)](http://cocoapods.org/pods/KeepBackgroundCell)
+
 Style iOS apps with a stylesheet, similar to CSS
 
 Description
@@ -63,6 +69,8 @@ Installation
 ### CocoaPods
 
 NUI is most easily installed using [CocoaPods](http://cocoapods.org/). Its pod name is "NUI". After installing it, add `[NUISettings init];` to `application:didFinishLaunchingWithOptions` in AppDelegate.m (like [this](https://github.com/tombenner/nui/blob/master/Demo/NUIDemo/AppDelegate.m)).
+When installed as a framework, NUI can be natively imported in Swift. Just add
+`import NUI` to the top of your file.
 
 ### Without CocoaPods
 
@@ -70,21 +78,16 @@ If you choose not to use CocoaPods, you can install NUI with these steps:
 
 1. Copy the NUI directory into your application
 2. Add the CoreImage and QuartzCore frameworks to your application if you haven't already (like [this](http://stackoverflow.com/a/3377682))
-3. Add [CoreParse](https://github.com/beelsebob/CoreParse) as a subproject, set its iOSCoreParse target as a dependency of your target, and add libCoreParse.a to your linked libraries.
+3. Add [NUIParse](https://github.com/tombenner/NUIParse) as a subproject, set its iOSNUIParse target as a dependency of your target, and add libNUIParse.a to your linked libraries.
 4. Add `[NUISettings init];` to `application:didFinishLaunchingWithOptions` in AppDelegate.m (like [this](https://github.com/tombenner/nui/blob/master/Demo/NUIDemo/AppDelegate.m))
+5. To use NUI in Swift add `#import <NUI/NUISettings.h>` to your bridging header.
 
 The Demo uses CocoaPods, so you'll want to [install CocoaPods](http://cocoapods.org/), run `pod install` in the `Demo` directory, and then open the .xcworkspace to open the project.
 
-### Swift
-
-If you're using Swift, in addition to the steps above, you'll also want to add the following `#import` in your bridging header:
-
-```objective-c
-#import <NUI/NUISettings.h>
-```
-
 Usage
 -----
+
+Here's a [walkthrough on how to get up and running with NUI](http://h4ckish.com/2015/12/31/how-to-style-your-ios-app-with-nui/).
 
 After dropping in NUI, you can modify your app's styling by simply editing NUIStyle.nss. If you want to avoid modifying NUI's files, you can copy NUIStyle.nss into your app, rename it (e.g. MyTheme.nss), then replace `[NUISettings init]` with `[NUISettings initWithStylesheet:@"MyTheme"];` (step 4 in Installation).
 
@@ -257,8 +260,8 @@ Below are all of the currently available style classes, their corresponding UI c
 #### Button
 
 *UIButton*
-
 * background-color *(Color)*
+* background-color-normal *(Color)*
 * background-color-top/background-color-bottom *(Gradient)*
 * background-color-disabled *(Color)*
 * background-color-highlighted *(Color)*
@@ -356,6 +359,7 @@ Below are all of the currently available style classes, their corresponding UI c
 * text-align *(TextAlign)*
 * text-alpha *(Number)*
 * text-auto-fit *(Boolean)*
+* text-line-clamp *(Integer)*
 * text-shadow-color *(Color)*
 * text-shadow-offset *(Offset)*
 * text-transform *(TextTransform)*
@@ -380,6 +384,13 @@ Below are all of the currently available style classes, their corresponding UI c
 * text-shadow-offset *(Offset)*
 * tint-color *(Color)* _new_
 * title-vertical-offset *(Number)*
+
+#### PageControl
+
+*UIPageControl*
+
+* color *(Color)*   `pageIndicatorTintColor`
+* current-color *(Color)* `currentPageIndicatorTintColor`
 
 #### Progress
 
@@ -470,6 +481,7 @@ See SegmentedControl
 
 *UITabBar*
 
+* bar-tint-color *(Color)*
 * background-color *(Color)*
 * background-color-top/background-color-bottom *(Gradient)*
 * background-image *(Image)*
@@ -510,6 +522,7 @@ See SegmentedControl
 
 *UITableViewCell*
 
+* tint-color *(Color)*
 * background-color *(Color)*
 * background-color-top/background-color-bottom *(Gradient)*
 * background-color-selected *(Color)*
@@ -524,6 +537,12 @@ See SegmentedControl
 * text-shadow-color *(Color)*
 * text-shadow-offset *(Offset)*
 * tint-color *(Color)* _new_
+
+#### TableCellContentView
+
+The content view of a *UITableViewCell*
+
+* *all attributes supported by UIView*
 
 #### TableCellDetail
 
@@ -565,6 +584,9 @@ The detail label of a *UITableViewCell*
 * border-style *(BorderStyle)*
 * border-width *(Number)*
 * corner-radius *(Number)*
+* text-align *(TextAlign)*
+* text-alpha *(Number)*
+* text-auto-fit *(Boolean)*
 * font-color *(Color)*
 * font-name *(FontName)*
 * font-size *(Number)*
@@ -574,9 +596,11 @@ The detail label of a *UITableViewCell*
 * shadow-offset *(Offset)*
 * shadow-opacity *(Number)*
 * shadow-radius *(Number)*
-* tint-color *(Color)* _new_
+* tint-color *(Color)*
 * vertical-align *(VerticalAlign)*
+* horizontal-align *(HorizontalAlign)*
 * width *(Number)*
+* keyboard-appearance *(KeyboardAppearance)*
 
 #### TextView
 
@@ -586,7 +610,8 @@ The detail label of a *UITableViewCell*
 * font-name *(FontName)*
 * font-size *(Number)*
 * padding *(Box)*
-* tint-color *(Color)* _new_
+* keyboard-appearance *(KeyboardAppearance)*
+* *all other attributes supported by UIView*
 
 #### View
 
@@ -619,7 +644,17 @@ Style Value Types
 * **BorderStyle** - A border style, as rendered by a UITextBorderStyle. Accepted values are `none`, `line`, `bezel`, and `rounded`.
 * **Box** - A series of 1 to 4 integers that specify the widths of a box's edges. Interpreted like CSS's `padding` and `margin` properties (top, right, bottom, left). Examples: `15` (a box with a width of 15 for each edge), `10 15` (a box with a width of 10 for the top and bottom edges and 15 for the right and left edges)
 * **Color** - A hex color (e.g. `#FF0000`); a rgb, rgba, hsl, or hsla expression (e.g. `rgb(255,0,0)` or `hsla(0.5, 0, 1.0, 0.5)`); or a color name that UIColor has a related method name for (e.g. `red`, `yellow`, `clear`). If `[UIColor redColor]` is supported, then `red` is supported.
-* **FontName** - A font name. See available values [here](http://iosfonts.com/). Can also be `system`, `boldSystem` or `italicSystem`.
+* **FontName** - A font name. See available values [here](http://iosfonts.com/). Can also be one of the following:
+  * `system`
+  * `boldSystem`
+  * `italicSystem`
+  * `blackSystem`
+  * `heavySystem`
+  * `lightSystem`
+  * `mediumSystem`
+  * `semiboldSystem`
+  * `thinSystem`
+  * `ultraLightSystem`
 * **Gradient** - Two Colors that will create a vertical gradient. background-color-top and background-color-bottom need to be defined in separate .nss properties.
 * **Image** - A name of an image, as used in `[UIImage imageNamed:name]` (e.g. `MyImage.png`).
 * **Number** - A number (e.g. `-1`, `4.5`)
@@ -628,6 +663,7 @@ Style Value Types
 * **TextAlign** - A text alignment (e.g. `left`, `right`, `center`)
 * **TextTransform** - A text transform (e.g. `uppercase`, `lowercase`, `capitalize`, `none`)
 * **VerticalAlign** - A vertical alignment (e.g. `top`, `center`, `bottom`, `fill`)
+* **KeyboardAppearance** - A keyboard appearance (e.g.  `default`, `dark`, `light`, `alert`)
 
 FAQ
 ---

@@ -127,7 +127,7 @@
 // padding (Box)
 - (void)testSetPadding
 {
-    UIEdgeInsets insets = UIEdgeInsetsMake(5, 5, 5, 5);
+    UIEdgeInsets insets = UIEdgeInsetsMake(7, 7, 7, 7);
     XCTAssertTrue(UIEdgeInsetsEqualToEdgeInsets(_sut.titleEdgeInsets, insets), @"NUI should set button padding");
 }
 

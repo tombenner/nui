@@ -169,6 +169,11 @@ static NUISettings *instance = nil;
     return [NUIConverter toFloat:[self get:property withClass:className]];
 }
 
++ (NSInteger)getInteger:(NSString*)property withClass:(NSString*)className
+{
+    return [NUIConverter toInteger:[self get:property withClass:className]];
+}
+
 + (CGSize)getSize:(NSString*)property withClass:(NSString*)className
 {   
     return [NUIConverter toSize:[self get:property withClass:className]];
@@ -218,14 +223,35 @@ static NUISettings *instance = nil;
     if ([self hasProperty:propertyName withClass:className]) {
         NSString *fontName = [self get:propertyName withClass:className];
         
-        if ([fontName isEqualToString:@"system"]) {
-            font = [UIFont systemFontOfSize:fontSize];
-        } else if ([fontName isEqualToString:@"boldSystem"]) {
-            font = [UIFont boldSystemFontOfSize:fontSize];
-        } else if ([fontName isEqualToString:@"italicSystem"]) {
-            font = [UIFont italicSystemFontOfSize:fontSize];
-        } else {
-            font = [UIFont fontWithName:fontName size:fontSize];
+#if defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && __IPHONE_OS_VERSION_MAX_ALLOWED >= 80200
+        if (&UIFontWeightBlack != NULL) {
+            if ([fontName isEqualToString:@"blackSystem"]) {
+                font = [UIFont systemFontOfSize:fontSize weight:UIFontWeightBlack];
+            } else if ([fontName isEqualToString:@"heavySystem"]) {
+                font = [UIFont systemFontOfSize:fontSize weight:UIFontWeightHeavy];
+            } else if ([fontName isEqualToString:@"lightSystem"]) {
+                font = [UIFont systemFontOfSize:fontSize weight:UIFontWeightLight];
+            } else if ([fontName isEqualToString:@"mediumSystem"]) {
+                font = [UIFont systemFontOfSize:fontSize weight:UIFontWeightMedium];
+            } else if ([fontName isEqualToString:@"semiboldSystem"]) {
+                font = [UIFont systemFontOfSize:fontSize weight:UIFontWeightSemibold];
+            } else if ([fontName isEqualToString:@"thinSystem"]) {
+                font = [UIFont systemFontOfSize:fontSize weight:UIFontWeightThin];
+            } else if ([fontName isEqualToString:@"ultraLightSystem"]) {
+                font = [UIFont systemFontOfSize:fontSize weight:UIFontWeightUltraLight];
+            }
+        }
+#endif
+        if (!font) {
+            if ([fontName isEqualToString:@"system"]) {
+                font = [UIFont systemFontOfSize:fontSize];
+            } else if ([fontName isEqualToString:@"boldSystem"]) {
+                font = [UIFont boldSystemFontOfSize:fontSize];
+            } else if ([fontName isEqualToString:@"italicSystem"]) {
+                font = [UIFont italicSystemFontOfSize:fontSize];
+            } else {
+                font = [UIFont fontWithName:fontName size:fontSize];
+            }
         }
     } else {
         font = baseFont ? [baseFont fontWithSize:fontSize] : [UIFont systemFontOfSize:fontSize];
@@ -273,6 +299,11 @@ static NUISettings *instance = nil;
 + (UIControlContentVerticalAlignment)getControlContentVerticalAlignment:(NSString*)property withClass:(NSString*)className
 {
     return [NUIConverter toControlContentVerticalAlignment:[self get:property withClass:className]];
+}
+
++ (UIKeyboardAppearance)getKeyboardAppearance:(NSString*)property withClass:(NSString*)className
+{
+    return [NUIConverter toKeyboardAppearance:[self get:property withClass:className]];
 }
 
 + (NSArray*)getClasses:(NSString*)className

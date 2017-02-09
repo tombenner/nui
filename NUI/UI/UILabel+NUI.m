@@ -23,6 +23,7 @@
     // (e.g. UITableViewCellContentView), unless nuiClass is explictly set
     if (([self isMemberOfClass:[UILabel class]] &&
         [[self superview] isMemberOfClass:[UIView class]]) ||
+        [self superview] == nil ||
         self.nuiClass)
     {
         [self initNUI];

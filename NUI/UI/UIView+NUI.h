@@ -12,7 +12,7 @@
 
 @interface UIView (NUI)
 
-@property (nonatomic, retain) NSString* nuiClass;
+@property (nonatomic, retain) IBInspectable NSString* nuiClass;
 @property (nonatomic, assign, getter = isNUIApplied) BOOL nuiApplied;
 
 - (void)applyNUI;

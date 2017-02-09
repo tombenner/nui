@@ -10,6 +10,7 @@
 #import "NUIConstants.h"
 #import "NUIFileMonitor.h"
 #import "NUISettings.h"
+#import "NUIActivityIndicatorRenderer.h"
 #import "NUIBarButtonItemRenderer.h"
 #import "NUIButtonRenderer.h"
 #import "NUIControlRenderer.h"
@@ -21,6 +22,7 @@
 #import "NUISegmentedControlRenderer.h"
 #import "NUISliderRenderer.h"
 #import "NUISwitchRenderer.h"
+#import "NUIPageControlRenderer.h"
 #import "NUITabBarRenderer.h"
 #import "NUITabBarItemRenderer.h"
 #import "NUITableViewRenderer.h"
@@ -37,6 +39,9 @@
 @property(nonatomic)BOOL rerenderOnOrientationChange;
 
 + (void)rerender;
+
++ (void)renderActivityIndicator:(UIActivityIndicatorView *)activityIndicator;
++ (void)renderActivityIndicator:(UIActivityIndicatorView *)activityIndicator withClass:(NSString*)className;
 
 + (void)renderBarButtonItem:(UIBarButtonItem*)item;
 + (void)renderBarButtonItem:(UIBarButtonItem*)item withClass:(NSString*)className;
@@ -72,6 +77,9 @@
 + (void)renderSwitch:(UISwitch*)uiSwitch;
 + (void)renderSwitch:(UISwitch*)uiSwitch withClass:(NSString*)className;
 
++ (void)renderPageControl:(UIPageControl*)pageControl;
++ (void)renderPageControl:(UIPageControl*)pageControl withClass:(NSString*)className;
+
 + (void)renderTabBar:(UITabBar*)bar;
 + (void)renderTabBar:(UITabBar*)bar withClass:(NSString*)className;
 
@@ -95,6 +103,7 @@
 
 + (void)renderView:(UIView*)view;
 + (void)renderView:(UIView*)view withClass:(NSString*)className;
++ (void)renderView:(UIView*)view withClass:(NSString*)className withSuffix:(NSString*)suffix;
 
 + (void)renderWindow:(UIWindow*)window;
 + (void)renderWindow:(UIWindow*)window withClass:(NSString*)className;

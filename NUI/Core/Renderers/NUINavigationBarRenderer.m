@@ -24,6 +24,10 @@
         }
     }
     
+    if ([NUISettings hasProperty:@"background-color" withClass:className]) {
+        [bar setBackgroundColor:[NUISettings getColor:@"background-color" withClass:className]];
+    }
+
     if ([NUISettings hasProperty:@"background-image" withClass:className]) {
         [bar setBackgroundImage:[NUISettings getImage:@"background-image" withClass:className] forBarMetrics:UIBarMetricsDefault];
     }

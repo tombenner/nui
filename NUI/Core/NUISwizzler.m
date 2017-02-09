@@ -12,6 +12,7 @@
 
 - (void)swizzleAll
 {
+    [self swizzleDidMoveToWindow:[UIActivityIndicatorView class]];
     [self swizzleDidMoveToWindow:[UIBarButtonItem class]];
     [self swizzleDidMoveToWindow:[UIButton class]];
     [self swizzleDidMoveToWindow:[UILabel class]];
@@ -27,6 +28,7 @@
     [self swizzleDidMoveToWindow:[UITextField class]];
     [self swizzleDidMoveToWindow:[UITextView class]];
     [self swizzleDidMoveToWindow:[UIToolbar class]];
+    [self swizzleDidMoveToWindow:[UIPageControl class]];
     [self swizzleDidMoveToWindow:[UIControl class]];
     [self swizzleDidMoveToWindow:[UIView class]];
   

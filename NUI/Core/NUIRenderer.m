@@ -13,6 +13,14 @@
 
 static NUIRenderer *gInstance = nil;
 
++ (void)renderActivityIndicator:(UIActivityIndicatorView *)activityIndicator {
+    [NUIActivityIndicatorRenderer render:activityIndicator withClass:@"ActivityIndicator"];
+}
+
++ (void)renderActivityIndicator:(UIActivityIndicatorView *)activityIndicator withClass:(NSString*)className {
+    [NUIActivityIndicatorRenderer render:activityIndicator withClass:className];
+}
+
 + (void)renderBarButtonItem:(UIBarButtonItem*)item
 {
     [NUIBarButtonItemRenderer render:item withClass:@"BarButton"];
@@ -128,6 +136,14 @@ static NUIRenderer *gInstance = nil;
     [NUISwitchRenderer render:uiSwitch withClass:className];
 }
 
++ (void)renderPageControl:(UIPageControl*)pageControl {
+    [NUIPageControlRenderer render:pageControl withClass:@"PageControl"];
+}
+
++ (void)renderPageControl:(UIPageControl*)pageControl withClass:(NSString*)className {
+    [NUIPageControlRenderer render:pageControl withClass:className];
+}
+
 + (void)renderTabBar:(UITabBar*)bar
 {
     [NUITabBarRenderer render:bar withClass:@"TabBar"];
@@ -206,6 +222,11 @@ static NUIRenderer *gInstance = nil;
 + (void)renderView:(UIView*)view withClass:(NSString*)className
 {
     [NUIViewRenderer render:view withClass:className];
+}
+
++ (void)renderView:(UIView*)view withClass:(NSString*)className withSuffix:(NSString*)suffix
+{
+    [NUIViewRenderer render:view withClass:className withSuffix:suffix];
 }
 
 + (void)renderWindow:(UIWindow*)window

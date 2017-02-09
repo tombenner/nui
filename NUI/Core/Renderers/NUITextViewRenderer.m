@@ -1,11 +1,13 @@
 #import "NUITextViewRenderer.h"
-
+#import "NUITextInputTraitsRenderer.h"
 @implementation NUITextViewRenderer
 
 + (void)render:(UITextView*)textView withClass:(NSString*)className
 {
     NSString *property;
     
+    [super render:textView withClass: className];
+
     // Set tint
     property = @"tint-color";
     if ([NUISettings hasProperty:property withClass:className]) {
@@ -25,6 +27,11 @@
     if ([NUISettings hasProperty:property withClass:className]) {
         [textView setContentInset:[NUISettings getEdgeInsets:@"padding" withClass:className]];
     }
+    
+    if([textView conformsToProtocol:@protocol(UITextInputTraits)]) {
+        [NUITextInputTraitsRenderer renderKeyboard:(id<UITextInputTraits>)textView withClass:className];
+    }
+
 }
 
 @end

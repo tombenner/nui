@@ -29,6 +29,11 @@
     return [value floatValue];
 }
 
++ (NSInteger)toInteger:(id)value
+{
+    return [value integerValue];
+}
+
 + (NSNumber*)toNumber:(id)value
 {
     return [NSNumber numberWithFloat:[value floatValue]];
@@ -251,6 +256,20 @@
     }
     
     return alignment;
+}
+
++ (UIKeyboardAppearance)toKeyboardAppearance:(NSString*)value
+{
+    UIKeyboardAppearance appearance = UIKeyboardAppearanceDefault;
+    
+    if ([value isEqualToString:@"dark"]) {
+        appearance =  UIKeyboardAppearanceDark;
+    } else if ([value isEqualToString:@"light"]) {
+        appearance =  UIKeyboardAppearanceLight;
+    } else if ([value isEqualToString:@"alert"]) {
+        appearance =  UIKeyboardAppearanceAlert;
+    }
+    return appearance;
 }
 
 /** Matches the given content against the regular expression pattern, extracting
