@@ -29,7 +29,7 @@ static NSString * const NUIButtonGradientTestsStyleClass = @"ButtonWithGradientC
     [_sut applyNUI];
     
     // Flip this to YES to record images in the reference image directory.
-    self.recordMode = YES;
+    self.recordMode = NO;
 }
 
 #pragma mark - Button Gradients

@@ -24,6 +24,7 @@
 
 + (BOOL)toBoolean:(id)value;
 + (float)toFloat:(id)value;
++ (NSInteger)toInteger:(id)value;
 + (CGSize)toSize:(NSString*)value;
 + (UIOffset)toOffset:(NSString*)value;
 + (UIEdgeInsets)toEdgeInsets:(NSString*)value;
@@ -36,4 +37,5 @@
 + (kTextAlignment)toTextAlignment:(NSString*)value;
 + (UIControlContentHorizontalAlignment)toControlContentHorizontalAlignment:(NSString*)value;
 + (UIControlContentVerticalAlignment)toControlContentVerticalAlignment:(NSString*)value;
++ (UIKeyboardAppearance)toKeyboardAppearance:(NSString*)value;
 @end

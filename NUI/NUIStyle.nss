@@ -94,6 +94,10 @@ SegmentedControl {
 Switch {
     on-tint-color: @primaryBackgroundTintColor;
 }
+PageControl {
+    color:@secondaryFontColor;
+    current-color: @primaryFontColor;
+}
 TabBar {
     background-color-top: @primaryBackgroundColorTop;
     background-color-bottom: @primaryBackgroundColorBottom;

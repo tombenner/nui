@@ -1,1 +1,0 @@
-../../NUIParse/NUIParse/Parsers/NUIPShiftReduceParsers/NUIPShiftReduceActionTable.h
