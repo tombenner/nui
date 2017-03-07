@@ -177,9 +177,12 @@
         for (UIView* subview in button.subviews) {
             if ([subview isKindOfClass:[UILabel class]] == NO) {
                 subview.layer.cornerRadius = r;
+                subview.layer.masksToBounds = YES;
+            }
+            else {
+                subview.layer.masksToBounds = NO;
             }
         }
-        button.layer.masksToBounds = NO;
     }
     
     [NUIViewRenderer renderShadow:button withClass:className];
