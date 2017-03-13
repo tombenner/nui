@@ -52,6 +52,14 @@ static NSString * const NUIButtonBackgroundColorTestsStyleClass = @"ButtonWithCo
     XCTAssertEqualObjects([_sut backgroundColor], [UIColor yellowColor], @"NUI should set button background color (regardless of state)");
 }
 
+#pragma mark - Tint Color
+
+// tint-color (Color)
+- (void)testTintColor
+{
+    XCTAssertEqualObjects([_sut tintColor], [UIColor greenColor], @"NUI should set tint color (regardless of state)");
+}
+
 // background-color-normal (Color)
 - (void)testBackgroundColorNormal
 {

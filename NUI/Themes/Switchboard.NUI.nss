@@ -36,6 +36,10 @@ Button {
     padding: 7;
     exclude-views: UIAlertButton;
     exclude-subviews: UITableViewCell,UITextField;
+    tint-color: @primaryFontColor;
+}
+ButtonTint{
+    tint-color: @primaryFontColor;
 }
 ImageViewTint{
     tint-color: @primaryFontColor;

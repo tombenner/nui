@@ -70,6 +70,7 @@ Button {
     text-shadow-color-selected-highlighted: red;
     text-shadow-offset: 2, 1;
     text-transform: uppercase;
+    tint-color: green;
     title-insets: 7;
     width: 80;
 }
@@ -129,6 +130,7 @@ ButtonWithColor {
     background-color-selected-highlighted: blue;
     font-name: ultraLightSystem;
     font-size: 13;
+    tint-color: green;
 }
 
 ButtonWithGradientColor {
