@@ -36,6 +36,10 @@ Button {
     corner-radius: 7;
     exclude-views: UIAlertButton;
     exclude-subviews: UITableViewCell,UITextField;
+    tint-color: #54B4EB;
+}
+ButtonTint{
+    tint-color: #54B4EB;
 }
 ImageViewTint{
     tint-color: #54B4EB;
