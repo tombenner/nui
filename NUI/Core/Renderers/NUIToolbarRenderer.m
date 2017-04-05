@@ -32,10 +32,10 @@
         [bar setBackgroundImage:[NUISettings getImage:@"background-image-bottom" withClass:className] forToolbarPosition:UIToolbarPositionBottom barMetrics:UIBarMetricsDefault];
     }
     if ([NUISettings hasProperty:@"background-image-top-landscape" withClass:className]) {
-        [bar setBackgroundImage:[NUISettings getImage:@"background-image-top-landscape" withClass:className] forToolbarPosition:UIToolbarPositionTop barMetrics:UIBarMetricsLandscapePhone];
+        [bar setBackgroundImage:[NUISettings getImage:@"background-image-top-landscape" withClass:className] forToolbarPosition:UIToolbarPositionTop barMetrics:UIBarMetricsCompact];
     }
     if ([NUISettings hasProperty:@"background-image-bottom-landscape" withClass:className]) {
-        [bar setBackgroundImage:[NUISettings getImage:@"background-image-bottom-landscape" withClass:className] forToolbarPosition:UIToolbarPositionBottom barMetrics:UIBarMetricsLandscapePhone];
+        [bar setBackgroundImage:[NUISettings getImage:@"background-image-bottom-landscape" withClass:className] forToolbarPosition:UIToolbarPositionBottom barMetrics:UIBarMetricsCompact];
     }
     
     // setShadowImage is available since ios 6.0
