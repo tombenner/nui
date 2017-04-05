@@ -41,7 +41,7 @@ NSString *flattenTokens(NSArray *tokens)
         } else if ([token isKindOfClass:[NSArray class]]) {
             tokenString = flattenTokens(token);
         } else {
-            [NSException raise:@"Unexpected value token" format:nil];
+            [NSException raise:@"Unexpected value token" format:@""];
         }
         
         if (contents.length > 0)

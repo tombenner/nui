@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Tom Benner. All rights reserved.
 //
 
-#import "NUIStylesheetItem.h"
+#import "NUIStyleSheetItem.h"
 #import "NUIMediaBlock.h"
 
 @implementation NUIStyleSheetItem

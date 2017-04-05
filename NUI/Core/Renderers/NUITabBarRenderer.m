@@ -24,7 +24,7 @@
     
     property = @"selected-image-tint-color";
     if ([NUISettings hasProperty:property withClass:className]) {
-        [bar setSelectedImageTintColor:[NUISettings getColor:property withClass:className]];
+        [bar setTintColor:[NUISettings getColor:property withClass:className]];
     }
     
     [self renderSizeDependentProperties:bar];

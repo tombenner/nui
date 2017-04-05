@@ -35,6 +35,13 @@
         [button setBackgroundColor:[NUISettings getColor:@"background-color" withClass:className]];
     }
     
+    // Set tint color
+    if ([NUISettings hasProperty:@"tint-color" withClass:className]) {
+        [button setBackgroundImage:[button.currentBackgroundImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+        [button setImage:[button.currentImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+        [button setTintColor:[NUISettings getColor:@"tint-color" withClass:className]];
+    }
+    
     if ([NUISettings hasProperty:@"background-color-normal" withClass:className]) {
         [button setBackgroundImage:[NUISettings getImageFromColor:@"background-color-normal" withClass:className] forState:UIControlStateNormal];
     }

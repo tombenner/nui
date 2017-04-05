@@ -40,6 +40,18 @@ Button {
     corner-radius: 7;
     exclude-views: UIAlertButton;
     exclude-subviews: UITableViewCell,UITextField;
+    tint-color: @primaryBackgroundColorTop;
+}
+ButtonTint{
+    background-color: @primaryBackgroundColorBottomStrong;
+    tint-color: @primaryBackgroundColorTop;
+}
+ImageViewTint{
+
+    background-color: @primaryBackgroundColorBottomStrong;
+    tint-color: @primaryBackgroundColorTop;
+
+
 }
 LargeButton {
     height: 50;
