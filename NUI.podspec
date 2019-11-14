@@ -14,5 +14,5 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.frameworks   = [ "UIKit", "CoreGraphics","QuartzCore", "CoreImage" ]
   
-  s.dependency 'NUIParse'
+  s.dependency 'NUIParse', :git => "https://github.com/bhaveshagrawal1014/NUIParse.git"
 end
