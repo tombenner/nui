@@ -45,8 +45,14 @@
         [control setDividerImage:[NUISettings getImageFromColor:@"divider-color" withClass:className] forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     }
     
-    // Set background tint color
-    if ([NUISettings hasProperty:@"background-tint-color" withClass:className]) {
+    if ([NUISettings hasProperty:@"tint-color" withClass:className]) {
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < 70000
+        // UISegmentedControlStyleBar is necessary for setTintColor to take effect
+        control.segmentedControlStyle = UISegmentedControlStyleBar;
+#endif
+        [control setTintColor:[NUISettings getColor:@"tint-color" withClass:className]];
+    } else if ([NUISettings hasProperty:@"background-tint-color" withClass:className]) {
+        // Set background tint color
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < 70000
         // UISegmentedControlStyleBar is necessary for setTintColor to take effect
         control.segmentedControlStyle = UISegmentedControlStyleBar;

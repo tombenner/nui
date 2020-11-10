@@ -14,6 +14,11 @@
 
 + (void)render:(UITextField*)textField withClass:(NSString*)className
 {
+    // Set tint
+    if ([NUISettings hasProperty:@"tint-color" withClass:className]) {
+        [textField setTintColor:[NUISettings getColor:@"tint-color" withClass:className]];
+    }
+    
     if ([NUISettings hasFontPropertiesWithClass:className]) {
         [textField setFont:[NUISettings getFontWithClass:className baseFont:textField.font]];
     }

@@ -31,6 +31,11 @@
         }
     }
     
+    // Set tint
+    if ([NUISettings hasProperty:@"tint-color" withClass:className]) {
+        [label setTintColor:[NUISettings getColor:@"tint-color" withClass:className]];
+    }
+    
     if ([NUISettings hasProperty:@"font-color" withClass:className]) {
         label.textColor = [NUISettings getColor:@"font-color" withClass:className];
     }

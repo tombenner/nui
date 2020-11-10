@@ -16,8 +16,6 @@
     
     if ([NUISettings hasProperty:@"background-image" withClass:className]) {
         [item setBackgroundImage:[NUISettings getImage:@"background-image" withClass:className] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    } else if ([NUISettings hasProperty:@"background-tint-color" withClass:className]) {
-        [item setTintColor:[NUISettings getColor:@"background-tint-color" withClass:className]];
     } else if ([NUISettings hasProperty:@"background-color" withClass:className] ||
                [NUISettings hasProperty:@"background-color-top" withClass:className]) {
         CALayer *layer = [CALayer layer];
@@ -85,6 +83,11 @@
             }
             [item setBackgroundImage:highlightedImage forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
         }
+    }
+    if ([NUISettings hasProperty:@"tint-color" withClass:className]) {
+        [item setTintColor:[NUISettings getColor:@"tint-color" withClass:className]];
+    } else if ([NUISettings hasProperty:@"background-tint-color" withClass:className]) {
+        [item setTintColor:[NUISettings getColor:@"background-tint-color" withClass:className]];
     }
     
     NSDictionary *titleTextAttributes = [NUIUtilities titleTextAttributesForClass:className];

@@ -18,6 +18,11 @@
     } else if ([NUISettings hasProperty:@"background-color" withClass:className]) {
         [control setBackgroundColor: [NUISettings getColor:@"background-color" withClass: className]];
     }
+
+    // Set tint
+    if ([NUISettings hasProperty:@"tint-color" withClass:className]) {
+        [control setTintColor:[NUISettings getColor:@"tint-color" withClass:className]];
+    }
     
     [NUIViewRenderer renderBorder:control withClass:className];
     [NUIViewRenderer renderShadow:control withClass:className];
