@@ -16,7 +16,7 @@
     [self swizzleDidMoveToWindow:[UIBarButtonItem class]];
     [self swizzleDidMoveToWindow:[UIButton class]];
     [self swizzleDidMoveToWindow:[UILabel class]];
-    [self swizzleDidMoveToWindow:[UINavigationBar class]];
+    [self swizzleDidMovetoWindowWithClass:[UINavigationBar class]];
     [self swizzleDidMoveToWindow:[UINavigationItem class]];
     [self swizzleDidMoveToWindow:[UIProgressView class]];
     [self swizzleDidMoveToWindow:[UISearchBar class]];
@@ -49,6 +49,13 @@
     [self swizzleDealloc:[UITableViewCell class]];
     [self swizzleDealloc:[UITableView class]];
 }
+
+- (void)swizzleDidMovetoWindowWithClass:(Class)class{
+    NSString* methodName = @"didMoveToWindow";
+    SEL originalMethod = NSSelectorFromString(methodName);
+    SEL newMethod = NSSelectorFromString([NSString stringWithFormat:@"%@%@_%@", @"override_", class, methodName]);
+    [self swizzle:class from:originalMethod to:newMethod];
+};
 
 - (void)swizzleDidMoveToWindow:(Class)class
 {
