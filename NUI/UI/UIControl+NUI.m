@@ -36,7 +36,7 @@
     if (!self.isNUIApplied) {
         [self applyNUI];
     }
-    [self override_didMoveToWindow];
+    //[self override_didMoveToWindow];
 }
 
 @end
