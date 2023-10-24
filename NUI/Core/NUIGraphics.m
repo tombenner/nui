@@ -177,7 +177,7 @@
 
 + (UIImage*)colorImage:(UIColor*)color withFrame:(CGRect)frame
 {
-    UIGraphicsBeginImageContextWithOptions(frame.size, NO, 0);
+    [[UIGraphicsImageRenderer alloc] initWithSize:frame.size];
     [color setFill];
     UIRectFill(frame);
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
