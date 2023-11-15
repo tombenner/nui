@@ -15,15 +15,19 @@
 + (void)render:(UIButton*)button withClass:(NSString*)className
 {
     [NUIViewRenderer renderSize:button withClass:className];
+   
     // UIButtonTypeRoundedRect's first two sublayers contain its background and border, which
     // need to be hidden for NUI's rendering to be displayed correctly. Ideally we would switch
     // over to a UIButtonTypeCustom, but this appears to be impossible.
+    
+    //This code cause to hiding _UICalendarHeaderTitleButton label in UIDatePicker
+    /*
     if (button.buttonType == UIButtonTypeRoundedRect) {
         if ([button.layer.sublayers count] > 2) {
             [button.layer.sublayers[0] setOpacity:0.0f];
             [button.layer.sublayers[1] setOpacity:0.0f];
         }
-    }
+    }*/
 
     // Set padding
     if ([NUISettings hasProperty:@"padding" withClass:className]) {
