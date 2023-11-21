@@ -134,12 +134,15 @@
 {
     UIScreen *screen = [UIScreen mainScreen];
     CGFloat scale = [screen scale];
-    UIGraphicsBeginImageContextWithOptions(layer.frame.size, NO, scale);
     
-    [layer renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return image;
+    UIGraphicsImageRendererFormat *format = [UIGraphicsImageRendererFormat defaultFormat];
+    UIGraphicsImageRenderer *renderer = [[UIGraphicsImageRenderer alloc] initWithSize: layer.frame.size format:format];
+    UIImage *resultImage = [renderer imageWithActions:^(UIGraphicsImageRendererContext * _Nonnull rendererContext) {
+        CGRect rect = CGRectMake(0, 0, layer.frame.size.width, layer.frame.size.height);
+        [rendererContext.currentImage drawInRect:rect];
+    }];
+    
+    return resultImage;
 }
 
 + (CALayer*)uiImageToCALayer:(UIImage*)image
